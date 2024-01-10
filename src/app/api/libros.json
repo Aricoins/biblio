@@ -1,0 +1,173 @@
+[
+    {"Nombre":"ST Moritz","Autor/Editorial":"Peter Kasper","estante":"1","N� Inventario":"15270","DECLARA":"","N� Orden":"13"}
+    ,
+    {"Nombre":"Suiza Vista desde afuera","Autor/Editorial":"Comision de Coordinacion para la presencia de Suiza en el extranjero","estante":"1","N� Inventario":"23408","DECLARA":"","N� Orden":"14"}
+    ,
+    {"Nombre":"Suiza vista desde afuera","Autor/Editorial":"Comision de Coordinacion para la presencia de Suiza en el extranjero","estante":"1","N� Inventario":"23408","DECLARA":"","N� Orden":"15"}
+    ,
+    {"Nombre":"Paramos Venezolanos","Autor/Editorial":"Weidmann","estante":"1","N� Inventario":"15268","DECLARA":"","N� Orden":"16"}
+    ,
+    {"Nombre":"PEDESTRIAN AREAS","Autor/Editorial":"Klaus Uhiig","estante":"1","N� Inventario":"15264","DECLARA":"","N� Orden":"55"}
+    ,
+    {"Nombre":"Regi�n del bio bio (repetido con el 32)","Autor/Editorial":"Gobierno de Chile","estante":"1","N� Inventario":"23407","DECLARA":"","N� Orden":"66"}
+    ,
+    {"Nombre":"Rehabilitar una sociedad drogada","Autor/Editorial":"Ronald Hubbard","estante":"1","N� Inventario":"","DECLARA":"","N� Orden":"18"}
+    ,
+    {"Nombre":"Fil�ntropo Educaci�n Alfabetizaci�n y civilizaci�n","Autor/Editorial":"Ronald Hubbard","estante":"1","N� Inventario":"","DECLARA":"","N� Orden":"19"}
+    ,
+    {"Nombre":"Encrucijadas entre cuidar y educar (2)","Autor/Editorial":"Patricia Redondo y Estanislao Antelo","estante":"1","N� Inventario":"","DECLARA":"2297-17","N� Orden":""}
+    ,
+    {"Nombre":"Un d�a m�s ARB una historia de conciencia y dignidad","Autor/Editorial":"Mabel Painehual, Fabiana Ertola, M�nica de Torres Curth y Laura Mendez","estante":"1","N� Inventario":"","DECLARA":"2375-18","N� Orden":""}
+    ,
+    {"Nombre":"Diccionario de la Lengua Espa�ola (tomo 1)","Autor/Editorial":"","estante":"2","N� Inventario":"4884","DECLARA":"","N� Orden":"11"}
+    ,
+    {"Nombre":"Diccionario de la Lengua Espa�ola (tomo 2)","Autor/Editorial":"","estante":"2","N� Inventario":"4884","DECLARA":"","N� Orden":"12"}
+    ,
+    {"Nombre":"TOMOS (2) DICCIONARIO CIENCIAS SOCIALES","Autor/Editorial":"Instituto de Estudios Politicos.","estante":"2","N� Inventario":"15287","DECLARA":"","N� Orden":"45"}
+    ,
+    {"Nombre":"LA POLIT DE DESREGULACION PETROLERA Arg.","Autor/Editorial":"Roberto Kozuij- Victor Bravo","estante":"2","N� Inventario":"15262","DECLARA":"","N� Orden":"88"}
+    ,
+    {"Nombre":"DESARROLLO Y ENERGIA Vol 2 N� 4","Autor/Editorial":"Victor Bravo Carlos Suarez","estante":"2","N� Inventario":"15261","DECLARA":"","N� Orden":"96"}
+    ,
+    {"Nombre":"Diccionario incompleto de mm onta�a.","Autor/Editorial":"Jose Herminio Hernandez","estante":"3","N� Inventario":"","DECLARA":"","N� Orden":"61"}
+    ,
+    {"Nombre":"DIAGNOSTICO SACIO CULTURAL POBLACION Bernal Don Bosco","Autor/Editorial":"M.T. Sirvent S. l. Brusilovsky.","estante":"3","N� Inventario":"15265","DECLARA":"","N� Orden":"80"}
+    ,
+    {"Nombre":"A HACHA CU�A Y GOLPE","Autor/Editorial":"Mar�a Luisa Bou","estante":"3","N� Inventario":"23403","DECLARA":"","N� Orden":"86"}
+    ,
+    {"Nombre":"LA MESETA RIONEGRINA DE SOMUNCURA","Autor/Editorial":"Ministerio asuntos socialesa rn","estante":"3","N� Inventario":"15260","DECLARA":"","N� Orden":"92"}
+    ,
+    {"Nombre":"Bariloche en Blanco y Negro","Autor/Editorial":"Diego Ortiz Mugica","estante":"3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"DEPURACION DE AGUAS RESIDUAL","Autor/Editorial":"Ramon Collado Nara","estante":"4","N� Inventario":"12625","DECLARA":"","N� Orden":"52"}
+    ,
+    {"Nombre":"LIBRO DE RECICLAJE","Autor/Editorial":"Alfonso del Val","estante":"4","N� Inventario":"10813","DECLARA":"","N� Orden":"53"}
+    ,
+    {"Nombre":"FLORA Y FAUNA PUERTO BLEST","Autor/Editorial":"Centro Regional Universitario Bariloche","estante":"4","N� Inventario":"13047","DECLARA":"1494-2010","N� Orden":"81"}
+    ,
+    {"Nombre":"LOS JOVENES TIENEN LA PALABRA","Autor/Editorial":"Lic. Beatriz Tobin- Stella Robatto","estante":"4","N� Inventario":"39766","DECLARA":"","N� Orden":"84"}
+    ,
+    {"Nombre":"50 cosas que usted puede hacer para salvar la tierra","Autor/Editorial":"the earthwoeks group","estante":"4","N� Inventario":"10816","DECLARA":"","N� Orden":"97"}
+    ,
+    {"Nombre":"INTRODUCCION A LAS FINANZAS PUBLICAS","Autor/Editorial":"Jose Maria Martin","estante":"B1","N� Inventario":"15279","DECLARA":"","N� Orden":"47"}
+    ,
+    {"Nombre":"Derecho P�blico","Autor/Editorial":"Presidencia de la Naci�n","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"49"}
+    ,
+    {"Nombre":"Filosof�a del Derecho","Autor/Editorial":"Presidencia de la Naci�n","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"50"}
+    ,
+    {"Nombre":"Hombres y Mujeres de Bariloche (3)","Autor/Editorial":"Teresita Mendez","estante":"B1","N� Inventario":"","DECLARA":"1344-2008","N� Orden":"58"}
+    ,
+    {"Nombre":"Historia del Esqu� en Bariloche","Autor/Editorial":"Ichatzi Bachmann","estante":"B1","N� Inventario":"23400","DECLARA":"694-2000","N� Orden":"72"}
+    ,
+    {"Nombre":"Encuentro en Bariloche","Autor/Editorial":"Bruna Giacori.","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"73"}
+    ,
+    {"Nombre":"Cuando el agua se vuelve vidrio","Autor/Editorial":"Albertina Rahm","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"83"}
+    ,
+    {"Nombre":"Hielos del Enga�o","Autor/Editorial":"Justo Ram�n C�ceres","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"94"}
+    ,
+    {"Nombre":"Maquinchao","Autor/Editorial":"Galo Martinez","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"95"}
+    ,
+    {"Nombre":"LOS LIMITES DE RIO NEGRO","Autor/Editorial":"Ledislatura de la Provincia","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"98"}
+    ,
+    {"Nombre":"Patagonia 1892 Diario del explorador suizo","Autor/Editorial":"Jorge Mach�n","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"100"}
+    ,
+    {"Nombre":"DIVERSIDAD CULTURAL ARG","Autor/Editorial":"Helena Aizen- Tam Muro","estante":"B1","N� Inventario":"23410","DECLARA":"","N� Orden":"102"}
+    ,
+    {"Nombre":"Comunicaci�n Estrat�gica valor agregado para una ONG","Autor/Editorial":"Vecinos por la carta","estante":"B1","N� Inventario":"38248","DECLARA":"1465-2010","N� Orden":"105"}
+    ,
+    {"Nombre":"El Parlamento","Autor/Editorial":"Luc�a Fontenla","estante":"B1","N� Inventario":"15280","DECLARA":"","N� Orden":"107"}
+    ,
+    {"Nombre":"Tratado de Derecho Municipal (3)","Autor/Editorial":"Horacio Rosatti","estante":"B1","N� Inventario":"12146","DECLARA":"","N� Orden":"108"}
+    ,
+    {"Nombre":"Control Municipal del Tr�nsito","Autor/Editorial":"Horacio Rosatti","estante":"B1","N� Inventario":"12145","DECLARA":"","N� Orden":"109"}
+    ,
+    {"Nombre":"Laguna del Desierto","Autor/Editorial":"Justo Ram�n C�ceres.","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":"163"}
+    ,
+    {"Nombre":"Decreto de desburocratizacion y simplificacion","Autor/Editorial":"Thomson Reuters","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Lotes sin due�o","Autor/Editorial":"Jorge Paolinelli, Tomas Guevara, Guillermo Oglietti y Alejandro Nussbaum","estante":"B1","N� Inventario":"","DECLARA":"2226-17","N� Orden":""}
+    ,
+    {"Nombre":"Mensajes al poblador rural","Autor/Editorial":"Jorge Piccini","estante":"B1","N� Inventario":"","DECLARA":"2545-15","N� Orden":""}
+    ,
+    {"Nombre":"Retratos de mi Bariloche","Autor/Editorial":"Roberto Sosa Lukman","estante":"B1","N� Inventario":"","DECLARA":"2528-19","N� Orden":""}
+    ,
+    {"Nombre":"Otra Historia es posible","Autor/Editorial":"Jorge Pablo Mogensen","estante":"B1","N� Inventario":"","DECLARA":"2514-19","N� Orden":""}
+    ,
+    {"Nombre":"Damas Patricias Argenyinas","Autor/Editorial":"Ruben Gancedo","estante":"B1","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Derechos de los pueblos originatios","Autor/Editorial":"Enopto","estante":"B1","N� Inventario":"","DECLARA":"2734-16","N� Orden":""}
+    ,
+    {"Nombre":"Pueblos � Naciones Originarias en Argentina","Autor/Editorial":"Enopto","estante":"B1","N� Inventario":"","DECLARA":"2734-16","N� Orden":""}
+    ,
+    {"Nombre":"Archivos del Silencio","Autor/Editorial":"Pilar Perez","estante":"B1","N� Inventario":"","DECLARA":"2126-16","N� Orden":""}
+    ,
+    {"Nombre":"El potrillo y la Mariposa","Autor/Editorial":"Susana Amuch�stegui","estante":"B3","N� Inventario":"","DECLARA":"1525-11","N� Orden":"140"}
+    ,
+    {"Nombre":"Abuelas de Plaza de Mayo fotograf�a 30 a�os","Autor/Editorial":"abuelas plaza de mayo","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":"76"}
+    ,
+    {"Nombre":"Ni�os desaparecidos J�venes localizados","Autor/Editorial":"madres de plaza de mayo","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":"79"}
+    ,
+    {"Nombre":"EL CABALLERO DE LAS BOTAS AZULES � LA HIJA DEL MAR","Autor/Editorial":"Rosal�a Castro","estante":"B3","N� Inventario":"23404","DECLARA":"","N� Orden":"87"}
+    ,
+    {"Nombre":"Ruisue�os","Autor/Editorial":"Guada","estante":"B3","N� Inventario":"","DECLARA":"1930-15","N� Orden":"91"}
+    ,
+    {"Nombre":"LA VIA","Autor/Editorial":"Juan Sgolastra","estante":"B3","N� Inventario":"23310","DECLARA":"","N� Orden":"93"}
+    ,
+    {"Nombre":"La Obra del buen Pastor, Camino al Sol.","Autor/Editorial":"Doris Pastor","estante":"B3","N� Inventario":"15263","DECLARA":"","N� Orden":"106"}
+    ,
+    {"Nombre":"El Ombudsman Defensor del Pueblo y de las Instituciones Republicanas.","Autor/Editorial":"Jorge L. Maiorano","estante":"B3","N� Inventario":"15285","DECLARA":"","N� Orden":"110"}
+    ,
+    {"Nombre":"Dejando el Silencio atr�s Coversaciones sobre Malvinas","Autor/Editorial":"Luis Serono","estante":"B3","N� Inventario":"","DECLARA":"2623/19","N� Orden":""}
+    ,
+    {"Nombre":"La Historia de Abuelas 30 a�os de b�squeda","Autor/Editorial":"Abuelas de Plaza de Mayo","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Libro de viaje para colorear Flora y Fauna de la Patagonia","Autor/Editorial":"Valeria Nieto","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Bodega de Sue�os","Autor/Editorial":"Norma Dus","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Bailando con duendes","Autor/Editorial":"Maria Liliana Odano","estante":"B3","N� Inventario":"","DECLARA":"2301-17","N� Orden":""}
+    ,
+    {"Nombre":"La Brujita Alegria","Autor/Editorial":"Maria Liliana Odano","estante":"B3","N� Inventario":"","DECLARA":"1925-15","N� Orden":""}
+    ,
+    {"Nombre":"El Juego de la Oruga","Autor/Editorial":"Mariano Agustin Di Genova","estante":"B3","N� Inventario":"","DECLARA":"2223-17","N� Orden":""}
+    ,
+    {"Nombre":"Mujeres en monedas y billetes en America Latina","Autor/Editorial":"Mabel Ros","estante":"B3","N� Inventario":"","DECLARA":"2154-17","N� Orden":""}
+    ,
+    {"Nombre":"La Casa de la Moneda de Oruro","Autor/Editorial":"Arnaldo Cunietti Ferrando y Raul Tapia Bascope","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"La sexologia en la numismatica","Autor/Editorial":"Oswaldo M Rodrigues Jr","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Historias dos coleccionismos numismaticos algunas historias brasileiras","Autor/Editorial":"Oswaldo M Rodrigues Jr","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"El Dios de la Monta�a","Autor/Editorial":"Francisco Javier Bustelo de la Riva","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Una Casa en el Casta�o","Autor/Editorial":"Francisco Javier Bustelo de la Riva","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Chau Chi Una bella historia de amor","Autor/Editorial":"Francisco Javier Bustelo de la Riva","estante":"B3","N� Inventario":"","DECLARA":"","N� Orden":""}
+    ,
+    {"Nombre":"Inexplicable","Autor/Editorial":"Colegio Don Jaime de Nevares","estante":"B3","N� Inventario":"","DECLARA":"1983-16","N� Orden":"164"}
+    ,
+    {"Nombre":"La Reconstrucci�n Hacie el camino que no existe","Autor/Editorial":"Vanesa Vicente","estante":"B3","N� Inventario":"","DECLARA":"1595-12","N� Orden":"167"}
+    ,
+    {"Nombre":"Algo en com�n. Peque�as historias de inmigraci�n","Autor/Editorial":"EMB","estante":"B3","N� Inventario":"","DECLARA":"2680-20","N� Orden":""}
+    ,
+    {"Nombre":"Dos Sillones","Autor/Editorial":"Alejandro Nespiral","estante":"B3","N� Inventario":"","DECLARA":"2835-22","N� Orden":""}
+    ,
+    {"Nombre":"Mil nueve setenta","Autor/Editorial":"Virginia Schuvab � Alicia Pez","estante":"B3","N� Inventario":"","DECLARA":"2822-22","N� Orden":""}
+    ,
+    {"Nombre":"Las Primeras Mujeres que hicieron historia","Autor/Editorial":"Gisela Marziotta","estante":"B3","N� Inventario":"","DECLARA":"2889-22","N� Orden":""}
+    ,
+    {"Nombre":"Guia de identificaci�n de LIQUENES de los bosques","Autor/Editorial":"Susana Calvela y Alfredo Passo","estante":"","N� Inventario":"","DECLARA":"2739-21","N� Orden":""}
+    ,
+    {"Nombre":"Aime Pain� La voz del pueblo Mapuche","Autor/Editorial":"Cristina Rafanelli","estante":"","N� Inventario":"","DECLARA":"2716-20","N� Orden":""}
+    ,
+    {"Nombre":"Mejor s� hablar de ciertas cosas","Autor/Editorial":"Mar�a Campolonghi","estante":"","N� Inventario":"","DECLARA":"2736-21","N� Orden":""}
+    ,
+    {"Nombre":"Historia del Soyem 1946-2015","Autor/Editorial":"Luciano Arancibia Aguero y Nancy Vargas","estante":"","N� Inventario":"","DECLARA":"2847-22","N� Orden":""}
+    ,
+    {"Nombre":"Patagonia Relatos de viento y piedra","Autor/Editorial":"Mirta Santiago (coordinadora)","estante":"","N� Inventario":"","DECLARA":"2821-22","N� Orden":""}
+    ,
+    {"Nombre":"La colonizacion del Nahuel Huapi","Autor/Editorial":"Cristian Pablo Muller","estante":"","N� Inventario":"","DECLARA":"2756-21","N� Orden":""}
+    
+    ]
+    
