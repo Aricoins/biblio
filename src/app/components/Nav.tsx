@@ -25,17 +25,17 @@ const Navbar = () => {
       <Image src={logo} width={300} alt="logotipo"/>
       <ul className="flex">
         <li>
-          <Link href="/" passHref>
+          <Link href="/" >
             <StyledLink>Inicio</StyledLink>
           </Link>
         </li>
         <li>
-          <Link href="/" passHref>
+          <Link href="/" >
             <StyledLink>Libros</StyledLink>
           </Link>
         </li>
         <li>
-          <Link href="/login" passHref>
+          <Link href="/login" >
             <StyledLink>Login</StyledLink>
           </Link>
         </li>
