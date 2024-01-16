@@ -3,45 +3,46 @@ import Link from 'next/link';
 import logo from "../../../public/assets/moran.png"
 import Image from 'next/image';
 import styled from "styled-components";
+import SearchBar from "./SearchBar";
 
 const Container = styled.div`
   background-color: #fcfdfb;
   position: fixed;
-  top: 0%;
+top: 0%  ;
   left: 0%;
   display: flex;
   justify-content: space-between;
   width: 100%;
 `;
 
-const StyledLink = styled.a`
-  color: #062358;
-  margin-left: 2rem;
-`;
 
-const Navbar = () => {
+const NavTop = () => {
   return (
     <Container>
       <Image src={logo} width={300} alt="logotipo"/>
-      <ul className="flex">
+      <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
         <li>
-          <Link href="/" >
-            <StyledLink>Inicio</StyledLink>
+          <Link href="/inicio" >
+           Inicio
           </Link>
         </li>
         <li>
-          <Link href="/" >
-            <StyledLink>Libros</StyledLink>
+          <Link href="/libros" >
+           Libros
           </Link>
         </li>
         <li>
           <Link href="/login" >
-            <StyledLink>Login</StyledLink>
+           Login
           </Link>
-        </li>
+          </li>
+          <li>
+                <SearchBar />
+      
+          </li>
       </ul>
     </Container>
   );
 };
 
-export default Navbar;
+export default NavTop;

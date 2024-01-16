@@ -15,7 +15,7 @@ export default function Libros() {
     });
   return (
     <div className="mt-20 flex min-h-screen flex-col items-center justify-between p-24">
-           <div className="grid grid-cols-3 gap-4 w-4/5 mx-auto">
+           <div className="lg:grid grid-cols-3 gap-4 w-4/5 mx-auto md: flex flex-col">
         {librosToShow.map((libro: any, index) => (
           <Libro key={index} libro={libro} />
         ))}
