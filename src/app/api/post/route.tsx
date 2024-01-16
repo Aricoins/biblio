@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function Post(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const nuevoLibro = req.body;
 
