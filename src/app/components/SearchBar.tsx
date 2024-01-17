@@ -7,14 +7,6 @@ export default function SearchBar (){
     const [filteredBooks, setFilteredBooks] = useState([])
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const fetchBooks = async () => {
-            const response = await fetch(`/api/getLibros`);
-            const data = await response.json();
-            if (data.libros && data.libros.rows) {
-              setBooks(data.libros.rows)
-            }
-          }
-        fetchBooks()
     
 
   

@@ -11,7 +11,7 @@ if (!dbUrl) {
 
 const db = pgp(dbUrl);
 
-export default async function post(req: NextApiRequest, res: NextApiResponse) {
+export default async function(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method Not Allowed');
