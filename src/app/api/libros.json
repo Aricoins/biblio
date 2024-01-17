@@ -83,6 +83,9 @@
     {"titulo":"Mejor sí hablar de ciertas cosas","autor":"María Campolonghi","estante":"","inventario":"","decla":"2736-21","Orden":""},
     {"titulo":"Historia del Soyem 1946-2015","autor":"Luciano Arancibia Aguero y Nancy Vargas","estante":"","inventario":"","decla":"2847-22","Orden":""},
     {"titulo":"Patagonia Relatos de viento y piedra","autor":"Mirta Santiago (coordinadora)","estante":"","inventario":"","decla":"2821-22","Orden":""},
-    {"titulo":"Las colonizaciones del Nahuel Huapi","autor":"Cristian Pablo Muller","estante":"","inventario":"","decla":"2756-21","Orden":""}
-    
+    {"titulo":"Las colonizaciones del Nahuel Huapi","autor":"Cristian Pablo Muller","estante":"","inventario":"","decla":"2756-21","Orden":""},
+    {"titulo": "Décimas de un albañil", "autor": "Nazario Abel Almendra", "decla":"2931-23", "imagen": "/assets/libros/decimas1.webp" },
+    {"titulo": "Una vida llena de lagunas", "autor": "Wilge Delgado", "decla":"2771-23", "imagen": "" },
+    {"titulo": "Que nadie te ausente", "autor": "Marcos H. Easdale", "decla":"2926-23", "imagen": "/assets/libros/ausente1.webp" },
+    {"titulo": "¿Qué sabemos de autismo hoy?", "autor": "Marcela Menassé", "decla":"2928-23", "imagen": "/assets/libros/autismo1.jpg" }
 ]
