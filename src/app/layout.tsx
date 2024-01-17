@@ -1,3 +1,4 @@
+"use client "
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -5,6 +6,7 @@ import Link from 'next/link'
 import NavTop from "./components/NavTop"
 const inter = Inter({ subsets: ['latin'] })
 import NavFoot from './components/NavFoot'
+import LoadBooksButton from './components/cargar'
 
 export const metadata: Metadata = {
   title: "Biblioteca",
@@ -19,15 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <NavTop />
+  
 
       <body className={inter.className}>
-  
-        {children}
-
+      <NavTop />
+         {children}
+        <NavFoot />
     
       </body>
-      <NavFoot />
+
  
    
     </html>

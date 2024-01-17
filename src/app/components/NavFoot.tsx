@@ -15,11 +15,6 @@ const Container = styled.div`
   height: 15%;
 `;
 
-// const StyledLink = styled(Link)`
-//   color: #062358;
-//   margin-left: 2rem;
-// `;
-
 const NavFoot = () => {
   return (
     <Container>
@@ -41,7 +36,7 @@ const NavFoot = () => {
           </Link>
         </li>
 </ul>
-      <Image src={logo} alt="logotipo"/>
+      <Image src={logo} className="w-80 " alt="logotipo"/>
     </Container>
   );
 };

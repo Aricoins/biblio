@@ -2,27 +2,17 @@
 import Link from 'next/link';
 import logo from "../../../public/assets/moran.png"
 import Image from 'next/image';
-import styled from "styled-components";
 import SearchBar from "./SearchBar";
-
-const Container = styled.div`
-  background-color: #fcfdfb;
-  position: fixed;
-top: 0%  ;
-  left: 0%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
+import LoadBooksButton from './cargar';
 
 
 const NavTop = () => {
   return (
-    <Container>
-      <Image src={logo} width={300} alt="logotipo"/>
-      <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
+    <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full">
+     <Image src={logo} width={300} alt="logotipo" priority />
+       <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
         <li>
-          <Link href="/inicio" >
+          <Link href="/" >
            Inicio
           </Link>
         </li>
@@ -36,12 +26,9 @@ const NavTop = () => {
            Login
           </Link>
           </li>
-          <li>
-                <SearchBar />
-      
-          </li>
-      </ul>
-    </Container>
+          </ul>
+     <SearchBar /> 
+    </div>
   );
 };
 

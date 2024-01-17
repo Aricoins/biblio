@@ -1,27 +1,25 @@
-// pages/api/libros.ts
-import fs from 'fs';
-import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
+import pgPromise from 'pg-promise';
+import libros from '../libros.json';
 
-export default function Post(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const nuevoLibro = req.body;
+const pgp = pgPromise();
 
-    // Lee el archivo JSON
-    const librosPath = path.join(process.cwd(), 'libros.json');
-    let libros = JSON.parse(fs.readFileSync(librosPath, 'utf8'));
+const dbUrl = process.env.POSTGRES_URL;
+if (!dbUrl) {
+  throw new Error('POSTGRES_URL is not defined');
+}
 
-    // Agrega el nuevo libro
-    libros.push(nuevoLibro);
+const db = pgp(dbUrl);
 
-    // Escribe el array actualizado de nuevo al archivo JSON
-    fs.writeFileSync(librosPath, JSON.stringify(libros, null, 2));
-
-    // Envía una respuesta
-    res.status(200).json({ message: 'Libro agregado' });
-  } else {
-    // Maneja cualquier otro método HTTP
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+export default async function post(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    res.status(405).end('Method Not Allowed');
+    return;
   }
+
+  for (const libro of libros) {
+    await db.none('INSERT INTO books (titulo, autor, imagen, decla) VALUES ($1, $2, $3, $4)', [libro.titulo, libro.autor, libro.imagen, libro.decla]);
+  }
+  res.status(200).json({ message: 'Libros cargados correctamente' });
 }

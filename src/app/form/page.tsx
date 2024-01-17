@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, FormEvent, ChangeEvent } from 'react';
+import LoadBooksButton from '../components/cargar';
 
 interface Libro {
   titulo: string;
@@ -59,7 +60,9 @@ function FormularioLibro({ onSubmit }: FormularioLibroProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <> 
+    
+       <form onSubmit={handleSubmit}>
       <label>
         Título:
         <input type="text" name="titulo" value={titulo} onChange={handleChange} />
@@ -74,6 +77,8 @@ function FormularioLibro({ onSubmit }: FormularioLibroProps) {
       </label>
       <input type="submit" value="Enviar" />
     </form>
+    </>
+
   );
 }
 
