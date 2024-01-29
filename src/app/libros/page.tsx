@@ -3,7 +3,6 @@
 import { FC } from "react";
 import { useEffect, useState } from "react";
 import { sql } from '@vercel/postgres';
-import { Libros} from '../lib/definitions';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
