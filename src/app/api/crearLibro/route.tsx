@@ -20,7 +20,7 @@ export async function POST(req: NextRequest , form: Form) {
 const { titulo, autor, decla, imagen } = form;
 console.log(form, "form")
     if (titulo && autor && decla && imagen) {
-      await sql`INSERT INTO libritos ( Titulo, Autor, Imagen, Descripcion) VALUES ( ${titulo}, ${autor},  ${imagen}, ${decla}) RETURNING *`;
+      await sql`INSERT INTO libros ( Titulo, Autor, Imagen, Decla) VALUES ( ${titulo}, ${autor},  ${imagen}, ${decla}) RETURNING *`;
     }
 
     console.log('Libro agregado exitosamente')

@@ -15,7 +15,7 @@ interface LibroProps {
 const Libro: React.FC<LibroProps> = ({ libro }) => {
   return (
     <div className="max-w-l bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <Image className= "text-center " src={libro.imagen ? libro.imagen : defaultImage} alt={libro.titulo} width={500} height={300} />
+    <Image className= "text-center " src={libro.imagen ? libro.imagen : defaultImage} alt={libro.titulo} width={400} height={400} />
     <div className="flex flex-col items-center justify-center b">
       <div className="mb-2 text-l text-center font-bold tracking-tight text-gray-600 dark:text-white"><div className=" mb-3 font-2px text-gray-600 dark:text-gray-400 "> {libro.titulo}</div> </div>
       <h5 className="text-center text-xs">{libro.autor}</h5>

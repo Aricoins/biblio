@@ -8,7 +8,7 @@ import LoadBooksButton from './cargar';
 
 const NavTop = () => {
   return (
-    <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full">
+    <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full z-10">
      <Image src={logo} width={300} alt="logotipo" priority />
        <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
         <li>
@@ -26,6 +26,11 @@ const NavTop = () => {
            Login
           </Link>
           </li>
+          <li>
+          <Link href="/libros/form" >
+           Agregar Libro
+          </Link>
+        </li>
           </ul>
      <SearchBar /> 
     </div>

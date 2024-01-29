@@ -180,14 +180,14 @@ const handleAddSpec = () => {
   }, []);
 console.log(errors, 'eerros')
 
-
-
 return (
     <>
-      <div className='flex flex-col sm:flex-row justify-center bg-gray-500 w-full mb-36'>
-        <div className='m-6  mx-4 w-auto sm:mx-10 sm:w-2/3 p-4 bg-black rounded-md shadow-md items-center gap-5 mb-50 text-gray-300 '>
-          <h1 data-aos='flip-right' className='text-2xl text-gray-300 p-20 text-center'> Agregar Libro a la Base de Datos</h1>
-          <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-20'>
+   <div className='flex flex-col sm:flex-row gap-10'>
+    <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
+    shadow-md text-gray-100'>   <div className='p-20 bg-gray-900 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
+          <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
+                        Agregar Libro </h1>
+          <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-40'>
            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
              <label htmlFor='titulo'>Título:</label> 
              <input
@@ -200,6 +200,7 @@ return (
                 className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
               />  
             </div>
+
             <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
               <label htmlFor='autor'>Autor:</label> 
               <input
@@ -258,59 +259,65 @@ return (
         </div>
       
       </div>
-{/* Columna lateral */}
-{formInteracted ? (
-      Object.values(errors).some((error) => error !== '') ? (
-        <div className='sticky top-20  h-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto p-15 bg-black rounded-md shadow-md '>
-         <p>Validamos tus datos:</p>
-          <ul className='sticky top-12 h-auto ' >
-            {Object.entries(errors).map(([key, value]) => (
-              <li className= 'p-5' key={key}>
-                <span className=' rounded-md shadow-md '> {value ?  '❌ '  + value :  '✅ ' + key.charAt(0).toUpperCase() + key.slice(1) + ' es válido' }  </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div className='sticky top-12  h-auto text-sm  md:tw-1/2 tw-1/4 mx-auto p-8 bg-black rounded-md shadow-md text-gray-400 '>
-
-          <ul>
-            {Object.entries(errors).map(([key, value]) => (
-              <li className='p-5' key={key}>
-                <span className='text-gray-400'>✅ {key.charAt(0).toUpperCase() + key.slice(1)} has been successfully validated </span>
-              </li>
-            ))}
-          </ul> 
-            <div className='text-gray-200 p-5  text-sm rounded-full '> ✅
-           <b>El libro ya puede ser cargado.</b></div>
-          </div>
-      )
-    ) : (
-      <div className='sticky top-20  h-auto text-base text-gray-400 md:tw-1/2 tw-1/4 mx-auto p-5 bg-black rounded-md shadow-md '>
-        <p>Requerimientos:</p>
-        <ul>
-          <li className='p-5 '>
-            <span className='text-blue-500 '>Título:</span> ingrese el título completo del libro. 
-          </li>
-          <li className='p-5 '>
-            <span className='text-blue-500'>Imagen:</span> agregue una imagen de la portada. 
-          </li>
-          <li className='p-5 '>
-            <span className='text-blue-500'>Autor:</span> ingrese el nombre del autor del libro.
-          </li>
-          <li className='p-5 '>
-            <span className='text-blue-500'>Delcaración: </span> ingrese el número de declaración del libro.
-          </li>
-          <li className='p-5 '>  
-            <span className='text-blue-500'>Reseña:</span> ingrese los Fundamentos de la declaración de interés.
-          </li>
-              
+      <div className='flex-1 p-4 bg-black opacity-80 rounded-md shadow-md text-gray-400'>
+<div className='fixed top-20 h-full w-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
+  {/* Sidebar content */}
+  {formInteracted ? (
+    Object.values(errors).some((error) => error !== '') ? (
+      <div>
+        <p>Validamos tus datos:</p>
+        <ul className='sticky top-12 h-auto w-full '>
+          {Object.entries(errors).map(([key, value]) => (
+            <li className='p-5' key={key}>
+              <span className=' rounded-md shadow-md '>
+                {value ? '❌ ' + value : '✅ ' + key.charAt(0).toUpperCase() + key.slice(1) + ' es válido'}
+              </span>
+            </li>
+          ))}
         </ul>
-
       </div>
-    )}
+    ) : (
+      <div >
+        <ul>
+          {Object.entries(errors).map(([key, value]) => (
+            <li className='p-5' key={key}>
+              <span className='text-gray-200'>✅ {key.charAt(0).toUpperCase() + key.slice(1)} ha sido validado </span>
+            </li>
+          ))}
+        </ul>
+        <div className='text-gray-200 p-5 text-sm rounded-full'>
+          ✅ <b>El libro ya puede ser cargado.</b>
+        </div>
+      </div>
+    )
+  ) : (
+    <div className='fixed top-20 h-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
+
+      <p>Requerimientos:</p>
+      <ul>
+        <li className='p-5 '>
+          <span className='text-blue-500 '>Título:</span> ingrese el título completo del libro.
+        </li>
+        <li className='p-5 '>
+          <span className='text-blue-500'>Imagen:</span> agregue una imagen de la portada.
+        </li>
+        <li className='p-5 '>
+          <span className='text-blue-500'>Autor:</span> ingrese el nombre del autor del libro.
+        </li>
+        <li className='p-5 '>
+          <span className='text-blue-500'>Delcaración: </span> ingrese el número de declaración del libro.
+        </li>
+        <li className='p-5 '>
+          <span className='text-blue-500'>Reseña:</span> ingrese los Fundamentos de la declaración de interés.
+        </li>
+      </ul>
+    </div>
+  )}
+</div>
 
 
+    </div>
+    </div>
 
 
     </>
