@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import logo from "../../../public/assets/concejo.png"
+import logo from "../api/assets/concejo.png"
 import Image from 'next/image';
 import styled from "styled-components";
 

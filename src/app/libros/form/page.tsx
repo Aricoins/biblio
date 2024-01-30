@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
 import { ImageConfigContext } from 'next/dist/shared/lib/image-config-context.shared-runtime';
+import NavFoot from '@/app/components/NavFoot';
+import NavTop from '@/app/components/NavTop';
 
 
 interface Resenia {
@@ -182,6 +184,7 @@ console.log(errors, 'eerros')
 
 return (
     <>
+    <NavTop/>
    <div className='flex flex-col sm:flex-row gap-10'>
     <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
     shadow-md text-gray-100'>   <div className='p-20 bg-gray-900 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
@@ -318,7 +321,7 @@ return (
 
     </div>
     </div>
-
+<NavFoot/>
 
     </>
   );

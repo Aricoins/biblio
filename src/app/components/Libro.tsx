@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import defaultImage from "../../../public/assets/imagendefault.jpg"
+import defaultImage from "../api/assets/imagendefault.jpg"
 // Define las props que el componente Libro espera recibir
 interface LibroProps {
   libro: {
@@ -14,8 +14,11 @@ interface LibroProps {
 
 const Libro: React.FC<LibroProps> = ({ libro }) => {
   return (
-    <div className="max-w-l bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <Image className= "text-center " src={libro.imagen ? libro.imagen : defaultImage} alt={libro.titulo} width={400} height={400} />
+    <div className="max-w-l bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-14">
+    <Image data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000"
+      className= "text-center " src={libro.imagen ? libro.imagen : defaultImage} alt={libro.titulo} width={300} height={300} />
     <div className="flex flex-col items-center justify-center b">
       <div className="mb-2 text-l text-center font-bold tracking-tight text-gray-600 dark:text-white"><div className=" mb-3 font-2px text-gray-600 dark:text-gray-400 "> {libro.titulo}</div> </div>
       <h5 className="text-center text-xs">{libro.autor}</h5>

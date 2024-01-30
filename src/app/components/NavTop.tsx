@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import logo from "../../../public/assets/moran.png"
+import logo from "../api/assets/moran.png"
 import Image from 'next/image';
 import SearchBar from "./SearchBar";
 import LoadBooksButton from './cargar';
