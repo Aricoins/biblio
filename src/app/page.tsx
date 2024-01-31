@@ -12,7 +12,7 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
-
+import foto from "../../src/app/api/assets/imagen.svg"
 
 
 const GlobalStyle = createGlobalStyle`
@@ -85,7 +85,19 @@ const Footer = styled.footer`
         align-self: bottom;
         margin: 5%;
                 `
-
+const Landing = styled.div`
+height: 100vh;
+width: 100%;
+background-image: linear-gradient(#f8f0f0, #b0a8a8); 
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 2%;
+`
 
   export default function Libros() {
     const [text, setText] = useState('Hover me');
@@ -99,26 +111,17 @@ const Footer = styled.footer`
     }
     return (
       <>
-      <GlobalStyle />
-      <GirdContainer>
-        <Header data-aos="fade-out" ></Header>
-        <Nav    onMouseEnter={() => setText('You hovered over me!')}
-      onMouseLeave={() => setText('Hover me')} >Literatura
-       <Image 
-        src={logo}
-        alt="Picture of the author"
-        width={200}
-        height={200}
-        data-aos="fade-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="4000"
-        />
-      </Nav>
-       <Sidebar data-aos="fade-right">Cultura</Sidebar>
-        <Main onClick={mouseClick} data-aos="fade-left">Política</Main>
-        <Footer  > <Link href="/libros" > 
-        <Text /> </Link> </Footer> 
-      </GirdContainer>
+
+<Landing >
+   <Text />
+</Landing>
+ 
+ 
+
+        <Link href="/libros" >  
+     INGRESAR
+        </Link> 
+   
 </>
     );
   }

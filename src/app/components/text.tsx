@@ -1,9 +1,11 @@
 import { FC, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import logo from "../api/assets/moran.png"
 
 const H1 = styled.h1`
 font-size: 60px;
 height: 100%;
+color: black;
 
 &::after {
     content: '/';
@@ -31,7 +33,7 @@ const Text: FC = () => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = [' ❤️ ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  ' ❤️ ',  ],
+    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `<img src=${logo} alt="logo"/>  `,  ],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;

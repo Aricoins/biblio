@@ -6,6 +6,7 @@ import Libro  from '../components/Libro';
 import librosJSON from '../api/libros.json';
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
+
 interface Libro {
   id: number;
   titulo: string;
