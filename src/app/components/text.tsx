@@ -7,18 +7,9 @@ const H1 = styled.h1`
 font-size: 60px;
 height: 100%;
 color: black;
+text-align: center;
+position: fixed;
 
-&::after {
-    content: '/';
-    background-color: #070000;
-    width: 1px;
-    position: absolute;
-    top: 5px;
-    bottom: 5px;
-    color: #0a0101;
-    right: 7px;
-    animation: blinkAnim 50ms linear infinite;
-  }
 
   @keyframes blinkAnim {
     0% {
@@ -34,7 +25,7 @@ const Text: FC = () => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `_`, ` __ `, ` __ `, ` ___ ` ,` ____ `, `Ingresar >`  ],
+    let words = ['Biblioteca', 'y', 'Archivo', 'Graciela', 'Morán', 'de ', 'Di', 'Biase', '>'  ],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;
@@ -66,8 +57,6 @@ const Text: FC = () => {
   }, []);
 
   return (
-
-
     <div className="text-3xl font-bold text-center text-gray-800 h-50vh w-100vh dark:text-white">
         <H1 className="text-2x1 text-gray-100 word " id="word" ref={wordRef}></H1>
          </div>

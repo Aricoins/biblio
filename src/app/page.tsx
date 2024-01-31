@@ -12,7 +12,8 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
-import foto from "../../src/app/api/assets/imagen.svg"
+import foto from "../../src/assets/fondo.avif";
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -30,8 +31,8 @@ const Container  = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(#090101, #023438);
     color: white;
+background-image: url({foto});
     `
 
 
@@ -86,8 +87,10 @@ const Header = styled.header`
         grid-area: nav;         `
 
  const Sidebar = styled.aside`
-        grid-area: sidebar;
         background-color: rgba(77, 237, 106, 0.74);
+        margin-top: 6rem;
+        border-radius: 20%;
+        position: fixed;
         `
 
  const Main = styled.main`
@@ -112,31 +115,26 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 2%;
+margin: 0%;
 `
 
   export default function Libros() {
-    const [text, setText] = useState('Hover me');
+    const [text, setText] = useState('Ingresar');
     useEffect(() => {
       Aos.init({ duration: 2000 });
     }
     , []);
-
-    return (
+    
+return (
       <>
 <Container>
 <Landing >
-
-
-
 <Text />
-
-</Landing>
-
 <Link  href="/libros" >  
+<Sidebar > INGRESAR </Sidebar>
 
-INGRESAR
-   </Link> 
+</Link> 
+</Landing>
 
 
 </Container>
