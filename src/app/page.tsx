@@ -19,11 +19,11 @@ const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 `
 
-const Container = { 
-    boxSizing: "border-box",
-    margin: "0",
-    padding: "0",
-  }
+const Container  = styled.div`  
+    box-sizing: "border-box";
+    margin: "0";
+    padding: "0";
+    `
 
 
 const GirdContainer = styled.div`
@@ -111,14 +111,14 @@ margin: 2%;
     }
     return (
       <>
-
+<Container>
 <Landing >
 <div>
    <Text />
-   </div>
+</div>
 </Landing>
  
- 
+ </Container>
 
         <Link href="/libros" >  
      INGRESAR

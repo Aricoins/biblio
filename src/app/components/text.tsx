@@ -1,3 +1,4 @@
+"use client"
 import { FC, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import logo from "../api/assets/moran.png"
@@ -33,7 +34,7 @@ const Text: FC = () => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `<img src=${logo} alt="logo"/>  `,  ],
+    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `<img src="${logo}" />`,  ],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;
