@@ -113,7 +113,9 @@ margin: 2%;
       <>
 
 <Landing >
+<div>
    <Text />
+   </div>
 </Landing>
  
  
