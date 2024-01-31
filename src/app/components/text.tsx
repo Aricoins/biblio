@@ -66,7 +66,9 @@ const Text: FC = () => {
   }, []);
 
   return (
-    <div className="text-3xl font-bold text-center text-gray-800 dark:text-white">
+
+
+    <div className="text-3xl font-bold text-center text-gray-800 h-50vh w-100vh dark:text-white">
         <H1 className="text-2x1 text-gray-100 word " id="word" ref={wordRef}></H1>
          </div>
   )
