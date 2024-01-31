@@ -34,7 +34,7 @@ const Text: FC = () => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `<img src="${logo}" />`,  ],
+    let words = ['  ',' Biblioteca ', ' y ', ' Archivo ', ' Graciela ', 'Morán ', ' de ', ' Di ', ' Biase  ',  `_`, ` __ `, ` __ `, ` ___ ` ,` ____ `, `Ingresar >`  ],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;

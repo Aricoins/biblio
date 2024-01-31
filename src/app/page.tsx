@@ -23,6 +23,15 @@ const Container  = styled.div`
     box-sizing: "border-box";
     margin: "0";
     padding: "0";
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#090101, #023438);
+    color: white;
     `
 
 
@@ -93,7 +102,7 @@ const Footer = styled.footer`
         margin: 5%;
                 `
 const Landing = styled.div`
-height: 50vh;
+height: 100vh;
 width: 100%;
 background-image: linear-gradient(#f8f0f0, #b0a8a8); 
 background-position: center;
@@ -118,17 +127,18 @@ margin: 2%;
 <Container>
 <Landing >
 
-<Header> 
+
 
 <Text />
 
-</Header>
- <Link href="/libros" >  
+</Landing>
+
+<Link  href="/libros" >  
 
 INGRESAR
    </Link> 
 
-</Landing>
+
 </Container>
        
    
