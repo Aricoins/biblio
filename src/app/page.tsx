@@ -62,7 +62,14 @@ const GirdContainer = styled.div`
 `
 const Header = styled.header`
         grid-area: header;
-        background-color: rgba(53, 41, 229, 0.74);
+        background-color: rgba(222, 222, 231, 0.1);
+        display: flex;
+        height: 90%;
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+        margin: 5%;
               `
 
  const Nav = styled.nav`
@@ -86,7 +93,7 @@ const Footer = styled.footer`
         margin: 5%;
                 `
 const Landing = styled.div`
-height: 100vh;
+height: 50vh;
 width: 100%;
 background-image: linear-gradient(#f8f0f0, #b0a8a8); 
 background-position: center;
@@ -106,23 +113,24 @@ margin: 2%;
     }
     , []);
 
-    const mouseClick = () => {
-      alert('click')
-    }
     return (
       <>
 <Container>
 <Landing >
-<div>
-   <Text />
-</div>
-</Landing>
- 
- </Container>
 
-        <Link href="/libros" >  
-     INGRESAR
-        </Link> 
+<Header> 
+
+<Text />
+
+</Header>
+ <Link href="/libros" >  
+
+INGRESAR
+   </Link> 
+
+</Landing>
+</Container>
+       
    
 </>
     );
