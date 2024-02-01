@@ -1,7 +1,7 @@
 import {sql} from '@vercel/postgres';
 import {NextResponse, NextRequest} from 'next/server';
 
-export async function GET( req: NextRequest, res: NextResponse,) {
+export async function GET( req: NextRequest, res: NextResponse) {
     try {
 
       const data = await sql`SELECT * FROM libros ORDER BY id DESC;`;
