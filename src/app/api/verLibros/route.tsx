@@ -4,7 +4,7 @@ import {NextResponse, NextRequest} from 'next/server';
 export async function GET( req: NextRequest, res: NextResponse) {
     try {
 
-      const data = await sql`SELECT * FROM libros ORDER BY id DESC;`;
+      const data = await sql`SELECT * FROM libros ORDER BY titulo DESC;`;
 const libros = data.rows;
      
 console.log(data.rows)
