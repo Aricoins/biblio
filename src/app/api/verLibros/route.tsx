@@ -1,13 +1,13 @@
 import {sql} from '@vercel/postgres';
-import {NextResponse} from 'next/server';
+import {NextResponse, NextRequest} from 'next/server';
 
-export async function GET(res: NextResponse) {
+export async function GET( req: NextRequest, res: NextResponse,) {
     try {
 
-      const data = await sql`SELECT * FROM libros`;
+      const data = await sql`SELECT * FROM libros ORDER BY id DESC;`;
 const libros = data.rows;
      
-console.log(data)
+console.log(data.rows)
       return NextResponse.json({ libros}, { status: 200 });
      
     } catch (error) {
