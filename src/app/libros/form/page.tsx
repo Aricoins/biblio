@@ -81,15 +81,14 @@ const CrearLibro: FC = () => {
 };
 
 
-
-const handleReseniaChange = (newSpecs: { property: string; value: any }) => {
-    const property = newSpecs.property;
-    const value = newSpecs.value;
+const handleReviewChange = (newReview: { property: string; value: any }) => {
+    const property = newReview.property;
+    const value = newReview.value;
    setForm((prevForm) => ({
       ...prevForm,
       specs: {
         ...prevForm.resenia,
-        [newSpecs.property]: newSpecs.value,
+        [newReview.property]: newReview.value,
       },
     }));  
     validation({ ...form, resenia: { ...form.resenia, [property]: value } }, setErrors);
@@ -105,17 +104,16 @@ const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   setValue(event.target.value);
 };
 
-const handleAddSpec = () => {
+const handleAddReview = () => {
     
-  handleReseniaChange({ property: key, value: value });
+  handleReviewChange({ property: key, value: value });
   setKey('');
   setValue('');
 };
 
 
   const handleImageUpload = (data: any) => {
-  
-   const  {info} = data
+  const  {info} = data
     setForm((prevForm) => ({
           ...prevForm,
          imagen: info.secure_url,
@@ -188,7 +186,7 @@ return (
    <div className='flex flex-col sm:flex-row gap-10'>
     <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
     shadow-md text-gray-100'>   <div className='p-20 bg-gray-900 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
-          <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
+       <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
                         Agregar Libro </h1>
           <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-40'>
            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
@@ -249,6 +247,18 @@ return (
                 className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
               />
             </div>
+            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
+              <label htmlFor='resenia'>Declaración de Interés:</label>
+              <input
+                name='resenia'
+                type='text'
+                id='decla'
+                placeholder='Ingrese el número de declaración...'
+                value={form.decla}
+                onChange={handleChange}
+                className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
+              />
+            </div>
             <div data-aos='flip-right' className='bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full'>
               <button 
                 type='submit'
@@ -268,7 +278,7 @@ return (
   {formInteracted ? (
     Object.values(errors).some((error) => error !== '') ? (
       <div>
-        <p>Validamos tus datos:</p>
+        <p>Validación de Datos:</p>
         <ul className='sticky top-12 h-auto w-full '>
           {Object.entries(errors).map(([key, value]) => (
             <li className='p-5' key={key}>
@@ -309,9 +319,6 @@ return (
         </li>
         <li className='p-5 '>
           <span className='text-blue-500'>Delcaración: </span> ingrese el número de declaración del libro.
-        </li>
-        <li className='p-5 '>
-          <span className='text-blue-500'>Reseña:</span> ingrese los Fundamentos de la declaración de interés.
         </li>
       </ul>
     </div>

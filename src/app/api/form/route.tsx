@@ -18,8 +18,8 @@ export async function POST(req: Request) {
     try {
         const {form}= await req.json();
       
-      await sql`INSERT INTO products (titulo, autor, imagen, decla)
-      VALUES (${form.titulo}, ${form.autor}, ${form.imagen}, ${form.decla})   `,
+      await sql`INSERT INTO products (titulo, autor, imagen, decla, resenia)
+      VALUES (${form.titulo}, ${form.autor}, ${form.imagen}, ${form.decla}, ${form.resenia})   `,
       console.log('Libro agregado exitosamente')
       return NextResponse.json({ message: "Libro agregado", result: true });
       } catch (error) {

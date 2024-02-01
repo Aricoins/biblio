@@ -4,17 +4,18 @@ import styled from 'styled-components';
 import logo from "../api/assets/moran.png"
 
 const H1 = styled.h1`
-font-size: 14px;
-height: 50%;
-width: 80%;
-line-height: 120%;
+font-size: 20px;
+height: 100%;
+width: 100%;
 color: #092945;
 text-align: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 0% 25% 25% 25%;
+margin: auto;
+text-align: justify;
+margin-top: 20px;
 
 
   @keyframes blinkAnim {
@@ -28,10 +29,13 @@ margin: 0% 25% 25% 25%;
 `;
 
 const Text: FC = () => {
+
+
+
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = [' Biblioteca y Archivo  Graciela Morán de Di Biase '],
+    let words = [" La Biblioteca y Archivo Graciela Morán de Di Biase es la biblioteca del Concejo Municipal de San Carlos de Bariloche y cuenta con una colección de libros declarados de interés para la ciudad, junto a documentos y material de valor cultural e  histórico."],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;
@@ -54,7 +58,7 @@ const Text: FC = () => {
           wordWrapperContent = '';
         }
       }
-    }, 100);
+    }, 50);
     return () => clearInterval(interval);
   }, []);
 

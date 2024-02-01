@@ -114,7 +114,28 @@ align-items: center;
 margin: 0%;
 `
 
-  export default function Libros() {
+const Boton = styled.div`
+  background-color: #1b0478;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+ 
+  margin-top: 1%;
+position: static;
+  :hover {
+    background-color: #13bfd9;
+    cursor: pointer;
+    transition: 1s;
+    border: #045d78 1% solid;
+  }
+`;
+
+export default function Libros() {
     const [text, setText] = useState('Ingresar');
     useEffect(() => {
       Aos.init({ duration: 2000 });
@@ -140,21 +161,21 @@ return (
                 {/* Logo */}
                 <div className="text-center">
                   <Image
-                    className="m-auto p-4 w-48"
-                    src={imagen}
+                    className="m-auto p-4 "
+                    src={logo}
                     alt="logo"
-                    width={100}
-                    height={100}
+                    width={600}
+                    height={600}
                      />
-                  <h4 className=" mb-12 mt-1 pb-1 w-9/12 ">
-                   <Text />
-                  </h4>
+                  <div className=" mt-1 mb-8 text-m    ">
+               <h1>¡Bienvenidos!</h1> 
+                  </div>
                 </div>
 
                 <form>
-                  <p className="mb-8">Ingrese con sus credenciales</p>
+                  <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
               
-                  <div className="relative mb-4" data-te-input-wrapper-init>
+                  <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
                     <input
                       type="text"
                       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -162,16 +183,16 @@ return (
                       placeholder="Usuario" />
                     <label
                       htmlFor="examplehtmlFormControlInput1"
-                      className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                      className=" text-sm pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                       >Usuario
                     </label>
                   </div>
 
                   {/* <!--Password input--> */}
-                  <div className="relative mb-4" data-te-input-wrapper-init>
+                  <div className=" text-sm relative mb-4" data-te-input-wrapper-init>
                     <input
                       type="password"
-                      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                      className="peer text-sm block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                       id="examplehtmlFormControlInput11"
                       placeholder="Contraseña" />
                     <label
@@ -189,11 +210,11 @@ return (
                       data-te-ripple-init
                       data-te-ripple-color="light"
                      >
-                      Log in
+                 Ingresar
                     </button>
 
                     {/* <!--Forgot password link--> */}
-                    <a href="#!">¿Olvidó su contraseña?</a>
+                    <a className='text-sm' href="#!">¿Olvidó su contraseña?</a>
                   </div>
 
                   {/* <!--Register button--> */}
@@ -213,31 +234,30 @@ return (
 
             {/* <!-- Right column container with background and description--> */}
             <div
-  className="relative bg-cover bg-center flex items-center m-auto p-24 flex-col rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
+  className=" flex relative bg-cover bg-center flex items-center m-auto p-24 flex-col rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
   style={{ backgroundImage: `url(${logo})` }}
 >
   <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-1200 opacity-90"></div>
 
-
-              <Image
+             <Image
                 className="object-cover w-6/12  rounded-r-lg rounded-bl-none"
-                src={logo}
+                src={imagen}
                 alt="logo"
                 width={200}
                 height={200}
                  />
               <div className="px-4 py-6 text-black md:mx-6 md:p-12">
-                <h4 className="mb-6 text-xl font-semibold">
-                  Bienvenidos a la Biblioteca y Archivo Graciela Morán de Di Biase 
-                </h4>
-                <p className="text-sm">
-                  La Biblioteca y Archivo Graciela Morán de Di Biase es la biblioteca del Concejo Municipal de San Carlos de Bariloche, que cuenta con una colección de libros declarados de interés, normativa, documentos y material hitórico.
-                </p>
+         <h4 className="mb-6 text-xl font-semibold">
+             <Text  /> 
+        </h4>
               </div>
-              <Link href="/libros" >
-                Ingresar
-              </Link>
             </div>
+            <Boton>
+  <Link style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "100%", height: "100%" }} href="/libros">
+    <button style={{ width: "100%", height: "100%" }}>Ingresar</button>
+    <p style={{ fontSize: "14px", alignSelf: "center" }}>como invitado</p>
+  </Link>
+</Boton>
           </div>
         </div>
       </div>
