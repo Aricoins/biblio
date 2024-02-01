@@ -152,8 +152,8 @@ const handleAddReview = () => {
         resetForm();
 
         Swal.fire({
-          title: 'Agregar nuevo libro',
-          html: `Libro creado con éxito!`,
+          title: 'Libro Creado!',
+          html: `El libro ha sido creado exitosamente.`,
           icon: 'success',
           confirmButtonText: 'OK',
         }).then((result) => {
@@ -247,18 +247,7 @@ return (
                 className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
               />
             </div>
-            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
-              <label htmlFor='resenia'>Declaración de Interés:</label>
-              <input
-                name='resenia'
-                type='text'
-                id='decla'
-                placeholder='Ingrese el número de declaración...'
-                value={form.decla}
-                onChange={handleChange}
-                className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
-              />
-            </div>
+    
             <div data-aos='flip-right' className='bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full'>
               <button 
                 type='submit'

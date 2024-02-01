@@ -24,15 +24,12 @@ const Libros: FC = () => {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await fetch('/api/verLibros', {
+     const res = await fetch('/api/verLibros', {
         method: 'GET',
       }); 
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-      let dataFromDb = await res.json();
-      let combinedData = [...dataFromDb, ...librosJSON]; // Combina los datos de la base de datos y el archivo JSON
-      setData(combinedData); // Actualiza el estado con los libros obtenidos
+
+      const data = await res.json(); // Obtiene los libros
+      setData(data.libros); // Actualiza el estado con los libros obtenidos
     }
     fetchData();
   }, []);
@@ -41,11 +38,11 @@ const Libros: FC = () => {
   return ( <>
 <NavTop/>
 
-    <h1>Libros</h1>
-
-    <div className="grid grid-cols-3 gap-4 mt-16">
+    <h2 className="mt-40 flex justify-center text-4xl font-bold " >Libros declarados de interés municipal</h2>
+    <div   className="grid grid-cols-4 gap-1 mt-16 
+    md:gird-cols-4 mt-20 mx-40">
       {data && data.map((libro: any, index) => (     
-              <Libro key={index} libro={libro} />
+              <Libro  data-aos="fade-up" key={index} libro={libro} />
             ))}
 
       </div>

@@ -103,7 +103,7 @@ const Footer = styled.footer`
 const Landing = styled.div`
 height: 100vh;
 width: 100%;
-background-image: linear-gradient(#f8f0f0, #b0a8a8); 
+
 background-position: center;
 background-size: cover;
 background-repeat: no-repeat;
@@ -235,7 +235,7 @@ return (
             {/* <!-- Right column container with background and description--> */}
             <div
   className=" flex relative bg-cover bg-center flex items-center m-auto p-24 flex-col rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none"
-  style={{ backgroundImage: `url(${logo})` }}
+  
 >
   <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-1200 opacity-90"></div>
 
