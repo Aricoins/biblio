@@ -35,7 +35,7 @@ const Text: FC = () => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = [" La Biblioteca y Archivo Graciela Morán de Di Biase es la biblioteca del Concejo Municipal de San Carlos de Bariloche y cuenta con una colección de libros declarados de interés para la ciudad, junto a documentos y material de valor cultural e  histórico."],
+    let words = [" La Biblioteca y Archivo Graciela Morán de Di Biase es la biblioteca del Concejo Municipal de San Carlos de Bariloche. Brinda resguardo a la normativa de la ciudad,  cuenta con una colección de libros declarados de interés, documentos y material de valor cultural e histórico."],
     wordWrapperContent = '',
     addingWord = true,
     counter = 0;

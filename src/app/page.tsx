@@ -10,12 +10,12 @@ import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
 import foto from "../../src/assets/fondo.avif";
 import imagen from "../../src/app/api/assets/concejo.png"
+import getLocalIP from './lib/ip';
 
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 `
-
 const Container  = styled.div`  
     box-sizing: "border-box";
     margin: "0";
@@ -30,8 +30,6 @@ const Container  = styled.div`
     color: white;
 background-image: url({foto});
     `
-
-
 const GirdContainer = styled.div`
     box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
     padding: 10px;
@@ -77,7 +75,6 @@ const Header = styled.header`
         justify-content: center;  
         margin: 5%;
               `
-
  const Nav = styled.nav`
         background-color: rgba(179, 46, 241, 0.74);
         grid-area: nav;         `
@@ -93,7 +90,6 @@ const Header = styled.header`
         grid-area: main;
         background-color: #c51a1a;
             `
-
 const Footer = styled.footer`
         background-color: rgba(1, 0, 0, 0.74);
         grid-area: footer;       
@@ -139,6 +135,8 @@ export default function Libros() {
     const [text, setText] = useState('Ingresar');
     useEffect(() => {
       Aos.init({ duration: 2000 });
+
+
     }
     , []);
     
@@ -161,7 +159,7 @@ return (
                 {/* Logo */}
                 <div className="text-center">
                   <Image
-                    className="m-auto p-4 "
+                    className="m-auto p-4 shadow-lg rounded-lg"
                     src={logo}
                     alt="logo"
                     width={600}
