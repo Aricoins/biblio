@@ -14,11 +14,11 @@ interface LibroProps {
 
 const Libro: React.FC<LibroProps> = ({ libro }) => {
   return (
-    <div className="hover:w-9/12 hover:justify-center  max-w-l bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-14 mx-14">
+    <div className="hover:w-9/12 duration-1000 hover:justify-center  max-w-l bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-14 mx-14">
     <Image data-aos="flip-left"
   data-aos-easing="ease-out-cubic"
   data-aos-duration="1000"
-  className="text-center transition-all duration-500 ease-in-out transform hover:scale-110 hover:brightness-150" 
+  className="text-center transition-all duration-1000 ease-in-out transform hover:scale-110 hover:brightness-150" 
   src={libro.imagen ? libro.imagen : defaultImage} 
   alt={libro.titulo} 
   width={300} 

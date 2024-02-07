@@ -14,31 +14,30 @@ const NavTop = () => {
     alert("En desarrollo"))
   }
   return (
-    <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full z-10">
-     <Image src={logo} width={300} alt="logotipo" priority />
-       <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
-        <li>
-          <Link href="/" >
-           Inicio
-          </Link>
-        </li>
-        <li>
-          <Link href="/libros" >
-           Libros
-          </Link>
-        </li>
-        <li onClick={endev} >
-           Login
-          </li>
-          <li>
-      
-          <Link href="/libros/form" >
-           Agregar Libro
-          </Link>
-        </li>
-          </ul>
-     <SearchBar /> 
-    </div>
+    <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full z-10 shadow">
+    <Image src={logo} width={300} alt="logotipo" priority />
+    <ul className="flex flex-col sm:flex-row text-sm items-start sm:items-center justify-around w-full mx-4 sm:mx-28">
+      <li className="sm:my-0">
+        <Link href="/" >
+          Inicio
+        </Link>
+      </li>
+      <li className="my-2 sm:my-0">
+        <Link href="/libros" >
+          Libros
+        </Link>
+      </li>
+      <li className="my-2 sm:my-0" onClick={endev} >
+        Login
+      </li>
+      <li className="my-2 sm:my-0">
+        <Link href="/libros/form" >
+          Agregar Libro
+        </Link>
+      </li>
+    </ul>
+    <SearchBar /> 
+  </div>
   );
 };
 

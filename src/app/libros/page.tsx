@@ -37,13 +37,16 @@ const Libros: FC = () => {
   return (
     <>
       <NavTop />
-      <h2 className='text-justify text-xl mt-3.5'>
-        Libros declarados de interés municipal</h2>
-      <div className='w-full flex flex-col justify-center my-40'>
-        {data && data.map((libro: Libro, index) => (
-          <Libro data-aos="fade-up" key={index} libro={libro} />
-        ))}
-      </div>
+      <div className="w-9/12 justify-center mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <h2 className='text-justify text-xl mt-10'>
+    Libros declarados de interés municipal
+  </h2>
+  <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center my-10'>
+    {data && data.map((libro: Libro, index) => (
+      <Libro data-aos="fade-up" key={index} libro={libro} />
+    ))}
+  </div>
+</div>
       <NavFoot />
     </>
   );

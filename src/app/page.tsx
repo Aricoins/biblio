@@ -145,12 +145,11 @@ return (
 <Container>
 
 {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
-<section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
-  <div className="container h-full p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
- 
+<section className="bg-gradient-to-br rounded-lg h-full bg-neutral-200 dark:bg-neutral-700">
+  <div className="">
     <div
       className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
-      <div className="w-full">
+      <div className="absolute w-full h-full ">
         <div
           className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
           <div className="g-0 lg:flex lg:flex-wrap">

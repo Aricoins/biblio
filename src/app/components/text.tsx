@@ -4,23 +4,19 @@ import styled from 'styled-components';
 import logo from "../api/assets/moran.png"
 
 const H1 = styled.h1`
-font-size: 20px;
-height: 100%;
-width: 100%;
+font-size: 8px;
+height: auto;
+width: auto;
 color: #092945;
-text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: auto;
+margin:0;
 text-align: justify;
 margin-top: 20px;
+inline-size: 100%;
 
 
   @keyframes blinkAnim {
     0% {
-      opacity: 0;
+      opacity: 1;
     }
     50% {
       opacity: 1;
@@ -64,8 +60,8 @@ const Text: FC = () => {
 
   return (
     (
-      <div className="mx-auto">
-        <H1 className="w-8/12 text-gray-100 word " id="word" ref={wordRef}></H1>
+      <div className="">
+        <H1 className="w-8/12 text-2xl text-gray-100 word " id="word" ref={wordRef}></H1>
       </div>
     )
   );
