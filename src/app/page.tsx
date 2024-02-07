@@ -146,7 +146,8 @@ return (
 
 {/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
 <section className="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
-  <div className="container h-full p-10">
+  <div className="container h-full p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+ 
     <div
       className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
       <div className="w-full">

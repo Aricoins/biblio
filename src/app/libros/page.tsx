@@ -32,13 +32,14 @@ const Libros: FC = () => {
     fetchData();
   }, []);
 
-  console.log(data);
+  console.log(data, "data");
 
   return (
     <>
       <NavTop />
-      <h2 className="mt-40 flex justify-center text-4xl font-bold">Libros declarados de interés municipal</h2>
-      <div className="grid grid-cols-4 gap-1 mt-16 md:gird-cols-4 mt-20 mx-40">
+      <h2 className='text-justify text-xl mt-3.5'>
+        Libros declarados de interés municipal</h2>
+      <div className='w-full flex flex-col justify-center my-40'>
         {data && data.map((libro: Libro, index) => (
           <Libro data-aos="fade-up" key={index} libro={libro} />
         ))}
