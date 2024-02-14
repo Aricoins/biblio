@@ -13,6 +13,7 @@ import imagen from "../../src/app/api/assets/concejo.png"
 import getLocalIP from './lib/ip';
 
 
+
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 `
@@ -143,8 +144,6 @@ export default function Libros() {
 return (
       <>
 <Container>
-
-{/* <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->  */}
 <section className="bg-gradient-to-br rounded-lg h-full bg-neutral-200 dark:bg-neutral-700">
   <div className="">
     <div
@@ -153,27 +152,24 @@ return (
         <div
           className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
           <div className="g-0 lg:flex lg:flex-wrap">
-            {/* <!-- Left column container--> */}
-            <div className="px-4 md:px-0 lg:w-6/12">
+             <div className="px-4 md:px-0 lg:w-6/12">
               <div className="md:mx-6 md:p-12">
-                {/* Logo */}
-                <div className="text-center">
+                  <div className="text-center">
                   <Image
-                    className="m-auto p-4 shadow-lg rounded-lg"
+                    className="mt-60 w-10/12 shadow-lg rounded-lg"
                     src={logo}
                     alt="logo"
-                    width={600}
-                    height={600}
+                    width={50}
+                    height={50}
                      />
                   <div className=" mt-1 mb-8 text-m    ">
-               <h1>¡Bienvenidos!</h1> 
+                  <h1>¡Bienvenidos!</h1> 
                   </div>
                 </div>
 
                 <form>
                   <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
-              
-                  <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
+                   <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
                     <input
                       type="text"
                       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -218,14 +214,16 @@ return (
                   {/* <!--Register button--> */}
                   <div className="flex items-center justify-between pb-6">
                     <p className="mb-0 mr-2">Crear cuenta</p>
-                    <button
+            <Link href="/registro"> 
+            
+                  <button
                       type="button"
                       className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
                       data-te-ripple-init
                       data-te-ripple-color="light">
                       Registrarse
                     </button>
-                  </div>
+                    </Link>   </div>
                 </form>
               </div>
             </div>
