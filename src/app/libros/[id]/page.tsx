@@ -32,7 +32,7 @@ export default function Detail({ params }: { params: { id: string } }) {
   useEffect(()=>{
     fetchDetail()
     
-  }, [])
+  }, [fetchDetail])
   
   const handleImageChange = (newImage: string) => {
     setVideo(false)
@@ -57,8 +57,8 @@ export default function Detail({ params }: { params: { id: string } }) {
       <h1 className=" m-10 text-4xl font-bold" >{librosDetail.titulo}</h1>
       <h2 className=" m-10 text-2xl font-semibold" > de {librosDetail.autor}</h2>
        <div>
-  {librosDetail.resenia.split('. ').map((paragraph, index) => (
-    <p  key={index}> "{paragraph}"</p>
+  {librosDetail.resenia.split('. ').map((paragraph: any, index: any) => (
+    <p  key={index}> '{paragraph}'</p>
   ))}
    <p className="m-10 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
     
