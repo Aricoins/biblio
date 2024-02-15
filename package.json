@@ -16,7 +16,8 @@
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "cloudinary": "^1.41.3",
-    "docker": "^1.0.0",
+    "docker": "^0.2.14",
+    "highlight.js": "^11.9.0",
     "next": "^14.0.4",
     "next-cloudinary": "^5.20.0",
     "nvm": "^0.0.4",
@@ -25,7 +26,7 @@
     "react-dom": "^18",
     "recoil": "^0.7.7",
     "styled-components": "^6.1.8",
-    "sweetalert2": "^11.10.4"
+    "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
     "@types/node": "^20",
