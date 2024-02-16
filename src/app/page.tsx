@@ -132,6 +132,10 @@ position: static;
   }
 `;
 
+const TextContainer = styled.div`
+  overflow: hidden; 
+  font-size: 20px;`;
+
 export default function Libros() {
     const [text, setText] = useState('Ingresar');
     useEffect(() => {
@@ -144,7 +148,7 @@ export default function Libros() {
 return (
       <>
 <Container>
-<section className="bg-gradient-to-br rounded-lg h-full bg-neutral-200 dark:bg-neutral-700">
+<section className="mt-80 bg-gradient-to-br rounded-lg h-full bg-neutral-200 dark:bg-neutral-700">
   <div className="">
     <div
       className="g-6 flex h-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
@@ -159,8 +163,8 @@ return (
                     className="mt-60 w-10/12 shadow-lg rounded-lg"
                     src={logo}
                     alt="logo"
-                    width={50}
-                    height={50}
+                    width={500}
+                    height={500}
                      />
                   <div className=" mt-1 mb-8 text-m    ">
                   <h1>¡Bienvenidos!</h1> 
@@ -244,7 +248,9 @@ return (
                  />
               <div className="px-4 py-6 text-black md:mx-6 md:p-12">
          <h4 className="mb-6 text-xl font-semibold">
+         <TextContainer>
              <Text  /> 
+             </TextContainer>
         </h4>
               </div>
             </div>

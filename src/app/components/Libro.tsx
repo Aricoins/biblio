@@ -11,7 +11,6 @@ interface LibroProps {
     imagen: string;
     resenia: string;
     id: string;
-    // Agrega aquí cualquier otra propiedad que el objeto libro pueda tener
   };
 
 }

@@ -1,5 +1,7 @@
 "use client "
 import type { Metadata } from 'next'
+import NavTop from "../components/NavTop";
+import NavFoot from "../components/NavFoot";
 
 
 import Link from 'next/link'
@@ -18,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
          <body >
+         <NavTop />
          {children}
-   
+         <NavFoot />
       </body>
 
  
