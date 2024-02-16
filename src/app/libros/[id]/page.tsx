@@ -58,7 +58,7 @@ export default function Detail({ params }: { params: { id: string } }) {
       <h2 className=" m-10 text-2xl font-semibold" > de {librosDetail.autor}</h2>
        <div>
   {librosDetail.resenia.split('. ').map((paragraph: any, index: any) => (
-    <p  key={index}> '{paragraph}'</p>
+    <p  key={index}>{paragraph}</p>
   ))}
    <p className="m-10 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
     
