@@ -9,7 +9,7 @@ import { useState } from 'react';
 const NavTop = () => {
 
   
-  const [search, setSearch] = useState('');
+
 
   const endev = () => {
     return(

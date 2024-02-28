@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "cloudinary": "^1.41.3",
+    "csv-parse": "^5.5.5",
     "docker": "^0.2.14",
     "dotenv": "^16.4.4",
     "highlight.js": "^11.9.0",

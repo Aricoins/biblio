@@ -7,7 +7,7 @@ function ONGs() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQTz1q8kLsZ3F_PRF0Y-2_Wde3vF7b9WVZVHhX34nbST6RYveyxMOAP_IPe0eIBUxPf4nrORlC8Pjwl/pub?output=csv')
+    axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pubhtml')
       .then(response => {
         const results = Papa.parse(response.data, { header: true });
         setData(results.data);

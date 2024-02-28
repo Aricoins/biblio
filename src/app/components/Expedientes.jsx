@@ -7,21 +7,30 @@ function Expedientes() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQTz1q8kLsZ3F_PRF0Y-2_Wde3vF7b9WVZVHhX34nbST6RYveyxMOAP_IPe0eIBUxPf4nrORlC8Pjwl/pub?output=csv')
+    axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv')
       .then(response => {
+        // Parse CSV string into an array of objects
         const results = Papa.parse(response.data, { header: true });
         setData(results.data);
+        console.log('Data: ', results.data);
       })
       .catch(error => {
         console.error('Error fetching data: ', error);
       });
   }, []);
 
-  const filteredData = data.filter(row => row.Resumen.toLowerCase().includes(search.toLowerCase()));
+  const filteredData = data.filter(row =>
+    row['Resumen '] && typeof row['Resumen '] === 'string' && row['Resumen '].toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div>
-      <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar en Resumen..." />
+      <input
+        type="text"
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        placeholder="Buscar en Resumen..."
+      />
       <table>
         <thead>
           <tr>
@@ -33,16 +42,13 @@ function Expedientes() {
         <tbody>
           {filteredData.map((row, index) => (
             <tr key={index}>
-              <td>{row['Proyecto ']}</td>
-              <td>{row.Resumen}</td>
+              <td>{row['Proyecto']}</td>
+              <td>{row['Resumen ']}</td>
               <td>{row['Tipo Norma']}</td>
-              <td>{row['Link']}</td>
-          
             </tr>
           ))}
         </tbody>
       </table>
- 
     </div>
   );
 }
