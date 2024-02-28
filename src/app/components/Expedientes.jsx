@@ -75,7 +75,7 @@ function Expedientes() {
             <th className="border p-2">Proyecto</th>
             <th className="border p-2">Resumen</th>
             <th className="border p-2">Tipo Norma</th>
-            <th className="border p-2">Link</th>
+        
           </tr>
         </thead>
         <tbody>
