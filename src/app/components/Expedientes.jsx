@@ -86,7 +86,7 @@ function Expedientes() {
           <Link href={row['Link']} 
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-100 justify-center p-2 w-10 hover:underline  hover: bg-gray-600 visited:opacity-50"
+            className="justify-center p-2 w-10 hover:underline visited:opacity-50"
           passHref>
             {row['Proyecto']}
           </Link>
