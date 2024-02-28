@@ -83,7 +83,11 @@ function Expedientes() {
     <tr key={index}>
       {row['Link'] ? (
         <td className="border p-2">
-          <Link href={row['Link']} passHref>
+          <Link href={row['Link']} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-100 justify-center p-2 w-10 hover:underline  hover: bg-gray-600 visited:opacity-50"
+          passHref>
             {row['Proyecto']}
           </Link>
         </td>
