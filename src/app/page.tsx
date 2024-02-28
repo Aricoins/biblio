@@ -147,6 +147,7 @@ export default function Libros() {
     
 return (
       <>
+
 <Container>
 <section className="mt-80 bg-gradient-to-br rounded-lg h-full bg-neutral-200 dark:bg-neutral-700">
   <div className="">
@@ -218,7 +219,7 @@ return (
                   {/* <!--Register button--> */}
                   <div className="flex items-center justify-between pb-6">
                     <p className="mb-0 mr-2">Crear cuenta</p>
-            <Link href="/registro"> 
+            <Link href="/crearcuenta"> 
             
                   <button
                       type="button"
@@ -269,6 +270,7 @@ return (
 
 
 </Container>
+
        
    
 </>

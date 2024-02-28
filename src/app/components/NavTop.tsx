@@ -3,11 +3,13 @@ import Link from 'next/link';
 import logo from "../api/assets/moran.png"
 import Image from 'next/image';
 import SearchBar from "./SearchBar";
-import LoadBooksButton from './cargar';
+import { useState } from 'react';
 
 
 const NavTop = () => {
 
+  
+  const [search, setSearch] = useState('');
 
   const endev = () => {
     return(
@@ -15,7 +17,7 @@ const NavTop = () => {
   }
   return (
     <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full z-10 shadow">
-    <Image src={logo} width={300} alt="logotipo" priority />
+    <Image src={logo} width={200} alt="logotipo" priority />
     <ul className="flex flex-col sm:flex-row text-sm items-start sm:items-center justify-around w-full mx-4 sm:mx-28">
       <li className="sm:my-0">
         <Link href="/" >
@@ -27,6 +29,11 @@ const NavTop = () => {
           Libros
         </Link>
       </li>
+      <li className="my-2 sm:my-0">
+        <Link href="/registro" >
+          Archivo
+        </Link>
+      </li>
       <li className="my-2 sm:my-0" onClick={endev} >
         Login
       </li>
@@ -36,7 +43,7 @@ const NavTop = () => {
         </Link>
       </li>
     </ul>
-    <SearchBar /> 
+
   </div>
   );
 };

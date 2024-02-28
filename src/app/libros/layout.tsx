@@ -4,6 +4,8 @@ import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
 
 
+
+
 import Link from 'next/link'
 
 
@@ -17,10 +19,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
+
   return (
     <html lang="en">
          <body >
-         <NavTop />
+          <NavTop />
          {children}
          <NavFoot />
       </body>
