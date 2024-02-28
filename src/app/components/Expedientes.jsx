@@ -82,11 +82,12 @@ function Expedientes() {
   {filteredData.map((row, index) => (
     <tr key={index}>
       {row['Link'] ? (
-        <td className="border p-2">
+        <td className="border p-6 w-32 bg-gray-200 justify-center text-center">
           <Link href={row['Link']} 
             target="_blank"
             rel="noopener noreferrer"
-            className="justify-center p-2 w-10 hover:underline visited:opacity-50"
+            className="hover:underline hover:bg-gray-100 hover:p-3 rounded-lg border-slate-800 visited:opacity-20"
+            
           passHref>
             {row['Proyecto']}
           </Link>
