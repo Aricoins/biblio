@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics'; // Importa la biblioteca diacritics
+import Link from 'next/link';
 
 function Expedientes() {
   const [data, setData] = useState([]);
@@ -27,7 +28,7 @@ function Expedientes() {
     if (search && projectSearch) {
       // Ambos campos de búsqueda están presentes
       return (
-        (row['Resumen '] && typeof row['Resumen '] === 'string' &&
+        (row['Resumen'] && typeof row['Resumen '] === 'string' &&
           diacritics.remove(row['Resumen '].toLowerCase()).includes(diacritics.remove(search.toLowerCase()))) &&
         (row['Proyecto'] && typeof row['Proyecto'] === 'string' &&
           row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase()))
@@ -35,8 +36,8 @@ function Expedientes() {
     } else if (search) {
       // Solo el campo de búsqueda 'Resumen' está presente
       return (
-        row['Resumen '] && typeof row['Resumen '] === 'string' &&
-        diacritics.remove(row['Resumen '].toLowerCase()).includes(diacritics.remove(search.toLowerCase()))
+        row['Resumen'] && typeof row['Resumen'] === 'string' &&
+        diacritics.remove(row['Resumen'].toLowerCase()).includes(diacritics.remove(search.toLowerCase()))
       );
     } else if (projectSearch) {
       // Solo el campo de búsqueda 'Proyecto' está presente
@@ -74,17 +75,26 @@ function Expedientes() {
             <th className="border p-2">Proyecto</th>
             <th className="border p-2">Resumen</th>
             <th className="border p-2">Tipo Norma</th>
+            <th className="border p-2">Link</th>
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((row, index) => (
-            <tr key={index}>
-              <td className="border p-2">{row['Proyecto']}</td>
-              <td className="border p-2">{row['Resumen ']}</td>
-              <td className="border p-2">{row['Tipo Norma']}</td>
-            </tr>
-          ))}
-        </tbody>
+  {filteredData.map((row, index) => (
+    <tr key={index}>
+      {row['Link'] ? (
+        <td className="border p-2">
+          <Link href={row['Link']} passHref>
+            {row['Proyecto']}
+          </Link>
+        </td>
+      ) : (
+        <td className="border p-2">{row['Proyecto']}</td>
+      )}
+      <td className="border p-2">{row['Resumen']}</td>
+      <td className="border p-2">{row['Tipo Norma']}</td>
+    </tr>
+  ))}
+</tbody>
       </table>
     </div>
   );
