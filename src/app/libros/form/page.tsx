@@ -185,7 +185,7 @@ return (
     <NavTop/>
    <div className='flex flex-col sm:flex-row gap-10'>
     <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
-    shadow-md text-gray-100'>   <div className='p-20 bg-gray-900 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
+    shadow-md text-gray-100'>   <div className='p-20 bg-gray-200 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
        <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
                         Agregar Libro </h1>
           <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-40'>
@@ -216,7 +216,7 @@ return (
              </div>
             <div data-aos='flip-right' className='flex justify-center w-full'>
               <CldUploadButton 
-                className='w-full border-blue-500 text-normal rounded border-2 p-8 cursor-pointer transition duration-300 hover:bg-blue-500 hover:text-white hover:border-transparent'
+                className='w-full border-blue-500 text-normal rounded border-2 p-8 cursor-pointer transition duration-30 bg-blue-500 hover:text-white hover:border-transparent'
                 uploadPreset='zwtk1tj5'
                 onUpload={handleImageUpload}
               >
@@ -249,20 +249,20 @@ return (
             </div>
     
             <div data-aos='flip-right' className='bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full'>
-              <button 
-                type='submit'
-                disabled={ Object.values(errors).some((error) => error !== '')}
-                className='border-gray-500 w-full rounded '
-              >
-                {!form.titulo || Object.values(errors).some((error) => error !== '') ? 'Cannot Submit - Fix Errors' : 'Add New Book'}
-              </button>
+            <button 
+  type='submit'
+  disabled={form.titulo === ""  || Object.values(errors).some((error) => error !== '')}
+  className='border-gray-500 w-full rounded'
+>
+  {!form.titulo || Object.values(errors).some((error) => error !== '') ? 'Revise los errores antes de crear el libro' : 'Crear Libro'}
+</button>
             </div>
           </form>
         </div>
       
       </div>
-      <div className='flex-1 p-4 bg-black opacity-80 rounded-md shadow-md text-gray-400'>
-<div className='fixed top-20 h-full w-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
+      <div className='flex-1 p-4 bg-white opacity-80 rounded-md shadow-md text-white'>
+<div className='fixed top-20 h-full w-full p-12 text-sm text-k md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
   {/* Sidebar content */}
   {formInteracted ? (
     Object.values(errors).some((error) => error !== '') ? (
@@ -283,31 +283,31 @@ return (
         <ul>
           {Object.entries(errors).map(([key, value]) => (
             <li className='p-5' key={key}>
-              <span className='text-gray-200'>✅ {key.charAt(0).toUpperCase() + key.slice(1)} ha sido validado </span>
+              <span className='text-gray-100'>✅ {key.charAt(0).toUpperCase() + key.slice(1)} ha sido validado </span>
             </li>
           ))}
         </ul>
-        <div className='text-gray-200 p-5 text-sm rounded-full'>
+        <div className='text-gray-100 p-5 text-sm rounded-full'>
           ✅ <b>El libro ya puede ser cargado.</b>
         </div>
       </div>
     )
   ) : (
-    <div className='fixed top-20 h-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
+    <div className='fixed top-20 h-full p-12 text-lg text-white md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
 
       <p>Requerimientos:</p>
       <ul>
         <li className='p-5 '>
-          <span className='text-blue-500 '>Título:</span> ingrese el título completo del libro.
+          <span className='text-blue-200 '>Título:</span> ingrese el título completo del libro.
         </li>
         <li className='p-5 '>
-          <span className='text-blue-500'>Imagen:</span> agregue una imagen de la portada.
+          <span className='text-blue-200'>Imagen:</span> agregue una imagen de la portada.
         </li>
         <li className='p-5 '>
-          <span className='text-blue-500'>Autor:</span> ingrese el nombre del autor del libro.
+          <span className='text-blue-200'>Autor:</span> ingrese el nombre del autor del libro.
         </li>
         <li className='p-5 '>
-          <span className='text-blue-500'>Delcaración: </span> ingrese el número de declaración del libro.
+          <span className='text-blue-200'>Delcaración: </span> ingrese el número de declaración del libro.
         </li>
       </ul>
     </div>

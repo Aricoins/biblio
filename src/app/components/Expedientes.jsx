@@ -53,8 +53,8 @@ function Expedientes() {
 
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
-    <h2 className="text-2xl font-semibold text-center mt-10 p-5">Proyectos Sin Sanción</h2>
+    <div className="max-w-3xl mx-auto p-4 my-10">
+    <h2 className="text-2xl font-semibold text-center mt-2 p-5">Proyectos Sin Sanción</h2>
       <input
         type="text"
         value={search}
@@ -86,7 +86,7 @@ function Expedientes() {
           <Link href={row['Link']} 
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline hover:bg-gray-100 hover:p-3 rounded-lg border-slate-800 visited:opacity-20"
+            className="hover:underline hover:bg-gray-100 hover:p-1 rounded-lg border-slate-800 visited:opacity-20"
             
           passHref>
             {row['Proyecto']}
