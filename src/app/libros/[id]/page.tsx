@@ -17,22 +17,22 @@ export default function Detail({ params }: { params: { id: string } }) {
   const [currentImage, setCurrentImage] = useState<string>('');
   const [video, setVideo] = useState<boolean>(true);
 
-  const fetchDetail = async () =>{
-    try {
-      const response = await fetch(`/api/detail?id=${params.id}`);
-      if (response.ok) {
-        const libros = await response.json();
-        setLibrosDetail(libros.libros[0]);
-    } 
-  } catch (error) {
-      console.error('No se encontró el detalle del libro', error);
-    }
-  };
+
   
   useEffect(()=>{
-    fetchDetail()
-    
-  }, [fetchDetail])
+    const fetchDetail = async () =>{
+      try {
+        const response = await fetch(`/api/detail?id=${params.id}`);
+        if (response.ok) {
+          const libros = await response.json();
+          setLibrosDetail(libros.libros[0]);
+      } 
+    } catch (error) {
+        console.error('No se encontró el detalle del libro', error);
+      }
+    };
+    fetchDetail();
+  }, [])
   
   const handleImageChange = (newImage: string) => {
     setVideo(false)

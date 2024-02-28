@@ -6,7 +6,7 @@ import Link from 'next/link'
 import NavTop from "./components/NavTop"
 const inter = Inter({ subsets: ['latin'] })
 import NavFoot from './components/NavFoot'
-import LoadBooksButton from './components/cargar'
+
 import Text from './components/text'
 
 export const metadata: Metadata = {

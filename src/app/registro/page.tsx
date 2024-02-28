@@ -13,7 +13,7 @@ return (
 Expedientes de proyectos sin sanción.</h1>
 
 <Expedientes />
-<h1>Registro de ONG's </h1>
+<h1>Registro de ONG&apos;s </h1>
 
 <ONGs />
 
