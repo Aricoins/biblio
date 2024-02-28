@@ -11,8 +11,9 @@ const Container = styled.div`
   left: 0%;
   display: flex;
   justify-content: space-between;
+  font-size: small;
   width: 100%;
-  height: 15%;
+  height: 10%;
 `;
 
 const NavFoot = () => {

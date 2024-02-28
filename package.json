@@ -17,6 +17,7 @@
     "axios": "^1.6.7",
     "cloudinary": "^1.41.3",
     "csv-parse": "^5.5.5",
+    "diacritics": "^1.3.0",
     "docker": "^0.2.14",
     "dotenv": "^16.4.4",
     "highlight.js": "^11.9.0",

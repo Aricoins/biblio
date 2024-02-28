@@ -1,21 +1,21 @@
 'use client'
 import Expedientes from '../components/Expedientes'
 import ONGs from '../components/ONGs'
+import NavTop from '../components/NavTop'
+import NavFoot from '../components/NavFoot'
 
 
 const Registro = (
 ) => {
 
-
 return (
     <>
-<h1> 
-Expedientes de proyectos sin sanción.</h1>
-
+<NavTop/>
+<div className="mt-10">
+<h1>Expedientes de proyectos sin sanción.</h1>
 <Expedientes />
-<h1>Registro de ONG&apos;s </h1>
-
-<ONGs />
+</div>
+<NavFoot/>
 </>
 )
 
