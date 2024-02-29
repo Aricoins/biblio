@@ -1,70 +1,66 @@
-"use client"
+// Asegúrate de importar las bibliotecas necesarias
 import { FC, useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
-import logo from "../api/assets/moran.png"
+import styled, { keyframes } from 'styled-components';
+
 
 const H1 = styled.h1`
-font-size: 8px;
-height: auto;
-width: auto;
-color: #092945;
-margin:0;
-text-align: justify;
-margin-top: 20px;
-inline-size: 100%;
-
+  font-size: 14px;
+  height: 80%;
+  width: 120%;
+  color: #010115;
+  text-align: justify;
+  inline-size: 100%;
+  margin: 10% 5% 10% 5%;
 
   @keyframes blinkAnim {
     0% {
       opacity: 1;
     }
     50% {
-      opacity: 1;
+      opacity: 0;
     }
   }
 `;
 
-const Text: FC = () => {
 
 
-
+const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> = ({ setComplete }) => {
   const wordRef = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
-    let words = [" La Biblioteca y Archivo Graciela Morán de Di Biase es la biblioteca del Concejo Municipal de San Carlos de Bariloche. Brinda resguardo a la normativa de la ciudad,  cuenta con una colección de libros declarados de interés, documentos y material de valor cultural e histórico."],
-    wordWrapperContent = '',
-    addingWord = true,
-    counter = 0;
-  
-    const interval = setInterval(function(){
-      if(wordRef.current) {
-        if(addingWord && wordWrapperContent.length < words[counter].length) {
-          wordRef.current.innerHTML += words[counter].charAt(wordWrapperContent.length);
+    const words = [
+      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad, cuenta con un aservo literario conformado por libros considerados de interés para la comunidad, asi como archivos y material de destacado valor documental, cultural e histórico."
+    ];
+
+    let wordWrapperContent = '';
+    let addingWord = true;
+    let counter = 0;
+
+    const interval = setInterval(() => {
+      if (wordRef.current) {
+        const currentWord = words[counter];
+
+        if (addingWord && wordWrapperContent.length < currentWord.length) {
+          wordRef.current.innerHTML += currentWord.charAt(wordWrapperContent.length);
           wordWrapperContent = wordRef.current.innerHTML;
-        } else if(addingWord && wordWrapperContent.length === words[counter].length) {
+        } else if (addingWord && wordWrapperContent.length === currentWord.length) {
           addingWord = false;
-        
-        } else if(!addingWord) {
+          setComplete(true); 
+        } else if (!addingWord) {
           addingWord = true;
-          if(counter < words.length - 1) {
-            counter++;
-          } else {
-            counter = 0;
-          }
+          counter = (counter + 1) % words.length;
           wordWrapperContent = '';
         }
       }
-    }, 50);
+    }, 20);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [setComplete]);
 
   return (
-    (
-      <div className="">
-        <H1 className="w-8/12 text-2xl text-gray-100 word " id="word" ref={wordRef}></H1>
-      </div>
-    )
+
+      <H1 id="word" ref={wordRef}></H1>
   );
-}
+};
 
 export default Text;

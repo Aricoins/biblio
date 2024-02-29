@@ -37,7 +37,10 @@ const NavFoot = () => {
           </Link>
         </li>
 </ul>
-      <Image src={logo} className="w-80 " alt="logotipo"/>
+      <Image 
+      src={logo} 
+      width={180}
+      alt="logotipo"/>
     </Container>
   );
 };
