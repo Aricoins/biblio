@@ -22,17 +22,22 @@ const NavFoot = () => {
       
       <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
       <li>
-          <Link href="https://concejobariloche.gov.ar/" >
+          <Link href="https://concejobariloche.gov.ar/" 
+          target="_blank">
           Concejo Municipal
           </Link>
         </li>
         <li>
-          <Link href="http://10.20.101.141/gbuscador/" >
+          <Link href="http://10.20.101.141/gbuscador/" 
+          target="_blank">
            Digesto Jurídico
           </Link>
         </li>
         <li>
-          <Link href="https://concejobariloche.gov.ar/index.php?option=com_rsform&formId=5" >
+          <Link 
+          href="https://concejobariloche.gov.ar/index.php?option=com_rsform&formId=5"
+          target="_blank"
+          >
            Mesa de entradas
           </Link>
         </li>
