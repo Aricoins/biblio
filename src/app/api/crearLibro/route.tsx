@@ -17,10 +17,10 @@ interface Form {
 export async function POST(req: NextRequest , form: Form) {
   try {
     const {form}= await req.json();
-const { titulo, autor, decla, imagen } = form;
+const { titulo, autor, decla, imagen, resenia } = form;
 console.log(form, "form")
     if (titulo && autor && decla && imagen) {
-      await sql`INSERT INTO libros ( Titulo, Autor, Imagen, Decla) VALUES ( ${titulo}, ${autor},  ${imagen}, ${decla}) RETURNING *`;
+      await sql`INSERT INTO libros ( Titulo, Autor, Imagen, Decla, Resenia) VALUES ( ${titulo}, ${autor},  ${imagen}, ${decla}, ${resenia}) RETURNING *`;
     }
 
     console.log('Libro agregado exitosamente')

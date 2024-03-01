@@ -80,14 +80,11 @@ const CrearLibro: FC = () => {
     
     setForm((prevForm) => ({
       ...prevForm,
-      specs: {
-        ...prevForm.resenia,  // Corrected from prevForm.resenia
-        [newReview.property]: newReview.value,
-      },
+      resenia:  newReview.value,
+      
     }));  
   
-    validation({ ...form, resenia: { ...form.resenia, [property]: value } }, setErrors);
-  };
+    validation({ ...form, resenia: value }, setErrors);  };
   
 const [key, setKey] = useState('');
 const [value, setValue] = useState('');
@@ -143,7 +140,7 @@ const handleAddReview = () => {
             autor: '',
             imagen: '',
             decla: '',
-            resenia: {reseña: ''},
+            resenia:  '',
           });
         resetForm();
 

@@ -45,22 +45,22 @@ export default function Detail({ params }: { params: { id: string } }) {
 
   return (
     <>
-    <div className='mx-20'>
-     <div>
+    <div className='mt-20 mx-20 flex flex-row w-12/12'>
+     <div className="mx-10 p-10 w-12/12">
       <Image src={librosDetail.imagen}
       alt={librosDetail.titulo} 
-      width={1000} 
+      width={10000} 
       height={1000} 
       className=""/>
       </div>
-      <div className="m-10 my-5">
-      <h1 className=" m-10 text-4xl font-bold" >{librosDetail.titulo}</h1>
-      <h2 className=" m-10 text-2xl font-semibold" > de {librosDetail.autor}</h2>
-       <div>
+      <div className="p-5 mb-10">
+      <h1 className="p-5 text-4xl font-bold" >{librosDetail.titulo}</h1>
+      <h2 className="p-5 text-2xl font-semibold" > de {librosDetail.autor}</h2>
+       <div className="p-5">
   {librosDetail.resenia.split('. ').map((paragraph: any, index: any) => (
     <p  key={index}>{paragraph}</p>
   ))}
-   <p className="m-10 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
+   <p className="m-1 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
     
 </div>
       </div>

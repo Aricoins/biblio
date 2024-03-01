@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
 import imagen from "../../src/app/api/assets/concejo.png"
-import bgif from './bg.jpg';
+import bgif from './bgif.webp';
 
 const Container = styled.div`
   background-image: url(${bgif.src});
