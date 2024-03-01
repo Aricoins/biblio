@@ -32,7 +32,7 @@ export default function Detail({ params }: { params: { id: string } }) {
       }
     };
     fetchDetail();
-  }, [])
+  }, [params.id])
   
   const handleImageChange = (newImage: string) => {
     setVideo(false)
@@ -45,8 +45,8 @@ export default function Detail({ params }: { params: { id: string } }) {
 
   return (
     <>
-    <div className='mt-20 mx-20 flex flex-row w-12/12'>
-     <div className="mx-10 p-10 w-12/12">
+    <div className='mt-20 mx-10 flex flex-row w-12/12'>
+     <div className="p-10 w-12/12">
       <Image src={librosDetail.imagen}
       alt={librosDetail.titulo} 
       width={10000} 
