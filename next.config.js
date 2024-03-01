@@ -7,8 +7,14 @@
 // }
 
 // module.exports = nextConfig
+
 module.exports = {
     images: {
-      domains: ['images.unsplash.com', 'res.cloudinary.com'],
+      remotePatterns: [
+       {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+      },]
     },
   }
