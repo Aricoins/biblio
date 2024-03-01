@@ -1,5 +1,4 @@
 "use client"
-// 1. Importaciones
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -9,7 +8,7 @@ import "aos/dist/aos.css";
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
 import imagen from "../../src/app/api/assets/concejo.png"
-import bgif from '../app/api/assets/bgif.webp';
+import bgif from './bgif.webp';
 
 const Container = styled.div`
   background-image: url(${bgif.src});
@@ -18,8 +17,8 @@ const Container = styled.div`
   background-position: center;`;
 
 const Subcontainer = styled.div`
-width: 60%;
-height: 60%;
+  width: 60%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
