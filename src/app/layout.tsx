@@ -23,9 +23,7 @@ export default function RootLayout({
     <html lang="en">
  
          <body className={inter.className}>
-         <head> 
-          <link rel="icon" href="../../public/biblio.ico" sizes= "any"/>
-   </head> 
+      
      
      
      
