@@ -71,7 +71,8 @@ const Boton = styled.div`
   border-radius: 10px;
   padding: 10px;
   color: white;
-  margin-bottom: 1%;
+position: absolute;
+bottom: 0;
  
 
   :hover {
