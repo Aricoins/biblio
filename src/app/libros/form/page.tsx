@@ -6,24 +6,18 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import Swal from 'sweetalert2'
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation';
-import { ImageConfigContext } from 'next/dist/shared/lib/image-config-context.shared-runtime';
 import NavFoot from '@/app/components/NavFoot';
 import NavTop from '@/app/components/NavTop';
 
 
-interface Resenia {
-    [key: string]: any; 
-}
 
 interface Form {
   titulo: string;
   autor: string;
   imagen: string;
   decla: string;
-  resenia: Resenia;
+  resenia: string;
 }
 
 interface Errors {
@@ -34,30 +28,28 @@ interface Errors {
   resenia: string;
 }
 
-
-
-const validation = ( form: Form, setErrors: React.Dispatch<React.SetStateAction<Errors>>) => {
-    let reseniaAsString = JSON.stringify(form.resenia);
-    let newErrors: Errors = {
-      titulo: form.titulo?.trim() === '' ? 'El título no puede estar vacío' : '',
-      autor: form.autor?.trim() === '' ? "El campo Autor debe estar completo"  : '', 
-      imagen: form.imagen ? '' : "Debe seleccionar una imagen",
-      decla: Number(form.decla) > 0 ? '' : 'Debe ser un numero',
-      resenia:  /^(\S+\s*){1,1000}$/.test(reseniaAsString)  ? "" : "La reseña no puede exceder las 1000 palabras",
-    };
-    setErrors(newErrors);
-}
+const validation = (form: Form, setErrors: React.Dispatch<React.SetStateAction<Errors>>) => {
+  let newErrors: Errors = {
+    titulo: form.titulo?.trim() === '' ? 'El título no puede estar vacío' : '',
+    autor: form.autor?.trim() === '' ? "El campo Autor debe estar completo" : '',
+    imagen: form.imagen ? '' : "Debe seleccionar una imagen",
+    decla: Number(form.decla) > 0 ? '' : 'Debe ser un numero',
+    resenia: /^(\S+\s*){1,10000}$/.test(form.resenia) ? "" : "La reseña no puede exceder las 1000 palabras",
+  };
+  setErrors(newErrors);
+};
 
 
 const CrearLibro: FC = () => {
     const router = useRouter();
     const [form, setForm] = useState<Form>({
-    titulo: '',
-    autor: '',
-    imagen: '',
-    decla: '',
-    resenia: {},
-  });
+      titulo: '',
+      autor: '',
+      imagen: '',
+      decla: '',
+      resenia: '', 
+    });
+    
 
   const [errors, setErrors] = useState<Errors>({
     titulo: '',
@@ -69,30 +61,34 @@ const CrearLibro: FC = () => {
   const [formInteracted, setFormInteracted] = useState(false);
 
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
     const property = event.target.name;
     const value = event.target.value;
     setForm((prevForm) => ({
-    ...prevForm,
-    [property]: value,
+      ...prevForm,
+      [property]: value,
     }));
     validation({ ...form, [property]: value }, setErrors);
     setFormInteracted(true);
-};
+  };
+  
 
 
-const handleReviewChange = (newReview: { property: string; value: any }) => {
+  const handleReviewChange = (newReview: { property: string; value: any }) => {
     const property = newReview.property;
     const value = newReview.value;
-   setForm((prevForm) => ({
+    
+    setForm((prevForm) => ({
       ...prevForm,
       specs: {
-        ...prevForm.resenia,
+        ...prevForm.resenia,  // Corrected from prevForm.resenia
         [newReview.property]: newReview.value,
       },
     }));  
+  
     validation({ ...form, resenia: { ...form.resenia, [property]: value } }, setErrors);
   };
+  
 const [key, setKey] = useState('');
 const [value, setValue] = useState('');
 
@@ -178,16 +174,18 @@ const handleAddReview = () => {
   useEffect(() => {
     AOS.init();
   }, []);
-console.log(errors, 'eerros')
+console.log(errors, 'errors')
 
 return (
     <>
     <NavTop/>
    <div className='flex flex-col sm:flex-row gap-10'>
     <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
-    shadow-md text-gray-100'>   <div className='p-20 bg-gray-200 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
+    shadow-md text-gray-100'>
+    <div className='p-20 bg-gray-200 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
        <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
-                        Agregar Libro </h1>
+        Agregar Libro
+        </h1>
           <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-40'>
            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
              <label htmlFor='titulo'>Título:</label> 
@@ -247,7 +245,18 @@ return (
                 className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
               />
             </div>
-    
+            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
+  <label htmlFor='resenia'>Reseña:</label>
+  <textarea
+    name='resenia'
+    id='resenia'
+    placeholder='Ingrese la reseña...'
+    value={form.resenia}
+    onChange={handleChange}
+    className='m-1 text-2xl text-black p-2 w-full border-gray-500 rounded'
+  />
+</div>
+
             <div data-aos='flip-right' className='bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full'>
             <button 
   type='submit'
@@ -294,7 +303,6 @@ return (
     )
   ) : (
     <div className='fixed top-20 h-full p-12 text-lg text-white md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
-
       <p>Requerimientos:</p>
       <ul>
         <li className='p-5 '>
@@ -312,9 +320,7 @@ return (
       </ul>
     </div>
   )}
-</div>
-
-
+   </div>
     </div>
     </div>
 <NavFoot/>
