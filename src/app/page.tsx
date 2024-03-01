@@ -99,7 +99,7 @@ export default function Libros() {
   }, [complete]);
 
 return (<>
-
+<div>
 <Container>
   <Subcontainer>
     <LeftContent>
@@ -204,6 +204,7 @@ return (<>
 </RightContent>
 </Subcontainer>
 </Container>
+</div>
 
 </> );
 }
