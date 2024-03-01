@@ -38,6 +38,8 @@ const LeftContent = styled.div`
   padding: 5%;
   border-radius: 20px;
   background-color: white;
+  height: max-content;
+
   
 
   @media (min-width: 768px) {
@@ -49,10 +51,11 @@ const LeftContent = styled.div`
 const RightContent = styled.div`
   width: 100%;
   text-align: center;
-  margin: 10% 0 0 0;
+  margin: 10% 1% 0 1%;
   border-radius: 20px;
   background-color: white;
   padding: 5%;
+  height: max-content;
 
   @media (min-width: 768px) {
     width: 50%;
@@ -71,7 +74,7 @@ const Boton = styled.div`
   border-radius: 10px;
   padding: 10px;
   color: white;
-position: absolute;
+position: relative;
 bottom: 0;
  
 
@@ -101,9 +104,18 @@ return (<>
 <Container>
   <Subcontainer>
     <LeftContent>
+      <div className='flex justify-center'>
+    <Image
+    className="mt-0 w-auto shadow-lg rounded-lg "
+    src={imagen}
+    alt="logo"
+    width={100}
+    height={100}
+  />
+  </div>
      <form>
-  <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
-  <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
+     <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
+     <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
     <input
       type="text"
       className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -160,22 +172,22 @@ return (<>
 </form>
 </LeftContent>
 <RightContent>
-<div>
+<div className='flex justify-center'>
   {/* Logo */}
   <Image
     className="mt-6 w-10/12 shadow-lg rounded-lg"
     src={logo}
     alt="logo"
-    width={500}
-    height={500}
+    width={200}
+    height={200}
   />
 </div>
 
 {/* Texto de bienvenida */}
 <div>
-  <span>
+  <div style={{height: "173px" }}>
     <Text setComplete={setComplete} />
-  </span>
+  </div>
   {showWelcome && (
     <p className={`mb-6 mt-5 text-xl font-semibold ${complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'}`}>
       ¡Bienvenidos!
