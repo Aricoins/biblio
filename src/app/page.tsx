@@ -101,7 +101,11 @@ export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-
+useEffect(() => {
+  setTimeout(() => {
+    setShowWelcome(true);
+  }, 1000);
+}, [complete]);
 
 return (<>
 <div> 
@@ -115,7 +119,7 @@ return (<>
     alt="logo"
     width={200}
     height={200}
-    priority
+
 
   />
   </div>
@@ -178,7 +182,6 @@ return (<>
 
 <RightContent>
 <div className='flex justify-center'>
-
   <Image
     className="mt-6 w-10/12 shadow-lg rounded-lg"
     src={logo}
