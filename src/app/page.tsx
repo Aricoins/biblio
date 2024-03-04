@@ -1,32 +1,20 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
 import imagen from "../../src/app/api/assets/concejo.png"
-
-const gradientAnimation = keyframes`
-  0% {
-    background-position: 100% 0%;
-  }
-  60% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
-`;
+import bgif from './bgif.webp';
 
 const Container = styled.div`
-  height: 140vh;
-  background: linear-gradient(45deg, #6bceff, #556270, #FF6B6B);
-  background-size: 200% 200%;
-  animation: ${gradientAnimation} 10s ease infinite;
-  transition: background 1s ease;
-`
-
+  background-image: url(bgif);
+  height: 140vh; 
+  background-size: cover;
+  background-position: center;`;
 
 const Subcontainer = styled.div`
   width: 60%;
@@ -101,10 +89,17 @@ export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-  
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+    if (complete) {
+      setTimeout(() => {
+        setShowWelcome(true);
+      }, 800);
+    }
+  }, [complete]);
 
 return (<>
-<div> 
+<div>
 <Container>
   <Subcontainer>
     <LeftContent>
@@ -113,40 +108,40 @@ return (<>
     className="mt-0 w-auto shadow-lg rounded-lg "
     src={imagen}
     alt="logo"
-    width={200}
-    height={200}
+    width={100}
+    height={100}
     priority
 
   />
   </div>
-  <form>
-  <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
-  <div className="relative mb-4 text-sm">
+     <form>
+     <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
+     <div className="relative mb-4 text-sm" data-te-input-wrapper-init>
     <input
       type="text"
-      className="custom-input"
+      className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
       id="exampleFormControlInput1"
       placeholder="Usuario"
     />
     <label
-      htmlFor="usuario"
-    
+      htmlFor="examplehtmlFormControlInput1"
+      className=" text-sm pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
     >
       Usuario
     </label>
   </div>
 
   {/* <!--Password input--> */}
-  <div className="text-sm relative mb-4">
+  <div className="text-sm relative mb-4" data-te-input-wrapper-init>
     <input
       type="password"
-      className="custom-input"
+      className="peer text-sm block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
       id="examplehtmlFormControlInput11"
       placeholder="Contraseña"
     />
     <label
-      htmlFor="contrasenia"
-   
+      htmlFor="examplehtmlFormControlInput11"
+      className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
     >
       Contraseña
     </label>
@@ -155,7 +150,7 @@ return (<>
   {/* <!--Submit button--> */}
   <div className="mb-12 pb-1 pt-1 text-center">
     <button
-      className="custom-button"
+      className="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
       type="button"
       data-te-ripple-init
       data-te-ripple-color="light"
@@ -169,20 +164,17 @@ return (<>
 
   <button
     type="button"
-    className="custom-button-secondary"
+    className="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
     data-te-ripple-init
     data-te-ripple-color="light"
   >
     Registrarse
   </button>
 </form>
-
 </LeftContent>
-
-
 <RightContent>
 <div className='flex justify-center'>
-
+  {/* Logo */}
   <Image
     className="mt-6 w-10/12 shadow-lg rounded-lg"
     src={logo}
@@ -192,22 +184,23 @@ return (<>
   />
 </div>
 
+{/* Texto de bienvenida */}
 <div>
-  <div style={{height: "140px" }}>
+  <div style={{height: "173px" }}>
     <Text setComplete={setComplete} />
   </div>
   {showWelcome && (
-    <p className='opacity-100 transition-opacity transition-color color-red duration-100'>
+    <p className={`mb-6 mt-5 text-xl font-semibold ${complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'}`}>
       ¡Bienvenidos!
     </p>
   )}
 </div>
 
-
+{/* Botón para ingresar como invitado */}
 <Boton>
-  <Link style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "100%", height: "100%", position: "relative", marginBottom: "0"}} href="/libros">
-    <button style={{ width: "100%", height: "100%" }}>Ingresar
-    <p style={{ fontSize: "14px", alignSelf: "center" }}>como invitado</p></button>
+  <Link style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "100%", height: "100%" }} href="/libros">
+    <button style={{ width: "100%", height: "100%" }}>Ingresar</button>
+    <p style={{ fontSize: "14px", alignSelf: "center" }}>como invitado</p>
   </Link>
 </Boton>
 </RightContent>
