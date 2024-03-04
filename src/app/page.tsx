@@ -101,14 +101,7 @@ export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-  useEffect(() => {
-   
-    if (complete) {
-      setTimeout(() => {
-        setShowWelcome(true);
-      }, 80);
-    }
-  }, [complete]);
+
 
 return (<>
 <div> 
@@ -129,34 +122,30 @@ return (<>
   <form>
   <p className="mb-8 mt-4 text-sm">Ingrese con sus credenciales</p>
   <div className="relative mb-4 text-sm">
-    <input
-      type="text"
-      className="custom-input"
-      id="exampleFormControlInput1"
-      placeholder="Usuario"
-    />
-    <label
-      htmlFor="examplehtmlFormControlInput1"
-      className="custom-label"
+  <label
+      htmlFor="usuario"
+      className=""
     >
       Usuario
     </label>
+
+  <input type="text"  id="usuario" placeholder="usuario" autoComplete="current-password"/>
+
+   
   </div>
 
   {/* <!--Password input--> */}
   <div className="text-sm relative mb-4">
-    <input
-      type="password"
-      className="custom-input"
-      id="examplehtmlFormControlInput11"
-      placeholder="Contraseña"
-    />
-    <label
-      htmlFor="examplehtmlFormControlInput11"
-      className="custom-label"
+  
+  <label
+      htmlFor="pas"
+      className=""
     >
       Contraseña
     </label>
+    <input type="password"  id="pas" placeholder="Contraseña" autoComplete="current-password"/>
+
+  
   </div>
 
   {/* <!--Submit button--> */}
@@ -200,7 +189,7 @@ return (<>
 </div>
 
 <div>
-  <div style={{height: "140px" }}>
+  <div >
     <Text setComplete={setComplete} />
   </div>
   {showWelcome && (
