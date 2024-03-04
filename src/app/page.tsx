@@ -101,14 +101,7 @@ export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
 
-  useEffect(() => {
-   
-    if (complete) {
-      setTimeout(() => {
-        setShowWelcome(true);
-      }, 80);
-    }
-  }, [complete]);
+  
 
 return (<>
 <div> 
@@ -136,8 +129,8 @@ return (<>
       placeholder="Usuario"
     />
     <label
-      htmlFor="examplehtmlFormControlInput1"
-      className="custom-label"
+      htmlFor="usuario"
+    
     >
       Usuario
     </label>
@@ -152,8 +145,8 @@ return (<>
       placeholder="Contraseña"
     />
     <label
-      htmlFor="examplehtmlFormControlInput11"
-      className="custom-label"
+      htmlFor="contrasenia"
+   
     >
       Contraseña
     </label>
@@ -204,7 +197,7 @@ return (<>
     <Text setComplete={setComplete} />
   </div>
   {showWelcome && (
-    <p className={`mb-6 mt-5 text-xl font-semibold ${complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'}`}>
+    <p className='opacity-100 transition-opacity transition-color color-red duration-100'>
       ¡Bienvenidos!
     </p>
   )}
