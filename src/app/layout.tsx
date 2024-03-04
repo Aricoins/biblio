@@ -1,17 +1,7 @@
-"use client "
-import type { Metadata } from 'next'
-import './globals.css'
+// RootLayout.js
+import React from 'react'
 
 
-interface CspConfig {
-  'default-src': string;
-  'script-src': string;
-  // ... other CSP directives as needed
-}
-
-interface ExtendedMetadata extends Metadata {
-  csp?: CspConfig; // Optional csp property
-}
 
 export default function RootLayout({
   children,
@@ -20,13 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-   
-         <body >      
-              {children}
-          </body>
-
- 
-   
+      <body>{children}</body>
     </html>
   )
 }

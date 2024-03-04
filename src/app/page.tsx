@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import logo from "../../src/app/api/assets/moran.png"
 import Text from './components/text';
 import imagen from "../../src/app/api/assets/concejo.png"
+import "./globals.css";
 
 const gradientAnimation = keyframes`
   0% {
@@ -119,6 +120,7 @@ return (<>
     alt="logo"
     width={200}
     height={200}
+    priority
 
 
   />
@@ -188,6 +190,7 @@ return (<>
     alt="logo"
     width={200}
     height={200}
+    priority
   />
 </div>
 
@@ -204,9 +207,9 @@ return (<>
 
 {/* Botón para ingresar como invitado */}
 <Boton>
-  <Link style={{ display: "flex", justifyContent: "center", flexDirection: "column", width: "100%", height: "100%", position: "relative", marginBottom: "0"}} href="/libros">
-    <button style={{ width: "100%", height: "100%" }}>Ingresar</button>
-    <p style={{ fontSize: "14px", alignSelf: "center" }}>como invitado</p>
+  <Link  href="/libros">
+    <button >Ingresar</button>
+    <p >como invitado</p>
   </Link>
 </Boton>
 </RightContent>
