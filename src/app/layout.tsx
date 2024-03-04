@@ -21,15 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
- 
-         <body className={inter.className}>
-      
-     
-     
-     
-         {children}
-    
-      </body>
+      <head>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';"/>
+      </head>
+         <body className={inter.className}>      
+              {children}
+          </body>
 
  
    
