@@ -8,7 +8,7 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(10); 
+  const [visibleRows, setVisibleRows] = useState(1); 
   const [showLessButton, setShowLessButton] = useState(false); 
 
   useEffect(() => {

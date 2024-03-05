@@ -8,12 +8,12 @@ function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(10); // Nuevo estado para gestionar la cantidad de filas a mostrar
+  const [visibleRows, setVisibleRows] = useState(1); // Nuevo estado para gestionar la cantidad de filas a mostrar
 
   useEffect(() => {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv'
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vTOPvyh0NxFC-EyV28tFWZlX3f_OFPrY2w4JFVnqF3CDyPJ4pNbORFaq5yI1uNw4aeoP27jXWp82GTU/pub?output=csv'
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
@@ -30,7 +30,7 @@ function ExpedientesDeclaraciones() {
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase())
+        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
       return (
@@ -39,7 +39,7 @@ function ExpedientesDeclaraciones() {
         )
       );
     } else if (projectSearch) {
-      return row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase());
+      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
     }
 
     return true;
@@ -89,10 +89,10 @@ function ExpedientesDeclaraciones() {
                   </Link>
                 </td>
               ) : (
-                <td className="border p-2">{row['Proyecto']}</td>
+                <td className="border p-2">{row['Numero']}</td>
               )}
               <td className="border p-2">{row['Resumen']}</td>
-              <td className="border p-2">{row['Tipo Norma']}</td>
+              <td className="border p-2">{row['Año']}</td>
             </tr>
           ))}
         </tbody>
