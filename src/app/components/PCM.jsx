@@ -8,7 +8,7 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(0); 
+  const [visibleRows, setVisibleRows] = useState(1); 
   const [showLessButton, setShowLessButton] = useState(false); 
 
   useEffect(() => {
@@ -70,21 +70,21 @@ function ExpedientesResoluciones() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes PCM</h2>
+    <div className="p-0 mt-10  mb-0 border border-black">
+    <h2 className="text-xl h-2/4 font-semibold text-center ">Expedientes PCM</h2>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar en Resumen..."
-        className="w-full mb-4 p-2 border rounded"
+        className="w-8/12 mx-2 border  border-blue rounded"
       />
       <input
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
         placeholder="Buscar por número..."
-        className="w-full mb-4 p-2 border rounded"
+        className="w-2/12 mx-2 border rounded"
       />
       <table className="w-full border-collapse border">
         <thead>

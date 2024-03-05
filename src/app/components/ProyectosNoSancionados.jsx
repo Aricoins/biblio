@@ -4,11 +4,11 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 
-function Expedientes() {
+function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(0);
+  const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   useEffect(() => {
     axios
@@ -66,35 +66,35 @@ function Expedientes() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes Sin Sanción</h2>
+    <div className="p-0 mt-10  mb-0 border border-black">
+    <h2 className="text-xl h-2/4 font-semibold text-center ">Proyectos No Sancionados</h2>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar en Resumen..."
-        className="w-full mb-4 p-2 border rounded"
+        className="w-8/12 mx-2 border  border-blue rounded"
       />
       <input
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
-        placeholder="Buscar por número de Proyecto..."
-        className="w-full mb-4 p-2 border rounded"
+        placeholder="Por número..."
+        className="w-2/12 mx-2 border rounded"
       />
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Proyecto</th>
-            <th className="border p-2">Resumen</th>
-            <th className="border p-2">Tipo Norma</th>
+            <th className="border">Proyecto</th>
+            <th className="border">Resumen</th>
+            <th className="border">Tipo Norma</th>
           </tr>
         </thead>
         <tbody>
           {visibleRowsData.map((row, index) => (
             <tr key={index}>
               {row['Link'] ? (
-                <td className="border p-6 w-32 bg-gray-200 justify-center text-center">
+                <td className="border p-1 bg-gray-200 justify-center text-center">
                   <Link
                     href={row['Link']}
                     target="_blank"
@@ -136,5 +136,4 @@ function Expedientes() {
     </div>
   );
 }
-
-export default Expedientes;
+export default ProyectosNoSancionados;

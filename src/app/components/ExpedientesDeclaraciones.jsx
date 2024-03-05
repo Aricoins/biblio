@@ -8,7 +8,8 @@ function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(0); // Nuevo estado para gestionar la cantidad de filas a mostrar
+  const [visibleRows, setVisibleRows] = useState(1); 
+  const [showLessButton, setShowLessButton] = useState(false);
 
   useEffect(() => {
     axios
@@ -46,31 +47,48 @@ function ExpedientesDeclaraciones() {
   });
 
   // Filtrar solo las filas visibles según el estado
+
   const visibleRowsData = filteredData.slice(0, visibleRows);
 
+  const handleShowMore = () => {
+    setVisibleRows((prevRows) => prevRows + 10);
+    setShowLessButton(true);
+  };
+
+  const handleShowLess = () => {
+    if (visibleRows > 10) {
+      setVisibleRows((prevRows) => prevRows - 10);
+    
+      setShowLessButton(false);
+   
+    } else {
+      setVisibleRows(10);
+     }
+  };
+
   return (
-    <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes Declaraciones</h2>
+    <div className="p-0 mt-10  mb-0 border border-black">
+    <h2 className="text-xl h-2/4 font-semibold text-center ">Expedientes Declaraciones</h2>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar en Resumen..."
-        className="w-full mb-4 p-2 border rounded"
+        className="w-8/12 mx-2 border  border-blue rounded"
       />
       <input
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
-        placeholder="Buscar por número de Proyecto..."
-        className="w-full mb-4 p-2 border rounded"
+        placeholder="Por número ..."
+        className="w-2/12 mx-2 border rounded"
       />
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Número</th>
-            <th className="border p-2">Resumen</th>
-            <th className="border p-2">Año</th>
+            <th className="border">Número</th>
+            <th className="border">Resumen</th>
+            <th className="border">Año</th>
           </tr>
         </thead>
         <tbody>
@@ -99,12 +117,22 @@ function ExpedientesDeclaraciones() {
       </table>
 
       {visibleRows < filteredData.length && (
-        <button
-          onClick={() => setVisibleRows((prevRows) => prevRows + 10)}
-          className="mt-4 bg-blue-500 text-white px-4 py
-          -2 rounded-md hover:bg-blue-600">
-          Listar...
-        </button>
+        <>
+          <button
+            onClick={handleShowMore}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          >
+            Ver más...
+          </button>
+          {showLessButton && (
+            <button
+              onClick={handleShowLess}
+              className="mt-4 ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            >
+              Ver menos...
+            </button>
+          )}
+        </>
       )}
     </div>
   );
