@@ -60,7 +60,7 @@ function ExpedientesResoluciones() {
 
   const handleShowLess = () => {
     if (visibleRows > 0) {
-      setVisibleRows((prevRows) => prevRows - 10);
+      setVisibleRows((prevRows) => prevRows - 15000);
     
       setShowLessButton(false);
    
