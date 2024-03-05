@@ -30,7 +30,7 @@ const NavTop = () => {
         </Link>
       </li>
       <li className="my-2 sm:my-0">
-        <Link href="/registro" >
+        <Link href="/archivo" >
           Archivo
         </Link>
       </li>
