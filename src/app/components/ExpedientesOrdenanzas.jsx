@@ -8,12 +8,13 @@ function ExpedientesOrdenanzas() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(1); 
+  const [visibleRows, setVisibleRows] = useState(0); 
+  const [showLessButton, setShowLessButton] = useState(false); 
   
   useEffect(() => {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv'
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vRG6dLsp3OS5Yh7KafIfj989OB-kQXxXJdlZ_loCJ1aKk8cBdXddrwCMpnHdtIqtnQidWIjyPsoLynv/pub?output=csv'
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
@@ -30,7 +31,7 @@ function ExpedientesOrdenanzas() {
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase())
+        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
       return (
@@ -39,7 +40,7 @@ function ExpedientesOrdenanzas() {
         )
       );
     } else if (projectSearch) {
-      return row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase());
+      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
     }
 
     return true;
@@ -47,6 +48,19 @@ function ExpedientesOrdenanzas() {
 
   // Filtrar solo las filas visibles según el estado
   const visibleRowsData = filteredData.slice(0, visibleRows);
+
+  const handleShowMore = () => {
+    setVisibleRows((prevRows) => prevRows + 10);
+    setShowLessButton(true);
+  };
+
+  const handleShowLess = () => {
+    if (visibleRows > 1) {
+      setVisibleRows((prevRows) => prevRows - 10);
+    
+!visibleRows ? setShowLessButton(false): setShowLessButton(1)
+   
+  };}
 
   return (
     <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
@@ -68,9 +82,9 @@ function ExpedientesOrdenanzas() {
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Proyecto</th>
+            <th className="border p-2">Número</th>
             <th className="border p-2">Resumen</th>
-            <th className="border p-2">Tipo Norma</th>
+            {/* <th className="border p-2">Año</th> */}
           </tr>
         </thead>
         <tbody>
@@ -85,29 +99,40 @@ function ExpedientesOrdenanzas() {
                     className="hover:underline hover:bg-gray-100 hover:p-1 rounded-lg border-slate-800 visited:opacity-20"
                     passHref
                   >
-                    {row['Proyecto']}
+                    {row['Numero']}
                   </Link>
                 </td>
               ) : (
-                <td className="border p-2">{row['Proyecto']}</td>
+                <td className="border p-2">{row['Numero']}</td>
               )}
               <td className="border p-2">{row['Resumen']}</td>
-              <td className="border p-2">{row['Tipo Norma']}</td>
+              {/* <td className="border p-2">{row['Tipo Norma']}</td> */}
             </tr>
           ))}
         </tbody>
       </table>
 
       {visibleRows < filteredData.length && (
-        <button
-          onClick={() => setVisibleRows((prevRows) => prevRows + 10)}
-          className="mt-4 bg-blue-500 text-white px-4 py
-          -2 rounded-md hover:bg-blue-600">
-          Ver más...
-        </button>
+        <>
+          <button
+            onClick={handleShowMore}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          >
+            Listar...
+          </button>
+          {showLessButton && (
+            <button
+              onClick={handleShowLess}
+              className="mt-4 ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            >
+              Ver menos...
+            </button>
+          )}
+        </>
       )}
     </div>
   );
 }
+
 
 export default ExpedientesOrdenanzas;

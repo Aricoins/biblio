@@ -8,7 +8,7 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(1); 
+  const [visibleRows, setVisibleRows] = useState(0); 
   const [showLessButton, setShowLessButton] = useState(false); 
 
   useEffect(() => {
@@ -120,7 +120,7 @@ function ExpedientesResoluciones() {
             onClick={handleShowMore}
             className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
-            Ver más...
+            Listar...
           </button>
           {showLessButton && (
             <button

@@ -8,7 +8,7 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(1); 
+  const [visibleRows, setVisibleRows] = useState(0); 
   const [showLessButton, setShowLessButton] = useState(false); 
 
   useEffect(() => {
@@ -46,6 +46,8 @@ function ExpedientesResoluciones() {
     return true;
   });
 
+  
+
   const visibleRowsData = filteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
@@ -53,8 +55,11 @@ function ExpedientesResoluciones() {
     setShowLessButton(true);
   };
 
+  const handleAll = () => {
+    setVisibleRows(15000); }
+
   const handleShowLess = () => {
-    if (visibleRows > 10) {
+    if (visibleRows > 0) {
       setVisibleRows((prevRows) => prevRows - 10);
     
       setShowLessButton(false);
@@ -66,7 +71,7 @@ function ExpedientesResoluciones() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Resoluciones PCM</h2>
+      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes PCM</h2>
       <input
         type="text"
         value={search}
@@ -113,7 +118,6 @@ function ExpedientesResoluciones() {
           ))}
         </tbody>
       </table>
-
       {visibleRows < filteredData.length && (
         <>
           <button
@@ -121,6 +125,12 @@ function ExpedientesResoluciones() {
             className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
           >
             Ver más...
+          </button>
+          <button
+            onClick={handleAll}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          >
+            Ver todo...
           </button>
           {showLessButton && (
             <button
@@ -135,5 +145,6 @@ function ExpedientesResoluciones() {
     </div>
   );
 }
+
 
 export default ExpedientesResoluciones;

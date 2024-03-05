@@ -8,7 +8,7 @@ function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(1); // Nuevo estado para gestionar la cantidad de filas a mostrar
+  const [visibleRows, setVisibleRows] = useState(0); // Nuevo estado para gestionar la cantidad de filas a mostrar
 
   useEffect(() => {
     axios
@@ -68,9 +68,9 @@ function ExpedientesDeclaraciones() {
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Proyecto</th>
+            <th className="border p-2">Número</th>
             <th className="border p-2">Resumen</th>
-            <th className="border p-2">Tipo Norma</th>
+            <th className="border p-2">Año</th>
           </tr>
         </thead>
         <tbody>
@@ -103,7 +103,7 @@ function ExpedientesDeclaraciones() {
           onClick={() => setVisibleRows((prevRows) => prevRows + 10)}
           className="mt-4 bg-blue-500 text-white px-4 py
           -2 rounded-md hover:bg-blue-600">
-          Ver más...
+          Listar...
         </button>
       )}
     </div>
