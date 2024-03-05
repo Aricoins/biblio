@@ -8,7 +8,8 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(10); // Nuevo estado para gestionar la cantidad de filas a mostrar
+  const [visibleRows, setVisibleRows] = useState(10); 
+  const [showLessButton, setShowLessButton] = useState(false); 
 
   useEffect(() => {
     axios
@@ -45,8 +46,23 @@ function ExpedientesResoluciones() {
     return true;
   });
 
-  // Filtrar solo las filas visibles según el estado
   const visibleRowsData = filteredData.slice(0, visibleRows);
+
+  const handleShowMore = () => {
+    setVisibleRows((prevRows) => prevRows + 10);
+    setShowLessButton(true);
+  };
+
+  const handleShowLess = () => {
+    if (visibleRows > 10) {
+      setVisibleRows((prevRows) => prevRows - 10);
+    
+      setShowLessButton(false);
+   
+    } else {
+      setVisibleRows(10);
+     }
+  };
 
   return (
     <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
@@ -99,12 +115,22 @@ function ExpedientesResoluciones() {
       </table>
 
       {visibleRows < filteredData.length && (
-        <button
-          onClick={() => setVisibleRows((prevRows) => prevRows + 10)}
-          className="mt-4 bg-blue-500 text-white px-4 py
-          -2 rounded-md hover:bg-blue-600">
-          Ver más...
-        </button>
+        <>
+          <button
+            onClick={handleShowMore}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          >
+            Ver más...
+          </button>
+          {showLessButton && (
+            <button
+              onClick={handleShowLess}
+              className="mt-4 ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            >
+              Ver menos...
+            </button>
+          )}
+        </>
       )}
     </div>
   );
