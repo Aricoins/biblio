@@ -14,7 +14,7 @@ function ExpedientesResoluciones() {
   useEffect(() => {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv'
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv'
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
@@ -31,7 +31,7 @@ function ExpedientesResoluciones() {
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase())
+        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
       return (
@@ -40,7 +40,7 @@ function ExpedientesResoluciones() {
         )
       );
     } else if (projectSearch) {
-      return row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase());
+      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
     }
 
     return true;
@@ -78,15 +78,15 @@ function ExpedientesResoluciones() {
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
-        placeholder="Buscar por número de Proyecto..."
+        placeholder="Buscar por número..."
         className="w-full mb-4 p-2 border rounded"
       />
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Proyecto</th>
+            <th className="border p-2">Número</th>
             <th className="border p-2">Resumen</th>
-            <th className="border p-2">Tipo Norma</th>
+            <th className="border p-2">Año</th>
           </tr>
         </thead>
         <tbody>
@@ -101,14 +101,14 @@ function ExpedientesResoluciones() {
                     className="hover:underline hover:bg-gray-100 hover:p-1 rounded-lg border-slate-800 visited:opacity-20"
                     passHref
                   >
-                    {row['Proyecto']}
+                    {row['Numero']}
                   </Link>
                 </td>
               ) : (
-                <td className="border p-2">{row['Proyecto']}</td>
+                <td className="border p-2">{row['Numero']}</td>
               )}
               <td className="border p-2">{row['Resumen']}</td>
-              <td className="border p-2">{row['Tipo Norma']}</td>
+              <td className="border p-2">{row['Año']}</td>
             </tr>
           ))}
         </tbody>

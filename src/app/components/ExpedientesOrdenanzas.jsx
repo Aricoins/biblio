@@ -8,8 +8,8 @@ function ExpedientesOrdenanzas() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(10); // Nuevo estado para gestionar la cantidad de filas a mostrar
-
+  const [visibleRows, setVisibleRows] = useState(1); 
+  
   useEffect(() => {
     axios
       .get(

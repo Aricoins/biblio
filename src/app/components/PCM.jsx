@@ -4,16 +4,17 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 
-function Expedientes() {
+function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-  const [visibleRows, setVisibleRows] = useState(1); // Nuevo estado para gestionar la cantidad de filas a mostrar
-  const [showLessButton, setShowLessButton] = useState(false);
+  const [visibleRows, setVisibleRows] = useState(1); 
+  const [showLessButton, setShowLessButton] = useState(false); 
+
   useEffect(() => {
     axios
       .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv'
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVE-Kl6UMQgVck3WUQ6FSm6vJF-LLQInvnapo-zuk_zMszIN1PP3BCsSBN_-aRWllb1Y3S_i3_bAB0/pub?output=csv'
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
@@ -30,7 +31,7 @@ function Expedientes() {
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase())
+        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
       return (
@@ -39,14 +40,12 @@ function Expedientes() {
         )
       );
     } else if (projectSearch) {
-      return row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase());
+      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
     }
 
     return true;
   });
 
-  // Filtrar solo las filas visibles según el estado
- 
   const visibleRowsData = filteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
@@ -67,7 +66,7 @@ function Expedientes() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes Sin Sanción</h2>
+      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Resoluciones PCM</h2>
       <input
         type="text"
         value={search}
@@ -79,15 +78,15 @@ function Expedientes() {
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
-        placeholder="Buscar por número de Proyecto..."
+        placeholder="Buscar por número..."
         className="w-full mb-4 p-2 border rounded"
       />
       <table className="w-full border-collapse border">
         <thead>
           <tr>
-            <th className="border p-2">Proyecto</th>
+            <th className="border p-2">Número</th>
             <th className="border p-2">Resumen</th>
-            <th className="border p-2">Tipo Norma</th>
+            <th className="border p-2">Año</th>
           </tr>
         </thead>
         <tbody>
@@ -102,14 +101,14 @@ function Expedientes() {
                     className="hover:underline hover:bg-gray-100 hover:p-1 rounded-lg border-slate-800 visited:opacity-20"
                     passHref
                   >
-                    {row['Proyecto']}
+                    {row['Numero']}
                   </Link>
                 </td>
               ) : (
-                <td className="border p-2">{row['Proyecto']}</td>
+                <td className="border p-2">{row['Numero']}</td>
               )}
               <td className="border p-2">{row['Resumen']}</td>
-              <td className="border p-2">{row['Tipo Norma']}</td>
+              <td className="border p-2">{row['Año']}</td>
             </tr>
           ))}
         </tbody>
@@ -137,4 +136,4 @@ function Expedientes() {
   );
 }
 
-export default Expedientes;
+export default ExpedientesResoluciones;

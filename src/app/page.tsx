@@ -12,13 +12,13 @@ const gradientAnimation = 'animate-gradient';
 
 const Container = 'h-full bg-image  bg-cover bg-center bg-no-repeat bg-gradient-to-tl from-indigo-800 to-teal-400 flex items-center justify-center';
 
-const Subcontainer = 'w-3/5 h-5/5 flex flex-col justify-center mx-auto md:flex-row rounded-lg '; // Agregamos clases de redondeo y sombra
+const Subcontainer = 'w-3/5 h-5/5 flex flex-col justify-center mx-auto md:flex-row rounded-lg relative'; // Añadida la posición relativa
 
 const LeftContent = 'w-full p-20 text-center h-5/5 my-16 md:w-1/2 md:my-10 p-5 bg-white rounded-md shadow-md';
 
 const RightContent = 'w-full p-20 text-center my-10 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
-const Boton = 'bg-indigo-800 w-full flex justify-center items-center my-0 mx-auto rounded-md p-4 text-white relative bottom-0 transition duration-500 hover:bg-teal-400';
+const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute bottom-0 right-0 left-0 p-4 text-white rounded-md transition duration-500 hover:bg-teal-400';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);
