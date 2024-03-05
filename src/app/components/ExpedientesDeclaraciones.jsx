@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 
-function Expedientes() {
+function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
@@ -50,7 +50,7 @@ function Expedientes() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 my-10 border border-black">
-      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes</h2>
+      <h2 className="text-2xl font-semibold text-center mt-2 p-5">Expedientes Declaraciones</h2>
       <input
         type="text"
         value={search}
@@ -110,4 +110,4 @@ function Expedientes() {
   );
 }
 
-export default Expedientes;
+export default ExpedientesDeclaraciones;

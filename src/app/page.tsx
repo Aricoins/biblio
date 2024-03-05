@@ -10,7 +10,7 @@ import './globals.css';
 
 const gradientAnimation = 'animate-gradient';
 
-const Container = 'h-full bg-image  bg-cover bg-center bg-no-repeat bg-gradient-to-tl from-indigo-800 to-teal-400 flex items-center justify-center m-4';
+const Container = 'h-full bg-image  bg-cover bg-center bg-no-repeat bg-gradient-to-tl from-indigo-800 to-teal-400 flex items-center justify-center';
 
 const Subcontainer = 'w-3/5 h-5/5 flex flex-col justify-center mx-auto md:flex-row rounded-lg '; // Agregamos clases de redondeo y sombra
 
