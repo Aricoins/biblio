@@ -14,7 +14,10 @@ const cspHeader = `
 `
 
 module.exports = {
-  // ... other configurations
+  
+  images: {
+    domains: ['localhost', 'res.cloudinary.com'],
+  },
   headers() {
     return [
       {
