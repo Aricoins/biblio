@@ -66,20 +66,20 @@ function ExpedientesResoluciones() {
 
   return (
     <div className="p-0 mt-10  mb-0 border border-black">
-    <h2 className="text-xl h-2/4 font-semibold text-center ">Expedientes Comunicaciones</h2>
+    <h2 className="text-xl  bg-black text-white h-2/4 font-semibold text-center ">Expedientes Comunicaciones</h2>
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar en Resumen..."
-        className="w-8/12 mx-2 border  border-blue rounded"
+        className="w-8/12 mt-4 ml-4 border placeholder-black border-black p-2 rounded"
       />
       <input
         type="text"
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
         placeholder="Buscar por número..."
-        className="w-2/12 mx-2 border rounded"
+        className="w-2/12 mx-10 border placeholder-black border-black p-2 rounded"
       />
       <table className="w-full border-collapse border">
         <thead>

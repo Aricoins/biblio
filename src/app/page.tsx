@@ -8,9 +8,8 @@ import Text from './components/text';
 import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
 
-const gradientAnimation = 'animate-gradient';
 
-const Container = 'h-full bg-image  bg-cover bg-center bg-no-repeat bg-gradient-to-tl from-indigo-800 to-teal-400 flex items-center justify-center';
+const Container = 'h-full bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
 
 const Subcontainer = 'w-3/5 h-5/5 flex flex-col justify-center mx-auto md:flex-row rounded-lg relative'; // Añadida la posición relativa
 

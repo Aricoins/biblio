@@ -11,14 +11,15 @@ import ExpedientesComunicaciones from '../components/ExpedientesComunicaciones'
 import PCM from '../components/PCM'
 
 
-const Container = 'bg-black flex items-center justify-center text-x1 h-2';
+const Container = 'flex items-center justify-center text-x1 h-2';
 
 const Registro = () => {
   return (
     <>
       <NavTop />
       <div className="gap-4">
-      <div className="grid grid-cols-12 mt-20 mb-20">
+      <div className="grid grid-cols-12 bg-gradient-to-r 
+from-gray-100 to-grey-600 via-grey-800 animate-gradient-x mt-20 mb-20">
             <div className='col-span-6 mx-10 shadow-2xl'>
           <ExpedientesOrdenanzas />
         </div>
