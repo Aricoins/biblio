@@ -109,7 +109,7 @@ export default function Libros() {
                 </div>
                 {showWelcome && (
                   <p
-                    className={` my-12 text-base font-semibold ${
+                    className={` my-4 text-base font-semibold ${
                       complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'
                     }`}
                   >
