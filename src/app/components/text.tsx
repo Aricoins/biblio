@@ -3,15 +3,16 @@ import { FC, useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 
-const H1 = styled.h1`
-  font-size: 16px;
-  height: 80%;
+const H1 = styled.h6`
+  font-size: 12px;
+  height: 100%;
   width: 90%;
-  color: #010115;
+  color: #080855;
   text-align: justify;
   inline-size: 100%;
-  margin: 10% 5% 10% 0%;
-  line-height: 2.2;
+  margin: 10% 0% 0% 0%;
+  line-height: 1.8;
+  justify-self: center;
 
   @keyframes blinkAnim {
     0% {
@@ -30,7 +31,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
 
   useEffect(() => {
     const words = [
-      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad, cuenta con un aservo literario conformado por libros considerados de interés para la comunidad, asi como archivos y material de destacado valor documental, cultural e histórico."
+      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad; cuenta con un corpus literario de interés para la comunidad y un archivo de destacado valor documental e histórico."
     ];
 
     let wordWrapperContent = '';

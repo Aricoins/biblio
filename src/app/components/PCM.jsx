@@ -70,7 +70,7 @@ function ExpedientesResoluciones() {
   };
 
   return (
-    <div className="p-0 mt-10  mb-0 border border-black">
+    <div className="p-0 mt-10  mb-0 ">
     <h2 className="text-xl h-2/4 bg-black text-white font-semibold text-center "> PCM</h2>
       <input
         type="text"
@@ -78,7 +78,7 @@ function ExpedientesResoluciones() {
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Buscar en Resumen..."
         className="w-8/12 mt-4 ml-4 border placeholder-black border-black p-2 rounded"
-      />
+      />git 
       <input
         type="text"
         value={projectSearch}

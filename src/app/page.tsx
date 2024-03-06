@@ -9,15 +9,15 @@ import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
 
 
-const Container = ' h-screen h-4/5 bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
+const Container = ' w-12/12 h-100vh bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
 
-const Subcontainer = 'w-3/5 h-10/12 flex flex-col justify-center mx-auto md:flex-row rounded-lg relative'; // Añadida la posición relativa
+const Subcontainer = 'w-2/5 h-8/12 flex m-1 flex-col justify-center mx-auto md:flex-row rounded-lg opacity-80 relative'; // Añadida la posición relativa
 
-const LeftContent = 'w-full m-1 p-20 text-center h-2/5 my-16 md:w-1/2 md:my-10 p-5 bg-white rounded-md shadow-md';
+const LeftContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-8 m-1 rounded-md';
 
-const RightContent = 'w-full p-20 text-center h-4/5 my-10 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
+const RightContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
-const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute bottom-0 right-0 left-0 p-4 text-white rounded-md transition duration-500 hover:bg-teal-400';
+const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute bottom-0 right-0 left-0 p-1 text-white rounded-md transition duration-500 hover:bg-teal-400';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);
@@ -35,9 +35,9 @@ export default function Libros() {
       
           <div className={Subcontainer}>
             <div className={LeftContent}>
-              <div className='flex justify-center'>
+              <div className='flex justify-center mt-6'>
                 <Image
-                  className='mt-0 w-auto shadow-lg rounded-lg'
+                  className=' w-auto shadow-lg rounded-lg'
                   src={imagen}
                   alt='logo'
                   width={100}
@@ -46,7 +46,7 @@ export default function Libros() {
                 />
               </div>
               <form>
-                <p className='mb-4 mt-4 text-sm'>Ingrese con sus credenciales</p>
+                <p className='text-[10px] m-4' >Ingrese con sus credenciales</p>
                 <div className='relative mb-4 text-sm'>
                   <label htmlFor='usuario'>Usuario</label>
                   <input
@@ -64,25 +64,27 @@ export default function Libros() {
                     id='pas'
                     placeholder='Contraseña'
                     autoComplete='current-password'
-                    className='border rounded-md px-2 py-1 w-full'
+                    className='border rounded-md px-2 w-full'
                   />
                 </div>
-                <div className='mb-12 pb-1 pt-1 text-center'>
+                <div className='pt-1 text-center text-sm'>
                   <button
-                    className='bg-indigo-800 text-white rounded-md px-4 py-2 hover:bg-teal-400'
+                    className='bg-indigo-800 w-10/12 text-white rounded-md px-4 py-2 hover:bg-teal-400'
                     type='button'
                     data-te-ripple-init
                     data-te-ripple-color='light'
                   >
                     Ingresar
                   </button>
-                  <a className='text-sm' href='#'>
+                  <div>
+                  <a className='text-[10px]' href='#'>
                     ¿Olvidó su contraseña?
                   </a>
+                  </div>
                 </div>
                 <button
                   type='button'
-                  className='bg-gray-300 text-gray-800 rounded-md px-4 py-2 hover:bg-gray-400'
+                  className='bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 p-1 text-[10px] w-10/12 mt-2'
                   data-te-ripple-init
                   data-te-ripple-color='light'
                 >
@@ -93,11 +95,11 @@ export default function Libros() {
             <div className={RightContent}>
               <div className='flex justify-center'>
                 <Image
-                  className='mt-6 w-10/12 shadow-lg rounded-lg'
+                  className=' w-10/12 shadow-lg rounded-lg my-10'
                   src={logo}
                   alt='logo'
-                  width={200}
-                  height={200}
+                  width={300}
+                  height={300}
                   priority
                 />
               </div>
@@ -107,7 +109,7 @@ export default function Libros() {
                 </div>
                 {showWelcome && (
                   <p
-                    className={`mb-6 mt-5 text-base font-semibold ${
+                    className={` my-12 text-base font-semibold ${
                       complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'
                     }`}
                   >
@@ -117,8 +119,8 @@ export default function Libros() {
               </div>
               <div className={Boton}>
                 <Link href='/libros'>
-                  <button>Ingresar</button>
-                  <p>como invitado</p>
+                  <button>Ingresar
+                  <p>como invitado</p></button>
                 </Link>
               </div>
             </div>
