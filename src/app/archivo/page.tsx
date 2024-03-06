@@ -17,7 +17,7 @@ const Registro = () => {
   return (
     <>
       <NavTop />
-      <div className="gap-4">
+      <div className="gap-[10px]">
       <div className="grid grid-cols-12 bg-gradient-to-r 
 from-gray-100 to-grey-600 via-grey-800 animate-gradient-x mt-20 mb-20">
             <div className='col-span-6 mx-10 shadow-2xl'>
