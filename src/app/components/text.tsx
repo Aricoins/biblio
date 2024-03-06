@@ -4,13 +4,14 @@ import styled, { keyframes } from 'styled-components';
 
 
 const H1 = styled.h1`
-  font-size: 14px;
+  font-size: 16px;
   height: 80%;
-  width: 120%;
+  width: 90%;
   color: #010115;
   text-align: justify;
   inline-size: 100%;
-  margin: 10% 5% 10% 5%;
+  margin: 10% 5% 10% 0%;
+  line-height: 2.2;
 
   @keyframes blinkAnim {
     0% {

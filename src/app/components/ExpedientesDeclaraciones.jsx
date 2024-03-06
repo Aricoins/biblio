@@ -67,7 +67,7 @@ function ExpedientesDeclaraciones() {
   };
 
   return (
-    <div className="p-0 mt-10  mb-0 border border-black">
+    <div className="p-0 mt-10  mb-0 border">
     <h2 className="text-xl  bg-black text-white h-2/4 font-semibold text-center ">Expedientes Declaraciones</h2>
       <input
         type="text"

@@ -63,7 +63,7 @@ function ExpedientesOrdenanzas() {
   };}
 
   return (
-    <div className="p-0 mt-10  mb-0 border border-black">
+    <div className="p-0 mt-10  mb-0 border">
       <h2 className="text-xl h-2/4  bg-black text-white font-semibold text-center ">Expedientes Ordenanzas</h2>
       <input
         type="text"

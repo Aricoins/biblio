@@ -9,13 +9,13 @@ import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
 
 
-const Container = 'h-full bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
+const Container = ' h-screen h-4/5 bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
 
-const Subcontainer = 'w-3/5 h-5/5 flex flex-col justify-center mx-auto md:flex-row rounded-lg relative'; // Añadida la posición relativa
+const Subcontainer = 'w-3/5 h-10/12 flex flex-col justify-center mx-auto md:flex-row rounded-lg relative'; // Añadida la posición relativa
 
-const LeftContent = 'w-full p-20 text-center h-5/5 my-16 md:w-1/2 md:my-10 p-5 bg-white rounded-md shadow-md';
+const LeftContent = 'w-full m-1 p-20 text-center h-2/5 my-16 md:w-1/2 md:my-10 p-5 bg-white rounded-md shadow-md';
 
-const RightContent = 'w-full p-20 text-center my-10 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
+const RightContent = 'w-full p-20 text-center h-4/5 my-10 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
 const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute bottom-0 right-0 left-0 p-4 text-white rounded-md transition duration-500 hover:bg-teal-400';
 
@@ -40,13 +40,13 @@ export default function Libros() {
                   className='mt-0 w-auto shadow-lg rounded-lg'
                   src={imagen}
                   alt='logo'
-                  width={200}
-                  height={200}
+                  width={100}
+                  height={100}
                   priority
                 />
               </div>
               <form>
-                <p className='mb-8 mt-4 text-sm'>Ingrese con sus credenciales</p>
+                <p className='mb-4 mt-4 text-sm'>Ingrese con sus credenciales</p>
                 <div className='relative mb-4 text-sm'>
                   <label htmlFor='usuario'>Usuario</label>
                   <input
@@ -102,12 +102,12 @@ export default function Libros() {
                 />
               </div>
               <div>
-                <div>
+                <div >
                   <Text setComplete={setComplete} />
                 </div>
                 {showWelcome && (
                   <p
-                    className={`mb-6 mt-5 text-xl font-semibold ${
+                    className={`mb-6 mt-5 text-base font-semibold ${
                       complete ? 'opacity-100 transition-opacity transition-color color-red duration-100' : 'opacity-0'
                     }`}
                   >

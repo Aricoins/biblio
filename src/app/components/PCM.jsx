@@ -71,7 +71,7 @@ function ExpedientesResoluciones() {
 
   return (
     <div className="p-0 mt-10  mb-0 border border-black">
-    <h2 className="text-xl h-2/4 bg-black text-white font-semibold text-center ">Expedientes PCM</h2>
+    <h2 className="text-xl h-2/4 bg-black text-white font-semibold text-center "> PCM</h2>
       <input
         type="text"
         value={search}

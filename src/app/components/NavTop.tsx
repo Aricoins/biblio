@@ -26,7 +26,7 @@ const NavTop = () => {
       </li>
       <li className="my-2 sm:my-0">
         <Link href="/libros" >
-          Libros
+        Bilioteca
         </Link>
       </li>
       <li className="my-2 sm:my-0">
@@ -35,13 +35,13 @@ const NavTop = () => {
         </Link>
       </li>
       <li className="my-2 sm:my-0" onClick={endev} >
-        Login
+        Ingresar
       </li>
-      <li className="my-2 sm:my-0">
+      {/* <li className="my-2 sm:my-0">
         <Link href="/libros/form" >
           Agregar Libro
         </Link>
-      </li>
+      </li> */}
     </ul>
 
   </div>
