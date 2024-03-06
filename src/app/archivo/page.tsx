@@ -18,8 +18,7 @@ const Registro = () => {
     <>
       <NavTop />
       <div className="gap-2">
-      <div className="grid grid-cols-12 bg-gradient-to-r 
-from-gray-100 to-grey-600 via-grey-800 animate-gradient-x mt-20 mb-20">
+      <div className="mt-20">
             <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesOrdenanzas />
         </div>

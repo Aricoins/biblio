@@ -11,7 +11,7 @@ const H1 = styled.h6`
   text-align: justify;
   inline-size: 100%;
   margin: 10% 0% 0% 0%;
-  line-height: 1.8;
+  line-height: 1.6;
   justify-self: center;
 
   @keyframes blinkAnim {
