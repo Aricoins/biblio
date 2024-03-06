@@ -11,7 +11,7 @@ import ExpedientesComunicaciones from '../components/ExpedientesComunicaciones'
 import PCM from '../components/PCM'
 
 
-const Container = 'flex items-center justify-center text-x1 h-2';
+const Container = 'flex items-center justify-center text-sm h-2';
 
 const Registro = () => {
   return (
