@@ -96,14 +96,14 @@ const handleSort = () => {
       >
         Proyectos No Sancionados
       </h2>
-      <div className={`p-0 mt-1 mb-0 border mr-0 ${isComponentVisible ? 'block' : 'hidden'}`}>
+      <div className={`p-0 mt-1 mb-0 border mr-4 ${isComponentVisible ? 'block' : 'hidden'}`}>
        
         <input
           type="text"
           value={projectSearch}
           onChange={(e) => setProjectSearch(e.target.value)}
-          placeholder="Por número..."
-          className="w-1/12 mx-0 border placeholder-black border-black p-1 rounded"
+          placeholder="Número..."
+          className="w-2/12 mx-0 border placeholder-black border-black p-1 rounded"
         />
          <input
           type="text"
