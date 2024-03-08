@@ -150,9 +150,10 @@ const handleSort = () => {
 
         {visibleRows  < filteredData.length && (
           <>
+          <div className="flex flex-row justify-end mr-0">
             <button
               onClick={handleShowMore}
-              className="m-1  bg-gray-800 text-white px-4 py-1 rounded-md hover:bg-gray-600"
+              className="m-1  bg-gray-800 text-white p-1 rounded-md hover:bg-gray-600"
             >
                            Ver más...
             </button>
@@ -162,6 +163,7 @@ const handleSort = () => {
             >
               Ver menos...
             </button>): null}
+            </div>
           </>
         )}
       </div>
