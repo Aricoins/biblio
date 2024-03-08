@@ -6,7 +6,7 @@ export async function GET() {
     try {
       
       const { rows: books } = await sql`
-      SELECT * FROM libros`;
+      SELECT * FROM libros Where disable = false`;
 console.log(books)
       return NextResponse.json({ books});
     } catch (error) {
