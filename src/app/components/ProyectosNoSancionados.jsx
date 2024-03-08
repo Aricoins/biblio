@@ -81,11 +81,11 @@ function ProyectosNoSancionados() {
     setShowLessButton(false);
   };
 
-  const handleSort = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-    setVisibleRows(filteredData.length); // Mostrar todas las filas al cambiar el orden
-    setShowLessButton(true); // Mostrar el botón "Ver menos"
-  };
+const handleSort = () => {
+  setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+  setVisibleRows(visibleRows); // Mostrar todas las filas al cambiar el orden
+  setShowLessButton(true); // Mostrar el botón "Ver menos"
+};
 
   const sortedData = sortData(visibleRowsData, sortOrder);
   return (
@@ -103,7 +103,7 @@ function ProyectosNoSancionados() {
           value={projectSearch}
           onChange={(e) => setProjectSearch(e.target.value)}
           placeholder="Por número..."
-          className="w-2/12 mx-0 border placeholder-black border-black p-1 rounded"
+          className="w-1/12 mx-0 border placeholder-black border-black p-1 rounded"
         />
          <input
           type="text"
@@ -112,19 +112,17 @@ function ProyectosNoSancionados() {
           placeholder="Buscar en Resumen..."
           className="w-8/12 m-4 ml-4 border placeholder-black border-black p-1 rounded"
         />
-        <table className="w-full text-white bg-gray-500 border-collapse border">
-                  <thead>
-                  <thead>
-        <tr>
-          <th className="border w-1 cursor-pointer" onClick={handleSort}>
-            Numero {sortOrder === 'asc' ? '▼' : '▲'}
-          </th>
-          <th className="border">Resumen</th>
-          <th className="border">Tipo Norma</th>
-        </tr>
-      </thead>
+     <table className="w-full text-white bg-gray-500 border-collapse border">
+        <thead>
+          <tr>
+            <th className="border w-2/12 cursor-pointer" onClick={handleSort}>
+              Numero {sortOrder === 'asc' ? '▼' : '▲'}
+            </th>
+            <th className="border w-8/12">Resumen</th>
+            <th className="border w-4/12">Tipo Norma</th>
+          </tr>
+        </thead>
 
-      </thead>
           <tbody>
             {visibleRowsData.map((row, index) => (
               <tr key={index}>
