@@ -5,7 +5,7 @@ import { sql } from '@vercel/postgres';
 async function GET() {
   try {
     const { rows } = await sql`
-      SELECT * FROM libros`;
+      SELECT * FROM libros WHERE id = 1;`;
     return NextResponse.json({ rows });
   } catch (error) {
     console.error('Error reading table libros:', error);
