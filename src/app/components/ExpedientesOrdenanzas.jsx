@@ -69,7 +69,7 @@ function ExpedientesOrdenanzas() {
   return (
     <>
       <h2
-        className="text-xl w-12/12 h-4/4 bg-black text-white font-semibold text-center cursor-pointer"
+        className="text-xl w-12/12 h-4/4 bg-orange-500 text-white font-semibold text-center cursor-pointer"
         onClick={handleHeaderClick}
       >
         Expedientes Ordenanzas
