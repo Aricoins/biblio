@@ -96,21 +96,21 @@ const handleSort = () => {
       >
         Proyectos No Sancionados
       </h2>
-      <div className={`p-0 mt-1 mb-0 border mr-4 ${isComponentVisible ? 'block' : 'hidden'}`}>
+      <div className={`p-0 mb-0 border ${isComponentVisible ? 'block' : 'hidden'}`}>
        
         <input
           type="text"
           value={projectSearch}
           onChange={(e) => setProjectSearch(e.target.value)}
           placeholder="Número..."
-          className="w-2/12 mx-0 border placeholder-black border-black p-1 rounded"
+          className="w-2/12 my-1 border placeholder-black border-black p-1 rounded"
         />
          <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Buscar en Resumen..."
-          className="w-8/12 m-4 ml-4 border placeholder-black border-black p-1 rounded"
+          className="w-8/12 my-1 border placeholder-black border-black p-1 rounded"
         />
      <table className="w-full text-white bg-gray-500 border-collapse border">
         <thead>
