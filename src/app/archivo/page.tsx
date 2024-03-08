@@ -19,12 +19,13 @@ const Registro = () => {
       <NavTop />
       <div className="gap-2">
       <div className="mt-20">
+      <div className='col-span-6  mx-2 shadow-2xl'>
+          <ProyectosNoSancionados />
+        </div>
             <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesOrdenanzas />
         </div>
-        <div className='col-span-6  mx-2 shadow-2xl'>
-          <ProyectosNoSancionados />
-        </div>
+      
         <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesComunicaciones />
    </div>

@@ -11,6 +11,7 @@ function ProyectosNoSancionados() {
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
+  const [sortOrder, setSortOrder] = useState('desc');
 
   useEffect(() => {
     axios
@@ -19,12 +20,31 @@ function ProyectosNoSancionados() {
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
-        setData(results.data);
+        const sortedData = sortData(results.data, 'desc'); // Ordena los datos inicialmente
+        setData(sortedData);
+        setVisibleRows(1);
+        setShowLessButton(false);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
   }, []);
+
+  const sortData = (data, order) => {
+    return data.sort((a, b) => {
+      const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
+      const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
+
+      const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
+      const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
+
+      if (order === 'asc') {
+        return yearA !== yearB ? yearA - yearB : projectA - projectB;
+      } else {
+        return yearB !== yearA ? yearB - yearA : projectB - projectA;
+      }
+    });
+  };
 
   const filteredData = data.filter((row) => {
     if (search && projectSearch) {
@@ -52,90 +72,98 @@ function ProyectosNoSancionados() {
   const visibleRowsData = filteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
-    setVisibleRows((prevRows) => prevRows + 10);
+    setVisibleRows((prevRows) => Math.min(prevRows + 9, filteredData.length));
     setShowLessButton(true);
   };
 
   const handleShowLess = () => {
-    if (visibleRows > 10) {
-      setVisibleRows((prevRows) => prevRows - 10);
-
-      setShowLessButton(false);
-    } else {
-      setVisibleRows(10)
-    }
+    setVisibleRows(1);
+    setShowLessButton(false);
   };
 
+  const handleSort = () => {
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+    setVisibleRows(filteredData.length); // Mostrar todas las filas al cambiar el orden
+    setShowLessButton(true); // Mostrar el botón "Ver menos"
+  };
+
+  const sortedData = sortData(visibleRowsData, sortOrder);
   return (
     <>
       <h2
-        className="text-xl h-2/4 w-12/12 bg-black text-white my-2 font-semibold text-center cursor-pointer"
+        className="text-xl h-2/4 w-12/12 bg-black text-white my-1 font-semibold text-center cursor-pointer"
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
         Proyectos No Sancionados
       </h2>
-      <div className={`p-0 mt-10 mb-0 border ${isComponentVisible ? 'block' : 'hidden'}`}>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar en Resumen..."
-          className="w-8/12 mt-4 ml-4 border placeholder-black border-black p-2 rounded"
-        />
+      <div className={`p-0 mt-1 mb-0 border mr-0 ${isComponentVisible ? 'block' : 'hidden'}`}>
+       
         <input
           type="text"
           value={projectSearch}
           onChange={(e) => setProjectSearch(e.target.value)}
           placeholder="Por número..."
-          className="w-2/12 mx-10 border placeholder-black border-black p-2 rounded"
+          className="w-2/12 mx-0 border placeholder-black border-black p-1 rounded"
         />
-        <table className="w-full border-collapse border">
-          <thead>
-            <tr>
-              <th className="border">Proyecto</th>
-              <th className="border">Resumen</th>
-              <th className="border">Tipo Norma</th>
-            </tr>
-          </thead>
+         <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Buscar en Resumen..."
+          className="w-8/12 m-4 ml-4 border placeholder-black border-black p-1 rounded"
+        />
+        <table className="w-full text-white bg-gray-500 border-collapse border">
+                  <thead>
+                  <thead>
+        <tr>
+          <th className="border w-1 cursor-pointer" onClick={handleSort}>
+            Numero {sortOrder === 'asc' ? '▼' : '▲'}
+          </th>
+          <th className="border">Resumen</th>
+          <th className="border">Tipo Norma</th>
+        </tr>
+      </thead>
+
+      </thead>
           <tbody>
             {visibleRowsData.map((row, index) => (
               <tr key={index}>
                 {row['Link'] ? (
-                  <td className="border p-1 bg-gray-200 justify-center text-center">
+                  <td className="border w-2/12 p-1 bg-gray-800 justify-center text-center">
                     <Link
                       href={row['Link']}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline hover:bg-gray-100 hover:p-1 rounded-lg border-slate-800 visited:opacity-20"
+                      className="hover:underline hover:bg-gray-100 hover:p-1 hover:text-black rounded-lg border-slate-800 visited:opacity-20"
                       passHref
                     >
                       {row['Proyecto']}
                     </Link>
                   </td>
                 ) : (
-                  <td className="border p-2">{row['Proyecto']}</td>
+                  <td className="border p-1">{row['Proyecto']}</td>
                 )}
-                <td className="border p-2">{row['Resumen']}</td>
-                <td className="border p-2">{row['Tipo Norma']}</td>
+                <td className="border p-1">{row['Resumen']}</td>
+                <td className="border p-1">{row['Tipo Norma']}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        {visibleRows < filteredData.length && (
+        {visibleRows  < filteredData.length && (
           <>
             <button
               onClick={handleShowMore}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              className="m-1  bg-gray-800 text-white px-4 py-1 rounded-md hover:bg-gray-600"
             >
                            Ver más...
             </button>
-            <button
+        { showLessButton ? (    <button
               onClick={handleShowLess}
-              className="mt-4 ml-4 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+              className="m-1 relative bg-slate-600 text-white p-1 rounded-md hover:bg-gray-600"
             >
               Ver menos...
-            </button>
+            </button>): null}
           </>
         )}
       </div>

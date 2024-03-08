@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
+import { Suspense } from 'react';
 
 
 
@@ -25,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
          <body >
+         <Suspense>
           <NavTop />
          {children}
          <NavFoot />
+         </Suspense>
       </body>
 
  
