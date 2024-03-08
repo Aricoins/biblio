@@ -18,7 +18,7 @@ const NavTop = () => {
   return (
     <div className="bg-[#fcfdfb] fixed top-0 left-0 flex justify-between w-full z-10 shadow">
     <Image src={logo} width={200} alt="logotipo" priority />
-    <ul className="flex flex-col sm:flex-row text-sm items-start sm:items-center justify-around w-full mx-4 sm:mx-28">
+    <ul className="flex sm:flex-row text-sm items-start sm:items-center justify-around w-full mx-4 sm:mx-28">
       <li className="sm:my-0">
         <Link href="/" >
           Inicio
