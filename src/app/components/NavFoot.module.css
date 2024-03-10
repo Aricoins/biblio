@@ -1,0 +1,39 @@
+/* styles.module.css */
+
+.navFoot {
+    background-color: #fcfdfb; /* Equivalente a bg-[#fcfdfb] */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navTopImage {
+    width: 20%;
+    height: 10%;
+  }
+  
+  .navTopList {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 4px; 
+    
+
+      }
+  
+  .link {
+    margin-bottom: 8px; /* Ajustar según necesidades */
+    cursor: pointer;
+    text-decoration: none;
+   color: #000;   
+   list-style: none;
+   align-self: center;
+  }
+ 
+  
