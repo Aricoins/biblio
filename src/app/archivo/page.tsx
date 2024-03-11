@@ -22,13 +22,14 @@ const Registro = () => {
       <div className={styles.component}>
           <ProyectosNoSancionados />
         </div>
-            <div className='col-span-6 mx-2 shadow-2xl'>
+       <div className={styles.component}>
           <ExpedientesOrdenanzas />
         </div>
-      
+       
         <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesComunicaciones />
    </div>
+   {/*
    <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesDeclaraciones />
         </div>
@@ -38,7 +39,7 @@ const Registro = () => {
         </div>
         <div className='col-span-6 mx-2 shadow-2xl'>
           <PCM />
-        </div>
+        </div> */}
       </div>
       </div>
       <NavFoot />

@@ -110,7 +110,7 @@ const handleSort = () => {
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Buscar en Resumen..."
+        placeholder=" Resumen..."
         className={`${styles.input} ${styles.searchInput}`}
       />
       <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
@@ -128,14 +128,14 @@ const handleSort = () => {
             <tr key={index}>
               {row['Link'] ? (
                 <td className={`${styles.tableCell} ${styles.linkCell}`}>
-                  <a
+                  <Link
                     href={row['Link']}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
                   >
                     {row['Proyecto']}
-                  </a>
+                  </Link>
                 </td>
               ) : (
                 <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>

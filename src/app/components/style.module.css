@@ -7,6 +7,7 @@
     justify-content: center;
     margin-left: 1%;
     margin-right: 1%;
+    cursor: pointer;
   }
   
   /* Fondo negro para el componente h2 */
@@ -17,7 +18,7 @@
   
   /* Estilos para la visibilidad del componente */
   .block {
-    diplay: block; 
+    display: block; 
      width: 96%;
     justify-content: center;
     margin-left: 2%
@@ -35,11 +36,12 @@
   }
   
   .projectSearchInput {
-    width: 16.6667%;
+    width: 66.6667%;
   }
   
   .searchInput {
-    width: 66.6667%;
+ 
+    width: 16.6667%;
   }
   
   /* Estilos para la tabla */
@@ -53,14 +55,14 @@
   .tableHeader1 {
     width: 16%;
     color: #fff;
-    background-color: #070000;
+    background-color: #03113a;
     border-collapse: collapse;
     border: 1px solid #fff;
   }
   .tableHeader2 {
     width: 70%;
     color: #fff;
-    background-color: #070000;
+    background-color: #050542;
     border-collapse: collapse;
     border: 1px solid #fff;
   }
