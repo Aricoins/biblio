@@ -104,14 +104,14 @@ const handleSort = () => {
         value={projectSearch}
         onChange={(e) => setProjectSearch(e.target.value)}
         placeholder="Número..."
-        className={`${styles.input} ${styles.projectSearchInput}`}
+        className={`${styles.input} ${styles.searchInput}`}
       />
       <input
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder=" Resumen..."
-        className={`${styles.input} ${styles.searchInput}`}
+        className={`${styles.input} ${styles.projectSearchInput}`}
       />
       <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
         <thead>
