@@ -1,7 +1,7 @@
 /* Estilos para el componente h2 */
 .h2 {
     font-size: large;
-    font-weight: 800;
+    font-weight: 500;
     height: 50%;
     display: flex;
     justify-content: center;
@@ -17,7 +17,10 @@
   
   /* Estilos para la visibilidad del componente */
   .block {
-    display: block;
+    diplay: block; 
+     width: 96%;
+    justify-content: center;
+    margin-left: 2%
   }
   
   /* Estilos para los input de búsqueda */
@@ -42,15 +45,29 @@
   /* Estilos para la tabla */
   .table {
     width: 100%;
-    color: #fff;
-    background-color: #808080;
+    color: #070000;
+    background-color: #e0d2d2;
     border-collapse: collapse;
     border: 1px solid #fff;
   }
   .tableHeader1 {
-    width: 18%;
+    width: 16%;
     color: #fff;
-    background-color: #808080;
+    background-color: #070000;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+  }
+  .tableHeader2 {
+    width: 70%;
+    color: #fff;
+    background-color: #070000;
+    border-collapse: collapse;
+    border: 1px solid #fff;
+  }
+  .tableHeader3 {
+    width: 14%;
+    color: #fff;
+    background-color: #070000;
     border-collapse: collapse;
     border: 1px solid #fff;
   }
@@ -60,7 +77,8 @@
   }
   
   .textWhite {
-    color: #fff;
+    color: #050000;
+    font-size: medium;
   }
   
   .borderCollapse {
@@ -78,7 +96,7 @@
   }
   
   .linkCell {
-    background-color: #800;
+    background-color: rgb(20, 19, 19);
     justify-content: center;
     text-align: center;
   }

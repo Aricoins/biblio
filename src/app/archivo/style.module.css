@@ -11,10 +11,13 @@
             margin-top: 50px;
             background-color: rgb(224, 218, 218);
             font-family: "Verdana"; 
-             }
+           
+        }
 
     .component { 
                 margin-top: 1%;
                 margin-bottom: 1%;
+                width: 99%;
+                justify-content: center;
     }
 

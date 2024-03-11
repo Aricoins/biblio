@@ -11,6 +11,7 @@ import ExpedientesComunicaciones from '../components/ExpedientesComunicaciones'
 import PCM from '../components/PCM'
 import styles from "./style.module.css"
 
+const Container = 'flex items-center justify-center text-sm h-2';
 
 const Registro = () => {
   return (
