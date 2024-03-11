@@ -20,7 +20,7 @@ const NavTop = () => {
     <div className={styles.navTop}>
     <Image src={logo} width={200} alt="logotipo" priority />
     <ul className={styles.navTopList}>
-      <li className="sm:my-0">
+    <li className="my-2 sm:my-0">
         <Link  className ={styles.link} href="/" >
           Inicio
         </Link>

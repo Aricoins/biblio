@@ -29,13 +29,14 @@ const Registro = () => {
         <div className={styles.component}>
           <ExpedientesComunicaciones />
    </div>
+   <div className={styles.component}>
+          <ExpedientesDeclaraciones />
+        </div>
     <div className={styles.component}>
           <ExpedientesResoluciones />
         </div>
    {/*
-   <div className='col-span-6 mx-2 shadow-2xl'>
-          <ExpedientesDeclaraciones />
-        </div>
+   
              
        
         <div className='col-span-6 mx-2 shadow-2xl'>
