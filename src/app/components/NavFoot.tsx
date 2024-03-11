@@ -2,23 +2,13 @@
 import Link from 'next/link';
 import logo from "../api/assets/concejo.png"
 import Image from 'next/image';
-import styled from "styled-components";
+import styles from './NavFoot.module.css';
 
-const Container = styled.div`
-  background-color: #fcfdfb;
-  position: fixed;
-  bottom: 0%;
-  left: 0%;
-  display: flex;
-  justify-content: space-between;
-  font-size: small;
-  width: 100%;
-  height: 10%;
-`;
+
 
 const NavFoot = () => {
   return (
-    <Container>
+    <div className ={ styles.navFoot }  >
       
       <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
       <li>
@@ -46,7 +36,7 @@ const NavFoot = () => {
       src={logo} 
       width={180}
       alt="logotipo"/>
-    </Container>
+    </div>
   );
 };
 

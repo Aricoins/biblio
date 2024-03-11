@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
 
@@ -27,4 +28,22 @@ async function GET() {
     console.error('Error reading Google Sheets:', error);
     return NextResponse.json({ message: 'Error reading Google Sheets' }, { status: 500 });
   }
+=======
+import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
+
+
+
+async function GET() {
+    try {
+        const { rows: books } = await sql`
+      SELECT * FROM libros Where disable = false`;
+        console.log(books);
+        return NextResponse.json({ books });
+    }
+    catch (error) {
+        console.error('Error fetching libros:', error);
+        return NextResponse.json({ message: 'Error fetching products' }, { status: 500 });
+    }
+>>>>>>> 8fcc7a7c53e0418af3e42cfb49c31b207041617a
 }
