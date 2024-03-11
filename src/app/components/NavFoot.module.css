@@ -12,12 +12,14 @@ bottom: 0;
   flex-direction: row;
  justify-content: space-between;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ height: 10%;
+ font-size: 80%;
   
 }
 
 .navFootImage {
   width: 20%;
-  height: 10%;
+  height: 5%;
 }
 
 .navFootList {
