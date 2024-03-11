@@ -10,17 +10,27 @@ import ExpedientesDeclaraciones from '../components/ExpedientesDeclaraciones'
 import ExpedientesComunicaciones from '../components/ExpedientesComunicaciones'
 import PCM from '../components/PCM'
 import styles from "./style.module.css"
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 
 const Container = 'flex items-center justify-center text-sm h-2';
 
 const Registro = () => {
+
+useEffect(() => {
+  Aos.init({duration: 2000});
+}
+, [])
+
+
   return (
     <>
       <NavTop />
-      <div className={styles.container}>
+      <div  className={styles.container} data-aos="flip-right" >
       <div className={styles.subcontainer}>
-      <div className={styles.component}>
-          <ProyectosNoSancionados />
+      <div  className={styles.component}>
+          <ProyectosNoSancionados  />
         </div>
        <div className={styles.component}>
           <ExpedientesOrdenanzas />
@@ -28,20 +38,16 @@ const Registro = () => {
        
         <div className={styles.component}>
           <ExpedientesComunicaciones />
-   </div>
-   <div className={styles.component}>
+</div>
+   <div  className={styles.component}>
           <ExpedientesDeclaraciones />
         </div>
     <div className={styles.component}>
           <ExpedientesResoluciones />
-        </div>
-   {/*
-   
-             
-       
-        <div className='col-span-6 mx-2 shadow-2xl'>
+        </div>             
+           <div  className={styles.component}>
           <PCM />
-        </div> */}
+        </div> 
       </div>
       </div>
       <NavFoot />
