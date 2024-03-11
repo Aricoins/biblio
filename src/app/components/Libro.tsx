@@ -36,14 +36,9 @@ const Libro: FC<LibroProps> = ({ libro }) => {
           <div className={styles.title}>{libro.titulo}</div>
           <h5 className={styles.author}>{libro.autor}</h5>
           {libro.decla ? (
-<<<<<<< HEAD
             <Link  href= "/libros" className={styles.declaLink}>
                 <p> Declaración {libro.decla}-CM-23</p>
           
-=======
-            <Link href="#">
-           
->>>>>>> 6da0d0f182ea291c29237d5b2fd4cac0c2087cab
             </Link>
           ) : null}
         </div>

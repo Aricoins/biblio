@@ -1,8 +1,9 @@
     .container { 
-        margin-top: 5%;
+        margin-top: 10%;
         font-size: x-small; 
         height: 60px;
         justify-content: center;
+        align-items: center;
    
     }
 
@@ -13,6 +14,7 @@
              }
 
     .component { 
-                
+                margin-top: 1%;
+                margin-bottom: 1%;
     }
 

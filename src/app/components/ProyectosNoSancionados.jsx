@@ -90,86 +90,88 @@ const handleSort = () => {
 
   const sortedData = sortData(visibleRowsData, sortOrder);
   return (
-    <>
-      <h2
-        className={styles.h2}
-        onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
-      >
-        Proyectos No Sancionados
-      </h2>
-      {isComponentVisible && (
-      <div className={`  ? 'block' : 'hidden'}`}>
-       
-        <input
-          type="text"
-          value={projectSearch}
-          onChange={(e) => setProjectSearch(e.target.value)}
-          placeholder="Número..."
-          className="w-2/12 my-1 border placeholder-black border-black p-1 rounded"
-        />
-         <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar en Resumen..."
-          className="w-8/12 my-1 border placeholder-black border-black p-1 rounded"
-        />
-     <table className="w-full text-white bg-gray-500 border-collapse border">
+<>
+  <h2
+    className={`${styles.h2} ${styles.h2Background}`}
+    onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+  >
+    Proyectos No Sancionados
+  </h2>
+  {isComponentVisible && (
+    <div className={`${styles.block}`}>
+      <input
+        type="text"
+        value={projectSearch}
+        onChange={(e) => setProjectSearch(e.target.value)}
+        placeholder="Número..."
+        className={`${styles.input} ${styles.projectSearchInput}`}
+      />
+      <input
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Buscar en Resumen..."
+        className={`${styles.input} ${styles.searchInput}`}
+      />
+      <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
         <thead>
           <tr>
-            <th className="border w-2/12 cursor-pointer" onClick={handleSort}>
+            <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
               Numero {sortOrder === 'asc' ? '▼' : '▲'}
             </th>
-            <th className="border w-8/12">Resumen</th>
-            <th className="border w-4/12">Tipo Norma</th>
+            <th className={`${styles.tableHeader} ${styles.border2}`}>Resumen</th>
+            <th className={`${styles.tableHeader} ${styles.border3}`}>Tipo Norma</th>
           </tr>
         </thead>
-
-          <tbody>
-            {visibleRowsData.map((row, index) => (
-              <tr key={index}>
-                {row['Link'] ? (
-                  <td className="border w-2/12 p-1 bg-gray-800 justify-center text-center">
-                    <Link
-                      href={row['Link']}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline hover:bg-gray-100 hover:p-1 hover:text-black rounded-lg border-slate-800 visited:opacity-20"
-                      passHref
-                    >
-                      {row['Proyecto']}
-                    </Link>
-                  </td>
-                ) : (
-                  <td className="border p-1">{row['Proyecto']}</td>
-                )}
-                <td className="border p-1">{row['Resumen']}</td>
-                <td className="border p-1">{row['Tipo Norma']}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
-        {visibleRows  < filteredData.length && (
-          <>
-          <div className="flex flex-row justify-end mr-0">
+        <tbody>
+          {visibleRowsData.map((row, index) => (
+            <tr key={index}>
+              {row['Link'] ? (
+                <td className={`${styles.tableCell} ${styles.linkCell}`}>
+                  <a
+                    href={row['Link']}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
+                  >
+                    {row['Proyecto']}
+                  </a>
+                </td>
+              ) : (
+                <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                  {row['Proyecto']}
+                </td>
+              )}
+              <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
+              <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {visibleRows < filteredData.length && (
+        <>
+          <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
             <button
               onClick={handleShowMore}
-              className="m-1  bg-gray-800 text-white p-1 rounded-md hover:bg-gray-600"
+              className={`${styles.button} ${styles.showMoreButton} ${styles.bgGray} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
             >
-                           Ver más...
+              Ver más...
             </button>
-        { showLessButton ? (    <button
-              onClick={handleShowLess}
-              className="m-1 relative bg-slate-600 text-white p-1 rounded-md hover:bg-gray-600"
-            >
-              Ver menos...
-            </button>): null}
-            </div>
-          </>
-        )}
-      </div>) }
-    </>
+            {showLessButton ? (
+              <button
+                onClick={handleShowLess}
+                className={`${styles.button} ${styles.showLessButton} ${styles.relative} ${styles.bgSlate} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
+              >
+                Ver menos...
+              </button>
+            ) : null}
+          </div>
+        </>
+      )}
+    </div>
+  )}
+</>
+
   );
 }
 
