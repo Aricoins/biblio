@@ -19,7 +19,7 @@ const Libro: FC<LibroProps> = ({ libro }) => {
 
   return (
    <>
-    <Link href={`/libros/${libro.id}`}>
+    <Link className={styles.link} href={`/libros/${libro.id}`}>
       <div className={styles.container} >
         <div className={styles.imageContainer}>  
           <Image
@@ -28,18 +28,17 @@ const Libro: FC<LibroProps> = ({ libro }) => {
             data-aos-duration="1000"
             src={libro.imagen ? libro.imagen : defaultImage}
             alt={libro.titulo}
-            width={300}
-            height={300}
+            width={200}
+            height={250}
           />
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.title}>{libro.titulo}</div>
           <h5 className={styles.author}>{libro.autor}</h5>
           {libro.decla ? (
-            <Link href="#">
-              <a className={styles.declaLink}>
-                <p className='text-xs'>Declaración {libro.decla}</p>
-              </a>
+            <Link  href= "/libros" className={styles.declaLink}>
+                <p> Declaración {libro.decla}-CM-23</p>
+          
             </Link>
           ) : null}
         </div>

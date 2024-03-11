@@ -1,0 +1,12 @@
+.h2 {
+    background-color: black;
+    color: white;
+font-size: large;
+font-weight: 800;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+   
+}

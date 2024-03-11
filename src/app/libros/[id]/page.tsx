@@ -2,6 +2,7 @@
 import { fetchDetailLibros } from "../../lib/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import styles from "./style.module.css"
 
 interface Detail{
   id: string;
@@ -45,18 +46,18 @@ export default function Detail({ params }: { params: { id: string } }) {
 
   return (
     <>
-    <div className='mt-20 mx-10 flex flex-row w-12/12'>
-     <div className="p-10 w-12/12">
+    <div className={styles.container}>
+     <div className={styles.imagen}>
       <Image src={librosDetail.imagen}
       alt={librosDetail.titulo} 
-      width={10000} 
-      height={1000} 
+      width={500} 
+      height={600} 
       className=""/>
       </div>
-      <div className="p-5 mb-10">
+      <div className={styles.texto}>
       <h1 className="p-5 text-4xl font-bold" >{librosDetail.titulo}</h1>
       <h2 className="p-5 text-2xl font-semibold" > de {librosDetail.autor}</h2>
-       <div className="p-5">
+       <div className={styles.resenia}>
   {librosDetail.resenia.split('. ').map((paragraph: any, index: any) => (
     <p  key={index}>{paragraph}</p>
   ))}

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
+import styles from "./style.module.css"
 
 function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
@@ -91,12 +92,13 @@ const handleSort = () => {
   return (
     <>
       <h2
-        className="text-xl h-2/4 w-12/12 bg-black text-white my-1 font-semibold text-center cursor-pointer"
+        className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
         Proyectos No Sancionados
       </h2>
-      <div className={`p-0 mb-0 border ${isComponentVisible ? 'block' : 'hidden'}`}>
+      {isComponentVisible && (
+      <div className={`  ? 'block' : 'hidden'}`}>
        
         <input
           type="text"
@@ -166,7 +168,7 @@ const handleSort = () => {
             </div>
           </>
         )}
-      </div>
+      </div>) }
     </>
   );
 }

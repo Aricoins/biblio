@@ -9,7 +9,7 @@ import ExpedientesOrdenanzas from '../components/ExpedientesOrdenanzas'
 import ExpedientesDeclaraciones from '../components/ExpedientesDeclaraciones'
 import ExpedientesComunicaciones from '../components/ExpedientesComunicaciones'
 import PCM from '../components/PCM'
-
+import styles from "./style.module.css"
 
 const Container = 'flex items-center justify-center text-sm h-2';
 
@@ -17,9 +17,9 @@ const Registro = () => {
   return (
     <>
       <NavTop />
-      <div className="gap-2">
-      <div className="mt-20">
-      <div className='col-span-6  mx-2 shadow-2xl'>
+      <div className={styles.container}>
+      <div className={styles.subcontainer}>
+      <div className={styles.component}>
           <ProyectosNoSancionados />
         </div>
             <div className='col-span-6 mx-2 shadow-2xl'>

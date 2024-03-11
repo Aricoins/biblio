@@ -2,39 +2,27 @@
 import Link from 'next/link';
 import logo from "../api/assets/concejo.png"
 import Image from 'next/image';
-import styled from "styled-components";
-
-const Container = styled.div`
-  background-color: #fcfdfb;
-  position: fixed;
-  bottom: 0%;
-  left: 0%;
-  display: flex;
-  justify-content: space-between;
-  font-size: small;
-  width: 100%;
-  height: 10%;
-`;
+import styles from './NavFoot.module.css';
 
 const NavFoot = () => {
   return (
-    <Container>
+    <div className={styles.navFoot}>
       
-      <ul className="flex text-6x1 items-center flex-row justify-between w-full mx-28">
+      <ul className={styles.navFootList}>
       <li>
-          <Link href="https://concejobariloche.gov.ar/" 
+          <Link className={styles.link  } href="https://concejobariloche.gov.ar/" 
           target="_blank">
           Concejo Municipal
           </Link>
         </li>
         <li>
-          <Link href="http://10.20.101.141/gbuscador/" 
+          <Link className={styles.link } href="http://10.20.101.141/gbuscador/" 
           target="_blank">
            Digesto Jurídico
           </Link>
         </li>
         <li>
-          <Link 
+          <Link  className={styles.link}
           href="https://concejobariloche.gov.ar/index.php?option=com_rsform&formId=5"
           target="_blank"
           >
@@ -46,7 +34,7 @@ const NavFoot = () => {
       src={logo} 
       width={180}
       alt="logotipo"/>
-    </Container>
+    </div>
   );
 };
 
