@@ -26,17 +26,18 @@ const Registro = () => {
           <ExpedientesOrdenanzas />
         </div>
        
-        <div className='col-span-6 mx-2 shadow-2xl'>
+        <div className={styles.component}>
           <ExpedientesComunicaciones />
    </div>
+    <div className={styles.component}>
+          <ExpedientesResoluciones />
+        </div>
    {/*
    <div className='col-span-6 mx-2 shadow-2xl'>
           <ExpedientesDeclaraciones />
         </div>
              
-        <div className='col-span-6  mx-2 shadow-2xl'>
-          <ExpedientesResoluciones />
-        </div>
+       
         <div className='col-span-6 mx-2 shadow-2xl'>
           <PCM />
         </div> */}

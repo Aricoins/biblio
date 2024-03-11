@@ -100,14 +100,14 @@ function ExpedientesComunicaciones() {
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
-            placeholder="Buscar por número..."
+            placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
           />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar en Resumen..."
+            placeholder="Resumen..."
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
        

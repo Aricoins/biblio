@@ -120,7 +120,7 @@ const handleSort = () => {
               Numero {sortOrder === 'asc' ? '▼' : '▲'}
             </th>
             <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
-            <th className={`${styles.tableHeader3} ${styles.border3}`}>Tipo Norma</th>
+            <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
           </tr>
         </thead>
         <tbody>
