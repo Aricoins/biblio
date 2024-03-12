@@ -1,5 +1,8 @@
 /* styles.module.css */
-
+.body{
+  background-color: rgb(149, 160, 160);
+  margin-bottom: 10%;
+}	
 .container {
     width: 90%;
     justify-content: center;
@@ -47,4 +50,3 @@
       grid-template-columns: repeat(1, minmax(0, 1fr));
     } 
   }
-  
