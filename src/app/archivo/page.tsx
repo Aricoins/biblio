@@ -14,8 +14,6 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 
-const Container = 'flex items-center justify-center text-sm h-2';
-
 const Registro = () => {
 
 useEffect(() => {
@@ -27,8 +25,8 @@ useEffect(() => {
   return (
     <>
       <NavTop />
-      <div  className={styles.container} data-aos="flip-right" >
-      <div className={styles.subcontainer}>
+      <div  className={styles.container}  >
+      <div className={styles.subcontainer} data-aos="flip-right">
       <div  className={styles.component}>
           <ProyectosNoSancionados  />
         </div>

@@ -5,12 +5,13 @@
         height: 60%;
         justify-content: center;
         align-items: center;
+        background-color: gradient(rgb(32, 15, 65), rgb(134, 8, 117));
    
     }
 
     .subcontainer  { 
             margin-top: 50px;
-            background-color: rgb(224, 218, 218);
+          
             font-family: "Verdana"; 
            
         }

@@ -117,7 +117,7 @@ const handleSort = () => {
         <thead>
           <tr>
             <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
-              Numero {sortOrder === 'asc' ? '▼' : '▲'}
+              Número {sortOrder === 'asc' ? '▼' : '▲'}
             </th>
             <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
             <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
