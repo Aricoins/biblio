@@ -17,7 +17,7 @@ import { useEffect } from 'react'
 const Registro = () => {
 
 useEffect(() => {
-  Aos.init({duration: 2000});
+  Aos.init({duration: 1000});
 }
 , [])
 
@@ -26,24 +26,24 @@ useEffect(() => {
     <>
       <NavTop />
       <div  className={styles.container}  >
-      <div className={styles.subcontainer} data-aos="flip-right">
-      <div  className={styles.component}>
+      <div className={styles.subcontainer}>
+      <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />
         </div>
-       <div className={styles.component}>
+       <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />
         </div>
        
-        <div className={styles.component}>
+        <div  data-aos="fade-up" className={styles.component}>
           <ExpedientesComunicaciones />
 </div>
-   <div  className={styles.component}>
+   <div data-aos="fade-up" className={styles.component}>
           <ExpedientesDeclaraciones />
         </div>
-    <div className={styles.component}>
+    <div data-aos="fade-up" className={styles.component}>
           <ExpedientesResoluciones />
         </div>             
-           <div  className={styles.component}>
+           <div data-aos="fade-up" className={styles.component}>
           <PCM />
         </div> 
       </div>
