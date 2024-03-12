@@ -1,14 +1,18 @@
     .container { 
-        margin-top: 12%;
+        margin-top: 8%;
         margin-bottom: 20%;
         font-size: x-small; 
         height: 60%;
         justify-content: center;
         align-items: center;
-        background-color: gradient(rgb(32, 15, 65), rgb(134, 8, 117));
+        padding: 2%;
+        height: 100vh
    
     }
 
+    .body{
+        background-color: rgb(232, 233, 233);
+    }
     .subcontainer  { 
             margin-top: 50px;
           
