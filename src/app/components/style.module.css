@@ -153,6 +153,7 @@
     color: #fff;
     padding: 0.25rem;
     border-radius: 0.25rem;
+    margin-right: 55%;
   }
   
   .showLessButton {
@@ -160,6 +161,7 @@
     color: #fff;
     padding: 0.25rem;
     border-radius: 0.25rem;
+    margin-right: 15%;
   }
   
   .showLessButton.disabled {

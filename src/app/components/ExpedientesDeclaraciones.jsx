@@ -5,6 +5,24 @@ import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
 
+const sortData = (data, order) => {
+  if (!Array.isArray(data)) {
+    console.error('Error: Data is not an array');
+    return data;
+  }
+
+  return data.slice().sort((a, b) => {
+    const [numeroA, cmA, yearA] = a['Numero'].split('-');
+    const [numeroB, cmB, yearB] = b['Numero'].split('-');
+
+    if (order === 'desc') {
+      return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
+    } else {
+      return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
+    }
+  });
+};
+
 function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
@@ -22,12 +40,13 @@ function ExpedientesDeclaraciones() {
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
         setData(results.data);
+       
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
   }, []);
-
+  
   const filteredData = data.filter((row) => {
     if (search && projectSearch) {
       return (
@@ -37,10 +56,8 @@ function ExpedientesDeclaraciones() {
         row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        )
+      return diacritics.remove(row['Resumen'].toLowerCase()).includes(
+        diacritics.remove(search.toLowerCase())
       );
     } else if (projectSearch) {
       return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
@@ -49,8 +66,10 @@ function ExpedientesDeclaraciones() {
     return true;
   });
 
+  const sortedFilteredData = sortData(filteredData, sortOrder);
+
   // Filtrar solo las filas visibles según el estado
-  const visibleRowsData = filteredData.slice(0, visibleRows);
+  const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
     setVisibleRows((prevRows) => prevRows + 10);
@@ -70,34 +89,22 @@ function ExpedientesDeclaraciones() {
     setIsComponentVisible((prevVisibility) => !prevVisibility);
   };
 
-  const sortData = (data, order) => {
-    return data.sort((a, b) => {
-      const [numeroA, cmA, yearA] = a['Numero'].split('-');
-      const [numeroB, cmB, yearB] = b['Numero'].split('-');
 
-      if (order === 'asc') {
-        return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
-      } else {
-        return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
-      }
-    });
-  };
-
+  
   const handleSort = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-    setVisibleRows(visibleRows);
+    setVisibleRows((prevVisibleRows) => sortData(prevVisibleRows, sortOrder)); // Ordenar los datos al cambiar el orden
     setShowLessButton(true);
   };
-
+  
   const sortedData = sortData(visibleRowsData, sortOrder);
+  
   return (
     <>
-      <h2
-        className={`text-xl bg-black text-white h-2/4 font-semibold text-center cursor-pointer ${
-          isComponentVisible ? 'border-b-2 border-white' : ''
-        } ${styles.h2} ${styles.h2Background}`}
-        onClick={handleHeaderClick}
-      >
+       <h2
+    className={`${styles.h2} ${styles.h2Background}`}
+    onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+  >
         Expedientes Declaraciones
       </h2>
 
@@ -158,7 +165,7 @@ function ExpedientesDeclaraciones() {
              <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
               <button
                 onClick={handleShowMore}
-                className={`${styles.button} ${styles.showMoreButton} ${styles.bgBlue} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgGray}`}
+                className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
               >
                 Ver más...
               </button>

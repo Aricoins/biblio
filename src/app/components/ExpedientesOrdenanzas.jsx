@@ -64,7 +64,7 @@ function ExpedientesOrdenanzas() {
   const handleShowLess = () => {
     if (visibleRows > 1) {
       setVisibleRows((prevRows) => prevRows - 10);
-      setShowLessButton(visibleRows - 10 > 0);
+      setShowLessButton(visibleRows - 10 > 1);
     }
   };
   const sortData = (data, order) => {
@@ -147,7 +147,7 @@ function ExpedientesOrdenanzas() {
         <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
           <button
             onClick={handleShowMore}
-            className={`${styles.button} ${styles.showMoreButton} ${styles.bgBlue} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgGray}`}
+            className={styles.showMoreButton}
           >
             Ver más...
           </button>
@@ -155,7 +155,7 @@ function ExpedientesOrdenanzas() {
         {showLessButton ? (
            <button
            onClick={handleShowLess}
-           className={`${styles.button} ${styles.showLessButton} ${styles.relative} ${styles.bgSlate} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
+           className={styles.showLessButton}
          >
               Ver menos...
             </button>

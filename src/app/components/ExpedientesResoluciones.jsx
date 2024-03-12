@@ -170,7 +170,7 @@ function ExpedientesResoluciones() {
           <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
             <button
               onClick={handleShowMore}
-              className={`${styles.mt4} ${styles.bgBlue500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgGray}`}
+              className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
             >
               Ver más...
             </button>

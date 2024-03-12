@@ -3,24 +3,48 @@
 .navFoot {
   background-color: #fcfdfb; /* Equivalente a bg-[#fcfdfb] */
   position: fixed;
-bottom: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
- justify-content: space-between;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- height: 10%;
- font-size: 80%;
-  
+  justify-content: space-between;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 10%;
+  font-size: 90%;
+
 }
 
 .navFootImage {
   width: 20%;
-  height: 5%;
+  height: 100%
 }
+
+@media (max-width: 700px){
+  .navFoot {
+    font-size: 80%;
+    
+  }
+  .navFootImage{
+    width: 80%;
+    height: 80%;
+  }
+}
+@media (max-width: 450px){
+  .navFoot {
+    font-size: 50%;
+    
+  }
+  .navFootImage{
+    width: 50%;
+    height: 60%;
+    margin-top: 4%;
+  }
+}
+
+
 
 .navFootList {
   display: flex;
@@ -31,16 +55,21 @@ bottom: 0;
   align-self: center;
   text-decoration: none;
   list-style: none;
-  
+  box-shadow: 4px 2px 8px 2px rgba(0, 0, 0, 0.1);
+  flex-direction: row;
+   justify-content: space-between;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 100%;
+}
 
-    }
-    .navFootList a:hover {
-      background-color: #042346;
-      padding: 10px;
-      color: white;
-      border-radius: 5px;
-      opacity: 0.8;
-    }
+.item {
+
+padding: 2%;
+border: 2px;
+border-color: black;
+
+}
+   
 
 .link {
   margin-bottom: 8px; /* Ajustar según necesidades */
@@ -52,6 +81,13 @@ bottom: 0;
  text-decoration: none;
   list-style: none;
  
-
 }
+
+.item:hover {
+  background-color: rgb(4, 36, 72, 0.5);
+  
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
 

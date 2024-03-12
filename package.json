@@ -28,6 +28,7 @@
     "papa": "^0.0.0",
     "papaparse": "^5.4.1",
     "pg-promise": "^11.5.4",
+    "postcss-nested": "^6.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recoil": "^0.7.7",

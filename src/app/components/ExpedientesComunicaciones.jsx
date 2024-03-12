@@ -1,9 +1,27 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css'; // Asegúrate de importar el módulo de estilos correspondiente
+
+const sortData = (data, order) => {
+  if (!Array.isArray(data)) {
+    console.error('Error: Data is not an array');
+    return data;
+  }
+
+  return data.slice().sort((a, b) => {
+    const [numeroA, cmA, yearA] = a['Numero'].split('-');
+    const [numeroB, cmB, yearB] = b['Numero'].split('-');
+
+    if (order === 'desc') {
+      return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
+    } else {
+      return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
+    }
+  });
+};
 
 function ExpedientesComunicaciones() {
   const [data, setData] = useState([]);
@@ -37,10 +55,8 @@ function ExpedientesComunicaciones() {
         row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
       );
     } else if (search) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        )
+      return diacritics.remove(row['Resumen'].toLowerCase()).includes(
+        diacritics.remove(search.toLowerCase())
       );
     } else if (projectSearch) {
       return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
@@ -49,7 +65,10 @@ function ExpedientesComunicaciones() {
     return true;
   });
 
-  const visibleRowsData = filteredData.slice(0, visibleRows);
+  const sortedFilteredData = sortData(filteredData, sortOrder);
+  
+  
+  const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
     setVisibleRows((prevRows) => prevRows + 10);
@@ -65,17 +84,8 @@ function ExpedientesComunicaciones() {
     }
   };
 
-  const sortData = (data, order) => {
-    return data.sort((a, b) => {
-      const [numeroA, cmA, yearA] = a['Numero'].split('-');
-      const [numeroB, cmB, yearB] = b['Numero'].split('-');
-
-      if (order === 'asc') {
-        return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
-      } else {
-        return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
-      }
-    });
+  const handleHeaderClick = () => {
+    setIsComponentVisible((prevVisibility) => !prevVisibility);
   };
 
   const handleSort = () => {
@@ -96,7 +106,7 @@ function ExpedientesComunicaciones() {
       </h2>
       {isComponentVisible && (
         <div className={styles.block}>
-            <input
+          <input
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
@@ -110,12 +120,11 @@ function ExpedientesComunicaciones() {
             placeholder="Resumen..."
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-       
           <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
             <thead>
               <tr>
                 <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
-                Número {sortOrder === 'asc' ? '▼' : '▲'}
+                  Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border}`}>Resumen</th>
                 <th className={`${styles.tableHeader3} ${styles.border}`}>Año</th>
@@ -137,41 +146,42 @@ function ExpedientesComunicaciones() {
                       </Link>
                     </td>
                   ) : (
-                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Numero']}</td>
-                  )}
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          {visibleRows < filteredData.length && (
-            <>
-              <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
-                <button
-                  onClick={handleShowMore}
-                  className={`${styles.button} ${styles.showMoreButton} ${styles.bgBlue} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgGray}`}
-                >
-                  Ver más...
-                </button>
-
-                {showLessButton ? (
+                    <td className={`${styles.tableCell
+                    } ${styles.border} ${styles.padding}`}>{row['Numero']}</td>
+                    )}
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+  
+            {visibleRows < filteredData.length && (
+              <>
+                <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
                   <button
-                    onClick={handleShowLess}
-                    className={`${styles.button} ${styles.showLessButton} ${styles.relative} ${styles.bgSlate} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
+                    onClick={handleShowMore}
+                    className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
                   >
-                    Ver menos...
+                    Ver más...
                   </button>
-                ) : null}
-              </div>
-            </>
-          )}
-        </div>
-      )}
-    </>
-  );
-}
-
-export default ExpedientesComunicaciones;
-
+  
+                  {showLessButton ? (
+                    <button
+                      onClick={handleShowLess}
+                      className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
+                    >
+                      Ver menos...
+                    </button>
+                  ) : null}
+                </div>
+              </>
+            )}
+          </div>
+        )}
+      </>
+    );
+  }
+  
+  export default ExpedientesComunicaciones;
+  

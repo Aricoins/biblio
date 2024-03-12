@@ -18,27 +18,26 @@ const NavTop = () => {
   }
   return (
     <div className={styles.navTop}>
-    <Image src={logo} width={200} alt="logotipo" priority />
+    <Image src={logo} width={200} className={styles.navTopImage} alt="logotipo" priority />
     <ul className={styles.navTopList}>
-    <li className="my-2 sm:my-0">
+    <li className= {styles.item}>
         <Link  className ={styles.link} href="/" >
           Inicio
         </Link>
       </li>
-      <li className="my-2 sm:my-0">
+      <li className={styles.item}>
         <Link  className ={styles.link} href="/libros" >
         Bilioteca
         </Link>
       </li>
-      <li className="my-2 sm:my-0">
-        <Link className ={styles.link} href="/archivo" >
+      <li className={styles.item}>        <Link className ={styles.link} href="/archivo" >
           Archivo
         </Link>
       </li>
-      <li className="my-2 sm:my-0" onClick={endev} >
+      <li className={styles.item} onClick={endev} >
         Ingresar
       </li>
-      {/* <li className="my-2 sm:my-0">
+      {/* <li className={styles.item}>
         <Link href="/libros/form" >
           Agregar Libro
         </Link>

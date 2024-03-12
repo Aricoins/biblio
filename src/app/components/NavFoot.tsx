@@ -9,31 +9,28 @@ const NavFoot = () => {
     <div className={styles.navFoot}>
       
       <ul className={styles.navFootList}>
-      <li>
+      <li className={styles.item}>
           <Link className={styles.link  } href="https://concejobariloche.gov.ar/" 
           target="_blank">
           Concejo Municipal
           </Link>
         </li>
-        <li>
+        <li className={styles.item}>
           <Link className={styles.link } href="http://10.20.101.141/gbuscador/" 
-          target="_blank">
-           Digesto Jurídico
-          </Link>
+          target="_blank">Digesto Jurídico</Link>
         </li>
-        <li>
+        <li className={styles.item}>
           <Link  className={styles.link}
           href="https://concejobariloche.gov.ar/index.php?option=com_rsform&formId=5"
           target="_blank"
-          >
-           Mesa de entradas
-          </Link>
+          >Mesa de Entradas</Link>
         </li>
 </ul>
       <Image 
       src={logo} 
-      width={180}
-      alt="logotipo"/>
+      width={150}
+      alt="logotipo"
+      className={styles.navFootImage}/>
     </div>
   );
 };

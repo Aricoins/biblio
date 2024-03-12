@@ -153,14 +153,14 @@ const handleSort = () => {
           <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
             <button
               onClick={handleShowMore}
-              className={`${styles.button} ${styles.showMoreButton} ${styles.bgGray} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
+              className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
             >
               Ver más...
             </button>
             {showLessButton ? (
               <button
                 onClick={handleShowLess}
-                className={`${styles.button} ${styles.showLessButton} ${styles.relative} ${styles.bgSlate} ${styles.textWhite} ${styles.p} ${styles.roundedMd} ${styles.hoverBgGray}`}
+                className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
               >
                 Ver menos...
               </button>
