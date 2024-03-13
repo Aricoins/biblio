@@ -88,7 +88,7 @@ function ProyectosNoSancionados() {
       );
 
       if (matchingProjects.length === 0) {
-        alert('No results found for the entered project number.');
+        alert(`No existe un proyecto no sancionado con el numero ${projectSearch}.`);
       }
     }
   };
