@@ -5,6 +5,23 @@ import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from "./style.module.css"
 
+const sortData = (data, order) => {
+  return data.sort((a, b) => {
+    const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
+    const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
+
+    const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
+    const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
+
+    if (order === 'asc') {
+      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+    } else {
+      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+    }
+  });
+};
+
+
 function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
@@ -31,21 +48,7 @@ function ProyectosNoSancionados() {
       });
   }, []);
 
-  const sortData = (data, order) => {
-    return data.sort((a, b) => {
-      const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
-      const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
-
-      const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
-      const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
-
-      if (order === 'asc') {
-        return yearA !== yearB ? yearA - yearB : projectA - projectB;
-      } else {
-        return yearB !== yearA ? yearB - yearA : projectB - projectA;
-      }
-    });
-  };
+  
 
   const filteredData = data.filter((row) => {
     if (search && projectSearch) {
@@ -68,18 +71,27 @@ function ProyectosNoSancionados() {
     return true;
   });
 
-  // Filtrar solo las filas visibles según el estado
 
-  const visibleRowsData = filteredData.slice(0, visibleRows);
+  const sortedFilteredData = sortData(filteredData, sortOrder);
 
+  const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
+
+  // const handleShowMore = () => {
+  //   setVisibleRows((prevRows) => Math.min(prevRows + 9, filteredData.length));
+  //   setShowLessButton(true);
+  // };
   const handleShowMore = () => {
-    setVisibleRows((prevRows) => Math.min(prevRows + 9, filteredData.length));
+    setVisibleRows((prevRows) => prevRows + 10);
     setShowLessButton(true);
   };
 
   const handleShowLess = () => {
-    setVisibleRows(1);
-    setShowLessButton(false);
+    if (visibleRows > 10) {
+      setVisibleRows((prevRows) => prevRows - 10);
+      setShowLessButton(false);
+    } else {
+      setVisibleRows(10);
+    }
   };
 
 const handleSort = () => {
@@ -124,7 +136,7 @@ const handleSort = () => {
           </tr>
         </thead>
         <tbody>
-          {visibleRowsData.map((row, index) => (
+          {sortedData.map((row, index) => (
             <tr key={index}>
               {row['Link'] ? (
                 <td className={`${styles.tableCell} ${styles.linkCell}`}>
