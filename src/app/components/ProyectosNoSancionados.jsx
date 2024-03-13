@@ -4,6 +4,11 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
+
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
@@ -64,6 +69,8 @@ function ProyectosNoSancionados() {
     return true;
   });
 
+
+ 
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
@@ -95,9 +102,20 @@ function ProyectosNoSancionados() {
     });
 
     if (!projectFound) {
-      alert('El número ingresado no es un proyecto sin sanción');
+     
+      Swal.fire({
+        icon: "warning",
+        title: "Oops...",
+        text: "No se encontró un proyecto con ese número!",
+        footer: `Realice una nueva búsqueda`
+      })
+      .then(() => {
+        MySwal.close(); // Close the loading spinner
+        MySwal.fire(<p> Busque entre los expedientes de normas sancionadas</p>);
+      });
     }
   };
+
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
