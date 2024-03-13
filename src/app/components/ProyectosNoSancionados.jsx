@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
-
-const MySwal = withReactContent(Swal);
-
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
@@ -30,6 +25,7 @@ function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
+
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
@@ -37,9 +33,7 @@ function ProyectosNoSancionados() {
 
   useEffect(() => {
     axios
-      .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv'
-      )
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
         const sortedData = sortData(results.data, 'desc');
@@ -53,24 +47,16 @@ function ProyectosNoSancionados() {
   }, []);
 
   const filteredData = data.filter((row) => {
-    if (search || projectSearch) {
-      const [numeroProyecto] = row['Proyecto'].split('-');
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        ) &&
-        (projectSearch
-          ? numeroProyecto === projectSearch
-          : numeroProyecto.toLowerCase().startsWith(search.toLowerCase()))
-      );
-    }
- 
+    const numeroProyecto = row['Proyecto'].split('-')[0];
+    const searchTerm = diacritics.remove(search.toLowerCase());
+    const proyectoLowerCase = numeroProyecto.toLowerCase();
 
-    return true;
+    return (
+      diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
+      (projectSearch === '' || numeroProyecto === projectSearch)
+    );
   });
 
-
- 
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
@@ -95,33 +81,18 @@ function ProyectosNoSancionados() {
   };
 
   const sortedData = sortData(visibleRowsData, sortOrder);
-  const handleProjectSearch = () => {
-    const projectFound = data.some((row) => {
-      const [numeroProyecto] = row['Proyecto'].split('-');
-      return numeroProyecto === projectSearch;
-    });
+  const handleProjectSearchEnter = (e) => {
+    if (e.key === 'Enter') {
+      const matchingProjects = filteredData.filter(
+        (row) => row['Proyecto'].split('-')[0] === projectSearch
+      );
 
-    if (!projectFound) {
-     
-      Swal.fire({
-        icon: "warning",
-        title: "Oops...",
-        text: "No se encontró un proyecto con ese número!",
-        footer: `Realice una nueva búsqueda`
-      })
-      .then(() => {
-        MySwal.close(); // Close the loading spinner
-        MySwal.fire(<p> Busque entre los expedientes de normas sancionadas</p>);
-      });
+      if (matchingProjects.length === 0) {
+        alert('No results found for the entered project number.');
+      }
     }
   };
 
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleProjectSearch();
-    }
-  };
   return (
     <>
       <h2
@@ -131,25 +102,22 @@ function ProyectosNoSancionados() {
         Proyectos No Sancionados | 2011 - 2016
       </h2>
       {isComponentVisible && (
-       <div className={styles.block}>
-       <input
-         type="text"
-         value={projectSearch}
-         onChange={(e) => setProjectSearch(e.target.value)}
-         placeholder="Número..."
-         className={`${styles.input} ${styles.searchInput}`}
-         onKeyPress={handleKeyPress}
-       />
-      <input
-  type="text"
-  value={search}
-  onChange={(e) => setSearch(e.target.value)}
-  placeholder=" Resumen..."
-  className={`${styles.input} ${styles.projectSearchInput}`}
-  onKeyDown={handleKeyPress}
-/>
-
-         
+        <div className={`${styles.block}`}>
+         <input
+            type="text"
+            value={projectSearch}
+            onChange={(e) => setProjectSearch(e.target.value)}
+            onKeyDown={handleProjectSearchEnter}
+            placeholder="Número..."
+            className={`${styles.input} ${styles.searchInput}`}
+          />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder=" Resumen..."
+            className={`${styles.input} ${styles.projectSearchInput}`}
+          />
           <table
             data-aos="fade-up"
             data-aos-duration="300"
@@ -160,7 +128,6 @@ function ProyectosNoSancionados() {
                 <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
-            
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
                 <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
               </tr>
@@ -206,6 +173,7 @@ function ProyectosNoSancionados() {
           )}
         </div>
       )}
+
     </>
   );
 }
