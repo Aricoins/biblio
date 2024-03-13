@@ -59,6 +59,7 @@ function ProyectosNoSancionados() {
           : numeroProyecto.toLowerCase().startsWith(search.toLowerCase()))
       );
     }
+ 
 
     return true;
   });
@@ -87,7 +88,16 @@ function ProyectosNoSancionados() {
   };
 
   const sortedData = sortData(visibleRowsData, sortOrder);
+  const handleProjectSearch = () => {
+    const projectFound = data.some((row) => {
+      const [numeroProyecto] = row['Proyecto'].split('-');
+      return numeroProyecto === projectSearch;
+    });
 
+    if (!projectFound) {
+      alert('El número ingresado no es un proyecto sin sanción');
+    }
+  };
   return (
     <>
       <h2
@@ -105,6 +115,9 @@ function ProyectosNoSancionados() {
             placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
           />
+           <button onClick={handleProjectSearch} className={styles.searchButton}>
+            Buscar
+          </button>
           <input
             type="text"
             value={search}
@@ -112,6 +125,7 @@ function ProyectosNoSancionados() {
             placeholder=" Resumen..."
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
+         
           <table
             data-aos="fade-up"
             data-aos-duration="300"
