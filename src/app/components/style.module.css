@@ -12,7 +12,10 @@
     color: white;
   }
   
-
+.alert{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+}
   
   /* Estilos para la visibilidad del componente */
   .block {

@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
+import Swal from 'sweetalert2';
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
@@ -81,17 +82,37 @@ function ProyectosNoSancionados() {
   };
 
   const sortedData = sortData(visibleRowsData, sortOrder);
+
   const handleProjectSearchEnter = (e) => {
     if (e.key === 'Enter') {
-      const matchingProjects = filteredData.filter(
-        (row) => row['Proyecto'].split('-')[0] === projectSearch
-      );
-
-      if (matchingProjects.length === 0) {
-        alert(`No existe un proyecto no sancionado con el numero ${projectSearch}.`);
+      e.preventDefault(); // Prevent the default behavior of the Enter key
+  
+      // Check if the event is already handled
+      if (!e.handled) {
+        e.handled = true;
+  
+        const matchingProjects = filteredData.filter(
+          (row) => row['Proyecto'].split('-')[0] === projectSearch
+        );
+  
+        if (matchingProjects.length === 0) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: `El número ${projectSearch} no es un Proyecto No Sancionado .`,
+            footer: 'Busque entre los expedientes sancionados.',
+            customClass: {
+              title: `${styles.alert}`, 
+              content: `${styles.alert}`, 
+            },
+          }).then(() => {
+            setProjectSearch('');
+          });
+        }
       }
     }
   };
+  
 
   return (
     <>
