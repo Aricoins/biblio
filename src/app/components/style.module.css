@@ -23,7 +23,7 @@
 .alert{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.5rem;
-  background-color: #052341;
+  background-color: #000204;
   color: white;
   text-align: center;
   margin-top: 1%;
@@ -32,7 +32,8 @@
 
   }
 .content {
-  background-color: red;
+  background-color: rgb(26, 24, 24);
+  color: rgb(249, 245, 245);
 }
   
   /* Estilos para la visibilidad del componente */

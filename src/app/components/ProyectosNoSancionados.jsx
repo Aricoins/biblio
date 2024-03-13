@@ -106,6 +106,9 @@ function ProyectosNoSancionados() {
               title: `${styles.alert}`, 
               content: `${styles.content}`, 
             },
+            background: "#032138",
+            color: "white",
+            borderRadius: "50%",
           }).then(() => {
             setProjectSearch('');
           });
