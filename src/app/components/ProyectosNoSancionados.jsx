@@ -98,6 +98,12 @@ function ProyectosNoSancionados() {
       alert('El número ingresado no es un proyecto sin sanción');
     }
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleProjectSearch();
+    }
+  };
   return (
     <>
       <h2
@@ -107,24 +113,24 @@ function ProyectosNoSancionados() {
         Proyectos No Sancionados | 2011 - 2016
       </h2>
       {isComponentVisible && (
-        <div className={styles.block}>
-          <input
-            type="text"
-            value={projectSearch}
-            onChange={(e) => setProjectSearch(e.target.value)}
-            placeholder="Número..."
-            className={`${styles.input} ${styles.searchInput}`}
-          />
-           <button onClick={handleProjectSearch} className={styles.searchButton}>
-            Buscar
-          </button>
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder=" Resumen..."
-            className={`${styles.input} ${styles.projectSearchInput}`}
-          />
+       <div className={styles.block}>
+       <input
+         type="text"
+         value={projectSearch}
+         onChange={(e) => setProjectSearch(e.target.value)}
+         placeholder="Número..."
+         className={`${styles.input} ${styles.searchInput}`}
+         onKeyPress={handleKeyPress}
+       />
+      <input
+  type="text"
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  placeholder=" Resumen..."
+  className={`${styles.input} ${styles.projectSearchInput}`}
+  onKeyDown={handleKeyPress}
+/>
+
          
           <table
             data-aos="fade-up"
