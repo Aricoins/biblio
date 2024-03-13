@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
 import { Suspense } from 'react';
+import styles from './style.module.css';
 
 
 
@@ -25,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-         <body >
+         <body className={styles.body}>
          <Suspense>
           <NavTop />
          {children}

@@ -10,25 +10,30 @@
     cursor: pointer;
     background-color: black;
     color: white;
+    transition: 0.3s;
   }
   .h2:hover {
-    background-color: #bbc1d0;
+    background-color: #f7f8fa;
     color: black;
-    border: black 2px solid;
+    border: black 1px solid;
+
+    
   }
   
 .alert{
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.5rem;
-  background-color: #708090;
+  background-color: #052341;
   color: white;
   text-align: center;
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 1%;
-  border-radius: 8%;
-  }
 
+  }
+.content {
+  background-color: red;
+}
   
   /* Estilos para la visibilidad del componente */
   .block {

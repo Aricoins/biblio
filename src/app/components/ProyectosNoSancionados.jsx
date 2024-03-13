@@ -100,11 +100,11 @@ function ProyectosNoSancionados() {
           Swal.fire({
             icon:  'info',
             title: 'Atención',
-            text: `El ${projectSearch} no se encuentra entre los Proyecto No Sancionados.`,
-            footer: 'Busque entre los Expedientes Sancionados.',
+            text: `El Proyecto ${projectSearch} no se encuentra entre los No Sancionados.`,
+            footer: 'Ingrese otro número o busque entre los Expedientes Sancionados.',
             customClass: {
               title: `${styles.alert}`, 
-              content: `${styles.alert}`, 
+              content: `${styles.content}`, 
             },
           }).then(() => {
             setProjectSearch('');
