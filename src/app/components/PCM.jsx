@@ -88,7 +88,7 @@ function PCM() {
   return (
     <>
       <h2
-        className={`${styles.h2} ${styles.h2Background} text-xl h-2/4 w-12/12 bg-black text-white my-2 font-semibold text-center cursor-pointer`}
+        className={`${styles.h2} ${styles.h2Background}`}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
         Resoluciones PCM | 1988 - actualidad
