@@ -13,9 +13,17 @@
   }
   
 .alert{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
-}
+  background-color: #708090;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  border-radius: 8%;
+  }
+
   
   /* Estilos para la visibilidad del componente */
   .block {

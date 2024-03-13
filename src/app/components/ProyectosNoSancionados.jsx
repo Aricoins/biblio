@@ -5,6 +5,7 @@ import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
 import Swal from 'sweetalert2';
+import logo from '../api/assets/moran.png';
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
@@ -97,10 +98,10 @@ function ProyectosNoSancionados() {
   
         if (matchingProjects.length === 0) {
           Swal.fire({
-            icon: 'warning',
-            title: 'Oops...',
-            text: `El número ${projectSearch} no es un Proyecto No Sancionado .`,
-            footer: 'Busque entre los expedientes sancionados.',
+            icon:  'info',
+            title: 'Atención',
+            text: `El ${projectSearch} no se encuentra entre los Proyecto No Sancionados.`,
+            footer: 'Busque entre los Expedientes Sancionados.',
             customClass: {
               title: `${styles.alert}`, 
               content: `${styles.alert}`, 
