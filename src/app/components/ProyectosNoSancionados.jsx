@@ -117,7 +117,7 @@ const handleSort = () => {
     className={styles.h2}
     onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
   >
-    Proyectos No Sancionados
+    Proyectos No Sancionados | 2011 - 2016
   </h2>
   {isComponentVisible && (
     <div className={`${styles.block}`}>

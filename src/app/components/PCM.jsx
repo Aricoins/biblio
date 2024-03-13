@@ -91,7 +91,7 @@ function PCM() {
         className={`${styles.h2} ${styles.h2Background} text-xl h-2/4 w-12/12 bg-black text-white my-2 font-semibold text-center cursor-pointer`}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-        Resoluciones PCM
+        Resoluciones PCM | 1988 - actualidad
       </h2>
       {isComponentVisible && (
       <div

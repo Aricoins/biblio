@@ -105,7 +105,7 @@ function ExpedientesDeclaraciones() {
     className={`${styles.h2} ${styles.h2Background}`}
     onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
   >
-        Expedientes Declaraciones
+        Expedientes Declaraciones | 1988 - actualidad
       </h2>
 
       {isComponentVisible && (
