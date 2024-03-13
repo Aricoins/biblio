@@ -25,11 +25,14 @@ const sortData = (data, order) => {
 function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
-  const [projectSearch, setProjectSearch] = useState('');
+  const [projectSearch, setProjectSearch] = useState({ value: '', exact: false });
+
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('desc');
+  const [exactSearch, setExactSearch] = useState(false);
+
 
   useEffect(() => {
     axios
@@ -51,12 +54,15 @@ function ProyectosNoSancionados() {
   
 
   const filteredData = data.filter((row) => {
-    if (search && projectSearch) {
+    if (search && projectSearch.value) {
+      const [numeroProyecto] = row['Proyecto'].split('-');
       return (
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase())
+        (projectSearch.exact
+          ? numeroProyecto === projectSearch.value
+          : numeroProyecto.toLowerCase().startsWith(projectSearch.value.toLowerCase()))
       );
     } else if (search) {
       return (
@@ -64,14 +70,18 @@ function ProyectosNoSancionados() {
           diacritics.remove(search.toLowerCase())
         )
       );
-    } else if (projectSearch) {
-      return row['Proyecto'].toLowerCase().includes(projectSearch.toLowerCase());
+    } else if (projectSearch.value) {
+      const [numeroProyecto] = row['Proyecto'].split('-');
+      return (
+        projectSearch.exact
+          ? numeroProyecto === projectSearch.value
+          : numeroProyecto.toLowerCase().startsWith(projectSearch.value.toLowerCase())
+      );
     }
-
+  
     return true;
   });
-
-
+  
   const sortedFilteredData = sortData(filteredData, sortOrder);
 
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
@@ -104,20 +114,30 @@ const handleSort = () => {
   return (
 <>
   <h2
-    className={`${styles.h2} ${styles.h2Background}`}
+    className={styles.h2}
     onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
   >
     Proyectos No Sancionados
   </h2>
   {isComponentVisible && (
     <div className={`${styles.block}`}>
+      <label >
+    <input
+    type="checkbox"
+    checked={exactSearch}
+    onChange={() => setExactSearch((prevExact) => !prevExact)}
+    title="Búsqueda exacta"
+  />
+</label>
       <input
-        type="text"
-        value={projectSearch}
-        onChange={(e) => setProjectSearch(e.target.value)}
-        placeholder="Número..."
-        className={`${styles.input} ${styles.searchInput}`}
-      />
+  type="text"
+  value={projectSearch.value}
+  onChange={(e) => setProjectSearch({ value: e.target.value, exact: exactSearch })}
+  placeholder="Número..."
+  className={`${styles.input} ${styles.searchInput}`}
+/>
+
+      
       <input
         type="text"
         value={search}
@@ -125,7 +145,7 @@ const handleSort = () => {
         placeholder=" Resumen..."
         className={`${styles.input} ${styles.projectSearchInput}`}
       />
-      <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
+      <table data-aos="fade-up" data-aos-duration="300" className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
         <thead>
           <tr>
             <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
