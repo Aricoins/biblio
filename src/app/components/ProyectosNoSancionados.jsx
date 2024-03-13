@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
-import styles from "./style.module.css"
+import styles from './style.module.css';
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
@@ -21,18 +21,14 @@ const sortData = (data, order) => {
   });
 };
 
-
 function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
-  const [projectSearch, setProjectSearch] = useState({ value: '', exact: false });
-
+  const [projectSearch, setProjectSearch] = useState('');
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('desc');
-  const [exactSearch, setExactSearch] = useState(false);
-
 
   useEffect(() => {
     axios
@@ -41,7 +37,7 @@ function ProyectosNoSancionados() {
       )
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
-        const sortedData = sortData(results.data, 'desc'); // Ordena los datos inicialmente
+        const sortedData = sortData(results.data, 'desc');
         setData(sortedData);
         setVisibleRows(1);
         setShowLessButton(false);
@@ -51,45 +47,25 @@ function ProyectosNoSancionados() {
       });
   }, []);
 
-  
-
   const filteredData = data.filter((row) => {
-    if (search && projectSearch.value) {
+    if (search || projectSearch) {
       const [numeroProyecto] = row['Proyecto'].split('-');
       return (
         diacritics.remove(row['Resumen'].toLowerCase()).includes(
           diacritics.remove(search.toLowerCase())
         ) &&
-        (projectSearch.exact
-          ? numeroProyecto === projectSearch.value
-          : numeroProyecto.toLowerCase().startsWith(projectSearch.value.toLowerCase()))
-      );
-    } else if (search) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        )
-      );
-    } else if (projectSearch.value) {
-      const [numeroProyecto] = row['Proyecto'].split('-');
-      return (
-        projectSearch.exact
-          ? numeroProyecto === projectSearch.value
-          : numeroProyecto.toLowerCase().startsWith(projectSearch.value.toLowerCase())
+        (projectSearch
+          ? numeroProyecto === projectSearch
+          : numeroProyecto.toLowerCase().startsWith(search.toLowerCase()))
       );
     }
-  
+
     return true;
   });
-  
-  const sortedFilteredData = sortData(filteredData, sortOrder);
 
+  const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
-  // const handleShowMore = () => {
-  //   setVisibleRows((prevRows) => Math.min(prevRows + 9, filteredData.length));
-  //   setShowLessButton(true);
-  // };
   const handleShowMore = () => {
     setVisibleRows((prevRows) => prevRows + 10);
     setShowLessButton(true);
@@ -104,107 +80,96 @@ function ProyectosNoSancionados() {
     }
   };
 
-const handleSort = () => {
-  setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
-  setVisibleRows(visibleRows); // Mostrar todas las filas al cambiar el orden
-  setShowLessButton(true); // Mostrar el botón "Ver menos"
-};
+  const handleSort = () => {
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+    setVisibleRows(visibleRows);
+    setShowLessButton(true);
+  };
 
   const sortedData = sortData(visibleRowsData, sortOrder);
+
   return (
-<>
-  <h2
-    className={styles.h2}
-    onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
-  >
-    Proyectos No Sancionados | 2011 - 2016
-  </h2>
-  {isComponentVisible && (
-    <div className={`${styles.block}`}>
-      <label >
-    <input
-    type="checkbox"
-    checked={exactSearch}
-    onChange={() => setExactSearch((prevExact) => !prevExact)}
-    title="Búsqueda exacta"
-  />
-</label>
-      <input
-  type="text"
-  value={projectSearch.value}
-  onChange={(e) => setProjectSearch({ value: e.target.value, exact: exactSearch })}
-  placeholder="Número..."
-  className={`${styles.input} ${styles.searchInput}`}
-/>
-
-      
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        placeholder=" Resumen..."
-        className={`${styles.input} ${styles.projectSearchInput}`}
-      />
-      <table data-aos="fade-up" data-aos-duration="300" className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
-        <thead>
-          <tr>
-            <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
-              Número {sortOrder === 'asc' ? '▼' : '▲'}
-            </th>
-            <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
-            <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedData.map((row, index) => (
-            <tr key={index}>
-              {row['Link'] ? (
-                <td className={`${styles.tableCell} ${styles.linkCell}`}>
-                  <Link
-                    href={row['Link']}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
-                  >
-                    {row['Proyecto']}
-                  </Link>
-                </td>
-              ) : (
-                <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
-                  {row['Proyecto']}
-                </td>
-              )}
-              <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
-              <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {visibleRows < filteredData.length && (
-        <>
-          <div className={styles.botones}>            <button
-              onClick={handleShowMore}
-              className={styles.verMas}
-            >
-              Ver más...
-            </button>
-            {showLessButton ? (
-              <button
-                onClick={handleShowLess}
-                className={styles.verMenos}
-              >
-                Ver menos...
-              </button>
-            ) : null}
-          </div>
-        </>
+    <>
+      <h2
+        className={styles.h2}
+        onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+      >
+        Proyectos No Sancionados | 2011 - 2016
+      </h2>
+      {isComponentVisible && (
+        <div className={styles.block}>
+          <input
+            type="text"
+            value={projectSearch}
+            onChange={(e) => setProjectSearch(e.target.value)}
+            placeholder="Número..."
+            className={`${styles.input} ${styles.searchInput}`}
+          />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder=" Resumen..."
+            className={`${styles.input} ${styles.projectSearchInput}`}
+          />
+          <table
+            data-aos="fade-up"
+            data-aos-duration="300"
+            className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}
+          >
+            <thead>
+              <tr>
+                <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
+                  Número {sortOrder === 'asc' ? '▼' : '▲'}
+                </th>
+            
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
+                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedData.map((row, index) => (
+                <tr key={index}>
+                  {row['Link'] ? (
+                    <td className={`${styles.tableCell} ${styles.linkCell}`}>
+                      <Link
+                        href={row['Link']}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
+                      >
+                        {row['Proyecto']}
+                      </Link>
+                    </td>
+                  ) : (
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                      {row['Proyecto']}
+                    </td>
+                  )}
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {visibleRows < filteredData.length && (
+            <>
+              <div className={styles.botones}>
+                <button onClick={handleShowMore} className={styles.verMas}>
+                  Ver más...
+                </button>
+                {showLessButton ? (
+                  <button onClick={handleShowLess} className={styles.verMenos}>
+                    Ver menos...
+                  </button>
+                ) : null}
+              </div>
+            </>
+          )}
+        </div>
       )}
-    </div>
-  )}
-</>
-
+    </>
   );
 }
 
 export default ProyectosNoSancionados;
-
