@@ -32,10 +32,34 @@
     margin-bottom: 0.25rem;
     border: 1px solid #000;
     color: #000;
-    padding: 0.25rem;
+    padding: 0.40rem;
     border-radius: 0.25rem;
   }
+
+  .botones{
+display: grid;
+grid-template-columns: repeat(12, 1fr );
+
+
+  }
+  .verMas {
+    grid-column-start: 3;
+margin-top: 1%;
+justify-content: center;
+background-color: rgb(59, 60, 111);
+color: white;
+border-radius: 8%;
+  }
+  .verMenos {
+    grid-column-start: 10;
+    margin-top: 1%;
   
+    background-color: rgb(59, 60, 111);
+    color: white;
+    border-radius: 8%;
+      }
+    
+
   .projectSearchInput {
     width: 66.6667%;
   }

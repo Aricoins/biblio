@@ -162,17 +162,16 @@ const handleSort = () => {
       </table>
       {visibleRows < filteredData.length && (
         <>
-          <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
-            <button
+          <div className={styles.botones}>            <button
               onClick={handleShowMore}
-              className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
+              className={styles.verMas}
             >
               Ver más...
             </button>
             {showLessButton ? (
               <button
                 onClick={handleShowLess}
-                className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
+                className={styles.verMenos}
               >
                 Ver menos...
               </button>

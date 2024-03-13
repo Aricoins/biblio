@@ -115,8 +115,11 @@ function ExpedientesOrdenanzas() {
     <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
       <thead>
         <tr>
-          <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort} >Número {sortOrder === 'asc' ? '▼' : '▲' } </th>
+        <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
+              Número {sortOrder === 'asc' ? '▼' : '▲'}
+            </th>
           <th className={`${styles.tableHeader2} ${styles.border3}`}>Resumen</th>
+          <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
         </tr>
       </thead>
       <tbody>
@@ -147,7 +150,7 @@ function ExpedientesOrdenanzas() {
         <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
           <button
             onClick={handleShowMore}
-            className={styles.showMoreButton}
+            className={styles.verMas}
           >
             Ver más...
           </button>
@@ -155,7 +158,7 @@ function ExpedientesOrdenanzas() {
         {showLessButton ? (
            <button
            onClick={handleShowLess}
-           className={styles.showLessButton}
+           className={styles.verMenos}
          >
               Ver menos...
             </button>
