@@ -25,15 +25,17 @@ const NavTop = () => {
           Inicio
         </Link>
       </li>
+      <li className={styles.item}>        <Link className ={styles.link} href="/archivo" >
+          Archivo
+        </Link>
+      </li>
+
       <li className={styles.item}>
         <Link  className ={styles.link} href="/libros" >
         Bilioteca
         </Link>
       </li>
-      <li className={styles.item}>        <Link className ={styles.link} href="/archivo" >
-          Archivo
-        </Link>
-      </li>
+     
       <li className={styles.item} onClick={endev} >
         Ingresar
       </li>

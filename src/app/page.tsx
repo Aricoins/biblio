@@ -118,7 +118,7 @@ export default function Libros() {
                 )}
               </div>
               <div className={Boton}>
-                <Link href='/libros'>
+                <Link href='/archivo'>
                   <button>Ingresar
                   <p>como invitado</p></button>
                 </Link>
