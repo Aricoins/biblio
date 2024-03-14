@@ -25,7 +25,9 @@ useEffect(() => {
   return (
     <>
       <NavTop />
+     
       <div  className={styles.container}  >
+      <p className={styles.endev}> En desarrollo RG|IC|AGR </p>
       <div className={styles.subcontainer}>
       <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />
@@ -46,7 +48,7 @@ useEffect(() => {
           <PCM />
         </div> 
       </div>
-      <p className={styles.endev}> En desarrollo RG|IC|AGR </p>
+    
       </div>
       <NavFoot />
     </>
