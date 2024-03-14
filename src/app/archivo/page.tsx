@@ -47,6 +47,7 @@ useEffect(() => {
           <PCM />
         </div> 
       </div>
+      <p style={{color:"red", marginLeft: "100px", fontWeight: "800", fontFamily: "Verdana"}}> En desarrollo </p>
       </div>
       <NavFoot />
     </>
