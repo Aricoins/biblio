@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import Libro from '../components/Libro';
 import axios from 'axios';
 import styles from './style.module.css';
+import OtrosTitulos from "../components/OtrosTitulos";
 
 
 interface Libro {
@@ -22,7 +23,7 @@ const Libros: FC = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/verLibros');
-        setData(response.data.libros); 
+        setData(response.data.libros);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -36,14 +37,22 @@ const Libros: FC = () => {
   return (
     <>
       <div className={styles.container}>
-     
+
         <input  className={styles.inputSearch} type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar por título..." />
-        
+
         <div className={styles.gridContainer}>
+       
           {filteredData && filteredData.map((libro: Libro, index) => (
             <Libro data-aos="fade-up" key={index} libro={libro} />
-          ))}
+          ))
+          
+          
+          }
+    
         </div>
+   
+        <OtrosTitulos  /> 
+ 
       </div>
     </>
   );
