@@ -19,6 +19,11 @@
 
     
   }
+  @media (max-width: 768px) {
+    .h2 {
+      font-size: smaller;
+    }
+  }
   
 .alert{
   font-family: Verdana, Geneva, Tahoma, sans-serif;

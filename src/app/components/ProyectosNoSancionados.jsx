@@ -153,8 +153,8 @@ function ProyectosNoSancionados() {
                 <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
-                <th className={`${styles.tableHeader2} ${styles.border2}`}>Resumen</th>
-                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo Norma</th>
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
+                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo de Norma</th>
               </tr>
             </thead>
             <tbody>
