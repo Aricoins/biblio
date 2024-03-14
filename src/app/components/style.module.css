@@ -84,13 +84,12 @@
 .verMenos .verMas :hover{
     background-color: #0b2c6f;
     color:  rgb(59, 60, 111);;
- 
-   }   
+    }   
+
 .projectSearchInput {
     width: 66.6667%;
     margin-left: 1px;
   }
-  
 .searchInput {
     width: 15%;
     margin-right: 0px;
@@ -99,8 +98,7 @@
 .searchIcon{
    position: relative;
   left: -22px;
-  
-  }
+ }
   /* Estilos para la tabla */
 .table {
     width: 100%;
@@ -128,7 +126,7 @@
     background-color: #230266;
     border-collapse: collapse;
     border: 2px solid  black;
-       }
+}
 
 .tableHeader3 {
     width: 14%;

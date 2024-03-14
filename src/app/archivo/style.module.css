@@ -9,7 +9,19 @@
     
    
     }
+.endev{
+display: flex   ;
+  color:red;
+    font-size: 0.8rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   border: 1px solid red;
+justify-content: flex-end;
+margin-left: 80%;
+text-align: center;
+padding: 2%;
+border-radius: 25%;
 
+}
     .body{
         background-color: rgb(232, 233, 233);
         margin-bottom: 10%;

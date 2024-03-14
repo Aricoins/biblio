@@ -30,24 +30,23 @@ useEffect(() => {
       <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />
         </div>
-       <div data-aos="fade-up" className={styles.component}>
+        <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />
         </div>
-       
         <div  data-aos="fade-up" className={styles.component}>
           <ExpedientesComunicaciones />
-</div>
-   <div data-aos="fade-up" className={styles.component}>
+        </div>
+        <div data-aos="fade-up" className={styles.component}>
           <ExpedientesDeclaraciones />
         </div>
-    <div data-aos="fade-up" className={styles.component}>
+        <div data-aos="fade-up" className={styles.component}>
           <ExpedientesResoluciones />
         </div>             
-           <div data-aos="fade-up" className={styles.component}>
+        <div data-aos="fade-up" className={styles.component}>
           <PCM />
         </div> 
       </div>
-      <p style={{color:"red", marginLeft: "100px", fontWeight: "800", fontFamily: "Verdana"}}> En desarrollo </p>
+      <p className={styles.endev}> En desarrollo RG|IC|AGR </p>
       </div>
       <NavFoot />
     </>

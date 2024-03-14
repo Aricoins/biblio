@@ -1,21 +1,19 @@
 .container {
-    width: 100%;
+    width: 80%;
     justify-content: center;
     margin: 0 auto;
     background-color: #ffffff;
     border: 1px solid #c4c4c4;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
     padding: 20px;
-    margin-top: 20%;
-
+    margin-top: 15%;
 }
 
 
 .imagen {
-
     width: 60%;
     height: 100%;
     object-fit: cover;
@@ -26,23 +24,26 @@
 
 
 .texto {
-    margin-top: 10px;
-    font-size: 1.2rem;
+    font-size: .8rem;
     font-weight: bold;
-    color: #374151;
+    background-color: rgba(137, 130, 145, 0.2);
+    color: rgb(8, 0, 0);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     list-style: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
 }
 
-
 .resenia {
-    font-size: 1rem;
+    font-size: 0.6rem;
     text-align: center;
-    color: #4b5563;
+    color: rgb(50, 45, 45);
     text-decoration: none;
     margin: 5%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
 }
