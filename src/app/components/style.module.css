@@ -16,7 +16,6 @@
     background-color: #f7f8fa;
     color: black;
     border: black 1px solid;
-
     
   }
   @media (max-width: 768px) {
@@ -75,6 +74,7 @@ background-color: rgb(59, 60, 111);
 color: white;
 border-radius: 8%;
 font-size: xx-small;
+cursor: pointer;
   }
   .verMenos {
     grid-column-start: 10;
@@ -84,52 +84,63 @@ font-size: xx-small;
     color: white;
     border-radius: 8%;
     font-size: xx-small;
+    cursor: pointer;
       }
+   .verMenos .verMas :hover{
+    background-color: #f7f8fa;
+    color:  rgb(59, 60, 111);;
+    border:  rgb(59, 60, 111);
+   }   
     
 
   .projectSearchInput {
     width: 66.6667%;
+    margin-left: 1px;
   }
   
   .searchInput {
- 
     width: 15%;
-    margin-right: 1px;
+    margin-right: 0px;
   }
+  .searchIcon{
+   position: relative;
+  left: -22px;
   
+  }
   /* Estilos para la tabla */
   .table {
     width: 100%;
     color: #070000;
-    background-color: #e0d2d2;
+    background-color: #fdfafa;
     border-collapse: collapse;
-    border: 1px solid #fff;
+    border: 1px solid #180101;
     font-size: smaller;
   height: 60%;
   margin-bottom: 1%;
   }
   .tableHeader1 {
     width: 16%;
-    color: #fff;
-    background-color: #03113a;
+    color: #1d054b;
+    background-color: #f3f2ee;
     border-collapse: collapse;
-    border: 1px solid #fff;
+    border: 2px solid  rgb(59, 60, 111);
     cursor: pointer;
   }
   .tableHeader2 {
     width: 70%;
-    color: #fff;
-    background-color: #050542;
+    color: #1d054b;
+    background-color: #f3f1ed;
     border-collapse: collapse;
-    border: 1px solid #fff;
-  }
+    border: 2px solid  rgb(59, 60, 111);
+     }
 
   .tableHeader3 {
     width: 14%;
-    color: #fff;
-    background-color: #070000;
+    color: #1d054b;
+    background-color: #f9f7f2;
     border-collapse: collapse;
-    border: 1px solid #fff;
+    border: 2px solid  rgb(59, 60, 111);
+    
   }
   
   .fullWidth {
@@ -206,6 +217,7 @@ font-size: xx-small;
     padding: 0.25rem;
     border-radius: 0.25rem;
     margin-right: 55%;
+    cursor: pointer;
   }
   
   .showLessButton {

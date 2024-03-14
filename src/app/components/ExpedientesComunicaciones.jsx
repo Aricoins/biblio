@@ -120,7 +120,7 @@ function ExpedientesComunicaciones() {
             placeholder="Resumen..."
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          <table className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
+          <table  data-aos="fade-up" className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
             <thead>
               <tr>
                 <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>

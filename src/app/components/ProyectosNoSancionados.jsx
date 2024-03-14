@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styles from './style.module.css';
 import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
-
+import { FiSearch } from 'react-icons/fi'; 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
@@ -136,13 +136,15 @@ function ProyectosNoSancionados() {
             placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
           />
+    
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder=" Descripción Sintética..."
+            placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
+          
           <table
             data-aos="fade-up"
             data-aos-duration="300"
@@ -150,7 +152,7 @@ function ProyectosNoSancionados() {
           >
             <thead>
               <tr>
-                <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
+                <th className={styles.tableHeader1} onClick={handleSort}>
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
