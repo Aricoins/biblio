@@ -8,7 +8,7 @@
     margin-left: 1%;
     margin-right: 1%;
     cursor: pointer;
-    background-color: black;
+    background-color: rgb(7, 31, 66);
     color: white;
     transition: 0.3s;
   }
@@ -39,7 +39,6 @@
   background-color: rgb(26, 24, 24);
   color: rgb(249, 245, 245);
 }
-  
   /* Estilos para la visibilidad del componente */
   .block {
     display: block; 
@@ -61,96 +60,92 @@
   }
 
   .botones{
-display: grid;
-grid-template-columns: repeat(12, 1fr );
+  display: grid;
+  grid-template-columns: repeat(12, 1fr );
+}
 
-
-  }
-  .verMas {
+.verMas {
     grid-column-start: 3;
-margin-top: 1%;
-justify-content: center;
-background-color: rgb(59, 60, 111);
-color: white;
-border-radius: 8%;
-font-size: xx-small;
-cursor: pointer;
-  }
-  .verMenos {
-    grid-column-start: 10;
-    margin-top: 1%;
-  
-    background-color: rgb(59, 60, 111);
-    color: white;
-    border-radius: 8%;
-    font-size: xx-small;
+    justify-content: center;
+    color: rgb(33, 9, 65);
+    font-size: x-large;
     cursor: pointer;
+    border: 1px solid #f5ebeb;
+    
+     }
+.verMenos {
+    grid-column-start: 10;
+    justify-content: center;
+    color: rgb(33, 9, 65);
+    font-size: x-large;
+    cursor: pointer;
+    border: 1px solid #f5ebeb;
       }
-   .verMenos .verMas :hover{
-    background-color: #f7f8fa;
+.verMenos .verMas :hover{
+    background-color: #0b2c6f;
     color:  rgb(59, 60, 111);;
-    border:  rgb(59, 60, 111);
+ 
    }   
     
 
-  .projectSearchInput {
+.projectSearchInput {
     width: 66.6667%;
     margin-left: 1px;
   }
   
-  .searchInput {
+.searchInput {
     width: 15%;
     margin-right: 0px;
   }
-  .searchIcon{
+
+.searchIcon{
    position: relative;
   left: -22px;
   
   }
   /* Estilos para la tabla */
-  .table {
+.table {
     width: 100%;
     color: #070000;
     background-color: #fdfafa;
     border-collapse: collapse;
     border: 1px solid #180101;
-    font-size: smaller;
-  height: 60%;
-  margin-bottom: 1%;
+    font-size: madium;
+    height: 60%;
+    margin-bottom: 1%;
   }
-  .tableHeader1 {
+
+.tableHeader1 {
     width: 16%;
-    color: #1d054b;
-    background-color: #f3f2ee;
+    color: white;
+    background-color: #230266;
     border-collapse: collapse;
-    border: 2px solid  rgb(59, 60, 111);
+    border: 2px solid  black;
     cursor: pointer;
   }
-  .tableHeader2 {
-    width: 70%;
-    color: #1d054b;
-    background-color: #f3f1ed;
-    border-collapse: collapse;
-    border: 2px solid  rgb(59, 60, 111);
-     }
 
-  .tableHeader3 {
-    width: 14%;
-    color: #1d054b;
-    background-color: #f9f7f2;
+.tableHeader2 {
+    width: 70%;
+    color: white;
+    background-color: #230266;
     border-collapse: collapse;
-    border: 2px solid  rgb(59, 60, 111);
-    
-  }
+    border: 2px solid  black;
+       }
+
+.tableHeader3 {
+    width: 14%;
+    color: white;
+    background-color: #230266;
+    border-collapse: collapse;
+    border: 2px solid  black;
+    cursor: pointer;
+}
   
-  .fullWidth {
+.fullWidth {
     width: 100%;
   }
   
-  .textWhite {
-    color: #050000;
-    font-size: medium;
-  }
+  
   
   .borderCollapse {
     border-collapse: collapse;
@@ -185,9 +180,7 @@ cursor: pointer;
     background-color: #100;
     color:white
   }
-  
-  
-  
+    
   .hoverText:hover {
     color: white;
   }

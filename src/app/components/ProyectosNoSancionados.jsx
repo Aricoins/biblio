@@ -6,7 +6,9 @@ import Link from 'next/link';
 import styles from './style.module.css';
 import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
-import { FiSearch } from 'react-icons/fi'; 
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
+
 const sortData = (data, order) => {
   return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
@@ -188,11 +190,11 @@ function ProyectosNoSancionados() {
             <>
               <div className={styles.botones}>
                 <button onClick={handleShowMore} className={styles.verMas}>
-                  Ver más...
+                <MdExpandMore />
                 </button>
                 {showLessButton ? (
                   <button onClick={handleShowLess} className={styles.verMenos}>
-                    Ver menos...
+                    <MdExpandLess />
                   </button>
                 ) : null}
               </div>
