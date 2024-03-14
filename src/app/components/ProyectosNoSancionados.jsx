@@ -124,7 +124,7 @@ function ProyectosNoSancionados() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-        Proyectos No Sancionados | 2011 - 2016
+        Proyectos No Sancionados | 2015 - 2020
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
@@ -140,7 +140,7 @@ function ProyectosNoSancionados() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder=" Resumen..."
+            placeholder=" Descripción Sintética..."
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
           <table
