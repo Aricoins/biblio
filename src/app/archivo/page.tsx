@@ -32,8 +32,8 @@ useEffect(() => {
       <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />
         </div>
-        <div className={styles.h3}  > <h2  >
-   Expedientes sancionados
+        <div className={styles.h3}  > <h2  className={styles.h4}>
+   Expedientes sancionados:
   </h2>  
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />

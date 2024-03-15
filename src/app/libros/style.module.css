@@ -2,8 +2,7 @@
 .body{
   background-color: #b9c1c1;
   margin-bottom: 10%;
-width: 66%;  
-
+width: 62%;  
 }	
 .container {
     width: 100%;
@@ -18,7 +17,6 @@ width: 66%;
    display: flex;
     flex-direction: column;
     padding: 20px;
-    z-index: 5;
 
   }
   
@@ -38,8 +36,7 @@ width: 66%;
   }
   
   .gridContainer {
-z-index: 6;
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.5rem;

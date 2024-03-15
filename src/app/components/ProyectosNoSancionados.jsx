@@ -194,7 +194,7 @@ function ProyectosNoSancionados() {
                 </button>
                 {showLessButton ? (
                   <button onClick={handleShowLess} className={styles.verMenos}>
-                    <MdExpandLess /> <p style={{fontSize: "smaller"}}>Menos </p>
+                    <MdExpandLess /> <p>Menos </p>
                   </button>
                 ) : null}
               </div>
