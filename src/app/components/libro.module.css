@@ -6,6 +6,7 @@
     padding: 20%;
     background-color: rgba(251, 250, 252, 0.1);
     border-radius: 5%;
+    z-index: 100;
   }
   
   .imageContainer {
@@ -91,6 +92,8 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 height: 150%;
 overflow: scroll;
 text-align: center;
+scrollbar-width: thin; /* Anchura de la barra de desplazamiento (experimental) */
+  scrollbar-color: #4b5563 #051951; 
 
     
 }

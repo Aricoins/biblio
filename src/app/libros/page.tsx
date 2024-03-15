@@ -4,6 +4,8 @@ import Libro from '../components/Libro';
 import axios from 'axios';
 import styles from './style.module.css';
 import OtrosTitulos from "../components/OtrosTitulos";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 interface Libro {
@@ -21,6 +23,7 @@ const Libros: FC = () => {
   let backgroundColor = "defaultColor"; 
 
   useEffect(() => {
+    Aos.init({duration: 3000});
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/verLibros');
@@ -56,7 +59,7 @@ const filteredData = data?.filter(libro => libro.titulo.toLowerCase().includes(s
     
         </div>
    
-        <OtrosTitulos  /> 
+        <OtrosTitulos data-aos="fade-right" /> 
  
       </div>
     </>
