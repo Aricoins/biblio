@@ -18,6 +18,7 @@ interface Libro {
 const Libros: FC = () => {
   const [data, setData] = useState<Libro[] | null>(null);
   const [search, setSearch] = useState('');
+  let backgroundColor = "defaultColor"; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,9 +33,13 @@ const Libros: FC = () => {
     fetchData();
   }, []);
 
-  const filteredData = data?.filter(libro => libro.titulo.toLowerCase().includes(search.toLowerCase()));
+const filteredData = data?.filter(libro => libro.titulo.toLowerCase().includes(search.toLowerCase()));
 
-  return (
+  
+
+
+
+ return (
     <>
       <div className={styles.container}>
 

@@ -1,93 +1,482 @@
 [
-    {"titulo":"ST Moritz","autor":"Peter Kasper","estante":"1","inventario":"15270","decla":"","Orden":"13"},
-    {"titulo":"Suiza Vista desde afuera","autor":"Comisión de Coordinación para la presencia de Suiza en el extranjero","estante":"1","inventario":"23408","decla":"","Orden":"14"},
-    {"titulo":"Paramos Venezolanos","autor":"Weidmann","estante":"1","inventario":"15268","decla":"","Orden":"16"},
-    {"titulo":"PEDESTRIAN AREAS","autor":"Klaus Uhiig","estante":"1","inventario":"15264","decla":"","Orden":"55"},
-    {"titulo":"Región del bio-bio (repetido con el 32)","autor":"Gobierno de Chile","estante":"1","inventario":"23407","decla":"","Orden":"66"},
-    {"titulo":"Rehabilitar una sociedad drogada","autor":"Ronald Hubbard","estante":"1","inventario":"","decla":"","Orden":"18"},
-    {"titulo":"Filántropo Educación Alfabetización y civilización","autor":"Ronald Hubbard","estante":"1","inventario":"","decla":"","Orden":"19"},
-    {"titulo":"Encrucijadas entre cuidar y educar (2)","autor":"Patricia Redondo y Estanislao Antelo","estante":"1","inventario":"","decla":"2297-17","Orden":""},
-    {"titulo":"Un día más ARB una historia de conciencia y dignidad","autor":"Mabel Painehual, Fabiana Ertola, Mónica de Torres Curth y Laura Mendez","estante":"1","inventario":"","decla":"2375-18","Orden":""},
-    {"titulo":"Diccionario de la Lengua Española (tomo 1)","autor":"","estante":"2","inventario":"4884","decla":"","Orden":"11"},
-    {"titulo":"Diccionario de la Lengua Española (tomo 2)","autor":"","estante":"2","inventario":"4884","decla":"","Orden":"12"},
-    {"titulo":"TOMOS (2) DICCIONARIO CIENCIAS SOCIALES","autor":"Instituto de Estudios Políticos.","estante":"2","inventario":"15287","decla":"","Orden":"45"},
-    {"titulo":"LA POLIT DE DESREGULACION PETROLERA Arg.","autor":"Roberto Kozuij- Victor Bravo","estante":"2","inventario":"15262","decla":"","Orden":"88"},
-    {"titulo":"DESARROLLO Y ENERGIA Vol 2 N 4","autor":"Victor Bravo Carlos Suarez","estante":"2","inventario":"15261","decla":"","Orden":"96"},
-    {"titulo":"Diccionario incompleto de montaña.","autor":"Jose Herminio Hernandez","estante":"3","inventario":"","decla":"","Orden":"61"},
-    {"titulo":"DIAGNOSTICO SACIO CULTURAL POBLACION Bernal Don Bosco","autor":"M.T. Sirvent S. l. Brusilovsky.","estante":"3","inventario":"15265","decla":"","Orden":"80"},
-    {"titulo":"A HACHA CUÑA Y GOLPE","autor":"María Luisa Bou","estante":"3","inventario":"23403","decla":"","Orden":"86"},
-    {"titulo":"LA MESETA RIONEGRINA DE SOMUNCURA","autor":"Ministerio asuntos socialesa rn","estante":"3","inventario":"15260","decla":"","Orden":"92"},
-    {"titulo":"Bariloche en Blanco y Negro","autor":"Diego Ortiz Mugica","estante":"3","inventario":"","decla":"","Orden":""},
-    {"titulo":"DEPURACION DE AGUAS RESIDUAL","autor":"Ramon Collado Nara","estante":"4","inventario":"12625","decla":"","Orden":"52"},
-    {"titulo":"LIBRO DE RECICLAJE","autor":"Alfonso del Val","estante":"4","inventario":"10813","decla":"","Orden":"53"},
-    {"titulo":"FLORA Y FAUNA PUERTO BLEST","autor":"Centro Regional Universitario Bariloche","estante":"4","inventario":"13047","decla":"1494-2010","Orden":"81"},
-    {"titulo":"LOS JOVENES TIENEN LA PALABRA","autor":"Lic. Beatriz Tobin- Stella Robatto","estante":"4","inventario":"39766","decla":"","Orden":"84"},
-    {"titulo":"50 cosas que usted puede hacer para salvar la tierra","autor":"the earthworks group","estante":"4","inventario":"10816","decla":"","Orden":"97"},
-    {"titulo":"INTRODUCCION A LAS FINANZAS PUBLICAS","autor":"Jose Maria Martin","estante":"B1","inventario":"15279","decla":"","Orden":"47"},
-    {"titulo":"Derecho Público","autor":"Presidencia de la Nación","estante":"B1","inventario":"","decla":"","Orden":"49"},
-    {"titulo":"Filosofía del Derecho","autor":"Presidencia de la Nación","estante":"B1","inventario":"","decla":"","Orden":"50"},
-    {"titulo":"Hombres y Mujeres de Bariloche (3)","autor":"Teresita Mendez","estante":"B1","inventario":"","decla":"1344-2008","Orden":"58"},
-    {"titulo":"Historia del Esquí en Bariloche","autor":"Ichatzi Bachmann","estante":"B1","inventario":"23400","decla":"694-2000","Orden":"72"},
-    {"titulo":"Encuentro en Bariloche","autor":"Bruna Giacori.","estante":"B1","inventario":"","decla":"","Orden":"73"},
-    {"titulo":"Cuando el agua se vuelve vidrio","autor":"Albertina Rahm","estante":"B1","inventario":"","decla":"","Orden":"83"},
-    {"titulo":"Hielos del Engaño","autor":"Justo Ramón Cáceres","estante":"B1","inventario":"","decla":"","Orden":"94"},
-    {"titulo":"Maquinchao","autor":"Galo Martinez","estante":"B1","inventario":"","decla":"","Orden":"95"},
-    {"titulo":"LOS LIMITES DE RIO NEGRO","autor":"Legislatura de la Provincia","estante":"B1","inventario":"","decla":"","Orden":"98"},
-    {"titulo":"Patagonia 1892 Diario del explorador suizo","autor":"Jorge Machón","estante":"B1","inventario":"","decla":"","Orden":"100"},
-    {"titulo":"DIVERSIDAD CULTURAL ARG","autor":"Helena Aizen- Tam Muro","estante":"B1","inventario":"23410","decla":"","Orden":"102"},
-    {"titulo":"Comunicación Estratégica valor agregado para una ONG","autor":"Vecinos por la carta","estante":"B1","inventario":"38248","decla":"1465-2010","Orden":"105"},
-    {"titulo":"El Parlamento","autor":"Lucía Fontenla","estante":"B1","inventario":"15280","decla":"","Orden":"107"},
-    {"titulo":"Tratado de Derecho Municipal (3)","autor":"Horacio Rosatti","estante":"B1","inventario":"12146","decla":"","Orden":"108"},
-    {"titulo":"Control Municipal del Tránsito","autor":"Horacio Rosatti","estante":"B1","inventario":"12145","decla":"","Orden":"109"},
-    {"titulo":"Laguna del Desierto","autor":"Justo Ramón Cáceres.","estante":"B1","inventario":"","decla":"","Orden":"163"},
-    {"titulo":"Decreto de desburocratización y simplificación","autor":"Thomson Reuters","estante":"B1","inventario":"","decla":"","Orden":""},
-    {"titulo":"Lotes sin dueño","autor":"Jorge Paolinelli, Tomás Guevara, Guillermo Oglietti y Alejandro Nussbaum","estante":"B1","inventario":"","decla":"2226-17","Orden":""},
-    {"titulo":"Mensajes al poblador rural","autor":"Jorge Piccini","estante":"B1","inventario":"","decla":"2545-15","Orden":""},
-    {"titulo":"Retratos de mi Bariloche","autor":"Roberto Sosa Lukman","estante":"B1","inventario":"","decla":"2528-19","Orden":""},
-    {"titulo":"Otra Historia es posible","autor":"Jorge Pablo Mogensen","estante":"B1","inventario":"","decla":"2514-19","Orden":""},
-    {"titulo":"Damas Patricias Argentinas","autor":"Ruben Gancedo","estante":"B1","inventario":"","decla":"","Orden":""},
-    {"titulo":"Derechos de los pueblos originarios","autor":"Enopto","estante":"B1","inventario":"","decla":"2734-16","Orden":""},
-    {"titulo":"Pueblos y Naciones Originarias en Argentina","autor":"Enopto","estante":"B1","inventario":"","decla":"2734-16","Orden":""},
-    {"titulo":"Archivos del Silencio","autor":"Pilar Perez","estante":"B1","inventario":"","decla":"2126-16","Orden":""},
-    {"titulo":"El potrillo y la Mariposa","autor":"Susana Amuchástegui","estante":"B3","inventario":"","decla":"1525-11","Orden":"140"},
-    {"titulo":"Abuelas de Plaza de Mayo | Fotografías de 30 años en lucha","autor":"Abuelas Plaza de Mayo","estante":"B3","inventario":"","decla":"","Orden":"76"},
-    {"titulo":"Niños desaparecidos Jóvenes localizados","autor":"madres de plaza de mayo","estante":"B3","inventario":"","decla":"","Orden":"79"},
-    {"titulo":"EL CABALLERO DE LAS BOTAS AZULES LA HIJA DEL MAR","autor":"Rosalía Castro","estante":"B3","inventario":"23404","decla":"","Orden":"87"},
-    {"titulo":"Ruisueños","autor":"Guada","estante":"B3","inventario":"","decla":"1930-15","Orden":"91"},
-    {"titulo":"LA VIA","autor":"Juan Sgolastra","estante":"B3","inventario":"23310","decla":"","Orden":"93"},
-    {"titulo":"La Obra del buen Pastor, Camino al Sol.","autor":"Doris Pastor","estante":"B3","inventario":"15263","decla":"","Orden":"106"},
-    {"titulo":"El Ombudsman Defensor del Pueblo y de las Instituciones Republicanas.","autor":"Jorge L. Maiorano","estante":"B3","inventario":"15285","decla":"","Orden":"110"},
-    {"titulo":"Dejando el Silencio atrás Conversaciones sobre Malvinas","autor":"Luis Serono","estante":"B3","inventario":"","decla":"2623/19","Orden":""},
-    {"titulo":"La Historia de Abuelas 30 años de búsqueda","autor":"Abuelas de Plaza de Mayo","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Libro de viaje para colorear Flora y Fauna de la Patagonia","autor":"Valeria Nieto","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Bodega de Sueños","autor":"Norma Dus","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Bailando con duendes","autor":"Maria Liliana Odano","estante":"B3","inventario":"","decla":"2301-17","Orden":""},
-    {"titulo":"La Brujita Alegría","autor":"Maria Liliana Odano","estante":"B3","inventario":"","decla":"1925-15","Orden":""},
-    {"titulo":"El Juego de la Oruga","autor":"Mariano Agustin Di Genova","estante":"B3","inventario":"","decla":"2223-17","Orden":"", "imagen": "/assets/libros/oruga1.webp"},
-    {"titulo":"Mujeres en monedas y billetes en América Latina","autor":"Mabel Ros","estante":"B3","inventario":"","decla":"2154-17","Orden":""},
-    {"titulo":"La Casa de la Moneda de Oruro","autor":"Arnaldo Cunietti Ferrando y Raul Tapia Bascope","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"La sexología en la numismática","autor":"Oswaldo M Rodrigues Jr","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Historias dos coleccionismos numismáticos algunas historias brasileiras","autor":"Oswaldo M Rodrigues Jr","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"El Dios de la Montaña","autor":"Francisco Javier Bustelo de la Riva","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Una Casa en el Castaño","autor":"Francisco Javier Bustelo de la Riva","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Chau Chi Una bella historia de amor","autor":"Francisco Javier Bustelo de la Riva","estante":"B3","inventario":"","decla":"","Orden":""},
-    {"titulo":"Inexplicable","autor":"Colegio Don Jaime de Nevares","estante":"B3","inventario":"","decla":"1983-16","Orden":"164"},
-    {"titulo":"La Reconstrucción Hacia el camino que no existe","autor":"Vanesa Vicente","estante":"B3","inventario":"","decla":"1595-12","Orden":"167"},
-    {"titulo":"Algo en común. Pequeñas historias de inmigración","autor":"EMB","estante":"B3","inventario":"","decla":"2680-20","Orden":""},
-    {"titulo":"Dos Sillones","autor":"Alejandro Nespiral","estante":"B3","inventario":"","decla":"2835-22","Orden":""},
-    {"titulo":"Mil novecientos setenta","autor":"Virginia Schuvab / Alicia Pez","estante":"B3","inventario":"","decla":"2822-22","Orden":""},
-    {"titulo":"Las Primeras Mujeres que hicieron historia","autor":"Gisela Marziotta","estante":"B3","inventario":"","decla":"2889-22","Orden":""},
-    {"titulo":"Guía de identificación de LÍQUENES de los bosques","autor":"Susana Calvela y Alfredo Passo","estante":"","inventario":"","decla":"2739-21","Orden":""},
-    {"titulo":"Aimé Painé. La voz del pueblo Mapuche","autor":"Cristina Rafanelli","estante":"","inventario":"","decla":"2716-20","Orden":""},
-    {"titulo":"Mejor sí hablar de ciertas cosas","autor":"María Campolonghi","estante":"","inventario":"","decla":"2736-21","Orden":""},
-    {"titulo":"Historia del Soyem 1946-2015","autor":"Luciano Arancibia Aguero y Nancy Vargas","estante":"","inventario":"","decla":"2847-22","Orden":""},
-    {"titulo":"Patagonia Relatos de viento y piedra","autor":"Mirta Santiago (coordinadora)","estante":"","inventario":"","decla":"2821-22","Orden":""},
-    {"titulo":"Las colonizaciones del Nahuel Huapi","autor":"Cristian Pablo Muller","estante":"","inventario":"","decla":"2756-21","Orden":""},
-    {"titulo": "Décimas de un albañil", "autor": "Nazario Abel Almendra", "decla":"2931-23", "imagen": "/assets/libros/decimas1.webp" },
-    {"titulo": "Una vida llena de lagunas", "autor": "Wilge Delgado", "decla":"2771-23", "imagen": "" },
-    {"titulo": "Que nadie te ausente", "autor": "Marcos H. Easdale", "decla":"2926-23", "imagen": "/assets/libros/ausente1.webp" },
-    {"titulo": "¿Qué sabemos de autismo hoy?", "autor": "Marcela Menassé", "decla":"2928-23", "imagen": "/assets/libros/autismo1.jpg" }, 
-    {"titulo": "Nosotras somos ellas", "autor": "Laura Méndez | Mónica de Torres Curth | Julieta Santos", "decla":"2915-23", "imagen": "" }
-
-
-]
+    {
+      "titulo": "ST Moritz",
+      "autor": "Peter Kasper",
+      "estante": "1",
+      "inventario": "15270",
+      "decla": "",
+      "orden": "13"
+    },
+    {
+      "titulo": "Suiza vista desde afuera",
+      "autor": "Comisión de Coordinación para la presencia de Suiza en el extranjero",
+      "estante": "1",
+      "inventario": "23408",
+      "decla": "",
+      "orden": "14"
+    },
+    {
+      "titulo": "Páramos Venezolanos",
+      "autor": "Weidmann",
+      "estante": "1",
+      "inventario": "15268",
+      "decla": "",
+      "orden": "16"
+    },
+    {
+      "titulo": "Áreas peatonales",
+      "autor": "Klaus Uhiig",
+      "estante": "1",
+      "inventario": "15264",
+      "decla": "",
+      "orden": "55"
+    },
+    {
+      "titulo": "Región del Biobío (repetido con el 32)",
+      "autor": "Gobierno de Chile",
+      "estante": "1",
+      "inventario": "23407",
+      "decla": "",
+      "orden": "66"
+    },
+    {
+      "titulo": "Rehabilitar una sociedad drogada",
+      "autor": "Ronald Hubbard",
+      "estante": "1",
+      "inventario": "",
+      "decla": "",
+      "orden": "18"
+    },
+    {
+      "titulo": "Filántropo: Educación, alfabetización y civilización",
+      "autor": "Ronald Hubbard",
+      "estante": "1",
+      "inventario": "",
+      "decla": "",
+      "orden": "19"
+    },
+    {
+      "titulo": "Encrucijadas entre cuidar y educar",
+      "autor": "Patricia Redondo y Estanislao Antelo",
+      "estante": "1",
+      "inventario": "",
+      "decla": "2297-17",
+      "orden": ""
+    },
+    {
+      "titulo": "Un día más ARB: una historia de conciencia y dignidad",
+      "autor": "Mabel Painehual, Fabiana Ertola, Mónica de Torres Curth y Laura Mendez",
+      "estante": "1",
+      "inventario": "",
+      "decla": "2375-18",
+      "orden": ""
+    },
+    {
+      "titulo": "Diccionario de la lengua española. Tomo I",
+      "autor": "Real Academia Española",
+      "estante": "2",
+      "inventario": "4884",
+      "decla": "",
+      "orden": "11"
+    },
+    {
+      "titulo": "Diccionario de la lengua española. Tomo II",
+      "autor": "Real Academia Española",
+      "estante": "2",
+      "inventario": "4884",
+      "decla": "",
+      "orden": "12"
+    },
+    {
+      "titulo": "Diccionario de ciencias sociales. Tomo I",
+      "autor": "Instituto de Estudios Políticos.",
+      "estante": "2",
+      "inventario": "15287",
+      "decla": "",
+      "orden": "45"
+    },
+    {
+      "titulo": "Diccionario de ciencias sociales. Tomo II",
+      "autor": "Instituto de Estudios Políticos.",
+      "estante": "2",
+      "inventario": "15287",
+      "decla": "",
+      "orden": "45"
+    },
+    {
+      "titulo": "La política de la desregulación petrolera argentina",
+      "autor": "Roberto Kozuij- Victor Bravo",
+      "estante": "2",
+      "inventario": "15262",
+      "decla": "",
+      "orden": "88"
+    },
+    {
+        "titulo": "DESARROLLO Y ENERGIA Vol 2 N 4",
+        "autor": "Victor Bravo Carlos Suarez",
+        "estante": "2",
+        "inventario": "15261",
+        "decla": "",
+        "orden": "96"
+      },
+      {
+        "titulo": "Diccionario incompleto de montaña",
+        "autor": "Jose Herminio Hernandez",
+        "estante": "3",
+        "inventario": "",
+        "decla": "",
+        "orden": "61"
+      },
+      {
+        "titulo": "Diagnóstico sociocultural población Bernal Don Bosco",
+        "autor": "M.T. Sirvent S. l. Brusilovsky.",
+        "estante": "3",
+        "inventario": "15265",
+        "decla": "",
+        "orden": "80"
+      },
+      {
+        "titulo": "A hacha, cuña y golpe",
+        "autor": "María Luisa Bou",
+        "estante": "3",
+        "inventario": "23403",
+        "decla": "",
+        "orden": "86"
+      },
+      {
+        "titulo": "LA MESETA RIONEGRINA DE SOMUNCURA",
+        "autor": "Ministerio asuntos socialesa rn",
+        "estante": "3",
+        "inventario": "15260",
+        "decla": "",
+        "orden": "92"
+      },
+      {
+        "titulo": "Bariloche en blanco y negro",
+        "autor": "Diego Ortiz Mugica",
+        "estante": "3",
+        "inventario": "",
+        "decla": "",
+        "orden": ""
+      },
+      {
+        "titulo": "Depuración de aguas residuales",
+        "autor": "Ramon Collado Nara",
+        "estante": "4",
+        "inventario": "12625",
+        "decla": "",
+        "orden": "52"
+      },
+      {
+        "titulo": "LIBRO DE RECICLAJE",
+        "autor": "Alfonso del Val",
+        "estante": "4",
+        "inventario": "10813",
+        "decla": "",
+        "orden": "53"
+      },
+      {
+        "titulo": "FLORA Y FAUNA PUERTO BLEST",
+        "autor": "Centro Regional Universitario Bariloche",
+        "estante": "4",
+        "inventario": "13047",
+        "decla": "1494-2010",
+        "orden": "81"
+      },
+      {
+        "titulo": "LOS JOVENES TIENEN LA PALABRA",
+        "autor": "Lic. Beatriz Tobin- Stella Robatto",
+        "estante": "4",
+        "inventario": "39766",
+        "decla": "",
+        "orden": "84"
+      },
+      {
+        "titulo": "50 cosas que usted puede hacer para salvar la Tierra",
+        "autor": "the earthworks group",
+        "estante": "4",
+        "inventario": "10816",
+        "decla": "",
+        "orden": "97"
+      },
+      {
+        "titulo": "Introducción a las finanzas públicas",
+        "autor": "Jose Maria Martin",
+        "estante": "B1",
+        "inventario": "15279",
+        "decla": "",
+        "orden": "47"
+      },
+      {
+        "titulo": "Derecho Público",
+        "autor": "Presidencia de la Nación",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "49"
+      },
+      {
+        "titulo": "Filosofía del Derecho",
+        "autor": "Presidencia de la Nación",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "50"
+      },
+      {
+        "titulo": "Hombres y Mujeres de Bariloche (3)",
+        "autor": "Teresita Mendez",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "1344-2008",
+        "orden": "58"
+      },
+      {
+        "titulo": "Historia del Esquí en Bariloche",
+        "autor": "Alberto C. del Castillo",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2383-18",
+        "orden": "60"
+      },
+      {
+        "titulo": "Encuentro en Bariloche",
+        "autor": "Alberto C. del Castillo",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2382-18",
+        "orden": "62"
+      },
+      {
+        "titulo": "Cuando el agua se vuelve vidrio",
+        "autor": "Maria Eugenia Ciocchini",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2380-18",
+        "orden": "63"
+      },
+      {
+        "titulo": "Hielos del Engaño",
+        "autor": "Maria Eugenia Ciocchini",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2381-18",
+        "orden": "64"
+      },
+      {
+        "titulo": "Maquinchao",
+        "autor": "Mario A. Gallina",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2379-18",
+        "orden": "65"
+      },
+      {
+        "titulo": "LOS LIMITES DE RIO NEGRO",
+        "autor": "Guillermo F. Marcilese",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2378-18",
+        "orden": "67"
+      },
+      {
+        "titulo": "Patagonia 1892: diario del explorador suizo",
+        "autor": "Jules Claraz",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2376-18",
+        "orden": "68"
+      },
+      {
+        "titulo": "Diversidad cultural argentina",
+        "autor": "Consejo Federal de Inversiones",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2377-18",
+        "orden": "69"
+      },
+      {
+        "titulo": "Comunicación Estratégica: valor agregado para una ONG",
+        "autor": "Lic. Maria Laura Di Giano",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "70"
+      },
+      {
+        "titulo": "El parlamento",
+        "autor": "Eduardo A. Duhalde",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "71"
+      },
+      {
+        "titulo": "Tratado de Derecho Municipal (3)",
+        "autor": "Jorge Vanossi",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "72"
+      },
+      {
+        "titulo": "Control Municipal del Tránsito",
+        "autor": "Jorge Vanossi",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "73"
+      },
+      {
+        "titulo": "Laguna del Desierto",
+        "autor": "E. C. B. Corbetta",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "74"
+      },
+      {
+        "titulo": "Decreto de desburocratización y simplificación",
+        "autor": "Presidencia de la Nación",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "75"
+      },
+      {
+        "titulo": "Lotes sin dueño",
+        "autor": "Presidencia de la Nación",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "76"
+      },
+      {
+        "titulo": "Mensajes al poblador rural",
+        "autor": "Presidencia de la Nación",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "77"
+      },
+      {
+        "titulo": "Retratos de mi Bariloche",
+        "autor": "Carlos Wiederhold",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "78"
+      },
+      {
+        "titulo": "Bariloche: imágenes de su historia",
+        "autor": "Carlos Wiederhold",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "2374-18",
+        "orden": "79"
+      },
+      {
+        "titulo": "La Patagonia Rebelde",
+        "autor": "Osvaldo Bayer",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "82"
+      },
+      {
+        "titulo": "Neuquén, Argentina: guía turística",
+        "autor": "Patricia Velazquez",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "83"
+      },
+      {
+        "titulo": "Parques Nacionales de la Patagonia",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "85"
+      },
+      {
+        "titulo": "Argentina: guía turística",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "87"
+      },
+      {
+        "titulo": "Bariloche, la ciudad de los lagos",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "89"
+      },
+      {
+        "titulo": "El Nahuel Huapi",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "90"
+      },
+      {
+        "titulo": "San Carlos de Bariloche",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "91"
+      },
+      {
+        "titulo": "Los Lagos del Sur",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "93"
+      },
+      {
+        "titulo": "Argentina: Tierra de Fuego",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "94"
+      },
+      {
+        "titulo": "Argentina: Patagonia",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "95"
+      },
+      {
+        "titulo": "Argentina: Buenos Aires",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "98"
+      },
+      {
+        "titulo": "Argentina: Córdoba",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "99"
+      },
+      {
+        "titulo": "Argentina: Mendoza",
+        "autor": "Ediciones Turísticas de América",
+        "estante": "B1",
+        "inventario": "",
+        "decla": "",
+        "orden": "100"
+      }
+    ]

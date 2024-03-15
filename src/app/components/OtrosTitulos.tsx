@@ -1,7 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import json from '../api/libros.json';
-import styles from './libro.module.css'
+import styles from './libro.module.css';
+let backgroundColor = "defaultColor"; 
+
 
 export default function OtrosTitulos() {
  
@@ -11,12 +13,7 @@ export default function OtrosTitulos() {
         setLibros(json);
     }, []);
 
-    if (!libros) {
-        return <div>Product not found!</div>;
-    }
 
-
- 
  
  
     return (
@@ -28,10 +25,10 @@ export default function OtrosTitulos() {
             
 
 {libros.map((libro: any) => (
-                <div key={libro.id}>
+                <div key={libro.id}  className= {libro.decla? styles.otrosdecla : styles.default}>
                     <h2 className={styles.otrotitulo}>{libro.titulo}</h2>
-                    <p className={styles.otroauthor}>Autor: {libro.autor}</p>
-                                   
+                    <p className={styles.otroauthor}>Autor: {libro.autor}</p>     
+                   {libro.decla ? <p style={{backgroundColor: "indigo" }}> De interés ({libro.decla} )</p> : null}                             
                 </div>
             ))}
 

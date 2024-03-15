@@ -90,6 +90,8 @@ padding: 1%;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 height: 150%;
 overflow: scroll;
+text-align: center;
+
     
 }
 
@@ -114,8 +116,23 @@ overflow: scroll;
   }
 
   .otrostitulos{
-    color: black;
+    color: rgb(251, 250, 250);
+    background-color: #051951;
     text-align: center;
     font-size: large;
+    justify-content: center;
   
   }
+  .otrosdecla{
+    background-color: "#5505f5;";
+    color: "white";
+    opacity: "0.5";
+    border: #000 1px solid; margin: 5%;
+  box-shadow: 0 0 5px #000;
+
+  }
+  .default{
+background-color: rgb(255, 0, 0, 0);
+border: #000 1px solid; margin: 5%;
+box-shadow: 0 0 5px #000;
+}

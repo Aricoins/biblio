@@ -17,6 +17,9 @@ interface LibroProps {
 
 const Libro: FC<LibroProps> = ({ libro }) => {
 
+
+
+
   return (
    <>
     <Link className={styles.link} href={`/libros/${libro.id}`}>
