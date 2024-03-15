@@ -1,5 +1,5 @@
 .container { 
-        margin-top: 5%;
+        margin-top: 3%;
         margin-bottom: 1%;
         font-size: x-small; 
         height: 50%;
@@ -52,5 +52,6 @@ font-size: x-small;
     color: rgb(8, 8, 8);
 text-align: left;
     padding-left: 2%;
-    font-size: x-small;
+    font-size: small;
+    margin: 0%;
 }

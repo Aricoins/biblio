@@ -91,7 +91,7 @@ function PCM() {
         className={`${styles.h2} ${styles.h2Background}`}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-        Resoluciones PCM | 1988 - actualidad
+ PCM | 1988 - actualidad
       </h2>
       {isComponentVisible && (
       <div
