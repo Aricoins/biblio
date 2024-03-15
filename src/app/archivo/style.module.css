@@ -12,8 +12,8 @@
     }
 .endev{
 display: flex   ;
-  color:red;
-    font-size: 0.8rem;
+  color:rgb(54, 51, 51);
+    font-size: 0.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    border: 1px solid red;
 justify-content: flex-end;
@@ -39,5 +39,16 @@ border-radius: 25%;
                 margin-bottom: 1%;
                 width: 99%;
                 justify-content: center;
+    }
+
+    .h3 {
+background-color: rgb(5, 0, 0, 0.2);
+color: rgb(8, 8, 8);
+border: 1px solid black;
+border-radius: 0.5rem;
+padding: 1%;
+margin-top: 1%;
+text-align: center;
+
     }
 

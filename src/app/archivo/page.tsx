@@ -32,6 +32,9 @@ useEffect(() => {
       <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />
         </div>
+        <div className={styles.h3}  > <h2  >
+   Expedientes sancionados
+  </h2>  
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />
         </div>
@@ -43,6 +46,7 @@ useEffect(() => {
         </div>
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesResoluciones />
+        </div>
         </div>             
         <div data-aos="fade-up" className={styles.component}>
           <PCM />
