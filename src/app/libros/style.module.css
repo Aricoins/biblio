@@ -1,12 +1,11 @@
 /* styles.module.css */
 .body{
-  background-color: #c4c7c7;
+  background-color: #b9c1c1;
   margin-bottom: 10%;
-  margin-right: 35% ;
-  width: 100%;
+width: 62%;  
 }	
 .container {
-    width: 90%;
+    width: 100%;
     margin-right: 50%;
     justify-content: center;
     margin: 0 auto;
