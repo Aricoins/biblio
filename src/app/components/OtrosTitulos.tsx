@@ -28,7 +28,7 @@ export default function OtrosTitulos() {
                 <div key={libro.id}  className= {libro.decla? styles.otrosdecla : styles.default}>
                     <h2 className={styles.otrotitulo}>{libro.titulo}</h2>
                     <p className={styles.otroauthor}>Autor: {libro.autor}</p>     
-                   {libro.decla ? <p style={{backgroundColor: "indigo" }}> Declaración ({libro.decla} )</p> : null}                             
+                   {libro.decla ? <p style={{backgroundColor: "indigo" }}> Declaración {libro.decla}</p> : null}                             
                 </div>
             ))}
 
