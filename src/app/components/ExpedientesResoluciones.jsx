@@ -111,7 +111,7 @@ function ExpedientesResoluciones() {
         className={`${styles.h2} ${styles.h2Background}`}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-        Expedientes Resoluciones | 1983 - actualidad
+ Resoluciones | 1983 - actualidad
       </h2>
 {isComponentVisible && (
       <div className={styles.block }>

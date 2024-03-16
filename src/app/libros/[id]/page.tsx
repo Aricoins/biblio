@@ -10,14 +10,17 @@ interface Detail{
   autor: string;
   decla: any;
   imagen: string;
+  contratapa: string;
   resenia: string;
   }
+
+
 
 export default function Detail({ params }: { params: { id: string } }) {
   const [librosDetail, setLibrosDetail] = useState<any>() 
   const [currentImage, setCurrentImage] = useState<string>('');
   const [video, setVideo] = useState<boolean>(true);
-
+  const [isFlipped, setIsFlipped] = useState(false);
 
   
   useEffect(()=>{
@@ -43,17 +46,36 @@ export default function Detail({ params }: { params: { id: string } }) {
   if (!librosDetail) {
     return <div>Product not found!</div>;
   }
+ 
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
 
   return (
     <>
     <div className={styles.container}>
      <div className={styles.imagen}>
-      <Image src={librosDetail.imagen}
+     <div className="container" onClick={handleClick}>
+      <div className={`card ${isFlipped ? 'is-flipped' : ''}`}>
+        <div className="front">
+        <Image src={librosDetail.imagen}
       alt={librosDetail.titulo} 
       width={500} 
       height={600} 
       className=""/>
+        </div>
+        {/* <div className="back">
+        <Image src={librosDetail.contratapa}
+      alt={librosDetail.titulo} 
+      width={500} 
+      height={600} 
+      className=""/>  </div> */}
       </div>
+    </div>
+     
+            </div>
       <div className={styles.texto}>
       <h1 className="p-5 text-4xl font-bold" >{librosDetail.titulo}</h1>
       <h2 className="p-5 text-2xl font-semibold" > de {librosDetail.autor}</h2>
@@ -62,11 +84,10 @@ export default function Detail({ params }: { params: { id: string } }) {
     <p  key={index}>{paragraph}</p>
   ))}
    <p className="m-1 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
-    
-</div>
-      </div>
-    </div>
-       </> 
+ </div>
+ </div>
+ </div>
+  </> 
      );
   
 }

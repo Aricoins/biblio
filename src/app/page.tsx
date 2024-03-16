@@ -11,7 +11,7 @@ import './globals.css';
 
 const Container = ' w-12/12 h-100vh bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
 
-const Subcontainer = 'w-2/5 h-8/12 flex m-1 flex-col justify-center mx-auto md:flex-row rounded-lg opacity-80 relative'; // Añadida la posición relativa
+const Subcontainer = 'w-4/5 h-4/12 flex m-1 flex-col justify-center mx-auto md:flex-row rounded-lg opacity-80 relative'; // Añadida la posición relativa
 
 const LeftContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-8 m-1 rounded-md';
 

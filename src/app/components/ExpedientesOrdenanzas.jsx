@@ -4,6 +4,8 @@ import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
 import styles from './style.module.css';
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
 
 function ExpedientesOrdenanzas() {
   const [data, setData] = useState([]);
@@ -93,7 +95,7 @@ function ExpedientesOrdenanzas() {
     className={`${styles.h2} ${styles.h2Background}`}
     onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
   >
-    Expedientes Ordenanzas | 2015 - actualidad
+Ordenanzas | 2015 - actualidad
   </h2>
   {isComponentVisible && (
   <div className={styles.block}> 
@@ -146,26 +148,18 @@ function ExpedientesOrdenanzas() {
       </tbody>
     </table>
     {visibleRows < filteredData.length && (
-      <>
-        <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
-          <button
-            onClick={handleShowMore}
-            className={styles.verMas}
-          >
-            Ver más...
-          </button>
-    
-        {showLessButton ? (
-           <button
-           onClick={handleShowLess}
-           className={styles.verMenos}
-         >
-              Ver menos...
-            </button>
-            ) : null}
-            </div>
-       
-      </>
+    <>
+    <div className={styles.botones}>
+      <button onClick={handleShowMore} className={styles.verMas}>
+      <p className={styles.mas}>Más</p> <MdExpandMore /> 
+      </button>
+      {showLessButton ? (
+        <button onClick={handleShowLess} className={styles.verMenos}>
+         <p className={styles.mas}>Menos</p> <MdExpandLess /> 
+        </button>
+      ) : null}
+    </div>
+  </>
     )}
   </div>
   )}

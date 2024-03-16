@@ -262,3 +262,258 @@ cursor: pointer;
     background-color: #606060;
   }
   
+/* Estilos para el componente h2 */
+.h2 {
+    font-size: large;
+    font-weight: 500;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    cursor: pointer;
+    background-color: rgb(7, 31, 66);
+    color: white;
+    transition: 0.3s;
+  }
+  .h2:hover {
+    background-color: #f7f8fa;
+    color: black;
+    border: black 1px solid;
+    
+  }
+  @media (max-width: 768px) {
+    .h2 {
+      font-size: small;
+    }
+  }
+  
+.alert{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  background-color: #000204;
+  color: white;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+
+  }
+.content {
+  background-color: rgb(26, 24, 24);
+  color: rgb(249, 245, 245);
+}
+  /* Estilos para la visibilidad del componente */
+  .block {
+    display: block; 
+     width: 96%;
+    justify-content: center;
+    margin-left: 2%;
+    margin-bottom: 2%;
+  }
+  
+  /* Estilos para los input de búsqueda */
+  .input {
+    width: 100%;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid #000;
+    color: #000;
+    padding: 0.40rem;
+    border-radius: 0.25rem;
+  }
+
+  .botones{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr );
+  justify-content: center;
+}
+
+.verMas {
+    grid-column-start: 3;
+    justify-content: center;
+    color: rgb(111, 11, 241);
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+   background-color: rgb(0, 0, 0, 0);
+     }
+.verMenos {
+    grid-column-start: 10;
+    color: rgb(111, 11, 241);
+    font-size: x-large;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(0, 0, 0, 0);
+
+      }
+.verMenos .verMas :hover{
+    background-color: #0b2c6f;
+    color:  rgb(59, 60, 111);;
+    }   
+
+ .mas  {
+  color: rgb(5, 0, 11);
+      cursor: pointer;
+      inline-size: none;
+      font-size: x-small;
+      grid-column-start: 3 ;
+    }
+
+.projectSearchInput {
+    width: 66.6667%;
+    margin-left: 1px;
+  }
+.searchInput {
+    width: 15%;
+    margin-right: 0px;
+  }
+
+.searchIcon{
+   position: relative;
+  left: -22px;
+ }
+  /* Estilos para la tabla */
+.table {
+    width: 100%;
+    color: #070000;
+    background-color: #fdfafa;
+    border-collapse: collapse;
+    border: 1px solid #180101;
+    font-size: madium;
+    height: 60%;
+    margin-bottom: 1%;
+  }
+
+.tableHeader1 {
+    width: 16%;
+    color: white;
+    background-color: #230266;
+    border-collapse: collapse;
+    border: 2px solid  black;
+    cursor: pointer;
+  }
+
+.tableHeader2 {
+    width: 70%;
+    color: white;
+    background-color: #230266;
+    border-collapse: collapse;
+    border: 2px solid  black;
+}
+
+.tableHeader3 {
+    width: 14%;
+    color: white;
+    background-color: #230266;
+    border-collapse: collapse;
+    border: 2px solid  black;
+    cursor: pointer;
+}
+  
+.fullWidth {
+    width: 100%;
+  }
+  
+  
+  
+  .borderCollapse {
+    border-collapse: collapse;
+  }
+  
+  .border {
+    border: 1px solid #fff;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .tableCell {
+    border: 1px solid #fff;
+    padding: 0.2rem;
+  }
+  
+  .linkCell {
+    background-color: rgb(20, 19, 19);
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .link {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hoverUnderline:hover {
+    text-decoration: underline;
+  }
+  
+  .hoverBg:hover {
+    background-color: #100;
+    color:white
+  }
+    
+  .hoverText:hover {
+    color: white;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
+  .borderSlate {
+    border: 1px solid #708090;
+  }
+  
+  .visitedOpacity:visited {
+    opacity: 0.2;
+  }
+  
+  /* Estilos para los botones de "Ver más" y "Ver menos" */
+  .button {
+    font-size: smaller;
+    margin: 0.25rem;
+    cursor: pointer;
+  }
+  
+
+  
+  .showLessButton {
+    background-color: #474747;
+    color: #fff;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    margin-right: 15%;
+  }
+  
+  .showLessButton.disabled {
+    opacity: 0.5;
+  }
+  
+  /* Estilos específicos para botones */
+  .relative {
+    position: relative;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justifyEnd {
+    justify-content: flex-end;
+  }
+  
+  .mr0 {
+    margin-right: 0;
+  }
+  
+  .bgGray {
+    background-color: #808080;
+  }
+  
+  .bgSlate {
+    background-color: #708090;
+  }
+  
+  .hoverBgGray:hover {
+    background-color: #606060;
+  }
+  

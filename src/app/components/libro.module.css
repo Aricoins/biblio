@@ -1,11 +1,12 @@
 /* styles.module.css */
 
 .container {
-    width: 90%;
+    width: 100%;
     transition: all 1s ease-in-out;
     padding: 20%;
-    background-color: rgb(39, 15, 100, 0.1);
+    background-color: rgba(251, 250, 252, 0.1);
     border-radius: 5%;
+    z-index: 100;
   }
   
   .imageContainer {
@@ -18,7 +19,7 @@
   
   .imageContainer:hover {
     transform: scale(1.3);
-    filter: brightness(1.3);
+    filter: brightness(1.2);
   }
   
   .infoContainer {
@@ -70,10 +71,71 @@
   }
   
   .declaLink:hover {
-    background-color: #1d4ed8;
+    background-color: #051951;
   }
   .link {
     text-decoration: none;
     color: #000;
   }
+  .otros{
+    width: 28%;
+position: absolute;
+top: 22%;
+right:2%;
+background-color: rgb(5, 25, 81, 0.6);
+color: rgb(255, 255, 255);
+
+justify-content: center;
+margin: auto;
+padding: 1%;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+height: 150%;
+overflow: scroll;
+text-align: center;
+scrollbar-width: thin; /* Anchura de la barra de desplazamiento (experimental) */
+  scrollbar-color: #4b5563 #051951; 
+
+    
+}
+
+.otrotitulo{
+    font-size: 1rem;
+    text-align: center;
+    color: #140645;
+    background-color: #ffffff;
+        text-decoration: none;
+    margin-top: 0;
+  }
+
+  .otroautor{
+    font-size: 0.8rem;
+    text-align: center;
+    color: #0b0536;
+    text-decoration: none;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 2%;
   
+  }
+
+  .otrostitulos{
+    color: rgb(251, 250, 250);
+    background-color: #051951;
+    text-align: center;
+    font-size: large;
+    justify-content: center;
+  
+  }
+  .otrosdecla{
+    background-color: "#5505f5;";
+    color: "white";
+    opacity: "0.5";
+    border: #000 1px solid; margin: 5%;
+  box-shadow: 0 0 5px #000;
+
+  }
+  .default{
+background-color: rgb(255, 0, 0, 0);
+border: #000 1px solid; margin: 5%;
+box-shadow: 0 0 5px #000;
+}
