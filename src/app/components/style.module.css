@@ -11,6 +11,7 @@
     background-color: black;
     color: white;
     transition: 0.3s;
+    border: white 1px solid;
   }
   .h2:hover {
     background-color: #f7f8fa;
@@ -94,7 +95,7 @@ cursor: pointer;
     
 
   .projectSearchInput {
-    width: 66.6667%;
+    width: 70%;
     margin-left: 1px;
   }
   
