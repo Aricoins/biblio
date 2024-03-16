@@ -16,7 +16,7 @@ const NavFoot = () => {
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={styles.link } href="http://10.20.101.141/gbuscador/" 
+          <Link className={styles.link } href="http://digestobariloche.gov.ar/" 
           target="_blank">Digesto Jurídico</Link>
         </li>
         <li className={styles.item}>

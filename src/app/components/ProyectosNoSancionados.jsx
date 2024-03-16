@@ -108,7 +108,7 @@ function ProyectosNoSancionados() {
               title: `${styles.alert}`, 
               content: `${styles.content}`, 
             },
-            background: "#032138",
+            background: "#570c7a",
             color: "white",
             borderRadius: "50%",
           }).then(() => {
@@ -190,7 +190,7 @@ function ProyectosNoSancionados() {
             <>
               <div className={styles.botones}>
                 <button onClick={handleShowMore} className={styles.verMas}>
-                <p className={styles.mas}>Más</p> <MdExpandMore /> 
+                <MdExpandMore /><p className={styles.mas}> Más </p>  
                 </button>
                 {showLessButton ? (
                   <button onClick={handleShowLess} className={styles.verMenos}>
