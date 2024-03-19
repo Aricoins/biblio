@@ -125,7 +125,7 @@ function ProyectosNoSancionados() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-        Proyectos No Sancionados | 2015 - 2023
+        Proyectos No Sancionados | 2011 - 2023
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
