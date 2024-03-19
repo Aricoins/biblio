@@ -13,7 +13,6 @@ const sortData = (data, order) => {
   return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
     const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
-
     const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
     const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
 
