@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
-import styles from './style.module.css'; // Asegúrate de importar el módulo de estilos correspondiente
+import styles from './style.module.css';
+import Swal from 'sweetalert2';
+import logo from '../api/assets/moran.png';
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
 
 const sortData = (data, order) => {
-  if (!Array.isArray(data)) {
-    console.error('Error: Data is not an array');
-    return data;
-  }
+  return data.sort((a, b) => {
+    const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
+    const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
 
-  return data.slice().sort((a, b) => {
-    const [numeroA, cmA, yearA] = a['Numero'].split('-');
-    const [numeroB, cmB, yearB] = b['Numero'].split('-');
+    const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
+    const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
 
-    if (order === 'desc') {
-      return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
+    if (order === 'asc') {
+      return yearA !== yearB ? yearA - yearB : projectA - projectB;
     } else {
-      return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
+      return yearB !== yearA ? yearB - yearA : projectB - projectA;
     }
   });
 };
@@ -27,6 +29,7 @@ function ExpedientesComunicaciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
+
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
@@ -34,12 +37,13 @@ function ExpedientesComunicaciones() {
 
   useEffect(() => {
     axios
-      .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv'
-      )
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
-        setData(results.data);
+        const sortedData = sortData(results.data, 'desc');
+        setData(sortedData);
+        setVisibleRows(1);
+        setShowLessButton(false);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
@@ -47,27 +51,17 @@ function ExpedientesComunicaciones() {
   }, []);
 
   const filteredData = data.filter((row) => {
-    if (search && projectSearch) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        ) &&
-        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
-      );
-    } else if (search) {
-      return diacritics.remove(row['Resumen'].toLowerCase()).includes(
-        diacritics.remove(search.toLowerCase())
-      );
-    } else if (projectSearch) {
-      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
-    }
+    const numeroProyecto = row['Proyecto'].split('-')[0];
+    const searchTerm = diacritics.remove(search.toLowerCase());
+    const proyectoLowerCase = numeroProyecto.toLowerCase();
 
-    return true;
+    return (
+      diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
+      (projectSearch === '' || numeroProyecto === projectSearch)
+    );
   });
 
   const sortedFilteredData = sortData(filteredData, sortOrder);
-  
-  
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
@@ -84,10 +78,6 @@ function ExpedientesComunicaciones() {
     }
   };
 
-  const handleHeaderClick = () => {
-    setIsComponentVisible((prevVisibility) => !prevVisibility);
-  };
-
   const handleSort = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
     setVisibleRows(visibleRows);
@@ -96,38 +86,79 @@ function ExpedientesComunicaciones() {
 
   const sortedData = sortData(visibleRowsData, sortOrder);
 
+  const handleProjectSearchEnter = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent the default behavior of the Enter key
+  
+      // Check if the event is already handled
+      if (!e.handled) {
+        e.handled = true;
+  
+        const matchingProjects = filteredData.filter(
+          (row) => row['Proyecto'].split('-')[0] === projectSearch
+        );
+  
+        if (matchingProjects.length === 0) {
+          Swal.fire({
+            icon:  'info',
+            title: 'Atención',
+            text: `El Proyecto ${projectSearch} no se encuentra entre los No Sancionados.`,
+            footer: 'Ingrese otro número o busque entre los Expedientes Sancionados.',
+            customClass: {
+              title: `${styles.alert}`, 
+              content: `${styles.content}`, 
+            },
+            background: "#570c7a",
+            color: "white",
+            borderRadius: "50%",
+          }).then(() => {
+            setProjectSearch('');
+          });
+        }
+      }
+    }
+  };
+  
+
   return (
     <>
       <h2
-        className={`${styles.h2} ${styles.h2Background}`}
+        className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-      Comunicaciones | 1988 - actualidad
+       Comunicaciones | 1988 - actualidad
       </h2>
       {isComponentVisible && (
-        <div className={styles.block}>
-          <input
+        <div className={`${styles.block}`}>
+         <input
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
+            onKeyDown={handleProjectSearchEnter}
             placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
           />
+    
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Resumen..."
+            placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          <table  data-aos="fade-up" className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
+          
+          <table
+            data-aos="fade-up"
+            data-aos-duration="300"
+            className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}
+          >
             <thead>
               <tr>
-                <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
+                <th className={styles.tableHeader1} onClick={handleSort}>
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
-                <th className={`${styles.tableHeader2} ${styles.border}`}>Resumen</th>
-                <th className={`${styles.tableHeader3} ${styles.border}`}>Año</th>
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
+                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo de Norma</th>
               </tr>
             </thead>
             <tbody>
@@ -140,48 +171,40 @@ function ExpedientesComunicaciones() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
-                        passHref
                       >
-                        {row['Numero']}
+                        {row['Proyecto']}
                       </Link>
                     </td>
                   ) : (
-                    <td className={`${styles.tableCell
-                    } ${styles.border} ${styles.padding}`}>{row['Numero']}</td>
-                    )}
-                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
-                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-  
-            {visibleRows < filteredData.length && (
-              <>
-                <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
-                  <button
-                    onClick={handleShowMore}
-                    className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
-                  >
-                    Ver más...
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                      {row['Proyecto']}
+                    </td>
+                  )}
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {visibleRows < filteredData.length && (
+            <>
+              <div className={styles.botones}>
+                <button onClick={handleShowMore} className={styles.verMas}>
+                <MdExpandMore /><p className={styles.mas}> Más </p>  
+                </button>
+                {showLessButton ? (
+                  <button onClick={handleShowLess} className={styles.verMenos}>
+                   <p className={styles.mas}>Menos</p> <MdExpandLess /> 
                   </button>
-  
-                  {showLessButton ? (
-                    <button
-                      onClick={handleShowLess}
-                      className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
-                    >
-                      Ver menos...
-                    </button>
-                  ) : null}
-                </div>
-              </>
-            )}
-          </div>
-        )}
-      </>
-    );
-  }
-  
-  export default ExpedientesComunicaciones;
-  
+                ) : null}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+    </>
+  );
+}
+
+export default ExpedientesComunicaciones;

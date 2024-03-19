@@ -69,11 +69,11 @@ function ExpedientesOrdenanzas() {
       setShowLessButton(visibleRows - 10 > 1);
     }
   };
+  
   const sortData = (data, order) => {
     return data.sort((a, b) => {
       const [numeroA, cmA, yearA] = a['Numero'].split('-');
       const [numeroB, cmB, yearB] = b['Numero'].split('-');
-  
       if (order === 'asc') {
         return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
       } else {
