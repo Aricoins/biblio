@@ -10,16 +10,27 @@ import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 const sortData = (data, order = 'asc') => {
   return data.sort((a, b) => {
-    const [yearA, projectA] = a['Numero'].split('\t');
-    const [yearB, projectB] = b['Numero'].split('\t');
+    const yearA = parseInt(a['Año']);
+    const yearB = parseInt(b['Año']);
+    const projectA = parseInt(a['Numero']);
+    const projectB = parseInt(b['Numero']);
 
     if (order === 'asc') {
-      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+      if (yearA !== yearB) {
+        return yearA - yearB;
+      } else {
+        return projectA - projectB;
+      }
     } else {
-      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+      if (yearB !== yearA) {
+        return yearB - yearA;
+      } else {
+        return projectB - projectA;
+      }
     }
   });
 };
+
 
 function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
@@ -54,7 +65,7 @@ function ExpedientesResoluciones() {
 
     return (
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || numeroProyecto === projectSearch)
+      (projectSearch === '' || proyectoLowerCase === projectSearch)
     );
   });
 
@@ -71,14 +82,14 @@ function ExpedientesResoluciones() {
   const handleShowLess = () => {
     if (visibleRows > 10) {
       setVisibleRows((prevRows) => prevRows - 10);
-      setShowLessButton(false);
+      setShowLessButton(true);
     } else {
       setVisibleRows(10);
     }
   };
 
   const handleSort = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
+    setSortOrder((prevOrder) => (prevOrder === 'desc' ? 'asc' : 'desc'));
     setVisibleRows(visibleRows);
     setShowLessButton(true);
   };
@@ -125,7 +136,7 @@ function ExpedientesResoluciones() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Resoluciones | 1988 - actualidad
+      Resoluciones | 1988 - actualidad
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
