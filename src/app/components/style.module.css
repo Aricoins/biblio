@@ -37,8 +37,9 @@
 
   }
 .content {
-  background-color: rgb(26, 24, 24);
+  background-color: rgb(144, 35, 35);
   color: rgb(249, 245, 245);
+  border: 1px solid rgb(41, 12, 12);
 }
   /* Estilos para la visibilidad del componente */
   .block {

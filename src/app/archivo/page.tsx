@@ -33,7 +33,7 @@ useEffect(() => {
           <ProyectosNoSancionados  />
         </div>
         <div className={styles.h3}  > <h2  className={styles.h4}>
-   Expedientes sancionados:
+   Expedientes aprobados:
   </h2>  
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />
