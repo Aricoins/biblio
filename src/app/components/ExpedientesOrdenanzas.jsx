@@ -158,7 +158,7 @@ function ExpedientesOrdenanzas() {
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo de Norma</th>
+               
               </tr>
             </thead>
             <tbody>
@@ -181,7 +181,7 @@ function ExpedientesOrdenanzas() {
                     </td>
                   )}
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
+                  
                 </tr>
               ))}
             </tbody>

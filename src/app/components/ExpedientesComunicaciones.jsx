@@ -8,14 +8,10 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
-
-const sortData = (data, order) => {
+const sortData = (data, order = 'asc') => {
   return data.sort((a, b) => {
-    const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
-    const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
-
-    const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
-    const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
+    const [yearA, projectA] = a['Numero'].split('\t');
+    const [yearB, projectB] = b['Numero'].split('\t');
 
     if (order === 'asc') {
       return yearA !== yearB ? yearA - yearB : projectA - projectB;
@@ -33,14 +29,14 @@ function ExpedientesComunicaciones() {
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
-  const [sortOrder, setSortOrder] = useState('desc');
+  const [sortOrder, setSortOrder] = useState('asc'); // Cambiado a 'asc'
 
   useEffect(() => {
     axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
-        const sortedData = sortData(results.data, 'desc');
+        const sortedData = sortData(results.data);
         setData(sortedData);
         setVisibleRows(1);
         setShowLessButton(false);
@@ -50,8 +46,9 @@ function ExpedientesComunicaciones() {
       });
   }, []);
 
+
   const filteredData = data.filter((row) => {
-    const numeroProyecto = row['Proyecto'].split('-')[0];
+    const numeroProyecto = row['Numero'];
     const searchTerm = diacritics.remove(search.toLowerCase());
     const proyectoLowerCase = numeroProyecto.toLowerCase();
 
@@ -60,6 +57,8 @@ function ExpedientesComunicaciones() {
       (projectSearch === '' || numeroProyecto === projectSearch)
     );
   });
+
+
 
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
@@ -95,14 +94,14 @@ function ExpedientesComunicaciones() {
         e.handled = true;
   
         const matchingProjects = filteredData.filter(
-          (row) => row['Proyecto'].split('-')[0] === projectSearch
+          (row) => row['Numero'].split('\t')[1] === projectSearch
         );
   
         if (matchingProjects.length === 0) {
           Swal.fire({
             icon:  'info',
             title: 'Atención',
-            text: `El Proyecto ${projectSearch} no se encuentra entre los No Sancionados.`,
+            text: `No se encuentra el Expediente  ${projectSearch}.`,
             footer: 'Ingrese otro número o busque entre los Expedientes Sancionados.',
             customClass: {
               title: `${styles.alert}`, 
@@ -158,30 +157,19 @@ function ExpedientesComunicaciones() {
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo de Norma</th>
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Año</th>
+               
               </tr>
             </thead>
             <tbody>
               {sortedData.map((row, index) => (
                 <tr key={index}>
-                  {row['Link'] ? (
-                    <td className={`${styles.tableCell} ${styles.linkCell}`}>
-                      <Link
-                        href={row['Link']}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
-                      >
-                        {row['Proyecto']}
-                      </Link>
-                    </td>
-                  ) : (
-                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
-                      {row['Proyecto']}
-                    </td>
-                  )}
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                    {row['Numero']}
+                  </td>
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Tipo Norma']}</td>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
+               
                 </tr>
               ))}
             </tbody>
