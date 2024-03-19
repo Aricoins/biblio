@@ -3,53 +3,65 @@ import axios from 'axios';
 import Papa from 'papaparse';
 import diacritics from 'diacritics';
 import Link from 'next/link';
-import styles from './style.module.css'; 
+import styles from './style.module.css';
+import Swal from 'sweetalert2';
+import logo from '../api/assets/moran.png';
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
+const sortData = (data, order = 'asc') => {
+  return data.sort((a, b) => {
+    const [yearA, projectA] = a['Numero'].split('\t');
+    const [yearB, projectB] = b['Numero'].split('\t');
+
+    if (order === 'asc') {
+      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+    } else {
+      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+    }
+  });
+};
 
 function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
+
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
-  const [sortOrder, setSortOrder] = useState('desc');
+  const [sortOrder, setSortOrder] = useState('asc'); // Cambiado a 'asc'
 
   useEffect(() => {
     axios
-      .get(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vSVE-Kl6UMQgVck3WUQ6FSm6vJF-LLQInvnapo-zuk_zMszIN1PP3BCsSBN_-aRWllb1Y3S_i3_bAB0/pub?output=csv'
-      )
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
-        setData(results.data);
+        const sortedData = sortData(results.data);
+        setData(sortedData);
+        setVisibleRows(1);
+        setShowLessButton(false);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
   }, []);
 
-  const filteredData = data.filter((row) => {
-    if (search && projectSearch) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        ) &&
-        row['Numero'].toLowerCase().includes(projectSearch.toLowerCase())
-      );
-    } else if (search) {
-      return (
-        diacritics.remove(row['Resumen'].toLowerCase()).includes(
-          diacritics.remove(search.toLowerCase())
-        )
-      );
-    } else if (projectSearch) {
-      return row['Numero'].toLowerCase().includes(projectSearch.toLowerCase());
-    }
 
-    return true;
+  const filteredData = data.filter((row) => {
+    const numeroProyecto = row['Numero'];
+    const searchTerm = diacritics.remove(search.toLowerCase());
+    const proyectoLowerCase = numeroProyecto.toLowerCase();
+
+    return (
+      diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
+      (projectSearch === '' || numeroProyecto === projectSearch)
+    );
   });
 
-  const visibleRowsData = filteredData.slice(0, visibleRows);
+
+
+  const sortedFilteredData = sortData(filteredData, sortOrder);
+  const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
     setVisibleRows((prevRows) => prevRows + 10);
@@ -65,24 +77,6 @@ function ExpedientesResoluciones() {
     }
   };
 
-  const handleAll = () => {
-    setVisibleRows(filteredData.length);
-  };
-
- 
-  const sortData = (data, order) => {
-    return data.sort((a, b) => {
-      const [numeroA, cmA, yearA] = a['Numero'].split('-');
-      const [numeroB, cmB, yearB] = b['Numero'].split('-');
-
-      if (order === 'asc') {
-        return yearA !== yearB ? parseInt(yearA, 10) - parseInt(yearB, 10) : parseInt(numeroA, 10) - parseInt(numeroB, 10);
-      } else {
-        return yearB !== yearA ? parseInt(yearB, 10) - parseInt(yearA, 10) : parseInt(numeroB, 10) - parseInt(numeroA, 10);
-      }
-    });
-  };
-
   const handleSort = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
     setVisibleRows(visibleRows);
@@ -90,109 +84,115 @@ function ExpedientesResoluciones() {
   };
 
   const sortedData = sortData(visibleRowsData, sortOrder);
- 
- 
- 
- 
- 
- 
 
- 
- 
- 
+  const handleProjectSearchEnter = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent the default behavior of the Enter key
+  
+      // Check if the event is already handled
+      if (!e.handled) {
+        e.handled = true;
+  
+        const matchingProjects = filteredData.filter(
+          (row) => row['Numero'].split('\t')[1] === projectSearch
+        );
+  
+        if (matchingProjects.length === 0) {
+          Swal.fire({
+            icon:  'info',
+            title: 'Atención',
+            text: `No se encuentra el Expediente  ${projectSearch}.`,
+            footer: 'Ingrese otro número o busque entre los Expedientes Sancionados.',
+            customClass: {
+              title: `${styles.alert}`, 
+              content: `${styles.content}`, 
+            },
+            background: "#570c7a",
+            color: "white",
+            borderRadius: "50%",
+          }).then(() => {
+            setProjectSearch('');
+          });
+        }
+      }
+    }
+  };
+  
 
- 
- 
- 
- 
   return (
     <>
       <h2
-        className={`${styles.h2} ${styles.h2Background}`}
+        className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
- Resoluciones | 1983 - actualidad
+       Resoluciones | 1988 - actualidad
       </h2>
-{isComponentVisible && (
-      <div className={styles.block }>
+      {isComponentVisible && (
+        <div className={`${styles.block}`}>
          <input
-          type="text"
-          value={projectSearch}
-          onChange={(e) => setProjectSearch(e.target.value)}
-          placeholder="Número..."
-          className={`${styles.input} ${styles.searchInput}`}
-        />
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar en Resumen..."
-          className={`${styles.input} ${styles.projectSearchInput}`}
-        />
-      
-        <table data-aos="fade-up" className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}>
-        <thead>
+            type="text"
+            value={projectSearch}
+            onChange={(e) => setProjectSearch(e.target.value)}
+            onKeyDown={handleProjectSearchEnter}
+            placeholder="Número..."
+            className={`${styles.input} ${styles.searchInput}`}
+          />
+    
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder='Descripción Sintética... '
+            className={`${styles.input} ${styles.projectSearchInput}`}
+          />
+          
+          <table
+            data-aos="fade-up"
+            data-aos-duration="300"
+            className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}
+          >
+            <thead>
               <tr>
-                <th className={`${styles.tableHeader1} ${styles.border} ${styles.cursorPointer}`} onClick={handleSort}>
-                Número {sortOrder === 'asc' ? '▼' : '▲'}
+                <th className={styles.tableHeader1} onClick={handleSort}>
+                  Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
-                <th className={`${styles.tableHeader2} ${styles.border}`}>Resumen</th>
-                <th className={`${styles.tableHeader3} ${styles.border}`}>Año</th>
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
+                <th className={`${styles.tableHeader2} ${styles.border2}`}>Año</th>
+               
               </tr>
             </thead>
-          <tbody>
-            {sortedData.map((row, index) => (
-              <tr key={index}>
-                {row['Link'] ? (
-                  <td className={`${styles.border} ${styles.p6} ${styles.w32} ${styles.bgGray200} ${styles.justifyCenter} ${styles.textCenter}`}>
-                    <Link
-                      href={row['Link']}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.hoverUnderline} ${styles.hoverBgGray100} ${styles.hoverP1} ${styles.roundedLg} ${styles.borderSlate800} ${styles.visitedOpacity20}`}
-                      passHref
-                    >
-                      {row['Numero']}
-                    </Link>
+            <tbody>
+              {sortedData.map((row, index) => (
+                <tr key={index}>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                    {row['Numero']}
                   </td>
-                ) : (
-                  <td className={`${styles.border} ${styles.p2}`}>{row['Numero']}</td>
-                )}
-                <td className={`${styles.border} ${styles.p2}`}>{row['Resumen']}</td>
-                <td className={`${styles.border} ${styles.p2}`}>{row['Año']}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
+                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
+               
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {visibleRows < filteredData.length && (
+            <>
+              <div className={styles.botones}>
+                <button onClick={handleShowMore} className={styles.verMas}>
+                <MdExpandMore /><p className={styles.mas}> Más </p>  
+                </button>
+                {showLessButton ? (
+                  <button onClick={handleShowLess} className={styles.verMenos}>
+                   <p className={styles.mas}>Menos</p> <MdExpandLess /> 
+                  </button>
+                ) : null}
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
-        {visibleRows < filteredData.length && (
-          <>
-          <div className={`${styles.table} ${styles.flex} ${styles.justifyEnd} ${styles.mr0}`}>
-            <button
-              onClick={handleShowMore}
-              className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
-            >
-              Ver más...
-            </button>
-         
-            {showLessButton ? (
-              <button
-                onClick={handleShowLess}
-                className={`${styles.mt4} ${styles.ml4} ${styles.bgRed500} ${styles.textWhite} ${styles.px4} ${styles.py2} ${styles.roundedMd} ${styles.hoverBgRed600}`}
-              >
-                Ver menos...
-              </button>
-            ) : null}
-            </div>
-      
-      </>
-    
-    )}
-     
-      </div>
-     )}
-     </>
+    </>
   );
- }
+}
 
 export default ExpedientesResoluciones;
