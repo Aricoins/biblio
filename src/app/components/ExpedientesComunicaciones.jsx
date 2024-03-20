@@ -174,14 +174,26 @@ function ExpedientesComunicaciones() {
               </tr>
             </thead>
             <tbody>
-              {sortedData.map((row, index) => (
+            {sortedData.map((row, index) => (
                 <tr key={index}>
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
-                    {row['Numero']}
-                  </td>
+                  {row['Link'] ? (
+                    <td className={`${styles.tableCell} ${styles.linkCell}`}>
+                      <Link
+                        href={row['Link']}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
+                      >
+                        {row['Numero']}
+                      </Link>
+                    </td>
+                  ) : (
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                      {row['Numero']}
+                    </td>
+                  )}
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
-               
                 </tr>
               ))}
             </tbody>
