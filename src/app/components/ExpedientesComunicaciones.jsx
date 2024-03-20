@@ -67,6 +67,7 @@ function ExpedientesComunicaciones() {
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
+    setSortOrder('desc');
     setVisibleRows((prevRows) => prevRows + 10);
     setShowLessButton(true);
   };
