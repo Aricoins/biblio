@@ -8,18 +8,21 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
-const sortData = (data, order = 'asc') => {
+const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
-    const [yearA, projectA] = a['Numero'].split('\t');
-    const [yearB, projectB] = b['Numero'].split('\t');
+    const yearA = parseInt(a['Año']);
+    const yearB = parseInt(b['Año']);
+    const [projectA] = (a['Número'] || '').split('\t');
+    const [projectB] = (b['Número'] || '').split('\t');
 
-    if (order === 'asc') {
-      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+    if (yearA !== yearB) {
+      return order === 'asc' ? yearA - yearB : yearB - yearA;
     } else {
-      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+      return order === 'asc' ? projectA - projectB : projectB - projectA;
     }
   });
 };
+
 
 function ExpedientesDeclaraciones() {
   const [data, setData] = useState([]);
@@ -33,7 +36,7 @@ function ExpedientesDeclaraciones() {
 
   useEffect(() => {
     axios
-      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTOPvyh0NxFC-EyV28tFWZlX3f_OFPrY2w4JFVnqF3CDyPJ4pNbORFaq5yI1uNw4aeoP27jXWp82GTU/pub?output=csv')
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
         const sortedData = sortData(results.data);
@@ -64,6 +67,7 @@ function ExpedientesDeclaraciones() {
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
   const handleShowMore = () => {
+    setSortOrder('desc');
     setVisibleRows((prevRows) => prevRows + 10);
     setShowLessButton(true);
   };
@@ -117,7 +121,16 @@ function ExpedientesDeclaraciones() {
       }
     }
   };
-  
+
+  let handleNumero = (e) => {
+    e.preventDefault();
+    setSortOrder('desc');
+  setProjectSearch(e.target.value)
+  }
+   let handleLista = (e) => {
+    e.preventDefault();
+    setSortOrder('desc');
+    setSearch(e.target.value)}
 
   return (
     <>
@@ -132,7 +145,7 @@ function ExpedientesDeclaraciones() {
          <input
             type="text"
             value={projectSearch}
-            onChange={(e) => setProjectSearch(e.target.value)}
+            onChange={handleNumero}
             onKeyDown={handleProjectSearchEnter}
             placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
@@ -141,7 +154,7 @@ function ExpedientesDeclaraciones() {
           <input
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={handleLista}
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
@@ -162,14 +175,26 @@ function ExpedientesDeclaraciones() {
               </tr>
             </thead>
             <tbody>
-              {sortedData.map((row, index) => (
+            {sortedData.map((row, index) => (
                 <tr key={index}>
-                  <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
-                    {row['Numero']}
-                  </td>
+                  {row['Link'] ? (
+                    <td className={`${styles.tableCell} ${styles.linkCell}`}>
+                      <Link
+                        href={row['Link']}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${styles.link} ${styles.hoverUnderline} ${styles.hoverBg} ${styles.hoverP} ${styles.hoverText} ${styles.rounded} ${styles.borderSlate} ${styles.visitedOpacity}`}
+                      >
+                        {row['Numero']}
+                      </Link>
+                    </td>
+                  ) : (
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                      {row['Numero']}
+                    </td>
+                  )}
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Resumen']}</td>
                   <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>{row['Año']}</td>
-               
                 </tr>
               ))}
             </tbody>

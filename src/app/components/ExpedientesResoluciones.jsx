@@ -10,27 +10,16 @@ import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 const sortData = (data, order = 'asc') => {
   return data.sort((a, b) => {
-    const yearA = parseInt(a['Año']);
-    const yearB = parseInt(b['Año']);
-    const projectA = parseInt(a['Numero']);
-    const projectB = parseInt(b['Numero']);
+    const [yearA, projectA] = a['Numero'].split('\t');
+    const [yearB, projectB] = b['Numero'].split('\t');
 
     if (order === 'asc') {
-      if (yearA !== yearB) {
-        return yearA - yearB;
-      } else {
-        return projectA - projectB;
-      }
+      return yearA !== yearB ? yearA - yearB : projectA - projectB;
     } else {
-      if (yearB !== yearA) {
-        return yearB - yearA;
-      } else {
-        return projectB - projectA;
-      }
+      return yearB !== yearA ? yearB - yearA : projectB - projectA;
     }
   });
 };
-
 
 function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
@@ -44,7 +33,7 @@ function ExpedientesResoluciones() {
 
   useEffect(() => {
     axios
-      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv')
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTOPvyh0NxFC-EyV28tFWZlX3f_OFPrY2w4JFVnqF3CDyPJ4pNbORFaq5yI1uNw4aeoP27jXWp82GTU/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
         const sortedData = sortData(results.data);
@@ -65,7 +54,7 @@ function ExpedientesResoluciones() {
 
     return (
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || proyectoLowerCase === projectSearch)
+      (projectSearch === '' || numeroProyecto === projectSearch)
     );
   });
 
@@ -82,14 +71,14 @@ function ExpedientesResoluciones() {
   const handleShowLess = () => {
     if (visibleRows > 10) {
       setVisibleRows((prevRows) => prevRows - 10);
-      setShowLessButton(true);
+      setShowLessButton(false);
     } else {
       setVisibleRows(10);
     }
   };
 
   const handleSort = () => {
-    setSortOrder((prevOrder) => (prevOrder === 'desc' ? 'asc' : 'desc'));
+    setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
     setVisibleRows(visibleRows);
     setShowLessButton(true);
   };
@@ -136,7 +125,7 @@ function ExpedientesResoluciones() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-      Resoluciones | 1988 - actualidad
+       Resoluciones | 1988 - actualidad
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
