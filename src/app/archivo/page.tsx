@@ -27,7 +27,7 @@ useEffect(() => {
       <NavTop />
      
       <div  className={styles.container}  >
-      <p className={styles.endev}> En desarrollo RG|IC|AGR </p>
+      <p className={styles.endev}> En desarrollo | RG-IC-AGR  digestobariloche@gmail.com </p>
       <div className={styles.subcontainer}>
       <div data-aos="fade-up" className={styles.component}>
           <ProyectosNoSancionados  />

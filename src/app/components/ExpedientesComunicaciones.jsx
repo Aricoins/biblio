@@ -8,18 +8,21 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
-const sortData = (data, order = 'asc') => {
+const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
-    const [yearA, projectA] = a['Numero'].split('\t');
-    const [yearB, projectB] = b['Numero'].split('\t');
+    const yearA = parseInt(a['Año']);
+    const yearB = parseInt(b['Año']);
+    const [projectA] = (a['Número'] || '').split('\t');
+    const [projectB] = (b['Número'] || '').split('\t');
 
-    if (order === 'asc') {
-      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+    if (yearA !== yearB) {
+      return order === 'asc' ? yearA - yearB : yearB - yearA;
     } else {
-      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+      return order === 'asc' ? projectA - projectB : projectB - projectA;
     }
   });
 };
+
 
 function ExpedientesComunicaciones() {
   const [data, setData] = useState([]);
@@ -117,7 +120,16 @@ function ExpedientesComunicaciones() {
       }
     }
   };
-  
+
+  let handleNumero = (e) => {
+    e.preventDefault();
+    setSortOrder('desc');
+  setProjectSearch(e.target.value)
+  }
+   let handleLista = (e) => {
+    e.preventDefault();
+    setSortOrder('desc');
+    setSearch(e.target.value)}
 
   return (
     <>
@@ -132,7 +144,7 @@ function ExpedientesComunicaciones() {
          <input
             type="text"
             value={projectSearch}
-            onChange={(e) => setProjectSearch(e.target.value)}
+            onChange={handleNumero}
             onKeyDown={handleProjectSearchEnter}
             placeholder="Número..."
             className={`${styles.input} ${styles.searchInput}`}
@@ -141,7 +153,7 @@ function ExpedientesComunicaciones() {
           <input
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={handleLista}
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
