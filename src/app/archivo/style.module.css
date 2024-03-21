@@ -40,7 +40,7 @@
     }
 
     .h3 {
-background-color: rgba(19, 11, 60, .2);
+background-color: rgba(19, 11, 60, 0);
 color: rgb(4, 15, 84);
 border: 2px solid black;
 border-radius: 0.5rem;
@@ -53,7 +53,7 @@ box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
 
 
 .h4{
-    background-color: rgba(225, 199, 199, 0.5);
+    background-color: rgba(225, 199, 199, 0.1);
     color: rgb(21, 3, 57);
     font-size: small;
     border: px solid black;
