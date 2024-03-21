@@ -36,7 +36,7 @@ function ExpedientesDeclaraciones() {
 
   useEffect(() => {
     axios
-      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv')
+      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTOPvyh0NxFC-EyV28tFWZlX3f_OFPrY2w4JFVnqF3CDyPJ4pNbORFaq5yI1uNw4aeoP27jXWp82GTU/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
         const sortedData = sortData(results.data);

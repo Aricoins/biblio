@@ -8,11 +8,10 @@
         
     }
     .endevdiv{
-        display: flex   ;
+        display: flex;
         flex-direction: row;
-        margin-right: 2%;
-   
-    }
+        color:rgb(54, 51, 51);
+        }
     
 .endev{
     display: flex   ;
