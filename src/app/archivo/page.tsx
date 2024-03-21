@@ -23,8 +23,7 @@ useEffect(() => {
     <>
       <NavTop />
       <div  className={styles.container}  >
-      <p className={styles.endev}> En desarrollo | RG-IC-AGR  digestobariloche@gmail.com </p>
-      <div className={styles.subcontainer}>
+       <div className={styles.subcontainer}>
       <div data-aos="fade-up" className={styles.component}>
       <ProyectosNoSancionados  />
       </div>
@@ -48,7 +47,9 @@ useEffect(() => {
           <PCM />
         </div> 
       </div>
-    
+      <div data-aos="fade-up" className={styles.endevdiv}>
+      <p className={styles.endev}> En desarrollo | RG-IC-AGR  digestobariloche@gmail.com </p>
+   </div>
       </div>
       <NavFoot />
     </>
