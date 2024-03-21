@@ -17,7 +17,7 @@ const LeftContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10
 
 const RightContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
-const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute bottom-0 right-0 left-0 p-1 text-white rounded-md transition duration-500 hover:bg-teal-400';
+const Boton = 'bg-indigo-800 w-full flex justify-center items-center absolute top-0 right-0 left-0 p-1 text-white rounded-md transition duration-500 hover:bg-teal-400';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);
@@ -32,7 +32,12 @@ export default function Libros() {
   return (
     <>
       <div className={Container}>
-      
+           <div className={Boton}>
+                <Link href='/archivo'>
+                  <button>Ingresar
+                  <p>como invitado</p></button>
+                </Link>
+              </div>
           <div className={Subcontainer}>
             <div className={LeftContent}>
               <div className='flex justify-center mt-6'>
@@ -117,12 +122,7 @@ export default function Libros() {
                   </p>
                 )}
               </div>
-              <div className={Boton}>
-                <Link href='/archivo'>
-                  <button>Ingresar
-                  <p>como invitado</p></button>
-                </Link>
-              </div>
+         
             </div>
           </div>
         </div>

@@ -15,24 +15,20 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 
 const Registro = () => {
-
 useEffect(() => {
   Aos.init({duration: 300});
 }
 , [])
-
-
   return (
     <>
       <NavTop />
-     
       <div  className={styles.container}  >
       <p className={styles.endev}> En desarrollo | RG-IC-AGR  digestobariloche@gmail.com </p>
       <div className={styles.subcontainer}>
       <div data-aos="fade-up" className={styles.component}>
-          <ProyectosNoSancionados  />
-        </div>
-        <div className={styles.h3}  > <h2  className={styles.h4}>
+      <ProyectosNoSancionados  />
+      </div>
+     <div className={styles.h3}  > <h2  className={styles.h4}>
    EXPEDIENTES APROBADOS:
   </h2>  
         <div data-aos="fade-up" className={styles.component}>
