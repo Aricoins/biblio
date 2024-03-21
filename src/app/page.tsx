@@ -95,7 +95,7 @@ export default function Libros() {
             <div className={RightContent}>
               <div className='flex justify-center'>
                 <Image
-                  className=' w-10/12 "filter drop-shadow-md blur-md rounded-lg my-10'
+                  className=' w-10/12 "filter drop-shadow-md rounded-lg my-10'
                   src={logo}
                   alt='logo'
                   width={300}
