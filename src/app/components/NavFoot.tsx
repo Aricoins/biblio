@@ -28,7 +28,8 @@ const NavFoot = () => {
 </ul>
       <Image 
       src={logo} 
-      width={100}
+      width={200}
+      height={200}
       alt="logotipo"
       className={styles.navFootImage}/>
     </div>

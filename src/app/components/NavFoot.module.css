@@ -16,19 +16,17 @@
   font-size: 80%;
 
 }
-
 .navFootImage {
-  width: 20%;
+  width: 15%;
   height: 100%
 }
 
 @media (max-width: 700px){
   .navFoot {
     font-size: 80%;
-    
-  }
+    }
   .navFootImage{
-    width: 20%;
+    width: 10%;
     height: 80%;
   }
 }
