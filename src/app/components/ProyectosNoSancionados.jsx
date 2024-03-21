@@ -8,8 +8,11 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+import { match } from 'assert';
 
 const sortData = (data, order) => {
+
+
   return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
     const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
@@ -22,6 +25,7 @@ const sortData = (data, order) => {
       return yearB !== yearA ? yearB - yearA : projectB - projectA;
     }
   });
+
 };
 
 function ProyectosNoSancionados() {
@@ -33,8 +37,8 @@ function ProyectosNoSancionados() {
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('desc');
-
   useEffect(() => {
+ 
     axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv')
       .then((response) => {
@@ -47,6 +51,8 @@ function ProyectosNoSancionados() {
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
+     
+      console.log(data)
   }, []);
 
   const filteredData = data.filter((row) => {
@@ -96,7 +102,7 @@ function ProyectosNoSancionados() {
         const matchingProjects = filteredData.filter(
           (row) => row['Proyecto'].split('-')[0] === projectSearch
         );
-  
+     
         if (matchingProjects.length === 0) {
           Swal.fire({
             icon:  'info',
@@ -118,7 +124,7 @@ function ProyectosNoSancionados() {
     }
   };
   
-
+  
   return (
     <>
       <h2
