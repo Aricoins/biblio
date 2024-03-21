@@ -33,10 +33,13 @@ function ProyectosNoSancionados() {
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
 
-  const [visibleRows, setVisibleRows] = useState(1);
+  const [visibleRows, setVisibleRows] = useState(0);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('desc');
+  const [numProjectsWithLink, setNumProjectsWIthLink] = useState(0);
+  const [numSearchResults, setNumSearchResults] = useState(0);
+  const [numVisibleResults, setNumVisibleResults] = useState(0);
   useEffect(() => {
  
     axios
@@ -47,6 +50,8 @@ function ProyectosNoSancionados() {
         setData(sortedData);
         setVisibleRows(1);
         setShowLessButton(false);
+        const numProjectsWithLink = sortedData.filter(row => row['Link']).length;
+        setNumProjectsWIthLink(numProjectsWithLink);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
@@ -54,6 +59,26 @@ function ProyectosNoSancionados() {
      
       console.log(data)
   }, []);
+
+  useEffect(() => {
+    // Calcular la cantidad de resultados de búsqueda
+    const numSearchResults = data.filter((row) => {
+      const numeroProyecto = row['Proyecto'].split('-')[0];
+      const searchTerm = diacritics.remove(search.toLowerCase());
+      const proyectoLowerCase = numeroProyecto.toLowerCase();
+
+      return (
+        diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
+        (projectSearch === '' || numeroProyecto === projectSearch)
+      );
+    }).length;
+    setNumSearchResults(numSearchResults);
+  }, [data, search, projectSearch]);
+
+  useEffect(() => {
+    // Calcular la cantidad de resultados visibles
+    setNumVisibleResults(visibleRows);
+  }, [visibleRows]);
 
   const filteredData = data.filter((row) => {
     const numeroProyecto = row['Proyecto'].split('-')[0];
@@ -134,8 +159,9 @@ function ProyectosNoSancionados() {
         Proyectos No Sancionados | 2011 - 2023
       </h2>
       {isComponentVisible && (
-        <div className={`${styles.block}`}>
-         <input
+        <div className={styles.block}>
+          <div className={styles.inputsydata
+        }>         <input
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
@@ -151,7 +177,9 @@ function ProyectosNoSancionados() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
+          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink }</p>
           
+          </div>
           <table
             data-aos="fade-up"
             data-aos-duration="300"
@@ -197,16 +225,24 @@ function ProyectosNoSancionados() {
                 <button onClick={handleShowMore} className={styles.verMas}>
                 <MdExpandMore /><p className={styles.mas}> Más </p>  
                 </button>
+
+               {search ? ( <p className={styles.datos}>Mostrando {numVisibleResults} resultado(s) de  {numSearchResults}</p>): null}
                 {showLessButton ? (
+                    <>
                   <button onClick={handleShowLess} className={styles.verMenos}>
                    <p className={styles.mas}>Menos</p> <MdExpandLess /> 
-                  </button>
+                  </button></>
                 ) : null}
               </div>
+            
             </>
           )}
+          
         </div>
       )}
+
+
+
 
     </>
   );
