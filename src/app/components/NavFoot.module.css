@@ -18,7 +18,7 @@
 }
 
 .navFootImage {
-  width: 10%;
+  width: 20%;
   height: 100%
 }
 
@@ -28,17 +28,16 @@
     
   }
   .navFootImage{
-    width: 80%;
+    width: 20%;
     height: 80%;
   }
 }
 @media (max-width: 450px){
   .navFoot {
     font-size: 50%;
-    
-  }
+     }
   .navFootImage{
-    width: 50%;
+    width: 20%;
     height: 60%;
     margin-top: 4%;
   }
@@ -55,7 +54,7 @@
   align-self: center;
   text-decoration: none;
   list-style: none;
-  box-shadow: 4px 2px 0px 0px rgba(0, 0, 0, 0.1);
+  
   flex-direction: row;
    justify-content: space-between;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
