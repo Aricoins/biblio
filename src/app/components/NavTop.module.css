@@ -14,11 +14,13 @@
    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 90%;
     height: 10%;
+    margin: auto
   }
   
   .navTopImage {
-    width: 25%;
-    height: 100%;
+    width: 22%;
+    height: 60%;
+    margin: auto
   }
   
   .navTopList {
@@ -38,20 +40,29 @@
   .navTopList .navTop {
     font-size: 80%;
   }
-  .navTopList .navTopImage {
-    width: 40%;
-    height: 40%;
+ .navTopImage {
+    width: 20%;
+    height: 90%;
+  
+  }
+  .navTop {
+
+    height: 5%;
   }
 }
 
 @media (max-width: 450px) {
-  .navTopList .navTop {
-    font-size: 10%;
+  .navTopList {
+    font-size: 60%;
   }
-  .navTopList .navTopImage {
-    width: 20%;
-    height: 20%;
+   .navTopImage {
+    width: 30%;
+    height: 50%;
     margin-top: 4%;
+  }
+  .navTop {
+
+    height: 5%;
   }
 }
      
