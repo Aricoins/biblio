@@ -32,7 +32,6 @@ function ProyectosNoSancionados() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-
   const [visibleRows, setVisibleRows] = useState(0);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
@@ -40,9 +39,9 @@ function ProyectosNoSancionados() {
   const [numProjectsWithLink, setNumProjectsWIthLink] = useState(0);
   const [numSearchResults, setNumSearchResults] = useState(0);
   const [numVisibleResults, setNumVisibleResults] = useState(0);
+  
   useEffect(() => {
- 
-    axios
+     axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv')
       .then((response) => {
         const results = Papa.parse(response.data, { header: true });
@@ -59,7 +58,6 @@ function ProyectosNoSancionados() {
      
       console.log(data)
   }, []);
-
   useEffect(() => {
     // Calcular la cantidad de resultados de búsqueda
     const numSearchResults = data.filter((row) => {
@@ -74,12 +72,10 @@ function ProyectosNoSancionados() {
     }).length;
     setNumSearchResults(numSearchResults);
   }, [data, search, projectSearch]);
-
   useEffect(() => {
     // Calcular la cantidad de resultados visibles
     setNumVisibleResults(visibleRows);
   }, [visibleRows]);
-
   const filteredData = data.filter((row) => {
     const numeroProyecto = row['Proyecto'].split('-')[0];
     const searchTerm = diacritics.remove(search.toLowerCase());
@@ -90,7 +86,6 @@ function ProyectosNoSancionados() {
       (projectSearch === '' || numeroProyecto === projectSearch)
     );
   });
-
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
@@ -177,7 +172,7 @@ function ProyectosNoSancionados() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink }</p>
+          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink } de {data.length -1}</p>
           
           </div>
           <table
