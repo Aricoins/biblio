@@ -8,17 +8,20 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+
 const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
     const yearA = parseInt(a['Año']);
     const yearB = parseInt(b['Año']);
-    const [projectA] = (a['Número'] || '').split('\t');
-    const [projectB] = (b['Número'] || '').split('\t');
+    const projectA = parseInt(a['Numero']);
+    const projectB = parseInt(b['Numero']);
 
     if (yearA !== yearB) {
-      return order === 'asc' ? yearA - yearB : yearB - yearA;
+      // Si los años son diferentes, ordenamos por año.
+      return order === 'desc' ? yearB - yearA : yearA - yearB;
     } else {
-      return order === 'asc' ? projectB - projectA : projectA -  projectB;
+      // Si los años son iguales, comparamos los números de proyecto.
+      return order === 'desc' ? projectB - projectA : projectA - projectB;
     }
   });
 };
