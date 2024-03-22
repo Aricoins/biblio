@@ -13,7 +13,7 @@ import styles from "./style.module.css"
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
-
+import Link from 'next/link'
 const Registro = () => {
 useEffect(() => {
   Aos.init({duration: 300});
@@ -48,8 +48,8 @@ useEffect(() => {
         </div> 
       </div>
       <div data-aos="fade-up" className={styles.endevdiv}>
-      <p className={styles.endev}> En desarrollo | RG-IC-AGR  digestobariloche@gmail.com </p>
-   </div>
+  <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
+</div>
       </div>
       <NavFoot />
     </>

@@ -18,7 +18,7 @@ const sortData = (data, order, isSearch) => {
     if (yearA !== yearB) {
       return order === 'asc' ? yearA - yearB : yearB - yearA;
     } else {
-      return order === 'asc' ? projectA - projectB : projectB - projectA;
+      return order === 'asc' ? projectB - projectA : projectA -  projectB;
     }
   });
 };

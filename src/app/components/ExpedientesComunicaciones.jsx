@@ -12,13 +12,15 @@ const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
     const yearA = parseInt(a['Año']);
     const yearB = parseInt(b['Año']);
-    const [projectA] = (a['Número'] || '').split('\t');
-    const [projectB] = (b['Número'] || '').split('\t');
+    const projectA = parseInt(a['Numero']);
+    const projectB = parseInt(b['Numero']);
 
     if (yearA !== yearB) {
-      return order === 'asc' ? yearA - yearB : yearB - yearA;
+      // Si los años son diferentes, ordenamos por año.
+      return order === 'desc' ? yearB - yearA : yearA - yearB;
     } else {
-      return order === 'asc' ? projectA - projectB : projectB - projectA;
+      // Si los años son iguales, comparamos los números de proyecto.
+      return order === 'desc' ? projectB - projectA : projectA - projectB;
     }
   });
 };
