@@ -172,7 +172,7 @@ function ProyectosNoSancionados() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink } de {data.length}</p>
+          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink } de {data.length -1}</p>
           
           </div>
           <table
