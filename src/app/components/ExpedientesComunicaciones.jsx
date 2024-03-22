@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+
 const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
     const yearA = parseInt(a['Año']);
