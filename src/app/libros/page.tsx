@@ -38,11 +38,7 @@ const Libros: FC = () => {
 
 const filteredData = data?.filter(libro => libro.titulo.toLowerCase().includes(search.toLowerCase()));
 
-  
-
-
-
- return (
+return (
     <>
       <div className={styles.container}>
 

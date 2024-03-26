@@ -23,9 +23,9 @@ export default function OtrosTitulos() {
       {libros.map((libro) => (
         <div key={libro.titulo} className={libro.decla ? styles.otrosdecla : styles.default}>
           <h2 className={styles.otrotitulo}>{libro.titulo}</h2>
-          <p className={styles.otroauthor}>Autor: {libro.autor}</p>
+          <p className={styles.otroauthor}> de {libro.autor}</p>
           {libro.decla ? (
-            <p style={{ backgroundColor: "indigo" }}> Declaración {libro.decla}</p>
+            <p className={styles.pdecla}> Declaración {libro.decla}</p>
           ) : null}
         </div>
       ))}

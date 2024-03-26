@@ -151,7 +151,7 @@ function ExpedientesComunicaciones() {
             onChange={handleNumero}
             onKeyDown={handleProjectSearchEnter}
             placeholder="Número..."
-            className={`${styles.input} ${styles.searchInput}`}
+            className={`${styles.input} ${styles.searchInputAprobados}`}
           />
     
           <input
@@ -172,8 +172,8 @@ function ExpedientesComunicaciones() {
                 <th className={styles.tableHeader1} onClick={handleSort}>
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
-                <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th className={`${styles.tableHeader2} ${styles.border2}`}>Año</th>
+                <th className={`${styles.tableHeaderOrdenanzas} ${styles.border2}`}>Descripción Sintética</th>
+                <th className={`${styles.tableHeader3} ${styles.border2}`}>Año</th>
                
               </tr>
             </thead>

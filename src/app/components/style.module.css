@@ -100,15 +100,16 @@ text-align: center;
 
       }
 .verMenos .verMas :hover{
-    background-color: #cfd3db;
-    color:  rgb(59, 60, 111);;
+    background-color: #7f14d2;
+    color:  rgb(212, 212, 234);;
     }   
 
  .mas  {
   color: rgb(5, 0, 11);
   cursor: pointer;
   inline-size: none;
-  font-size: x-small;
+  font-size: xx-small;
+  justify-self: flex-start;
   
     }
 .datos{
@@ -116,11 +117,15 @@ text-align: center;
   grid-column-end: 35;
 }
 .projectSearchInput {
-    width: 66.6667%;
+    width: 60%;
     margin-left: 1px;
   }
-.searchInput {
+  .searchInput {
     width: 15%;
+    margin-right: 0px;
+  }
+  .searchInputAprobados {
+    width: 18%;
     margin-right: 0px;
   }
 
@@ -141,7 +146,7 @@ text-align: center;
   }
 
 .tableHeader1 {
-    width: 16%;
+    width: 15%;
     color: white;
     background-color: #7a787e;
     border-collapse: collapse;
@@ -150,7 +155,7 @@ text-align: center;
   }
 
 .tableHeader2 {
-    width: 65%;
+    width: 40%;
     color: white;
     background-color: #77737e;
     border-collapse: collapse;
@@ -158,12 +163,19 @@ text-align: center;
 }
 
 .tableHeader3 {
-    width: 14%;
+    width: 10%;
     color: white;
     background-color: #6f6d74;
     border-collapse: collapse;
     border: 2px solid  black;
     cursor: pointer;
+}
+
+.tableHeaderOrdenanzas{
+  width: 60%;
+  background-color: #6f6d74;
+  color: white;
+  border: 2px solid  black;
 }
   
 .fullWidth {
