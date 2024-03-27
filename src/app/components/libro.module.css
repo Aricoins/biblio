@@ -83,19 +83,21 @@ position: fixed;
 top: 11%;
 right:1%;
 justify-content: center;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-family:'Roboto', sans-serif;
+font-weight: 600;
 height: 78vh;
 overflow: scroll;
 text-align: center;
 scrollbar-width: thin; /* Anchura de la barra de desplazamiento (experimental) */
 scrollbar-color: #4b5563 #051951; 
 background-color: #4b5563;
+font-size: small;
     
 }
 
 .otrotitulo{
-    font-size: 1rem;
-    font-weight: 900;
+    font-size: small;
+    font-weight: 400;
     text-align: center;
     color: rgb(250, 248, 248);
     background-color: #040003;
