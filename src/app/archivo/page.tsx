@@ -13,7 +13,8 @@ import styles from "./style.module.css"
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import FondosDocumentales from '../components/FondosDocumentales';
 const Registro = () => {
 useEffect(() => {
   Aos.init({duration: 300});
@@ -47,10 +48,13 @@ useEffect(() => {
           <PCM />
         </div> 
       </div>
-      <div data-aos="fade-up" className={styles.endevdiv}>
-  <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
-</div>
+
+      
       </div>
+          <FondosDocumentales />
+     
+
+    
       <NavFoot />
     </>
   );
