@@ -38,9 +38,7 @@ const FondosDocumentales = () => {
              <p className={styles.p}>Tarjeta presentacional del Fondo Documental</p>
             </div>
             </div>
-            <div  className={styles.endevdiv}>
-  <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
-</div>
+           
 </div>
             </>
     );

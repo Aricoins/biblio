@@ -14,7 +14,9 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+          'gradient-to-b': 'linear-gradient(to bottom,  white, black)',
+
+        },
 
        'animation': {
             'gradient-x':'gradient-x 5s ease infinite',
