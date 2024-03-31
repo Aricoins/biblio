@@ -5,10 +5,12 @@ import Image from 'next/image';
 import SearchBar from "./SearchBar";
 import { useState } from 'react';
 import styles from './NavTop.module.css';
-
+import clsx from 'clsx'
+import { usePathname } from 'next/navigation';
 
 const NavTop = () => {
-
+  const pathname = usePathname();
+ 
   
 
 
@@ -25,13 +27,19 @@ const NavTop = () => {
           Inicio
         </Link>
       </li>
-      <li className={styles.item}>        <Link className ={styles.link} href="/archivo" >
+      <li className={styles.item}>        <Link href="/archivo" className={clsx(styles.link, {
+          [styles.link2]: pathname === '/archivo',
+        
+        })}>
           Archivo
         </Link>
       </li>
 
       <li className={styles.item}>
-        <Link  className ={styles.link} href="/libros" >
+        <Link   href="/libros" className={clsx(styles.link, {
+          [styles.link2]: pathname === '/libros',
+        
+        })}>
         Bilioteca
         </Link>
       </li>
