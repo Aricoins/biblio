@@ -15,8 +15,8 @@ const NavTop = () => {
 
 
   const endev = () => {
-    return(
-    alert("En desarrollo"))
+    return
+    alert("En desarrollo")
   }
   return (
     <div className={styles.navTop}>

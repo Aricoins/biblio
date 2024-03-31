@@ -73,10 +73,15 @@
 .inputsydata{
 
   display: flex;
+  justify-content: stretch;
+  gap: 10px;
 }
 .escaneados{
-margin-left:  10px;
+margin-left: auto;
+margin-right: auto;
 text-align: center;
+justify-content: center;
+align-content: center;
 }
 .verMas {
     grid-column-start: 10;
@@ -120,7 +125,7 @@ text-align: center;
   grid-column-end: 35;
 }
 .projectSearchInput {
-    width: 60%;
+    width: 40%;
     margin-left: 1px;
   }
   .searchInput {
