@@ -1,6 +1,9 @@
 "use client"
 import React from 'react'
 import style from './style.module.css'
+import NavTop from "../components/NavTop";
+import NavFoot from "../components/NavFoot";
+import { Suspense } from 'react';
 
 export default function RootLayout({
   children,
@@ -9,7 +12,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={style.body}> {children}</body>
+         <body >
+         <Suspense>
+          <NavTop />
+         {children}
+         <NavFoot />
+         </Suspense>
+      </body>
     </html>
   )
 }
