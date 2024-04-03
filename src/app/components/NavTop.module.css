@@ -12,7 +12,7 @@
    justify-content: space-between;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 90%;
-    height: 10%;
+
 
     box-shadow: 5px  5px 5px 5px rgba(0, 0, 0, 0.3 );
   }
@@ -31,10 +31,9 @@
     align-self: center;
     text-decoration: none;
     list-style: none;
-    height: 100%;
-margin-bottom: 0;
+    height: 50%;
+    margin: auto;
   }
-
    
 @media (max-width: 700px) {
   .navTopList .navTop {
@@ -43,10 +42,8 @@ margin-bottom: 0;
  .navTopImage {
     width: 20%;
     height: 90%;
-  
   }
   .navTop {
-
     height: 5%;
   }
 }
@@ -61,7 +58,6 @@ margin-bottom: 0;
 
   }
   .navTop {
-
     height: 5%;
   }
 }
@@ -69,22 +65,21 @@ margin-bottom: 0;
 
   
 .item {
-
-  margin: auto;
- height: 50%;
+margin: auto;
+height: 50%;
 padding: auto;
- align-content: center;
+align-content: center;
 width: 5%;
 }
      
 .link {
 /* Ajustar según necesidades */
-  cursor: pointer;
-  text-decoration: none;
-  color: #000;
-  padding: 25%; 
-  border-radius: 20%;  
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+cursor: pointer;
+text-decoration: none;
+color: #000;
+padding: 25%; 
+border-radius: 20%;  
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 border: 1px solid black 
 }
 
@@ -100,9 +95,7 @@ border: 1px solid black
 
 .link:hover {
   background-color: rgb(158, 156, 156);
-
   color:white;
-
 }
 
   .link:hover {

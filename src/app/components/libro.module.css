@@ -2,8 +2,6 @@
 
 .container {
     width: 100%;
-    transition: all 1s ease-in-out;
-    padding: 20%;
     background-color: rgba(251, 250, 252, 0.1);
     border-radius: 5%;
     z-index: 100;
@@ -80,7 +78,7 @@
   .otros{
     width: 28%;
 position: fixed;
-top: 11%;
+top: 15%;
 right:1%;
 justify-content: center;
 font-family:'Roboto', sans-serif;

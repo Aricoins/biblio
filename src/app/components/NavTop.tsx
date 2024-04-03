@@ -8,6 +8,8 @@ import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
+
+
 const NavTop = () => {
   const pathname = usePathname();
  

@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
          <body className={styles.body}>
-         <Suspense>
+
           <NavTop />
          {children}
          <NavFoot />
-         </Suspense>
+   
       </body>
 
  
