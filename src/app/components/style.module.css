@@ -125,7 +125,7 @@ align-content: center;
   grid-column-end: 35;
 }
 .projectSearchInput {
-    width: 40%;
+    width: 60%;
     margin-left: 1px;
   }
   .searchInput {
@@ -154,7 +154,7 @@ align-content: center;
   }
 
 .tableHeader1 {
-    width: 15%;
+    width: 11%;
     color: white;
     background-color: #7a787e;
     border-collapse: collapse;
@@ -171,7 +171,7 @@ align-content: center;
 }
 
 .tableHeader3 {
-    width: 10%;
+    width: 15%;
     color: white;
     background-color: #6f6d74;
     border-collapse: collapse;

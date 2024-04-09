@@ -216,7 +216,7 @@ const animatedCount = () =>{
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th className={`${styles.tableHeader2} ${styles.border3}`}>Tipo de Norma</th>
+                <th className={`${styles.tableHeader3} ${styles.border3}`}>Tipo de Norma</th>
               </tr>
             </thead>
             <tbody>
