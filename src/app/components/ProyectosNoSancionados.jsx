@@ -40,6 +40,31 @@ function ProyectosNoSancionados() {
   const [numSearchResults, setNumSearchResults] = useState(0);
   const [numVisibleResults, setNumVisibleResults] = useState(0);
   
+
+const animatedCount = () =>{
+    let count = 0;
+    const totalProjects = data.length;
+
+    const incrementCount = () => {
+      // Increment the count by 1 every 100 milliseconds
+      const interval = setInterval(() => {
+        if (totalProjects >= count) count++;
+        setNumProjectsWIthLink(count);
+        // Once count reaches the total number of projects, clear the interval
+        if (count >= totalProjects) {
+          clearInterval(interval);
+        }
+      }, 10);
+    };
+
+    // Start incrementing the count after a delay
+    const timeout = setTimeout(incrementCount, 50);
+
+    // Clean up the timeout if the component unmounts before it completes
+    return () => clearTimeout(timeout);
+  };
+
+
   useEffect(() => {
      axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv')
@@ -58,6 +83,7 @@ function ProyectosNoSancionados() {
      
       console.log(data)
   }, []);
+
   useEffect(() => {
     // Calcular la cantidad de resultados de búsqueda
     const numSearchResults = data.filter((row) => {
@@ -149,7 +175,11 @@ function ProyectosNoSancionados() {
     <>
       <h2
         className={styles.h2}
-        onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+        onClick={() => {
+          setIsComponentVisible((prevVisibility) => !prevVisibility);
+          animatedCount();
+        }}
+        
       >
         Proyectos No Sancionados | 2011 - 2023
       </h2>
@@ -172,7 +202,7 @@ function ProyectosNoSancionados() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink } de {data.length -1}</p>
+          <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink -1 } de {data.length -1}</p>
           
           </div>
           <table
