@@ -83,6 +83,7 @@ text-align: center;
 justify-content: center;
 align-content: center;
 font-weight: 600;
+box-shadow: 1px 1px 3px  #000;
 }
 .verMas {
     grid-column-start: 10;
