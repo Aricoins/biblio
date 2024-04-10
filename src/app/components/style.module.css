@@ -47,10 +47,14 @@
   /* Estilos para la visibilidad del componente */
   .block {
     display: block; 
-     width: 96%;
+     width: 94%;
     justify-content: center;
+    justify-self: center;
+
     margin-left: 2%;
     margin-bottom: 2%;
+    box-shadow: 0px 0px 3px  #000;
+    padding: 1%;
   }
   
   /* Estilos para los input de búsqueda */
@@ -83,7 +87,7 @@ text-align: center;
 justify-content: center;
 align-content: center;
 font-weight: 600;
-box-shadow: 1px 1px 3px  #000;
+
 }
 .verMas {
     grid-column-start: 10;
