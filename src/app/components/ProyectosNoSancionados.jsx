@@ -87,7 +87,7 @@ const animatedCount = () =>{
   }, []);
 
   useEffect(() => {
-    animatedCount();
+  
     // Calcular la cantidad de resultados de búsqueda
     const numSearchResults = data.filter((row) => {
       const numeroProyecto = row['Proyecto'].split('-')[0];
