@@ -7,7 +7,11 @@ import logo from '../../src/app/api/assets/moran.png';
 import Text from './components/text';
 import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
-
+import
+{ Typography }
+from
+"antd"
+;
 
 const Container = ' w-12/12 h-100vh bg-gradient-to-b animated-gradient-x flex items-center justify-center';
 
@@ -32,7 +36,7 @@ export default function Libros() {
   return (
     <>
       <div className={Container}>
-      
+
           <div className={Subcontainer}>
             <div className={LeftContent}>
               <div className='flex justify-center mt-6'>

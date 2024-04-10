@@ -8,7 +8,9 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
-import { match } from 'assert';
+
+
+
 
 const sortData = (data, order) => {
 
@@ -54,7 +56,7 @@ const animatedCount = () =>{
         if (count >= totalProjects) {
           clearInterval(interval);
         }
-      }, 10);
+      }, 1);
     };
 
     // Start incrementing the count after a delay
@@ -85,6 +87,7 @@ const animatedCount = () =>{
   }, []);
 
   useEffect(() => {
+    animatedCount();
     // Calcular la cantidad de resultados de búsqueda
     const numSearchResults = data.filter((row) => {
       const numeroProyecto = row['Proyecto'].split('-')[0];
@@ -167,12 +170,15 @@ const animatedCount = () =>{
           });
         }
       }
+
     }
   };
-  
+
   
   return (
     <>
+
+  
       <h2
         className={styles.h2}
         onClick={() => {
@@ -183,6 +189,8 @@ const animatedCount = () =>{
       >
         Proyectos No Sancionados | 2011 - 2023
       </h2>
+
+
       {isComponentVisible && (
         <div className={styles.block}>
           <div className={styles.inputsydata
@@ -220,6 +228,7 @@ const animatedCount = () =>{
               </tr>
             </thead>
             <tbody>
+  
               {sortedData.map((row, index) => (
                 <tr key={index}>
                   {row['Link'] ? (
@@ -259,10 +268,10 @@ const animatedCount = () =>{
                   </button></>
                 ) : null}
               </div>
-            
+         
             </>
           )}
-          
+           
         </div>
       )}
 
