@@ -5,11 +5,15 @@ import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
 import { Suspense } from 'react';
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+
+
   return (
     <html lang="en">
          <body >
