@@ -27,9 +27,7 @@ useEffect(() => {
  
       <div  className={styles.container}  >
        <div className={styles.subcontainer}>
-       <div data-aos="fade-up" className={styles.component}>
-      {/* <Proyectos  /> */}
-      </div>
+      
       <div data-aos="fade-up" className={styles.component}>
       <ProyectosNoSancionados  />
       </div>
