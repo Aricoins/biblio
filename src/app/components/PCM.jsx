@@ -11,30 +11,52 @@ import { MdExpandLess } from "react-icons/md";
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
-    const projectA = parseInt(a['Numero'].split('-')[0], 10);
-    const yearA = parseInt(a['Año'].split('-').pop(), 10); // Obtener el último elemento después de dividir por '-'
-
-    const projectB = parseInt(b['Numero'].split('-')[0], 10);
-    const yearB = parseInt(b['Año'].split('-').pop(), 10); // Obtener el último elemento después de dividir por '-'
-
-    if (order === 'asc') {
-      return yearA !== yearB ? yearA - yearB : projectA - projectB;
-    } else {
-      return yearB !== yearA ? yearB - yearA : projectB - projectA;
-    }
-  });
-};
-
+    const projectA = a['Proyecto'] ? parseInt(a['Proyecto'].split('-')[0], 10) : 0;
+    const yearA = a['Proyecto'] ? parseInt(a['Proyecto'].split('-')[1], 10) : 0;
+    const projectB = b['Proyecto'] ? parseInt(b['Proyecto'].split('-')[0], 10) : 0;
+    const yearB = b['Proyecto'] ? parseInt(b['Proyecto'].split('-')[1], 10) : 0;
+    
+     if (order === 'asc') {
+       return yearA !== yearB ? yearA - yearB : projectA - projectB;
+     } else {
+       return yearB !== yearA ? yearB - yearA : projectB - projectA;
+     }
+   });
+ 
+ };
 
 function PCM() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('desc');
+  const [numProjectsWithLink, setNumProjectsWIthLink] = useState(0);
+  const [numSearchResults, setNumSearchResults] = useState(0);
+  const [numVisibleResults, setNumVisibleResults] = useState(0);
+
+  const animatedCount = () =>{
+    let count = 0;
+    const totalProjects = data.length;
+
+    const incrementCount = () => {
+      // Increment the count by 1 every 100 milliseconds
+      const interval = setInterval(() => {
+        if (totalProjects >= count) count++;
+        setNumProjectsWIthLink(count);
+        // Once count reaches the total number of projects, clear the interval
+        if (count >= totalProjects) {
+          clearInterval(interval);
+        }
+      }, 1);
+    };
+    const timeout = setTimeout(incrementCount, 50);
+
+    // Clean up the timeout if the component unmounts before it completes
+    return () => clearTimeout(timeout);
+  };
 
   useEffect(() => {
     axios
@@ -45,11 +67,40 @@ function PCM() {
         setData(sortedData);
         setVisibleRows(1);
         setShowLessButton(false);
+        const numProjectsWithLink = sortedData.filter(row => row['Link']).length;
+        setNumProjectsWIthLink(numProjectsWithLink);
       })
       .catch((error) => {
         console.error('Error fetching data: ', error);
       });
+     
+      console.log(data)
   }, []);
+  useEffect(() => {
+  
+    // Calcular la cantidad de resultados de búsqueda
+    const numSearchResults = data.filter((row) => {
+      if (row['Proyecto']) {
+        const numeroProyecto = row['Proyecto'].split('-')[0];
+        const searchTerm = diacritics.remove(search.toLowerCase());
+        const proyectoLowerCase = numeroProyecto.toLowerCase();
+    
+        return (
+          diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
+          (projectSearch === '' || numeroProyecto === projectSearch)
+        );
+      } else {
+        return false; // Ignorar filas sin valor en 'Proyecto'
+    }
+    }).length;
+    
+    setNumSearchResults(numSearchResults);
+  }, [data, search, projectSearch]);
+  useEffect(() => {
+    // Calcular la cantidad de resultados visibles
+    setNumVisibleResults(visibleRows);
+  }, [visibleRows]);
+  
 
   const filteredData = data.filter((row) => {
     const numeroProyecto = row['Numero'].split('-')[0];
@@ -109,10 +160,9 @@ function PCM() {
               title: `${styles.alert}`, 
               content: `${styles.content}`, 
             },
-            background: "#570c7a",
+            background: "#a7a6a8",
             color: "white",
-            borderRadius: "50%",
-          }).then(() => {
+                   }).then(() => {
             setProjectSearch('');
           });
         }
@@ -125,13 +175,17 @@ function PCM() {
     <>
       <h2
         className={styles.h2}
-        onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+        onClick={() => {
+          setIsComponentVisible((prevVisibility) => !prevVisibility);
+          animatedCount();
+        }}
       >
        PCM | 1988 - actualidad
       </h2>
       {isComponentVisible && (
-        <div className={`${styles.block}`}>
-         <input
+          <div className={styles.block}>
+          <div className={styles.inputsydata
+        }>         <input
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
@@ -147,8 +201,9 @@ function PCM() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          
-          <table
+            <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink -1 } de {data.length -1}</p>
+            </div>
+         <table
             data-aos="fade-up"
             data-aos-duration="300"
             className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}
@@ -159,7 +214,7 @@ function PCM() {
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th className={`${styles.tableHeader2} ${styles.border3}`}>Año</th>
+                <th style={{width: "15%"}}>Año</th>
               </tr>
             </thead>
             <tbody>

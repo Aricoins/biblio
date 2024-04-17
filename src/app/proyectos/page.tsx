@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import styles from './style.module.css';
-
+import styles from './styles.module.css';
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -45,9 +44,9 @@ function Proyectos() {
       const response = await fetch('/api/proyectos');
       const data = await response.json();
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
-        const proyectosOrdenados = data.proyectos.rows.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
+        const proyectosOrdenados = data.proyectos.rows.sort((a: any, b: any) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
         setProyectos(proyectosOrdenados);
-        setResultados(proyectosOrdenados.slice(0, 5));
+        setResultados(proyectosOrdenados);
         setLoading(true);
       }
     } catch (error) {
@@ -89,9 +88,9 @@ function Proyectos() {
       return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
 
-    filteredProyectos = filteredProyectos.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
+    filteredProyectos = filteredProyectos.sort((a, b) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
 
-    setResultados(filteredProyectos);
+    setResultados(filteredProyectos.slice(0, 5));
   };
 
   const columns = [
@@ -99,19 +98,20 @@ function Proyectos() {
     { title: 'Año', dataIndex: 'año_proyecto', key: 'año_proyecto' },
     { title: 'Título', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
     { title: 'Autor', dataIndex: 'autor', key: 'autor' },
-    { title: 'Colaboradores', dataIndex: 'colaboradores', key: 'colaboradores' },
-    { title: 'Girado a', dataIndex: 'girado_a', key: 'girado_a' },
+    //{ title: 'Colaboradores', dataIndex: 'colaboradores', key: 'colaboradores' },
+    //{ title: 'Girado a', dataIndex: 'girado_a', key: 'girado_a' },
     { title: 'Acta fecha', dataIndex: 'acta_fecha', key: 'acta_fecha',
       render: (date: Date) => new Date(date).toLocaleDateString() },
     { title: 'Aprobado', dataIndex: 'aprobado', key: 'aprobado',
       render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
     { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
     { title: 'Número norma', dataIndex: 'numero_norma', key: 'numero_norma' },
-    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 200 },
+    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 0 },
   ];
   
   return (
     (!loading) ?  <Spin/> :
+    <div style={{ width: '90%', margin: 'auto' }}>
     <>
       <div onClick={() => setVer(!ver)}>
         <h2 
@@ -123,22 +123,22 @@ function Proyectos() {
       </div>
       
       {(ver) && (
-        <div>
-          <div style={{ marginBottom: '16px' }}>
+   <div style={{ marginLeft: '10px' }}>
+          <div style={{ marginBottom: '16px'}}>
             <Input.Search
-              placeholder="Buscar proyecto por número exacto..."
+              placeholder="por número..."
               value={busquedaNumero}
               onChange={handleBusquedaNumeroChange}
-              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+              style={{ width: 200, margin: "auto" }}
             />
             <Input.Search
-              placeholder="Buscar proyecto por palabra..."
+              placeholder="por palabra..."
               value={busquedaPalabra}
               onChange={handleBusquedaPalabraChange}
               style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
             />
             <Select
-              placeholder="Filtrar por tipo de proyecto"
+              placeholder="por tipo de proyecto"
               style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
               onChange={handleFiltroTipoChange}
             >
@@ -154,13 +154,13 @@ function Proyectos() {
             dataSource={resultados}
             columns={columns}
             pagination={false}
-            style={{ borderCollapse: 'collapse', background: '#0d0101', color:"white" }}
+            style={{width: "90%", margin: "0 auto" }}
             rowKey="id"
           />
         </div>
       )}
     </>
-  );
+    </div>)
 }
 
 export default Proyectos;

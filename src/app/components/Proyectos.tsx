@@ -1,9 +1,9 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import styles from './style.module.css';
-import { AnyAaaaRecord } from 'dns';
+import styles from './styles.module.css';
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -44,9 +44,9 @@ function Proyectos() {
       const response = await fetch('/api/proyectos');
       const data = await response.json();
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
-        const proyectosOrdenados = data.proyectos.rows.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
+        const proyectosOrdenados = data.proyectos.rows.sort((a: any, b: any) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
         setProyectos(proyectosOrdenados);
-        setResultados(proyectosOrdenados.slice(0, 5));
+        setResultados(proyectosOrdenados);
         setLoading(true);
       }
     } catch (error) {
@@ -88,9 +88,9 @@ function Proyectos() {
       return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
 
-    filteredProyectos = filteredProyectos.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
+    filteredProyectos = filteredProyectos.sort((a, b) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
 
-    setResultados(filteredProyectos);
+    setResultados(filteredProyectos.slice(0, 5));
   };
 
   const columns = [
@@ -106,11 +106,12 @@ function Proyectos() {
       render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
     { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
     { title: 'Número norma', dataIndex: 'numero_norma', key: 'numero_norma' },
-    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 200 },
+    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 0 },
   ];
   
   return (
     (!loading) ?  <Spin/> :
+    <div style={{ width: '50%', margin: '0 auto' }}>
     <>
       <div onClick={() => setVer(!ver)}>
         <h2 
@@ -122,13 +123,13 @@ function Proyectos() {
       </div>
       
       {(ver) && (
-        <div>
-          <div style={{ marginBottom: '16px' }}>
+   <div style={{ width: '50%', margin: '0 auto' }}>
+          <div style={{ marginBottom: '16px'}}>
             <Input.Search
               placeholder="Buscar proyecto por número exacto..."
               value={busquedaNumero}
               onChange={handleBusquedaNumeroChange}
-              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+              style={{ width: 200, margin: "auto" }}
             />
             <Input.Search
               placeholder="Buscar proyecto por palabra..."
@@ -153,13 +154,13 @@ function Proyectos() {
             dataSource={resultados}
             columns={columns}
             pagination={false}
-            style={{ borderCollapse: 'collapse', background: '#0d0101', color:"white" }}
+            style={{ backgroundColor: "red", width: "50%" }}
             rowKey="id"
           />
         </div>
       )}
     </>
-  );
+    </div>)
 }
 
 export default Proyectos;

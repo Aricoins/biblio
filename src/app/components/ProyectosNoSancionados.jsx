@@ -9,13 +9,8 @@ import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 
-
-
-
 const sortData = (data, order) => {
-
-
-  return data.sort((a, b) => {
+ return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
     const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
     const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
@@ -105,6 +100,7 @@ const animatedCount = () =>{
     // Calcular la cantidad de resultados visibles
     setNumVisibleResults(visibleRows);
   }, [visibleRows]);
+
   const filteredData = data.filter((row) => {
     const numeroProyecto = row['Proyecto'].split('-')[0];
     const searchTerm = diacritics.remove(search.toLowerCase());
@@ -162,7 +158,7 @@ const animatedCount = () =>{
               title: `${styles.alert}`, 
               content: `${styles.content}`, 
             },
-            background: "#570c7a",
+            background: "#a7a6a8",
             color: "white",
             borderRadius: "50%",
           }).then(() => {
