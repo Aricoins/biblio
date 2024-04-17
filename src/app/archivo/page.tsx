@@ -15,7 +15,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import Link from 'next/link';
 import FondosDocumentales from '../components/FondosDocumentales';
-import Proyectos from '../components/Proyectos'
+import Proyectos from '../proyectos/page'
 
 const Registro = () => {
 useEffect(() => {
@@ -33,7 +33,6 @@ useEffect(() => {
      <div className={styles.h3}  > <h2  className={styles.h4}>
    EXPEDIENTES APROBADOS:
   </h2>  
-      
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesOrdenanzas />
         </div>
@@ -50,12 +49,19 @@ useEffect(() => {
         <div data-aos="fade-up" className={styles.component}>
           <PCM />
         </div> 
-      
+        <div data-aos="fade-up" className={styles.component}>
+         {/* <Proyectos /> */}
+
+      </div>
 </div>
-         <div  className={styles.endevdiv}>
+      
+      </div>
+          {/* <FondosDocumentales /> 
+       */}
+          <div  className={styles.endevdiv}>
   <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
 </div>
-</div>
+
     </>
   );
 }

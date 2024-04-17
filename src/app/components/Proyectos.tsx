@@ -52,33 +52,46 @@ function Proyectos() {
 
   return (
     <div>
-
+      <h1>Proyectos</h1>
 <h2 onClick={ () =>   fetchProyectos()}>
         Todos los Proyectos
       </h2>
 
-      <h1>Proyectos</h1>
+
       <input
         type="text"
         placeholder="Buscar proyecto..."
         value={busqueda}
         onChange={handleBusquedaChange}
       />
-      <ul>
-        {resultados.map((proyecto) => (
-          <li key={proyecto.id}>
-            <p>Título: {proyecto.titulo_proyecto}</p>
-            <p>Autor: {proyecto.autor}</p>
-            <p>Girado a: {proyecto.girado_a}</p>
-            <p>Acta fecha: {proyecto.acta_fecha.toLocaleDateString()}</p>
-            <p>Aprobado: {proyecto.aprobado ? 'Sí' : 'No'}</p>
-            <p>Tipo norma: {proyecto.tipo_norma}</p>
-            <p>Número norma: {proyecto.numero_norma}</p>
-            <p>Observaciones: {proyecto.observaciones}</p>
+               <table style={{ borderCollapse: 'collapse',  marginTop: '20px' }}>
+  <thead>
+    <tr>
+      <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>Autor</th>
+    <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>Aprobado</th>
+      <th style={{ border: '1px solid #ddd', padding: '8px', backgroundColor: '#f2f2f2' }}>Observaciones</th>
+    </tr>
+  </thead>
+    <tbody>
+    {resultados.map((proyecto) => (
+      <tr key={proyecto.id} style={{ borderBottom: '1px solid #ddd' }}>
+        <td style={{ padding: '8px' }}>{proyecto.numero_proyecto}</td>
+               <td style={{ padding: '8px' }}>{proyecto.titulo_proyecto}</td>
+        <td style={{ padding: '8px' }}>{proyecto.autor}</td>
+        <td style={{ padding: '8px' }}>{proyecto.girado_a}</td>
+        <td style={{ padding: '8px' }}>{proyecto.acta_fecha.toLocaleDateString()}</td>
+        <td style={{ padding: '8px' }}>{proyecto.aprobado ? 'Sí' : 'No'}</td>
+        <td style={{ padding: '8px' }}>{proyecto.tipo_norma}</td>
+        <td style={{ padding: '8px' }}>{proyecto.numero_norma}</td>
+        <td style={{ padding: '8px' }}>{proyecto.observaciones}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+   
+        
 
-          </li>
-        ))}
-      </ul>
+   
     </div>
   );
 }
