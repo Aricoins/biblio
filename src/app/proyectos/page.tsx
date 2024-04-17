@@ -1,8 +1,10 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Input, Button, Table, Select, Checkbox, Typography, Skeleton, Spin, Flex, Progress } from 'antd';
+import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import styles from './style.module.css';
+
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -43,8 +45,9 @@ function Proyectos() {
       const response = await fetch('/api/proyectos');
       const data = await response.json();
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
-        setProyectos(data.proyectos.rows);
-        setResultados(data.proyectos.rows);
+        const proyectosOrdenados = data.proyectos.rows.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
+        setProyectos(proyectosOrdenados);
+        setResultados(proyectosOrdenados.slice(0, 5));
         setLoading(true);
       }
     } catch (error) {
@@ -54,26 +57,26 @@ function Proyectos() {
 
   const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBusquedaNumero(event.target.value);
-    filtrarProyectos(busquedaPalabra, event.target.value, filtroTipo, filtroAprobado);
+    filtrarProyectos(event.target.value, busquedaPalabra, filtroTipo, filtroAprobado);
   };
 
   const handleBusquedaPalabraChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBusquedaPalabra(event.target.value);
-    filtrarProyectos(event.target.value, busquedaNumero, filtroTipo, filtroAprobado);
+    filtrarProyectos(busquedaNumero, event.target.value, filtroTipo, filtroAprobado);
   };
 
   const handleFiltroTipoChange = (value: string) => {
     setFiltroTipo(value);
-    filtrarProyectos(busquedaPalabra, busquedaNumero, value, filtroAprobado);
+    filtrarProyectos(busquedaNumero, busquedaPalabra, value, filtroAprobado);
   };
 
   const handleFiltroAprobadoChange = (checked: boolean) => {
     setFiltroAprobado(checked);
-    filtrarProyectos(busquedaPalabra, busquedaNumero, filtroTipo, checked);
+    filtrarProyectos(busquedaNumero, busquedaPalabra, filtroTipo, checked);
   };
   
-  const filtrarProyectos = (palabra: string, numero: string, tipo: string, aprobado: boolean) => {
-    const filteredProyectos = proyectos.filter((proyecto: Proyecto) => {
+  const filtrarProyectos = (numero: string, palabra: string, tipo: string, aprobado: boolean) => {
+    let filteredProyectos = proyectos.filter((proyecto) => {
       const titulo = proyecto.titulo_proyecto.toLowerCase();
       const numeroStr = proyecto.numero_proyecto.toString();
       const tipoLower = proyecto.tipo_proyecto.toLowerCase();
@@ -85,10 +88,12 @@ function Proyectos() {
   
       return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
-  
+
+    filteredProyectos = filteredProyectos.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
+
     setResultados(filteredProyectos);
   };
-  
+
   const columns = [
     { title: 'Número', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
     { title: 'Año', dataIndex: 'año_proyecto', key: 'año_proyecto' },
@@ -102,20 +107,21 @@ function Proyectos() {
       render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
     { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
     { title: 'Número norma', dataIndex: 'numero_norma', key: 'numero_norma' },
-    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones' },
+    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 200 },
   ];
-
-  const verComponente = () => {
-    setVer(!ver);
-  }
-
+  
   return (
-    !loading ?  <Spin/> :
+    (!loading) ?  <Spin/> :
     <>
-      <div onClick={verComponente}>
-        <Title data-aos="fade-left" 
-        style={{borderRadius:"15px", cursor: 'pointer', backgroundColor: "black", color: "white", textAlign: "center", fontSize: "large"}}>Todos los Proyectos</Title>
+      <div onClick={() => setVer(!ver)}>
+        <h2 
+          data-aos="fade-left" 
+          className={styles.h2}
+        >
+          Todos los Proyectos
+        </h2>
       </div>
+      
       {(ver) && (
         <div>
           <div style={{ marginBottom: '16px' }}>
@@ -123,17 +129,17 @@ function Proyectos() {
               placeholder="Buscar proyecto por número exacto..."
               value={busquedaNumero}
               onChange={handleBusquedaNumeroChange}
-              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
             />
             <Input.Search
               placeholder="Buscar proyecto por palabra..."
               value={busquedaPalabra}
               onChange={handleBusquedaPalabraChange}
-              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
             />
             <Select
               placeholder="Filtrar por tipo de proyecto"
-              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
               onChange={handleFiltroTipoChange}
             >
               <Option value="Ordenanza">Ordenanza</Option>
@@ -148,10 +154,9 @@ function Proyectos() {
             dataSource={resultados}
             columns={columns}
             pagination={false}
-            style={{ borderCollapse: 'collapse' }}
+            style={{ borderCollapse: 'collapse', background: '#0d0101', color:"white" }}
             rowKey="id"
           />
-
         </div>
       )}
     </>
