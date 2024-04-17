@@ -28,9 +28,8 @@ useEffect(() => {
       <div  className={styles.container}  >
        <div className={styles.subcontainer}>
        <div data-aos="fade-up" className={styles.component}>
-    
-    <Proyectos />
-  </div>
+      <Proyectos  />
+      </div>
       <div data-aos="fade-up" className={styles.component}>
       <ProyectosNoSancionados  />
       </div>
@@ -58,8 +57,7 @@ useEffect(() => {
 
       </div>
  
-      {/* <FondosDocumentales />  */}
-          <div  className={styles.endevdiv}>
+      <FondosDocumentales />           <div  className={styles.endevdiv}>
   <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
 </div>
 
