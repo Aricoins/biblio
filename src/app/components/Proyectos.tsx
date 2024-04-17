@@ -3,6 +3,7 @@ import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import styles from './style.module.css';
+import { AnyAaaaRecord } from 'dns';
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -43,7 +44,7 @@ function Proyectos() {
       const response = await fetch('/api/proyectos');
       const data = await response.json();
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
-        const proyectosOrdenados = data.proyectos.rows.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
+        const proyectosOrdenados = data.proyectos.rows.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
         setProyectos(proyectosOrdenados);
         setResultados(proyectosOrdenados.slice(0, 5));
         setLoading(true);
@@ -87,7 +88,7 @@ function Proyectos() {
       return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
 
-    filteredProyectos = filteredProyectos.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
+    filteredProyectos = filteredProyectos.sort((a: any, b: any) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
 
     setResultados(filteredProyectos);
   };
@@ -127,13 +128,13 @@ function Proyectos() {
               placeholder="Buscar proyecto por número exacto..."
               value={busquedaNumero}
               onChange={handleBusquedaNumeroChange}
-              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }}
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
             />
             <Input.Search
               placeholder="Buscar proyecto por palabra..."
               value={busquedaPalabra}
               onChange={handleBusquedaPalabraChange}
-              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }}
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
             />
             <Select
               placeholder="Filtrar por tipo de proyecto"
