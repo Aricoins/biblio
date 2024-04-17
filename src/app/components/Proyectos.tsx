@@ -1,4 +1,3 @@
-"use client"
 import React, { useState, useEffect } from 'react';
 import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
@@ -44,9 +43,9 @@ function Proyectos() {
       const response = await fetch('/api/proyectos');
       const data = await response.json();
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
-        const proyectosOrdenados = data.proyectos.rows.sort((a: any, b: any) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
+        const proyectosOrdenados = data.proyectos.rows.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha));
         setProyectos(proyectosOrdenados);
-        setResultados(proyectosOrdenados);
+        setResultados(proyectosOrdenados.slice(0, 5));
         setLoading(true);
       }
     } catch (error) {
@@ -88,9 +87,9 @@ function Proyectos() {
       return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
 
-    filteredProyectos = filteredProyectos.sort((a, b) => new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime());
+    filteredProyectos = filteredProyectos.sort((a, b) => new Date(b.acta_fecha) - new Date(a.acta_fecha)).slice(0, 5);
 
-    setResultados(filteredProyectos.slice(0, 5));
+    setResultados(filteredProyectos);
   };
 
   const columns = [
@@ -106,7 +105,7 @@ function Proyectos() {
       render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
     { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
     { title: 'Número norma', dataIndex: 'numero_norma', key: 'numero_norma' },
-    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones' },
+    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 200 },
   ];
   
   return (
@@ -153,7 +152,7 @@ function Proyectos() {
             dataSource={resultados}
             columns={columns}
             pagination={false}
-            style={{ borderCollapse: 'collapse' }}
+            style={{ borderCollapse: 'collapse', background: '#0d0101', color:"white" }}
             rowKey="id"
           />
         </div>
@@ -163,4 +162,3 @@ function Proyectos() {
 }
 
 export default Proyectos;
-
