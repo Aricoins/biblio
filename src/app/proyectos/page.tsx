@@ -1,10 +1,11 @@
 "use client"
-
 import React, { useState, useEffect } from 'react';
 import { Input, Button, Table, Select, Checkbox, Typography, Skeleton, Spin, Flex, Progress } from 'antd';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
-const {Title} = Typography 
 const { Option } = Select;
+const { Title } = Typography;
 
 interface Proyecto {
   id: number;
@@ -29,9 +30,12 @@ function Proyectos() {
   const [filtroTipo, setFiltroTipo] = useState('');
   const [filtroAprobado, setFiltroAprobado] = useState(false);
   const [resultados, setResultados] = useState<Proyecto[]>([]);
-const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [ver, setVer] = useState(false);
+  
   useEffect(() => {
     fetchProyectos();
+    Aos.init({ duration: 3000 });
   }, []);
 
   async function fetchProyectos() {
@@ -41,7 +45,7 @@ const [loading, setLoading] = useState(false)
       if (data && data.proyectos && Array.isArray(data.proyectos.rows)) {
         setProyectos(data.proyectos.rows);
         setResultados(data.proyectos.rows);
-        setLoading(true)
+        setLoading(true);
       }
     } catch (error) {
       console.error('Error al obtener los proyectos:', error);
@@ -68,30 +72,23 @@ const [loading, setLoading] = useState(false)
     filtrarProyectos(busquedaPalabra, busquedaNumero, filtroTipo, checked);
   };
   
-
   const filtrarProyectos = (palabra: string, numero: string, tipo: string, aprobado: boolean) => {
     const filteredProyectos = proyectos.filter((proyecto: Proyecto) => {
       const titulo = proyecto.titulo_proyecto.toLowerCase();
       const numeroStr = proyecto.numero_proyecto.toString();
       const tipoLower = proyecto.tipo_proyecto.toLowerCase();
-
-      // Filtrar por número exacto
+  
       const numeroExacto = numero !== '' && numeroStr === numero;
-
-      // Filtrar por palabra insensible a mayúsculas, acentos o errores de tipeo
       const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
-
-      // Filtrar por tipo de proyecto
       const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-
-      // Filtrar por aprobado
       const aprobadoMatch = aprobado === proyecto.aprobado;
-
-      return numeroExacto && palabraMatch && tipoMatch && aprobadoMatch;
+  
+      return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
     });
+  
     setResultados(filteredProyectos);
   };
-
+  
   const columns = [
     { title: 'Número', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
     { title: 'Año', dataIndex: 'año_proyecto', key: 'año_proyecto' },
@@ -108,45 +105,56 @@ const [loading, setLoading] = useState(false)
     { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones' },
   ];
 
+  const verComponente = () => {
+    setVer(!ver);
+  }
+
   return (
     !loading ?  <Spin/> :
-    <div>
-      <Title style={{marginTop: "10%"}}>Buscador de Proyectos</Title>
-  
-      <div style={{ marginBottom: '16px' }}>
-        <Input.Search
-          placeholder="Buscar proyecto por número exacto..."
-          value={busquedaNumero}
-          onChange={handleBusquedaNumeroChange}
-          style={{ width: 300, marginRight: '16px' }}
-        />
-        <Input.Search
-          placeholder="Buscar proyecto por palabra..."
-          value={busquedaPalabra}
-          onChange={handleBusquedaPalabraChange}
-          style={{ width: 300, marginRight: '16px' }}
-        />
-        <Select
-          placeholder="Filtrar por tipo de proyecto"
-          style={{ width: 200, marginRight: '16px' }}
-          onChange={handleFiltroTipoChange}
-        >
-          <Option value="Ordenanza">Ordenanza</Option>
-          <Option value="Declaración">Declaración</Option>
-          <Option value="Comunicación">Comunicación</Option>
-          <Option value="Resolución">Resolución</Option>
-        </Select>
-        <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Proyectos aprobados</Checkbox>
+    <>
+      <div onClick={verComponente}>
+        <Title data-aos="fade-left" 
+        style={{borderRadius:"15px", cursor: 'pointer', backgroundColor: "black", color: "white", textAlign: "center", fontSize: "large"}}>Todos los Proyectos</Title>
       </div>
+      {(ver) && (
+        <div>
+          <div style={{ marginBottom: '16px' }}>
+            <Input.Search
+              placeholder="Buscar proyecto por número exacto..."
+              value={busquedaNumero}
+              onChange={handleBusquedaNumeroChange}
+              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+            />
+            <Input.Search
+              placeholder="Buscar proyecto por palabra..."
+              value={busquedaPalabra}
+              onChange={handleBusquedaPalabraChange}
+              style={{ width: 300, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+            />
+            <Select
+              placeholder="Filtrar por tipo de proyecto"
+              style={{ width: 200, marginRight: '16px', marginBottom: '8px' }} // Modificado el estilo aquí
+              onChange={handleFiltroTipoChange}
+            >
+              <Option value="Ordenanza">Ordenanza</Option>
+              <Option value="Declaración">Declaración</Option>
+              <Option value="Comunicación">Comunicación</Option>
+              <Option value="Resolución">Resolución</Option>
+            </Select>
+            <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Proyectos aprobados</Checkbox>
+          </div>
 
-      <Table
-        dataSource={resultados}
-        columns={columns}
-        pagination={false}
-        style={{ borderCollapse: 'collapse' }}
-        rowKey="id" // Agregado la propiedad rowKey con el valor "id" para corregir el warning
-      />
-    </div>
+          <Table
+            dataSource={resultados}
+            columns={columns}
+            pagination={false}
+            style={{ borderCollapse: 'collapse' }}
+            rowKey="id"
+          />
+
+        </div>
+      )}
+    </>
   );
 }
 

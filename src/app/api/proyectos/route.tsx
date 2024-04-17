@@ -23,8 +23,7 @@ export async function GET(request: Request) {
                 proyectos
         `;
 
-        console.log(proyectos, "proyectos");
-
+    
         // Retornar los proyectos como respuesta
         return NextResponse.json({ proyectos }, { status: 200 });
     }
