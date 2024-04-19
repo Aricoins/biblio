@@ -4,6 +4,7 @@ import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import styles from './styles.module.css';
+import Link from 'next/link';
 
 const { Option } = Select;
 const { Title } = Typography;
@@ -98,16 +99,41 @@ function Proyectos() {
     { title: 'Año', dataIndex: 'año_proyecto', key: 'año_proyecto' },
     { title: 'Título', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
     { title: 'Autor', dataIndex: 'autor', key: 'autor' },
-    //{ title: 'Colaboradores', dataIndex: 'colaboradores', key: 'colaboradores' },
-    //{ title: 'Girado a', dataIndex: 'girado_a', key: 'girado_a' },
     { title: 'Acta fecha', dataIndex: 'acta_fecha', key: 'acta_fecha',
       render: (date: Date) => new Date(date).toLocaleDateString() },
     { title: 'Aprobado', dataIndex: 'aprobado', key: 'aprobado',
       render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
     { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
-    { title: 'Número norma', dataIndex: 'numero_norma', key: 'numero_norma' },
-    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', width: 0 },
+    {
+      title: 'Número norma',
+      dataIndex: 'numero_norma',
+      key: 'numero_norma',
+      render: (numeroNorma: string, record: Proyecto) => {
+        if (numeroNorma) {
+          // Extraer el año de la ordenanza
+          const { acta_fecha } = record;
+          const añoNorma = new Date(acta_fecha).getFullYear();
+    
+          // Construir la URL basada en la ubicación de los archivos estáticos en la carpeta 'public'
+          const filePath = `normas/ordenanzas/${añoNorma}/${numeroNorma}.doc`;
+    
+          // Crear el enlace al archivo
+          return (
+            <Link href={filePath} target="_blank" rel="noopener noreferrer">
+              {numeroNorma}
+            </Link>
+          );
+        } else {
+          return ''; // Retorna una cadena vacía si no hay número de norma
+        }
+      }
+    }
+,    
+    
+    { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones' },
   ];
+  
+  
   
   return (
     (!loading) ?  <Spin/> :
