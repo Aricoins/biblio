@@ -7,8 +7,12 @@ import { useState } from 'react';
 import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-
-
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 const NavTop = () => {
   const pathname = usePathname();
@@ -45,22 +49,16 @@ const NavTop = () => {
         Bilioteca
         </Link>
       </li>
+     <li className={styles.item}>
+           <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <SignInButton/>
+      </SignedOut>
+     </li>
+      </ul>
      
-      <li className={styles.item}>
-        <Link   href="/" className={clsx(styles.link, {
-          [styles.link2]: pathname === '/',
-        
-        })}>
-        Salir
-        </Link>
-      </li>
-      {/* <li className={styles.item}>
-        <Link href="/libros/form" >
-          Agregar Libro
-        </Link>
-      </li> */}
-    </ul>
-
   </div>
   );
 };

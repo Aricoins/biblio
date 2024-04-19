@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/localizations": "^1.28.3",
+    "@clerk/nextjs": "^4.30.0",
     "@heroicons/react": "^2.1.1",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/aos": "^3.0.7",
