@@ -9,7 +9,7 @@ import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 
-const sortData = (data, order, isSearch) => {
+const sortData = (data, order) => {
   return data.sort((a, b) => {
     const yearA = parseInt(a['Año']);
     const yearB = parseInt(b['Año']);
