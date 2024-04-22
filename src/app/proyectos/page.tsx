@@ -142,7 +142,7 @@ function Proyectos() {
       <div onClick={() => setVer(!ver)}>
         <h2 
           data-aos="fade-left" 
-          className={styles.h2}
+          className={styles.hdos}
         >
           Todos los Proyectos
         </h2>

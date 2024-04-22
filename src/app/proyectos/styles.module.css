@@ -29,4 +29,34 @@
       font-size: small;
     }
   }
+
+  .hdos {
+    font-size: large;
+    font-weight: 500;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 10%;
+    cursor: pointer;
+    background-color:rgb(246, 130, 6);
+    color: white;
+    transition: 0.3s;
+    border: white 1px solid;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+
+  }
+  .hdos:hover {
+    background-color: #f7f8fa;
+    color: rgb(246, 130, 6);
+    border: rgb(246, 130, 6) 1px solid;
+    
+  }
+  @media (max-width: 768px) {
+    .h2 {
+      font-size: small;
+    }
+  }
   

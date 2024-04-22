@@ -14,7 +14,7 @@ export async function GET(request: Request) {
                 autor, 
                 colaboradores, 
                 girado_a, 
-                acta_fecha::text, 
+                acta_fecha, 
                 aprobado, 
                 tipo_norma, 
                 numero_norma, 
