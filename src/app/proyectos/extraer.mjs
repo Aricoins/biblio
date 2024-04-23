@@ -41,40 +41,35 @@ function extraerTipoProyecto(parrafo) {
 }
 
 function extraerAutor(parrafo) {
-    // Expresión regular para extraer la sección de autores
-    const regexAutor = /(?:Autor(?:es)?|Colaborador):\s*([^:]+)(?: Colaborador|<)/;
-    const coincidencia = regexAutor.exec(parrafo);
-    
-    // Si hay una coincidencia, obtener la lista de autores y dividirla en un array
+    // Expresión regular para extraer autor(es)
+    const patronAutor = /(?:Autor(?:es)?):\s*([^;]+?)(?=\s*(Colaborador|Aprobado|Retirado|A las |A la |A Aseso|\[|\n))/i;
+
+    // Buscar coincidencia en el texto
+    const coincidencia = parrafo.match(patronAutor);
     if (coincidencia) {
-        // Extraer el texto de autores y dividirlo por coma
-        const autores = coincidencia[1].trim().split(',');
-        
-        // Limpiar espacios en blanco de cada autor
-        return autores.map(autor => autor.trim());
+        // Extraer el autor (grupo de captura)
+        const autor = coincidencia[1].trim();
+        return autor;
     }
+    return null;
+}
+function extraerColaboradores(texto) {
+    // Expresión regular para extraer colaboradores desde la palabra "Colaborador(es)" hasta el punto final de la oración.
+    // La expresión es sensible a las abreviaturas (Sr., Lic., Dr., Mg.) y busca el primer punto final que no está precedido por una abreviatura.
+    const patronColaboradores = /(?:Colaborador(?:es)?|Colaboradores?):\s*([^\.]+?(?<!\b(?:Sr|Lic|Dr|Mg)\.)(?=\.\s*(?:A\s|APROBADO|RETIRADO|\n|$)))/i;
     
-    // Si no se encuentra ninguna coincidencia, devolver un array vacío
-    return [];
+    // Buscar coincidencia en el texto
+    const coincidencia = texto.match(patronColaboradores);
+    
+    if (coincidencia) {
+        // Extraer colaboradores (grupo de captura)
+        const colaboradores = coincidencia[1].trim();
+        return colaboradores;
+    }
+    return null;
 }
 
-function extraerColaboradores(parrafo) {
-    // Expresión regular para extraer la oración completa después de "colaborador", "colaboradora", o "colaboradores"
-    // Detiene la extracción en un punto que no es parte de una abreviatura como "Sr." o "Sra." y que es seguido por "A" o "S" mayúsculas.
-    const regex = /(colaborador(?:a|es)?:)\s*(.*?)(?<!\b(?:Sr|Sra|Dr|Dra|Mr|Mrs|Lic|Mg|Arq|Dr|)\.)\.(?=\s*[A|S]\s|$)/i;
-    
-    // Ejecuta la expresión regular en el párrafo
-    const coincidencia = regex.exec(parrafo);
-    
-    // Si se encuentra una coincidencia, devuelve la oración completa que sigue a la palabra "colaborador"
-    if (coincidencia) {
-        return coincidencia[2].trim();
-    } else {
-        // Si no se encuentra coincidencia, devuelve una cadena vacía
-        return '';
-    }
-}
-  
+
 
 
 function extraerGiradoA(parrafo) {

@@ -1,36 +1,160 @@
-import generarConsultaInsert from './tabla.mjs';
 
-function generarConsultasDeParrafos(parrafos) {
-    const consultas = [];
-    for (const parrafo of parrafos) {
-        const consulta = generarConsultaInsert(parrafo);
-        consultas.push(consulta);
+import fs from 'fs';
+import mammoth from 'mammoth';
+
+// Funciones de extracción agrupadas en un objeto para facilitar su manejo
+const extraccion = {
+    extraerNumeroProyecto: function(parrafo) {
+        const regexNumeroProyecto = /(\b\d{3,4}\b)(?=\/)/;
+        const coincidencia = regexNumeroProyecto.exec(parrafo);
+        return coincidencia ? coincidencia[1] : '';
+    },
+
+    extraerAnioProyecto: function(parrafo) {
+        const regexAnioProyecto = /\/(\d{2})/;
+        const coincidencia = regexAnioProyecto.exec(parrafo);
+        if (coincidencia) {
+            return `20${coincidencia[1]}`;
+        }
+        return '';
+    },
+
+    extraerTituloProyecto: function(parrafo) {
+           const regexTituloProyecto = /\d{3,4}\/\d{2}:\s*(["“”])([^"“”]+)\1/;
+            const coincidencia = regexTituloProyecto.exec(parrafo);
+            return coincidencia ? coincidencia[2] : '';
+        },
+
+    extraerTipoProyecto: function(parrafo) {
+        const regexTipoProyecto = /Proyecto de\s+(Ordenanza|Declaración|Comunicación|Resolución)/;
+        const coincidencia = regexTipoProyecto.exec(parrafo);
+        return coincidencia ? coincidencia[1].toLowerCase() : '';
+    },
+
+    extraerAutor: function(parrafo) {
+        const patronAutor = /(?:Autor(?:es)?):\s*([^;]+?)(?=\s*(Colaborador|Aprobado|Retirado|A las |A la |A Aseso|\[|\n))/i;
+        const coincidencia = parrafo.match(patronAutor);
+        if (coincidencia) {
+            // Extraer el autor (grupo de captura)
+            const autor = coincidencia[1].trim();
+            return autor;
+        }
+        return null;
+    },
+
+    extraerColaboradores: function (texto) {
+        // Expresión regular para extraer colaboradores desde la palabra "Colaborador(es)"
+        // hasta el primer punto que no está precedido por una abreviatura común (Sr., Lic., Dr., Mg., etc.).
+        // Usa un lookbehind para verificar que el punto no es parte de una abreviatura.
+        const patronColaboradores = /(?:Colaborador(?:es)?|Colaboradores?):\s*([\w\s,]+)(?<!\b(?:Sr|Lic|Dr|Mg|Ing|Prof|Ing)\.)(?=\.\s*(?:A\s|APROBADO|RETIRADO|\n|$))/i;
+        
+        // Buscar coincidencia en el texto
+        const coincidencia = texto.match(patronColaboradores);
+        
+        if (coincidencia) {
+            // Extraer colaboradores (grupo de captura)
+            const colaboradores = coincidencia[1].trim();
+            return colaboradores;
+        }
+        return null;
     }
-    return consultas;
+   , 
+    
+
+    extraerGiradoA: function(parrafo) {
+        const regexGiradoA = /\bA\s([^.]*)\./;
+        const coincidencia = regexGiradoA.exec(parrafo);
+        return coincidencia ? coincidencia[1].trim() : '';
+    },
+
+    extraerActaFecha: function(parrafo) {
+        const regexActaFecha = /Acta\s+(\d+\/\d+)/;
+        const coincidencia = regexActaFecha.exec(parrafo);
+        return coincidencia ? coincidencia[1] : null;
+    },
+
+    extraerAprobado: function(parrafo) {
+        const regexAprobado = /(APROBADO)/;
+        const coincidencia = regexAprobado.exec(parrafo);
+        return coincidencia ? true : false;
+    },
+
+    extraerTipoNorma: function(parrafo) {
+        const regexTipoNorma = /(O|C|D|R)-\d+-/;
+        const coincidencia = regexTipoNorma.exec(parrafo);
+        const tipoNormaMap = {
+            'O': 'ordenanza',
+            'C': 'comunicación',
+            'D': 'declaración',
+            'R': 'resolución'
+        };
+        return coincidencia ? tipoNormaMap[coincidencia[1]] : '';
+    },
+
+    extraerNumeroNorma: function(parrafo) {
+        const regexNumeroNorma = /(O|R|C|D)-\d+-\d+/;
+        const coincidencia = regexNumeroNorma.exec(parrafo);
+        return coincidencia ? coincidencia[0] : '';
+    },
+
+    extraerObservaciones: function(parrafo) {
+        const regexObservaciones = /(RETIRADO|NO APROBADO|OBSERVACIONES|LIBRO)\s+.*\d{2}\/\d{2}\/\d{2}(?:.*|\n)?/i;
+        const coincidencia = regexObservaciones.exec(parrafo);
+        return coincidencia ? coincidencia[0].trim() : '';
+    }
+};
+
+async function generarDatosProyecto(rutaArchivoDocx) {
+    try {
+        // Leer el archivo DOCX
+        const { value: textoCompleto } = await mammoth.extractRawText({ path: rutaArchivoDocx });
+        
+        // Divide el texto completo en párrafos y filtra los vacíos
+        const parrafos = textoCompleto.split('\n').filter(parrafo => parrafo.trim() !== '');
+
+        // Lista para almacenar los datos extraídos
+        const listaDatosProyecto = [];
+        
+        // Itera sobre cada párrafo y extrae los datos
+        parrafos.forEach(parrafo => {
+            const datosProyecto = {
+                numero_proyecto: extraccion.extraerNumeroProyecto(parrafo),
+                anio_proyecto: extraccion.extraerAnioProyecto(parrafo),
+                titulo_proyecto: extraccion.extraerTituloProyecto(parrafo),
+                tipo_proyecto: extraccion.extraerTipoProyecto(parrafo),
+                autor: extraccion.extraerAutor(parrafo),
+                colaboradores: extraccion.extraerColaboradores(parrafo),
+                girado_a: extraccion.extraerGiradoA(parrafo),
+                acta_fecha: extraccion.extraerActaFecha(parrafo),
+                aprobado: extraccion.extraerAprobado(parrafo),
+                tipo_norma: extraccion.extraerTipoNorma(parrafo),
+                numero_norma: extraccion.extraerNumeroNorma(parrafo),
+                observaciones: extraccion.extraerObservaciones(parrafo)
+            };
+
+            // Agrega los datos extraídos a la lista
+            listaDatosProyecto.push(datosProyecto);
+        });
+
+        return listaDatosProyecto;
+    } catch (error) {
+        console.error('Error al generar los datos del proyecto:', error);
+        return null;
+    }
 }
 
-const parrafosPrueba = [
-    `001.- Proyecto de Ordenanza 001/03: "Aprobar contrato de comodato suscripto con fecha 24/11/2003 entre la Coordinación de Organismos en Liquidación y la Municipalidad de San Carlos de Bariloche". Autor: Intendente Municipal, Sr. Alberto Icare. Colaborador: Secretario de Gobierno, Sr. Adolfo Foures. A Asesoría Letrada y a las Comisiones de Economía y de Gobierno y Legales. APROBADO 12/02/04 – Acta 822/04 (O-04-1358)`,
+async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
+    const datos = await generarDatosProyecto(rutaArchivoDocx);
     
-'002.- Proyecto de Ordenanza 002/03: "Modificar artículo 50° de la Ordenanza 679-CM-96 y sus modificatorias”. Autor: Intendente Municipal, Sr. Alberto Icare. Colaborador: Secretario de Gobierno, Sr. Adolfo Foures. A Asesoría Letrada y a las Comisiones de Economía y de Gobierno y Legales. APROBADO 13/05/04 – Acta 827/04 (O-04-1391)',
+    if (datos) {
+        // Escribe los datos en formato JSON
+        fs.writeFileSync(rutaArchivoJson, JSON.stringify(datos, null, 2));
+        console.log('Los datos se han guardado en formato JSON en', rutaArchivoJson);
+    }
+}
 
-'003.- Proyecto de Ordenanza 003/03: "Prorrogar la Declaración de Emergencia y Ordenamiento Económico, Financiero, Administrativo de la Municipalidad de San Carlos de Bariloche”. Autor: Intendente Municipal, Sr. Alberto Icare. Colaborador: Secretario de Gobierno, Sr. Adolfo Foures. A Asesoría Letrada y a las Comisiones de Economía y de Gobierno y Legales. APROBADO 22/12/03 – Acta 820/03 (O-03-1351)',
+// Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
+const rutaArchivoDocx = './proyectos.docx';
+const rutaArchivoJson = './proyectos.json';
 
-'004.- Proyecto de Ordenanza 004/03: "Reconocimiento de jurisdicción y otorgamiento de personería jurídica municipal de la Junta Vecinal Barrio Vivero Municipal”. Autor: Intendente Municipal, Sr. Alberto Icare. Colaborador: Secretario de Gobierno, Sr. Adolfo Foures. A Asesoría Letrada y a la Comisión de Gobierno y Legales. APROBADO 22/12/03 – Acta 820/03 (O-03-1352).',
-
-'005.- Proyecto de Ordenanza 005/03: “Registro de deudores alimentarios”. Autor: Intendente Municipal, Sr. Alberto Icare. A la Comisión de Gobierno y Legales. RETIRADO 18/11/04 – Acta 837/04.	LIBRO 35',
-
-'006.- Proyecto de Ordenanza 006/03: “Designación nombres calles Junta Vecinal Barrio 2 de Abril”. Autor: Intendente Municipal, Sr. Alberto Icare. A la Comisión de Gobierno y Legales. APROBADO 26/02/04 – Acta 823/04 (O-04-1367).',
-
-'007.- Proyecto de Ordenanza 007/03: "Modificación Ordenanza Tarifaria 678-CM-96 y Fiscal 679-CM-96". Autor: Intendente Municipal, Sr. Alberto Icare. A las Comisiones de Economía y de Gobierno y Legales. RETIRADO 21/10/04 – Acta 836/04.	LIBRO 35',
-
-'008.- Proyecto de Ordenanza 008/03: “Ampliación denominación y asignación nombre calle Junta Vecinal Barrio Parque Playa Serena”. Autor: Intendente Municipal, Sr. Alberto Icare. A las Comisiones de Obras y Planeamiento y de Gobierno y Legales. APROBADO 12/02/04 – Acta 822/04 (O-04-1359).',
-
-'009.- Proyecto de Ordenanza 009/03: "Modificación Ordenanza 678-CM-96 y Fiscal 679-CM-96". Autor: Intendente Municipal, Sr. Alberto Icare. A la Comisión de Economía. APROBADO 13/05/04 – Acta 827/04 (O-04-1390)',
-
-'010.- Proyecto de Ordenanza 010/03: "Modificación Ordenanza Tarifaria N° 678-CM-96 y Fiscal N° 679-CM-96". Autor: Intendente Municipal, Sr. Alberto Icare. A la Comisión de Economía. RETIRADO 21/10/04 – Acta 836/04.	LIBRO 35'
-
-];
-
-const consultas = generarConsultasDeParrafos(parrafosPrueba);
-console.log(consultas);
+guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
