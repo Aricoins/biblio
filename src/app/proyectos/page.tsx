@@ -156,7 +156,7 @@ function Proyectos() {
             </div>
             
             {(ver) && (
-            <div style={{ margin: "auto" , width: "90%" }}>
+            <div style={{ margin: "auto" , width: "100%" }}>
               
                  <div style={{ margin: 'auto', backgroundColor: "gray", padding: "1%", borderRadius: "5px" }}>
                     <Input.Search
@@ -191,7 +191,7 @@ function Proyectos() {
                             dataSource={resultados}
                             columns={columns}
                             pagination={false}
-                            style={{ width: "90%", margin: "auto", marginBottom: "10%"  }}
+                            style={{ width: "100%", margin: "auto", marginBottom: "10%"  }}
                             rowKey="id"
                         />
                     )}

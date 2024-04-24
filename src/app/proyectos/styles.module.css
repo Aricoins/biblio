@@ -38,7 +38,7 @@
     justify-content: center;
     margin-left: 1%;
     margin-right: 1%;
-    margin-top: 20%;
+    margin-top: 1%;
     cursor: pointer;
     background-color:rgb(246, 130, 6);
     color: white;
@@ -46,7 +46,7 @@
     border: white 1px solid;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
-    
+
 
   }
   .hdos:hover {

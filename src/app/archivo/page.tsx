@@ -25,11 +25,13 @@ useEffect(() => {
   return (
     <>
  
-      <div  className={styles.container}  >
-       <div className={styles.subcontainer}>
-      
-      <div data-aos="fade-up" className={styles.component}>
-      <ProyectosNoSancionados  />
+   <div  className={styles.container}>
+    <div className={styles.subcontainer}>
+    <div data-aos="fade-up" className={styles.component}>
+    <Proyectos />
+    </div>
+     <div data-aos="fade-up" className={styles.component}>
+      <ProyectosNoSancionados />
       </div>
      <div className={styles.h3}  > <h2  className={styles.h4}>
    EXPEDIENTES APROBADOS:
@@ -52,7 +54,7 @@ useEffect(() => {
         </div> 
       
 </div>
-<Proyectos />    
+
 
       </div>
  
