@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { promisify } from 'util';
-import { readFile } from 'fs';
+import { readFile } from 'fs-extra';
 import marked from 'marked'; // Library for markdown to HTML conversion
 
 const readFileAsync = promisify(readFile);
