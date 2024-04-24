@@ -15,7 +15,7 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import Link from 'next/link';
 import FondosDocumentales from '../components/FondosDocumentales';
-import Proyectos from '../components/Proyectos'
+import Proyectos from '../proyectos/page'
 
 const Registro = () => {
 useEffect(() => {
@@ -52,10 +52,11 @@ useEffect(() => {
         </div> 
       
 </div>
+<Proyectos />    
 
       </div>
  
-      {/* <FondosDocumentales />       */}
+  
            <div  className={styles.endevdiv}>
   <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
 </div>
