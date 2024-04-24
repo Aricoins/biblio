@@ -126,9 +126,18 @@ function Proyectos() {
                 if (!añoNorma || añoNorma.length !== 4) {
                     return 'N/A';
                 }
-            
+                if (record.tipo_norma === 'ordenanza') {
+                  record.tipo_norma = "ordenanzas"}
+                if (record.tipo_norma === 'declaración') {
+                  record.tipo_norma = "declaraciones"}
+                if (record.tipo_norma === 'comunicación') {
+                  record.tipo_norma = "comunicaciones"}
+                if (record.tipo_norma === 'resolución') {
+                  record.tipo_norma = "resoluciones"}
+                // Convertir el tipo de norma a minúsculas
+            const tipoNorma = record.tipo_norma.toLowerCase();
                 // Construir la URL basada en la ubicación de los archivos estáticos en la carpeta 'public'
-                const filePath = `normas/ordenanzas/${añoNorma}/${numeroNorma}.doc`;
+                const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
             
                 // Crear el enlace al archivo
                 return (
@@ -200,6 +209,7 @@ function Proyectos() {
                 </div>
        
             )}
+            
         </>
         </div>)
 }
