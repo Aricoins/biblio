@@ -151,7 +151,7 @@ function Proyectos() {
                     data-aos="fade-left" 
                     className={styles.hdos}
                 >
-                    Buscar normativa - Proyectos ingresados 2003-2024
+                    Buscar normativa | Proyectos ingresados 2003-2024
                 </h2>
             </div>
             

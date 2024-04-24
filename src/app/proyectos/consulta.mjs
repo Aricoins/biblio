@@ -26,20 +26,42 @@ const extraccion = {
         },
 
     extraerTipoProyecto: function(parrafo) {
-        const regexTipoProyecto = /Proyecto de\s+(Ordenanza|Declaración|Comunicación|Resolución)/;
+        const regexTipoProyecto = /Proyecto de\s+(ordenanza|declaración|comunicación|resolución)/;
         const coincidencia = regexTipoProyecto.exec(parrafo);
         return coincidencia ? coincidencia[1].toLowerCase() : '';
     },
 
     extraerAutor: function(parrafo) {
-        const patronAutor = /(?:Autor(?:es)?):\s*([^;]+?)(?=\s*(Colaborador|Aprobado|Retirado|A las |A la |A Aseso|\[|\n))/i;
-        const coincidencia = parrafo.match(patronAutor);
+        // El patrón ahora captura múltiples autores, manejando nombres separados por comas
+        const regexAutor = /Autor(?:es|a|as)?:\s*([^;]+?)(?=\s*(?:(?:\.\s|$)|(?:\n)|(?:Colaboradores|Aprobado|Retirado|Se gira|A las|Iniciativa|Colaboradores|A la|A Aseso|\[)))/i;
+        const coincidencia = regexAutor.exec(parrafo);
+        
+        
         if (coincidencia) {
-            // Extraer el autor (grupo de captura)
-            const autor = coincidencia[1].trim();
-            return autor;
+            // Extraer los autores y dividirlos si están separados por comas
+            const autores = coincidencia[1].split(',').map(nombre => nombre.trim());
+            return autores;
         }
         return null;
+    },
+
+    // Extraer tipo de norma del párrafo
+    extraerTipoNorma: function(parrafo) {
+        // Cambié la expresión regular para capturar solo la primera letra antes de los guiones
+        const regexTipoNorma = /(O|C|D|R)-\d{2,4}-/;
+        const coincidencia = regexTipoNorma.exec(parrafo);
+        
+        if (coincidencia) {
+            // Mapeo de prefijo a tipo de norma
+            const tipoNormaMap = {
+                'O': 'ordenanza',
+                'C': 'comunicación',
+                'D': 'declaración',
+                'R': 'resolución'
+            };
+            return tipoNormaMap[coincidencia[1]];
+        }
+        return '';
     },
 
     extraerColaboradores: function (texto) {
@@ -114,7 +136,7 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        let contadorID = 1;
+        let contadorID = 5191;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
@@ -155,7 +177,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './proyectos.docx';
-const rutaArchivoJson = './proyectos.json';
+const rutaArchivoDocx = './proyectos2.docx';
+const rutaArchivoJson = './proyectos2.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
