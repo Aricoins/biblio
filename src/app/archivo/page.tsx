@@ -14,7 +14,7 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import Link from 'next/link';
-import FondosDocumentales from '../components/FondosDocumentales';
+//import FondosDocumentales from '../components/FondosDocumentales';
 import Proyectos from '../proyectos/page'
 
 const Registro = () => {
@@ -30,10 +30,11 @@ useEffect(() => {
     <div data-aos="fade-up" className={styles.component}>
     <Proyectos />
     </div>
-     <div data-aos="fade-up" className={styles.component}>
+     
+     <div className={styles.h3}  > <div data-aos="fade-up" className={styles.component}>
       <ProyectosNoSancionados />
-      </div>
-     <div className={styles.h3}  > <h2  className={styles.h4}>
+      </div><h2  className={styles.h4} style={{backgroundColor: 'rgb(246, 130, 6);', color: "white"}} >
+     
    EXPEDIENTES APROBADOS:
   </h2>  
         <div data-aos="fade-up" className={styles.component}>
