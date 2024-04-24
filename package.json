@@ -26,6 +26,7 @@
     "dotenv": "^16.4.4",
     "googleapis": "^133.0.0",
     "highlight.js": "^11.9.0",
+    "mammoth": "^1.7.1",
     "next": "^14.0.4",
     "next-auth": "^5.0.0-beta.16",
     "next-cloudinary": "^5.20.0",
