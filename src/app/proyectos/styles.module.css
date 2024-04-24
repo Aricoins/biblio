@@ -42,10 +42,10 @@
     cursor: pointer;
     background-color:rgb(246, 130, 6);
     color: white;
-    transition: 0.3s;
-    border: white 1px solid;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
+    border: black 2px solid;
+    transition: 1s;
 
 
   }
