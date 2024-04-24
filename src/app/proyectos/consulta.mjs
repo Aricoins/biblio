@@ -114,10 +114,11 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        
+        let contadorID = 1;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
+                id: contadorID++, 
                 numero_proyecto: extraccion.extraerNumeroProyecto(parrafo),
                 anio_proyecto: extraccion.extraerAnioProyecto(parrafo),
                 titulo_proyecto: extraccion.extraerTituloProyecto(parrafo),
