@@ -96,10 +96,19 @@ const extraccion = {
     },
 
     extraerAprobado: function(parrafo) {
-        const regexAprobado = /(APROBADO)/;
-        const coincidencia = regexAprobado.exec(parrafo);
-        return coincidencia ? true : false;
+        // Expresión regular para detectar la palabra "aprobado"
+        const regexAprobado = /aprobado/i;
+        // Expresión regular para detectar un número de norma (O|R|C|D)-d+-d+
+        const regexNumeroNorma = /(O|R|C|D)-\d+-\d+/;
+    
+        // Buscar coincidencias en el párrafo
+        const coincidenciaAprobado = regexAprobado.test(parrafo);
+        const coincidenciaNumeroNorma = regexNumeroNorma.test(parrafo);
+    
+        // Considerar un proyecto aprobado si tiene la palabra "aprobado" o un número de norma
+        return coincidenciaAprobado || coincidenciaNumeroNorma;
     },
+    
 
     extraerTipoNorma: function(parrafo) {
         const regexTipoNorma = /(O|C|D|R)-\d+-/;

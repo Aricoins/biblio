@@ -73,27 +73,29 @@ function Proyectos() {
     };
 
     const filtrarProyectos = (numero: string, palabra: string, tipo: string, aprobado: boolean) => {
-        let filteredProyectos = proyectos.filter((proyecto) => {
-            const titulo = proyecto.titulo_proyecto.toLowerCase();
-            const numeroStr = proyecto.numero_proyecto.toString();
-            const tipoLower = proyecto.tipo_proyecto.toLowerCase();
-
-            const numeroExacto = numero !== '' && numeroStr === numero;
-            const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
-            const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-            const aprobadoMatch = aprobado === proyecto.aprobado;
-
-            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
-        });
-
-        filteredProyectos = filteredProyectos.sort((a, b) => {
-          if (!a.acta_fecha || !b.acta_fecha) {
-            return 0;
-          }
-          return new Date(b.acta_fecha).getTime() - new Date(a.acta_fecha).getTime();
-        });
-        setResultados(filteredProyectos.slice(0, 5));
-    };
+      let filteredProyectos = proyectos.filter((proyecto) => {
+          const titulo = proyecto.titulo_proyecto.toLowerCase();
+          const numeroStr = proyecto.numero_proyecto.toString();
+          const tipoLower = proyecto.tipo_proyecto.toLowerCase();
+  
+          const numeroExacto = numero !== '' && numeroStr === numero;
+          const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
+          const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
+          const aprobadoMatch = aprobado === proyecto.aprobado;
+  
+          return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
+      });
+  
+      // Ordenar por año del proyecto (más nuevo a más viejo)
+      filteredProyectos = filteredProyectos.sort((a, b) => {
+          const yearA = parseInt(a.anio_proyecto, 10);
+          const yearB = parseInt(b.anio_proyecto, 10);
+          return yearB - yearA; // Orden descendente (más nuevo a más viejo)
+      });
+  
+      setResultados(filteredProyectos.slice(0, 10));
+  };
+  
 
     const columns = [
         { title: 'Número', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
@@ -151,7 +153,7 @@ function Proyectos() {
                     data-aos="fade-left" 
                     className={styles.hdos}
                 >
-                    Buscar normativa | Proyectos ingresados 2003-2024
+                    Buscar normativa | Proyectos 2003-2024
                 </h2>
             </div>
             
@@ -160,7 +162,7 @@ function Proyectos() {
               
                  <div style={{ margin: 'auto', backgroundColor: "gray", padding: "1%", borderRadius: "5px" }}>
                     <Input.Search
-                        placeholder="Por número exacto..."
+                        placeholder="Por número. Por ejemplo: 003 "
                         value={busquedaNumero}
                         onChange={handleBusquedaNumeroChange}
                         style={{ width: 200, marginRight: '16px', marginBottom: '8px'}}
