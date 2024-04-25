@@ -56,7 +56,7 @@ useEffect(() => {
       
 </div>
 
-<Proyectos />
+
       </div>
  
   
