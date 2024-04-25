@@ -111,6 +111,6 @@
 
     /* Ajustar component para pantallas pequeñas */
     .component {
-        width: 50%;
+        width: 100%;
     }
 }
