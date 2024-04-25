@@ -152,8 +152,8 @@ function Proyectos() {
     ];
 
     return (
-        (!loading) ?  <Spin  style={{margin: "50%", marginTop: "20%"}}/> :
-        <div style={{ width: '90%', margin: 'auto' }}>
+        (!loading) ?  <Spin  style={{margin: "auto", marginTop: "40%"}}/> :
+        <div style={{ width: '100%', marginTop: '15%' }}>
         <>
             <div onClick={() => setVer(!ver)}>
                 <h2 
@@ -166,8 +166,12 @@ function Proyectos() {
             
             {(ver) && (
             <div style={{ margin: "auto" , width: "100%" }}>
-              
-                 <div style={{ margin: 'auto', backgroundColor: "gray", padding: "1%", borderRadius: "5px" }}>
+           <div style={{ margin: 'auto', 
+                        backgroundColor: "gray", 
+                        padding: "1%", 
+                        borderRadius: "5px",
+                        display: "flex", 
+                        justifyContent: "center" }}>
                     <Input.Search
                         placeholder="Por número. Por ejemplo: 003 "
                         value={busquedaNumero}
