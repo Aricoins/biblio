@@ -15,7 +15,7 @@ interface Proyecto {
     anio_proyecto: string;
     titulo_proyecto: string;
     tipo_proyecto: string;
-    autor: string | null;
+    autor: string[];
     colaboradores: string | null;
     girado_a: string;
     acta_fecha: string | null;
@@ -26,7 +26,7 @@ interface Proyecto {
 }
 
 // Importar los datos del archivo JSON
-import data from './proyectos.json';
+import data from './proyectos3.json';
 
 function Proyectos() {
     const [proyectos, setProyectos] = useState<Proyecto[]>([]);

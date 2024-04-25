@@ -5,10 +5,16 @@ import mammoth from 'mammoth';
 // Funciones de extracción agrupadas en un objeto para facilitar su manejo
 const extraccion = {
     extraerNumeroProyecto: function(parrafo) {
-        const regexNumeroProyecto = /(\b\d{3,4}\b)(?=\/)/;
+        const regexNumeroProyecto = /(\b\d{1,4}\b)(?=\/)/;  // Captura números de 1 a 4 dígitos
         const coincidencia = regexNumeroProyecto.exec(parrafo);
-        return coincidencia ? coincidencia[1] : '';
-    },
+        if (coincidencia) {
+            // Convierte la coincidencia a un número entero para eliminar los ceros a la izquierda
+            const numeroProyecto = parseInt(coincidencia[1], 10);
+            return numeroProyecto.toString();
+        }
+        return '';
+    }
+,    
 
     extraerAnioProyecto: function(parrafo) {
         const regexAnioProyecto = /\/(\d{2})/;
@@ -26,24 +32,52 @@ const extraccion = {
         },
 
     extraerTipoProyecto: function(parrafo) {
-        const regexTipoProyecto = /Proyecto de\s+(ordenanza|declaración|comunicación|resolución)/;
-        const coincidencia = regexTipoProyecto.exec(parrafo);
-        return coincidencia ? coincidencia[1].toLowerCase() : '';
-    },
-
-    extraerAutor: function(parrafo) {
-        // El patrón ahora captura múltiples autores, manejando nombres separados por comas
-        const regexAutor = /Autor(?:es|a|as)?:\s*([^;]+?)(?=\s*(?:(?:\.\s|$)|(?:\n)|(?:Colaboradores|Aprobado|Retirado|Se gira|A las|Iniciativa|Colaboradores|A la|A Aseso|\[)))/i;
-        const coincidencia = regexAutor.exec(parrafo);
-        
+        const regexTipoNorma = /(O|C|D|R)-\d{2,4}-/;
+        const coincidencia = regexTipoNorma.exec(parrafo);
         
         if (coincidencia) {
-            // Extraer los autores y dividirlos si están separados por comas
-            const autores = coincidencia[1].split(',').map(nombre => nombre.trim());
-            return autores;
+            // Mapeo de prefijo a tipo de norma
+            const tipoNormaMap = {
+                'O': 'ordenanza',
+                'C': 'comunicación',
+                'D': 'declaración',
+                'R': 'resolución'
+            };
+            return tipoNormaMap[coincidencia[1]];
         }
-        return null;
-    },
+        return '';
+    }
+    ,
+    extraerAutor: function (parrafo) {
+        // Expresión regular para capturar los nombres de los autores
+        const regex = /(?:Autor(?:a|es)?:)\s*([^.;\n]+)(?:\s*(?:\.|;|\n|Colaboradores|Aprobado|Retirado|Se gira|A las|Iniciativa|A la|A Asesoría))/gi;
+
+        // Ejecuta la expresión regular y almacena las coincidencias
+        const matches = parrafo.match(regex);
+    
+        // Inicializa un array vacío para almacenar los autores
+        const autores = [];
+    
+        // Si hay coincidencias, procesa cada una
+        if (matches) {
+            for (const match of matches) {
+                // Extrae el nombre del autor eliminando el prefijo "Autor(es):" y otros caracteres no deseados
+                const autor = match.replace(/(?:Autor(?:a|es)?:\s*)/, '').trim();
+                
+                // Agrega el nombre del autor al array
+                autores.push(autor);
+            }
+        }
+    
+        // Devuelve el array con los nombres de los autores
+        return autores;
+    }
+    
+    
+
+    ,
+    
+
 
     // Extraer tipo de norma del párrafo
     extraerTipoNorma: function(parrafo) {
@@ -68,7 +102,7 @@ const extraccion = {
         // Expresión regular para extraer colaboradores desde la palabra "Colaborador(es)"
         // hasta el primer punto que no está precedido por una abreviatura común (Sr., Lic., Dr., Mg., etc.).
         // Usa un lookbehind para verificar que el punto no es parte de una abreviatura.
-        const patronColaboradores = /(?:Colaborador(?:es)?|Colaboradores?):\s*([\w\s,]+)(?<!\b(?:Sr|Lic|Dr|Mg|Ing|Prof|Ing)\.)(?=\.\s*(?:A\s|APROBADO|RETIRADO|\n|$))/i;
+        const patronColaboradores = /(?:Colaborador(?:es)?|Colaboradores?):\s*([\w\s,]+)(?<!\b(?:Sr)\.)(?=\.\s*(?:A\s|APROBADO|RETIRADO|\n|$))/i;
         
         // Buscar coincidencia en el texto
         const coincidencia = texto.match(patronColaboradores);
@@ -95,19 +129,7 @@ const extraccion = {
         return coincidencia ? coincidencia[1] : null;
     },
 
-    extraerAprobado: function(parrafo) {
-        // Expresión regular para detectar la palabra "aprobado"
-        const regexAprobado = /aprobado/i;
-        // Expresión regular para detectar un número de norma (O|R|C|D)-d+-d+
-        const regexNumeroNorma = /(O|R|C|D)-\d+-\d+/;
-    
-        // Buscar coincidencias en el párrafo
-        const coincidenciaAprobado = regexAprobado.test(parrafo);
-        const coincidenciaNumeroNorma = regexNumeroNorma.test(parrafo);
-    
-        // Considerar un proyecto aprobado si tiene la palabra "aprobado" o un número de norma
-        return coincidenciaAprobado || coincidenciaNumeroNorma;
-    },
+
     
 
     extraerTipoNorma: function(parrafo) {
@@ -122,17 +144,38 @@ const extraccion = {
         return coincidencia ? tipoNormaMap[coincidencia[1]] : '';
     },
 
-    extraerNumeroNorma: function(parrafo) {
-        const regexNumeroNorma = /(O|R|C|D)-\d+-\d+/;
-        const coincidencia = regexNumeroNorma.exec(parrafo);
-        return coincidencia ? coincidencia[0] : '';
-    },
+  
 
-    extraerObservaciones: function(parrafo) {
-        const regexObservaciones = /(RETIRADO|NO APROBADO|OBSERVACIONES|LIBRO)\s+.*\d{2}\/\d{2}\/\d{2}(?:.*|\n)?/i;
-        const coincidencia = regexObservaciones.exec(parrafo);
-        return coincidencia ? coincidencia[0].trim() : '';
-    }
+   
+        extraerNumeroNorma: function(parrafo) {
+            // Mejorar la expresión regular para extraer varios formatos de número de norma
+            const regexNumeroNorma = /\b(O|R|C|D)-\d{2,4}-\d{2,4}\b/;
+            const coincidencia = regexNumeroNorma.exec(parrafo);
+            return coincidencia ? coincidencia[0] : '';
+        },
+    
+        extraerAprobado: function(parrafo) {
+            // Expresión regular para detectar la palabra "aprobado"
+            // Verifica que la palabra "aprobado" está en un contexto relevante
+            const regexAprobado = /\baprobado\b/i;
+            
+            // Usar la función extraerNumeroNorma para comprobar si hay un número de norma presente
+            const numeroNorma = this.extraerNumeroNorma(parrafo);
+            
+            // Considerar un proyecto aprobado si tiene la palabra "aprobado" o un número de norma válido
+            const coincidenciaAprobado = regexAprobado.test(parrafo);
+            return coincidenciaAprobado || numeroNorma !== '';
+        }
+,        
+    
+        extraerObservaciones: function(parrafo) {
+            // Usar extraerAprobado para verificar si el proyecto está aprobado
+            const aprobado = this.extraerAprobado(parrafo);
+            if (aprobado === true) {return '';}
+            else return "sin sanción"
+        }
+        
+        
 };
 
 async function generarDatosProyecto(rutaArchivoDocx) {
@@ -145,7 +188,7 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        let contadorID = 5191;
+        let contadorID = 0;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
@@ -186,7 +229,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './proyectos2.docx';
-const rutaArchivoJson = './proyectos2.json';
+const rutaArchivoDocx = './proyectos.docx';
+const rutaArchivoJson = './proyectos3.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);

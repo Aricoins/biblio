@@ -93,7 +93,7 @@ font-weight: 600;
     grid-column-start: 10;
     justify-content: center;
     color: rgb(33, 10, 64);
-    font-size: xx-large;
+    font-size: x-large;
     cursor: pointer;
     border: none;
    display: flex;
@@ -154,13 +154,13 @@ font-weight: 600;
     background-color: #fdfafa;
     border-collapse: collapse;
     border: 1px solid #180101;
-    font-size: madium;
+    font-size: large;
     height: 60%;
     margin-bottom: 1%;
   }
 
 .tableHeader1 {
-    width: 11%;
+    width: 17%;
     color: white;
     background-color: #7a787e;
     border-collapse: collapse;
@@ -169,7 +169,7 @@ font-weight: 600;
   }
 
 .tableHeader2 {
-    width: 40%;
+    width: 60%;
     color: white;
     background-color: #77737e;
     border-collapse: collapse;
@@ -177,7 +177,7 @@ font-weight: 600;
 }
 
 .tableHeader3 {
-    width: 15%;
+    width: 100%;
     color: white;
     background-color: #6f6d74;
     border-collapse: collapse;
@@ -186,7 +186,7 @@ font-weight: 600;
 }
 
 .tableHeaderOrdenanzas{
-  width: 60%;
+  width: 100%;
   background-color: #6f6d74;
   color: white;
   border: 2px solid  black;
