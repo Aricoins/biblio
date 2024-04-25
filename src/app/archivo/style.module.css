@@ -85,7 +85,7 @@
 @media (max-width: 600px) {
     /* Ajustar container para pantallas pequeñas */
     .container {
-        width: 100%;
+        width: 90%;
         margin-top: 5%;
         margin-bottom: 5%;
     }
@@ -111,6 +111,6 @@
 
     /* Ajustar component para pantallas pequeñas */
     .component {
-        width: 100%;
+        width: 50%;
     }
 }

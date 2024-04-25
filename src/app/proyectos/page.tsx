@@ -160,7 +160,7 @@ function Proyectos() {
                     data-aos="fade-left" 
                     className={styles.hdos}
                 >
-                    Buscar normativa | Proyectos 2003-2024
+                    Buscador de normas 🔍
                 </h2>
             </div>
             

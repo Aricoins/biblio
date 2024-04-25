@@ -28,12 +28,11 @@ useEffect(() => {
    <div  className={styles.container}>
     <div className={styles.subcontainer}>
     <div data-aos="fade-up" className={styles.component}>
-    <Proyectos />
     </div>
      
      <div className={styles.h3}  > <div data-aos="fade-up" className={styles.component}>
       <ProyectosNoSancionados />
-      </div><h2  className={styles.h4} style={{backgroundColor: 'rgb(246, 130, 6);', color: "white"}} >
+      </div><h2  className={styles.h4}  >
      
    EXPEDIENTES APROBADOS:
   </h2>  
