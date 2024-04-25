@@ -102,8 +102,6 @@ function Proyectos() {
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
         { title: 'Título', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
         { title: 'Autor', dataIndex: 'autor', key: 'autor' },
-        { title: 'Aprobado', dataIndex: 'aprobado', key: 'aprobado',
-            render: (aprobado: boolean) => aprobado ? 'Sí' : 'No' },
         { title: 'Tipo norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
         {
             title: 'Número norma',
