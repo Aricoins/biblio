@@ -1,56 +1,60 @@
-.container { 
-      font-size: x-small; 
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        width: 98%;
-        margin: auto;
-        margin-bottom: 10%;
-        margin-top: 10%;
-        /* background-color: rgb(246, 234, 9); */
-        border-radius: 25%;
-    }
-  
-    .body {
-        background-color: rgb(186, 184, 184);
-        margin-bottom: 10%;
-        width: 100%;
-        margin: auto;
-
+/* Estilos generales para la clase container */
+.container {
+    font-size: x-small;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: auto;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    /* background-color: rgb(246, 234, 9); */
+    border-radius: 25%;
 }
 
-.subcontainer  { 
-         margin-top: 10px;
-         margin-bottom: 10%;
-        font-family: "Verdana";
-        background-color: white;
-        padding: 5%;
-        border-radius: 3%;
-        opacity: 0.9; 
-        box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
-      }
+/* Estilos generales para la clase body */
+.body {
+    background-color: rgb(186, 184, 184);
+    margin-bottom: 10%;
+    width: 100%;
+    margin: auto;
+}
 
-    .component { 
-                margin-top: 1%;
-                margin-bottom: 1%;
-                width: 99%;
-                justify-content: center;
-    }
+/* Estilos generales para la clase subcontainer */
+.subcontainer {
+    margin-top: 10px;
+    margin-bottom: 10%;
+    font-family: "Verdana";
+    background-color: white;
+    padding: 5%;
+    border-radius: 3%;
+    opacity: 0.9;
+    box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .h3 {
-background-color: rgba(19, 11, 60, 0);
-color: black;
-border: 2px solid black;
-border-radius: 0.5rem;
-text-align: left;
-padding: 1%;
-font-size: x-small;
-align-items: space-between;
-box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
-    }
+/* Estilos generales para la clase component */
+.component {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 99%;
+    justify-content: center;
+}
 
+/* Estilos generales para la clase h3 */
+.h3 {
+    background-color: rgba(19, 11, 60, 0);
+    color: black;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    text-align: left;
+    padding: 1%;
+    font-size: x-small;
+    align-items: space-between;
+    box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
+}
 
-.h4{
+/* Estilos generales para la clase h4 */
+.h4 {
     background-color: rgba(225, 199, 199, 0.1);
     color: rgb(0, 0, 0);
     font-size: small;
@@ -64,15 +68,49 @@ box-shadow: 0 0px 8px 4px rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
     border: 2px solid white;
     box-shadow: 0 0px 4px 2px rgba(0, 0, 0, 0.5);
-
 }
-.endev{
-    display: flex   ;
+
+/* Estilos generales para la clase endev */
+.endev {
+    display: flex;
     flex-direction: column;
     margin-left: 70%;
     justify-self: right;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10%;
-font-size: x-small;
-    
+    font-size: x-small;
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 600px) {
+    /* Ajustar container para pantallas pequeñas */
+    .container {
+        width: 100%;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
+
+    /* Ajustar subcontainer para pantallas pequeñas */
+    .subcontainer {
+        padding: 10%;
+        border-radius: 5%;
+    }
+
+    /* Ajustar tamaño de fuente y alineación de texto para elementos h3 y h4 */
+    .h3, .h4 {
+        font-size: small;
+        text-align: center;
+    }
+
+    /* Ajustar tamaño de fuente para endev */
+    .endev {
+        font-size: small;
+        margin-left: 0;
+        margin-bottom: 5%;
+    }
+
+    /* Ajustar component para pantallas pequeñas */
+    .component {
+        width: 100%;
+    }
+}
