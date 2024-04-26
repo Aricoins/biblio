@@ -56,6 +56,7 @@ useEffect(() => {
         <div data-aos="fade-up" className={styles.component}>
           <PCM />
         </div> 
+      
     </div>
     <Proyectos />
     </div>
