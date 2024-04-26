@@ -58,4 +58,23 @@
       font-size: small;
     }
   }
+  /* Estilo general para los inputs */
+.inputs {
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  background-color: gray;
+  border-radius: 5px;
+  margin: 'auto'; 
+                        background-color: "gray"; 
+                       }
+
+/* Media query para dispositivos medianos (768px de ancho máximo) */
+@media (max-width: 768px) {
+  .inputs {
+      flex-direction: column; /* Cambia a diseño de columna */
+      align-items: center; /* Alinea los elementos en el centro */
+  }
   
+ 
+}

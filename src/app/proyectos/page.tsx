@@ -161,12 +161,7 @@ function Proyectos() {
             
             {(ver) && (
             <div style={{ margin: "auto" , width: "100%" }}>
-           <div style={{ margin: 'auto', 
-                        backgroundColor: "gray", 
-                        padding: "1%", 
-                        borderRadius: "5px",
-                        display: "flex", 
-                        justifyContent: "center" }}>
+           <div className={styles.inputs}>
                     <Input.Search
                         placeholder="Por número. Por x ej: 003 "
                         value={busquedaNumero}
