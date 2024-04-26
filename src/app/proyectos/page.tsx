@@ -146,8 +146,26 @@ function Proyectos() {
             }
           }
         },
-        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones' },
+        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', 
+        render: (observaciones: string) => { 
+            if (observaciones === 'sin sanción') {
+                return <button onClick={handleClick}>sin sanción</button>;
+            } else {
+                return observaciones;
+            }
+        }
+     },
     ];
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        // Handle button click event
+        // You can call `window.scrollTo` here if that's what you need to do
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+    
 
     return (
         (!loading) ?  <Spin  style={{margin: "auto", marginTop: "40%"}}/> :
@@ -163,7 +181,7 @@ function Proyectos() {
             <div style={{ margin: "auto" , width: "100%" }}>
            <div className={styles.inputs}>
                     <Input.Search
-                        placeholder="Por número. Por x ej: 003 "
+                        placeholder="Por número... "
                         value={busquedaNumero}
                         onChange={handleBusquedaNumeroChange}
                         style={{ width: 200, marginRight: '16px', marginBottom: '8px'}}
@@ -175,16 +193,17 @@ function Proyectos() {
                         style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                     />
                     <Select
-                        placeholder="Por tipo de proyecto"
+                        placeholder="Filtrar por tipo"
                         style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                         onChange={handleFiltroTipoChange}
+                        className={styles.sele}
                     >
                         <Option value="Ordenanza">Ordenanza</Option>
                         <Option value="Declaración">Declaración</Option>
                         <Option value="Comunicación">Comunicación</Option>
                         <Option value="Resolución">Resolución</Option>
                     </Select>
-                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Proyectos aprobados</Checkbox>
+                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Incluir No Sancionados</Checkbox>
                  
                 </div>
                

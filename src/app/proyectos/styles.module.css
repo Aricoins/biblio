@@ -59,16 +59,32 @@
     }
   }
   /* Estilo general para los inputs */
-.inputs {
+.inputs  {
   display: flex;
   justify-content: center;
   padding: 1%;
   background-color: gray;
   border-radius: 5px;
   margin: 'auto'; 
-                        background-color: "gray"; 
-                       }
+  background-color: "gray"; 
+::placeholder {
+    color: #830b0b; 
+    font-style: italic; 
+    font-size: 0.9rem;
+}}
 
+.sele{
+
+    color: #830b0b; /* Cambia el color del placeholder */
+    font-style: italic; /* Cambia el estilo de la fuente del placeholder */
+    font-size: 0.9rem; 
+    ::placeholder {
+      color: #830b0b; 
+      font-style: italic; 
+      font-size: 0.9rem;
+  }
+}
+ 
 /* Media query para dispositivos medianos (768px de ancho máximo) */
 @media (max-width: 768px) {
   .inputs {
