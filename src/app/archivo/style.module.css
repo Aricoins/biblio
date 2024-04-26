@@ -1,12 +1,10 @@
 /* Estilos generales para la clase container */
 .container {
     font-size: x-small;
-    height: 100%;
     justify-content: center;
-    align-items: center;
     width: 98%;
     margin: auto;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
     margin-top: 10%;
     /* background-color: rgb(246, 234, 9); */
     border-radius: 25%;
@@ -24,8 +22,8 @@
 .subcontainer {
     margin-top: 10px;
     margin-bottom: 10%;
-    font-family: "Verdana";
-    background-color: white;
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(208, 207, 203);
     padding: 5%;
     border-radius: 3%;
     opacity: 0.9;

@@ -153,11 +153,11 @@ function Proyectos() {
 
     return (
         (!loading) ?  <Spin  style={{margin: "auto", marginTop: "40%"}}/> :
-        <div style={{ width: '100%', marginTop: '15%' }}>
+        <div className={styles.container} data-aos="fade-up">
         <>
             <div onClick={() => setVer(!ver)}>
                 <h2 
-                    data-aos="fade-left" 
+                 
                     className={styles.hdos}
                 >
                     Buscador de normas 🔍
