@@ -158,7 +158,7 @@ function Proyectos() {
                  
                     className={styles.hdos}
                 >
-                    Buscador de proyectos legisaltivos 🔍
+                    Buscador de iniciativas legislativas 🔍 | 2003-2024
                 </h2>
             </div>
             
