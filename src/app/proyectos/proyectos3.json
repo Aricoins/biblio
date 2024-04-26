@@ -6873,21 +6873,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 404,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+  
   {
     "id": 405,
     "numero_proyecto": "404",
@@ -9879,22 +9865,7 @@
     "numero_norma": "O-05-1579",
     "observaciones": ""
   },
-  {
-    "id": 581,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
+   {
     "id": 582,
     "numero_proyecto": "580",
     "anio_proyecto": "2006",
@@ -13432,21 +13403,6 @@
     "observaciones": ""
   },
   {
-    "id": 790,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
     "id": 791,
     "numero_proyecto": "787",
     "anio_proyecto": "2007",
@@ -16595,52 +16551,7 @@
     "numero_norma": "D-07-1317",
     "observaciones": ""
   },
-  {
-    "id": 978,
-    "numero_proyecto": "5",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 979,
-    "numero_proyecto": "12",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 980,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
+    {
     "id": 981,
     "numero_proyecto": "1",
     "anio_proyecto": "2007",
@@ -25123,21 +25034,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1481,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 1482,
     "numero_proyecto": "493",
@@ -30609,21 +30506,7 @@
     "numero_norma": "O-11-2141",
     "observaciones": ""
   },
-  {
-    "id": 1805,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+ 
   {
     "id": 1806,
     "numero_proyecto": "813",
@@ -33918,7 +33801,7 @@
   },
   {
     "id": 2000,
-    "numero_proyecto": "",
+    "numero_proyecto": "1006",
     "anio_proyecto": "2011",
     "titulo_proyecto": "",
     "tipo_proyecto": "",
@@ -39026,7 +38909,7 @@
     "id": 2301,
     "numero_proyecto": "293",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Creación, conformación y funcionamiento del Ente Mixto de Promoción y Desarrollo Social de Bariloche (EMPRODES BARILOCHE)",
     "tipo_proyecto": "",
     "autor": [
       "Intendenta Municipal interina, Lic María Eugenia Martini."
@@ -40114,7 +39997,7 @@
     "id": 2365,
     "numero_proyecto": "357",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Aceptar donación de una camioneta tipo todo terreno, marca Toyota modelo Land Cruiser, año de fabricación 1984, doble tracción, chasis Nº FJ40-369772 y motor Nº 2F832315, previsto en la disposición Nº 65/12 (AD BARI)",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendenta Municipal interina, Lic María Eugenia Martini."
@@ -40284,7 +40167,7 @@
     "id": 2375,
     "numero_proyecto": "367",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modifica Ordenanza 2399-CM-13 y su anexo.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Carlos Valeri;"
@@ -41098,7 +40981,7 @@
     "id": 2423,
     "numero_proyecto": "415",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Establecer nuevo organigrama político",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendenta Municipal, Lic María Eugenia Martini."
@@ -41521,7 +41404,7 @@
     "id": 2448,
     "numero_proyecto": "440",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de interés municipal lal29º Jornada de Actualización Técnica sobre Hormigón Elaborado",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Ramón Chiocconi, Alejandro Ramos Mejía y Edith Garro (PJ)."
@@ -41555,7 +41438,7 @@
     "id": 2450,
     "numero_proyecto": "442",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunicar Cámara de Senadores se vería con agrado aprobación proyecto 5833-D-2012",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Mauro Gonzalez (PVpC)."
@@ -41572,7 +41455,7 @@
     "id": 2451,
     "numero_proyecto": "443",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Prestar acuerdo al llamado a licitación pública Sistema de video vigilancia",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendenta Municipal, Lic María Eugenia Martini."
@@ -42013,7 +41896,7 @@
     "id": 2477,
     "numero_proyecto": "469",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de interés municipal y comunitario Jornada Solidaria Mc Día Feliz",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Leandro Lescano (AFSP)."
@@ -42353,7 +42236,7 @@
     "id": 2497,
     "numero_proyecto": "489",
     "anio_proyecto": "2013",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunicar Ejecutivo y Legislatura Provincial necesidad creación hogar CAINA varones Bariloche",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejal Mauro Gonzalez."
@@ -42844,7 +42727,7 @@
     "id": 2526,
     "numero_proyecto": "518",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Aprobar el proyecto de urbanización de la parcela 19-2-F-F20-08L",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendenta Municipal, Lic María Eugenia Martini."
@@ -43401,7 +43284,7 @@
     "id": 2559,
     "numero_proyecto": "551",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Desafectar dominio. Afectar dominio privado fracción parcela 19-2-K-205-B-02 construcción casa educativa terapéutica (SEDRONAR)",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendenta Municipal, Lic María Eugenia Martini."
@@ -43639,7 +43522,7 @@
     "id": 2573,
     "numero_proyecto": "565",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunicar al Poder Ejecutivo Nacional, Poder Ejecutivo Provincial, Dto. Ejecutivo Municipal intervengan sobre requerimiento de comunidad educativa Nº 48",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Edith Garro, Ramón Chiocconi (PJ);"
@@ -44574,7 +44457,7 @@
     "id": 2628,
     "numero_proyecto": "620",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modifica Ordenanza 1760-CM-07 Habilitación Casinos",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Leandro Lescano y Carmen Giménez (AFSP)."
@@ -44795,7 +44678,7 @@
     "id": 2641,
     "numero_proyecto": "633",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modificación Ordenanza 2488-CM-13",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Leandro Lescano (AFSP);"
@@ -44812,10 +44695,13 @@
     "id": 2642,
     "numero_proyecto": "634",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modificación Ordenanza 2488-CM-13",
     "tipo_proyecto": "",
     "autor": [
-      "Concejales Leandro Lescano (AFSP);"
+      "Leandro Lescano (AFSP)", 
+      "Alejandro Ramos Mejía (PJ)",
+       "Irma Haneck (FG)",
+       "Elena Welleschik (UCR)"
     ],
     "colaboradores": null,
     "girado_a": "Comisión de Gobierno y Legales",
@@ -46393,10 +46279,10 @@
     "id": 2735,
     "numero_proyecto": "727",
     "anio_proyecto": "2014",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
+    "titulo_proyecto": "Modifica art. 20 Ordenanza 2375-CM-12 y 12.5  Ordenanza Nº 901-CM-98",
+    "tipo_proyecto": "ordenanza",
     "autor": [
-      "Concejales Leandro Lescano (AFSP);"
+      "Concejales Leandro Lescano (AFSP) y Prof. Elena Welleschik (UCR)"
     ],
     "colaboradores": null,
     "girado_a": "Asesoría Letrada y a las comisiones de Economía y de Gobierno y Legales",
@@ -46411,7 +46297,7 @@
     "numero_proyecto": "728",
     "anio_proyecto": "2014",
     "titulo_proyecto": "Declarar interés municipal Marcha del Orgullo Gays, a realizarse el día 6 de diciembre en nuestra ciudad",
-    "tipo_proyecto": "",
+    "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Mauro Gonzalez (PVpC)."
     ],
@@ -47409,7 +47295,7 @@
     "id": 2795,
     "numero_proyecto": "787",
     "anio_proyecto": "2015",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Integración Junta Electoral Municipal período 2015/2019",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Ramón Chiocconi, Edith Garro (PJ);"
@@ -48324,21 +48210,6 @@
     "observaciones": "sin sanción"
   },
   {
-    "id": 2849,
-    "numero_proyecto": "1042",
-    "anio_proyecto": "2015",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1042/15",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-15-2665",
-    "observaciones": ""
-  },
-  {
     "id": 2850,
     "numero_proyecto": "841",
     "anio_proyecto": "2015",
@@ -49022,7 +48893,7 @@
     "id": 2890,
     "numero_proyecto": "881",
     "anio_proyecto": "2015",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Reforma Ordenanza Nº 2155-CM-2011 obliga a lugares de espectáculos públicos a admisión o provisión de alimentos  para celíacos",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Ramón Chiocconi y Edith Garro (PJ)."
@@ -49838,7 +49709,7 @@
     "id": 2938,
     "numero_proyecto": "929",
     "anio_proyecto": "2015",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de interés municipal y cultural el Concierto por la Paz por un mundo sin genocidio",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Ramón Chiocconi (PJ)."
@@ -49970,21 +49841,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 2946,
-    "numero_proyecto": "1042",
-    "anio_proyecto": "2015",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1042/15",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-15-1941",
-    "observaciones": ""
-  },
+
   {
     "id": 2947,
     "numero_proyecto": "937",
@@ -50288,51 +50145,6 @@
     "observaciones": ""
   },
   {
-    "id": 2965,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 2966,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 2967,
-    "numero_proyecto": "8",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
     "id": 2968,
     "numero_proyecto": "1",
     "anio_proyecto": "2015",
@@ -50370,7 +50182,7 @@
     "id": 2970,
     "numero_proyecto": "3",
     "anio_proyecto": "2015",
-    "titulo_proyecto": "Establecer en documentación municipal el texto: ",
+    "titulo_proyecto": "Establecer en documentación municipal el texto: No a la violencia de género, ni una menos",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Gerardo Ávila, Claudia Contreras, Diego Benítez, Julia Fernández, Viviana Gelain, Cristina Painefil y Andrés Martínez Infante (JSB)."
@@ -50672,21 +50484,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 2988,
-    "numero_proyecto": "",
-    "anio_proyecto": "2016",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-16-2721",
-    "observaciones": ""
-  },
+ 
   {
     "id": 2989,
     "numero_proyecto": "21",
@@ -50806,21 +50604,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 2996,
-    "numero_proyecto": "1059",
-    "anio_proyecto": "2016",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1059/16",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-16-2759",
-    "observaciones": ""
-  },
+ 
   {
     "id": 2997,
     "numero_proyecto": "28",
@@ -52453,21 +52237,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3093,
-    "numero_proyecto": "1055",
-    "anio_proyecto": "2016",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1055/16",
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+ 
   {
     "id": 3094,
     "numero_proyecto": "124",
@@ -53220,7 +52990,7 @@
     "id": 3138,
     "numero_proyecto": "168",
     "anio_proyecto": "2016",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar interés municipal turístico y cultural 5º Fiesta de la nieve gay por la diversidad",
     "tipo_proyecto": "",
     "autor": [
       "Comisión Legislativa: concejales Diego Benítez, Andrés Martínez Infante (JSB) y Ramón Chiocconi (FPV)."
@@ -54657,21 +54427,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3223,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 3224,
     "numero_proyecto": "251",
@@ -74272,36 +74028,7 @@
     "numero_norma": "D-19-2656",
     "observaciones": ""
   },
-  {
-    "id": 4378,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 4379,
-    "numero_proyecto": "16",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 4380,
     "numero_proyecto": "1",
@@ -74372,9 +74099,9 @@
   },
   {
     "id": 4384,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
+    "numero_proyecto": "5",
+    "anio_proyecto": "2019",
+    "titulo_proyecto": "Se declara de interés municipal, cultural y educativo al libro Cómo se hace para cambiar?",
     "tipo_proyecto": "",
     "autor": [
       "Concejal Natalia Almonacid (JSRN)."
@@ -87538,10 +87265,10 @@
   },
   {
     "id": 5159,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
+    "numero_proyecto": "779",
+    "anio_proyecto": "2023",
+    "titulo_proyecto": "Desafecta dominio público fracción del inmueble NC 19-2-D-038-01G-0. Ratifica comodato Secretaría de Ambiente Río Negro.",
+    "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
     ],
@@ -87549,7 +87276,7 @@
     "girado_a": "",
     "acta_fecha": null,
     "aprobado": false,
-    "tipo_norma": "declaración",
+    "tipo_norma": "ordenanza",
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
