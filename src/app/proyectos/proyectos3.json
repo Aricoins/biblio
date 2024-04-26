@@ -16302,7 +16302,7 @@
     "id": 963,
     "numero_proyecto": "954",
     "anio_proyecto": "2007",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modificación de zonas y parámetros urbanísticos en la Delegación Municipal Pampa de Huenuleu – Unidad Ambiental de Gestión (U.A.G.) Cerro Ventana (D.M.P.H.-U.A.G.C.V.).",
     "tipo_proyecto": "",
     "autor": [
       "Presidente Concejo Municipal, a/c Intendencia Municipal, Marcelo Cascón."
@@ -16417,21 +16417,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 970,
-    "numero_proyecto": "22",
-    "anio_proyecto": "2011",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "comunicación",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "889/07",
-    "aprobado": true,
-    "tipo_norma": "comunicación",
-    "numero_norma": "C-07-577",
-    "observaciones": ""
-  },
+
   {
     "id": 971,
     "numero_proyecto": "961",
@@ -17099,7 +17085,7 @@
     "id": 1013,
     "numero_proyecto": "33",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modificación de zonas y parámetros urbanísticos en la Delegación Municipal Pampa de Huenuleu – Unidad Ambiental de Gestión (U.A.G.) Cerro Ventana (D.M.P.H. – U.A.G.C.V.)",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Presidente del Concejo Municipal a/c Intendencia Municipal, Lic Ángel Darío Barriga."
@@ -17141,46 +17127,17 @@
     "colaboradores": null,
     "girado_a": "Asesoría Letrada y a las Comisiones de Gobierno y legales; de Acción Social y de Economía",
     "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 1016,
-    "numero_proyecto": "21",
-    "anio_proyecto": "2008",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "Asesoría Letrada, y a las Comisiones a Acción Social, Economía y Gobierno y Legales",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 1017,
-    "numero_proyecto": "6",
-    "anio_proyecto": "2011",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "916/08",
     "aprobado": true,
     "tipo_norma": "ordenanza",
     "numero_norma": "O-08-1856",
     "observaciones": ""
   },
+ 
   {
     "id": 1018,
     "numero_proyecto": "36",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "Se crea el ",
+    "titulo_proyecto": "Se crea el Espacio de la Mujer en la Biblioteca Pública Municipal ",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Francisco De Cesare (Partido Socialista)."
@@ -17518,21 +17475,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1038,
-    "numero_proyecto": "18",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "919/08",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-08-1881",
-    "observaciones": ""
-  },
+
   {
     "id": 1039,
     "numero_proyecto": "56",
@@ -18027,21 +17970,6 @@
     "observaciones": "sin sanción"
   },
   {
-    "id": 1068,
-    "numero_proyecto": "10",
-    "anio_proyecto": "2004",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "900/08",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-08-1806",
-    "observaciones": ""
-  },
-  {
     "id": 1069,
     "numero_proyecto": "85",
     "anio_proyecto": "2008",
@@ -18062,9 +17990,9 @@
     "id": 1070,
     "numero_proyecto": "86",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Establecer Parámetros  urbanísticos y autorizar planteo urbanístico sujeto y modificaciones en la parcela DC19-2-P-004-02C",
     "tipo_proyecto": "ordenanza",
-    "autor": [],
+    "autor": ["Presidente del Concejo Municipal, a/c Intendencia Municipal, Lic. Ángel Darío Barriga."],
     "colaboradores": null,
     "girado_a": "Asesoría Letrada y Comisiones de Obras y Planeamiento y Gobierno y Legales",
     "acta_fecha": "909/08",
@@ -18536,7 +18464,7 @@
     "id": 1098,
     "numero_proyecto": "114",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Reglamentación del Programa Formación  para el Empleo",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Presidente del Concejo Municipal a/c Intendencia, Lic Ángel Darío Barriga."
@@ -18583,21 +18511,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1101,
-    "numero_proyecto": "947",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+  
   {
     "id": 1102,
     "numero_proyecto": "117",
@@ -19438,7 +19352,7 @@
     "id": 1151,
     "numero_proyecto": "166",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de Interés Municipal Cultural y Turístico de la feria Expo Bariloche se muestra 2008, desde el 1 al 9 de agosto de 2008.",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -19540,7 +19454,7 @@
     "id": 1157,
     "numero_proyecto": "172",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Control de la fauna urbana (perros y gatos)",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal  Lic Arabela Carreras (FpV)."
@@ -19551,7 +19465,7 @@
     "aprobado": true,
     "tipo_norma": "ordenanza",
     "numero_norma": "O-09-1931",
-    "observaciones": ""
+    "observaciones": "Vetada por Resolución de Intendencia. Ratificada la ordenanza  03/09/09- Acta 935/09"
   },
   {
     "id": 1158,
@@ -19982,7 +19896,7 @@
     "id": 1183,
     "numero_proyecto": "198",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de Interés Social y Educativo Primer Encuentro sobre los Derechos de las Personas con Discapacidad, por una ciudadanía plena, Estrategias para la Acción",
     "tipo_proyecto": "declaración",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -21375,21 +21289,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1265,
-    "numero_proyecto": "79",
-    "anio_proyecto": "2009",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "Asesoría Letrada y a las comisiones de Turismo y de Gobierno y legales",
-    "acta_fecha": "79/09",
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 1266,
     "numero_proyecto": "280",
@@ -21547,7 +21447,7 @@
     "id": 1275,
     "numero_proyecto": "289",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Convalidar y refrendar Acta Acuerdo con el INTI",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -21645,21 +21545,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1281,
-    "numero_proyecto": "5",
-    "anio_proyecto": "2009",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "921/09",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-09-1386",
-    "observaciones": ""
-  },
+
   {
     "id": 1282,
     "numero_proyecto": "295",
@@ -22511,7 +22397,7 @@
     "id": 1332,
     "numero_proyecto": "345",
     "anio_proyecto": "2009",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Aprobar usos y parámetros urbanísticos para la parcela: 19-2-J-005-02 B y 02 C.",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -24186,21 +24072,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1431,
-    "numero_proyecto": "117",
-    "anio_proyecto": "2009",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "Asesoría Letrada, y a las Comisiones a Acción Social y Gobierno y Legales",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 1432,
     "numero_proyecto": "444",
@@ -25308,21 +25180,6 @@
     "observaciones": "sin sanción"
   },
   {
-    "id": 1498,
-    "numero_proyecto": "3",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "942/10",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-10-2019",
-    "observaciones": ""
-  },
-  {
     "id": 1499,
     "numero_proyecto": "509",
     "anio_proyecto": "2009",
@@ -25645,21 +25502,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1518,
-    "numero_proyecto": "148",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "Asesoría Letrada y a las Comisiones de Servicios, Tránsito y Transporte y de Gobierno y Legales RETIRADO ACTA 950/10 16/09/10",
-    "acta_fecha": "148/10",
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 1519,
     "numero_proyecto": "528",
@@ -27121,21 +26964,6 @@
     "observaciones": "sin sanción"
   },
   {
-    "id": 1605,
-    "numero_proyecto": "947",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
     "id": 1606,
     "numero_proyecto": "614",
     "anio_proyecto": "2010",
@@ -27154,12 +26982,12 @@
   },
   {
     "id": 1607,
-    "numero_proyecto": "29",
+    "numero_proyecto": "615",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Autorizar firma del convenio en el marco del programa operativo plan calor 2010 entre la dirección de infraestructura dependiente del ministerio de familia de la provincia de Río Negro y el Municipio de San Carlos de Bariloche",
     "tipo_proyecto": "ordenanza",
     "autor": [
-      "Intendente Municipal, Marcelo Alejandro Cascón;"
+      "Intendente Municipal, Marcelo Alejandro Cascón."
     ],
     "colaboradores": null,
     "girado_a": "",
@@ -27171,9 +26999,9 @@
   },
   {
     "id": 1608,
-    "numero_proyecto": "11",
+    "numero_proyecto": "616",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Área de gestión para las personas con discapacidad",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Arabela Carreras;"
@@ -27902,7 +27730,7 @@
     "id": 1651,
     "numero_proyecto": "659",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar evento de interés municipal el encuentro Buscando el menú argentino 2010",
     "tipo_proyecto": "declaración",
     "autor": [
       "Jorge Franchini, Secretario de Gobierno a/c Despacho Intendencia."
@@ -27987,7 +27815,7 @@
     "id": 1656,
     "numero_proyecto": "664",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Desafectar del Dominio Público Municipal la Parcela 19-2-E-539-01 para nuevo emplazamiento Comisaría 28",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -28746,9 +28574,9 @@
   },
   {
     "id": 1701,
-    "numero_proyecto": "25",
+    "numero_proyecto": "709",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Establecer especies de valor especial",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Lic Arabela Carreras (FpV-SUR)."
@@ -29324,7 +29152,7 @@
     "id": 1735,
     "numero_proyecto": "743",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Aprobar convenio Municipalidad de San Carlos de Bariloche Universidad de Río Negro - Tan-CO",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Marcelo Cascón;"
@@ -29813,7 +29641,7 @@
     "id": 1764,
     "numero_proyecto": "772",
     "anio_proyecto": "2010",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar interés municipal, educativo y cultural al taller Sin Remedio sobre uso indebido de medicamentos",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Dr."
@@ -30357,7 +30185,7 @@
     "id": 1796,
     "numero_proyecto": "804",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Potenciación gasoducto patagónico adecuación Ordenanzas 2113-CM-10 y 2115-CM-10.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Sr Marcelo Cascón."
@@ -30391,7 +30219,7 @@
     "id": 1798,
     "numero_proyecto": "806",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Reconoce jurisdicción destacamento bomberos San Francisco III. Modifica Ordenanza 1862-CM-08. Abroga Ordenanza 2118-CM-10.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Laura Alves, Claudio Otano, (CpD);"
@@ -31017,21 +30845,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1836,
-    "numero_proyecto": "14",
-    "anio_proyecto": "2004",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-11-1531",
-    "observaciones": ""
-  },
+
   {
     "id": 1837,
     "numero_proyecto": "843",
@@ -31136,7 +30950,7 @@
     "id": 1843,
     "numero_proyecto": "849",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declaración evento de interés municipal y comunitario charla – debate ¿Elegimos las mujeres cómo y con quién parir?",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Lic Darío Barriga (SUR-FpV)."
@@ -31918,7 +31732,7 @@
     "id": 1889,
     "numero_proyecto": "895",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunicar al Poder Ejecutivo Nacional urgente aplicación subsidio a los combustibles en la ciudad de San Carlos de Bariloche",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Intendente Municipal, Marcelo Cascón: Presidente del Concejo Municipal, Lic Ángel Dario Barriga y concejales Arabela Carreras y Hugo Cejas, (SUR-FpV);"
@@ -32598,7 +32412,7 @@
     "id": 1929,
     "numero_proyecto": "935",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Acordar pliego licitación pública adquisición del Euro Diesel",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Marcelo Cascón."
@@ -32866,21 +32680,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 1945,
-    "numero_proyecto": "7",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "971/11",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-11-2221",
-    "observaciones": ""
-  },
+ 
   {
     "id": 1946,
     "numero_proyecto": "951",
@@ -33548,10 +33348,10 @@
     "id": 1985,
     "numero_proyecto": "991",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Afectar espacio verde al dominio privado municipal. Comodato a Asociación Biblioteca Popular Jorge Luis Borges",
     "tipo_proyecto": "",
     "autor": [
-      "Comisión Legislativa: Concejales Silvana Camelli (PCcP);"
+      "Comisión Legislativa: Concejales Silvana Camelli (PCcP); Dr. Darío Rodríguez Duch (ARI); Laura Alves (CPD); Hugo Cejas, Lic Arabela Carreras (FpV-SUR); Daniel Pardo (PPR) y Prof. Alfredo Martín (FpV-FG)."
     ],
     "colaboradores": null,
     "girado_a": "",
@@ -33616,7 +33416,7 @@
     "id": 1989,
     "numero_proyecto": "995",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar evento de interés municipal el Recital de Danza anual del Instituto Alondra",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Lic Arabela Carreras (SUR-FpV)."
@@ -33701,7 +33501,7 @@
     "id": 1994,
     "numero_proyecto": "1000",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modificación Ordenanza 194-C-86 y 427-CM-94. Funcionamiento Juntas Vecinales",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Marcelo Cascón."
@@ -33803,7 +33603,7 @@
     "id": 2000,
     "numero_proyecto": "1006",
     "anio_proyecto": "2011",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Dar viabilidad a la propuesta según consulta preliminar N° 2579-EN-09 y notas N° 586-EN-10; 2276-EN-10; 855-2-11, parcela N° 19-2-E-113-20",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Marcelo Cascón."
@@ -33916,37 +33716,7 @@
     "numero_norma": "D-11-1577",
     "observaciones": ""
   },
-  {
-    "id": 2007,
-    "numero_proyecto": "12",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 2008,
-    "numero_proyecto": "28",
-    "anio_proyecto": "2011",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
+   {
     "id": 2009,
     "numero_proyecto": "1",
     "anio_proyecto": "2011",
@@ -34461,7 +34231,7 @@
     "id": 2039,
     "numero_proyecto": "32",
     "anio_proyecto": "2012",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunicación para la urgente reactivación del tren patagónico",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Alejandro Ramos Mejía, Ramón Chiocconi y María Eugenia Martini (PJ);"
@@ -35477,21 +35247,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 2099,
-    "numero_proyecto": "990",
-    "anio_proyecto": "2012",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 2100,
     "numero_proyecto": "92",
@@ -36516,7 +36272,7 @@
     "id": 2160,
     "numero_proyecto": "152",
     "anio_proyecto": "2012",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modifica Ordenanza 2314­CM-12",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "concejales María Eugenia Martini;"
@@ -53003,21 +52759,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3139,
-    "numero_proyecto": "1057",
-    "anio_proyecto": "2016",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1057/16",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-16-2033",
-    "observaciones": ""
-  },
+
   {
     "id": 3140,
     "numero_proyecto": "169",
@@ -54071,21 +53813,6 @@
     "tipo_norma": "",
     "numero_norma": "",
     "observaciones": "sin sanción"
-  },
-  {
-    "id": 3202,
-    "numero_proyecto": "1061",
-    "anio_proyecto": "2016",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1061/16",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-16-2781",
-    "observaciones": ""
   },
   {
     "id": 3203,
@@ -56962,21 +56689,6 @@
     "observaciones": "sin sanción"
   },
   {
-    "id": 3373,
-    "numero_proyecto": "1070",
-    "anio_proyecto": "2017",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1070/17",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-17-2832",
-    "observaciones": ""
-  },
-  {
     "id": 3374,
     "numero_proyecto": "400",
     "anio_proyecto": "2017",
@@ -57594,7 +57306,7 @@
     "id": 3410,
     "numero_proyecto": "436",
     "anio_proyecto": "2017",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se adhiere a la ley provincial 5042",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Comisión Legislativa, Concejales Diego Benítez, Andrés Martínez Infante (JSB) y Ramón Chiocconi (FPV)."
@@ -58865,7 +58577,7 @@
     "id": 3485,
     "numero_proyecto": "511",
     "anio_proyecto": "2017",
-    "titulo_proyecto": "",
+    "titulo_proyecto": " Se declara Huésped de Honor al Dr. Mark Purnell dentro de la hermandad con la ciudad de Aspen",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Daniel González (PRO)."
@@ -58963,21 +58675,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3491,
-    "numero_proyecto": "1076",
-    "anio_proyecto": "2017",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1076/17",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-17-2871",
-    "observaciones": ""
-  },
+
   {
     "id": 3492,
     "numero_proyecto": "517",
@@ -59339,7 +59037,7 @@
     "id": 3513,
     "numero_proyecto": "538",
     "anio_proyecto": "2017",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se crea sistema de protección y remediación del paisaje lacustre",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Ana Marks, Ramón Chiocconi y Daniel Natapof (FPV)."
@@ -59930,21 +59628,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3548,
-    "numero_proyecto": "1076",
-    "anio_proyecto": "2017",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1076/17",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-17-2221",
-    "observaciones": ""
-  },
+
   {
     "id": 3549,
     "numero_proyecto": "573",
@@ -60816,7 +60500,7 @@
     "id": 3600,
     "numero_proyecto": "624",
     "anio_proyecto": "2017",
-    "titulo_proyecto": "",
+    "titulo_proyecto": " Se comunica al Ministerio de Salud de Río Negro matriculación acompañantes terapéuticos",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Ramón Chiocconi, Ana Marks y Daniel Natapof (FPV)."
@@ -61407,21 +61091,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3635,
-    "numero_proyecto": "1080",
-    "anio_proyecto": "2017",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1080/17",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-17-2266",
-    "observaciones": ""
-  },
+
   {
     "id": 3636,
     "numero_proyecto": "659",
@@ -62072,7 +61742,7 @@
     "id": 3674,
     "numero_proyecto": "697",
     "anio_proyecto": "2017",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declara de interés municipal y comunitario la Jornada Federal de Asesoramiento Gratuito de Escribanos",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Daniel Natapof y Ana Marks (FpV)."
@@ -63721,7 +63391,7 @@
     "id": 3771,
     "numero_proyecto": "794",
     "anio_proyecto": "2018",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara patrimonio cultural de la ciudad de San Carlos de Bariloche Pintada de pañuelos 24 de marzo",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Ana Marks, Daniel Natapof y Ramón Chiocconi (FPV)."
@@ -66246,21 +65916,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 3920,
-    "numero_proyecto": "1101",
-    "anio_proyecto": "2018",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1101/18",
-    "aprobado": true,
-    "tipo_norma": "declaración",
-    "numero_norma": "D-18-2414",
-    "observaciones": ""
-  },
+ 
   {
     "id": 3921,
     "numero_proyecto": "943",
@@ -69746,21 +69402,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
-  {
-    "id": 4126,
-    "numero_proyecto": "1110",
-    "anio_proyecto": "2019",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "1110/19",
-    "aprobado": true,
-    "tipo_norma": "ordenanza",
-    "numero_norma": "O-19-3036",
-    "observaciones": ""
-  },
+ 
   {
     "id": 4127,
     "numero_proyecto": "1148",
@@ -72553,7 +72195,7 @@
     "id": 4291,
     "numero_proyecto": "1312",
     "anio_proyecto": "2019",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Interés municipal, educativo y comunitario la 2º Jornada de Legislación y Buenas Practicas de Manufactura.",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Gerardo Ávila, Claudia Contreras, Diego Benítez, Julia Fernández, Viviana Gelain, Carlos Sánchez y Puente y Cristina Painefil."
@@ -72570,7 +72212,7 @@
     "id": 4292,
     "numero_proyecto": "1313",
     "anio_proyecto": "2019",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se solicita al Congreso Nacional la sanción del proyecto de ley expediente 4259-d-2019. Prórroga de la Emergencia Alimentaria",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Ramón Chiocconi, Ana Marks, Daniel Natapof (FPV), Julia Fernández, Carlos Sánchez y Puente, Claudia Contreras, Viviana Gelain, Gerardo Ávila (JSB) y Daniel González (PRO)."
@@ -75084,21 +74726,7 @@
     "numero_norma": "C-20-1018",
     "observaciones": ""
   },
-  {
-    "id": 4442,
-    "numero_proyecto": "57",
-    "anio_proyecto": "2020",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
+
   {
     "id": 4443,
     "numero_proyecto": "63",
@@ -75409,7 +75037,7 @@
     "id": 4461,
     "numero_proyecto": "81",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se crea el Programa Municipal Reactivando Bariloche.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -75613,7 +75241,7 @@
     "id": 4473,
     "numero_proyecto": "93",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunica Ministerio de Justicia, Agencia de Seguridad Vial, Madres del Dolor Beneplácito inclusión víctimas viales línea 149.",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Norma Taboada, Gerardo Ávila, Natalia Almonacid, Claudia Torres y Carlos Sánchez y Puente (JSRN)."
@@ -75679,7 +75307,7 @@
     "id": 4477,
     "numero_proyecto": "97",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Adhiere ley provincial Iniciativa Popular. Autoriza certificación firmas.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Julieta Wallace, Marcelo Casas y Roxana Ferreyra (FdT)."
@@ -75696,7 +75324,7 @@
     "id": 4478,
     "numero_proyecto": "98",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunica Senado beneplácito por tratamiento y sanción proyecto 241-S-2020",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Roxana Ferreyra, Marcelo Casas y Julieta Wallace (FdT)."
@@ -75764,7 +75392,7 @@
     "id": 4482,
     "numero_proyecto": "102",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Comunica proyecto de reapertura LADE Sucursal Bariloche y nuevos vuelos regionales",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejal Pablo Chamatrópulos (POBAR)."
@@ -75883,7 +75511,7 @@
     "id": 4489,
     "numero_proyecto": "109",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se solicita al Congreso Nacional la sanción urgente de una ley que declare la emergencia turística",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejal Ariel Cárdenas (BxC)."
@@ -75894,13 +75522,13 @@
     "aprobado": true,
     "tipo_norma": "comunicación",
     "numero_norma": "C-20-1036",
-    "observaciones": ""
+    "observaciones": "subsumido con 125/20"
   },
   {
     "id": 4490,
     "numero_proyecto": "110",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se prorroga vigencia licencia de conducir para mayores de 60 años. Emergencia Covid 19",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Ariel Cárdenas (BxC)."
@@ -75917,7 +75545,7 @@
     "id": 4491,
     "numero_proyecto": "111",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Autoriza Ejecutivo Municipal suscripción comodato fracción 19-2-P-215-12. Junta vecinal 645 viviendas",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Julieta Wallace, Marcelo Casas y Roxana Ferreyra (FdT)."
@@ -76164,7 +75792,7 @@
     "aprobado": true,
     "tipo_norma": "comunicación",
     "numero_norma": "C-20-1036",
-    "observaciones": ""
+    "observaciones": "subsumido con proyecto 109/20"
   },
   {
     "id": 4506,
@@ -77306,9 +76934,9 @@
   },
   {
     "id": 4573,
-    "numero_proyecto": "1135",
+    "numero_proyecto": "193",
     "anio_proyecto": "2020",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declara interés municipal y comunitario labor desarrollada por Club Social, Cultural y Deportivo Rivadavia",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Julieta Wallace, Marcelo Casas y Roxana Ferreyra (FdT)."
@@ -81490,7 +81118,7 @@
     "id": 4819,
     "numero_proyecto": "439",
     "anio_proyecto": "2021",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Crea programa de módulos habitacionales de respuesta rápida (MHRR). Modifica ordenanza Ordenanza 1862-CM-08. Deroga ordenanza 1881-CM-08. Autores: Concejales Gerardo Ávila, Natalia Almonacid, Norma Taboada, Claudia Torres, Carlos Sánchez y Puente (JSRN); Ariel Cárdenas (BxC), Gerardo del Río ( PUL) ",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Gerardo Ávila, Natalia Almonacid, Norma Taboada, Claudia Torres, Carlos Sánchez y Puente (JSRN);"
@@ -82459,7 +82087,7 @@
     "id": 4876,
     "numero_proyecto": "496",
     "anio_proyecto": "2022",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal al evento Tango Cooperativo en el Nahuel Huapi.",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Carlos Sánchez y Puente, Natalia Almonacid, Claudia Torres, Norma Taboada y Gerardo Ávila (JSRN)."
@@ -82746,9 +82374,9 @@
   },
   {
     "id": 4893,
-    "numero_proyecto": "1160",
+    "numero_proyecto": "513",
     "anio_proyecto": "2022",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Amplía Presupuesto 2022. Programa Desarrollo Armónico con Equilibrio Territorial",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -84789,7 +84417,7 @@
     "id": 5013,
     "numero_proyecto": "633",
     "anio_proyecto": "2022",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Incorpora usuarios CSSTUP. Modifica ordenanza 2798-CM-16. Acceso información",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejales Roxana Ferreyra (FdT) y Gerardo del Río (PUL)."
@@ -84874,7 +84502,7 @@
     "id": 5018,
     "numero_proyecto": "638",
     "anio_proyecto": "2022",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal el evento Patagonia Picnic 2023 - Festival de Música, Diseño y Gastronomía.",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Carlos Sánchez y Puente, Natalia Almonacid, Claudia Torres, Norma Taboada y Gerardo Ávila (JSRN)."
@@ -84891,7 +84519,7 @@
     "id": 5019,
     "numero_proyecto": "639",
     "anio_proyecto": "2022",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se presta acuerdo llamado a licitación pública Obra Extensión Red de Gas Villa Lago Gutierrez y Reina Mora",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -85333,7 +84961,7 @@
     "id": 5045,
     "numero_proyecto": "665",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal la XXX edición de la Reunión Argentina de Ecología 2023",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Ariel Cárdenas (BxC)."
@@ -86319,7 +85947,7 @@
     "id": 5103,
     "numero_proyecto": "723",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Regula servicios de intermediación mediante plataformas electrónicas. Modifica ordenanzas 3018-CM-18, 2375-CM-12, 1629-CM-06 y 1520-CM-05. ",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -86693,7 +86321,7 @@
     "id": 5125,
     "numero_proyecto": "745",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se presta acuerdo llamado a licitación contratación de medios offline Campaña de Verano 2024",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal Gustavo Gennuso."
@@ -87099,7 +86727,7 @@
     "id": 5149,
     "numero_proyecto": "769",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal a las acciones en el marco del Día Internacional de la Dislexia",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejales Carlos Sánchez y Puente, Natalia Almonacid, Claudia Torres, Gerardo Ávila y Norma Taboada (JSRN)."
@@ -87133,7 +86761,7 @@
     "id": 5151,
     "numero_proyecto": "771",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal y comunitario los libros Contra fuego y El tiempo lento.",
     "tipo_proyecto": "",
     "autor": [],
     "colaboradores": null,
@@ -87386,7 +87014,7 @@
     "id": 5166,
     "numero_proyecto": "786",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Establece efemérides relativas a la cultura tradicionalista argentina. Modifica ordenanza 2033-CM-10",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Norma Taboada, Natalia Almonacid, Carlos Sánchez y Puente, Claudia Torres y Gerardo Ávila (JSRN)."
@@ -87403,7 +87031,7 @@
     "id": 5167,
     "numero_proyecto": "787",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Autoriza fraccionamiento loteo NC 19-1-A-007. Barrio Las Victorias. Declara de interés social. Mutual Transporte",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -87420,7 +87048,7 @@
     "id": 5168,
     "numero_proyecto": "788",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modifica ordenanza 3370-CM-23 Memorial Malvinas",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Gerardo Ávila (JSRN)."
@@ -87437,7 +87065,7 @@
     "id": 5169,
     "numero_proyecto": "789",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Modifica artículo 5º ordenanza 3276-CM-21",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Gerardo Ávila (JSRN)."
@@ -87454,7 +87082,7 @@
     "id": 5170,
     "numero_proyecto": "790",
     "anio_proyecto": "2023",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Autoriza fraccionamiento loteo NC 19-3-A-022-002, 023, 024, 025. Declara de interés social. Sindicato Luz y Fuerza",
     "tipo_proyecto": "",
     "autor": [
       "Intendente Municipal, Gustavo Gennuso."
@@ -88181,7 +87809,7 @@
     "id": 5213,
     "numero_proyecto": "24",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara el estado de Emergencia pública en materia Económica, Financiera, Fiscal, de Servicios y Habitacional",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendentes Municipal Walter Cortes."
@@ -88591,7 +88219,7 @@
     "id": 5237,
     "numero_proyecto": "48",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se crea Registro Municipal de Feriantes y Ferias Populares. Regulación y funcionamiento",
     "tipo_proyecto": "",
     "autor": [
       "Concejala Roxana Ferreyra (Nos Une)."
@@ -88608,7 +88236,7 @@
     "id": 5238,
     "numero_proyecto": "49",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se comunica necesidad de creación de escuela secundaria en zona oeste",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejala Julieta Wallace (Incluyendo Bariloche) Iniciativa: Grupo de Vecinos Autoconvocados del Oeste de Bariloche."
@@ -88642,7 +88270,7 @@
     "id": 5240,
     "numero_proyecto": "51",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se comunica rechazo al cierre de las delegaciones del Ente Nacional de Comunicaciones en la provincia de Rio Negro",
     "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Julieta Wallace, Leandro Costa Brutten (Incluyendo Bariloche) y Roxana Ferreyra (Nos Une)."
@@ -88659,7 +88287,7 @@
     "id": 5241,
     "numero_proyecto": "52",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Bono contribución voluntario. Fondo específico para el desarrollo cultural",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Juan Pablo Ferrari, Natalia Almonacid y Silvio Barriga (JSRN)."
@@ -88693,7 +88321,7 @@
     "id": 5243,
     "numero_proyecto": "54",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se declara de interés municipal 2° Edición del Campeonato Enduro Cordillerano 2024",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Tomás Hercigonja (PUL)."
@@ -88744,7 +88372,7 @@
     "id": 5246,
     "numero_proyecto": "57",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Se crea Plan de Mejoramiento de Transitabilidad para Personas con Discapacidad Visua",
     "tipo_proyecto": "",
     "autor": [
       "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
@@ -88761,7 +88389,7 @@
     "id": 5247,
     "numero_proyecto": "58",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar de interés al Festival Federal por la Ciencia Argentina Elijo Crecer",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
