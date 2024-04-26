@@ -183,7 +183,7 @@ const animatedCount = () =>{
         }}
         
       >
-        Proyectos Sin Sanción (expedientes) | 2011 - 2023
+        Expedientes Sin Sanción | 2011 - 2023
       </h2>
 
 
