@@ -102,7 +102,7 @@ function Proyectos() {
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
         { title: 'Descripción sintética', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
         // { title: 'Tipo de norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
-        { title:  'Autor | Autora | Autores ', dataIndex: 'autor', key: 'autor' },
+        { title:  'Autores ', dataIndex: 'autor', key: 'autor' },
         {
             title: 'Número norma',
             dataIndex: 'numero_norma',
