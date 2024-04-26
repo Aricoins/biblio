@@ -4,9 +4,10 @@
     width: 100%;
     background-color: rgba(251, 250, 252, 0.1);
     border-radius: 5%;
-    z-index: 100;
+
   }
   
+
   .imageContainer {
 
     text-align: center;
@@ -18,7 +19,9 @@
   .imageContainer:hover {
     transform: scale(1.3);
     filter: brightness(1.2);
-  }
+    z-index: 10000;
+    position: relative; /* Asegúrate de tener una posición relativa */
+}
   
   .infoContainer {
     display: flex;
@@ -70,6 +73,7 @@
   
   .declaLink:hover {
     background-color: #051951;
+        z-index: 100;
   }
   .link {
     text-decoration: none;

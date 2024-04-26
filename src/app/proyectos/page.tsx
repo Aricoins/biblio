@@ -154,11 +154,8 @@ function Proyectos() {
         <div className={styles.container} data-aos="fade-up">
         <>
             <div onClick={() => setVer(!ver)}>
-                <h2 
-                 
-                    className={styles.hdos}
-                >
-                    Buscador de iniciativas legislativas 🔍 | 2003-2024
+                <h2 className={styles.hdos}>
+                    Todos los proyectos 🔍 | 2003-2024
                 </h2>
             </div>
             
