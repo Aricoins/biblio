@@ -173,7 +173,7 @@ function Proyectos() {
         <>
             <div onClick={() => setVer(!ver)}>
                 <h2 className={styles.hdos}>
-                    Todos los proyectos 🔍 | 2003-2024
+                    Buscador de proyectos y normas 🔍 | 2003-2024
                 </h2>
             </div>
             
