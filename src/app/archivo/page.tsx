@@ -34,10 +34,7 @@ useEffect(() => {
     <div className={styles.subcontainer}>
     <div data-aos="fade-up" className={styles.component}>
     </div>
-     
-  
-
-      <div>
+    <div>
       
       <h2  className={styles.h4}  >
    
@@ -61,6 +58,7 @@ useEffect(() => {
         </div> 
     </div>
     </div>
+    <Proyectos />
    </div>
     <div  className={styles.endevdiv}>
   <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
