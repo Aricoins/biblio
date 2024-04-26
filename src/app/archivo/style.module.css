@@ -73,11 +73,12 @@
     display: flex;
     flex-direction: column;
     margin-left: 70%;
-    justify-self: right;
+    justify-self:center;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10%;
     font-size: x-small;
     background-color: rgb(255, 87, 51, 0.2);
+    text-align: center;
 }
 
 /* Media Query para dispositivos pequeños */

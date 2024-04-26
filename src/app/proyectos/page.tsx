@@ -158,7 +158,7 @@ function Proyectos() {
                  
                     className={styles.hdos}
                 >
-                    Buscardor de proyectos legislativos 🔍
+                    Buscador de proyectos legisaltivos 🔍
                 </h2>
             </div>
             
