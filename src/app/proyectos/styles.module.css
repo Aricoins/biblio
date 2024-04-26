@@ -31,13 +31,13 @@
   }
 
   .hdos {
-    font-size: medium;
+    font-size: large;
     font-weight: 500;
     display: flex;
     justify-content: center;
-    
+    padding: 1%;
     cursor: pointer;
-    background-color:rgb(246, 130, 6);
+    background-color: rgb(255, 87, 51);
     color: white;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
@@ -48,8 +48,8 @@
   }
   .hdos:hover {
     background-color: #f7f8fa;
-    color: rgb(246, 130, 6);
-    border: rgb(246, 130, 6) 1px solid;
+    color: rgb(255, 87, 51);
+    border: rgb(255, 87, 51) 1px solid;
     
   }
   @media (max-width: 768px) {

@@ -121,9 +121,7 @@ function Proyectos() {
                 }
             
                 // Si añoNorma es nulo o la longitud no es válida, regresar "N/A"
-                if (!añoNorma || añoNorma.length !== 4) {
-                    return 'N/A';
-                }
+              
                 if (record.tipo_norma === 'ordenanza') {
                   record.tipo_norma = "ordenanzas"}
                 if (record.tipo_norma === 'declaración') {
