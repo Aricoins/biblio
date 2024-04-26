@@ -203,7 +203,7 @@ function Proyectos() {
                         <Option value="Comunicación">Comunicación</Option>
                         <Option value="Resolución">Resolución</Option>
                     </Select>
-                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Incluir No Sancionados</Checkbox>
+                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Sólo aprobados</Checkbox>
                  
                 </div>
                
