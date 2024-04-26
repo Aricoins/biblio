@@ -715,7 +715,7 @@
     "id": 42,
     "numero_proyecto": "42",
     "anio_proyecto": "2003",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Interés Municipal el curso ATLS (Manejo avanzado del Trauma)",
     "tipo_proyecto": "declaración",
     "autor": [
       "Intendente Municipal, Sr Alberto Icare."
@@ -12157,21 +12157,6 @@
     ],
     "colaboradores": null,
     "girado_a": "Asesoría Letrada y a la Comisión de Gobierno y Legales",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 717,
-    "numero_proyecto": "11",
-    "anio_proyecto": "2010",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
     "acta_fecha": "886/07",
     "aprobado": false,
     "tipo_norma": "",
@@ -12811,7 +12796,7 @@
     "id": 755,
     "numero_proyecto": "752",
     "anio_proyecto": "2006",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Rechazo a la propuesta de división  de la Universidad Nacional del Comahue (UNC)",
     "tipo_proyecto": "",
     "autor": [
       "Concejales Marcelo Cascón, Alicia Grandío y Guillermina Alaniz (UCR)."
@@ -14159,21 +14144,6 @@
     ],
     "colaboradores": null,
     "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 837,
-    "numero_proyecto": "26",
-    "anio_proyecto": "2004",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
     "acta_fecha": "877/07",
     "aprobado": true,
     "tipo_norma": "declaración",
@@ -14219,28 +14189,13 @@
     "numero_proyecto": "834",
     "anio_proyecto": "2007",
     "titulo_proyecto": "Declarar de Interés Municipal el Congreso ",
-    "tipo_proyecto": "",
+    "tipo_proyecto": "declaración",
     "autor": [
       "Intendente Municipal, Sr Alberto Icare."
     ],
     "colaboradores": null,
     "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 841,
-    "numero_proyecto": "26",
-    "anio_proyecto": "2004",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "declaración",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "877/07",
+        "acta_fecha": "877/07",
     "aprobado": true,
     "tipo_norma": "declaración",
     "numero_norma": "D-07-1276",
@@ -14325,22 +14280,7 @@
     ],
     "colaboradores": null,
     "girado_a": "Comisión de Gobierno y Legales",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 847,
-    "numero_proyecto": "13",
-    "anio_proyecto": "2007",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "ordenanza",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": "880/07",
+     "acta_fecha": "880/07",
     "aprobado": true,
     "tipo_norma": "ordenanza",
     "numero_norma": "O-07-1726",
@@ -14418,7 +14358,7 @@
     "id": 852,
     "numero_proyecto": "844",
     "anio_proyecto": "2007",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Declarar evento de Interés Municipal VI Expo Universitaria 2007 en San Carlos de Bariloche",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Silvina Garcia Larraburu (PJ)."
@@ -15305,25 +15245,11 @@
     "titulo_proyecto": "Premio al Mérito al Laboratorio Ecotono y a la Doctora Sara Itkin",
     "tipo_proyecto": "",
     "autor": [
-      "Concejales Sandra Guerrero (MARA);"
+      "Concejales Sandra Guerrero (MARA), Diego Breide, Beatriz Contreras (Encuentro) y Alicia Grandío (UCR)"
     ],
     "colaboradores": null,
     "girado_a": "Comisión de Acción",
     "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
-    "id": 905,
-    "numero_proyecto": "9",
-    "anio_proyecto": "2011",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "resolución",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
     "acta_fecha": "888/07",
     "aprobado": true,
     "tipo_norma": "resolución",
@@ -15537,7 +15463,7 @@
     "id": 918,
     "numero_proyecto": "909",
     "anio_proyecto": "2007",
-    "titulo_proyecto": "",
+    "titulo_proyecto": "Aprobar convenios de financiamiento  con la Dirección Nacional de Empleo de la Secretaría de Empleo del Ministerio de Trabajo Empleo y Seguridad Social.",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Presidente del Concejo Municipal, a/c Intendencia Municipal, Marcelo Cascón."
