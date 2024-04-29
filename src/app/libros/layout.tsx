@@ -2,12 +2,13 @@
 import type { Metadata } from 'next'
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
-import { Suspense } from 'react';
 
 
 
 
-import Link from 'next/link'
+
+
+
 
 
 export const metadata: Metadata = {
@@ -25,13 +26,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-   
+     
 
           <NavTop />
          {children}
          <NavFoot />
    
-
 
  
    

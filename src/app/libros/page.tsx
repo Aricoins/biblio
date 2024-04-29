@@ -40,9 +40,14 @@ const filteredData = data?.filter(libro => libro.titulo.toLowerCase().includes(s
 
 return (
     <>
-      <div className={styles.container}>
+    <body className={styles.body}>
+      <section className={styles.container}>
 
-        <input  className={styles.inputSearch} type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar por título..." />
+        <input  className={styles.inputSearch} 
+                type="text" 
+                value={search} 
+                onChange={e => setSearch(e.target.value)} 
+                placeholder="Buscar por título..." />
 
         <div className={styles.gridContainer}>
        
@@ -57,7 +62,8 @@ return (
    
         <OtrosTitulos data-aos="fade-right" /> 
  
-      </div>
+      </section>
+      </body>
     </>
   );
 }

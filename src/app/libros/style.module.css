@@ -1,8 +1,8 @@
 /* styles.module.css */
 .body{
   background-color: #b9c1c1;
- 
-width: 66%;  
+  width: 66%;
+  margin: 5%;  
 }	
 .container {
     width: 100%;
