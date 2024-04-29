@@ -213,7 +213,7 @@ useEffect(() => {
                   Número {sortOrder === 'asc' ? '▼' : '▲'}
                 </th>
                 <th className={`${styles.tableHeader2} ${styles.border2}`}>Descripción Sintética</th>
-                <th style={{width: "15%"}}>Año</th>
+                <th  className={styles.tableHeader3}>Año</th>
               </tr>
             </thead>
             <tbody>
