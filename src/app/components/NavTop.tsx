@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import logo from "../api/assets/moran.png"
 import Image from 'next/image';
-import SearchBar from "./SearchBar";
-import { useState } from 'react';
+
 import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
@@ -65,5 +64,4 @@ const NavTop = () => {
   </div>
   );
 };
-
 export default NavTop;

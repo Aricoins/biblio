@@ -16,13 +16,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-         <body >
-         <Suspense>
-          <NavTop />
+   
+    
+         <NavTop />
          {children}
          <NavFoot />
-         </Suspense>
-      </body>
+
+  
     </html>
   )
 }
