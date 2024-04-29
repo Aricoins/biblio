@@ -176,7 +176,7 @@ useEffect(() => {
         className={styles.h2}
         onClick={() => {
           setIsComponentVisible((prevVisibility) => !prevVisibility);
-          animatedCount();
+      
         }}
       >
        PCM | 1988 - actualidad
