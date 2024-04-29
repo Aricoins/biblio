@@ -12,6 +12,7 @@ import { usePathname } from 'next/navigation';
 
 const NavTop = () => {
   const pathname = usePathname();
+
  
   
 
@@ -22,7 +23,7 @@ const NavTop = () => {
   }
   return (
     <div className={styles.navTop}>
-    <Image src={logo} width={150} height={150} className={styles.navTopImage} alt="logotipo" priority />
+    <Image src={logo} width={300} height={300} className={styles.navTopImage} alt="logotipo" priority />
     <ul className={styles.navTopList}>
     <li className= {styles.item}>
         <Link  className ={styles.link} href="/" >
