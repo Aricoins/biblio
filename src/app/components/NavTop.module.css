@@ -1,7 +1,6 @@
-/* styles.module.css */
 
 .navTop {
-    background-color: #fcfdfb; /* Equivalente a bg-[#fcfdfb] */
+    background-color: #fcfdfb; 
     position: fixed;
     padding: 1%;
     top: 0;
@@ -14,12 +13,12 @@
    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: x-small;
     box-shadow: 5px  5px 5px 5px rgba(0, 0, 0, 0.3 );
-  height: 12%;
+  height: 5%;
   }
   
   .navTopImage {
-    width: 19%;
-    height: 90%;
+    width: 15%;
+    height: 100%;
     margin-left: 2%;
     margin-top: 0%;
   }
@@ -32,7 +31,7 @@
     align-self: center;
     text-decoration: none;
     list-style: none;
-    height: 50%;
+    height: 10%;
     margin: auto;
   }
    
@@ -60,21 +59,20 @@
   }
   .navTop {
     height: 5%;
+    flex-direction: ;
   }
 }
      
 
   
 .item {
-margin: auto;
-height: 40%;
-padding: auto;
 align-content: center;
+height: 10%;
 width: 5%;
 }
      
 .link {
-/* Ajustar según necesidades */
+
 cursor: pointer;
 text-decoration: none;
 color: #000;
