@@ -133,7 +133,7 @@ font-weight: 600;
   }
   .searchInput {
     width: 15%;
-    margin-right: 0px;
+    justify-content: center;
   }
   .searchInputAprobados {
     width: 18%;
