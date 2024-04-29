@@ -14,15 +14,13 @@
    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: x-small;
     box-shadow: 5px  5px 5px 5px rgba(0, 0, 0, 0.3 );
-  height: 12%;
+  height: 10%;
   }
   
   .navTopImage {
     width: 20%;
     height: 100%;
     margin-left: 2%;
-
-    justify-content: center;
   }
   
   .navTopList {
@@ -43,7 +41,7 @@
   }
  .navTopImage {
     width: 20%;
-    height: 50%;
+    height: 60%;
   }
   .navTop {
     height: 5%;
@@ -56,7 +54,7 @@
   }
    .navTopImage {
     width: 30%;
-    height: 70%;
+    height: auto;
 
   }
   .navTop {

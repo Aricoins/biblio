@@ -17,31 +17,24 @@ import Link from 'next/link';
 //import FondosDocumentales from '../components/FondosDocumentales';
 import Proyectos from '../proyectos/page'
 
-const Registro = () => {
+const Archivo = () => {
 useEffect(() => {
   Aos.init({duration: 300});
 }
 , [])
   return (
     <>
- 
+ <NavTop />
    <div  className={styles.container}>
     <div className={styles.h3}  >
-    <div data-aos="fade-up" className={styles.component}> <ProyectosNoSancionados />
-      </div>
-  
-
-    <div className={styles.subcontainer}>
     <div data-aos="fade-up" className={styles.component}>
-    </div>
-    <div>
-      
-      <h2  className={styles.h4}  >
-   
-   EXPEDIENTES APROBADOS:
-  </h2>  
-        <div data-aos="fade-up" className={styles.component}>
-          <ExpedientesOrdenanzas />
+       <ProyectosNoSancionados />
+      </div>
+      <div className={styles.subcontainer}>
+      <div>
+      <h2  className={styles.h4}> EXPEDIENTES APROBADOS: </h2>  
+      <div data-aos="fade-up" className={styles.component}>
+        <ExpedientesOrdenanzas />
         </div>
         <div  data-aos="fade-up" className={styles.component}>
           <ExpedientesComunicaciones />
@@ -62,13 +55,16 @@ useEffect(() => {
     </div>
  
    </div>
-    <div  className={styles.endevdiv}>
-  <span className={styles.endev}> En desarrollo | RG-IC-AGR  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> </span>
+   <div  className={styles.endevdiv}>
+  <span className={styles.endev}> En desarrollo | RG-IC-AGR 
+  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> 
+  </span>
 </div>
+<NavFoot />
 
 
     </>
   );
 }
 
-export default Registro;
+export default Archivo;

@@ -9,21 +9,21 @@ import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
 
-const sortData = (data, order) => {
+const sortData = (data) => {
   return data.sort((a, b) => {
-    const projectA = a['Proyecto'] ? parseInt(a['Proyecto'].split('-')[0], 10) : 0;
-    const yearA = a['Proyecto'] ? parseInt(a['Proyecto'].split('-')[1], 10) : 0;
-    const projectB = b['Proyecto'] ? parseInt(b['Proyecto'].split('-')[0], 10) : 0;
-    const yearB = b['Proyecto'] ? parseInt(b['Proyecto'].split('-')[1], 10) : 0;
-    
-     if (order === 'asc') {
-       return yearA !== yearB ? yearA - yearB : projectA - projectB;
-     } else {
-       return yearB !== yearA ? yearB - yearA : projectB - projectA;
-     }
-   });
- 
- };
+      // Ordenar por año de forma descendente
+      const yearA = parseInt(a['Año']);
+      const yearB = parseInt(b['Año']);
+      if (yearA !== yearB) {
+          return yearB - yearA;
+      }
+
+      // Si los años son iguales, ordenar por número de forma descendente
+      const numberA = parseInt(a['Numero']);
+      const numberB = parseInt(b['Numero']);
+      return numberB - numberA;
+  });
+};
 
 function PCM() {
   const [data, setData] = useState([]);
@@ -37,6 +37,7 @@ function PCM() {
   const [numSearchResults, setNumSearchResults] = useState(0);
   const [numVisibleResults, setNumVisibleResults] = useState(0);
 
+  
   const animatedCount = () =>{
     let count = 0;
     const totalProjects = data.length;
@@ -57,26 +58,24 @@ function PCM() {
     // Clean up the timeout if the component unmounts before it completes
     return () => clearTimeout(timeout);
   };
-
   useEffect(() => {
     axios
-      .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSVE-Kl6UMQgVck3WUQ6FSm6vJF-LLQInvnapo-zuk_zMszIN1PP3BCsSBN_-aRWllb1Y3S_i3_bAB0/pub?output=csv')
-      .then((response) => {
-        const results = Papa.parse(response.data, { header: true });
-        const sortedData = sortData(results.data, 'desc');
-        setData(sortedData);
-        setVisibleRows(1);
-        setShowLessButton(false);
-        const numProjectsWithLink = sortedData.filter(row => row['Link']).length;
-        setNumProjectsWIthLink(numProjectsWithLink);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
-      });
-     
-      console.log(data)
-  }, []);
-  useEffect(() => {
+        .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSVE-Kl6UMQgVck3WUQ6FSm6vJF-LLQInvnapo-zuk_zMszIN1PP3BCsSBN_-aRWllb1Y3S_i3_bAB0/pub?output=csv')
+        .then((response) => {
+            const results = Papa.parse(response.data, { header: true });
+            const sortedData = sortData(results.data); // Ordenar datos después de recibirlos
+            setData(sortedData);
+            
+            // Calcular cantidad de proyectos con enlace
+            const numProjectsWithLink = sortedData.filter(row => row['Link']).length;
+            setNumProjectsWIthLink(numProjectsWithLink);
+        })
+        .catch((error) => {
+            console.error('Error fetching data:', error);
+        });
+}, []);
+
+useEffect(() => {
   
     // Calcular la cantidad de resultados de búsqueda
     const numSearchResults = data.filter((row) => {

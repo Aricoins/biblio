@@ -1,8 +1,7 @@
 "use client"
 import React from 'react'
-import style from './style.module.css'
-import NavTop from "../components/NavTop";
-import NavFoot from "../components/NavFoot";
+
+
 
 
 
@@ -15,14 +14,10 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
-   
-    
-         <NavTop />
-         {children}
-         <NavFoot />
+    <div lang="en">
 
-  
-    </html>
+               {children}
+
+    </div>
   )
 }
