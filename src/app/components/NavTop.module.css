@@ -35,6 +35,12 @@
     margin: auto;
   }
    
+  @media (max-width: 1100px) {
+    .navTopImage {
+      height: 60%;
+      margin: auto    }
+  }
+  
 @media (max-width: 700px) {
   .navTopList .navTop {
     font-size: 80%;

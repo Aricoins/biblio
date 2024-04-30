@@ -82,19 +82,50 @@
     background-color: rgb(255, 87, 51, 0.2);
     text-align: center;
 }
-
-/* Media Query para dispositivos pequeños */
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
     /* Ajustar container para pantallas pequeñas */
     .container {
         width: 90%;
-        margin-top: 25%;
+        margin-top: 35%;
         margin-bottom: 25%;
     }
 
     /* Ajustar subcontainer para pantallas pequeñas */
     .subcontainer {
-        padding: 10%;
+        padding: 1%;
+        border-radius: 5%;
+    }
+
+    /* Ajustar tamaño de fuente y alineación de texto para elementos h3 y h4 */
+    .h3, .h4 {
+        font-size: small;
+        text-align: center;
+    }
+
+    /* Ajustar tamaño de fuente para endev */
+    .endev {
+        font-size: small;
+        margin-left: 0;
+        margin-bottom: 5%;
+    }
+
+    /* Ajustar component para pantallas pequeñas */
+    .component {
+        width: 100%;
+    }
+}
+/* Media Query para dispositivos pequeños */
+@media (max-width: 600px) {
+    /* Ajustar container para pantallas pequeñas */
+    .container {
+        width: 90%;
+        margin-top: 35%;
+        margin-bottom: 25%;
+    }
+
+    /* Ajustar subcontainer para pantallas pequeñas */
+    .subcontainer {
+        padding: 1%;
         border-radius: 5%;
     }
 
