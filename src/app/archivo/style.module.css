@@ -96,6 +96,7 @@
     .subcontainer {
         padding: 10%;
         border-radius: 5%;
+        margin-bottom: 5%;
     }
 
     /* Ajustar tamaño de fuente y alineación de texto para elementos h3 y h4 */
@@ -108,7 +109,7 @@
     .endev {
         font-size: small;
         margin-left: 0;
-        margin-bottom: 5%;
+        margin-bottom: 15%;
     }
 
     /* Ajustar component para pantallas pequeñas */
