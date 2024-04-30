@@ -11,14 +11,14 @@
     flex-direction: row;
    justify-content: space-between;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 70%;
-    height: 10%;
+    font-size: x-large; 
+        height: 10%;
     margin: auto;
     box-shadow: 2px 5px 10px 10px rgba(0, 0, 0, 0.5 );
   
 }
 .navFootImage {
-  width: 12%;
+  width: 20%;
   height: 70%;
   margin-top: 1%;
 }
@@ -42,11 +42,11 @@
 }
 @media (max-width: 450px){
   .navFoot {
-    font-size: 50%;
+    font-size: xx-small;
      }
   .navFootImage{
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    height: 100%;
     margin-top: 9%;
   }
 }

@@ -3,7 +3,6 @@
 .navTop {
     background-color: #fcfdfb; /* Equivalente a bg-[#fcfdfb] */
     position: fixed;
-    padding: 1%;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,9 +17,12 @@
   }
   
   .navTopImage {
-    width: 17%;
-    height: 200%;
-
+    width: 18%;
+    margin-left: 5%;
+    height: 70%;
+    margin: auto;
+    margin-left: 5%;
+    
   }
   
   .navTopList {
@@ -38,20 +40,19 @@
   @media (max-width: 1100px) {
     .navTopImage {
       height: 60%;
-      margin: auto    }
+width: 22%;
+      margin: auto 20px;    }
   }
   
 @media (max-width: 700px) {
   .navTopList .navTop {
-    font-size: 80%;
+    font-size: small;
   }
  .navTopImage {
     width: 20%;
-    height: 60%;
+    height: 100%;
   }
-  .navTop {
-    height: 5%;
-  }
+
 }
 
 @media (max-width: 450px) {
@@ -59,8 +60,8 @@
     font-size: 60%;
   }
    .navTopImage {
-    width: 30%;
-    height: auto;
+    width: 20%;
+    height: 100%;
 
   }
   .navTop {
