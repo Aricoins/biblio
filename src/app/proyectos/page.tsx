@@ -104,7 +104,7 @@ function Proyectos() {
             return yearB - yearA; // Orden descendente (más nuevo a más viejo)
         });
 
-        setResultados(filteredProyectos.slice(0, 10));
+        setResultados(filteredProyectos.slice(0, 5));
     };
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         // Handle button click event
