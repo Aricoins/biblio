@@ -1,35 +1,5 @@
 
 
-.h2 {
-    font-size: large;
-    font-weight: 500;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    margin-left: 1%;
-    margin-right: 1%;
-    margin-top: 10%;
-    cursor: pointer;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    transition: 0.3s;
-    border: white 1px solid;
-    font-family: 'Roboto', sans-serif;
-    border-radius: 25px;
-
-  }
-  .h2:hover {
-    background-color: #f7f8fa;
-    color: rgb(7, 0, 0);
-    border: black 1px solid;
-    
-  }
-  @media (max-width: 768px) {
-    .h2 {
-      font-size: small;
-    }
-  }
-
   .hdos {
     font-size: small;
     font-weight: 500;
@@ -101,7 +71,12 @@ height: 33px;
 
 }
 
-
+.ant-table-row {
+  border-bottom: 1px solid #1b1212; /* Ajuste el grosor y color del borde a su preferencia */
+}
+.ant-table-cell {
+  padding: 8px 16px; /* Ajuste el espacio entre columnas según su preferencia */
+}
 
 /* Consulta de medios para dispositivos más pequeños */
 
@@ -111,7 +86,8 @@ height: 33px;
   .inputs {
       flex-direction: column; /* Cambia a diseño de columna */
       align-items: center;
-      width: 100%; /* Alinea los elementos en el centro */
+      width: 100%; 
+   
   }
   .sele{
     width: 55%;
@@ -127,20 +103,32 @@ height: 33px;
 }
 
 
-}  
-.hcuatro{
-  font-size: small;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
-  padding: 1%;
-  cursor: pointer;
-  background-color: white;
-  color: rgb(255, 87, 51);
-  font-family: 'Roboto', sans-serif;
-  border-radius: 25px;
-  border: rgb(106, 97, 97) 1px solid;
-  transition: 1s;
-}
  
+.año{
+  font-size: 6px;
+}
+.numero{
+  font-size: 6px;
+}
+.descripcion{
+  font-size: 6px;
+  width: 20%;
+}
+.autores{
+  font-size: 5px;
+
+}
+.observaciones{
+ font-size: 5px;
+ button{
+   font-size: 5px;
+   padding: 0%;
+ }
+
+}
+.norma{
+  font-size: 5px;
+}
+
+  
+}

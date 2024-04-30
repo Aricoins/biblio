@@ -116,10 +116,10 @@ function Proyectos() {
     };
 
     const columns = [
-        { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
-        { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
-        { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
-        { title: 'Autores', dataIndex: 'autor', key: 'autor' },
+        { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero},
+        { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto', className: styles.año },
+        { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto', className: styles.descripcion },
+        { title: 'Autores', dataIndex: 'autor', key: 'autor', className: styles.autores },
         {
             title: 'Norma',
             dataIndex: 'numero_norma',
@@ -158,7 +158,7 @@ function Proyectos() {
                 } else {
                     return '';
                 }
-            }
+            }, className: styles.norma
         },
         { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', 
         render: (observaciones: string) => { 
@@ -167,8 +167,8 @@ function Proyectos() {
             } else {
                 return observaciones;
             }
-        }
-     }    ];
+        }, className: styles.observaciones },
+   ];
 
     return (
         (!loading) ? <Spin style={{ margin: "auto", marginTop: "40%" }} /> :
@@ -225,8 +225,9 @@ function Proyectos() {
                                     dataSource={resultados}
                                     columns={columns}
                                     pagination={false}
-                                   
                                     rowKey="id"
+                                    className={styles.table}
+                                    style={{fontSize: "xx-small", backgroundColor: "red"}}
                                 />
                             )}
                         </div>
