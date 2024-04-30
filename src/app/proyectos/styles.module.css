@@ -31,7 +31,7 @@
   }
 
   .hdos {
-    font-size: medium;
+    font-size: small;
     font-weight: 500;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@
     padding: 1%;
     cursor: pointer;
     background-color: rgb(255, 87, 51);
-    color: black ;
+    color: white ;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
     border: black 2px solid;

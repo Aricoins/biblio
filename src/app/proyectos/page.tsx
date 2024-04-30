@@ -38,14 +38,17 @@ function Proyectos() {
     const [loading, setLoading] = useState(true);
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
-
+    const [datosCargados, setDatosCargados] = useState(false);
+    
     useEffect(() => {
-        // Inicializar los datos del estado con los datos del JSON
-        setProyectos(data);
-        setResultados(data);
-        setLoading(true);
-        Aos.init({ duration: 3000 });
-    }, []);
+        if (ver && !datosCargados) {
+            // Cargar los datos del JSON y establecer el estado de los datos cargados
+            setProyectos(data);
+            setResultados(data);
+            setDatosCargados(true);
+            Aos.init({ duration: 3000 });
+        }
+    }, [ver, datosCargados]);
 
     const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaNumero(event.target.value);
