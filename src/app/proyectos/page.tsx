@@ -60,9 +60,17 @@ function Proyectos() {
         setHaRealizadoBusqueda(true);
     };
 
-    const handleFiltroTipoChange = (value: string) => {
+    const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        // Obtén el valor seleccionado usando `event.target.value`
+        const value = event.target.value;
+        
+        // Actualiza el estado de `filtroTipo` con el valor seleccionado
         setFiltroTipo(value);
+        
+        // Llama a la función de filtro con los valores actualizados
         filtrarProyectos(busquedaNumero, busquedaPalabra, value, filtroAprobado);
+        
+        // Indica que se ha realizado una búsqueda
         setHaRealizadoBusqueda(true);
     };
 
@@ -192,18 +200,17 @@ function Proyectos() {
                         onChange={handleBusquedaPalabraChange}
                         style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                     />
-                    <Select
-                        placeholder="Filtrar por tipo"
-                        style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                        onChange={handleFiltroTipoChange}
-                        className={styles.sele}
-                    >
-                        <Option value="Ordenanza">Ordenanza</Option>
-                        <Option value="Declaración">Declaración</Option>
-                        <Option value="Comunicación">Comunicación</Option>
-                        <Option value="Resolución">Resolución</Option>
-                    </Select>
-                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}>Sólo aprobados</Checkbox>
+                 <select
+            onChange={handleFiltroTipoChange}
+            className={styles.sele}
+        >
+
+            <option value="Ordenanza">Ordenanzas</option>
+            <option value="Declaración">Declaraciones</option>
+            <option value="Comunicación">Comunicaciones</option>
+            <option value="Resolución">Resoluciones</option>
+        </select>
+                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)} className={styles.check}>Sólo aprobados</Checkbox>
                  
                 </div>
                

@@ -65,7 +65,6 @@
   padding: 1%;
   background-color: gray;
   border-radius: 5px;
-  margin: 'auto'; 
   background-color: "gray"; 
 ::placeholder {
     color: #830b0b; 
@@ -74,17 +73,27 @@
 }}
 
 .sele{
-
-    color: #830b0b; /* Cambia el color del placeholder */
-    font-style: italic; /* Cambia el estilo de la fuente del placeholder */
-    font-size: 0.9rem; 
-    ::placeholder {
-      color: #830b0b; 
-      font-style: italic; 
-      font-size: 0.9rem;
-  }
+width: 15%;
+color: #830b0b; 
+margin-left: 1%;
+margin-right: 1%;
+border-radius: 8%; 
+font-style: italic;
+height: 33px;
 }
- 
+
+.check{
+  align-items: center;
+  color: #830b0b; 
+  font-style: italic;
+  font-size: 0.9rem;
+  border-radius: 8%; 
+  height: 33px;
+  padding: 1%;
+  
+}
+
+
 /* Media query para dispositivos medianos (768px de ancho máximo) */
 @media (max-width: 768px) {
   .inputs {
