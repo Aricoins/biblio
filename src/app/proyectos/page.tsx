@@ -107,7 +107,7 @@ function Proyectos() {
         // Handle button click event
         // You can call `window.scrollTo` here if that's what you need to do
         window.scrollTo({
-            top: 300,
+            top: 200,
             behavior: 'smooth',
         });
     };
