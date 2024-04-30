@@ -92,14 +92,50 @@ height: 33px;
   padding: 1%;
   
 }
+.tabla{
+  width: '100%';
+  margin: 'auto';
+  margin-bottom: '10%';  
+  box-sizing: border-box;
+}
+.tabla th, .tabla td {
+  width: auto;
+}
 
 
-/* Media query para dispositivos medianos (768px de ancho máximo) */
+/* Consulta de medios para dispositivos más pequeños */
+
+
+
 @media (max-width: 768px) {
   .inputs {
       flex-direction: column; /* Cambia a diseño de columna */
-      align-items: center; /* Alinea los elementos en el centro */
+      align-items: center;
+      width: 100%; /* Alinea los elementos en el centro */
   }
-  
- 
+  .sele{
+    width: 36%;
+    justify-content: center;
+    align-items: center;
+  }
+.check{
+  padding: 10%;
+  margin: 5%;
+  width: 10%;
+
 }
+.tabla{
+  width: 80%;
+  font-size: xx-small;
+  
+ }
+
+ .tabla .ant-table-column-has-filters:nth-child(2), /* Columna Año */
+ .tabla .ant-table-column-has-filters:nth-child(1) /* Columna Número */ {
+     width: 100px /* Ancho reducido para dispositivos móviles */
+ }
+ .tabla .ant-table-column-has-filters:nth-child(6){
+  display: none;
+ }
+}  
+ 

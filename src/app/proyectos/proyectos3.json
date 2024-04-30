@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "numero_proyecto": "1",
+    "numero_proyecto":"1",
     "anio_proyecto": "2003",
     "titulo_proyecto": "Aprobar contrato de comodato suscripto con fecha 24/11/2003 entre la Coordinación de Organismos en Liquidación y la Municipalidad de San Carlos de Bariloche",
     "tipo_proyecto": "ordenanza",
     "autor": [
-      "Intendente Municipal, Sr Alberto Icare."
+      "Intendente Municipal, Sr Alberto Icare"
     ],
     "colaboradores": "Secretario de Gobierno, Sr Adolfo Foures",
     "girado_a": "Asesoría Letrada y a las Comisiones de Economía y de Gobierno y Legales",
@@ -59,7 +59,7 @@
     "autor": [
       "Intendente Municipal, Sr Alberto Icare."
     ],
-    "colaboradores": "Secretario de Gobierno, Sr Adolfo Foures",
+    "colaboradores": "Secretario de Gobierno, Sr Adolfo Fourés",
     "girado_a": "Asesoría Letrada y a la Comisión de Gobierno y Legales",
     "acta_fecha": "820/03",
     "aprobado": true,
@@ -647,8 +647,8 @@
   },
   {
     "id": 39,
-    "numero_proyecto": "39",
-    "anio_proyecto": "2003",
+    "numero_proyecto":"39",
+    "anio_proyecto":"2003",
     "titulo_proyecto": "Presupuesto Municipal para año 2004",
     "tipo_proyecto": "ordenanza",
     "autor": [
@@ -656,7 +656,7 @@
     ],
     "colaboradores": null,
     "girado_a": "Asesoría Letrada y a las Comisiones de Economía y de Gobierno y Legales",
-    "acta_fecha": "826/04",
+    "acta_fecha": "826/04", 
     "aprobado": true,
     "tipo_norma": "ordenanza",
     "numero_norma": "O-04-1387",
@@ -14822,7 +14822,7 @@
     "titulo_proyecto": "Declarar de Interés Cultural el espectáculo denominado: ",
     "tipo_proyecto": "",
     "autor": [
-      "Presidente Concejo Municipal, a/c Intendencia Municipal, Marcelo Cascón."
+      "Presidente Concejo Municipal, a/c Intendencia Municipal, Marcelo Cascón"
     ],
     "colaboradores": null,
     "girado_a": "la Comisión de Acción Social",
@@ -21105,7 +21105,7 @@
     "titulo_proyecto": "Convalidar y refrendar Acta Acuerdo con SEDRONAR",
     "tipo_proyecto": "ordenanza",
     "autor": [
-      "Intendente Municipal, Sr Marcelo Cascón."
+      "Intendente Municipal, Sr Marcelo Cascon"
     ],
     "colaboradores": null,
     "girado_a": "",

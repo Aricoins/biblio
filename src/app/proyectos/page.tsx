@@ -105,12 +105,12 @@ function Proyectos() {
     };
 
     const columns = [
-        { title: 'Número', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
+        { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
-        { title: 'Descripción sintética', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
+        { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
         { title: 'Autores', dataIndex: 'autor', key: 'autor' },
         {
-            title: 'Número norma',
+            title: 'Norma',
             dataIndex: 'numero_norma',
             key: 'numero_norma',
             render: (numeroNorma: string, record: Proyecto) => {
@@ -207,7 +207,8 @@ function Proyectos() {
                                     dataSource={resultados}
                                     columns={columns}
                                     pagination={false}
-                                    style={{ width: '100%', margin: 'auto', marginBottom: '10%' }}
+                                    className={styles.tabla}
+                                  
                                     rowKey="id"
                                 />
                             )}
