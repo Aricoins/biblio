@@ -22,7 +22,15 @@
   height: 70%;
   margin-top: 1%;
 }
-
+@media (max-width: 1100px){
+  .navFoot {
+    font-size: medium;
+    }
+  .navFootImage {
+    width: 30%;
+    height: 60%;
+    margin: auto;
+  }}
 @media (max-width: 700px){
   .navFoot {
     font-size: 80%;
