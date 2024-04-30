@@ -111,7 +111,7 @@ function Proyectos() {
             behavior: 'smooth',
         });
     };
-    
+
     const columns = [
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
@@ -193,13 +193,13 @@ function Proyectos() {
                                     style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                                 />
                                 <Input.Search
-                                    placeholder="Buscar por autor..."
+                                    placeholder="Por autor..."
                                     value={busquedaAutor}
                                     onChange={handleBusquedaAutorChange}
                                     style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                                 />
                                 <select onChange={handleFiltroTipoChange} className={styles.sele}>
-                                    <option value="">Filtrar por tipo</option>
+                                    <option value="">Por tipo</option>
                                     <option value="Ordenanza">Ordenanzas</option>
                                     <option value="Declaración">Declaraciones</option>
                                     <option value="Comunicación">Comunicaciones</option>
