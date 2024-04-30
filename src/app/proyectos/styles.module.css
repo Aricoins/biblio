@@ -93,10 +93,12 @@ height: 33px;
   
 }
 .tabla{
-  width: '100%';
-  margin: 'auto';
-  margin-bottom: '10%';  
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10%;  
   box-sizing: border-box;
+  border-collapse: collapse;
+
 }
 
 
@@ -112,28 +114,33 @@ height: 33px;
       width: 100%; /* Alinea los elementos en el centro */
   }
   .sele{
-    width: 36%;
+    width: 55%;
     justify-content: center;
-    align-items: center;
+    align-items: last baseline;
+    border-radius: 20px;
   }
 .check{
   padding: 10%;
-  margin: 5%;
+  margin: 15%;
   width: 10%;
 
 }
-.tabla{
-  width: 80%;
-  font-size: xx-small;
-  
- }
 
- .tabla .ant-table-column-has-filters:nth-child(2), /* Columna Año */
- .tabla .ant-table-column-has-filters:nth-child(1) /* Columna Número */ {
-     width: 100px /* Ancho reducido para dispositivos móviles */
- }
- .tabla .ant-table-column-has-filters:nth-child(6){
-  display: none;
- }
+
 }  
+.hcuatro{
+  font-size: small;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  padding: 1%;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(255, 87, 51);
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+  border: rgb(106, 97, 97) 1px solid;
+  transition: 1s;
+}
  

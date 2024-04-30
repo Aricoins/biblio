@@ -110,7 +110,7 @@ function Proyectos() {
         // Handle button click event
         // You can call `window.scrollTo` here if that's what you need to do
         window.scrollTo({
-            top: 200,
+            top: 50,
             behavior: 'smooth',
         });
     };
@@ -218,15 +218,14 @@ function Proyectos() {
                             </div>
                             {(resultados.length === 0 && haRealizadoBusqueda) ? (
                                 <h4 className={styles.hcuatro}>
-                                    Sin resultados.
+                                    No se encontraron resultados. Intente con otros términos.
                                 </h4>
                             ) : (
                                 <Table
                                     dataSource={resultados}
                                     columns={columns}
                                     pagination={false}
-                                    className={styles.tabla}
-                                  
+                                   
                                     rowKey="id"
                                 />
                             )}
