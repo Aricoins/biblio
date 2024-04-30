@@ -103,7 +103,15 @@ function Proyectos() {
 
         setResultados(filteredProyectos.slice(0, 10));
     };
-
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        // Handle button click event
+        // You can call `window.scrollTo` here if that's what you need to do
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+    
     const columns = [
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
@@ -149,8 +157,15 @@ function Proyectos() {
                 }
             }
         },
-        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', render: (observaciones: string) => observaciones },
-    ];
+        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', 
+        render: (observaciones: string) => { 
+            if (observaciones === 'sin sanción') {
+                return <button onClick={handleClick}>sin sanción</button>;
+            } else {
+                return observaciones;
+            }
+        }
+     }    ];
 
     return (
         (!loading) ? <Spin style={{ margin: "auto", marginTop: "40%" }} /> :
