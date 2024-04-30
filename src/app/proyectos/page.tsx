@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Input, Checkbox, Select, Typography, Table, Spin } from 'antd';
+import { Input, Checkbox, Typography, Table, Spin } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import styles from './styles.module.css';
 import Link from 'next/link';
 
-const { Option } = Select;
 const { Title } = Typography;
 
 interface Proyecto {
@@ -32,13 +31,13 @@ function Proyectos() {
     const [proyectos, setProyectos] = useState<Proyecto[]>([]);
     const [busquedaNumero, setBusquedaNumero] = useState('');
     const [busquedaPalabra, setBusquedaPalabra] = useState('');
+    const [busquedaAutor, setBusquedaAutor] = useState('');
     const [filtroTipo, setFiltroTipo] = useState('');
     const [filtroAprobado, setFiltroAprobado] = useState(false);
     const [resultados, setResultados] = useState<Proyecto[]>([]);
     const [loading, setLoading] = useState(true);
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
-
 
     useEffect(() => {
         // Inicializar los datos del estado con los datos del JSON
@@ -50,186 +49,173 @@ function Proyectos() {
 
     const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaNumero(event.target.value);
-        filtrarProyectos(event.target.value, busquedaPalabra, filtroTipo, filtroAprobado);
+        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaPalabraChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaPalabra(event.target.value);
-        filtrarProyectos(busquedaNumero, event.target.value, filtroTipo, filtroAprobado);
+        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, filtroTipo, filtroAprobado);
+        setHaRealizadoBusqueda(true);
+    };
+
+    const handleBusquedaAutorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setBusquedaAutor(event.target.value);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, filtroTipo, filtroAprobado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        // Obtén el valor seleccionado usando `event.target.value`
         const value = event.target.value;
-        
-        // Actualiza el estado de `filtroTipo` con el valor seleccionado
         setFiltroTipo(value);
-        
-        // Llama a la función de filtro con los valores actualizados
-        filtrarProyectos(busquedaNumero, busquedaPalabra, value, filtroAprobado);
-        
-        // Indica que se ha realizado una búsqueda
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, value, filtroAprobado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroAprobadoChange = (checked: boolean) => {
         setFiltroAprobado(checked);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, filtroTipo, checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked);
         setHaRealizadoBusqueda(true);
     };
 
-    const filtrarProyectos = (numero: string, palabra: string, tipo: string, aprobado: boolean) => {
-      let filteredProyectos = proyectos.filter((proyecto) => {
-          const titulo = proyecto.titulo_proyecto.toLowerCase();
-          const numeroStr = proyecto.numero_proyecto.toString();
-          const tipoLower = proyecto.tipo_proyecto.toLowerCase();
-  
-          const numeroExacto = numero !== '' && numeroStr === numero;
-          const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
-          const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-          const aprobadoMatch = aprobado === proyecto.aprobado;
-  
-          return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
-      });
-  
-      // Ordenar por año del proyecto (más nuevo a más viejo)
-      filteredProyectos = filteredProyectos.sort((a, b) => {
-          const yearA = parseInt(a.anio_proyecto, 10);
-          const yearB = parseInt(b.anio_proyecto, 10);
-          return yearB - yearA; // Orden descendente (más nuevo a más viejo)
-      });
-  
-      setResultados(filteredProyectos.slice(0, 10));
-  };
-  
+    const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean) => {
+        let filteredProyectos = proyectos.filter((proyecto) => {
+            const titulo = proyecto.titulo_proyecto.toLowerCase();
+            const numeroStr = proyecto.numero_proyecto.toString();
+            const tipoLower = proyecto.tipo_proyecto.toLowerCase();
+            const autorStr = proyecto.autor.join(' ').toLowerCase(); // Convertir autores a una cadena
+
+            const numeroExacto = numero !== '' && numeroStr === numero;
+            const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
+            const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
+            const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
+            const aprobadoMatch = aprobado === proyecto.aprobado;
+
+            return   (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
+        });
+
+        // Ordenar por año del proyecto (más nuevo a más viejo)
+        filteredProyectos = filteredProyectos.sort((a, b) => {
+            const yearA = parseInt(a.anio_proyecto, 10);
+            const yearB = parseInt(b.anio_proyecto, 10);
+            return yearB - yearA; // Orden descendente (más nuevo a más viejo)
+        });
+
+        setResultados(filteredProyectos.slice(0, 10));
+    };
 
     const columns = [
         { title: 'Número', dataIndex: 'numero_proyecto', key: 'numero_proyecto' },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto' },
         { title: 'Descripción sintética', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto' },
-        // { title: 'Tipo de norma', dataIndex: 'tipo_norma', key: 'tipo_norma' },
-        { title:  'Autores ', dataIndex: 'autor', key: 'autor' },
+        { title: 'Autores', dataIndex: 'autor', key: 'autor' },
         {
             title: 'Número norma',
             dataIndex: 'numero_norma',
             key: 'numero_norma',
             render: (numeroNorma: string, record: Proyecto) => {
-              if (numeroNorma) {
-                // Extraer los dígitos entre guiones de numeroNorma
-                const partesNorma = numeroNorma.split('-');
-                let añoNorma = null;
-            
-                if (partesNorma.length > 1) {
-                    // Los dos dígitos entre guiones
-                    const digitos = partesNorma[1];
-                    // Convertir los dos dígitos a un número y agregar el prefijo "20"
-                    añoNorma = `20${digitos}`;
+                if (numeroNorma) {
+                    const partesNorma = numeroNorma.split('-');
+                    let añoNorma = null;
+
+                    if (partesNorma.length > 1) {
+                        const digitos = partesNorma[1];
+                        añoNorma = `20${digitos}`;
+                    }
+
+                    if (record.tipo_norma === 'ordenanza') {
+                        record.tipo_norma = "ordenanzas";
+                    }
+                    if (record.tipo_norma === 'declaración') {
+                        record.tipo_norma = "declaraciones";
+                    }
+                    if (record.tipo_norma === 'comunicación') {
+                        record.tipo_norma = "comunicaciones";
+                    }
+                    if (record.tipo_norma === 'resolución') {
+                        record.tipo_norma = "resoluciones";
+                    }
+
+                    const tipoNorma = record.tipo_norma.toLowerCase();
+                    const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
+
+                    return (
+                        <Link href={filePath} target="_blank" rel="noopener noreferrer">
+                            {numeroNorma}
+                        </Link>
+                    );
+                } else {
+                    return '';
                 }
-            
-                // Si añoNorma es nulo o la longitud no es válida, regresar "N/A"
-              
-                if (record.tipo_norma === 'ordenanza') {
-                  record.tipo_norma = "ordenanzas"}
-                if (record.tipo_norma === 'declaración') {
-                  record.tipo_norma = "declaraciones"}
-                if (record.tipo_norma === 'comunicación') {
-                  record.tipo_norma = "comunicaciones"}
-                if (record.tipo_norma === 'resolución') {
-                  record.tipo_norma = "resoluciones"}
-                // Convertir el tipo de norma a minúsculas
-            const tipoNorma = record.tipo_norma.toLowerCase();
-                // Construir la URL basada en la ubicación de los archivos estáticos en la carpeta 'public'
-                const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
-            
-                // Crear el enlace al archivo
-                return (
-                    <Link href={filePath} target="_blank" rel="noopener noreferrer">
-                        {numeroNorma}
-                    </Link>
-                );
-            } else {
-                return ''; // Retorna una cadena vacía si no hay número de norma
             }
-          }
         },
-        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', 
-        render: (observaciones: string) => { 
-            if (observaciones === 'sin sanción') {
-                return <button onClick={handleClick}>sin sanción</button>;
-            } else {
-                return observaciones;
-            }
-        }
-     },
+        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', render: (observaciones: string) => observaciones },
     ];
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        // Handle button click event
-        // You can call `window.scrollTo` here if that's what you need to do
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-    };
-    
-
     return (
-        (!loading) ?  <Spin  style={{margin: "auto", marginTop: "40%"}}/> :
-        <div className={styles.container} data-aos="fade-up">
-        <>
-            <div onClick={() => setVer(!ver)}>
-                <h2 className={styles.hdos}>
-                    Buscador General 🔍 | 2003-2024
-                </h2>
-            </div>
-            
-            {(ver) && (
-            <div style={{ margin: "auto" , width: "100%" }}>
-           <div className={styles.inputs}>
-                    <Input.Search
-                        placeholder="Por número... "
-                        value={busquedaNumero}
-                        onChange={handleBusquedaNumeroChange}
-                        style={{ width: 200, marginRight: '16px', marginBottom: '8px'}}
-                    />
-                    <Input.Search
-                        placeholder="Por palabra..."
-                        value={busquedaPalabra}
-                        onChange={handleBusquedaPalabraChange}
-                        style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                    />
-                 <select
-            onChange={handleFiltroTipoChange}
-            className={styles.sele}
-        >
+        (!loading) ? <Spin style={{ margin: "auto", marginTop: "40%" }} /> :
+            <div className={styles.container} data-aos="fade-up">
+                <>
+                    <div onClick={() => setVer(!ver)}>
+                        <h2 className={styles.hdos}>
+                            Buscador General 🔍 | 2003-2024
+                        </h2>
+                    </div>
 
-            <option value="Ordenanza">Ordenanzas</option>
-            <option value="Declaración">Declaraciones</option>
-            <option value="Comunicación">Comunicaciones</option>
-            <option value="Resolución">Resoluciones</option>
-        </select>
-                    <Checkbox onChange={(e) => handleFiltroAprobadoChange(e.target.checked)} className={styles.check}>Sólo aprobados</Checkbox>
-                 
-                </div>
-               
-
-                {haRealizadoBusqueda && (
-                        <Table
-                            dataSource={resultados}
-                            columns={columns}
-                            pagination={false}
-                            style={{ width: "100%", margin: "auto", marginBottom: "10%"  }}
-                            rowKey="id"
-                        />
+                    {(ver) && (
+                        <div style={{ margin: "auto", width: "100%" }}>
+                            <div className={styles.inputs}>
+                                <Input.Search
+                                    placeholder="Por número..."
+                                    value={busquedaNumero}
+                                    onChange={handleBusquedaNumeroChange}
+                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                />
+                                <Input.Search
+                                    placeholder="Por palabra..."
+                                    value={busquedaPalabra}
+                                    onChange={handleBusquedaPalabraChange}
+                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                />
+                                <Input.Search
+                                    placeholder="Buscar por autor..."
+                                    value={busquedaAutor}
+                                    onChange={handleBusquedaAutorChange}
+                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                />
+                                <select onChange={handleFiltroTipoChange} className={styles.sele}>
+                                    <option value="">Filtrar por tipo</option>
+                                    <option value="Ordenanza">Ordenanzas</option>
+                                    <option value="Declaración">Declaraciones</option>
+                                    <option value="Comunicación">Comunicaciones</option>
+                                    <option value="Resolución">Resoluciones</option>
+                                </select>
+                                <div className={styles.checkbox}>
+                                    <Checkbox
+                                        onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
+                                    >
+                                        Aprobado
+                                    </Checkbox>
+                                </div>
+                            </div>
+                            {(resultados.length === 0 && haRealizadoBusqueda) ? (
+                                <h4 className={styles.hcuatro}>
+                                    Sin resultados.
+                                </h4>
+                            ) : (
+                                <Table
+                                    dataSource={resultados}
+                                    columns={columns}
+                                    pagination={false}
+                                    style={{ width: '100%', margin: 'auto', marginBottom: '10%' }}
+                                    rowKey="id"
+                                />
+                            )}
+                        </div>
                     )}
-                </div>
-       
-            )}
-            
-        </>
-        </div>)
+                </>
+            </div>
+    );
 }
 
 export default Proyectos;

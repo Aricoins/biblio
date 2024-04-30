@@ -1,20 +1,5 @@
 [
   {
-    "id": 0,
-    "numero_proyecto": "",
-    "anio_proyecto": "",
-    "titulo_proyecto": "",
-    "tipo_proyecto": "",
-    "autor": [],
-    "colaboradores": null,
-    "girado_a": "",
-    "acta_fecha": null,
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
-  },
-  {
     "id": 1,
     "numero_proyecto": "1",
     "anio_proyecto": "2003",
