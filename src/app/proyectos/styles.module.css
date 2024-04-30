@@ -98,9 +98,7 @@ height: 33px;
   margin-bottom: '10%';  
   box-sizing: border-box;
 }
-.tabla th, .tabla td {
-  width: auto;
-}
+
 
 
 /* Consulta de medios para dispositivos más pequeños */
