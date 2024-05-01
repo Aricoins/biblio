@@ -235,9 +235,10 @@ function Proyectos() {
                                     <Table
                                         dataSource={resultados}
                                         columns={columns}
-                                        pagination={false}
+                                        pagination={true}
                                         rowKey="id"
                                         className={styles.table}
+                                    
                                     />
                                 )
                             

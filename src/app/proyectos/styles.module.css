@@ -92,6 +92,56 @@ height: 33px;
   .sele{
     width: 55%;
     justify-content: center;
+    border-radius: 20px;
+  }
+
+.check{
+  padding: 10%;
+  margin: 15%;
+  width: 100%;
+
+}
+
+
+ 
+.año{
+  font-size: 6px;
+  width: 5%;
+}
+.numero{
+  font-size: 6px;
+  width: 5%;
+}
+.descripcion{
+  font-size: 6px;
+  width: 100%;
+}
+.autores{
+  font-size: 5px;
+width: 10%;
+}
+.observaciones{ 
+   display: none
+}
+.norma{
+  font-size: 5px;
+}
+
+  
+}
+
+
+
+@media (max-width: 450px) {
+  .inputs {
+      flex-direction: column; /* Cambia a diseño de columna */
+      align-items: center;
+      width: 100%; 
+   
+  }
+  .sele{
+    width: 100%;
+    justify-content: center;
     align-items: last baseline;
     border-radius: 20px;
   }
@@ -105,26 +155,24 @@ height: 33px;
 
  
 .año{
-  font-size: 6px;
+  font-size: xx-small;
+  width: 0%;
 }
 .numero{
-  font-size: 6px;
+  font-size: xx-small;
+  width: 1%;
 }
 .descripcion{
-  font-size: 6px;
-  width: 20%;
+  font-size: xx-small;
+  width: 50%;
+  
 }
 .autores{
-  font-size: 5px;
-
+  font-size: 6px;
+width: 40%;
 }
-.observaciones{
- font-size: 5px;
- button {
-   font-size: 5px;
-   padding: 0%;
- }
-
+.observaciones{ 
+   display: none
 }
 .norma{
   font-size: 5px;
@@ -132,6 +180,7 @@ height: 33px;
 
   
 }
+
 
 .spinContainer{
   display: flex;
