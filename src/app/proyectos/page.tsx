@@ -142,7 +142,11 @@ function Proyectos() {
                         añoNorma = `20${digitos}`;
                     }
 
-                    const tipoNorma = record.tipo_norma.toLowerCase();
+                    let tipoNorma = record.tipo_norma.toLowerCase();
+                    if (tipoNorma = "comunicacion") { tipoNorma = "comunicaciones"; }
+                    if (tipoNorma = "resolución") { tipoNorma = "resoluciones"; }
+                    if (tipoNorma = "declaración") { tipoNorma = "declaraciones"; }
+                    if (tipoNorma = "ordenanza") { tipoNorma = "ordenanzas"; }
                     const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
 
                     return (
