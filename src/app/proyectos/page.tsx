@@ -131,7 +131,12 @@ function Proyectos() {
                         añoNorma = `20${digitos}`;
                     }
 
-                    const tipoNorma = record.tipo_norma.toLowerCase();
+                    let tipoNorma = record.tipo_norma.toLowerCase();
+                    if (tipoNorma === 'resolución') {tipoNorma = 'resoluciones';}
+                    if (tipoNorma === 'declaración') {tipoNorma = 'declaraciones';}
+                    if (tipoNorma === 'comunicacion') {tipoNorma = 'comunicaciones';}
+                    if (tipoNorma === 'ordenanza') {tipoNorma = 'ordenanzas';}
+
                     const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
 
                     return (
@@ -144,14 +149,40 @@ function Proyectos() {
                 }
             }, className: styles.norma
         },
-        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', 
-        render: (observaciones: string) => { 
-            if (observaciones === 'sin sanción') {
-                return <button onClick={handleClick}>sin sanción</button>;
-            } else {
-                return observaciones;
-            }
-        }, className: styles.observaciones },
+        {
+            title: 'Observaciones',
+            dataIndex: 'observaciones',
+            key: 'observaciones',
+            render: (observaciones: string, record: Proyecto) => {
+                // Declarar añoNorma aquí
+                let añoNorma = null;
+                
+                // Obtener el número de la norma
+                const numeroNorma = record.numero_norma;
+        
+                // Comprobar si hay un número de norma
+                if (numeroNorma) {
+                    const partesNorma = numeroNorma.split('-');
+                    
+                    // Comprobar si hay una parte con el año
+                    if (partesNorma.length > 1) {
+                        const digitos = partesNorma[1];
+                        añoNorma = `20${digitos}`;
+                    }
+                }
+        console.log(añoNorma)
+                // Verificar si observaciones es "sin sanción" y añoNorma es '2024'
+                if (observaciones === "sin sanción" && añoNorma === '2024') {
+                    // Mostrar "en tratamiento" si se cumplen ambas condiciones
+                    return <button onClick={handleClick}>en tratamiento</button>;
+                } else {
+                    // Si no se cumplen las condiciones, mostrar observaciones normales
+                    return observaciones;
+                }
+            },
+            className: styles.observaciones
+        }
+        
    ];
 
     return (
@@ -188,7 +219,7 @@ function Proyectos() {
                                         <option value="">Por tipo</option>
                                         <option value="Ordenanza">Ordenanzas</option>
                                         <option value="Declaración">Declaraciones</option>
-                                        <option value="Comunicación">Comunicaciones</option>
+                                        <option value="Comunicacion">Comunicaciones</option>
                                         <option value="Resolución">Resoluciones</option>
                                     </select>
                                     <div className={styles.checkbox}>
