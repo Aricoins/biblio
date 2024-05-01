@@ -223,7 +223,7 @@ function Proyectos() {
 
                         {/* Resultados */}
                         {haRealizadoBusqueda ? (
-                            <div>
+                            <div className={styles.table }>
                                 <Table
                                     dataSource={datosPaginaActual}
                                     columns={columns}

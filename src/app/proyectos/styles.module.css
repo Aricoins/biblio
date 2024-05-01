@@ -63,9 +63,8 @@ height: 33px;
   
 }
 .tabla{
-  width: 100%;
-  margin: auto;
-  margin-bottom: 20%;  
+  width: 80%;
+  margin-bottom: 60%;  
   box-sizing: border-box;
   border-collapse: collapse;
   border: 1px solid black;

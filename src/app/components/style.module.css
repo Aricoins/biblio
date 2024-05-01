@@ -36,6 +36,7 @@
   padding: 1%;
 
   }
+
 .content {
   background-color: rgb(144, 35, 35);
   color: rgb(249, 245, 245);
@@ -156,6 +157,55 @@ font-weight: 600;
     height: 60%;
     margin-bottom: 1%;
     font-family: 'Roboto', sans-serif;
+  }
+
+  @media (max-width: 768px) {
+  
+      /* Estilos para la visibilidad del componente */
+      .block {
+      width: 90%;
+      justify-content: center;
+    }
+  
+    .table {
+      width: 100%;
+      font-weight: 400;
+      color: #070000;
+      background-color: #eae7e7;
+      border-collapse: collapse;
+      border: 1px solid #180101;
+      font-size: xx-small;
+      height: 60%;
+      margin-bottom: 1%;
+      font-family: 'Roboto', sans-serif;
+    }
+  
+    .content {
+    width: 100%;
+    }
+    
+    .input {
+      width: 90%;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      border: 1px solid #000;
+      color: #000;
+      padding: 0.40rem;
+      border-radius: 0.25rem;
+    }
+  
+    .botones{
+    display: grid;
+    grid-template-columns: repeat(50, 1fr );
+    justify-content: center;
+  
+  }
+  .inputsydata{
+      display: flex;
+    flex-direction: column;
+    
+  }
+  
   }
 
 .tableHeader1 {
