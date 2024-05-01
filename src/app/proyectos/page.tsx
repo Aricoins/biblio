@@ -35,7 +35,6 @@ function Proyectos() {
     const [filtroTipo, setFiltroTipo] = useState('');
     const [filtroAprobado, setFiltroAprobado] = useState(false);
     const [resultados, setResultados] = useState<Proyecto[]>([]);
-    const [loading, setLoading] = useState(true);
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
     const [datosCargados, setDatosCargados] = useState(false);
@@ -87,7 +86,6 @@ function Proyectos() {
             const numeroStr = proyecto.numero_proyecto.toString();
             const tipoLower = proyecto.tipo_proyecto.toLowerCase();
             const autorStr = proyecto.autor.join(' ').toLowerCase(); // Convertir autores a una cadena
-
             const numeroExacto = numero !== '' && numeroStr === numero;
             const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
             const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
@@ -106,9 +104,8 @@ function Proyectos() {
 
         setResultados(filteredProyectos.slice(0, 5));
     };
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        // Handle button click event
-        // You can call `window.scrollTo` here if that's what you need to do
         window.scrollTo({
             top: 50,
             behavior: 'smooth',
@@ -132,19 +129,6 @@ function Proyectos() {
                     if (partesNorma.length > 1) {
                         const digitos = partesNorma[1];
                         añoNorma = `20${digitos}`;
-                    }
-
-                    if (record.tipo_norma === 'ordenanza') {
-                        record.tipo_norma = "ordenanzas";
-                    }
-                    if (record.tipo_norma === 'declaración') {
-                        record.tipo_norma = "declaraciones";
-                    }
-                    if (record.tipo_norma === 'comunicación') {
-                        record.tipo_norma = "comunicaciones";
-                    }
-                    if (record.tipo_norma === 'resolución') {
-                        record.tipo_norma = "resoluciones";
                     }
 
                     const tipoNorma = record.tipo_norma.toLowerCase();
@@ -171,69 +155,75 @@ function Proyectos() {
    ];
 
     return (
-        (!loading) ? <Spin style={{ margin: "auto", marginTop: "40%" }} /> :
-            <div className={styles.container} data-aos="fade-up">
-                <>
-                    <div onClick={() => setVer(!ver)}>
-                        <h2 className={styles.hdos}>
-                            Buscador General 🔍 | 2003-2024
-                        </h2>
+        <div className={styles.container} data-aos="fade-up">
+            <>
+                <div onClick={() => setVer(!ver)}>
+                    <h2 className={styles.hdos}>
+                        Buscador General 🔍 | 2003-2024
+                    </h2>
+                </div>
+
+                {(ver) && (
+                    <div style={{ margin: "auto", width: "100%" }}>
+                                <div className={styles.inputs}>
+                                    <Input.Search
+                                        placeholder="Por número..."
+                                        value={busquedaNumero}
+                                        onChange={handleBusquedaNumeroChange}
+                                        style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                    />
+                                    <Input.Search
+                                        placeholder="Por palabra..."
+                                        value={busquedaPalabra}
+                                        onChange={handleBusquedaPalabraChange}
+                                        style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                    />
+                                    <Input.Search
+                                        placeholder="Por autor..."
+                                        value={busquedaAutor}
+                                        onChange={handleBusquedaAutorChange}
+                                        style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                                    />
+                                    <select onChange={handleFiltroTipoChange} className={styles.sele}>
+                                        <option value="">Por tipo</option>
+                                        <option value="Ordenanza">Ordenanzas</option>
+                                        <option value="Declaración">Declaraciones</option>
+                                        <option value="Comunicación">Comunicaciones</option>
+                                        <option value="Resolución">Resoluciones</option>
+                                    </select>
+                                    <div className={styles.checkbox}>
+                                        <Checkbox
+                                            onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
+                                        >
+                                            Sólo aprobados
+                                        </Checkbox>
+                                    </div>
+                                </div>
+
+                                {/* Resultados */}
+                                {haRealizadoBusqueda ? (
+                               
+                                    <Table
+                                        dataSource={resultados}
+                                        columns={columns}
+                                        pagination={false}
+                                        rowKey="id"
+                                        className={styles.table}
+                                    />
+                                )
+                            
+                                : (
+                                    // Mostrar Spinner si los datos no se han cargado
+                                    <Spin  className={styles.spin} > esperando búsqueda... </Spin>
+                                )
+                            }
+
+                        
                     </div>
 
-                    {(ver) && (
-                        <div style={{ margin: "auto", width: "100%" }}>
-                            <div className={styles.inputs}>
-                                <Input.Search
-                                    placeholder="Por número..."
-                                    value={busquedaNumero}
-                                    onChange={handleBusquedaNumeroChange}
-                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                                />
-                                <Input.Search
-                                    placeholder="Por palabra..."
-                                    value={busquedaPalabra}
-                                    onChange={handleBusquedaPalabraChange}
-                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                                />
-                                <Input.Search
-                                    placeholder="Por autor..."
-                                    value={busquedaAutor}
-                                    onChange={handleBusquedaAutorChange}
-                                    style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                                />
-                                <select onChange={handleFiltroTipoChange} className={styles.sele}>
-                                    <option value="">Por tipo</option>
-                                    <option value="Ordenanza">Ordenanzas</option>
-                                    <option value="Declaración">Declaraciones</option>
-                                    <option value="Comunicación">Comunicaciones</option>
-                                    <option value="Resolución">Resoluciones</option>
-                                </select>
-                                <div className={styles.checkbox}>
-                                    <Checkbox
-                                        onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
-                                    >
-                                        Aprobado
-                                    </Checkbox>
-                                </div>
-                            </div>
-                            {(resultados.length === 0 && haRealizadoBusqueda) ? (
-                                <h4 className={styles.hcuatro}>
-                                    No se encontraron resultados. Intente con otros términos.
-                                </h4>
-                            ) : (
-                                <Table
-                                    dataSource={resultados}
-                                    columns={columns}
-                                    pagination={false}
-                                    rowKey="id"
-                                    className={styles.table}
-                                    style={{fontSize: "xx-small", backgroundColor: "red"}}
-                                />
-                            )}
-                        </div>
-                    )}
-                </>
-            </div>
+                )}
+            </>
+        </div>
     );
 }
 

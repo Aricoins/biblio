@@ -19,7 +19,7 @@
 }
 .navFootImage {
   width: 20%;
-  height: 100%;
+  height: 60%;
   margin-top: 1%;
 }
 
@@ -40,7 +40,7 @@
   flex-direction: row;
    justify-content: space-between;
    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 100%;
+  font-size: 70%;
 }
 
 .item {
@@ -86,20 +86,21 @@ color: black
     font-size: x-small;
     }
   .navFootImage {
-    width: 30%;
+    width: 20%;
     height: 60%;
     margin: auto;
   }}
 @media (max-width: 700px){
   .navFoot {
-    font-size: xx-small;
+    font-size: small;
     }
   .navFootImage {
     width: 20%;
-    height: 40%;
-    margin-top: 3%;
+    height: 60%;
+    margin-top: 2%;
 
   }
+  
 }
 @media (max-width: 450px){
   .navFoot {

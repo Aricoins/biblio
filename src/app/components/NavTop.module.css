@@ -80,7 +80,7 @@ border: 1px solid black
    @media (max-width: 1100px) {
     .navTopImage {
       height: 60%;
-width: 22%;
+      width: 18%;
       margin: auto 20px;    }
   }
   
@@ -91,7 +91,7 @@ width: 22%;
   }
  .navTopImage {
     width: 20%;
-    height: 60%;
+    height: 80%;
   }
 
 }
