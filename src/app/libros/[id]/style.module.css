@@ -1,5 +1,5 @@
 .container {
-    width: 90%;
+    width: 100%;
     justify-content: center;
     background-color: #1a024d;
     border: 1px solid #c4c4c4;
@@ -7,9 +7,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: row;
-    margin:  5% 5% 5% 3%;
+    margin: auto;
     padding: 3%;
-    
 }
 
 
