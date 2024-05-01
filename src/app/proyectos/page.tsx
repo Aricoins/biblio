@@ -52,7 +52,7 @@ function Proyectos() {
     }, [ver, datosCargados]);
 
     // Función para manejar los cambios de página
-    const handlePageChange = (page, size) => {
+    const handlePageChange = (page: number, size: number) => {
         setCurrentPage(page);
         setPageSize(size);
     };

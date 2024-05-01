@@ -25,16 +25,15 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
      
+<div>
 
           <NavTop />
          {children}
          <NavFoot />
    
-
+         </div>
  
    
-    </html>
-  )
+     )
 }
