@@ -214,7 +214,11 @@ function Proyectos() {
                             
                                 : (
                                     // Mostrar Spinner si los datos no se han cargado
-                                    <Spin  className={styles.spin} > esperando búsqueda... </Spin>
+                                    <div className={styles.spinContainer} >
+                                    <Spin  size="large" className="h-16 w-16 text-gray-900/50" > 
+                                    <p className={styles.spinText} > ...esperando su búsqueda </p>
+                                    </Spin>
+                                    </div>
                                 )
                             }
 
