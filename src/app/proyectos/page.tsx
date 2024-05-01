@@ -170,11 +170,9 @@ function Proyectos() {
                         añoNorma = `20${digitos}`;
                     }
                 }
-        console.log(añoNorma)
-                // Verificar si observaciones es "sin sanción" y añoNorma es '2024'
-                if (observaciones === "sin sanción" && añoNorma === '2024') {
+                if (observaciones === "sin sanción" ) {
                     // Mostrar "en tratamiento" si se cumplen ambas condiciones
-                    return <button onClick={handleClick}>en tratamiento</button>;
+                    return <button onClick={handleClick}>Buscar entre los expedientes no sancionados</button>;
                 } else {
                     // Si no se cumplen las condiciones, mostrar observaciones normales
                     return observaciones;
