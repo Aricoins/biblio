@@ -141,14 +141,20 @@ function Proyectos() {
                         const digitos = partesNorma[1];
                         añoNorma = `20${digitos}`;
                     }
-
                     let tipoNorma = record.tipo_norma.toLowerCase();
-                    if (tipoNorma = "comunicacion") { tipoNorma = "comunicaciones"; }
-                    if (tipoNorma = "resolución") { tipoNorma = "resoluciones"; }
-                    if (tipoNorma = "declaración") { tipoNorma = "declaraciones"; }
-                    if (tipoNorma = "ordenanza") { tipoNorma = "ordenanzas"; }
-                    const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
 
+                    if (tipoNorma === "comunicacion") {
+                        tipoNorma = "comunicaciones";
+                    } else if (tipoNorma === "resolución") {
+                        tipoNorma = "resoluciones";
+                    } else if (tipoNorma === "declaración") {
+                        tipoNorma = "declaraciones";
+                    } else if (tipoNorma === "ordenanza") {
+                        tipoNorma = "ordenanzas";
+                    }
+                    
+                    const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
+                    
                     return (
                         <Link href={filePath} target="_blank" rel="noopener noreferrer">
                             {numeroNorma}
