@@ -122,6 +122,26 @@ function Proyectos() {
             behavior: 'smooth',
         });
     };
+    const downloadFile = async (filePath: string) => {
+        try {
+            const response = await fetch(filePath);
+            if (response.ok) {
+                // Si la respuesta es exitosa, abre la URL del archivo en una nueva ventana o pestaña
+                window.open(filePath, '_blank');
+            } else if (response.status === 404) {
+                // Si el error es 404, muestra un alert
+                alert('El archivo no se encuentra disponible');
+            } else {
+                // Maneja otros tipos de errores si es necesario
+                alert('Error al descargar el archivo.');
+            }
+        } catch (error) {
+            console.error('Error en la descarga:', error);
+            alert('Error al descargar el archivo.');
+        }
+    };
+
+
 
     const columns = [
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
@@ -154,16 +174,17 @@ function Proyectos() {
                     }
                     
                     const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
-                    
+
                     return (
-                        <Link href={filePath} target="_blank" rel="noopener noreferrer">
+                        <button onClick={() => downloadFile(filePath)}>
                             {numeroNorma}
-                        </Link>
+                        </button>
                     );
                 } else {
                     return '';
                 }
-            }, className: styles.norma
+            },
+            className: styles.norma
         },
         {
             title: 'Observaciones',
