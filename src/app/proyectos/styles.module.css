@@ -14,13 +14,13 @@
     border-radius: 25px;
     border: black 2px solid;
     transition: 1s;
-
+margin: 3%;
 
   }
   .hdos:hover {
     background-color: #f7f8fa;
     color: rgb(255, 87, 51);
-    border: rgb(255, 87, 51) 1px solid;
+    border: rgb(255, 87, 51) 2px solid;
     
   }
   @media (max-width: 768px) {
@@ -152,11 +152,12 @@ border: 1px solid black;
 }
 
   .sele{
-    width: 100%;
+    width: 50%;
     justify-content: center;
     align-items: last baseline;
     border-radius: 20px;
   }
+  
 .check{
   padding: 10%;
   margin: 15%;
