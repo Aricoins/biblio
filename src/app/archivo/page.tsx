@@ -55,11 +55,6 @@ useEffect(() => {
     </div>
  
    </div>
-   <div  className={styles.endevdiv}>
-  <span className={styles.endev}> En desarrollo | RG-IC-AGR 
-  <Link href="mailto:digestoconcejo@gmail.com">digestobariloche@gmail.com</Link> 
-  </span>
-</div>
 <NavFoot />
 
 
