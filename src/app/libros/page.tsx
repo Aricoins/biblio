@@ -83,7 +83,6 @@ const Libros: FC = () => {
                     {/* Paginación */}
                     {totalItems > 0 && ( 
                       <div>
-                      <p style={{backgroundColor: "red", width: "500px"}}>hola</p>
                       <Pagination
                       current={currentPage}
                       
