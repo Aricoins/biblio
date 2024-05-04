@@ -82,7 +82,7 @@ const Libros: FC = () => {
 
                     {/* Paginación */}
                     {totalItems > 0 && ( 
-                      <div>
+                      <div style={{justifyContent:"center"}}>
                       <Pagination
                       current={currentPage}
                       
