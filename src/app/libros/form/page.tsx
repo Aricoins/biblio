@@ -1,4 +1,3 @@
-
 'use client'
 import React, { useState, useEffect, FC } from 'react';
 import { CldUploadButton } from 'next-cloudinary';
@@ -10,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import NavFoot from '@/app/components/NavFoot';
 import NavTop from '@/app/components/NavTop';
 
-
+import styles from './style.module.css'; // Importar el archivo CSS Modules correspondiente
 
 interface Form {
   titulo: string;
@@ -38,7 +37,6 @@ const validation = (form: Form, setErrors: React.Dispatch<React.SetStateAction<E
   };
   setErrors(newErrors);
 };
-
 
 const CrearLibro: FC = () => {
     const router = useRouter();
@@ -72,7 +70,6 @@ const CrearLibro: FC = () => {
     setFormInteracted(true);
   };
   
-
 
   const handleReviewChange = (newReview: { property: string; value: any }) => {
     const property = newReview.property;
@@ -176,15 +173,14 @@ console.log(errors, 'errors')
 return (
     <>
     <NavTop/>
-   <div className='flex flex-col sm:flex-row gap-10'>
-    <div className='flex-1 p-1 bg-gray-600 mx-10 rounded-md 
-    shadow-md text-gray-100'>
-    <div className='p-20 bg-gray-200 rounded-md shadow-md items-center gap-4 mb-20 text-gray-100'>
-       <h1 data-aos='flip-right' className='text-gray-300 text-center text-9x1 p-20'>
+   <div className={styles.flexContainer}>
+    <div className={styles.flexItem}>
+    <div className={styles.formContainer}>
+       <h1 data-aos='flip-right' className={styles.formTitle}>
         Agregar Libro
         </h1>
-          <form onSubmit={handleFormSubmit} className='grid justify-items-center content-evenly gap-y-40'>
-           <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
+          <form onSubmit={handleFormSubmit} className={styles.formGrid}>
+           <div data-aos='flip-right' className={styles.formGroup}>
              <label htmlFor='titulo'>Título:</label> 
              <input
                 name='titulo'
@@ -193,11 +189,11 @@ return (
                 placeholder='Ingrese el título...'
                 value={form.titulo}
                 onChange={handleChange}
-                className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
+                className={styles.formInput}
               />  
             </div>
 
-            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
+            <div data-aos='flip-right' className={styles.formGroup}>
               <label htmlFor='autor'>Autor:</label> 
               <input
                  name='autor'
@@ -206,12 +202,12 @@ return (
                  placeholder='Ingrese el nombre de la autor...'
                  value={form.autor}
                  onChange={handleChange}
-                 className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
+                 className={styles.formInput}
                />  
              </div>
-            <div data-aos='flip-right' className='flex justify-center w-full'>
+            <div data-aos='flip-right' className={styles.formGroup}>
               <CldUploadButton 
-                className='w-full border-blue-500 text-normal rounded border-2 p-8 cursor-pointer transition duration-30 bg-blue-500 hover:text-white hover:border-transparent'
+                className={styles.uploadButton}
                 uploadPreset='zwtk1tj5'
                 onUpload={handleImageUpload}
               >
@@ -219,18 +215,18 @@ return (
               </CldUploadButton>
             </div>
             {form.imagen && (
-              <div className='flex justify-center w-full'>
+              <div className={styles.imageContainer}>
                 <Image 
                   src={form.imagen}
                   alt='imagen' 
                   width={200}
                   height={200}
-                  className='w-60 h-auto transition-transform rounded-2xl hover:scale-110' 
+                  className={styles.image}
                   data-aos='flip-right' 
                 />
               </div>
             )}
-            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
+            <div data-aos='flip-right' className={styles.formGroup}>
               <label htmlFor='decla'>Declaración de Interés:</label>
               <input
                 name='decla'
@@ -239,47 +235,45 @@ return (
                 placeholder='Ingrese el número de declaración...'
                 value={form.decla}
                 onChange={handleChange}
-                className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
+                className={styles.formInput}
               />
             </div>
-            <div data-aos='flip-right' className='flex flex-col items-center gap-2 w-full'>
-  <label htmlFor='resenia'>Reseña:</label>
-  <textarea
-    name='resenia'
-    id='resenia'
-    placeholder='Ingrese la reseña...'
-    value={form.resenia}
-    onChange={handleChange}
-    className='m-1 text-2xl text-black p-2 w-full border-gray-500 rounded'
-  />
-</div>
+            <div data-aos='flip-right' className={styles.formGroup}>
+              <label htmlFor='resenia'>Reseña:</label>
+              <textarea
+                name='resenia'
+                id='resenia'
+                placeholder='Ingrese la reseña...'
+                value={form.resenia}
+                onChange={handleChange}
+                className={styles.formTextArea}
+              />
+            </div>
 
-            <div data-aos='flip-right' className='bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full'>
+            <div data-aos='flip-right' className={styles.submitButtonContainer}>
             <button 
-  type='submit'
-  disabled={form.titulo === ""  || Object.values(errors).some((error) => error !== '')}
-  className='border-gray-500 w-full rounded'
->
-  {!form.titulo || Object.values(errors).some((error) => error !== '') ? 'Revise los errores antes de crear el libro' : 'Crear Libro'}
-</button>
+              type='submit'
+              disabled={form.titulo === ""  || Object.values(errors).some((error) => error !== '')}
+              className={styles.submitButton}
+            >
+              {!form.titulo || Object.values(errors).some((error) => error !== '') ? 'Revise los datos antes de crear el libro' : 'Crear Libro'}
+            </button>
             </div>
           </form>
         </div>
       
       </div>
-      <div className='flex-1 p-4 bg-white opacity-80 rounded-md shadow-md text-white'>
-<div className='fixed top-20 h-full w-full p-12 text-sm text-k md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
-  {/* Sidebar content */}
+      <div className={styles.flexItem}>
+<div className={styles.sideContent}>
   {formInteracted ? (
     Object.values(errors).some((error) => error !== '') ? (
       <div>
         <p>Validación de Datos:</p>
-        <ul className='sticky top-12 h-auto w-full '>
+        <ul className={styles.errorList}>
           {Object.entries(errors).map(([key, value]) => (
-            <li className='p-5' key={key}>
-              <span className=' rounded-md shadow-md '>
-                {value ? '❌ ' + value : '✅ ' + key.charAt(0).toUpperCase() + key.slice(1) + ' es válido'}
-              </span>
+            <li className={styles.errorListItem} key={key}>
+              <span className={styles.errorIcon}>{value ? '❌' : '✅'}</span>
+              <span className={styles.errorText}>{value ? value : key.charAt(0).toUpperCase() + key.slice(1) + ' es válido'}</span>
             </li>
           ))}
         </ul>
@@ -288,32 +282,25 @@ return (
       <div >
         <ul>
           {Object.entries(errors).map(([key, value]) => (
-            <li className='p-5' key={key}>
-              <span className='text-gray-100'>✅ {key.charAt(0).toUpperCase() + key.slice(1)} ha sido validado </span>
+            <li className={styles.errorListItem} key={key}>
+              <span className={styles.successIcon}>✅</span>
+              <span className={styles.successText}>{key.charAt(0).toUpperCase() + key.slice(1)} ha sido validado</span>
             </li>
           ))}
         </ul>
-        <div className='text-gray-100 p-5 text-sm rounded-full'>
+        <div className={styles.successMessage}>
           ✅ <b>El libro ya puede ser cargado.</b>
         </div>
       </div>
     )
   ) : (
-    <div className='fixed top-20 h-full p-12 text-lg text-white md:tw-1/2 tw-1/4 mx-auto bg-black opacity-80 rounded-md shadow-md'>
+    <div className={styles.requirementsMessage}>
       <p>Requerimientos:</p>
       <ul>
-        <li className='p-5 '>
-          <span className='text-blue-200 '>Título:</span> ingrese el título completo del libro.
-        </li>
-        <li className='p-5 '>
-          <span className='text-blue-200'>Imagen:</span> agregue una imagen de la portada.
-        </li>
-        <li className='p-5 '>
-          <span className='text-blue-200'>Autor:</span> ingrese el nombre del autor del libro.
-        </li>
-        <li className='p-5 '>
-          <span className='text-blue-200'>Delcaración: </span> ingrese el número de declaración del libro.
-        </li>
+        <li>Título: ingrese el título completo del libro.</li>
+        <li>Imagen: agregue una imagen de la portada.</li>
+        <li>Autor: ingrese el nombre del autor del libro.</li>
+        <li>Declaración: ingrese el número de declaración del libro.</li>
       </ul>
     </div>
   )}
@@ -327,204 +314,3 @@ return (
   
   };
   export default CrearLibro;
-
-
-
-  
-
-//  return (
-//   <>
-//     <div className="flex flex-col sm:flex-row justify-center bg-gray-500 w-full mb-36">
-      
-//       <div className="m-6  mx-4 w-auto sm:mx-10 sm:w-2/3 p-4 bg-black rounded-md shadow-md items-center gap-5 mb-50 text-gray-300 ">
-//         <h1 data-aos="flip-right" className="text-2xl text-gray-300 p-20 text-center"> Add New Product</h1>
-//         <form onSubmit={handleFormSubmit} className="grid justify-items-center content-evenly gap-y-20">
-//          <div data-aos="flip-right" className='flex flex-col items-center gap-2 w-full'>
-//            <label htmlFor="model">Name model:</label> 
-//            <input
-//               name="model"
-//               type="text"
-//               id="model"
-//               placeholder='Enter a Name Model...'
-//               value={form.model}
-//               onChange={handleChange}
-//               className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
-//             />  
-//           </div>
-//           <div data-aos="flip-right" className='flex justify-center w-full'>
-//             <CldUploadButton 
-//               className='w-full border-blue-500 text-normal rounded border-2 p-8 cursor-pointer transition duration-300 hover:bg-blue-500 hover:text-white hover:border-transparent'
-//               uploadPreset="zwtk1tj5"
-//               onUpload={handleImageUpload}
-//             >
-//               Upload Image
-//             </CldUploadButton>
-//           </div>
-//           {form.image && (
-//             <div className="flex justify-center w-full">
-//               <Image 
-//                 src={form.image}
-//                 alt='imagen' 
-//                 width={200}
-//                 height={200}
-//                 className="w-60 h-auto transition-transform rounded-2xl hover:scale-110" 
-//                 data-aos="flip-right" 
-//               />
-//             </div>
-//           )}
-//           <div data-aos="flip-right" className='flex flex-col items-center w-full'>
-//             <label htmlFor="category">Category:</label>
-//             <select
-//               name="category"
-//               id="category"
-       
-//               value={form.category}
-//               onChange={handleChange}
-//               className='text-3xl text-black w-full border-blue-500'  
-//             >
-//               <option value="All">All</option>
-//               <option value="Phones">Phones</option>
-//               <option value="Tablets">Tablets</option>
-//               <option value="Laptops">Laptops</option>
-//               <option value="Desktops">Desktops</option>
-//               <option value="Softwares">Softwares</option>
-//             </select>
-//           </div>
-//           <div data-aos="flip-right" className='flex flex-col items-center gap-2 w-full'>
-//             <label htmlFor="price">Price:</label>
-//             <input
-//               name="price"
-//               type="text"
-//               id="price"
-//               placeholder='Type a number for the Price...'
-//               value={form.price}
-//               onChange={handleChange}
-//               className='m-1 text-2xl text-black p-2 w-full  border-gray-500 rounded'
-//             />
-//           </div>
-          
-//  <div data-aos="flip-right" className='flex flex-col items-center gap-2 w-full'>
-//   <label htmlFor="key">Spec:</label>
-//   <input
-//     onChange={handleKeyChange}
-//     name="key"
-//     id="key"
-//     placeholder='Enter a specificification'
-//     value={key}
-//     className='m-1 text-2xl text-black p-2 w-full border-blue-500 rounded'
-//   />
-
-//   <label htmlFor="value">Desciption:</label>
-//   <input
-//     onChange={handleValueChange}
-//     name="value"
-//     id="value"
-//     placeholder='Enter description'
-//     value={value}
-//     className='m-1 text-2xl text-black p-2 w-full border-blue-500 rounded'
-//   />
-
-// <button  type="button" onClick={handleAddSpec} className='m-1 text-2xl text-gray-800 p-2 w-full border-blue-100 bg-blue-300 rounded'>
-//     Add Spec
-//   </button>
-// </div>
-
-// <div className='relative mx-auto text-left items-left self-left'>
-// {Object.keys(form.specs).length !== 0 ? (
-//   <>
-//   {form.image && (
-//             <div className="flex justify-center w-full">
-//               <Image 
-//                 src={form.image}
-//                 alt='imagen' 
-//                 width={20}
-//                 height={20}
-//                 className="w-60 h-auto transition-transform rounded-2xl hover:scale-110" 
-//                 data-aos="flip-right" 
-//               />
-//             </div>
-//           )}
-//     <div data-aos="flip-right" className='text-4xl items-left text-left p-3'>Specs:</div>
-//     {Object.entries(form.specs).map(([key, value], index) => (
-//       <div data-aos="flip-right" key={index} className='text-sm text-right justify-end text-gray-200 p-2 w-full border-blue-500 rounded'>
-//         <strong>{key}:</strong> {value}
-//       </div>
-//     ))}
-//   </>
-// ) : null}
-// </div>
-
-//    <div data-aos="flip-right" className="bg-blue-500 text-black p-10 justify-center rounded-md cursor-pointer transition duration-500 hover:bg-white hover:text-blue-500 w-full">
-//             <button 
-//               type="submit"
-//               disabled={ Object.values(errors).some((error) => error !== '')}
-//               className='border-gray-500 w-full rounded '
-//             >
-//               {!form.model || Object.values(errors).some((error) => error !== '') ? 'Cannot Submit - Fix Errors' : 'Add New Product'}
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//       <div className="w-full sm:w-2/4 mx-auto p-5 bg-gray-300 shadow-md text-black">
-//     {/* Columna lateral */}
-//     {formInteracted ? (
-//       Object.values(errors).some((error) => error !== '') ? (
-//         <div className="sticky top-20  h-full p-12 text-sm text-gray-400 md:tw-1/2 tw-1/4 mx-auto p-15 bg-black rounded-md shadow-md ">
-//          <p>Please correct the following requirements:</p>
-//           <ul className='sticky top-12 h-auto ' >
-//             {Object.entries(errors).map(([key, value]) => (
-//               <li className= "p-5" key={key}>
-//                 <span className=" rounded-md shadow-md "> {value ?  "❌ "  + value :  "✅ " + key.charAt(0).toUpperCase() + key.slice(1) + ' has been successfully validated' }  </span>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       ) : (
-//         <div className="sticky top-12  h-auto text-sm  md:tw-1/2 tw-1/4 mx-auto p-8 bg-black rounded-md shadow-md text-gray-400 ">
-
-//           <ul>
-//             {Object.entries(errors).map(([key, value]) => (
-//               <li className="p-5" key={key}>
-//                 <span className="text-gray-400">✅ {key.charAt(0).toUpperCase() + key.slice(1)} has been successfully validated </span>
-//               </li>
-//             ))}
-//           </ul> 
-//             <div className="text-gray-200 p-5  text-sm rounded-full "> ✅
-//            <b>Your product is ready to be loaded!</b></div>
-//           </div>
-//       )
-//     ) : (
-//       <div className="sticky top-20  h-auto text-base text-gray-400 md:tw-1/2 tw-1/4 mx-auto p-5 bg-black rounded-md shadow-md ">
-//         <p>Requirements:</p>
-//         <ul>
-//           <li className='p-5 '>
-//             <span className="text-blue-500 ">Name model:</span> enter a valid model name. 
-//           </li>
-//           <li className='p-5 '>
-//             <span className="text-blue-500">Image:</span> add an Image from multiple sources. 
-//           </li>
-//           <li className='p-5 '>
-//             <span className="text-blue-500">Category:</span> add a category for your created product.
-//           </li>
-//           <li className='p-5 '>
-//             <span className="text-blue-500">Price: </span> define the price of the product with a positive number.
-//           </li>
-//           <li className='p-5 '>  
-//             <span className="text-blue-500">Specs:</span> detail the Specifications of the created product
-//           </li>
-              
-//         </ul>
-
-//       </div>
-//     )}
-//       </div>
-
-        
-// </div>
-
-//   </>
-// );
-
-// };
-
-// export default CreateProduct

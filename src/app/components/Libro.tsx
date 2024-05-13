@@ -33,8 +33,7 @@ const Libro: FC<LibroProps> = ({ libro }) => {
             alt={libro.titulo}
             width={200}
             height={250}
-            
-          />
+                />
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.title}>{libro.titulo}</div>
