@@ -263,8 +263,9 @@ return (
         </div>
       
       </div>
-      <div className={styles.flexItem}>
+
 <div className={styles.sideContent}>
+
   {formInteracted ? (
     Object.values(errors).some((error) => error !== '') ? (
       <div>
@@ -279,7 +280,7 @@ return (
         </ul>
       </div>
     ) : (
-      <div >
+      <div className={styles.successMessage} >
         <ul>
           {Object.entries(errors).map(([key, value]) => (
             <li className={styles.errorListItem} key={key}>
@@ -288,7 +289,7 @@ return (
             </li>
           ))}
         </ul>
-        <div className={styles.successMessage}>
+        <div >
           ✅ <b>El libro ya puede ser cargado.</b>
         </div>
       </div>
@@ -306,7 +307,7 @@ return (
   )}
    </div>
     </div>
-    </div>
+
 <NavFoot/>
 
     </>
