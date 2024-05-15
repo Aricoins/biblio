@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2%;
+    margin-bottom: 5%;
     padding: 1%;
     cursor: pointer;
     background-color: rgb(255, 87, 51);
@@ -68,6 +69,7 @@ height: 33px;
   box-sizing: border-box;
   border-collapse: collapse;
   border: 1px solid black;
+  
 }
 
 .ant-table-row {
@@ -275,4 +277,5 @@ width: 40%;
 .spinText{
   text-align: center;
   font-size: 1.5rem;
+  color:rgba(153, 148, 146, 0.5)
 }

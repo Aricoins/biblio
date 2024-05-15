@@ -21,7 +21,7 @@ const Libros: FC = () => {
     const [data, setData] = useState<Libro[] | null>(null);
     const [search, setSearch] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize, setPageSize] = useState(5);
+    const [pageSize, setPageSize] = useState(6);
     const [paginatedData, setPaginatedData] = useState<Libro[] | null>(null);
     const [totalItems, setTotalItems] = useState(0);
 

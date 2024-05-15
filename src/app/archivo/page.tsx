@@ -26,6 +26,7 @@ useEffect(() => {
     <>
  <NavTop />
    <div  className={styles.container}>
+   <Proyectos />
     <div className={styles.h3}  >
     <div data-aos="fade-up" className={styles.component}>
        <ProyectosNoSancionados />
@@ -51,7 +52,7 @@ useEffect(() => {
         </div> 
       
     </div>
-    <Proyectos />
+
     </div>
  
    </div>

@@ -104,7 +104,7 @@ color: black
 }
 @media (max-width: 450px){
   .navFoot {
-    font-size: 7px;
+    font-size: x-small;
      }
   .navFootImage{
     width: 30%;

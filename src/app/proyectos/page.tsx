@@ -217,6 +217,8 @@ function Proyectos() {
 
                 {ver && (
                     <div style={{ margin: "auto", width: "100%" }}>
+                         
+                         <p className={styles.spinText}>Busque entre los proyectos ingresados desde 2003</p>
                         <div className={styles.inputs}>
                             <Input.Search
                                 placeholder="Por número..."
@@ -274,10 +276,8 @@ function Proyectos() {
                         ) : (
                             // Mostrar Spinner si los datos no se han cargado
                             <div className={styles.spinContainer}>
-                                <Spin size="large" className="h-16 w-16 text-gray-900/50">
-                                    <p className={styles.spinText}>...esperando su búsqueda</p>
-                                </Spin>
-                            </div>
+                            
+                             </div>
                         )}
                     </div>
                 )}

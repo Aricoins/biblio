@@ -49,7 +49,7 @@ if (año > "1900") {
           <h5 className={styles.author}>{libro.autor}</h5>
           {libro.decla ? (
           
-                <p className={styles.link}> Declaración {libro.decla}</p>
+                <p className={styles.declaLink}> Declaración {libro.decla}</p>
           
           ) : null}
         </div>

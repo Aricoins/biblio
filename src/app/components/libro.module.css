@@ -4,7 +4,9 @@
     width: 100%;
     background-color: rgba(251, 250, 252, 0.1);
     border-radius: 5%;
-    
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        
 
   }
   
@@ -15,7 +17,7 @@
     align-items: center;
     transition: transform 1s ease-in-out, filter 1s ease-in-out;
     justify-content: center;
-    border: #e2c983 2px solid;
+    box-shadow: #000 0px 0px 5px 1px;
   }
   
   .imageContainer:hover {
@@ -24,7 +26,8 @@
   
     position: relative;
     z-index:100 ;
-    box-shadow: #000 0px 0px 10px 5px;
+    box-shadow: #000 0px 0px 5px 1px;
+    
   }
   
   .infoContainer {
@@ -41,32 +44,41 @@
   
   .title {
     margin: 0.5rem;
-    font-size: 1rem;
+    font-size: medium;
     font-weight: bold;
     text-align: center;
     color: #374151;
     text-decoration: none;
     cursor: pointer;
     list-style: none;
-    font-size: x-small;
+    background-color: #000;
+    color: white;
+    border-radius: 5%;
+  font-weight: 100;
+  padding: 2%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
  
   
   }
   
   .author {
-    font-size: 0.5rem;
     text-align: center;
-    color: #4b5563;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 10px black; 
     text-decoration: none;
     margin-top: 0;
-   
+  font-size: small; 
+ 
+  
   }
   
   .declaLink {
     display: inline-flex;
    text-decoration: none;
     padding: 0.5rem 1rem;
-    font-size: 0.5rem;
+    
     font-weight: medium;
     text-align: center;
     color: #ffffff;
@@ -76,12 +88,13 @@
   }
   
   .declaLink:hover {
-    background-color: #051951;
+    background-color: #91a7e4;
         z-index: 100;
   }
   .link {
     text-decoration: none;
     color: #000;
+    font-size: xx-small;
   }
   .otros{
     width: 28%;
