@@ -17,6 +17,14 @@ interface LibroProps {
 
 const Libro: FC<LibroProps> = ({ libro }) => {
 
+const año = libro.decla
+console.log(año, "año")
+if (año > "1900") {
+ const  año = "2020"}
+ else {
+  const año = "2021"}
+
+  
 
 
 
@@ -33,16 +41,16 @@ const Libro: FC<LibroProps> = ({ libro }) => {
             alt={libro.titulo}
             width={200}
             height={250}
+            priority
                 />
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.title}>{libro.titulo}</div>
           <h5 className={styles.author}>{libro.autor}</h5>
           {libro.decla ? (
-            <Link  href= "/libros" className={styles.declaLink}>
-                <p> Declaración {libro.decla}-CM-23</p>
           
-            </Link>
+                <p className={styles.link}> Declaración {libro.decla}</p>
+          
           ) : null}
         </div>
       </div>

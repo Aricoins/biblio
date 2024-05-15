@@ -4,10 +4,12 @@ import {NextResponse, NextRequest} from 'next/server';
 export async function GET( req: NextRequest, res: NextResponse) {
     try {
 
-      const data = await sql`SELECT * FROM libros;`;
+      const data = await sql`SELECT * FROM "libros";`;
 const libros = data.rows;
      
-console.log(data.rows)
+console.log(libros, "libros api"
+
+)
       return NextResponse.json({ libros}, { status: 200 });
      
     } catch (error) {

@@ -40,7 +40,8 @@ const Libros: FC = () => {
     }, []);
 
     useEffect(() => {
-        if (data) {
+        console.log(data, "libros front")
+        if (data && Array.isArray(data)){
             // Filtra los libros basándose en la búsqueda
             const filteredData = data.filter(libro =>
                 libro.titulo.toLowerCase().includes(search.toLowerCase())

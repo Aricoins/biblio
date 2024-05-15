@@ -44,7 +44,8 @@ const NavFoot = () => {
       width={150}
       height={100}
       alt="logotipo"
-      className={styles.navFootImage}/>
+      className={styles.navFootImage}
+      priority/>
     </div>
   );
 };
