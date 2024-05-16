@@ -118,7 +118,7 @@ function Proyectos() {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         window.scrollTo({
-            top: 50,
+            top: 1000,
             behavior: 'smooth',
         });
     };

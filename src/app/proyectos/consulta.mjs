@@ -26,10 +26,12 @@ const extraccion = {
     },
 
     extraerTituloProyecto: function(parrafo) {
-           const regexTituloProyecto = /\d{3,4}\/\d{2}:\s*(["“”])([^"“”]+)\1/;
-            const coincidencia = regexTituloProyecto.exec(parrafo);
-            return coincidencia ? coincidencia[2] : '';
-        },
+        const regexTituloProyecto = /\d+\/\d+:\s*“([^“”]+)”/;
+
+        const coincidencia = regexTituloProyecto.exec(parrafo);
+        return coincidencia ? coincidencia[1] : '';
+    },
+    
 
     extraerTipoProyecto: function(parrafo) {
         const regexTipoNorma = /(O|C|D|R)-\d{2,4}-/;
@@ -188,7 +190,7 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        let contadorID = 0;
+        let contadorID = 5190;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
@@ -229,7 +231,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './proyectos.docx';
-const rutaArchivoJson = './proyectos3.json';
+const rutaArchivoDocx = './proyectos2.docx';
+const rutaArchivoJson = './proyectos4.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
