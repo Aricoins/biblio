@@ -87327,6 +87327,7 @@
     "numero_norma": "",
     "observaciones": "sin sanción"
   },
+
   {
     "id": 5190,
     "numero_proyecto": "1",
@@ -87427,7 +87428,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5196,
@@ -87444,7 +87445,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5197,
@@ -87461,7 +87462,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5198,
@@ -87478,7 +87479,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5199,
@@ -87529,7 +87530,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5202,
@@ -87546,14 +87547,14 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5203,
     "numero_proyecto": "14",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Tratamiento urgente del Concejo Deliberante de San Carlos de Bariloche de un proyecto de declaración que rechace en todos sus términos el DNU y la Ley Ómnibus presentada por el Ejecutivo Nacional",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejal Leandro Costa Brutten (IB)."
     ],
@@ -87561,7 +87562,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1109",
     "observaciones": ""
   },
@@ -87570,7 +87571,7 @@
     "numero_proyecto": "15",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica a Ejecutivo Nacional reclamo de trabajadores APN dado decreto 84/2023",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales: Roxana Ferreyra (Nos Une), Leandro Costa Brutten y Julieta Wallace (IB), Juan Pablo Ferrari, Natalia Almonacid y Silvio Barriga (JSRN)."
     ],
@@ -87578,7 +87579,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1110",
     "observaciones": ""
   },
@@ -87597,7 +87598,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5206,
@@ -87614,7 +87615,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5207,
@@ -87629,7 +87630,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5208,
@@ -87646,7 +87647,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5209,
@@ -87663,7 +87664,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5210,
@@ -87680,14 +87681,14 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5211,
     "numero_proyecto": "22",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica al Ejecutivo Nacional la importancia de sostener normas de Género y Diversidad",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejala Roxana Ferreyra (Nos Une)."
     ],
@@ -87695,7 +87696,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1111",
     "observaciones": ""
   },
@@ -87714,13 +87715,13 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5213,
     "numero_proyecto": "24",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "Se declara el estado de Emergencia pública en materia Económica, Financiera, Fiscal, de Servicios y Habitacional",
+    "titulo_proyecto": "",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendentes Municipal Walter Cortes."
@@ -87738,7 +87739,7 @@
     "numero_proyecto": "25",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica el rechazo a los ejercicios militares de Gran Bretaña en las Islas Malvinas",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Leandro Costa Brutten y Julieta Wallace (IB)."
     ],
@@ -87746,7 +87747,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1112",
     "observaciones": ""
   },
@@ -87755,7 +87756,7 @@
     "numero_proyecto": "26",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Comunicar que el CAB y el IB son pilares de la ciencia en Bariloche",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Leandro Costa Brutten y Julieta Wallace (IB)."
     ],
@@ -87763,7 +87764,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1113",
     "observaciones": ""
   },
@@ -87772,7 +87773,7 @@
     "numero_proyecto": "27",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica el repudio a la visita de David Cameron a las Islas Malvinas",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Leandro Costa Brutten y Julieta Wallace (IB)."
     ],
@@ -87780,7 +87781,7 @@
     "girado_a": "",
     "acta_fecha": "1186/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1114",
     "observaciones": ""
   },
@@ -87799,7 +87800,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5218,
@@ -87816,7 +87817,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5219,
@@ -87833,7 +87834,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5220,
@@ -87850,14 +87851,14 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5221,
     "numero_proyecto": "32",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Comunicar presentación de amparo colectivo contra Camuzzi Gas del Sur S.A",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Leandro Costa Brutten, Julieta Wallace (Incluyendo Bariloche)."
     ],
@@ -87865,7 +87866,7 @@
     "girado_a": "",
     "acta_fecha": null,
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1115",
     "observaciones": ""
   },
@@ -87874,7 +87875,7 @@
     "numero_proyecto": "33",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica apoyo al proyecto de ley Programa Compre Sin Iva",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejal  Leandro Costa Brutten (Incluyendo Bariloche)."
     ],
@@ -87882,7 +87883,7 @@
     "girado_a": "",
     "acta_fecha": "1187/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1116",
     "observaciones": ""
   },
@@ -87936,7 +87937,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5226,
@@ -88011,7 +88012,7 @@
     "numero_proyecto": "41",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica al Ejecutivo Nacional rechazo al cierre y despidos CDR y ANDIS",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejala Roxana Ferreyra (Nos Une)."
     ],
@@ -88019,7 +88020,7 @@
     "girado_a": "",
     "acta_fecha": "1187/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1117",
     "observaciones": ""
   },
@@ -88073,7 +88074,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5234,
@@ -88107,7 +88108,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5236,
@@ -88124,7 +88125,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5237,
@@ -88141,14 +88142,14 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5238,
     "numero_proyecto": "49",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica necesidad de creación de escuela secundaria en zona oeste",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejala Julieta Wallace (Incluyendo Bariloche) Iniciativa: Grupo de Vecinos Autoconvocados del Oeste de Bariloche."
     ],
@@ -88156,7 +88157,7 @@
     "girado_a": "",
     "acta_fecha": null,
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1118",
     "observaciones": ""
   },
@@ -88175,14 +88176,14 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5240,
     "numero_proyecto": "51",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica rechazo al cierre de las delegaciones del Ente Nacional de Comunicaciones en la provincia de Rio Negro",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Julieta Wallace, Leandro Costa Brutten (Incluyendo Bariloche) y Roxana Ferreyra (Nos Une)."
     ],
@@ -88190,7 +88191,7 @@
     "girado_a": "",
     "acta_fecha": "1188/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1119",
     "observaciones": ""
   },
@@ -88209,7 +88210,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5242,
@@ -88226,7 +88227,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5243,
@@ -88260,7 +88261,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5245,
@@ -88283,7 +88284,7 @@
     "id": 5246,
     "numero_proyecto": "57",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "Se crea Plan de Mejoramiento de Transitabilidad para Personas con Discapacidad Visua",
+    "titulo_proyecto": "Se crea Plan de Mejoramiento de Transitabilidad para Personas con Discapacidad Visual",
     "tipo_proyecto": "",
     "autor": [
       "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
@@ -88294,13 +88295,13 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5247,
     "numero_proyecto": "58",
     "anio_proyecto": "2024",
-    "titulo_proyecto": "Declarar de interés al Festival Federal por la Ciencia Argentina Elijo Crecer",
+    "titulo_proyecto": "",
     "tipo_proyecto": "declaración",
     "autor": [
       "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
@@ -88362,7 +88363,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5251,
@@ -88386,7 +88387,7 @@
     "numero_proyecto": "63",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica preocupación ante la falta de Plan Integral de Mantenimiento Invernal",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejala Julieta Wallace (Incluyendo Bariloche)."
     ],
@@ -88394,7 +88395,7 @@
     "girado_a": "",
     "acta_fecha": "1188/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1120",
     "observaciones": ""
   },
@@ -88413,7 +88414,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5254,
@@ -88430,7 +88431,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5255,
@@ -88464,7 +88465,7 @@
     "aprobado": false,
     "tipo_norma": "",
     "numero_norma": "",
-    "observaciones": "en tratamiento"
+    "observaciones": "sin sanción"
   },
   {
     "id": 5257,
@@ -88537,7 +88538,7 @@
     "numero_proyecto": "72",
     "anio_proyecto": "2024",
     "titulo_proyecto": "Se comunica preocupación sobre presupuesto de Universidades en Bariloche",
-    "tipo_proyecto": "comunicacion",
+    "tipo_proyecto": "comunicación",
     "autor": [
       "Concejales Julieta Wallace, Leandro Costa Brutten (IB), Gerardo Del Río, Maria Coronado, Tomas Hercigonja (PUL), Natalia Almonacid, Juan Pablo Ferrari y Silvio Barriga (JSRN), Roxana Ferreyra (Nos Une), Samanta Echenique (JxC) y Facundo Villalba (Primero Rio Negro)."
     ],
@@ -88545,8 +88546,229 @@
     "girado_a": "",
     "acta_fecha": "1188/24",
     "aprobado": true,
-    "tipo_norma": "comunicacion",
+    "tipo_norma": "comunicación",
     "numero_norma": "C-24-1121",
+    "observaciones": ""
+  },
+  {
+    "id": 5262,
+    "numero_proyecto": "73",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "Concejala Roxana Ferreyra (Nos Une)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "declaración",
+    "numero_norma": "D-24-2992",
+    "observaciones": ""
+  },
+  {
+    "id": 5263,
+    "numero_proyecto": "74",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara de interés municipal y comunitario certificación internacional perros de búsqueda AUI",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "Concejala Roxana Ferreyra (Nos Une)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "declaración",
+    "numero_norma": "D-24-2993",
+    "observaciones": ""
+  },
+  {
+    "id": 5264,
+    "numero_proyecto": "75",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": " Se comunica el rechazo y enérgico repudio al cierre de Télam",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "comunicación",
+    "numero_norma": "C-24-1122",
+    "observaciones": ""
+  },
+  {
+    "id": 5265,
+    "numero_proyecto": "76",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se presta acuerdo llamado licitación contratación agencia integral de marketing y medios. Emprotur",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Concejales Juan Pablo Ferrari (JSRN) y Facundo Villalba (Primero Río Negro)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3452",
+    "observaciones": ""
+  },
+  {
+    "id": 5266,
+    "numero_proyecto": "77",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica la necesidad de darle continuidad al trabajo del INTI en Bariloche",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejala Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "comunicación",
+    "numero_norma": "C-24-1123",
+    "observaciones": ""
+  },
+  {
+    "id": 5267,
+    "numero_proyecto": "78",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se modifica ordenanza 2375-CM-12. Tarifas Estacionamiento Medido",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "sin sanción"
+  },
+  {
+    "id": 5268,
+    "numero_proyecto": "79",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica el repudio al vaciamiento del programa nacional Primeros Años",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejales Leandro Costa Brutten y Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "comunicación",
+    "numero_norma": "C-24-1124",
+    "observaciones": ""
+  },
+  {
+    "id": 5269,
+    "numero_proyecto": "80",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Modifica artículo 4º inciso a) ordenanza 2017-CM-10",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Concejal Facundo Blanco Villalba (Primero Río Negro)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3453",
+    "observaciones": ""
+  },
+  {
+    "id": 5270,
+    "numero_proyecto": "81",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Regula bocas de expendio de alcohol. Modifica ordenanza 2548-CM-14",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "sin sanción"
+  },
+  {
+    "id": 5271,
+    "numero_proyecto": "82",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara área intangible a plazas, plazoletas y espacios verdes",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "sin sanción"
+  },
+  {
+    "id": 5272,
+    "numero_proyecto": "83",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Acepta renuncia. Integración Junta Electoral Municipal período 2024/2027",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Concejales Natalia Almonacid, Juan Pablo Ferrari, Laura Totonelli (JSRN), Gerardo Del Rio, Maria Coronado (PUL), Facundo Blanco Villalba (Primero Rio Negro) y Samanta Echenique (JxC)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3451",
+    "observaciones": ""
+  },
+  {
+    "id": 5273,
+    "numero_proyecto": "84",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se crea programa de visualización de artistas con discapacidad como trabajadores, hacedore y espectadores",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Roxana Ferreyra (Nos Une)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "sin sanción"
+  },
+  {
+    "id": 5274,
+    "numero_proyecto": "86",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica preocupación por caída de servicio eléctrico en la ciudad durante las nevadas",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejal Juan Pablo Ferrari (JSRN)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1189/24",
+    "aprobado": true,
+    "tipo_norma": "comunicación",
+    "numero_norma": "C-24-1125",
     "observaciones": ""
   }
 ]
