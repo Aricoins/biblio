@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentación del Software para la Webapp "Biblioteca y Archivo Graciela Di Biase"</title>
+
 </head>
 <body>
+    <title>Documentación del Software para la Webapp "Biblioteca y Archivo Graciela Di Biase"</title>
   <h1>Descripción General</h1>
   <p>"Biblioteca y Archivo Graciela Di Biase" es una aplicación web desarrollada con Next.js. Esta aplicación permite la gestión y visualización de una colección de libros y documentos archivísticos. Utiliza varias tecnologías y bibliotecas para proporcionar una interfaz de usuario interactiva y funcionalidades de backend robustas.</p>
 
