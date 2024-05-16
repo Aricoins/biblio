@@ -47,7 +47,7 @@ function Proyectos() {
             setProyectos(data);
             setResultados(data);
             setDatosCargados(true);
-            Aos.init({ duration: 3000 });
+            Aos.init({ duration: 300 });
         }
     }, [ver, datosCargados]);
 
