@@ -31,12 +31,13 @@ function ExpedientesResoluciones() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState('');
   const [projectSearch, setProjectSearch] = useState('');
-
   const [visibleRows, setVisibleRows] = useState(1);
   const [showLessButton, setShowLessButton] = useState(false);
   const [isComponentVisible, setIsComponentVisible] = useState(false);
   const [sortOrder, setSortOrder] = useState('asc'); // Cambiado a 'asc'
-
+  const [startYear, setStartYear] = useState('');
+  const [endYear, setEndYear] = useState('');
+  
   useEffect(() => {
     axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv')
@@ -54,15 +55,17 @@ function ExpedientesResoluciones() {
 
 
   const filteredData = data.filter((row) => {
-    const numeroProyecto = row['Numero'];
+    const year = parseInt(row['Año']);
+    const isWithinYearRange = (startYear === '' || year >= parseInt(startYear)) &&
+                              (endYear === '' || year <= parseInt(endYear));
     const searchTerm = diacritics.remove(search.toLowerCase());
-    const proyectoLowerCase = numeroProyecto.toLowerCase();
-
     return (
+      isWithinYearRange &&
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || numeroProyecto === projectSearch)
+      (projectSearch === '' || row['Numero'] === projectSearch)
     );
   });
+  
 
 
 
@@ -161,7 +164,20 @@ function ExpedientesResoluciones() {
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-          
+            <input
+      type="number"
+      value={startYear}
+      onChange={(e) => setStartYear(e.target.value)}
+      placeholder="Año inicial"
+      className={`${styles.input} ${styles.yearInput}`}
+    />
+    <input
+      type="number"
+      value={endYear}
+      onChange={(e) => setEndYear(e.target.value)}
+      placeholder="Año final"
+      className={`${styles.input} ${styles.yearInput}`}
+    />
           <table
             data-aos="fade-up"
             data-aos-duration="300"
