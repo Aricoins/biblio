@@ -34,19 +34,20 @@
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 1%;
+  
 
   }
 
 .content {
-  background-color: rgb(144, 35, 35);
+  background-color: rgba(195, 15, 201, 0.6);
   color: rgb(249, 245, 245);
   border: 1px solid rgb(41, 12, 12);
 }
   /* Estilos para la visibilidad del componente */
   .block {
     display: block; 
-     width: 94%;
-    justify-content: flex-start;
+     width: 95%;
+    justify-content: flex;
     justify-self: center;
     font-family: 'Roboto', sans-serif;
     margin-left: 2%;
@@ -54,7 +55,20 @@
     box-shadow: 0px 0px 3px  #000;
     padding: 1%;
   }
-  
+  .filtroAño{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: rgb(255, 87, 51);
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-small;
+    font-weight: 800;
+    cursor: pointer; 
+    border: black 1px solid;
+  }
   /* Estilos para los input de búsqueda */
   .input {
     width: 100%;
@@ -76,7 +90,7 @@
 
   display: flex;
   justify-content: stretch;
-  gap: 10px;
+  gap: 100px;
 }
 .escaneados{
 margin-left: auto;
@@ -357,4 +371,7 @@ font-weight: 600;
   .hoverBgGray:hover {
     background-color: #606060;
   }
-  
+  .yearInput{
+    width: 40%;
+    margin-left: 1px;
+  }

@@ -6,8 +6,9 @@ import Link from 'next/link';
 import styles from './style.module.css';
 import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
-import { MdExpandMore } from "react-icons/md";
+import { MdExpandMore, MdSportsRugby } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+import {Modal} from 'antd';
 
 const sortData = (data, order, isSearch) => {
   return data.sort((a, b) => {
@@ -37,8 +38,9 @@ function ExpedientesResoluciones() {
   const [sortOrder, setSortOrder] = useState('asc'); // Cambiado a 'asc'
   const [startYear, setStartYear] = useState('');
   const [endYear, setEndYear] = useState('');
+ const [filtroAño, setFiltroAño] = useState(false); 
   
-  useEffect(() => {
+ useEffect(() => {
     axios
       .get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv')
       .then((response) => {
@@ -107,19 +109,16 @@ function ExpedientesResoluciones() {
           (row) => row['Numero'].split('\t')[1] === projectSearch
         );
   
-        if (matchingProjects.length === 0) {
+        if (filteredData.length === 0) {
           Swal.fire({
-            icon:  'info',
-            title: 'Atención',
-            text: `No se encuentra el Expediente  ${projectSearch}.`,
-            footer: 'Ingrese otro número o busque entre los Expedientes Sancionados.',
-            customClass: {
-              title: `${styles.alert}`, 
-              content: `${styles.content}`, 
-            },
-            background: "#570c7a",
-            color: "white",
-            borderRadius: "50%",
+            icon: "info",
+          html: `
+    No encontramos Resoluciones del Concejo con "<b> ${projectSearch ? projectSearch : search} </b>."
+    <br> Pruebe con otra búsqueda
+  `,
+  showCloseButton: true,
+  confirmButtonColor: "#ff5733",
+  
           }).then(() => {
             setProjectSearch('');
           });
@@ -137,6 +136,14 @@ function ExpedientesResoluciones() {
     e.preventDefault();
     setSortOrder('desc');
     setSearch(e.target.value)}
+
+
+    const handleFiltroAño = (e) => {
+      e.preventDefault();
+      
+      filtroAño === false ? setFiltroAño(true) : setFiltroAño(false);
+    }
+
 
   return (
     <>
@@ -161,23 +168,34 @@ function ExpedientesResoluciones() {
             type="text"
             value={search}
             onChange={handleLista}
+            onKeyDown={handleProjectSearchEnter}
             placeholder='Descripción Sintética... '
             className={`${styles.input} ${styles.projectSearchInput}`}
           />
-            <input
-      type="number"
-      value={startYear}
-      onChange={(e) => setStartYear(e.target.value)}
-      placeholder="Año inicial"
-      className={`${styles.input} ${styles.yearInput}`}
-    />
-    <input
-      type="number"
-      value={endYear}
-      onChange={(e) => setEndYear(e.target.value)}
-      placeholder="Año final"
-      className={`${styles.input} ${styles.yearInput}`}
-    />
+        <div onClick={handleFiltroAño} className={styles.filtroAño}>
+  Filtrar por año
+  {filtroAño && (
+    <Modal title="Filtrar por año" visible={filtroAño} contentBg="red" onOk={handleFiltroAño} onCancel={handleFiltroAño}>
+      <input
+        type="number"
+        value={startYear}
+        onChange={(e) => setStartYear(e.target.value)}
+        placeholder="Año inicial"
+        className={`${styles.input} ${styles.yearInput}`}
+        onClick={(e) => e.stopPropagation()}
+      />
+      <input
+        type="number"
+        value={endYear}
+        onChange={(e) => setEndYear(e.target.value)}
+        placeholder="Año final"
+        className={`${styles.input} ${styles.yearInput}`}
+        onClick={(e) => e.stopPropagation()}
+      />
+    </Modal >
+  )}
+</div>
+
           <table
             data-aos="fade-up"
             data-aos-duration="300"
@@ -222,11 +240,11 @@ function ExpedientesResoluciones() {
             <>
               <div className={styles.botones}>
                 <button onClick={handleShowMore} className={styles.verMas}>
-                <MdExpandMore /><p className={styles.mas}> Más </p>  
+                <MdExpandMore /><p className={styles.mas}> </p>  
                 </button>
                 {showLessButton ? (
                   <button onClick={handleShowLess} className={styles.verMenos}>
-                   <p className={styles.mas}>Menos</p> <MdExpandLess /> 
+                   <p className={styles.mas}></p> <MdExpandLess /> 
                   </button>
                 ) : null}
               </div>
