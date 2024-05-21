@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 import logo from '../api/assets/moran.png';
 import { MdExpandMore } from "react-icons/md";
 import { MdExpandLess } from "react-icons/md";
+import { Modal } from 'antd';
+
 
 const sortData = (data) => {
   return data.sort((a, b) => {
@@ -36,6 +38,10 @@ function PCM() {
   const [numProjectsWithLink, setNumProjectsWIthLink] = useState(0);
   const [numSearchResults, setNumSearchResults] = useState(0);
   const [numVisibleResults, setNumVisibleResults] = useState(0);
+  const [startYear, setStartYear] = useState('');
+const [endYear, setEndYear] = useState('');
+const [filtroAño, setFiltroAño] = useState(false); 
+
 
   
   const animatedCount = () =>{
@@ -102,15 +108,17 @@ useEffect(() => {
   
 
   const filteredData = data.filter((row) => {
-    const numeroProyecto = row['Numero'].split('-')[0];
+    const year = parseInt(row['Año']);
+    const isWithinYearRange = (startYear === '' || year >= parseInt(startYear)) &&
+                              (endYear === '' || year <= parseInt(endYear));
     const searchTerm = diacritics.remove(search.toLowerCase());
-    const proyectoLowerCase = numeroProyecto.toLowerCase();
-
     return (
+      isWithinYearRange &&
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || numeroProyecto === projectSearch)
+      (projectSearch === '' || row['Numero'] === projectSearch)
     );
   });
+  
 
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
@@ -169,22 +177,25 @@ useEffect(() => {
     }
   };
   
+  const handleFiltroAño = (e) => {
+    e.preventDefault();
+    
+    filtroAño === false ? setFiltroAño(true) : setFiltroAño(false);
+  }
 
   return (
     <>
       <h2
         className={styles.h2}
         onClick={() => {
-          setIsComponentVisible((prevVisibility) => !prevVisibility);
-      
-        }}
+          setIsComponentVisible((prevVisibility) => !prevVisibility); }}
       >
        PCM | 1988 - actualidad
       </h2>
       {isComponentVisible && (
           <div className={styles.block}>
-          <div className={styles.inputsydata
-        }>         <input
+          <div className={styles.inputsydata}>    
+            <input
             type="text"
             value={projectSearch}
             onChange={(e) => setProjectSearch(e.target.value)}
@@ -202,6 +213,33 @@ useEffect(() => {
           />
             <p className={styles.escaneados}> Expedientes escaneados: {numProjectsWithLink -1 } de {data.length -1}</p>
             </div>
+            <div onClick={handleFiltroAño} className={styles.filtroAño}>
+  Filtrar por año
+  {filtroAño && (
+            <Modal
+  title="Filtrar por año"
+  visible={filtroAño}
+  onOk={handleFiltroAño}
+  onCancel={handleFiltroAño}
+>
+  <input
+    type="number"
+    value={startYear}
+    onChange={(e) => setStartYear(e.target.value)}
+    placeholder="Año inicial"
+    className={`${styles.input} ${styles.yearInput}`}
+    onClick={(e) => e.stopPropagation()}
+  />
+  <input
+    type="number"
+    value={endYear}
+    onChange={(e) => setEndYear(e.target.value)}
+    placeholder="Año final"
+    className={`${styles.input} ${styles.yearInput}`}
+    onClick={(e) => e.stopPropagation()}
+  />
+</Modal>)}
+</div>
          <table
             data-aos="fade-up"
             data-aos-duration="300"

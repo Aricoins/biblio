@@ -8,6 +8,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { Pagination } from 'antd';
 
+
 interface Libro {
     titulo: string;
     autor: string;
@@ -82,7 +83,7 @@ const Libros: FC = () => {
                         ))}
                     </div>
 
-                    {/* Paginación */}
+                
                     {totalItems > 0 && ( 
                       <div style={{justifyContent:"center"}}>
                       <Pagination

@@ -16,6 +16,7 @@ import { useEffect } from 'react'
 import Link from 'next/link';
 //import FondosDocumentales from '../components/FondosDocumentales';
 import Proyectos from '../proyectos/page'
+import {Modal} from 'antd'
 
 const Archivo = () => {
 useEffect(() => {
@@ -26,7 +27,7 @@ useEffect(() => {
     <>
  <NavTop />
    <div  className={styles.container}>
-   <Proyectos />
+
     <div className={styles.h3}  >
     <div data-aos="fade-up" className={styles.component}>
        <ProyectosNoSancionados />
@@ -46,15 +47,20 @@ useEffect(() => {
         <div data-aos="fade-up" className={styles.component}>
           <ExpedientesResoluciones />
         </div>
-        </div>             
+             
         <div data-aos="fade-up" className={styles.component}>
           <PCM />
         </div> 
-      
+        </div>
+        
+
     </div>
 
     </div>
+
+  
  
+    <Link href='/proyectos' className={styles.avanzada}> <h2>Buscar en proyectos </h2> </Link>
    </div>
 <NavFoot />
 

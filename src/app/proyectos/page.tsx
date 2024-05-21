@@ -207,11 +207,11 @@ function Proyectos() {
     const datosPaginaActual = resultados.slice(startIndex, endIndex);
 
     return (
-        <div className={styles.container} data-aos="fade-up">
+      
             <>
                 <div onClick={() => setVer(!ver)}>
                     <h2 className={styles.hdos}>
-                        Buscador General 🔍 | 2003-2024
+                        Buscador General 🔍 
                     </h2>
                 </div>
 
@@ -282,7 +282,7 @@ function Proyectos() {
                     </div>
                 )}
             </>
-        </div>
+
     );
 }
 
