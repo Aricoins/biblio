@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
 position: relative;
-    margin-bottom: 5%;
+    margin-bottom: 35%;
     padding: 1%;
     cursor: pointer;
     background-color: rgb(255, 87, 51);
@@ -68,7 +68,7 @@ height: 33px;
 }
 .tabla{
   width: 80%;
-  margin-bottom: 60%;  
+  margin-bottom: 100%;  
   box-sizing: border-box;
   border-collapse: collapse;
   border: 1px solid black;

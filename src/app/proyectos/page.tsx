@@ -34,7 +34,7 @@ function Proyectos() {
     const [filtroTipo, setFiltroTipo] = useState('');
     const [filtroAprobado, setFiltroAprobado] = useState(false);
     const [resultados, setResultados] = useState<Proyecto[]>([]);
-    const [ver, setVer] = useState(false);
+    const [ver, setVer] = useState(true);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
     const [datosCargados, setDatosCargados] = useState(false);
 
@@ -192,7 +192,7 @@ function Proyectos() {
             key: 'observaciones',
             render: (observaciones: string) => {
                 if (observaciones === 'sin sanción') {
-                    return <button onClick={handleClick}>Buscar entre los expedientes no sancionados</button>;
+                    return <Link href='/archivo' className={styles.numero}>Buscar entre los expedientes no sancionados</Link>;
                 } else {
                     return observaciones;
                 }
@@ -211,7 +211,7 @@ function Proyectos() {
             <>
                 <div onClick={() => setVer(!ver)}>
                     <h2 className={styles.hdos}>
-                        Buscador General 🔍 
+                        Buscar 🔍 
                     </h2>
                 </div>
 

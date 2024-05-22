@@ -13,7 +13,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" style={{marginBottom: "10%"}}>
          <body>
 
           <NavTop />

@@ -60,7 +60,7 @@ useEffect(() => {
 
   
  
-    <Link href='/proyectos' className={styles.avanzada}> <h2>Buscar en proyectos </h2> </Link>
+    <Link href='/proyectos' className={styles.avanzada}> <h2>Búsqueda avanzada</h2> </Link>
    </div>
 <NavFoot />
 
