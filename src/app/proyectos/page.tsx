@@ -218,7 +218,7 @@ function Proyectos() {
                 {ver && (
                     <div style={{ margin: "auto", width: "100%" }}>
                          
-                         <p className={styles.spinText}>Busque entre los proyectos ingresados desde 2003</p>
+                         <p className={styles.spinText}>Busque entre los proyectos que tomaron estado parlamentario desde 2003.</p>
                         <div className={styles.inputs}>
                             <Input.Search
                                 placeholder="Por número..."
