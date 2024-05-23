@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from 'next/server';
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const data = await sql`SELECT * FROM libros ORDER BY decla DESC;`;
+    const data = await sql`SELECT * FROM libros;`;
     const libros = data.rows;
 
     console.log(libros, "libros api");
