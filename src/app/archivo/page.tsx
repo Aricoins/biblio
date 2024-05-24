@@ -56,7 +56,7 @@ const Archivo = () => {
         </div>
 
         <Link href='/proyectos' className={styles.avanzada}>
-          <h2>Búscar en proyectos</h2>
+          <h2>Búscar en todos los expedientes</h2>
         </Link>
 
         <div className={styles.contactIcons}>
