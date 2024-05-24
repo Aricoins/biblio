@@ -14,57 +14,63 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { useEffect } from 'react'
 import Link from 'next/link';
-//import FondosDocumentales from '../components/FondosDocumentales';
 import Proyectos from '../proyectos/page'
-import {Modal} from 'antd'
+import { Modal } from 'antd'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWhatsapp, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 const Archivo = () => {
-useEffect(() => {
-  Aos.init({duration: 300});
-}
-, [])
+  useEffect(() => {
+    Aos.init({ duration: 300 });
+  }, [])
+
   return (
     <>
- <NavTop />
-   <div  className={styles.container}>
+      <NavTop />
+      <div className={styles.container}>
+        <div className={styles.h3}>
+          <div data-aos="fade-up" className={styles.component}>
+            <ProyectosNoSancionados />
+          </div>
+          <div className={styles.subcontainer}>
+            <div>
+              <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
+              <div data-aos="fade-up" className={styles.component}>
+                <ExpedientesOrdenanzas />
+              </div>
+              <div data-aos="fade-up" className={styles.component}>
+                <ExpedientesComunicaciones />
+              </div>
+              <div data-aos="fade-up" className={styles.component}>
+                <ExpedientesDeclaraciones />
+              </div>
+              <div data-aos="fade-up" className={styles.component}>
+                <ExpedientesResoluciones />
+              </div>
+              <div data-aos="fade-up" className={styles.component}>
+                <PCM />
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div className={styles.h3}  >
-    <div data-aos="fade-up" className={styles.component}>
-       <ProyectosNoSancionados />
+        <Link href='/proyectos' className={styles.avanzada}>
+          <h2>Búscar en proyectos</h2>
+        </Link>
+
+        <div className={styles.contactIcons}>
+          <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
+            <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+          </a>
+          <a href="mailto:example@gmail.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={styles.icon}>
+            <FontAwesomeIcon icon={faGoogle} size="2x" />
+          </a>
+        </div>
       </div>
-      <div className={styles.subcontainer}>
-      <div>
-      <h2  className={styles.h4}> EXPEDIENTES APROBADOS: </h2>  
-      <div data-aos="fade-up" className={styles.component}>
-        <ExpedientesOrdenanzas />
-        </div>
-        <div  data-aos="fade-up" className={styles.component}>
-          <ExpedientesComunicaciones />
-        </div>
-        <div data-aos="fade-up" className={styles.component}>
-          <ExpedientesDeclaraciones />
-        </div>
-        <div data-aos="fade-up" className={styles.component}>
-          <ExpedientesResoluciones />
-        </div>
-             
-        <div data-aos="fade-up" className={styles.component}>
-          <PCM />
-        </div> 
-        </div>
-        
-
-    </div>
-
-    </div>
-
-  
- 
-    <Link href='/proyectos' className={styles.avanzada}> <h2>Búscar en proyectos</h2> </Link>
-   </div>
-<NavFoot />
-
-
+      <NavFoot />
     </>
   );
 }

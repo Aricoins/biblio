@@ -16,8 +16,6 @@ interface Detail{
   resenia: string;
   }
 
-
-
 export default function Detail({ params }: { params: { id: string } }) {
   const [librosDetail, setLibrosDetail] = useState<any>() 
   const [currentImage, setCurrentImage] = useState<string>('');
@@ -25,8 +23,7 @@ export default function Detail({ params }: { params: { id: string } }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  
-  useEffect(()=>{
+    useEffect(()=>{
     const fetchDetail = async () =>{
       try {
         const response = await fetch(`/api/detail?id=${params.id}`);
@@ -52,12 +49,10 @@ export default function Detail({ params }: { params: { id: string } }) {
     setCurrentImage(newImage);
   };
 
-  
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
-
 
   return (
     <>
