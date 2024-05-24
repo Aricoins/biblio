@@ -65,8 +65,10 @@ const Archivo = () => {
           <a href="mailto:cmbiblioteca@bariloche.gov.ar" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className={styles.icon}>
-            <FontAwesomeIcon icon={faGoogle} size="2x" />
+          className={styles.icon}
+          aria-label="Enviar correo a cmbiblioteca@bariloche.gov.ar">
+            <FontAwesomeIcon  
+  icon={faGoogle} size="2x" />
           </a>
         </div>
       </div>
