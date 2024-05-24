@@ -3,6 +3,8 @@ import { fetchDetailLibros } from "../../lib/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./style.module.css"
+import {Spin} from 'antd'
+import { LoadingOutlined } from '@ant-design/icons';
 
 interface Detail{
   id: string;
@@ -21,6 +23,7 @@ export default function Detail({ params }: { params: { id: string } }) {
   const [currentImage, setCurrentImage] = useState<string>('');
   const [video, setVideo] = useState<boolean>(true);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   
   useEffect(()=>{
@@ -30,6 +33,7 @@ export default function Detail({ params }: { params: { id: string } }) {
         if (response.ok) {
           const libros = await response.json();
           setLibrosDetail(libros.libros[0]);
+
       } 
     } catch (error) {
         console.error('No se encontró el detalle del libro', error);
@@ -55,6 +59,12 @@ export default function Detail({ params }: { params: { id: string } }) {
 
   return (
     <>
+    {loading ?  <Spin 
+    style={{fontSize: "", 
+      color: "orangered", 
+      display: "flex",
+      justifyContent: "center", 
+    marginTop: "20%"}} /> : 
     <div className={styles.container}>
      <div className={styles.imagen}>
      <div className="container" onClick={handleClick}>
@@ -86,7 +96,7 @@ export default function Detail({ params }: { params: { id: string } }) {
    <p className="m-1 font-light" >Declaración {librosDetail.decla} del Concejo Municipal de San Carlos de Bariloche</p>
  </div>
  </div>
- </div>
+ </div>}
   </> 
      );
   
