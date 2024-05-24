@@ -33,7 +33,7 @@ export default function Detail({ params }: { params: { id: string } }) {
         if (response.ok) {
           const libros = await response.json();
           setLibrosDetail(libros.libros[0]);
-
+setLoading(false)
       } 
     } catch (error) {
         console.error('No se encontró el detalle del libro', error);
