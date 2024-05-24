@@ -62,7 +62,7 @@ const Archivo = () => {
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
             <FontAwesomeIcon  icon={faWhatsapp} size="2x" />
           </a>
-          <a href="mailto:digestobariloche@gmail.com" 
+          <a href="mailto:cmbiblioteca@bariloche.gov.com" 
           target="_blank" 
           rel="noopener noreferrer" 
           className={styles.icon}>
