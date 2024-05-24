@@ -216,7 +216,7 @@ function Proyectos() {
                 </div>
 
                 {ver && (
-                    <div style={{ margin: "auto", width: "100%" }}>
+                    <div style={{ margin: "auto", width: "100%", marginBottom: "20%" }}>
                          
                          <p className={styles.spinText}>Busque entre los proyectos que tomaron estado parlamentario desde 2003.</p>
                         <div className={styles.inputs}>
