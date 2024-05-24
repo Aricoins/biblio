@@ -64,8 +64,9 @@ const Archivo = () => {
             <FontAwesomeIcon  icon={faWhatsapp} size="2x" />
           </a>
           <a 
-          href="mailto:cmbiblioteca@bariloche.gov.ar"
-          target="_blank" 
+          href="mailto:digestobariloche@gmail.com"
+      
+          rel='nofollow noopener noreferrer'
               className={styles.icon}
          >
              <MdOutgoingMail  size="2x"/>
