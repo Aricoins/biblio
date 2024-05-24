@@ -33,24 +33,26 @@ export default function Detail({ params }: { params: { id: string } }) {
         if (response.ok) {
           const libros = await response.json();
           setLibrosDetail(libros.libros[0]);
-setLoading(false)
+
       } 
     } catch (error) {
         console.error('No se encontró el detalle del libro', error);
       }
     };
     fetchDetail();
-  }, [params.id])
+    if (librosDetail) {
+    
+      setLoading(false)
+    }
+   
+  }, [params.id, librosDetail])
   
   const handleImageChange = (newImage: string) => {
     setVideo(false)
     setCurrentImage(newImage);
   };
 
-  if (!librosDetail) {
-    return <div>Product not found!</div>;
-  }
- 
+  
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
