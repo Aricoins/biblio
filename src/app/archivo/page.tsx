@@ -60,7 +60,7 @@ const Archivo = () => {
 
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-            <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+            <FontAwesomeIcon  icon={faWhatsapp} size="2x" />
           </a>
           <a href="mailto:example@gmail.com" 
           target="_blank" 
