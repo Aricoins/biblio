@@ -61,15 +61,15 @@ const Archivo = () => {
 
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
-            <FontAwesomeIcon  icon={faWhatsapp} size="2x" />
+            <FontAwesomeIcon  icon={faWhatsapp} />
           </a>
           <a 
-          href="mailto:digestobariloche@gmail.com"
-      
+          href="mailto:http://digestobariloche@gmail.com"
+          target="_blank"
           rel='nofollow noopener noreferrer'
               className={styles.icon}
          >
-             <MdOutgoingMail  size="2x"/>
+             <MdOutgoingMail  />
 
           </a>
         </div>

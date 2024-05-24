@@ -15235,8 +15235,7 @@
     "colaboradores": null,
     "girado_a": "Comisión de Acción",
     "acta_fecha": null,
-    "acta_fecha": "888/07",
-    "aprobado": true,
+       "aprobado": true,
     "tipo_norma": "resolución",
     "numero_norma": "R-07-345",
     "observaciones": ""
@@ -21170,7 +21169,7 @@
     "id": 1263,
     "numero_proyecto": "278",
     "anio_proyecto": "2008",
-    "titulo_proyecto": "Define área céntrica de alta congestión vehicular y establece condiciones para Habilitaciones Comerciales." ,      
+    "titulo_proyecto": "Definición Turismo Estudiantil y camas/plazas homologadas" ,      
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Concejal Hugo Cejas (FpV)."
@@ -29773,8 +29772,8 @@
     "id": 1777,
     "numero_proyecto": "785",
     "anio_proyecto": "2010",
-    "titulo_proyecto":  "Define área céntrica de alta congestión vehicular y establece condiciones para Habilitaciones Comerciales",
-    "tipo_proyecto": "ordenanza",
+    "titulo_proyecto": "Define área céntrica de alta congestión vehicular y establece condiciones para Habilitaciones Comerciales",
+    "tipo_proyecto": "",
     "autor": [
       "Concejal Hugo Cejas (SUR-FpV)."
     ],
@@ -34550,7 +34549,7 @@
     "id": 2063,
     "numero_proyecto": "56",
     "anio_proyecto": "2012",
-    "titulo_proyecto": "Designar el nombre de Héroes de Malvinas a la Ruta de Circunvalación",
+    "titulo_proyecto": "Designar el nombre de ",
     "tipo_proyecto": "ordenanza",
     "autor": [
       "Intendente Municipal, Cdor."
@@ -66241,7 +66240,7 @@
     "numero_proyecto": "967",
     "anio_proyecto": "2018",
     "titulo_proyecto": "Se aprueba el Código Único de Habilitaciones de actividades comerciales",
-    "tipo_proyecto": "ordenanza",
+    "tipo_proyecto": "",
     "autor": [
       "Intendende Municipal, Ing. Gustavo Gennuso"
     ],
