@@ -8,6 +8,8 @@ import Text from './components/text';
 import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
 import { Typography } from "antd";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { useAuth } from "@clerk/nextjs";
 
 
 const Container = ' w-12/12 h-100vh bg-gradient-to-b animated-gradient-x flex items-center justify-center';
@@ -18,11 +20,13 @@ const LeftContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10
 
 const RightContent = 'w-full text-center h-screen my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
-const Boton = 'bg-gray-800 w-full flex justify-center items-center absolute top-1 right-0 left-0 p-1 text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
+const Boton = 'bg-gray-800 w-full flex justify-center items-center relative text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,66 +37,36 @@ export default function Libros() {
   return (
     <>
       <div className={Container}>
-
+   
           <div className={Subcontainer}>
             <div className={LeftContent}>
-              <div className='flex justify-center mt-6'>
-                <Image
-                  className=' w-auto "filter drop-shadow-md rounded-lg'
-                  src={imagen}
-                  alt='logo'
-                  width={100}
-                  height={100}
-                  priority
-                />
-              </div>
-              <form>
-                <p className='text-[10px] m-4' >Ingrese con sus credenciales</p>
-                <div className='relative mb-4 text-sm'>
-                  <label htmlFor='usuario'>Usuario</label>
-                  <input
-                    type='text'
-                    id='usuario'
-                    placeholder='usuario'
-                    autoComplete='current-password'
-                    className='border rounded-md px-2 py-1 w-full'
-                  />
-                </div>
-                <div className='text-sm relative mb-4'>
-                  <label htmlFor='pas'>Contraseña</label>
-                  <input
-                    type='password'
-                    id='pas'
-                    placeholder='Contraseña'
-                    autoComplete='current-password'
-                    className='border rounded-md px-2 w-full'
-                  />
-                </div>
-                <div className='pt-1 text-center text-sm'>
-                  <button
-                    className='bg-gray-800 w-10/12 text-white rounded-md px-4 py-2 hover:bg-white hover:border-gray-900 hover:text-gray-900 font-semibold transition duration-'
-                    type='button'
-                    data-te-ripple-init
-                    data-te-ripple-color='light'
-                  >
-                    Ingresar
-                  </button>
-                  <div>
-                  <a className='text-[10px]' href='#'>
-                    ¿Olvidó su contraseña?
-                  </a>
-                  </div>
-                </div>
-                <button
-                  type='button'
-                  className='bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400 p-1 text-[10px] w-10/12 mt-2'
-                  data-te-ripple-init
-                  data-te-ripple-color='light'
-                >
-                  Registrarse
-                </button>
-              </form>
-            </div>
+            <div className='flex justify-center mt-6'>
+        <Image
+          className=' w-auto "filter drop-shadow-md rounded-lg'
+          src={imagen}
+          alt='logo'
+          width={100}
+          height={100}
+          priority
+        />
+      </div>
+      <div>
+          
+      </div>
+              
+      <div className="flex justify-center flex-col items-center min-h-screen">
+    <br /> <SignInButton /> <br /><div> <UserButton /></div>
+    </div>
+ 
+    {userId ? (   <div >
+                <Link href='/archivo'>
+                <div className={Boton}>
+            Ingresar</div>
+                </Link>
+              </div>) : null}
+    
+         </div>
+         </div>
             <div className={RightContent}>
               <div className='flex justify-center'>
                 <Image
@@ -103,6 +77,7 @@ export default function Libros() {
                   height={300}
                   priority
                 />
+           
               </div>
               <div>
                 <div >
@@ -118,15 +93,10 @@ export default function Libros() {
                   </p>
                 )}
               </div>
-              <div className={Boton}>
-                <Link href='/archivo'>
-                  <button>Ingresar
-                  <p>como invitado</p></button>
-                </Link>
-              </div>
+            
             </div>
           </div>
-        </div>
+
 
     </>
   );

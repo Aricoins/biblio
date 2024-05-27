@@ -1,5 +1,6 @@
 // RootLayout.js
 import React from 'react'
+import {ClerkProvider, SignedOut, SignInButton, SignedIn, UserButton} from '@clerk/nextjs'
 
 
 
@@ -9,9 +10,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" >
-     
-      <body>{children}</body>
-    </html>
+<ClerkProvider>
+      <html lang="en">
+        <body>
+          <header>
+          
+          </header>
+          <main>
+            {children}
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

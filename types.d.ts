@@ -18,3 +18,10 @@ declare module 'clsx' {
 
 	export = classNames;
 }
+declare global {
+	interface CustomJwtSessionClaims {
+	  metadata: {
+		role?: "admin" | "moderator";
+	  };
+	}
+  }

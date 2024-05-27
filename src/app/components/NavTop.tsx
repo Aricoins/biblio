@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import { UserButton } from '@clerk/nextjs';
 
 
 
@@ -47,13 +48,7 @@ const NavTop = () => {
       </div>
      
       <div className={styles.item}>
-        <Link   href="/" className={clsx(styles.link, {
-          [styles.link2]: pathname === '/',
-        
-        })}>
-        Salir
-        </Link>
-      </div>
+   <UserButton />   </div>
       {/* <li className={styles.item}>
         <Link href="/libros/form" >
           Agregar Libro

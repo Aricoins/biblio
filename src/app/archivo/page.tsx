@@ -19,13 +19,19 @@ import { Modal } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, } from '@fortawesome/free-brands-svg-icons'
 import { MdOutgoingMail } from "react-icons/md";
+import { useAuth , useUser} from "@clerk/nextjs";
+
 
 const Archivo = () => {
+  
+const {isLoaded, userId, sessionId, getToken } = useAuth();
+
   useEffect(() => {
     Aos.init({ duration: 300 });
   }, [])
 
   return (
+
     <>
       <NavTop />
       <div className={styles.container}>
@@ -73,7 +79,15 @@ const Archivo = () => {
 
           </a>
         </div>
+
+
+
+
+    <div>
+      Hola, {userId} your current active session is {sessionId}, user is    </div>
+
       </div>
+
       <NavFoot />
     </>
   );
