@@ -1,10 +1,7 @@
-import { Roles } from "../../../types.d.ts"
-import { auth } from "@clerk/nextjs/server"
+import { useClerk } from "@clerk/clerk-react";
 
+export default function Home() {
+  const clerk = useClerk();
 
-    
-export const checkRole = (role: Roles) => {
-  const { sessionClaims } = auth()
-
-  return sessionClaims?.metadata.role === role;
-}
+  return clerk.user
+};

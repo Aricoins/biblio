@@ -45,6 +45,15 @@ padding: auto;
 align-content: center;
 width: 5%;
 }
+.item2{
+  margin: auto;
+  height: 40%;
+  padding: auto;
+  align-content: center;
+  width: 5%;
+  margin-bottom: 10%;
+
+}
      
 .link {
 /* Ajustar según necesidades */
@@ -80,7 +89,7 @@ border: 1px solid black
    @media (max-width: 1100px) {
     .navTopImage {
       height: 60%;
-      width: 18%;
+      width: 12%;
       margin: auto 20px;    }
   }
   
