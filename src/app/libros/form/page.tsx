@@ -131,6 +131,7 @@ const handleAddReview = () => {
           throw new Error(res.statusText);
         }
           const id = (await res.json()).id;
+          console.log(id, 'id')
           const resetForm = () =>
           setForm({
             titulo: '',
@@ -149,7 +150,7 @@ const handleAddReview = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             // window.location.href = `/product/${id}`;
-            router.push(`/libros`)
+            router.push(`/libros/${id}`)
 
           }});
         }
