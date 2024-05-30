@@ -7,7 +7,7 @@ import {Spin} from 'antd'
 import { LoadingOutlined } from '@ant-design/icons';
 
 interface Detail{
-  id: string;
+  id: number;
   titulo: string;
   autor: string;
   decla: any;
@@ -16,7 +16,7 @@ interface Detail{
   resenia: string;
   }
 
-export default function Detail({ params }: { params: { id: string } }) {
+export default function Detail({ params }: { params: { id: number } }) {
   const [librosDetail, setLibrosDetail] = useState<any>() 
   const [currentImage, setCurrentImage] = useState<string>('');
   const [video, setVideo] = useState<boolean>(true);

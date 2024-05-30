@@ -4,7 +4,7 @@ import { NextResponse, NextRequest } from 'next/server';
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     // Consulta a la base de datos
-    const data = await sql`SELECT resenia, titulo, autor, imagen, id FROM "libros";`;
+    const data = await sql`SELECT resenia, titulo, autor, imagen, id, decla FROM "libros";`;
     const libros = data.rows;
 
     console.log(libros, "libros api");

@@ -114,58 +114,27 @@ const handleAddReview = () => {
    }
 
 
-   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
-    validation(form, setErrors);
-  
-    const hasErrors = Object.values(errors).some((error) => error !== '');
-  
-    if (!hasErrors) {
-      try {
-        let res = await fetch('/api/crearLibro', {
-            method: 'POST',
-            body: JSON.stringify({ form }),
-          }); console.log(res, 'res')
-          if (!res.ok) {
-          throw new Error(res.statusText);
-        }
-          const id = (await res.json()).id;
-          console.log(id, 'id')
-          const resetForm = () =>
-          setForm({
-            titulo: '',
-            autor: '',
-            imagen: '',
-            decla: '',
-            resenia:  '',
-          });
-        resetForm();
+    try {
+      const response = await fetch('/api/detail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ form }),
+      });
 
-        Swal.fire({
-          title: 'Libro Creado!',
-          html: `El libro ha sido creado exitosamente.`,
-          icon: 'success',
-          confirmButtonText: 'OK',
-        }).then((result) => {
-          if (result.isConfirmed) {
-            // window.location.href = `/product/${id}`;
-            router.push(`/libros/${id}`)
+      const result = await response.json();
 
-          }});
-        }
-
-       catch (error) {
-        console.error(error);
-        Swal.fire({
-          title: 'Error!',
-          text: 'Product not added',
-          icon: 'error',
-          confirmButtonText: 'OK',
-        });
-        }
+      if (result.result) {
+        Swal.fire('Success', 'Libro agregado exitosamente', 'success');
+        router.push(`/libros/${result.id}`);
+      } else {
+        Swal.fire('Error', result.message, 'error');
+      }
+    } catch (error) {
+      Swal.fire('Error', 'Error al agregar el libro', 'error');
     }
-    };
+  };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -200,7 +169,7 @@ return (
                  name='autor'
                  type='text'
                  id='autor'
-                 placeholder='Ingrese el nombre de la autor...'
+                 placeholder='Ingrese el nombre del autor...'
                  value={form.autor}
                  onChange={handleChange}
                  className={styles.formInput}
@@ -314,5 +283,5 @@ return (
     </>
   );
   
-  };
-  export default CrearLibro;
+};
+export default CrearLibro;
