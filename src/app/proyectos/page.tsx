@@ -191,15 +191,21 @@ function Proyectos() {
             dataIndex: 'observaciones',
             key: 'observaciones',
             render: (observaciones: string) => {
+              
                 if (observaciones === 'sin sanción') {
                     return <Link href='/archivo' className={styles.numero}>Buscar entre los expedientes no sancionados</Link>;
-                } else {
+                }
+                if ( observaciones === "https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link" )
+                    
+                    return <Link href="https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link"> Ver dictamen</Link>;
+                
+                else {
                     return observaciones;
                 }
             },
             className: styles.observaciones
-        }
-    ];
+        },
+            ];
 
     // Calcular datos para la paginación
     const startIndex = (currentPage - 1) * pageSize;
