@@ -37864,15 +37864,15 @@
     "titulo_proyecto": "Autorización de reestructuración del Presupuesto 2012",
     "tipo_proyecto": "",
     "autor": [
-      "Intendente Municipal, Cdor."
+      "Intendente Municipal, Cdor. Omar Goye "
     ],
     "colaboradores": null,
     "girado_a": "",
     "acta_fecha": "993/12",
-    "aprobado": false,
-    "tipo_norma": "",
-    "numero_norma": "",
-    "observaciones": "sin sanción"
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-12-2361",
+    "observaciones": ""
   },
   {
     "id": 2260,
