@@ -118,7 +118,7 @@ function Proyectos() {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         window.scrollTo({
-            top: 1000,
+            top: 2000,
             behavior: 'smooth',
         });
     };
@@ -193,7 +193,7 @@ function Proyectos() {
             render: (observaciones: string) => {
               
                 if (observaciones === 'sin sanción') {
-                    return <Link href='/archivo' className={styles.numero}>Buscar entre los expedientes no sancionados</Link>;
+                    return <button onClick={handleClick} >Buscar entre los expedientes no sancionados</button>;
                 }
                 if ( observaciones === "https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link" )
                     
