@@ -34,7 +34,7 @@ function Proyectos() {
     const [filtroTipo, setFiltroTipo] = useState('');
     const [filtroAprobado, setFiltroAprobado] = useState(false);
     const [resultados, setResultados] = useState<Proyecto[]>([]);
-    const [ver, setVer] = useState(true);
+    const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
     const [datosCargados, setDatosCargados] = useState(false);
 
@@ -217,7 +217,7 @@ function Proyectos() {
             <>
                 <div onClick={() => setVer(!ver)}>
                     <h2 className={styles.hdos}>
-                        Buscar 🔍 
+                        Proyectos sancionados y no sancionados 🔍 
                     </h2>
                 </div>
 

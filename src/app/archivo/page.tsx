@@ -52,12 +52,12 @@ const Archivo = () => {
                 <PCM />
               </div>
             </div>
-            <ProyectosNoSancionados />
+         
           </div>
         </div>
-
-      
-
+<div style={{margin: "12%"}}>
+        <ProyectosNoSancionados />
+        </div>
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
             <FontAwesomeIcon  icon={faWhatsapp} />
