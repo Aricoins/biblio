@@ -31,7 +31,7 @@ const Archivo = () => {
       <div className={styles.container}>
         <div className={styles.h3}>
           <div data-aos="fade-up" className={styles.component}>
-            <ProyectosNoSancionados />
+         <Proyectos />
           </div>
           <div className={styles.subcontainer}>
             <div>
@@ -52,12 +52,11 @@ const Archivo = () => {
                 <PCM />
               </div>
             </div>
+            <ProyectosNoSancionados />
           </div>
         </div>
 
-        <Link href='/proyectos' className={styles.avanzada}>
-          <h2>Búscar en todos los expedientes</h2>
-        </Link>
+      
 
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
