@@ -83,8 +83,7 @@ const {isLoaded, userId, sessionId, getToken } = useAuth();
 
 
 
-    <div>
-      Hola, {userId} your current active session is {sessionId}, user is    </div>
+    
 
       </div>
 
