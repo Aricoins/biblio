@@ -14,9 +14,9 @@ import { useAuth } from "@clerk/nextjs";
 
 const Container = ' w-12/12 bg-gradient-to-b animated-gradient-x flex items-center justify-center';
 
-const Subcontainer = 'w-10/12 h-auto flex m-auto flex-col justify-center mx-0 md:flex-row rounded-lg opacity-80 relative'; // Añadida la posición
+const Subcontainer = 'w-12/12 h-auto flex m-auto flex-col justify-center mx-0 md:flex-row rounded-lg opacity-80 relative'; // Añadida la posición
 
-const LeftContent = ' my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-8 m-1 rounded-md mx-auto';
+const LeftContent = ' my-20 w-200px md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
 const RightContent = ' my-20 md:w-1/2 md:pt-0 md:pl-10 bg-white p-5 rounded-md';
 
