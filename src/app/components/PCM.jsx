@@ -186,7 +186,7 @@ useEffect(() => {
   return (
     <>
       <h2
-        className={styles.h2}
+        className={styles.h2PCM}
         onClick={() => {
           setIsComponentVisible((prevVisibility) => !prevVisibility); }}
       >

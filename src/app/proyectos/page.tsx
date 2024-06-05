@@ -217,14 +217,15 @@ function Proyectos() {
             <>
                 <div onClick={() => setVer(!ver)}>
                     <h2 className={styles.hdos}>
-                        Proyectos sancionados y no sancionados 🔍 
+                       Buscador 🔍 
                     </h2>
+
                 </div>
 
                 {ver && (
                     <div style={{ margin: "auto", width: "100%", marginBottom: "30%" }}>
                          
-                         <p className={styles.spinText}>Busque entre los proyectos que tomaron estado parlamentario desde 2003.</p>
+                         <p className={styles.spinText}> Proyectos que tomaron estado parlamentario desde 2003. </p>
                         <div className={styles.inputs}>
                             <Input.Search
                                 placeholder="Por número..."
@@ -278,7 +279,7 @@ function Proyectos() {
                                     onChange={handlePageChange}
                                     style={{ marginTop: 16 }}
                                 />
-                            </div>
+                             </div>
                         ) : (
                             // Mostrar Spinner si los datos no se han cargado
                             <div className={styles.spinContainer}>

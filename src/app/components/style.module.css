@@ -1,4 +1,64 @@
+.h2PCM {
+  font-size: small;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+position: relative;
+  margin-bottom: 35%;
+  padding: 1%;
+  cursor: pointer;
+  background-color: rgb(255, 87, 51);
+  color: white ;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+  border: black 2px solid;
+  transition: 1s;
+  margin: 3%;
+  margin-top: 10%;
+  width: 90%;
+  margin-left: 5%;
+  width: 40%;
+  margin: 5% 0  0  auto;
 
+}
+.h2PCM:hover {
+  background-color: #f7f8fa;
+  color: rgb(255, 87, 51);
+  border: rgb(255, 87, 51) 2px solid;
+  
+}
+@media (max-width: 768px) {
+  .h2PCM {
+    font-size: small;
+  }
+}
+/* 
+.{
+
+  font-size: medium;
+  font-weight: 500;
+  
+  padding: 1%;
+  cursor: pointer;
+  background-color: rgb(247, 240, 240);
+  color: rgb(13, 1, 1);
+  transition: 0.3s;
+  border: rgb(255, 87, 51) 2px solid;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+ }
+  .h2PCM:hover {
+    background-color: orange;
+    color: rgb(253, 249, 249);
+    border: black 2px solid;
+    }
+  @media (max-width: 768px) {
+    .h2PCM {
+      font-size: small;
+      text-align: center;
+    }
+  }
+ */
 
 .h2 {
     font-size: large;

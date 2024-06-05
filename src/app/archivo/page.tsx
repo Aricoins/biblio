@@ -48,13 +48,13 @@ const Archivo = () => {
               <div data-aos="fade-up" className={styles.component}>
                 <ExpedientesResoluciones />
               </div>
-              <div data-aos="fade-up" className={styles.component}>
+              
+            </div>
+                     </div>
+        </div>
+        <div data-aos="fade-up" className={styles.component}>
                 <PCM />
               </div>
-            </div>
-         
-          </div>
-        </div>
 <div style={{margin: "12%"}}>
         <ProyectosNoSancionados />
         </div>
