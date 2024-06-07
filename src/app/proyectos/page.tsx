@@ -264,11 +264,7 @@ function Proyectos() {
                             >
                                 Sólo aprobados
                             </Checkbox>
-                            <Checkbox
-                                onChange={(event) => handleFiltroRechazadoChange(event.target.checked)}
-                            >
-                                Sólo no aprobados
-                            </Checkbox>
+                           
                         </div>
                     </div>
 

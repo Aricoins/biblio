@@ -26217,7 +26217,7 @@
     "numero_proyecto": "575",
     "anio_proyecto": "2010",
     "titulo_proyecto": "Declaración huésped de honor de la ciudad de San Carlos de Bariloche al doctor Yuyika Amano, director general del Organismo Internacional de Energía Atómica (OIEA)",
-    "tipo_proyecto": "",
+    "tipo_proyecto": "declaracion",
     "autor": [
       "Intendente Municipal, Marcelo Cascón."
     ],
@@ -26226,7 +26226,7 @@
     "acta_fecha": null,
     "aprobado": false,
     "tipo_norma": "",
-    "numero_norma": "",
+    "numero_norma": "declaracion",
     "observaciones": "sin sanción"
   },
   {
