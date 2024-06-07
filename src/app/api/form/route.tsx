@@ -2,7 +2,7 @@ import { sql } from '@vercel/postgres';
 import { NextResponse, NextRequest } from 'next/server';
 
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
       const { form } = await req.json();
       const { rows: [newBook] } = await sql`

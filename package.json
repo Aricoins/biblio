@@ -50,6 +50,7 @@
     "react-router-dom": "^5.3.0",
     "react-to-print": "^2.15.1",
     "recoil": "^0.7.7",
+    "sharp": "^0.33.4",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.6",
     "sweetalert2-react-content": "^5.0.7",

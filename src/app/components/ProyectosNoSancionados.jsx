@@ -99,7 +99,7 @@ const animatedCount = () =>{
   useEffect(() => {
     // Calcular la cantidad de resultados visibles
     setNumVisibleResults(visibleRows);
-  }, [visibleRows]);
+  }, [visibleRows, data]);
 
   const filteredData = data.filter((row) => {
     const numeroProyecto = row['Proyecto'].split('-')[0];
