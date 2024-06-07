@@ -19,6 +19,8 @@ position: relative;
     margin-top: 10%;
     width: 90%;
     margin-left: 5%;
+    display: flex ;
+    justify-content: space-around;
 
   }
   .hdos:hover {
@@ -47,13 +49,10 @@ position: relative;
 }}
 
 .sele{
-width: 15%;
 color: #830b0b; 
-margin-left: 1%;
-margin-right: 1%;
-border-radius: 8%; 
-font-style: italic;
-height: 33px;
+margin-left: 10%;
+height: 5%;
+width: 20px;
 }
 
 .check{

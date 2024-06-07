@@ -5,6 +5,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import styles from './styles.module.css';
 import Link from 'next/link';
+import { MdExpandMore } from "react-icons/md";
+import { MdExpandLess } from "react-icons/md";
 
 const { Title } = Typography;
 
@@ -33,6 +35,7 @@ function Proyectos() {
     const [busquedaAutor, setBusquedaAutor] = useState('');
     const [filtroTipo, setFiltroTipo] = useState('');
     const [filtroAprobado, setFiltroAprobado] = useState(false);
+    const [filtroRechazado, setFiltroRechazado] = useState(false);
     const [resultados, setResultados] = useState<Proyecto[]>([]);
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
@@ -87,6 +90,13 @@ function Proyectos() {
         filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked);
         setHaRealizadoBusqueda(true);
     };
+    
+    const handleFiltroRechazadoChange = (checked: boolean) => {
+        setFiltroRechazado(checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked);
+        setHaRealizadoBusqueda(true);
+    };
+    
 
     const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean) => {
         let filteredProyectos = proyectos.filter((proyecto) => {
@@ -216,19 +226,23 @@ function Proyectos() {
       
             <>
                 <div onClick={() => setVer(!ver)}>
-                    <h2 className={styles.hdos}>
-                       Buscador 🔍 
+                    <h2 className={styles.hdos} >
+                   {ver ? 
+                    <MdExpandLess style= {{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
+                       Buscador general de expedientes 🔍   
+                       {ver ? 
+                       <MdExpandLess style={{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
                     </h2>
-
+                  
                 </div>
 
                 {ver && (
                     <div style={{ margin: "auto", width: "100%", marginBottom: "30%" }}>
                          
-                         <p className={styles.spinText}> Proyectos que tomaron estado parlamentario desde 2003. </p>
+                         <p className={styles.spinText}> Busque entre los proyectos sancionados y no sancionados </p>
                         <div className={styles.inputs}>
                             <Input.Search
-                                placeholder="Por número..."
+                                placeholder="Por n° de proyecto..."
                                 value={busquedaNumero}
                                 onChange={handleBusquedaNumeroChange}
                                 style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
@@ -257,6 +271,11 @@ function Proyectos() {
                                     onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
                                 >
                                     Sólo aprobados
+                                </Checkbox>
+                                <Checkbox
+                                    onChange={(event) => handleFiltroRechazadoChange(event.target.checked)}
+                                >
+                                    Sólo no aprobados
                                 </Checkbox>
                             </div>
                         </div>
