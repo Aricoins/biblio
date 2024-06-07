@@ -5,8 +5,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import styles from './styles.module.css';
 import Link from 'next/link';
-import { MdExpandMore } from "react-icons/md";
-import { MdExpandLess } from "react-icons/md";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import { BsDatabaseFillCheck } from "react-icons/bs";
 
 const { Title } = Typography;
 
@@ -62,68 +62,71 @@ function Proyectos() {
 
     const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaNumero(event.target.value);
-        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado);
+        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaPalabraChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaPalabra(event.target.value);
-        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, filtroTipo, filtroAprobado);
+        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaAutorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaAutor(event.target.value);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, filtroTipo, filtroAprobado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setFiltroTipo(value);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, value, filtroAprobado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, value, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroAprobadoChange = (checked: boolean) => {
         setFiltroAprobado(checked);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
-    
+
     const handleFiltroRechazadoChange = (checked: boolean) => {
         setFiltroRechazado(checked);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, checked);
         setHaRealizadoBusqueda(true);
     };
-    
 
-    const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean) => {
+    const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
         let filteredProyectos = proyectos.filter((proyecto) => {
             const titulo = proyecto.titulo_proyecto.toLowerCase();
             const numeroStr = proyecto.numero_proyecto.toString();
             const tipoLower = proyecto.tipo_proyecto.toLowerCase();
-            const autorStr = proyecto.autor.join(' ').toLowerCase(); // Convertir autores a una cadena
+            const autorStr = proyecto.autor.join(' ').toLowerCase();
 
             const numeroExacto = numero !== '' && numeroStr === numero;
             const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
             const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
             const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-            const aprobadoMatch = aprobado === proyecto.aprobado;
 
-            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && (!aprobado || aprobadoMatch);
+            let aprobadoMatch = true;
+            if (aprobado) {
+                aprobadoMatch = proyecto.aprobado === true;
+            } else if (rechazado) {
+                aprobadoMatch = proyecto.aprobado === false;
+            }
+
+            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && aprobadoMatch;
         });
 
-        // Ordenar por año del proyecto (más nuevo a más viejo)
         filteredProyectos = filteredProyectos.sort((a, b) => {
             const yearA = parseInt(a.anio_proyecto, 10);
             const yearB = parseInt(b.anio_proyecto, 10);
             return yearB - yearA;
         });
 
-        // Establecer los resultados para mostrar con paginación
         setResultados(filteredProyectos);
-        setCurrentPage(1); // Reiniciar a la página 1 después de filtrar
+        setCurrentPage(1);
     };
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -132,17 +135,15 @@ function Proyectos() {
             behavior: 'smooth',
         });
     };
+
     const downloadFile = async (filePath: string) => {
         try {
             const response = await fetch(filePath);
             if (response.ok) {
-                // Si la respuesta es exitosa, abre la URL del archivo en una nueva ventana o pestaña
                 window.open(filePath, '_blank');
             } else if (response.status === 404) {
-                // Si el error es 404, muestra un alert
                 alert('El archivo no se encuentra disponible');
             } else {
-                // Maneja otros tipos de errores si es necesario
                 alert('Error al descargar el archivo.');
             }
         } catch (error) {
@@ -150,8 +151,6 @@ function Proyectos() {
             alert('Error al descargar el archivo.');
         }
     };
-
-
 
     const columns = [
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
@@ -201,114 +200,105 @@ function Proyectos() {
             dataIndex: 'observaciones',
             key: 'observaciones',
             render: (observaciones: string) => {
-              
                 if (observaciones === 'sin sanción') {
                     return <button onClick={handleClick} >Buscar entre los expedientes no sancionados</button>;
                 }
-                if ( observaciones === "https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link" )
-                    
-                    return <Link href="https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link"> Ver dictamen</Link>;
-                
+                if (observaciones === "https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link")
+                    return <Link href="https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link">Ver dictamen</Link>;
                 else {
                     return observaciones;
                 }
             },
             className: styles.observaciones
         },
-            ];
+    ];
 
-    // Calcular datos para la paginación
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const datosPaginaActual = resultados.slice(startIndex, endIndex);
 
     return (
-      
-            <>
-                <div onClick={() => setVer(!ver)}>
-                    <h2 className={styles.hdos} >
-                   {ver ? 
+        <>
+            <div onClick={() => setVer(!ver)}>
+                <h2 className={styles.hdos} >
+                    {ver ? 
                     <MdExpandLess style= {{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
-                       Buscador general de expedientes 🔍   
-                       {ver ? 
-                       <MdExpandLess style={{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
-                    </h2>
-                  
-                </div>
+                    Buscador general de expedientes 🔍   
+                    {ver ? 
+                    <MdExpandLess style={{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
+                </h2>
+            </div>
 
-                {ver && (
-                    <div style={{ margin: "auto", width: "100%", marginBottom: "30%" }}>
-                         
-                         <p className={styles.spinText}> Busque entre los proyectos sancionados y no sancionados </p>
-                        <div className={styles.inputs}>
-                            <Input.Search
-                                placeholder="Por n° de proyecto..."
-                                value={busquedaNumero}
-                                onChange={handleBusquedaNumeroChange}
-                                style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                            />
-                            <Input.Search
-                                placeholder="Por palabra..."
-                                value={busquedaPalabra}
-                                onChange={handleBusquedaPalabraChange}
-                                style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                            />
-                            <Input.Search
-                                placeholder="Por autor..."
-                                value={busquedaAutor}
-                                onChange={handleBusquedaAutorChange}
-                                style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
-                            />
-                            <select onChange={handleFiltroTipoChange} className={styles.sele}>
-                                <option value="">Por tipo</option>
-                                <option value="Ordenanza">Ordenanzas</option>
-                                <option value="Declaración">Declaraciones</option>
-                                <option value="Comunicacion">Comunicaciones</option>
-                                <option value="Resolución">Resoluciones</option>
-                            </select>
-                            <div className={styles.checkbox}>
-                                <Checkbox
-                                    onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
-                                >
-                                    Sólo aprobados
-                                </Checkbox>
-                                <Checkbox
-                                    onChange={(event) => handleFiltroRechazadoChange(event.target.checked)}
-                                >
-                                    Sólo no aprobados
-                                </Checkbox>
-                            </div>
+            {ver && (
+                <div style={{ margin: "auto", width: "100%", marginBottom: "5%" }}>
+                    <p className={styles.spinText}> Busque entre los proyectos sancionados y no sancionados </p>
+                    <div className={styles.inputs}>
+                        <Input.Search
+                            placeholder="Por n° de proyecto..."
+                            value={busquedaNumero}
+                            onChange={handleBusquedaNumeroChange}
+                            style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                        />
+                        <Input.Search
+                            placeholder="Por palabra..."
+                            value={busquedaPalabra}
+                            onChange={handleBusquedaPalabraChange}
+                            style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                        />
+                        <Input.Search
+                            placeholder="Por autor..."
+                            value={busquedaAutor}
+                            onChange={handleBusquedaAutorChange}
+                            style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                        />
+                        <select onChange={handleFiltroTipoChange} className={styles.sele}>
+                            <option value="">Por tipo</option>
+                            <option value="Ordenanza">Ordenanzas</option>
+                            <option value="Declaración">Declaraciones</option>
+                            <option value="Comunicacion">Comunicaciones</option>
+                            <option value="Resolución">Resoluciones</option>
+                        </select>
+                        <div className={styles.checkbox}>
+                            <Checkbox
+                                onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
+                            >
+                                Sólo aprobados
+                            </Checkbox>
+                            <Checkbox
+                                onChange={(event) => handleFiltroRechazadoChange(event.target.checked)}
+                            >
+                                Sólo no aprobados
+                            </Checkbox>
                         </div>
-
-                        {/* Resultados */}
-                        {haRealizadoBusqueda ? (
-                            <div className={styles.table }>
-                                <Table
-                                    dataSource={datosPaginaActual}
-                                    columns={columns}
-                                    pagination={false}
-                                    rowKey="id"
-                                    className={styles.table}
-                                />
-                                {/* Paginación */}
-                                <Pagination
-                                    current={currentPage}
-                                    pageSize={pageSize}
-                                    total={resultados.length}
-                                    onChange={handlePageChange}
-                                    style={{ marginTop: 16 }}
-                                />
-                             </div>
-                        ) : (
-                            // Mostrar Spinner si los datos no se han cargado
-                            <div className={styles.spinContainer}>
-                            
-                             </div>
-                        )}
                     </div>
-                )}
-            </>
 
+                    {haRealizadoBusqueda ? (
+                        <div className={styles.table}>
+                            <Table
+                                dataSource={datosPaginaActual}
+                                columns={columns}
+                                pagination={false}
+                                rowKey="id"
+                           
+                            />
+                            <Pagination
+                                current={currentPage}
+                                pageSize={pageSize}
+                                total={resultados.length}
+                                onChange={handlePageChange}
+                                style={{ marginTop: 16 }}
+                            />
+                        </div>
+                    ) : (
+                        <div className={styles.spinContainer}>
+                          
+                            <BsDatabaseFillCheck />
+ | Conectado a la Base de Datos.
+                        </div>
+                    )}
+                </div>
+            )}
+        </>
     );
 }
 

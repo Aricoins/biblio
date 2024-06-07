@@ -5,7 +5,7 @@
     font-weight: 500;
     display: flex;
     justify-content: center;
-position: relative;
+    position: relative;
     margin-bottom: 35%;
     padding: 1%;
     cursor: pointer;
@@ -39,6 +39,8 @@ position: relative;
   display: flex;
   justify-content: center;
   padding: 1%;
+  height: 40px;
+  margin: auto;
   background-color: gray;
   border-radius: 5px;
   background-color: "gray"; 
@@ -50,9 +52,7 @@ position: relative;
 
 .sele{
 color: #830b0b; 
-margin-left: 10%;
-height: 5%;
-width: 20px;
+margin-right: 1%;
 }
 
 .check{
@@ -63,11 +63,11 @@ width: 20px;
   border-radius: 8%; 
   height: 33px;
   padding: 1%;
+  }
   
-}
 .tabla{
   width: 80%;
-  margin-bottom: 100%;  
+  margin-bottom: 20%;  
   box-sizing: border-box;
   border-collapse: collapse;
   border: 1px solid black;
@@ -262,22 +262,22 @@ width: 40%;
   height: 100%;
   text-align: center;
   align-items: center;
-  color:rgb(255, 87, 51)
+  color:rgb(99, 243, 4);
+  font-size: large;
+  margin: 5%;
 }
 
 .spin{
-
   margin: auto;
   width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
   color:rgb(255, 87, 51)
-  
-}
+  }
 
 .spinText{
   text-align: center;
   font-size: 1.5rem;
-  color:rgba(10, 3, 0)
+  color:rgb(172, 147, 137)
 }
