@@ -141,7 +141,7 @@ function ExpedientesDeclaraciones() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Declaraciones | 1988 - actualidad
+       Declaraciones | actualidad - 1988 
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

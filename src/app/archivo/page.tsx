@@ -36,9 +36,7 @@ const Archivo = () => {
           <div className={styles.subcontainer}>
             <div>
               <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
-              <div data-aos="fade-up" className={styles.component}>
-                <ExpedientesOrdenanzas />
-              </div>
+            
               <div data-aos="fade-up" className={styles.component}>
                 <ExpedientesComunicaciones />
               </div>
@@ -48,7 +46,9 @@ const Archivo = () => {
               <div data-aos="fade-up" className={styles.component}>
                 <ExpedientesResoluciones />
               </div>
-              
+              <div data-aos="fade-up" className={styles.component}>
+                <ExpedientesOrdenanzas />
+              </div>
             </div>
                      </div>
         </div>

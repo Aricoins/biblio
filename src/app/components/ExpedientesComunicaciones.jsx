@@ -141,7 +141,7 @@ function ExpedientesComunicaciones() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Comunicaciones | 1988 - actualidad
+       Comunicaciones | actualidad - 1988
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

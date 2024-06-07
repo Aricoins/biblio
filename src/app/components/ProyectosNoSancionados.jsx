@@ -183,8 +183,8 @@ const animatedCount = () =>{
         }}
         
       >
-        Expedientes Sin Sanción | 2011 - 2023
-      </h2>
+        Expedientes Sin Sanción | 2023 - 2011
+       </h2>
 
 
       {isComponentVisible && (
