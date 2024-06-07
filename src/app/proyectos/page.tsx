@@ -79,7 +79,6 @@ function Proyectos() {
     };
 
     const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        alert ("en desarrollo")
         const value = event.target.value;
         setFiltroTipo(value);
         filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, value, filtroAprobado, filtroRechazado);
@@ -87,7 +86,6 @@ function Proyectos() {
     };
 
     const handleFiltroAprobadoChange = (checked: boolean) => {
-       alert ("en desarrollo")
         setFiltroAprobado(checked);
         filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked, filtroRechazado);
         setHaRealizadoBusqueda(true);

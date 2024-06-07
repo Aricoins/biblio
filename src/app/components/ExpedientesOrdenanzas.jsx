@@ -186,6 +186,7 @@ function ExpedientesOrdenanzas() {
               ))}
             </tbody>
           </table>
+          <p> Para conocer la vigencia de una ordenanza consulte nuestro Digesto Juridico</p>
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>
