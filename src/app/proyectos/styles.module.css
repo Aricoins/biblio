@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   padding: 1%;
-  height: 40px;
+  height: 100%;
   margin: auto;
   background-color: gray;
   border-radius: 5px;
