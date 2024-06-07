@@ -79,7 +79,7 @@ const animatedCount = () =>{
       });
      
       console.log(data)
-  }, []);
+  }, [data]);
 
   useEffect(() => {
   
