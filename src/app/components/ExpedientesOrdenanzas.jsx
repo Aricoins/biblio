@@ -190,11 +190,11 @@ function ExpedientesOrdenanzas() {
             <>
               <div className={styles.botones}>
                 <button onClick={handleShowMore} className={styles.verMas}>
-                <MdExpandMore /><p className={styles.mas}> Más </p>  
+                <MdExpandMore /><p className={styles.mas}> </p>  
                 </button>
                 {showLessButton ? (
                   <button onClick={handleShowLess} className={styles.verMenos}>
-                   <p className={styles.mas}>Menos</p> <MdExpandLess /> 
+                   <p className={styles.mas}></p> <MdExpandLess /> 
                   </button>
                 ) : null}
               </div>
