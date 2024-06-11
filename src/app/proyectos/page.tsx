@@ -251,13 +251,13 @@ function Proyectos() {
                             onChange={handleBusquedaAutorChange}
                             style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                         />
-                        <select onChange={handleFiltroTipoChange} className={styles.sele}>
+                        {/* <select onChange={handleFiltroTipoChange} className={styles.sele}>
                             <option value="">Por tipo</option>
                             <option value="Ordenanza">Ordenanzas</option>
                             <option value="Declaración">Declaraciones</option>
                             <option value="Comunicacion">Comunicaciones</option>
                             <option value="Resolución">Resoluciones</option>
-                        </select>
+                        </select> */}
                         <div className={styles.checkbox}>
                             <Checkbox
                                 onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}

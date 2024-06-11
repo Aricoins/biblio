@@ -2,6 +2,7 @@
   "name": "libros",
   "version": "0.1.0",
   "private": true,
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -42,6 +43,7 @@
     "openssl": "^2.0.0",
     "papa": "^0.0.0",
     "papaparse": "^5.4.1",
+    "pg-format": "^1.0.4",
     "pg-promise": "^11.5.4",
     "postcss-nested": "^6.0.1",
     "react": "^18.2.0",

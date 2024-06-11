@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/OtrosTitulos.jsx", "src/app/components/NavTop.jsx", "src/app/components/NavTop.jsx", "src/app/components/Proyectos.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/OtrosTitulos.jsx", "src/app/components/NavTop.jsx", "src/app/components/NavTop.jsx", "src/app/components/Proyectos.tsx", "src/app/admin/page.js"],
   "exclude": ["node_modules"]
 }
