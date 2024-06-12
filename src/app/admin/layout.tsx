@@ -14,7 +14,7 @@ export default function RootLayout({
 
 
   return (
-    <div lang="en" style={{backgroundColor: "green", width: "100%"}}>
+    <div lang="en" style={{backgroundColor: "black"} }>
 
                {children}
 

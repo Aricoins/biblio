@@ -8,7 +8,7 @@ export default function Proyectos() {
 
   const [proyectos, setProyectos] = useState(initialProyectos.slice(0, 5)); // Usamos solo los primeros 10 proyectos
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(10);
+  const [projectsPerPage] = useState(5);
   const [editingProject, setEditingProject] = useState(null);
   const [formData, setFormData] = useState({});
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -21,7 +21,7 @@ export default function Proyectos() {
           throw new Error('Error al cargar los proyectos');
         }
         const data = await response.json();
-        setProyectos(data.proyectos); // Actualizamos con los primeros 10 proyectos
+        setProyectos(data.proyectos); 
       } catch (error) {
         console.error(error);
       }
@@ -81,9 +81,9 @@ export default function Proyectos() {
       <input type="text" className={styles.inputSearch} placeholder="Buscar Proyecto" />
       <div className={styles.gridContainer}> 
         {currentProjects.map((proyecto) => (
-          <div key={proyecto.id}>
+          <div style={{ border: "solid 1px black"}} key={proyecto.id}>
             <h2>{proyecto.titulo_proyecto}</h2>
-            <p>{proyecto.numero_proyecto} - {proyecto.anio_proyecto}</p>
+            <h3 style={{ fontSize: "large"}}>{proyecto.numero_proyecto}/{proyecto.anio_proyecto}</h3>
             <p>{proyecto.tipo_proyecto}</p>
             <p>Autor: {proyecto.autor}</p>
             <p>Colaboradores: {proyecto.colaboradores}</p>

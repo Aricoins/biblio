@@ -1,46 +1,53 @@
 "use client"
-import Proyectos from '../components/Proyectos';
+import Proyectos from './components/proyectos';
 import CrearLibro from '../libros/form/page';
 import Link from 'next/link';
+import { Modal } from 'antd';
 
 
 const Page = () => {
-  const abrirModal = () => {
 
-  }
 
   return (
        <>   
 <div style={{textAlign: "center", 
 color: "white",  
-margin: "10", 
-padding: "10%", 
-backgroundColor: "gray", 
-fontFamily: "Arial"
-}}>
 
-<h1>Administrar datos</h1>
+display: "flex",
+flexDirection: "column",
+width: "80%",
+margin: "5%",
+justifySelf: "center",
+fontSize: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
 
-</div> 
-    <div style={{
-     marginTop: "15%",
-     margin: "1%", 
-     display: "flex",
-     flexDirection: "row",    
-     fontSize: "40px", 
-     textAlign: "center", 
-     fontFamily: "Roboto"}}>
+}} >
 
-      
-      <div  style={{width: "40%", margin: "10%", marginLeft: "1%", justifyContent: "left" }}>
+  <h1 style={{backgroundColor: "gray", borderRadius: "10px", fontFamily: "Arial"}}>Administrar datos</h1>
+
+    <div style={{width: "90%", 
+       margin: "1%", 
+      marginLeft: "1%", 
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr", 
+      gap: "5%",
+      backgroundColor: "black"}} >
+ 
+     
+       <div style= {{width: "98%", color: "black"}}>
+       <p style={{color: "white", fontFamily: "Arial"}}>Archivo</p> 
         <Proyectos />
       </div>
-      <div style={{marginRight: "0px", textDecoration: "none", margin: "10%", backgroundColor: "red", width: "50%"}}>
-  
-     <button onClick={abrirModal} > Agregar Libro </button>
+      
+      <div style={{width: "98%"}}>
+      <p style= {{ color: "white",  fontFamily: "Arial"}} > Biblioteca </p>
+           <CrearLibro /> 
       </div>
-    </div>
+      
+    
 
+      </div> 
+    </div>
+    
     </>  );  
 }
 

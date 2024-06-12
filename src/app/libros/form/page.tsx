@@ -238,19 +238,7 @@ return (
 <div className={styles.sideContent}>
 
   {formInteracted ? (
-    Object.values(errors).some((error) => error !== '') ? (
-      <div>
-        <p>Validación de Datos:</p>
-        <ul className={styles.errorList}>
-          {Object.entries(errors).map(([key, value]) => (
-            <li className={styles.errorListItem} key={key}>
-              <span className={styles.errorIcon}>{value ? '❌' : '✅'}</span>
-              <span className={styles.errorText}>{value ? value : key.charAt(0).toUpperCase() + key.slice(1) + ' es válido'}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ) : (
+    Object.values(errors).some((error) => error !== '') ? null : (
       <div className={styles.successMessage} >
         <ul>
           {Object.entries(errors).map(([key, value]) => (
