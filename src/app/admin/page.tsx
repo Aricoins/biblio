@@ -1,5 +1,5 @@
 "use client"
-import Proyectos from './components/Proyectos';
+import Proyectos from '../components/Proyectos';
 import CrearLibro from '../libros/form/page';
 import Link from 'next/link';
 
