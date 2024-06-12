@@ -19,6 +19,7 @@ import { Modal } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, } from '@fortawesome/free-brands-svg-icons'
 import { MdOutgoingMail } from "react-icons/md";
+import FondosDocumentales from '../components/FondosDocumentales'
 
 const Archivo = () => {
   useEffect(() => {
@@ -73,6 +74,7 @@ const Archivo = () => {
           </a>
         </div>
       </div>
+      <FondosDocumentales />
       <NavFoot />
     </>
   );
