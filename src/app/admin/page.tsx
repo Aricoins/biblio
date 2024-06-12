@@ -38,8 +38,8 @@ fontSize: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxy
         <Proyectos />
       </div>
       
-      <div style={{width: "98%"}}>
-      <p style= {{ color: "white",  fontFamily: "Arial"}} > Biblioteca </p>
+      <div style={{width: "98%", }}>
+      <p style= {{ color: "white",  fontFamily: "Arial", justifySelf: "right"}} > Biblioteca </p>
            <CrearLibro /> 
       </div>
       

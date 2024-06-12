@@ -2,16 +2,18 @@
 import { useEffect, useState } from 'react';
 import { Modal } from 'antd';
 import styles from './styles.module.css'; 
+import {Spin } from 'antd'
 
 export default function Proyectos() {
   const initialProyectos = []; 
 
   const [proyectos, setProyectos] = useState(initialProyectos.slice(0, 5)); // Usamos solo los primeros 10 proyectos
   const [currentPage, setCurrentPage] = useState(1);
-  const [projectsPerPage] = useState(5);
+  const [projectsPerPage] = useState(10);
   const [editingProject, setEditingProject] = useState(null);
   const [formData, setFormData] = useState({});
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchProyectos() {
@@ -22,6 +24,7 @@ export default function Proyectos() {
         }
         const data = await response.json();
         setProyectos(data.proyectos); 
+        setLoading(true);
       } catch (error) {
         console.error(error);
       }
@@ -76,31 +79,24 @@ export default function Proyectos() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className={styles.container}> 
 
-      <input type="text" className={styles.inputSearch} placeholder="Buscar Proyecto" />
+    <div className={styles.container}> 
+{loading ? (  
+  
+  <>
+  <input type="text" className={styles.inputSearch} placeholder="Buscar Proyecto" />
       <div className={styles.gridContainer}> 
         {currentProjects.map((proyecto) => (
-          <div style={{ border: "solid 1px black"}} key={proyecto.id}>
-            <h2>{proyecto.titulo_proyecto}</h2>
-            <h3 style={{ fontSize: "large"}}>{proyecto.numero_proyecto}/{proyecto.anio_proyecto}</h3>
+          <div style={{ border: "solid 1px black", width: "100%"}} key={proyecto.id}>
+            <h5>{proyecto.titulo_proyecto}</h5>
+            <h3 >{proyecto.numero_proyecto}/{proyecto.anio_proyecto}</h3>
             <p>{proyecto.tipo_proyecto}</p>
-            <p>Autor: {proyecto.autor}</p>
-            <p>Colaboradores: {proyecto.colaboradores}</p>
-            <p>Girado a: {proyecto.girado_a}</p>
-            <p>Acta Fecha: {new Date(proyecto.acta_fecha).toLocaleDateString()}</p>
-            <p>Aprobado: {proyecto.aprobado ? 'Sí' : 'No'}</p>
-            <p>Tipo de Norma: {proyecto.tipo_norma}</p>
-            <p>Número de Norma: {proyecto.numero_norma}</p>
-            <p>Observaciones: {proyecto.observaciones}</p>
+          
             <button onClick={() => handleEditClick(proyecto)}>Editar</button>
           </div>
         ))}
       </div>
-
-    
-
-      <Modal
+     <Modal
  styles={{ body: { padding: 20 } }}
         title="Editar "
         open={isModalVisible}
@@ -219,14 +215,15 @@ export default function Proyectos() {
         </label>
 
       </Modal>
- <div> 
+ <div> <p>páginas</p>
   {Array.from({ length: Math.ceil(proyectos.length / projectsPerPage) }, (_, index) => (
     <button key={index} onClick={() => paginate(index + 1)}>
       {index + 1}
     </button>
   ))}
-</div>
+</div> 
 
-</div>
+</>) : <>  <Spin/> cargando datos ... </>  }
+</div> 
   );
 }
