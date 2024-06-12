@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Input, Checkbox, Typography, Table, Spin, Pagination } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import styles from '../proyectos/style.module.css';
+import styles from '../../app/proyectos/styles.module.css';
 import Link from 'next/link';
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import { BsDatabaseFillCheck } from "react-icons/bs";
