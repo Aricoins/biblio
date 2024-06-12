@@ -102,16 +102,12 @@ export default function Proyectos() {
 
       <Modal
  styles={{ body: { padding: 20 } }}
-
-         title="Editar "
+        title="Editar "
         open={isModalVisible}
         onOk={handleSubmit}
         onCancel={() => setIsModalVisible(false)}
       >
-        <input 
-            type="hidden"
-            name="id"
-            value={formData.id}
+        <input type="hidden" name="id" value={formData.id}
         />
         <label>
           Número de Proyecto:
@@ -223,7 +219,7 @@ export default function Proyectos() {
         </label>
 
       </Modal>
-      <div>
+ <div> 
   {Array.from({ length: Math.ceil(proyectos.length / projectsPerPage) }, (_, index) => (
     <button key={index} onClick={() => paginate(index + 1)}>
       {index + 1}

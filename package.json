@@ -2,7 +2,6 @@
   "name": "libros",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,6 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@heroicons/react": "^2.1.1",
+    "@mlc-ai/web-llm": "^0.2.43",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/aos": "^3.0.7",
     "@types/marked": "^6.0.0",

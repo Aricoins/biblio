@@ -8,6 +8,7 @@ import Text from './components/text';
 import imagen from '../../src/app/api/assets/concejo.png';
 import './globals.css';
 import { Typography } from "antd";
+import Chatbot from './components/Chatbot';
 
 
 const Container = ' w-12/12 h-100vh bg-gradient-to-b animated-gradient-x flex items-center justify-center';
@@ -32,6 +33,8 @@ export default function Libros() {
 
   return (
     <>
+<Chatbot />
+
       <div className={Container}>
 
           <div className={Subcontainer}>

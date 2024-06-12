@@ -14,10 +14,11 @@ export default function RootLayout({
 
 
   return (
-    <div lang="en">
+    <div lang="en" style={{backgroundColor: "green", width: "100%"}}>
 
                {children}
 
     </div>
   )
 }
+

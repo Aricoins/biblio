@@ -234,6 +234,7 @@ return (
       
       </div>
 
+
 <div className={styles.sideContent}>
 
   {formInteracted ? (
