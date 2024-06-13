@@ -7,13 +7,13 @@ const H1 = styled.h6`
   font-size: 12px;
   height: 100%;
   width: 90%;
-  color: #080855;
+  color: white;
   text-align: justify;
   inline-size: 100%;
   margin: 10% 0% 0% 0%;
   line-height: 1.6;
   justify-self: center;
-
+ font-family: 'Roboto', sans-serif;
   @keyframes blinkAnim {
     0% {
       opacity: 1;
@@ -31,7 +31,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
 
   useEffect(() => {
     const words = [
-      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad; cuenta con un corpus literario de interés para la comunidad y un archivo de destacado valor documental e histórico."
+      " www.dibiase.net ",
     ];
 
     let wordWrapperContent = '';
@@ -61,7 +61,11 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
 
   return (
 
-      <H1 id="word" ref={wordRef}></H1>
+      <H1 id="word" ref={wordRef} style={{fontFamily:"Roboto, Arial",
+        textAlign: "center", textDecoration: "none",  color:"oranged", margin: "auto",  
+        fontSize: "large"}}>
+www.dibiase.net
+        </H1>
   );
 };
 
