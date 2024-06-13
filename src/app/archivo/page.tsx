@@ -74,7 +74,7 @@ const Archivo = () => {
           </a>
         </div>
       </div>
-      <FondosDocumentales />
+      {/* <FondosDocumentales /> */}
       <NavFoot />
     </>
   );
