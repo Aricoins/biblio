@@ -6,28 +6,27 @@ import Image from 'next/image';
 import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import { UserButton, SignedIn } from '@clerk/nextjs';
+import { useAuth } from '@clerk/nextjs';
 
 
 
 const NavTop = () => {
   const pathname = usePathname();
-  
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
+
     return (
       
     <div className={styles.navTop}>
     <Image 
     src={logo}
-    width={300} 
+    width={200} 
     height={300} 
     className={styles.navTopImage}
      alt="logotipo" priority />
 
     <div className={styles.navTopList}>
-    <div className= {styles.item}>
-        <Link  className ={styles.link} href="/" >
-          Inicio
-        </Link>
-      </div>
+    
       <div className={styles.item}>    
           <Link href="/archivo" className={clsx(styles.link, {
           [styles.link2]: pathname === '/archivo',
@@ -45,23 +44,18 @@ const NavTop = () => {
         Bilioteca
         </Link>
       </div>
-     
-      <div className={styles.item}>
-        <Link   href="/" className={clsx(styles.link, {
-          [styles.link2]: pathname === '/',
-        
-        })}>
-        Salir
+      <div className= {styles.item}>
+        <Link  className ={styles.link} href="/dashboard" >
+          Datos
         </Link>
       </div>
-      {/* <li className={styles.item}>
-        <Link href="/libros/form" >
-          Agregar Libro
-        </Link>
-      </li> */}
+      <div className={styles.item2}> <li>
+{}   <SignedIn> <UserButton /> </SignedIn>
+      </li> 
+    </div>
+      </div>
     </div>
 
-  </div>
   );
 };
 export default NavTop;

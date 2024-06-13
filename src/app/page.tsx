@@ -40,7 +40,7 @@ export default function Libros() {
  
           <div className={Subcontainer}>
             <div className={LeftContent}>
-    <SignIn routing="hash"/>
+
 </div>
             <div className={RightContent}>
             
@@ -69,9 +69,13 @@ export default function Libros() {
               </div>
             
             </div>
+
+
    </div>
 
 </div>
-    </>
+<div >
+<Link style={{display: "flex", justifyContent: "center", textAlign: "center"}} href='/archivo'><button>Ingresar como invitado</button></Link>
+</div> </>
   );
 }
