@@ -3,13 +3,17 @@ import Proyectos from './components/proyectos';
 import CrearLibro from '../libros/form/page';
 import Link from 'next/link';
 import { Modal } from 'antd';
+import {SignIn, useAuth} from '@clerk/nextjs';
 
 
 const Page = () => {
-
+ const { isSignedIn } = useAuth();
 
   return (
        <>   
+
+       {isSignedIn ? 
+      (  
 <div style={{textAlign: "center", 
 color: "white",  
 
@@ -47,7 +51,7 @@ fontSize: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxy
 
       </div> 
     </div>
-    
+      ) : <SignIn /> }
     </>  );  
 }
 

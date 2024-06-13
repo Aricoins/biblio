@@ -45,7 +45,7 @@ const NavTop = () => {
         </Link>
       </div>
       <div className= {styles.item}>
-        <Link  className ={styles.link} href="/dashboard" >
+        <Link  className ={styles.link} href="/admin" >
           Datos
         </Link>
       </div>
