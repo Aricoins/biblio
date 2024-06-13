@@ -16,15 +16,16 @@ const NavTop = () => {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
 
     return (
-      
+   
     <div className={styles.navTop}>
+     <Link  className={styles.navTop} href='/'>
     <Image 
     src={logo}
     width={200} 
     height={300} 
     className={styles.navTopImage}
      alt="logotipo" priority />
-
+</Link>
     <div className={styles.navTopList}>
     
       <div className={styles.item}>    
