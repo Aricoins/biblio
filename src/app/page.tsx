@@ -70,7 +70,12 @@ export default function Libros() {
             
             </div>
    </div>
-
+  
+          </div>
+          <div className='flex justify-center items-center'>
+<Link href='/archivo'>
+<button className={Boton}>Entrar como invitado</button>
+</Link>
 </div>
     </>
   );
