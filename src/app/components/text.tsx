@@ -7,7 +7,7 @@ const H1 = styled.h6`
   font-size: 12px;
   height: 100%;
   width: 90%;
-  color: white;
+  color: black;
   text-align: justify;
   inline-size: 100%;
   margin: 10% 0% 0% 0%;
@@ -31,7 +31,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
 
   useEffect(() => {
     const words = [
-      " www.dibiase.net ",
+      " ww.DiBiase.net ",
     ];
 
     let wordWrapperContent = '';
@@ -54,7 +54,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
           wordWrapperContent = '';
         }
       }
-    }, 20);
+    }, 200);
 
     return () => clearInterval(interval);
   }, [setComplete]);
@@ -64,7 +64,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
       <H1 id="word" ref={wordRef} style={{fontFamily:"Roboto, Arial",
         textAlign: "center", textDecoration: "none",  color:"oranged", margin: "auto",  
         fontSize: "large"}}>
-www.dibiase.net
+
         </H1>
   );
 };
