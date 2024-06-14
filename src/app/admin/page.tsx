@@ -53,7 +53,7 @@ const Page = () => {
 </div>
 <Link href="/" > <button style={{fontSize: "x-large", 
   backgroundColor: "red", 
-  padding: "1%", color: "white", margin: "10%", marginLeft: "45%"}}> Salir </button> </Link>
+  padding: "1%", color: "white", margin: "10%", marginLeft: "45%"}}> Salir de Admin </button> </Link>
 
         </div>
 

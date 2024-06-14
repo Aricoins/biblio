@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './NavTop.module.css';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { UserButton, SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
+import { UserButton, SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
 import { useAuth } from '@clerk/nextjs';
 
 const NavTop = () => {
@@ -45,7 +45,7 @@ const NavTop = () => {
       <div className={styles.item2}> <li>
 
       <SignedOut>
-              <SignInButton />
+              <SignUpButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
