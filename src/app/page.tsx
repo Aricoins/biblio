@@ -29,9 +29,9 @@ export default function Libros() {
                   color: "white",  
                   background: "rgba( 255, 255, 255, 0.6)", 
                   fontSize: "xx-large",
-                  marginLeft: "5%", 
-                  marginRight: "5%",
-                  marginTop: "50%",
+                  marginLeft: "2%", 
+                  marginRight: "25%",
+                  marginTop: "35%",
                   width: "60%", 
                   fontFamily: "Roboto, Arial",
                   textAlign: "center",
@@ -41,8 +41,8 @@ export default function Libros() {
                 </div>
                 <Image
                     src={imagen}
-                    width={1500}
-                    height={1500}
+                    width={2500}
+                    height={2500}
                     alt="dibiase bg"
                     style={{width: "100%", height: "100%", objectFit: "cover"}}
                 />
