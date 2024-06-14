@@ -16,8 +16,18 @@ const cspHeader = `
 module.exports = {
   
   images: {
-    domains: ['localhost', 'res.cloudinary.com'],
-  },
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+      },
+          {
+            protocol: 'https',
+            hostname: 'res.cloudinary.com',
+          }
+        ]	
+        
+      },
   headers() {
     return [
       {

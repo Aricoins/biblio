@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import imagen from './fondo.webp.jpg';
+import imagen from './fondo.webp';
 import Text from './components/text';
 const Container = ' w-12/12 h-100vh bg-gradient-to-r from-blue-400 to-gray-500 via-gray-900  animated-gradient-x flex items-center justify-center';
 import { useState, useEffect } from 'react';
@@ -41,8 +41,8 @@ export default function Libros() {
                 </div>
                 <Image
                     src={imagen}
-                    width={500}
-                    height={500}
+                    width={1500}
+                    height={1500}
                     alt="dibiase bg"
                     style={{width: "100%", height: "100%", objectFit: "cover"}}
                 />

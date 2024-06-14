@@ -8,6 +8,7 @@ const H1 = styled.h6`
   height: 100%;
   width: 90%;
   color: black;
+  background-color: white !important;
   text-align: justify;
   inline-size: 100%;
   margin: 10% 0% 0% 0%;
