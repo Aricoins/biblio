@@ -27,7 +27,7 @@ export default function Libros() {
             <div className={Container} style={{ position: "relative" }}>
                 <div style={{ position: "absolute", 
                   color: "white",  
-                  background: "rgba( 255, 255, 255, 0.6)", 
+                  background: "rgba( 0, 0, 0, 0.6)", 
                   fontSize: "xx-large",
                   marginLeft: "2%", 
                   marginRight: "25%",
