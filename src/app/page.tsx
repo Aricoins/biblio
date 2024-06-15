@@ -40,13 +40,12 @@ export default function Libros() {
  
           <div className={Subcontainer}>
             <div className={LeftContent}>
-  
-<SignedIn>              
-             <SignIn routing="hash" />
-  </SignedIn> 
-         <SignedOut>                
-                        <SignUp routing="hash" />
-</SignedOut>   
+    <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
                 </div>
    <div className={RightContent}>
     <Image
