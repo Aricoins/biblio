@@ -40,14 +40,10 @@ export default function Libros() {
  
           <div className={Subcontainer}>
             <div className={LeftContent}>
-                            <SignedOut>
                             <SignIn routing="hash" />
-                        </SignedOut>
-                        <SignedIn>
                             
                         <SignUp routing="hash" />
-                        </SignedIn>
-</div>
+                /div>
    <div className={RightContent}>
     <Image
       className='w-10/12 "filter drop-shadow-md rounded-lg my-10'
