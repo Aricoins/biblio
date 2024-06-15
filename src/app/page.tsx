@@ -43,8 +43,7 @@ export default function Libros() {
                             <SignedOut>
                             <SignIn routing="hash" />
                         </SignedOut>
-                        <SignedIn>
-                            
+                        <SignedIn>                            
                         <SignUp routing="hash" />
                         </SignedIn>
 </div>
