@@ -43,7 +43,7 @@ export default function Libros() {
                             <SignIn routing="hash" />
                             
                         <SignUp routing="hash" />
-                /div>
+                </div>
    <div className={RightContent}>
     <Image
       className='w-10/12 "filter drop-shadow-md rounded-lg my-10'
