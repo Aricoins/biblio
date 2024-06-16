@@ -38,15 +38,17 @@ export default function Libros() {
     <>
       <div className={Container}>
  
+ 
           <div className={Subcontainer}>
             <div className={LeftContent}>
-    <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-                </div>
+              <SignedOut> 
+              <SignIn routing='hash'/>
+              </SignedOut>
+              <SignedIn>
+                        <SignUp routing='hash' />
+              </SignedIn>
+                              
+</div>
    <div className={RightContent}>
     <Image
       className='w-10/12 "filter drop-shadow-md rounded-lg my-10'

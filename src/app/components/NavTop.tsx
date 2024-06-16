@@ -45,7 +45,8 @@ const NavTop = () => {
       <div className={styles.item2}> <li>
 
       <SignedOut>
-              <SignUpButton />
+              <SignUpButton > Ingresar </SignUpButton>
+            
             </SignedOut>
             <SignedIn>
               <UserButton />
