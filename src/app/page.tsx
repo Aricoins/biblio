@@ -20,7 +20,7 @@ const LeftContent = 'md:w-2/3 md:pt-0 md:pl-10 bg-white p-8 mx-auto rounded-lg';
 
 const RightContent = ' m-auto w-12/12 mt-20 p-10 md:w-1/2 text-center md:pt-10 md:pl-10  p-5 rounded-md mx-20 ';
 
-const Boton = 'bg-black w-full flex p-4 justify-center items-center relative text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
+const Boton = 'bg-black  w-full flex p-4 justify-center items-center relative text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);

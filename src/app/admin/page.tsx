@@ -13,7 +13,7 @@ const Page = () => {
   console.log(user, "user");
   return (
     <>
-      {user && user.id ==="user_2hpeAtj5l4aYpY9olKcPdEYO6W6" || "user_2hyFEgA0uIUAdDsl4YSdDexhBu6" && isSignedIn ? (
+      {user && user.id ==="user_2hpeAtj5l4aYpY9olKcPdEYO6W6" && isSignedIn ? (
         <div style={{
           textAlign: "center",
           color: "white",
