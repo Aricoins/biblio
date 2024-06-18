@@ -47,13 +47,13 @@ const Page = () => {
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center", margin: "5%" }}>
-          <h4 style={{color: "white", marginLeft: "30%", padding: "3%", fontFamily: "Roboto", }}>Debe ser administrador para poder editar datos</h4>
-       <div style={{marginLeft: "30%"}}>
-</div>
-<Link href="/" > <button style={{fontSize: "x-large", 
-  backgroundColor: "red", 
-  padding: "1%", color: "white", margin: "10%", marginLeft: "45%"}}> Salir de Admin </button> </Link>
+        <div style={{ display: "flex", flexDirection: "column", marginTop: "10%" }}>
+          <h4 style={{color: "white", padding: "3%", textAlign: "center", fontFamily: "Roboto", }}>Debe ser administrador para poder editar datos</h4>
+       <div style={{}}>
+</div >
+<Link href="/" > <button style={{fontSize: "large", 
+  backgroundColor: "orangered", 
+  padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>
 
         </div>
 
