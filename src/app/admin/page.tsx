@@ -20,7 +20,7 @@ console.log (isAdmin, "isAdmin");
      {
      (user?.id === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" || user?.id === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6") ? 
      (
-      <Protect condition={(has) => has({ permission: "org:admin" })}> 
+  
       <div style={{
           textAlign: "center",
           color: "white",
@@ -58,7 +58,7 @@ console.log (isAdmin, "isAdmin");
           </div>
 
         </div>
-        </Protect>
+
       ) :
        ( <div>
         <div style={{ display: "flex", flexDirection: "column", marginTop: "20%" }}>
