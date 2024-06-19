@@ -13,7 +13,7 @@ const Page = () => {
   console.log(user, "user");
   return (
     <>
-      {user && user.id ==="user_2hpeAtj5l4aYpY9olKcPdEYO6W6" && isSignedIn ? (
+     {user && (user.id ==="user_2hpeAtj5l4aYpY9olKcPdEYO6W6" || user.id === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6") && isSignedIn ? (
         <div style={{
           textAlign: "center",
           color: "white",
@@ -41,19 +41,26 @@ const Page = () => {
             </div>
 
             <div style={{ width: "98%" }}>
-              <p style={{ color: "white", fontFamily: "Arial", justifySelf: "right" }}>Biblioteca</p>
+              <p style={{ color: "white", 
+                fontFamily: "Arial", 
+                fontSize: "10px", 
+                textAlign: "center", 
+                justifySelf: "right" }}>Biblioteca</p>
               <CrearLibro />
             </div>
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", marginTop: "10%" }}>
-          <h4 style={{color: "white", padding: "3%", textAlign: "center", fontFamily: "Sans-Serif"}}>Debe ser administrador para poder editar datos</h4>
+        <div style={{ display: "flex", flexDirection: "column", marginTop: "20%" }}>
+          <h4 style={{color: "white", 
+            padding: "3%", 
+            textAlign: "center", 
+            fontFamily: "Sans-Serif"}}>Debe ser administrador para poder editar datos</h4>
        <div style={{}}>
 </div >
-<Link href="/" > <button style={{fontSize: "large", 
-  backgroundColor: "orangered", 
-  padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>
+            <Link href="/" > <button style={{fontSize: "large", 
+                backgroundColor: "orangered", 
+                padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>
 
         </div>
 
