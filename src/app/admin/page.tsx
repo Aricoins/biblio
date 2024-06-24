@@ -6,6 +6,21 @@ import Link from 'next/link';
 import {  SignIn, useAuth, SignUp, UserProfile, Protect } from '@clerk/nextjs';
 import { useUser } from "@clerk/clerk-react";
 
+
+// {
+//   isLoaded: true,
+//   isSignedIn: false,
+//   sessionId: null,
+//   userId: null,
+//   actor: null,
+//   orgId: null,
+//   orgRole: null,
+//   orgSlug: null,
+//   has: [Function: has],
+//   signOut: [AsyncFunction (anonymous)],
+//   getToken: [AsyncFunction (anonymous)]
+// } useAuth
+
 const Page = () => {
   const { isSignedIn, has, orgRole } = useAuth();
   const { user } = useUser();
@@ -15,6 +30,7 @@ const Page = () => {
   console.log(isSignedIn, "isSignedIn");
   console.log(user, "user");
 console.log (isAdmin, "isAdmin");
+console.log(useAuth(), "useAuth");
   return (
     <>
      {

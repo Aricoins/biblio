@@ -10,7 +10,7 @@ const H1 = styled.h6`
   color: #080855;
   text-align: justify;
   inline-size: 100%;
-  margin: 10% 0% 0% 0%;
+  margin: auto;
   line-height: 1.6;
   justify-self: center;
 
