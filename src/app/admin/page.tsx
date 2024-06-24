@@ -25,16 +25,14 @@ const Page = () => {
   const { isSignedIn, has, orgRole, userId } = useAuth();
   const { user } = useUser();
   
-  const isAdmin = has && has({permission: "org:admin"});
-
   console.log(isSignedIn, "isSignedIn");
   console.log(user, "user");
-console.log (isAdmin, "isAdmin");
 console.log(useAuth(), "useAuth");
+
   return (
     <>
      {
-     (userId === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" ) ? 
+     (user?.id ) ? 
      (
   
       <div style={{

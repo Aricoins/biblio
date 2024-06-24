@@ -1,4 +1,4 @@
-import { sql, SQLQuery } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 import { NextResponse, NextRequest } from 'next/server';
 interface Proyecto {
   id: number;
@@ -6,15 +6,16 @@ interface Proyecto {
   anio_proyecto: string;
   titulo_proyecto: string;
   tipo_proyecto: string;
-  autor: string;
-  colaboradores: string;
+  autor: string[];
+  colaboradores: string | null;
   girado_a: string;
-  acta_fecha: Date;
+  acta_fecha: string | null;
   aprobado: boolean;
   tipo_norma: string;
   numero_norma: string;
   observaciones: string;
 }
+
 export async function GET(req: NextRequest) {
   try {
     const { rows: proyectos } = await sql`
@@ -68,19 +69,18 @@ export async function POST(req: NextRequest) {
   }
 }
 
-
 export async function PATCH(req: NextRequest) {
   try {
-    if (!req.body) {
-      throw new Error('No se proporcionó un cuerpo en la solicitud');
-    }
+    const body = await req.json();
 
-    const body = req.body;
-
-    const { id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones } = body as Partial<Proyecto>;
+    const {
+      id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto,
+      autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma,
+      numero_norma, observaciones
+    } = body as Partial<Proyecto>;
 
     // Actualizar el proyecto en la base de datos
-    await sql`
+    const { rows: updatedProyecto } = await sql`
       UPDATE proyectos
       SET
         numero_proyecto = ${numero_proyecto},
@@ -97,14 +97,12 @@ export async function PATCH(req: NextRequest) {
         observaciones = ${observaciones}
       WHERE
         id = ${id}
+      RETURNING *
     `;
 
-    // Obtener el proyecto actualizado
-    const { rows: updatedProyecto } = await sql`
-      SELECT *
-      FROM proyectos
-      WHERE id = ${id}
-    `;
+    if (updatedProyecto.length === 0) {
+      throw new Error('Proyecto no encontrado');
+    }
 
     return NextResponse.json({ proyecto: updatedProyecto[0] }, { status: 200 });
   } catch (error) {

@@ -1,18 +1,33 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Modal } from 'antd';
-import styles from './styles.module.css'; 
-import { Spin } from 'antd';
+import { Modal, Spin } from 'antd';
+import styles from './styles.module.css';
+
+interface Proyecto {
+  id: number;
+  numero_proyecto: string;
+  anio_proyecto: string;
+  titulo_proyecto: string;
+  tipo_proyecto: string;
+  autor: string;
+  colaboradores: string;
+  girado_a: string;
+  acta_fecha: string;
+  aprobado: boolean;
+  tipo_norma: string;
+  numero_norma: string;
+  observaciones: string;
+}
 
 export default function Proyectos() {
-  const initialProyectos = []; 
+  const initialProyectos: Proyecto[] = [];
 
-  const [proyectos, setProyectos] = useState(initialProyectos.slice(0, 5));
-  const [filteredProyectos, setFilteredProyectos] = useState(initialProyectos.slice(0, 5)); // Añadir estado para proyectos filtrados
+  const [proyectos, setProyectos] = useState<Proyecto[]>(initialProyectos.slice(0, 5));
+  const [filteredProyectos, setFilteredProyectos] = useState<Proyecto[]>(initialProyectos.slice(0, 5)); // Añadir estado para proyectos filtrados
   const [currentPage, setCurrentPage] = useState(1);
   const [projectsPerPage] = useState(10);
-  const [editingProject, setEditingProject] = useState(null);
-  const [formData, setFormData] = useState({});
+  const [editingProject, setEditingProject] = useState<Proyecto | null>(null);
+  const [formData, setFormData] = useState<Partial<Proyecto>>({});
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +50,7 @@ export default function Proyectos() {
     fetchProyectos();
   }, []);
 
-  const handleEditClick = (proyecto) => {
+  const handleEditClick = (proyecto: Proyecto) => {
     setEditingProject(proyecto);
     setFormData({
       ...proyecto,
@@ -44,16 +59,27 @@ export default function Proyectos() {
     setIsModalVisible(true);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     e.preventDefault();
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value
-    });
+    const { name, value, type } = e.target;
+    if (type === 'checkbox') {
+      const target = e.target as HTMLInputElement; // Asegurarse de que el objetivo es un HTMLInputElement
+      setFormData({
+        ...formData,
+        [name]: target.checked,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
+  
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     try {
       const response = await fetch('/api/proyectos', {
         method: 'PATCH',
@@ -62,14 +88,17 @@ export default function Proyectos() {
         },
         body: JSON.stringify(formData),
       });
+    
       if (!response.ok) {
         throw new Error('Error al actualizar el proyecto');
       }
+    
       const updatedProject = await response.json();
+    
       setProyectos((prev) => prev.map((p) => (p.id === updatedProject.id ? updatedProject : p)));
-      setFilteredProyectos((prev) => prev.map((p) => (p.id === updatedProject.id ? updatedProject : p))); // Actualizar proyectos filtrados
+      setFilteredProyectos((prev) => prev.map((p) => (p.id === updatedProject.id ? updatedProject : p)));
       setEditingProject(null);
-      setFormData({});
+
       setIsModalVisible(false);
     } catch (error) {
       console.error(error);
@@ -80,9 +109,9 @@ export default function Proyectos() {
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = filteredProyectos.slice(indexOfFirstProject, indexOfLastProject);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value.toLowerCase();
     const filtered = proyectos.filter((proyecto) => 
       proyecto.numero_proyecto.toLowerCase().includes(searchTerm)
@@ -90,7 +119,9 @@ export default function Proyectos() {
     setFilteredProyectos(filtered);
     setCurrentPage(1); // Reiniciar a la primera página después de la búsqueda
   };
-console.log(formData, "formData")
+
+  console.log(formData, "formData");
+
   return (
     <div className={styles.container}> 
       {loading ? (
@@ -119,13 +150,13 @@ console.log(formData, "formData")
             onOk={handleSubmit}
             onCancel={() => setIsModalVisible(false)}
           >
-            <input type="hidden" name="id" value={formData.id} />
+            <input type="hidden" name="id" value={formData.id || ''} />
             <label>
               Número de Proyecto:
               <input
                 type="text"
                 name="numero_proyecto"
-                value={formData.numero_proyecto}
+                value={formData.numero_proyecto || ''}
                 onChange={handleChange}
               />
             </label>
@@ -134,7 +165,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="anio_proyecto"
-                value={formData.anio_proyecto}
+                value={formData.anio_proyecto || ''}
                 onChange={handleChange}
               />
             </label>
@@ -143,7 +174,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="titulo_proyecto"
-                value={formData.titulo_proyecto}
+                value={formData.titulo_proyecto || ''}
                 onChange={handleChange}
               />
             </label>
@@ -152,7 +183,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="tipo_proyecto"
-                value={formData.tipo_proyecto}
+                value={formData.tipo_proyecto || ''}
                 onChange={handleChange}
               />
             </label>
@@ -161,7 +192,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="autor"
-                value={formData.autor}
+                value={formData.autor || ''}
                 onChange={handleChange}
               />
             </label>
@@ -170,7 +201,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="colaboradores"
-                value={formData.colaboradores}
+                value={formData.colaboradores || ''}
                 onChange={handleChange}
               />
             </label>
@@ -179,7 +210,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="girado_a"
-                value={formData.girado_a}
+                value={formData.girado_a || ''}
                 onChange={handleChange}
               />
             </label>
@@ -188,7 +219,7 @@ console.log(formData, "formData")
               <input
                 type="date"
                 name="acta_fecha"
-                value={formData.acta_fecha}
+                value={formData.acta_fecha || ''}
                 onChange={handleChange}
               />
             </label>
@@ -197,7 +228,7 @@ console.log(formData, "formData")
               <input
                 type="checkbox"
                 name="aprobado"
-                checked={formData.aprobado}
+                checked={formData.aprobado || false}
                 onChange={handleChange}
               />
             </label>
@@ -206,7 +237,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="tipo_norma"
-                value={formData.tipo_norma}
+                value={formData.tipo_norma || ''}
                 onChange={handleChange}
               />
             </label>
@@ -215,7 +246,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="numero_norma"
-                value={formData.numero_norma}
+                value={formData.numero_norma || ''}
                 onChange={handleChange}
               />
             </label>
@@ -224,7 +255,7 @@ console.log(formData, "formData")
               <input
                 type="text"
                 name="observaciones"
-                value={formData.observaciones}
+                value={formData.observaciones || ''}
                 onChange={handleChange}
               />
             </label>
@@ -232,14 +263,18 @@ console.log(formData, "formData")
           <div>
             <p>Páginas</p>
             {Array.from({ length: Math.ceil(filteredProyectos.length / projectsPerPage) }, (_, index) => (
-              <button key={index} onClick={() => paginate(index + 1)}>
+              <button
+                key={index + 1}
+                onClick={() => paginate(index + 1)}
+                className={currentPage === index + 1 ? styles.activePage : ''}
+              >
                 {index + 1}
               </button>
             ))}
           </div>
         </>
       ) : (
-        <><Spin /> cargando datos ... </>
+        <Spin size="large" />
       )}
     </div>
   );
