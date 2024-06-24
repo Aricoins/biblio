@@ -22,7 +22,7 @@ import { useUser } from "@clerk/clerk-react";
 // } useAuth
 
 const Page = () => {
-  const { isSignedIn, has, orgRole } = useAuth();
+  const { isSignedIn, has, orgRole, userId } = useAuth();
   const { user } = useUser();
   
   const isAdmin = has && has({permission: "org:admin"});
@@ -34,7 +34,7 @@ console.log(useAuth(), "useAuth");
   return (
     <>
      {
-     (user?.id === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" || user?.id === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6") ? 
+     (userId === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" ) ? 
      (
   
       <div style={{

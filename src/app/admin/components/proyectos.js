@@ -107,6 +107,7 @@ console.log(formData, "formData")
                 <h5>{proyecto.titulo_proyecto}</h5>
                 <h3>{proyecto.numero_proyecto}/{proyecto.anio_proyecto}</h3>
                 <p>{proyecto.tipo_proyecto}</p>
+                <p> {proyecto.id} </p>
                 <button onClick={() => handleEditClick(proyecto)}>Editar</button>
               </div>
             ))}
