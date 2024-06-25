@@ -22,7 +22,8 @@ function formatDate(dateStr) {
   if (!dateStr) return null;
   const date = new Date(dateStr);
   return isNaN(date.getTime()) ? null : date.toISOString().split('T')[0];
-}
+  }
+
 
 (async () => {
   try {
@@ -30,7 +31,6 @@ function formatDate(dateStr) {
 
     let successCount = 0;
     let errorCount = 0;
-
     for (const [index, proyecto] of jsonData.entries()) {
       try {
         // Convertir colaboradores a formato de array literal de Postgres
