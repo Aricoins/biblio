@@ -82,7 +82,7 @@ console.log(useAuth(), "useAuth");
             fontFamily: "Sans-Serif"}}>Debe ser administrador para poder editar datos</h4>
            
        <div style={{color: "green", margin: "auto"}}>
-          <SignIn />
+          <SignIn routing='hash' />
             <Link href="/" > <button style={{fontSize: "large", 
                 backgroundColor: "orangered", 
                 padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>
