@@ -75,13 +75,13 @@ console.log(useAuth(), "useAuth");
 
       ) :
        ( <div>
-        <div style={{ display: "flex", flexDirection: "column", marginTop: "20%" }}>
+        <div style={{ display: "flex", flexDirection: "column", margin: "auto", marginTop: "20%" }}>
           <h4 style={{color: "white", 
             padding: "3%", 
             textAlign: "center", 
             fontFamily: "Sans-Serif"}}>Debe ser administrador para poder editar datos</h4>
            
-       <div style={{color: "green"}}>
+       <div style={{color: "green", margin: "auto"}}>
           <SignIn />
             <Link href="/" > <button style={{fontSize: "large", 
                 backgroundColor: "orangered", 
