@@ -16,17 +16,15 @@ const Container = ' w-12/12 mx-auto bg-gradient-to-b  animated-gradient-x flex i
 
 const Subcontainer = 'w-12/12 h-auto flex flex-row justify-center mx-0 md:flex-col rounded-lg opacity-80 relative'; 
 
-const LeftContent = 'md:w-3/3  md:pt-0 md:pl-10 bg-white p-8 mx-auto rounded-lg';
+const LeftContent = 'md:w-2/3  md:pt-0 md:pl-10 bg-white p-12 py-60 mx-20 rounded-lg';
 
 const RightContent = ' m-auto w-12/12 mt-20 p-10 md:w-1/2 flex-center md:pt-10 md:pl-10  p-5 rounded-md mx-20 ';
 
-const Boton = 'bg-black  w-full flex p-4 justify-center items-center relative text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
-
+const Boton = 'bg-black border border-orange-500 border-2 w-full flex p-4 justify-center items-center relative text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
 export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const { isLoaded, userId, sessionId, getToken } = useAuth();
 
   useEffect(() => {
@@ -45,12 +43,12 @@ export default function Libros() {
           <div className={Subcontainer}>
             <div className={LeftContent}>
               <Image
-      className='w-10/12 "filter drop-shadow-md rounded-lg my-10'
-      src={logo}
-      alt='logo'
-      width={300}
-      height={300}
-      priority
+                className='w-10/12 "filter drop-shadow-md rounded-lg my-10'
+                src={logo}
+                alt='logo'
+                width={300}
+                height={300}
+                priority
                 />
      <div>
                 <div>
