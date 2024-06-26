@@ -33,7 +33,7 @@ export default function Proyectos() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+
     async function fetchProyectos() {
       try {
         const response = await fetch(`/api/proyectos`);
@@ -48,7 +48,7 @@ export default function Proyectos() {
         console.error(error);
       }
     }
-
+    useEffect(() => {
     fetchProyectos();
   }, []);
 
@@ -101,8 +101,8 @@ export default function Proyectos() {
       setProyectos((prev) => prev.map((p) => (p.id === updatedProject.id ? updatedProject : p)));
       setFilteredProyectos((prev) => prev.map((p) => (p.id === updatedProject.id ? updatedProject : p)));
       setEditingProject(null);
-
       setIsModalVisible(false);
+      fetchProyectos();
     } catch (error) {
       console.error(error);
     }
@@ -166,9 +166,19 @@ export default function Proyectos() {
   
     },
     {
-      title: 'autores',
+      title: 'Autores',
       dataIndex: 'autor',
       key: 'autor',
+      render: (autores: string[]) => (
+        <>
+          {autores.map((autor, index) => (
+            <span key={index}>
+              {autor}
+              {index < autores.length - 1 && ', '}
+            </span>
+          ))}
+        </>
+      ),
       width: '10%',
     },
     {

@@ -1,14 +1,13 @@
 .container {
     width: 100%;
-    
     justify-content: center;
     background-color: hsl(259, 95%, 15%, 0.1);
     border: 1px solid #c4c4c4;
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row;
-    
+    flex-direction: row;    
+    cursor: disabled;
 }
 
 
@@ -17,7 +16,7 @@
     margin-bottom: 10%;
     margin-left: 2%;
     object-fit: cover;
- height: 80%;
+    height: 80%;
     box-shadow: 0 0 20px rgb(17, 16, 16);
     transition: all 0.3s ease;
 }
@@ -28,7 +27,6 @@
     font-size: smaller;
     background-color: rgba(155, 150, 155, 0.5);
     color: rgb(225, 174, 5);
- 
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -41,12 +39,13 @@
     font-size: small;
     text-align: center;
     color: rgb(10, 0, 0);
-    text-decoration: none;
+
     margin: 5%;
     font-family: 'Roboto', sans-serif;
     text-align: justify;
     width: 80%;
     margin: 0 auto;
+    cursor: disabled;
 }
 
 

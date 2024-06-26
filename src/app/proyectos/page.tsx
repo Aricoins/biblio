@@ -163,8 +163,23 @@ function Proyectos() {
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto', className: styles.año },
         { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto', className: styles.descripcion },
-        { title: 'Autores', dataIndex: 'autor', key: 'autor', className: styles.autores },
         {
+            title: 'Autores',
+            dataIndex: 'autor',
+            key: 'autor',
+            render: (autores: string[]) => (
+              <>
+                {autores.map((autor, index) => (
+                  <span key={index}>
+                    {autor}
+                    {index < autores.length - 1 && ', '}
+                  </span>
+                ))}
+              </>
+            ),
+            className: styles.autores
+          },
+          {
             title: 'Norma',
             dataIndex: 'numero_norma',
             key: 'numero_norma',

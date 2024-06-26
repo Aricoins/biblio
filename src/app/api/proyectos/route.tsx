@@ -69,19 +69,22 @@ export async function POST(req: NextRequest) {
   }
 }
 
-
 export async function PATCH(req: NextRequest) {
   try {
-    if (!req.body) {
-      throw new Error('No se proporcionó un cuerpo en la solicitud');
+    const body = await req.json(); // Asegúrate de leer el cuerpo correctamente
+
+    const {
+      id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, autor,
+      colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones
+    } = body as Partial<Proyecto>;
+
+    // Verifica que todos los campos requeridos estén presentes
+    if (!id) {
+      throw new Error('El ID del proyecto es requerido');
     }
 
-    const body = req.body;
-
-    const { id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones } = body as Partial<Proyecto>;
-
     // Actualizar el proyecto en la base de datos
-    await sql`
+    const updatedProject = await sql`
       UPDATE proyectos
       SET
         numero_proyecto = ${numero_proyecto},
@@ -98,16 +101,20 @@ export async function PATCH(req: NextRequest) {
         observaciones = ${observaciones}
       WHERE
         id = ${id}
-        RETURNING *
+      RETURNING *
     `;
 
-    // Obtener el proyecto actualizado
-    const { rows: updatedProyecto } = await sql`
+    if (updatedProject.count === 0) {
+      throw new Error('No se encontró un proyecto con el ID proporcionado');
+    }
+
+    // Obtener todos los proyectos actualizados
+    const { rows: proyectos } = await sql`
       SELECT *
       FROM proyectos;
-     `;
+    `;
 
-    return NextResponse.json({ proyecto: updatedProyecto[0] }, { status: 200 });
+    return NextResponse.json({ proyectos }, { status: 200 });
   } catch (error) {
     console.error('Error al actualizar el proyecto:', error);
     return NextResponse.json({ error: 'Error al actualizar el proyecto' }, { status: 500 });
