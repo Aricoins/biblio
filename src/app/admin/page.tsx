@@ -26,18 +26,17 @@ import { useState } from 'react';
 const Page = () => {
   const { isSignedIn, has, orgRole, userId } = useAuth();
   const { user } = useUser();
-  // State to store the search term
-console.log(userId, "userId")
-  
+ 
   const authorizedUserIds = [
     "user_2hpQoB18ifR9aKQX85JeqFa3eXR",
     "user_2hpeAtj5l4aYpY9olKcPdEYO6W6",
     "user_2hyFEgA0uIUAdDsl4YSdDexhBu6", 
    
   ];
+  
   return (
     <>
-     {(userId === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6") ? 
+     {(userId && authorizedUserIds.includes(userId)) ? 
      (
         <div style={{
           textAlign: "center",
