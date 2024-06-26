@@ -18,7 +18,6 @@ interface LibroProps {
 const Libro: FC<LibroProps> = ({ libro }) => {
 
 const año = libro.decla
-console.log(año, "año")
 if (año > "1900") {
  const  año = "2020"}
  else {

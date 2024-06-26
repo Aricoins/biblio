@@ -200,7 +200,7 @@ export default function Proyectos() {
           <Input 
             type="text" 
             className="mb-4 p-2 border border-gray-300 rounded"
-            placeholder="Buscar Proyecto por ID" 
+            placeholder="Buscar Proyecto por " 
             onChange={handleSearch}
           />
           <Table 

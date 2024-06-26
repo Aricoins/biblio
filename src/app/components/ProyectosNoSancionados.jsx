@@ -78,7 +78,7 @@ const animatedCount = () =>{
         console.error('Error fetching data: ', error);
       });
      
-      console.log(data)
+  
   }, [data]);
 
   useEffect(() => {

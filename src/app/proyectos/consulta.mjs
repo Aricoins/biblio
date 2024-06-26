@@ -91,9 +91,9 @@ const extraccion = {
             // Mapeo de prefijo a tipo de norma
             const tipoNormaMap = {
                 'O': 'ordenanza',
-                'C': 'comunicación',
-                'D': 'declaración',
-                'R': 'resolución'
+                'C': 'comunicacion',
+                'D': 'declaracion',
+                'R': 'resolucion'
             };
             return tipoNormaMap[coincidencia[1]];
         }
@@ -139,9 +139,9 @@ const extraccion = {
         const coincidencia = regexTipoNorma.exec(parrafo);
         const tipoNormaMap = {
             'O': 'ordenanza',
-            'C': 'comunicación',
-            'D': 'declaración',
-            'R': 'resolución'
+            'C': 'comunicacion',
+            'D': 'declaracion',
+            'R': 'resolucion'
         };
         return coincidencia ? tipoNormaMap[coincidencia[1]] : '';
     },
@@ -190,7 +190,7 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        let contadorID = 5190;
+        let contadorID = 5935;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
@@ -231,7 +231,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './proyectos2.docx';
-const rutaArchivoJson = './proyectos4.json';
+const rutaArchivoDocx = './2024.docx';
+const rutaArchivoJson = './proyectos.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
