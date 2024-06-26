@@ -29,10 +29,9 @@ const Page = () => {
   return (
     <>
      {
-     (userId === "user_2hpQoB18ifR9aKQX85JeqFa3eXR" ||  userId === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6" ) ? 
+     (userId === "user_2hpQoB18ifR9aKQX85JeqFa3eXR" || userID === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" || userId === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6" ) ? 
      (
-  
-      <div style={{
+        <div style={{
           textAlign: "center",
           color: "white",
           display: "flex",
