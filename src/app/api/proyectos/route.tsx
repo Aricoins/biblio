@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { sql, SQLQuery } from '@vercel/postgres';
 import { NextResponse, NextRequest } from 'next/server';
 interface Proyecto {
   id: number;
@@ -15,7 +15,6 @@ interface Proyecto {
   numero_norma: string;
   observaciones: string;
 }
-
 export async function GET(req: NextRequest) {
   try {
     const { rows: proyectos } = await sql`
@@ -35,6 +34,7 @@ export async function GET(req: NextRequest) {
         observaciones 
       FROM 
         proyectos
+        order by id desc;
     `;
     return NextResponse.json({ proyectos }, { status: 200 });
   } catch (error) {
@@ -69,18 +69,19 @@ export async function POST(req: NextRequest) {
   }
 }
 
+
 export async function PATCH(req: NextRequest) {
   try {
-    const body = await req.json();
+    if (!req.body) {
+      throw new Error('No se proporcionó un cuerpo en la solicitud');
+    }
 
-    const {
-      id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto,
-      autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma,
-      numero_norma, observaciones
-    } = body as Partial<Proyecto>;
+    const body = req.body;
+
+    const { id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones } = body as Partial<Proyecto>;
 
     // Actualizar el proyecto en la base de datos
-    const { rows: updatedProyecto } = await sql`
+    await sql`
       UPDATE proyectos
       SET
         numero_proyecto = ${numero_proyecto},
@@ -97,12 +98,14 @@ export async function PATCH(req: NextRequest) {
         observaciones = ${observaciones}
       WHERE
         id = ${id}
-      RETURNING *
+        RETURNING *
     `;
 
-    if (updatedProyecto.length === 0) {
-      throw new Error('Proyecto no encontrado');
-    }
+    // Obtener el proyecto actualizado
+    const { rows: updatedProyecto } = await sql`
+      SELECT *
+      FROM proyectos;
+     `;
 
     return NextResponse.json({ proyecto: updatedProyecto[0] }, { status: 200 });
   } catch (error) {

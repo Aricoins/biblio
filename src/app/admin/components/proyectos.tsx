@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
-import { Modal, Spin } from 'antd';
+import { Modal, Spin, Table, Button, Input } from 'antd';
 import styles from './styles.module.css';
 
 interface Proyecto {
@@ -23,7 +23,7 @@ export default function Proyectos() {
   const initialProyectos: Proyecto[] = [];
 
   const [proyectos, setProyectos] = useState<Proyecto[]>(initialProyectos.slice(0, 5));
-  const [filteredProyectos, setFilteredProyectos] = useState<Proyecto[]>(initialProyectos.slice(0, 5)); // Añadir estado para proyectos filtrados
+  const [filteredProyectos, setFilteredProyectos] = useState<Proyecto[]>(initialProyectos.slice(0, 5));
   const [currentPage, setCurrentPage] = useState(1);
   const [projectsPerPage] = useState(10);
   const [editingProject, setEditingProject] = useState<Proyecto | null>(null);
@@ -40,7 +40,7 @@ export default function Proyectos() {
         }
         const data = await response.json();
         setProyectos(data.proyectos);
-        setFilteredProyectos(data.proyectos); // Inicializar proyectos filtrados
+        setFilteredProyectos(data.proyectos);
         setLoading(true);
       } catch (error) {
         console.error(error);
@@ -63,7 +63,7 @@ export default function Proyectos() {
     e.preventDefault();
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
-      const target = e.target as HTMLInputElement; // Asegurarse de que el objetivo es un HTMLInputElement
+      const target = e.target as HTMLInputElement;
       setFormData({
         ...formData,
         [name]: target.checked,
@@ -75,7 +75,6 @@ export default function Proyectos() {
       });
     }
   };
-  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,161 +116,85 @@ export default function Proyectos() {
       proyecto.numero_proyecto.toLowerCase().includes(searchTerm)
     );
     setFilteredProyectos(filtered);
-    setCurrentPage(1); // Reiniciar a la primera página después de la búsqueda
+    setCurrentPage(1);
   };
 
-  console.log(formData, "formData");
+  const columns = [
+    {
+      title: 'Título de Proyecto',
+      dataIndex: 'titulo_proyecto',
+      key: 'titulo_proyecto',
+    },
+    {
+      title: 'Número de Proyecto',
+      dataIndex: 'numero_proyecto',
+      key: 'numero_proyecto',
+    },
+    {
+      title: 'Año de Proyecto',
+      dataIndex: 'anio_proyecto',
+      key: 'anio_proyecto',
+    },
+    {
+      title: 'Tipo de Proyecto',
+      dataIndex: 'tipo_proyecto',
+      key: 'tipo_proyecto',
+    },
+    {
+      title: 'Acciones',
+      key: 'actions',
+      render: (text: string, record: Proyecto) => (
+        <Button type="link" onClick={() => handleEditClick(record)}>
+          Editar
+        </Button>
+      ),
+    },
+  ];
 
   return (
-    <div className={styles.container}> 
+    <div className="min-h-screen bg-gray-100 p-6">
       {loading ? (
         <>
-          <input 
+          <Input 
             type="text" 
-            className={styles.inputSearch} 
+            className="mb-4 p-2 border border-gray-300 rounded"
             placeholder="Buscar Proyecto por ID" 
-            onChange={handleSearch} // Añadir manejador de búsqueda
+            onChange={handleSearch}
           />
-          <div className={styles.gridContainer}> 
-            {currentProjects.map((proyecto) => (
-              <div style={{ border: "solid 1px black", width: "100%" }} key={proyecto.id}>
-                <h5>{proyecto.titulo_proyecto}</h5>
-                <h3>{proyecto.numero_proyecto}/{proyecto.anio_proyecto}</h3>
-                <p>{proyecto.tipo_proyecto}</p>
-                <p> {proyecto.id} </p>
-                <button onClick={() => handleEditClick(proyecto)}>Editar</button>
-              </div>
-            ))}
-          </div>
+          <Table 
+            dataSource={currentProjects}
+            columns={columns}
+            pagination={{
+              current: currentPage,
+              pageSize: projectsPerPage,
+              total: filteredProyectos.length,
+              onChange: paginate,
+            }}
+            rowKey="id"
+          />
           <Modal
-            styles={{ body: { padding: 20 } }}
-            title="Editar "
-            open={isModalVisible}
+            title="Editar Proyecto"
+            visible={isModalVisible}
             onOk={handleSubmit}
             onCancel={() => setIsModalVisible(false)}
           >
-            <input type="hidden" name="id" value={formData.id || ''} />
-            <label>
-              Número de Proyecto:
-              <input
-                type="text"
-                name="numero_proyecto"
-                value={formData.numero_proyecto || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Año de Proyecto:
-              <input
-                type="text"
-                name="anio_proyecto"
-                value={formData.anio_proyecto || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Título de Proyecto:
-              <input
-                type="text"
-                name="titulo_proyecto"
-                value={formData.titulo_proyecto || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Tipo de Proyecto:
-              <input
-                type="text"
-                name="tipo_proyecto"
-                value={formData.tipo_proyecto || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Autor:
-              <input
-                type="text"
-                name="autor"
-                value={formData.autor || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Colaboradores:
-              <input
-                type="text"
-                name="colaboradores"
-                value={formData.colaboradores || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Girado a:
-              <input
-                type="text"
-                name="girado_a"
-                value={formData.girado_a || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Acta Fecha:
-              <input
-                type="date"
-                name="acta_fecha"
-                value={formData.acta_fecha || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Aprobado:
-              <input
-                type="checkbox"
-                name="aprobado"
-                checked={formData.aprobado || false}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Tipo de Norma:
-              <input
-                type="text"
-                name="tipo_norma"
-                value={formData.tipo_norma || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Número de Norma:
-              <input
-                type="text"
-                name="numero_norma"
-                value={formData.numero_norma || ''}
-                onChange={handleChange}
-              />
-            </label>
-            <label>
-              Observaciones:
-              <input
-                type="text"
-                name="observaciones"
-                value={formData.observaciones || ''}
-                onChange={handleChange}
-              />
-            </label>
+            <form>
+              <input type="hidden" name="id" value={formData.id || ''} />
+              {Object.keys(formData).map((key) => (
+                <div key={key} className="mb-2">
+                  <label className="block text-sm font-medium text-gray-700">{key}</label>
+                  <input
+                    type={key === 'aprobado' ? 'checkbox' : 'text'}
+                    name={key}
+                    value={formData[key] || ''}
+                    checked={formData[key] || false}
+                    onChange={handleChange}
+                    className="mt-1 block w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
+              ))}
+            </form>
           </Modal>
-          <div>
-            <p>Páginas</p>
-            {Array.from({ length: Math.ceil(filteredProyectos.length / projectsPerPage) }, (_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => paginate(index + 1)}
-                className={currentPage === index + 1 ? styles.activePage : ''}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
         </>
       ) : (
         <Spin size="large" />

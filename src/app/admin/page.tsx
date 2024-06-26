@@ -32,7 +32,7 @@ console.log(useAuth(), "useAuth");
   return (
     <>
      {
-     (user?.id ) ? 
+     (userId ) ? 
      (
   
       <div style={{
