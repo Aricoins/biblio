@@ -31,7 +31,7 @@ const Text: FC<{ setComplete: React.Dispatch<React.SetStateAction<boolean>> }> =
 
   useEffect(() => {
     const words = [
-      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad; cuenta con un corpus literario de interés para la comunidad y un archivo de destacado valor documental e histórico."
+      " La Biblioteca del Concejo brinda resguardo a la normativa de la ciudad; cuenta con una colección literaria de interés para la comunidad y un archivo de destacado valor documental e histórico."
     ];
 
     let wordWrapperContent = '';

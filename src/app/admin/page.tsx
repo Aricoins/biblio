@@ -32,7 +32,7 @@ console.log(useAuth(), "useAuth");
   return (
     <>
      {
-     (userId ) ? 
+     (user?.id === "user_2hpQoB18ifR9aKQX85JeqFa3eXR") ? 
      (
   
       <div style={{
@@ -75,14 +75,14 @@ console.log(useAuth(), "useAuth");
 
       ) :
        ( <div>
-        <div style={{ display: "flex", flexDirection: "column", marginTop: "20%" }}>
+        <div style={{ display: "flex", flexDirection: "column", margin: "auto", marginTop: "20%" }}>
           <h4 style={{color: "white", 
             padding: "3%", 
             textAlign: "center", 
             fontFamily: "Sans-Serif"}}>Debe ser administrador para poder editar datos</h4>
            
-       <div style={{color: "green"}}>
-          <SignIn />
+       <div style={{color: "green", margin: "auto"}}>
+          <SignIn routing='hash' />
             <Link href="/" > <button style={{fontSize: "large", 
                 backgroundColor: "orangered", 
                 padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>

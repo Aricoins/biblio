@@ -26,8 +26,6 @@ interface Proyecto {
     observaciones: string;
 }
 
-import data from './proyectos3.json';
-
 function Proyectos() {
     const [proyectos, setProyectos] = useState<Proyecto[]>([]);
     const [busquedaNumero, setBusquedaNumero] = useState('');
@@ -47,13 +45,22 @@ function Proyectos() {
 
     useEffect(() => {
         if (ver && !datosCargados) {
-            setProyectos(data);
-            setResultados(data);
-            setDatosCargados(true);
-            Aos.init({ duration: 300 });
+          fetchProyectos();
         }
-    }, [ver, datosCargados]);
-
+      }, [ver, datosCargados]);
+    
+      const fetchProyectos = async () => {
+        try {
+          const response = await fetch('/api/proyectos');
+          const data = await response.json();
+          setProyectos(data.proyectos);
+          setResultados(data.proyectos);
+          setDatosCargados(true);
+          Aos.init({ duration: 300 });
+        } catch (error) {
+          console.error('Error al cargar los proyectos:', error);
+        }
+      };
     // Función para manejar los cambios de página
     const handlePageChange = (page: number, size: number) => {
         setCurrentPage(page);
