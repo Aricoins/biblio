@@ -3,7 +3,7 @@ import { createClient } from '@vercel/postgres';
 import fs from 'fs';
 
 // Cargar JSON
-const jsonData = JSON.parse(fs.readFileSync('../../proyectos/proyectos3.json'));
+const jsonData = JSON.parse(fs.readFileSync('../../proyectos/proyectos.json'));
 
 // Configurar el cliente de Postgres
 const client = createClient({
