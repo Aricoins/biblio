@@ -19,6 +19,8 @@ interface Proyecto {
   observaciones: string;
 }
 
+type FormDataKey = keyof Proyecto;
+
 export default function Proyectos() {
   const initialProyectos: Proyecto[] = [];
 
@@ -62,16 +64,18 @@ export default function Proyectos() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     e.preventDefault();
     const { name, value, type } = e.target;
+    const key = name as FormDataKey;
+
     if (type === 'checkbox') {
       const target = e.target as HTMLInputElement;
       setFormData({
         ...formData,
-        [name]: target.checked,
+        [key]: target.checked,
       });
     } else {
       setFormData({
         ...formData,
-        [name]: value,
+        [key]: value,
       });
     }
   };
@@ -124,21 +128,48 @@ export default function Proyectos() {
       title: 'Título de Proyecto',
       dataIndex: 'titulo_proyecto',
       key: 'titulo_proyecto',
+      width: '25%',
+    
     },
     {
       title: 'Número de Proyecto',
       dataIndex: 'numero_proyecto',
       key: 'numero_proyecto',
+      width: '2%',
     },
     {
       title: 'Año de Proyecto',
       dataIndex: 'anio_proyecto',
       key: 'anio_proyecto',
+      width: '2%',
+  
     },
     {
       title: 'Tipo de Proyecto',
       dataIndex: 'tipo_proyecto',
       key: 'tipo_proyecto',
+      width: '2%',
+  
+    },
+    {
+      title: 'Tipo norma',
+      dataIndex: 'tipo_norma',
+      key: 'tipo_norma',
+      width: '2%',
+  
+    },
+    {
+      title: 'id',
+      dataIndex: 'id',
+      key: 'id',
+      width: '2%',
+  
+    },
+    {
+      title: 'autores',
+      dataIndex: 'autor',
+      key: 'autor',
+      width: '10%',
     },
     {
       title: 'Acciones',
@@ -148,6 +179,7 @@ export default function Proyectos() {
           Editar
         </Button>
       ),
+      width: '2%',
     },
   ];
 
@@ -164,6 +196,7 @@ export default function Proyectos() {
           <Table 
             dataSource={currentProjects}
             columns={columns}
+            
             pagination={{
               current: currentPage,
               pageSize: projectsPerPage,
@@ -183,14 +216,23 @@ export default function Proyectos() {
               {Object.keys(formData).map((key) => (
                 <div key={key} className="mb-2">
                   <label className="block text-sm font-medium text-gray-700">{key}</label>
-                  <input
-                    type={key === 'aprobado' ? 'checkbox' : 'text'}
-                    name={key}
-                    value={formData[key] || ''}
-                    checked={formData[key] || false}
-                    onChange={handleChange}
-                    className="mt-1 block w-full p-2 border border-gray-300 rounded"
-                  />
+                  {key === 'aprobado' ? (
+                    <input
+                      type="checkbox"
+                      name={key}
+                      checked={formData[key as FormDataKey] as boolean || false}
+                      onChange={handleChange}
+                      className="mt-1"
+                    />
+                  ) : (
+                    <input
+                      type="text"
+                      name={key}
+                      value={formData[key as FormDataKey] as string || ''}
+                      onChange={handleChange}
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded"
+                    />
+                  )}
                 </div>
               ))}
             </form>

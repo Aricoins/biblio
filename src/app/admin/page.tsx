@@ -25,14 +25,11 @@ const Page = () => {
   const { isSignedIn, has, orgRole, userId } = useAuth();
   const { user } = useUser();
   
-  console.log(isSignedIn, "isSignedIn");
-  console.log(user, "user");
-console.log(useAuth(), "useAuth");
 
   return (
     <>
      {
-     (user?.id === "user_2hpQoB18ifR9aKQX85JeqFa3eXR") ? 
+     (userId === "user_2hpQoB18ifR9aKQX85JeqFa3eXR" ||  userId === "user_2hyFEgA0uIUAdDsl4YSdDexhBu6" ) ? 
      (
   
       <div style={{
@@ -40,36 +37,27 @@ console.log(useAuth(), "useAuth");
           color: "white",
           display: "flex",
           flexDirection: "column",
-          width: "80%",
-          margin: "5%",
+          width: "100%",
+          margin: "auto",
+          marginTop: "5%",
           justifySelf: "center",
           fontSize: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
         }}>
           <h1 style={{ backgroundColor: "gray", borderRadius: "10px", fontFamily: "Arial" }}>Administrar datos</h1>
 
           <div style={{
-            width: "90%",
-            margin: "1%",
-            marginLeft: "1%",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "5%",
+            width: "100%",
+            margin: "auto",
+            display: "flex",
             backgroundColor: "black"
           }}>
-            <div style={{ width: "98%", color: "black" }}>
+            <div style={{ width: "98%", color: "black", backgroundColor: "orangered", margin: "auto"}}>
               <p style={{ color: "white", fontFamily: "Arial" }}>Archivo</p>
               <Proyectos />
-            </div>
+            </div> </div>
 
-            <div style={{ width: "98%" }}>
-              <p style={{ color: "white", 
-                fontFamily: "Arial", 
-                fontSize: "10px", 
-                textAlign: "center", 
-                justifySelf: "right" }}>Biblioteca</p>
               <CrearLibro />
-            </div>
-          </div>
+         
 
         </div>
 
