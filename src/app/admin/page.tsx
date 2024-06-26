@@ -37,7 +37,7 @@ console.log(userId, "userId")
   ];
   return (
     <>
-      userId === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6" ? 
+     {(userId === "user_2hpeAtj5l4aYpY9olKcPdEYO6W6") ? 
      (
         <div style={{
           textAlign: "center",
@@ -89,7 +89,7 @@ console.log(userId, "userId")
         
         )
       
-    </>)};
+          }    </>)};
 
 export default Page;
 
