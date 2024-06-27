@@ -253,7 +253,7 @@ function Proyectos() {
 
             {ver && (
                 <div style={{ margin: "auto", width: "100%", marginBottom: "5%" }}>
-                    <p className={styles.spinText}> Busque entre los proyectos sancionados y no sancionados </p>
+                    <p className={styles.spinText}> Busque entre los expedientes sancionados y no sancionados </p>
                     <div className={styles.inputs}>
                         <Input.Search
                             placeholder="Por n° de proyecto..."
