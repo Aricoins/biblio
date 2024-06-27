@@ -23,7 +23,7 @@ import FondosDocumentales from '../components/FondosDocumentales'
 
 const Archivo = () => {
   useEffect(() => {
-    Aos.init({ duration: 300 });
+    Aos.init();
   }, [])
 
   return (
