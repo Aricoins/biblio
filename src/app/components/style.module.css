@@ -229,7 +229,6 @@ font-weight: 600;
     border-collapse: collapse;
     border: 1px solid #180101;
     font-size: medium;
-    height: 60%;
     margin-bottom: 1%;
     font-family: 'Roboto', sans-serif;
   }
@@ -250,8 +249,7 @@ font-weight: 600;
       border-collapse: collapse;
       border: 1px solid #180101;
       font-size: xx-small;
-      height: 60%;
-      margin-bottom: 1%;
+       margin-bottom: 1%;
       font-family: 'Roboto', sans-serif;
     }
   

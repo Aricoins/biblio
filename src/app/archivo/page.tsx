@@ -17,7 +17,8 @@ import Link from 'next/link';
 import Proyectos from '../proyectos/page'
 import { Modal } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWhatsapp, } from '@fortawesome/free-brands-svg-icons'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from '../components/FondosDocumentales'
 
@@ -56,9 +57,9 @@ const Archivo = () => {
         <div data-aos="fade-up" className={styles.component}>
                 <PCM />
               </div>
-<div style={{margin: "12%"}}>
+
         <ProyectosNoSancionados />
-        </div>
+
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
             <FontAwesomeIcon  icon={faWhatsapp} />
@@ -74,7 +75,7 @@ const Archivo = () => {
           </a>
         </div>
       </div>
-      {/* <FondosDocumentales /> */}
+       {/* <FondosDocumentales /> */}
       <NavFoot />
     </>
   );
