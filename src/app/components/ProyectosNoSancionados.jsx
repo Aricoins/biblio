@@ -79,10 +79,13 @@ function ProyectosNoSancionados() {
   const handleShowLess = () => {
     setVisibleRows((prevRows) => {
       const newVisibleRows = prevRows - 10;
-      return newVisibleRows < 1 ? 1 : newVisibleRows;
+      return newVisibleRows < 10 ? 1 : newVisibleRows;
     });
-    setShowLessButton(false);
+    if (visibleRows >= 1 || data > 1) {
+      setShowLessButton(true);
+
   };
+};
 
   const handleSort = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));

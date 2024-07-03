@@ -122,6 +122,14 @@ export default function Proyectos() {
     setFilteredProyectos(filtered);
     setCurrentPage(1);
   };
+  const handleSearchNombre = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filtered = proyectos.filter((proyecto) => 
+      proyecto.titulo_proyecto.toLowerCase().includes(searchTerm)
+    );
+    setFilteredProyectos(filtered);
+    setCurrentPage(1);
+  };
 
   const columns = [
     {
@@ -135,6 +143,12 @@ export default function Proyectos() {
       title: 'Número de Proyecto',
       dataIndex: 'numero_proyecto',
       key: 'numero_proyecto',
+      width: '2%',
+    },
+    {
+      title: 'Norma',
+      dataIndex: 'numero_norma',
+      key: 'numero_norma',
       width: '2%',
     },
     {
@@ -203,6 +217,11 @@ export default function Proyectos() {
             placeholder="Buscar Proyecto por " 
             onChange={handleSearch}
           />
+          <Input 
+            type="text" 
+            className="mb-4 p-2 border border-gray-300 rounded"
+            placeholder="Buscar Proyecto por " 
+            onChange={handleSearchNombre}          />
           <Table 
             dataSource={currentProjects}
             columns={columns}
