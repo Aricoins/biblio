@@ -72,7 +72,7 @@ export default function Libros() {
                <p style={{ justifySelf: "left", color: "white", margin: "10px"}}>o</p></div>
               <div>
 <Link href='/archivo'>
-<button className={Boton}>Ingresar como invitado</button>
+<button className={Boton}>Ingresar sin registro</button>
 </Link>
 </div>
 
