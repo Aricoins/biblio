@@ -174,7 +174,7 @@ const extraccion = {
             // Usar extraerAprobado para verificar si el proyecto está aprobado
             const aprobado = this.extraerAprobado(parrafo);
             if (aprobado === true) {return '';}
-            else return "sin sanción"
+            else return "en tratamiento"
         }
         
         
@@ -231,7 +231,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './2024.docx';
-const rutaArchivoJson = './proyectos.json';
+const rutaArchivoDocx = './proy2.docx';
+const rutaArchivoJson = './proyectoshoy.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
