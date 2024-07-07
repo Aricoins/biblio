@@ -191,8 +191,8 @@ function ExpedientesOrdenanzas() {
          <Link style={{color: "red"}} href="http://10.20.101.141/gbuscador/" 
           target="_blank"> Digesto Jurídico </Link>
        </p>
-            <p>  </p> </div>
-<marquee> Pida la digitalización de un expediente anterior a 2015 a digestoconcejo@gmail.com </marquee>
+            </div>
+
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>
