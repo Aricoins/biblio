@@ -187,10 +187,13 @@ function ExpedientesOrdenanzas() {
             </tbody>
           </table>
   <div style={{ display: "flex", justifyContent: "center"}}>  
-     <p> Para conocer la vigencia de una ordenanza consulte nuestro 
+<marquee>     <p> Para conocer la vigencia de una ordenanza consulte nuestro
          <Link style={{color: "red"}} href="http://10.20.101.141/gbuscador/" 
           target="_blank"> Digesto Jurídico</Link>
-        </p></div>
+       </p>
+  </div>
+  <div style={{ display: "flex", justifyContent: "center"}}>  
+            <p>   La digitalización de los expedientes de ordenazas comienza en de 2019  </p> </div></marquee>
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>
