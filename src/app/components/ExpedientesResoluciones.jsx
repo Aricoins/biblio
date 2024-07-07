@@ -236,6 +236,8 @@ function ExpedientesResoluciones() {
               ))}
             </tbody>
           </table>
+          <marquee> Los expedientes anteriores a 2015 se encuentran alojados en libros. Pida su digitalización a digestoconcejo@gmail.com . O vea la versión en papel en nuestro archivo en Dr. Balseiro 80
+Teléfono: 442 9100 los días hábiles de 7 a 17 h . </marquee>
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>
