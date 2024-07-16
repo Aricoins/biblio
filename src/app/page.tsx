@@ -16,7 +16,7 @@ const Container = ' w-12/12 mx-auto bg-gradient-to-b  animated-gradient-x flex i
 
 const Subcontainer = 'w-12/12 h-auto flex flex-row justify-center mx-0 md:flex-col rounded-lg opacity-80 relative'; 
 
-const LeftContent = 'md:w-2/3  md:pt-0 md:pl-10 bg-white p-12 py-60 mx-20 rounded-lg';
+const LeftContent = 'md:w-3/3  md:pt-0 md:pl-10 bg-white p-12 py-60 mx-20 rounded-lg';
 
 const RightContent = ' m-auto w-12/12 mt-20 p-10 md:w-1/2 flex-center md:pt-10 md:pl-10  p-5 rounded-md mx-20 ';
 
@@ -50,7 +50,7 @@ export default function Libros() {
                 height={300}
                 priority
                 />
-     <div>
+     <div style= {{width: "100%", height: "50px"}} >
                 <div>
      <Text setComplete={setComplete} />
                </div>
