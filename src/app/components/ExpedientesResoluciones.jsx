@@ -193,10 +193,18 @@ function ExpedientesResoluciones() {
         onClick={(e) => e.stopPropagation()}
       />
     </Modal >
-  )}
-</div>
+  )
+  
+  
 
-          <table
+  }
+</div>
+  <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500">
+Los expedientes anteriores a 2015 se encuentran alojados en libros. Pida su digitalización a digestoconcejo@gmail.com . O vea la versión en papel en nuestro archivo en Dr. Balseiro 80
+Teléfono: 442 9100 los días hábiles de 7 a 17 h . </div><table
             data-aos="fade-up"
             data-aos-duration="300"
             className={`${styles.table} ${styles.fullWidth} ${styles.textWhite} ${styles.borderCollapse} ${styles.border}`}
@@ -236,6 +244,7 @@ function ExpedientesResoluciones() {
               ))}
             </tbody>
           </table>
+         
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>

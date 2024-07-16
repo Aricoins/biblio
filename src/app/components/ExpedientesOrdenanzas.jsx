@@ -126,7 +126,7 @@ function ExpedientesOrdenanzas() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Ordenanzas | 2023 - 2014 
+       Ordenanzas | 2023 - 2000
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
@@ -186,11 +186,13 @@ function ExpedientesOrdenanzas() {
               ))}
             </tbody>
           </table>
-  <div style={{ display: "flex", justifyContent: "center"}}>  
-     <p> Para conocer la vigencia de una ordenanza consulte nuestro 
+    
+  <div style={{ display: "flex", justifyContent: "center"}}> <p>Para conocer la vigencia de una ordenanza consulte nuestro
          <Link style={{color: "red"}} href="http://10.20.101.141/gbuscador/" 
-          target="_blank"> Digesto Jurídico</Link>
-        </p></div>
+          target="_blank"> Digesto Jurídico </Link>
+       </p>
+            </div>
+
           {visibleRows < filteredData.length && (
             <>
               <div className={styles.botones}>
