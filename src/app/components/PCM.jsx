@@ -291,6 +291,7 @@ useEffect(() => {
                   </button>
                 ) : null}
               </div>
+              <b>Las PCM aprobadas reciben un nuevo número segun la serie a la que pertenece. Busque en Resoluciones, Comunicaciones o Declaraciones el número de norma final. </b>
             </>
           )}
         </div>
