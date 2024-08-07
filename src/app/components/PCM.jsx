@@ -291,11 +291,12 @@ useEffect(() => {
                   </button>
                 ) : null}
               </div>
-              <b>Las PCM aprobadas reciben un nuevo número segun la serie a la que pertenece. Busque en Resoluciones, Comunicaciones o Declaraciones el número de norma final. </b>
             </>
           )}
+           <p style={{textAlign: "center", backgroundColor: "black", color: "white", fontSize: "medium", backgroundColor: "orangered", color: "white", padding: "1%", borderRadius: "5px"}}>Las PCM aprobadas reciben un nuevo número según la serie a la que pertenecen. <br />Busque el número de norma final en Resoluciones, Comunicaciones o Declaraciones, según corresponda. </p>
         </div>
       )}
+             
 
     </>
   );
