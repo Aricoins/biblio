@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
@@ -37,7 +38,7 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <h1>Subir archivo DOCX para extracción</h1>
+            <h1>Subir archivo para extracción</h1>
             <input type="file" accept=".docx" onChange={handleFileChange} />
             <button onClick={handleUpload} disabled={loading}>
                 {loading ? 'Procesando...' : 'Subir y procesar'}
