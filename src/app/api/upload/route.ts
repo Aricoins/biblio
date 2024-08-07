@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import mammoth from 'mammoth';
-import * as formidable from 'formidable';
+import formidable, { Fields, Files, File } from 'formidable';
 import path from 'path';
 
 export const config = {
@@ -63,7 +63,7 @@ async function generarDatosProyecto(rutaArchivoDocx: string) {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    const form = new formidable.IncomingForm();
+    const form = new formidable.IncomingForm() as any; // Use type assertion to bypass TypeScript checks
     const uploadDir = path.join(process.cwd(), '/uploads');
 
     if (!fs.existsSync(uploadDir)) {
@@ -73,18 +73,23 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     form.uploadDir = uploadDir;
     form.keepExtensions = true;
 
-    form.parse(req, async (err, fields, files) => {
+    form.parse(req, async (err: any, fields: Fields, files: Files) => {
         if (err) {
             res.status(500).json({ error: 'Error al subir el archivo' });
             return;
         }
 
-        const file = files.file as formidable.File;
+        if (!files.file || !Array.isArray(files.file) || files.file.length === 0) {
+            res.status(400).json({ error: 'No se ha subido ningún archivo' });
+            return;
+        }
+
+        const file = files.file[0]; // Ensure files.file is an array and get the first file
         const filePath = file.filepath;
 
         try {
             const datos = await generarDatosProyecto(filePath);
-            
+
             if (datos) {
                 const jsonFilePath = path.join(uploadDir, 'proyectoshoy.json');
                 fs.writeFileSync(jsonFilePath, JSON.stringify(datos, null, 2));
