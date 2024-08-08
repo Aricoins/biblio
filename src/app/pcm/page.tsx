@@ -23,7 +23,7 @@ function PCMTable() {
         handleSearch(searchFromParams);
     }, [searchFromParams]);
 
-    const handleSearch = (value) => {
+    const handleSearch = (value: string) => {
         const filtered = dataSource.filter(item =>
             item.numero_pcm.toLowerCase().includes(value.toLowerCase()) ||
             item.descripcion.toLowerCase().includes(value.toLowerCase())
