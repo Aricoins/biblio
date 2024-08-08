@@ -190,8 +190,29 @@ useEffect(() => {
         onClick={() => {
           setIsComponentVisible((prevVisibility) => !prevVisibility); }}
       >
-       PCM | 1988 - actualidad
+      Resoluciones de Presidecia (PCM)
+  
       </h2>
+      <p  data-aos="fade-left" 
+                style={{ 
+                    fontSize: "small",
+                    fontWeight: "400",
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                    marginBottom: "3%",
+                    padding: "1%",
+                    cursor: "pointer",
+                    backgroundColor: "rgb(236, 233, 232)",
+                    color: "black",
+                    fontFamily: "Times New Roman",
+                    borderRadius: "5px",
+                    border: ".5px solid black",
+                    transition: "1s",
+                    marginLeft: "5%",
+                    width: "40%",
+                    margin: "1% 0  0  auto"
+                }}> 1988 - actualidad</p>
       {isComponentVisible && (
           <div className={styles.block}>
           <div className={styles.inputsydata}>    
@@ -293,7 +314,8 @@ useEffect(() => {
               </div>
             </>
           )}
-           <p style={{textAlign: "center", backgroundColor: "black", color: "white", fontSize: "medium", backgroundColor: "orangered", color: "white", padding: "1%", borderRadius: "5px"}}>Las PCM aprobadas reciben un nuevo número según la serie a la que pertenecen. <br />Busque el número de norma final en Resoluciones, Comunicaciones o Declaraciones, según corresponda. </p>
+           <p data-aos="fade-left" style={{textAlign: "center", backgroundColor: "black", color: "white", fontSize: "medium", backgroundColor: "orangered", color: "white", padding: "1%", borderRadius: "5px"}}>
+            Busque <Link href="/pcm" style={{textDecoration: "none", color: "black", backgroundColor: "whjite"}}>aquí </Link>el expediente de las normas originadas por PCM <i>Ad Reférendum</i> aprobadas  por el Concejo. </p>
         </div>
       )}
              
