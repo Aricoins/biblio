@@ -23,9 +23,9 @@
   {
     "id": 5,
     "numero_pcm": "388-PCM-19",
-    "descripcion": "",
+    "descripcion": "Se declara de interés municipal, cultural y educativo al libro Cómo se hace para cambiar?",
     "autor": "Vicepresidente Primero a cargo del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-20-2659"
   },
   {
     "id": 6,
@@ -46,7 +46,7 @@
     "numero_pcm": "408-PCM-19",
     "descripcion": "Se comunica la preocupación del Departamento Deliberante ante la situación que atraviesan los trabajadores del Sanatorio del Sol S.A.",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "C-20-1011"
   },
   {
     "id": 9,
@@ -67,19 +67,19 @@
     "numero_pcm": "016-PCM-20",
     "descripcion": "Se declara de interés municipal, cultural, educativo y turístico al 2° Concierto de Extensión en el Exterior de las Semanas Musicales de Frutillar",
     "autor": "Vicepresidente Primero del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-20-2660"
   },
   {
     "id": 13,
     "numero_pcm": "022-PCM-20",
     "descripcion": "Se declara de interés municipal y cultural 2º edición Festival sin Fronteras Sur Fest",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2661"
   },
   {
     "id": 14,
     "numero_pcm": "023-PCM-20",
-    "descripcion": "Contrato de locación de servicios rediseño optimización del sitio web",
+    "descripcion": "Contrato de locación de servicios rediseño optimización del sitio web.",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
     "numero_norma": "R-20-626"
   },
@@ -88,12 +88,12 @@
     "numero_pcm": "026-PCM-20",
     "descripcion": "Se declara de interés municipal y artístico al 4º Jolgorio Bariloche - Semana Internacional del Teatro de Humor",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2662"
   },
   {
     "id": 16,
     "numero_pcm": "034-PCM-20",
-    "descripcion": "Se deja sin efecto designación como asesora técnica de la Unidad Coordinadora para integral el Consejo de Planificación. Gestión 2019-2023 a la Sra. Magdalena Moreschi",
+    "descripcion": "Se deja sin efecto designación como asesora técnica de la Unidad Coordinadora para integral el Consejo de Planificación. Gestión 2019-2023 a la Sra. Magdalena Moreschi.",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
     "numero_norma": "R-20-627"
   },
@@ -102,35 +102,35 @@
     "numero_pcm": "038-PCM-20",
     "descripcion": "De declara de interés municipal y cultural el proyecto audiovisual Cielo Grande",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2663"
   },
   {
     "id": 18,
     "numero_pcm": "045-PCM-20",
     "descripcion": "Se declara de interés municipal, turístico y deportivo 16º edición de la carrera 4 Refugios 2020",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2664"
   },
   {
     "id": 19,
     "numero_pcm": "046-PCM-20",
     "descripcion": "Se declara de interés municipal, comunitario, científico y tecnológico al Saocom 1B y su embarque",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2665"
   },
   {
     "id": 20,
     "numero_pcm": "047-PCM-20",
     "descripcion": "Se declara de interés municipal, cultural y educativo conferencia Las travesías de la infancia hacia el puerto de la adolescencia",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2666"
   },
   {
     "id": 21,
     "numero_pcm": "048-PCM-20",
     "descripcion": "Se declara de interés municipal y cultural el evento H-D Bariloche Encuentro Internacional",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2667"
   },
   {
     "id": 22,
@@ -144,21 +144,21 @@
     "numero_pcm": "072-PCM-20",
     "descripcion": "Se declara de interés municipal y educativo “Post San Francisco Gi.GU",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2683"
   },
   {
     "id": 24,
     "numero_pcm": "075-PCM-20",
     "descripcion": "Se declara de interés municipal la segunda fecha del Campeonato argentino de motocross organizado por la asociación de motos de Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "Retirada Acta 1127/20 del 4 de junio de 2020."
   },
   {
     "id": 25,
     "numero_pcm": "076-PCM-20",
     "descripcion": "Se declara de interés municipal y cultural el libro Centro Cívico de Bariloche, eterna postal de la autora barilochense, Lic. Adriana María Robles",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2684"
   },
   {
     "id": 26,
@@ -172,7 +172,7 @@
     "numero_pcm": "092-PCM-20",
     "descripcion": "Declarar de interés municipal el proyecto Mes del Compostaje",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2686"
   },
   {
     "id": 28,
@@ -193,7 +193,7 @@
     "numero_pcm": "127-PCM-20",
     "descripcion": "Se declara de interés municipal y cultural proyecto de largometraje de ficción Un año sin primavera",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2696"
   },
   {
     "id": 31,
@@ -214,21 +214,21 @@
     "numero_pcm": "156-PCM-20",
     "descripcion": "Se declara de interés municipal, cultural y artístico al evento Camino a la pasión del Maruchito",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2701"
   },
   {
     "id": 34,
     "numero_pcm": "163-PCM-20",
     "descripcion": "Se declara de interés municipal al festival virtual solidario Maratón del lago y la montaña",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2703"
   },
   {
     "id": 35,
     "numero_pcm": "182-PCM-20",
     "descripcion": "Se declara de interés municipal la realización del V Congreso de Seguridad Social",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2710"
   },
   {
     "id": 36,
@@ -256,14 +256,14 @@
     "numero_pcm": "219-PCM-20",
     "descripcion": "Se declara de interés municipal, social y comunitario la 26º edición del Pan Dulce Solidario Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-20-2718"
   },
   {
     "id": 40,
     "numero_pcm": "007-PCM-21",
     "descripcion": "Se declara de interés municipal proyectos innovación en acopio, recolección, transporte y tratamiento RFU",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2726"
   },
   {
     "id": 41,
@@ -275,7 +275,7 @@
   {
     "id": 42,
     "numero_pcm": "023-PCM-21",
-    "descripcion": "Se renueva contrato de locación de servicios profesionales. Ingeniero Gustavo Sergio Ortíz Uriburu, informática Digesto Municipal",
+    "descripcion": "Se renueva contrato de locación de servicios profesionales. Ingeniero Gustavo Sergio Ortíz Uriburu, informática Digesto Municipal.",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
     "numero_norma": "R-21-641"
   },
@@ -298,35 +298,35 @@
     "numero_pcm": "056-PCM-21",
     "descripcion": "Se declara de interés municipal taller introductorio de Defensa Personal para Mujeres",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2728"
   },
   {
     "id": 46,
     "numero_pcm": "057-PCM-21",
     "descripcion": "Se declara de interés municipal agenda artística 2021 promoción de derechos personas trans- CLCPDSX",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2729"
   },
   {
     "id": 47,
     "numero_pcm": "058-PCM-21",
     "descripcion": "Declara interés comunitario labor trabajadoras y trabajadores de la salud Covid-19",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2730"
   },
   {
     "id": 48,
     "numero_pcm": "067-PCM-21",
     "descripcion": "Se declara de interés municipal, deportivo y turístico la 8ª Edición del Bariloche Cup",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2733"
   },
   {
     "id": 49,
     "numero_pcm": "069-PCM-21",
     "descripcion": "Se declara de interés municipal Jornada 2 Abril Marea Azul",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2734"
   },
   {
     "id": 50,
@@ -340,14 +340,14 @@
     "numero_pcm": "108-PCM-21",
     "descripcion": "Se declara de interés municipal y comunitario la sexta semana mundial para la seguridad vial Calles para la Vida #love30",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2742"
   },
   {
     "id": 52,
     "numero_pcm": "109-PCM-21",
     "descripcion": "Se ordena publicación Fe de Erratas ordenanza 3218-CM-21",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "O-21-3226"
   },
   {
     "id": 53,
@@ -368,56 +368,56 @@
     "numero_pcm": "142-PCM-21",
     "descripcion": "Se declara de interés municipal las Jornadas virtuales gratuitas de capacitación de Enargas",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2751"
   },
   {
     "id": 56,
     "numero_pcm": "180-PCM-21",
     "descripcion": "Declarar de interés municipal y cultural el proyecto de largometraje Dejé las luces prendidas",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2759"
   },
   {
     "id": 57,
     "numero_pcm": "181-PCM-21",
     "descripcion": "Se declara de interés municipal la Maratón Solidaria del Juguete",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2760"
   },
   {
     "id": 58,
     "numero_pcm": "198-PCM-21",
     "descripcion": "Se declara de interés municipal encuentro Proteger la lactancia es una responsabilidad compartida",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2761"
   },
   {
     "id": 59,
     "numero_pcm": "215-PCM-21",
     "descripcion": "Se declara de interés municipal y comunitario trabajos audiovisuales en el marco de Teatro por la Identidad Bariloche, edición 2021",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2762"
   },
   {
     "id": 60,
     "numero_pcm": "229-PCM-21",
     "descripcion": "Se declara de interés municipal a los programas Capacitaciones RCP, Seguridad Vial y Aburramos al bombero",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2772"
   },
   {
     "id": 61,
     "numero_pcm": "230-PCM-21",
     "descripcion": "Se declara de interés municipal al Campeonato Regional de Patinaje Artístico",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2773"
   },
   {
     "id": 62,
     "numero_pcm": "231-PCM-21",
     "descripcion": "Se declara de interés municipal Mega Corte Solidario Pelos al Viento. Pelucas pacientes oncológicos",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2774"
   },
   {
     "id": 63,
@@ -431,7 +431,7 @@
     "numero_pcm": "244-PCM-21",
     "descripcion": "Se declara de interés municipal el quinto Festival Internacional Teatro Infantil de Pichi Keche",
     "autor": "Vicepresidente primero a cargo del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-21-2775"
   },
   {
     "id": 65,
@@ -452,14 +452,14 @@
     "numero_pcm": "279-PCM-21",
     "descripcion": "Se declara de interés municipal la Jornada Federal de Asesoramiento Notarial Comunitario",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2791"
   },
   {
     "id": 68,
     "numero_pcm": "289-PCM-21",
     "descripcion": "Se declara de interés municipal la Semana de Concientización sobre los Derechos de las Personas con Discapacidad",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-21-2792"
   },
   {
     "id": 69,
@@ -480,42 +480,42 @@
     "numero_pcm": "308-PCM-21",
     "descripcion": "Se declara de interés municipal fragmento de muestra fotográfica Archivo de la Memoria Trans",
     "autor": "Vicepresidente 1º, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-21-2800"
   },
   {
     "id": 76,
     "numero_pcm": "321-PCM-21",
     "descripcion": "Declarar de interés municipal el evento Final del Campeonato MX Patagónico Sur de la República 2021, del 4 al 5 de diciembre 2021, organizado por la Asociación de Motos Bariloche",
     "autor": "Vicepresidente 1º a cargo del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-21-2797"
   },
   {
     "id": 77,
     "numero_pcm": "322-PCM-21",
     "descripcion": "Se declara de interés municipal y comunitario la 27º edición del Pan Dulce Solidario",
     "autor": "Vicepresidente 1º a cargo del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-21-2796"
   },
   {
     "id": 78,
     "numero_pcm": "015-PCM-22",
     "descripcion": "Se declara de interés municipal y comunitario proyecto cultural Patagonia Canta",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2801"
   },
   {
     "id": 79,
     "numero_pcm": "020-PCM-22",
     "descripcion": "Se declara de interés municipal, comunitario y deportivo evento Cruce del Moreno 2022",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2802"
   },
   {
     "id": 80,
     "numero_pcm": "021-PCM-22",
     "descripcion": "Se declara de interés municipal y comunitario el evento Vuelta a la Huemul, edición 2022",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2807"
   },
   {
     "id": 81,
@@ -550,14 +550,14 @@
     "numero_pcm": "057-PCM-22",
     "descripcion": "Se declara de interés municipal la presentación del libro La otra cara de la postal",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2819"
   },
   {
     "id": 86,
     "numero_pcm": "061-PCM-22",
     "descripcion": "Se declara de interés municipal Bailatón Sin Drama de Down",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2809"
   },
   {
     "id": 87,
@@ -571,7 +571,7 @@
     "numero_pcm": "077-PCM-22",
     "descripcion": "Declara de interés municipal y comunitario la Jornada virtual gratuita de capacitación de ENERGAS 2022",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2827"
   },
   {
     "id": 89,
@@ -592,14 +592,14 @@
     "numero_pcm": "098-PCM-22",
     "descripcion": "Se declara de interés municipal al 57º aniversario del Club de Regatas Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2834"
   },
   {
     "id": 92,
     "numero_pcm": "110-PCM-22",
     "descripcion": "Se declara de interés municipal actividades en el marco de la Semana Mundial del Parto Respetado",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2833"
   },
   {
     "id": 93,
@@ -627,28 +627,28 @@
     "numero_pcm": "132-PCM-22",
     "descripcion": "Se declara de interés municipal la muestra fotográfica Tierra, aire, agua fuego de Antronio ‘Toni’  Romano",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2837"
   },
   {
     "id": 97,
     "numero_pcm": "133-PCM-22",
     "descripcion": "Se declara de interés municipal el taller sobre percusión y danza Sabar",
     "autor": "Vicepresidente 1º del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-22-2838"
   },
   {
     "id": 98,
     "numero_pcm": "134-PCM-22",
     "descripcion": "Se declara de interés municipal feria Puro Vino BRC 2022",
     "autor": "Vicepresidente 1º del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-22-2839"
   },
   {
     "id": 99,
     "numero_pcm": "135-PCM-22",
     "descripcion": "Se declara de interés municipal la Semana del Ambiente 2022",
     "autor": "Vicepresidente 1º del Concejo Municipal, Marcelo Casas",
-    "numero_norma": ""
+    "numero_norma": "D-22-2840"
   },
   {
     "id": 100,
@@ -662,14 +662,14 @@
     "numero_pcm": "145-PCM-22",
     "descripcion": "Declara de interés municipal IV Congreso de psiquiatría y adicciones del Comahue",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2841"
   },
   {
     "id": 102,
     "numero_pcm": "149-PCM-22",
     "descripcion": "Se declara de interés municipal a la muestra Wiñol Xipantu: La construcción de las políticas públicas en el Municipio Intercultural",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2842"
   },
   {
     "id": 103,
@@ -697,21 +697,21 @@
     "numero_pcm": "174-PCM-22",
     "descripcion": "Se declara de interés municipal al evento solidario evangelístico de San Carlos de Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2851"
   },
   {
     "id": 107,
     "numero_pcm": "189-PCM-22",
     "descripcion": "Se declara de interés municipal la maratón solidaria del Día de las Infancias Ponete la 10, vení a donar tu juguete",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2857"
   },
   {
     "id": 108,
     "numero_pcm": "191-PCM-22",
     "descripcion": "Se declara de interés municipal el programa de capacitación Operador Socio Comunitario",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2858"
   },
   {
     "id": 109,
@@ -725,7 +725,7 @@
     "numero_pcm": "217-PCM-22",
     "descripcion": "Se declara de interés municipal actividades del 20º aniversario del hermanamiento Bariloche - Aspen",
     "autor": "presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2874"
   },
   {
     "id": 111,
@@ -746,7 +746,7 @@
     "numero_pcm": "227-PCM-22",
     "descripcion": "Se declara de interés municipal el 9º Encuentro Nacional de Mujeres Radicales Río Negro Bariloche 2022",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2875"
   },
   {
     "id": 114,
@@ -760,14 +760,14 @@
     "numero_pcm": "229-PCM-22",
     "descripcion": "Se declara de interés municipal, comunitario e intercultural ciclo de formación Construyendo un municipio intercultural",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2876"
   },
   {
     "id": 116,
     "numero_pcm": "233-PCM-22",
     "descripcion": "Se declara interés municipal cronograma actividades Lengua de Señas Argentina. Asociación Alas de Águilas",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2877"
   },
   {
     "id": 117,
@@ -800,23 +800,23 @@
   {
     "id": 121,
     "numero_pcm": "258-PCM-22",
-    "descripcion": "Se declara interés municipal Megacorte Solidario Edición 2022. Pelos al viento",
+    "descripcion": "Se declara interés municipal Megacorte Solidario Edición 2022. Pelos al viento.",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2880"
   },
   {
     "id": 122,
     "numero_pcm": "269-PCM-22",
     "descripcion": "Se declara de interés municipal y comunitario el 2º Congreso Federal de Empleo Público",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2881"
   },
   {
     "id": 123,
     "numero_pcm": "277-PCM-22",
     "descripcion": "Se declara de interés municipal XIV Edición Programa Uniendo Metas Jóvenes para el futuro",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2882"
   },
   {
     "id": 124,
@@ -830,40 +830,40 @@
     "numero_pcm": "294-PCM-22",
     "descripcion": "Se declara de interés municipal y comunitario el libro Las primeras, de Gisela Marziotta",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2889"
   },
   {
     "id": 126,
     "numero_pcm": "296-PCM-22",
     "descripcion": "Se declara de interés municipal actividades Día de la Tradición. Edición 2022",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2890"
   },
   {
     "id": 127,
     "numero_pcm": "301-PCM-22",
     "descripcion": "Se declaran de interés municipal las jornadas de Identificación y Prevención del Suicidio",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2891"
   },
   {
     "id": 128,
     "numero_pcm": "302-PCM-22",
     "descripcion": "Se declara de interés municipal el Festival María Remedios ",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2892"
   },
   {
     "id": 129,
     "numero_pcm": "304-PCM-22",
     "descripcion": "Se declara de interés municipal Jornada de Asesoramiento Notarial Comunitario",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2893"
   },
   {
     "id": 130,
     "numero_pcm": "308-PCM-22",
-    "descripcion": "Se llama audiencia pública proyectos de ordenanza 622/22: “Se aprueba y reemplaza el Anexo I de la ordenanza 2374-CM-12",
+    "descripcion": "Se llama audiencia pública proyectos de ordenanza 622/22: “Se aprueba y reemplaza el Anexo I de la ordenanza 2374-CM-12” y proyecto de ordenanza 623/22: “Se aprueban y reemplazan los Anexos I y II de la ordenanza 2375-CM-12",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
     "numero_norma": "R-22-679"
   },
@@ -872,7 +872,7 @@
     "numero_pcm": "317-PCM-22",
     "descripcion": "Se declara de interés municipal la colocación de un Banco Rojo en la sede de la Unco Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2900"
   },
   {
     "id": 132,
@@ -893,14 +893,14 @@
     "numero_pcm": "359-PCM-22",
     "descripcion": "Declara de interés municipal 5º edición campaña Recuperando el Espíritu de la Navidad",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-22-2904"
   },
   {
     "id": 136,
     "numero_pcm": "20-PCM-23",
     "descripcion": "Se declara de interés municipal a la carrera de trail run El Paso Austral - Ultra Trail",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2909"
   },
   {
     "id": 137,
@@ -928,7 +928,7 @@
     "numero_pcm": "68-PCM-23",
     "descripcion": "Se declara de interés municipal el documental Agua, Conciencia y Acción",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2918"
   },
   {
     "id": 141,
@@ -956,14 +956,14 @@
     "numero_pcm": "089-PCM-23",
     "descripcion": " Se declara de interés municipal e intercultural el film Cuentos de la Tierra",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2925"
   },
   {
     "id": 145,
     "numero_pcm": "090-PCM-23",
     "descripcion": "Se declara de interés municipal al evento Danzarium, Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2923"
   },
   {
     "id": 146,
@@ -977,7 +977,7 @@
     "numero_pcm": "094-PCM-23",
     "descripcion": "Se declara de interés municipal e intercultural encuentro Orquestas 2023 Arpegios del Sur",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2924"
   },
   {
     "id": 148,
@@ -1005,7 +1005,7 @@
     "numero_pcm": "174-PCM-23",
     "descripcion": "Se declara de interés municipal Maratón Solidaria Día de las Infancias 2023",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2948"
   },
   {
     "id": 153,
@@ -1019,28 +1019,28 @@
     "numero_pcm": "190-PCM-23",
     "descripcion": "Declara de interés municipal y cultural el 8º Encuentro Cultural de Payadores",
     "autor": "Vicepresidente 2º, Ariel Cárdenas",
-    "numero_norma": ""
+    "numero_norma": "D-23-2949"
   },
   {
     "id": 155,
     "numero_pcm": "191-PCM-23",
     "descripcion": "Declarar de interés municipal y cultural 2º Encuentro de Orquestas 2023",
     "autor": "Vicepresidente 2º, Ariel Cárdenas",
-    "numero_norma": ""
+    "numero_norma": "D-23-2950"
   },
   {
     "id": 156,
     "numero_pcm": "192-PCM-23",
     "descripcion": "Se declara de interés municipal al Campeonato infantil patagónico de esquí",
     "autor": "Vicepresidente 2º, Ariel Cárdenas",
-    "numero_norma": ""
+    "numero_norma": "D-23-2951"
   },
   {
     "id": 157,
     "numero_pcm": "200-PCM-23",
     "descripcion": "Se declara de interés municipal a la obra de teatro Exhumare",
     "autor": "Vicepresidente 2º del Concejo Municipal, Ariel Cárdenas",
-    "numero_norma": ""
+    "numero_norma": "D-23-2952"
   },
   {
     "id": 158,
@@ -1054,21 +1054,21 @@
     "numero_pcm": "215-PCM-23",
     "descripcion": "Se declara de interés municipal al evento Club Z & Bailarena solidarios",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2958"
   },
   {
     "id": 160,
     "numero_pcm": "221-PCM-23",
     "descripcion": "Se declara de interés municipal el evento Serpentor en Bariloche",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2959"
   },
   {
     "id": 161,
     "numero_pcm": "223-PCM-23",
     "descripcion": "Se declara de interés municipal al Torneo Amistoso Internacional Aniversario Club Alas Argentinas",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2960"
   },
   {
     "id": 162,
@@ -1089,7 +1089,7 @@
     "numero_pcm": "270-PCM-23",
     "descripcion": "Se declara de interés municipal la 34° Edición de las 1.000 Millas Sport de la República Argentina",
     "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
-    "numero_norma": ""
+    "numero_norma": "D-23-2968"
   },
   {
     "id": 165,

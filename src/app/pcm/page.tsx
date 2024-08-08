@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useSearchParams } from 'next/navigation';
 import styles from './styles.module.css';
-import dataSource from '../api/upload/datos_pcm.json';
+import dataSource from '../api/upload/datos_pcm2.json';
 
 const { Search } = Input;
 

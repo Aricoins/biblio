@@ -22,7 +22,7 @@ const extraccionPCM = {
     },
 
     extraerNumeroNorma: function(parrafo) {
-        const regexNumeroNorma = /\b(R-\d+-\d+)\b/;
+        const regexNumeroNorma = /\b([RCD]-\d{2}-\d+)\b/;
         const coincidencia = regexNumeroNorma.exec(parrafo);
         return coincidencia ? coincidencia[1] : '';
     }
@@ -65,6 +65,6 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
 const rutaArchivoDocx = './PCMs.docx'; // Ajusta la ruta al archivo DOCX si es necesario
-const rutaArchivoJson = './datos_pcm.json'; // Nombre del archivo JSON de salida
+const rutaArchivoJson = './datos_pcm2.json'; // Nombre del archivo JSON de salida
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
