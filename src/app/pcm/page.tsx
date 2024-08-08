@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Pagination } from 'antd';
+import { Table, Input, Pagination, Modal } from 'antd';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useSearchParams } from 'next/navigation';
 import styles from './styles.module.css';
 import dataSource from '../api/upload/datos_pcm_2.json';
-
 
 const { Search } = Input;
 
@@ -18,13 +17,14 @@ interface PCMRecord {
     enlace?: string; // Este campo es opcional
 }
 
-
 function PCMTable() {
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize, setPageSize] = useState(5);
     const [filteredData, setFilteredData] = useState(dataSource);
     const [searchText, setSearchText] = useState('');
-    
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [modalContent, setModalContent] = useState<PCMRecord | null>(null);
+
     const searchParams = useSearchParams();
     const searchFromParams = searchParams.get('search') || '';
 
@@ -46,6 +46,21 @@ function PCMTable() {
     const handlePageChange = (page: number, size: number) => {
         setCurrentPage(page);
         setPageSize(size);
+    };
+
+    const showModal = (record: PCMRecord) => {
+        setModalContent(record);
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+        setModalContent(null);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+        setModalContent(null);
     };
 
     const columns = [
@@ -74,7 +89,7 @@ function PCMTable() {
             className: styles.norma,
             render: (text: string, record: PCMRecord) => {
                 return record.enlace ? (
-                    <a href={record.enlace} target="_blank" rel="noopener noreferrer">
+                    <a href={record.enlace} target="_blank" rel="noopener noreferrer" style={{ cursor: 'pointer', color: '#1890ff' }}>
                         {text}
                     </a>
                 ) : (
@@ -83,12 +98,15 @@ function PCMTable() {
             },
         },
     ];
-    
-
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const paginatedData = filteredData.slice(startIndex, endIndex);
-
+    const transformLink = (url: string) => {
+        if (url.includes('/view')) {
+            return url.replace('/view', '/preview');
+        }
+        return url;
+    };
     return (
         <div> 
             <h2 className={styles.hdos}>Normas por PCM</h2>
@@ -149,6 +167,26 @@ function PCMTable() {
                     className={styles.pagination}
                 />
             </div>
+
+            <Modal 
+                title={`Documento de Norma: ${modalContent?.numero_norma}`} 
+                open={isModalVisible} 
+                onOk={handleOk} 
+                onCancel={handleCancel}
+                width={800}
+            >
+                {modalContent?.enlace ? (
+                    <iframe 
+                        src={modalContent.enlace} 
+                        title={modalContent.numero_norma} 
+                        width="100%" 
+                        height="500px" 
+                        style={{ border: 'none' }}
+                    />
+                ) : (
+                    <p>No hay documento disponible.</p>
+                )}
+            </Modal>
         </div>
     );
 }
