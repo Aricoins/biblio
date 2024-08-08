@@ -55,7 +55,7 @@ function PCMTable() {
             title: 'Autor',
             dataIndex: 'autor',
             key: 'autor',
-            className: styles.autor,
+            className: styles.autores,
         },
         {
             title: 'Número de Norma',
@@ -78,9 +78,9 @@ function PCMTable() {
     data-aos="fade-left" 
     style={{ 
         fontSize: "small",
-        fontWeight: "500",
+        fontWeight: "400",
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "center",
         position: "relative",
         marginBottom: "3%",
         padding: "1%",
@@ -89,15 +89,12 @@ function PCMTable() {
         color: "black",
         fontFamily: "Times New Roman",
         borderRadius: "5px",
-        border: "1px solid black",
+        border: ".5px solid black",
         transition: "1s",
-        margin: "3%",
-        marginTop: "1%",
-        width: "90%",
-        marginLeft: "5%"
+      
     }}
 >
-    Buscador de normas originadas en Resoluciones de la Presidencia
+    Buscador de expedientes de normas originadas en Resoluciones de la Presidencia
 <p></p>
 </h3>
 
