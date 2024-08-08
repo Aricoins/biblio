@@ -1,50 +1,103 @@
-"use client"
-import React, { useState } from 'react';
-import axios from 'axios';
-import { saveAs } from 'file-saver';
+"use client";
+import React, { useState, useEffect } from 'react';
+import { Table, Input, Pagination } from 'antd';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useSearchParams } from 'next/navigation';
+import styles from './styles.module.css';
+import dataSource from '../api/upload/datos_pcm.json';
 
-const Home: React.FC = () => {
-    const [file, setFile] = useState<File | null>(null);
-    const [loading, setLoading] = useState(false);
+const { Search } = Input;
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const selectedFile = e.target.files?.[0] || null;
-        setFile(selectedFile);
+function PCMTable() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [pageSize, setPageSize] = useState(5);
+    const [filteredData, setFilteredData] = useState(dataSource);
+    const [searchText, setSearchText] = useState('');
+    
+    const searchParams = useSearchParams();
+    const searchFromParams = searchParams.get('search') || '';
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+        handleSearch(searchFromParams);
+    }, [searchFromParams]);
+
+    const handleSearch = (value) => {
+        const filtered = dataSource.filter(item =>
+            item.numero_pcm.toLowerCase().includes(value.toLowerCase()) ||
+            item.descripcion.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredData(filtered);
+        setSearchText(value);
+        setCurrentPage(1);
     };
 
-    const handleUpload = async () => {
-        if (!file) return;
-
-        setLoading(true);
-
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const response = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-                responseType: 'blob',
-            });
-
-            saveAs(response.data, 'proyectoshoy.json');
-        } catch (error) {
-            console.error('Error al procesar el archivo:', error);
-        } finally {
-            setLoading(false);
-        }
+    const handlePageChange = (page, size) => {
+        setCurrentPage(page);
+        setPageSize(size);
     };
+
+    const columns = [
+        {
+            title: 'Número PCM',
+            dataIndex: 'numero_pcm',
+            key: 'numero_pcm',
+            className: styles.numero,
+        },
+        {
+            title: 'Descripción',
+            dataIndex: 'descripcion',
+            key: 'descripcion',
+            className: styles.descripcion,
+        },
+        {
+            title: 'Autor',
+            dataIndex: 'autor',
+            key: 'autor',
+            className: styles.autor,
+        },
+        {
+            title: 'Número de Norma',
+            dataIndex: 'numero_norma',
+            key: 'numero_norma',
+            className: styles.norma,
+        },
+    ];
+
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const paginatedData = filteredData.slice(startIndex, endIndex);
 
     return (
-        <div>
-            <h1>Subir archivo para extracción</h1>
-            <input type="file" accept=".docx" onChange={handleFileChange} />
-            <button onClick={handleUpload} disabled={loading}>
-                {loading ? 'Procesando...' : 'Subir y procesar'}
-            </button>
+
+        
+        <div className={styles.container} data-aos="fade-up">
+            <div className={styles.searchContainer}>
+                <Search
+                    placeholder="Buscar PCM o Descripción"
+                    onSearch={handleSearch}
+                    style={{ width: 300, marginBottom: 16 }}
+                    value={searchText}
+                    onChange={(e) => handleSearch(e.target.value)}
+                />
+            </div>
+            <Table
+                dataSource={paginatedData}
+                columns={columns}
+                pagination={false}
+                rowKey="id"
+                className={styles.table}
+            />
+            <Pagination
+                current={currentPage}
+                pageSize={pageSize}
+                total={filteredData.length}
+                onChange={handlePageChange}
+                className={styles.pagination}
+            />
         </div>
     );
-};
+}
 
-export default Home;
+export default PCMTable;
