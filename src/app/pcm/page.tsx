@@ -71,15 +71,54 @@ function PCMTable() {
 
     return (
 
-        
+        <div> <h2 className={styles.hdos} >
+       Normas por PCM 
+    </h2>
+    <h3 
+    data-aos="fade-left" 
+    style={{ 
+        fontSize: "small",
+        fontWeight: "500",
+        display: "flex",
+        justifyContent: "space-around",
+        position: "relative",
+        marginBottom: "3%",
+        padding: "1%",
+        cursor: "pointer",
+        backgroundColor: "rgb(236, 233, 232)",
+        color: "black",
+        fontFamily: "Times New Roman",
+        borderRadius: "5px",
+        border: "1px solid black",
+        transition: "1s",
+        margin: "3%",
+        marginTop: "1%",
+        width: "90%",
+        marginLeft: "5%"
+    }}
+>
+    Buscador de normas originadas en Resoluciones de la Presidencia
+<p></p>
+</h3>
+
+
         <div className={styles.container} data-aos="fade-up">
-            <div className={styles.searchContainer}>
+            <div className={styles.search}>
                 <Search
                     placeholder="Buscar PCM o Descripción"
                     onSearch={handleSearch}
-                    style={{ width: 300, marginBottom: 16 }}
+                    style={{ 
+                        width: 300, 
+                        marginBottom: 16, 
+                        border: "2px solid #ff6f00", // Color naranja más suave
+                        borderRadius: 5, // Bordes redondeados
+                        padding: "0 12px", // Espaciado interno horizontal
+                        fontSize: "16px", // Tamaño de fuente más grande
+                        fontFamily: "'Roboto', sans-serif", // Familia tipográfica consistente
+                        transition: "border-color 0.3s", // Transición suave para el borde
+                    }}
                     value={searchText}
-                    onChange={(e) => handleSearch(e.target.value)}
+                     onChange={(e) => handleSearch(e.target.value)}
                 />
             </div>
             <Table
@@ -96,6 +135,7 @@ function PCMTable() {
                 onChange={handlePageChange}
                 className={styles.pagination}
             />
+        </div>
         </div>
     );
 }

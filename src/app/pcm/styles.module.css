@@ -16,7 +16,7 @@
     border: black 2px solid;
     transition: 1s;
     margin: 3%;
-    margin-top: 10%;
+    margin-top: 1%;
     width: 90%;
     margin-left: 5%;
     display: flex ;
@@ -279,4 +279,12 @@ width: 40%;
   text-align: center;
   font-size: 1.5rem;
   color:rgb(172, 147, 137)
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.search {
+  display: flex;
+  justify-content: center;
 }
