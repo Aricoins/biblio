@@ -7,7 +7,17 @@ import { useSearchParams } from 'next/navigation';
 import styles from './styles.module.css';
 import dataSource from '../api/upload/datos_pcm_2.json';
 
+
 const { Search } = Input;
+
+interface PCMRecord {
+    numero_pcm: string;
+    descripcion: string;
+    autor: string;
+    numero_norma: string;
+    enlace?: string; // Este campo es opcional
+}
+
 
 function PCMTable() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -62,8 +72,7 @@ function PCMTable() {
             dataIndex: 'numero_norma',
             key: 'numero_norma',
             className: styles.norma,
-            render: (text, record) => {
-                // Verificar si hay un enlace disponible
+            render: (text: string, record: PCMRecord) => {
                 return record.enlace ? (
                     <a href={record.enlace} target="_blank" rel="noopener noreferrer">
                         {text}
@@ -71,9 +80,10 @@ function PCMTable() {
                 ) : (
                     text
                 );
-            }
+            },
         },
     ];
+    
 
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
