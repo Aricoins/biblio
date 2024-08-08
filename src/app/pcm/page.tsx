@@ -33,7 +33,7 @@ function PCMTable() {
         setCurrentPage(1);
     };
 
-    const handlePageChange = (page, size) => {
+    const handlePageChange = (page: number, size: number) => {
         setCurrentPage(page);
         setPageSize(size);
     };
