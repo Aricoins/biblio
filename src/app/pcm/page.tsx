@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useSearchParams } from 'next/navigation';
 import styles from './styles.module.css';
-import dataSource from '../api/upload/datos_pcm2.json';
+import dataSource from '../api/upload/datos_pcm_2.json';
 
 const { Search } = Input;
 
@@ -19,7 +19,7 @@ function PCMTable() {
     const searchFromParams = searchParams.get('search') || '';
 
     useEffect(() => {
-        AOS.init({ duration: 1000 });
+        AOS.init({ duration: 200 });
         handleSearch(searchFromParams);
     }, [searchFromParams]);
 
@@ -62,6 +62,16 @@ function PCMTable() {
             dataIndex: 'numero_norma',
             key: 'numero_norma',
             className: styles.norma,
+            render: (text, record) => {
+                // Verificar si hay un enlace disponible
+                return record.enlace ? (
+                    <a href={record.enlace} target="_blank" rel="noopener noreferrer">
+                        {text}
+                    </a>
+                ) : (
+                    text
+                );
+            }
         },
     ];
 
@@ -70,69 +80,65 @@ function PCMTable() {
     const paginatedData = filteredData.slice(startIndex, endIndex);
 
     return (
+        <div> 
+            <h2 className={styles.hdos}>Normas por PCM</h2>
+            <h3 
+                data-aos="fade-left" 
+                style={{ 
+                    fontSize: "small",
+                    fontWeight: "400",
+                    display: "flex",
+                    justifyContent: "center",
+                    position: "relative",
+                    marginBottom: "3%",
+                    padding: "1%",
+                    cursor: "pointer",
+                    backgroundColor: "rgb(236, 233, 232)",
+                    color: "black",
+                    fontFamily: "Times New Roman",
+                    borderRadius: "5px",
+                    border: ".5px solid black",
+                    transition: "1s",
+                }}
+            >
+                Buscador de expedientes de normas originadas en Resoluciones de la Presidencia
+                <p></p>
+            </h3>
 
-        <div> <h2 className={styles.hdos} >
-       Normas por PCM 
-    </h2>
-    <h3 
-    data-aos="fade-left" 
-    style={{ 
-        fontSize: "small",
-        fontWeight: "400",
-        display: "flex",
-        justifyContent: "center",
-        position: "relative",
-        marginBottom: "3%",
-        padding: "1%",
-        cursor: "pointer",
-        backgroundColor: "rgb(236, 233, 232)",
-        color: "black",
-        fontFamily: "Times New Roman",
-        borderRadius: "5px",
-        border: ".5px solid black",
-        transition: "1s",
-      
-    }}
->
-    Buscador de expedientes de normas originadas en Resoluciones de la Presidencia
-<p></p>
-</h3>
-
-
-        <div className={styles.container} data-aos="fade-up">
-            <div className={styles.search}>
-                <Search
-                    placeholder="Buscar PCM o Descripción"
-                    onSearch={handleSearch}
-                    style={{ 
-                        width: 300, 
-                        marginBottom: 16, 
-                        border: "2px solid #ff6f00", // Color naranja más suave
-                        borderRadius: 5, // Bordes redondeados
-                        padding: "0 12px", // Espaciado interno horizontal
-                        fontSize: "16px", // Tamaño de fuente más grande
-                        fontFamily: "'Roboto', sans-serif", // Familia tipográfica consistente
-                        transition: "border-color 0.3s", // Transición suave para el borde
-                    }}
-                    value={searchText}
-                     onChange={(e) => handleSearch(e.target.value)}
+            <div className={styles.container} data-aos="fade-up">
+                <div className={styles.search}>
+                    <Search
+                        placeholder="Buscar PCM o Descripción"
+                        onSearch={handleSearch}
+                        style={{ 
+                            width: 300, 
+                            marginBottom: 16, 
+                            border: "2px solid #ff6f00", // Color naranja más suave
+                            borderRadius: 5, // Bordes redondeados
+                            padding: "0 12px", // Espaciado interno horizontal
+                            fontSize: "16px", // Tamaño de fuente más grande
+                            fontFamily: "'Roboto', sans-serif", // Familia tipográfica consistente
+                            transition: "border-color 0.3s", // Transición suave para el borde
+                        }}
+                        value={searchText}
+                        onChange={(e) => handleSearch(e.target.value)}
+                    />
+                </div>
+                <Table
+                    dataSource={paginatedData}
+                    columns={columns}
+                    pagination={false}
+                    rowKey="id"
+                    className={styles.table}
+                />
+                <Pagination
+                    current={currentPage}
+                    pageSize={pageSize}
+                    total={filteredData.length}
+                    onChange={handlePageChange}
+                    className={styles.pagination}
                 />
             </div>
-            <Table
-                dataSource={paginatedData}
-                columns={columns}
-                pagination={false}
-                rowKey="id"
-                className={styles.table}
-            />
-            <Pagination
-                current={currentPage}
-                pageSize={pageSize}
-                total={filteredData.length}
-                onChange={handlePageChange}
-                className={styles.pagination}
-            />
-        </div>
         </div>
     );
 }
