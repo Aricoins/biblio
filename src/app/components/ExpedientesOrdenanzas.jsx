@@ -126,7 +126,7 @@ function ExpedientesOrdenanzas() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Ordenanzas | 2023 - 1992
+       Ordenanzas | 1989 - 2023 
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>
