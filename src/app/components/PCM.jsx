@@ -190,7 +190,7 @@ useEffect(() => {
         onClick={() => {
           setIsComponentVisible((prevVisibility) => !prevVisibility); }}
       >
-      Resoluciones de Presidecia (PCM)
+      Resoluciones de Presidencia (PCM)
   
       </h2>
       <p  data-aos="fade-left" 
