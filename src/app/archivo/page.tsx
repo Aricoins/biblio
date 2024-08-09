@@ -24,7 +24,7 @@ import FondosDocumentales from '../components/FondosDocumentales'
 
 const Archivo = () => {
   useEffect(() => {
-    Aos.init({      duration:"200">
+    Aos.init()>
 } );
   }, [])
 
@@ -33,7 +33,8 @@ const Archivo = () => {
       <NavTop />
       <div className={styles.container}>
         <div className={styles.h3}>
-          <div data-aos="fade-up" className={styles.component}>
+          <div data-aos="fade-up"      data-aos-duration="200"
+ className={styles.component}>
          <Proyectos />
           </div>
           <div className={styles.subcontainer}>
