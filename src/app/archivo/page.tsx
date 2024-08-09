@@ -25,8 +25,7 @@ import FondosDocumentales from '../components/FondosDocumentales'
 const Archivo = () => {
   useEffect(() => {
     Aos.init()>
-} );
-  }, [])
+}, [])
 
   return (
     <>
