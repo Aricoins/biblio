@@ -11,16 +11,21 @@ import { MdExpandLess } from "react-icons/md";
 
 const sortData = (data, order) => {
   return data.sort((a, b) => {
-    const [projectA, yearA] = a['Numero'].split('-');
-    const [projectB, yearB] = b['Numero'].split('-');
+    const [projectA, codeA, yearA] = a['Numero'].split('-');
+    const [projectB, codeB, yearB] = b['Numero'].split('-');
 
     if (order === 'asc') {
-      return yearA !== yearB ? yearA - yearB : projectA - projectB;
+      if (yearA !== yearB) return yearA - yearB;
+      if (codeA !== codeB) return codeA.localeCompare(codeB);
+      return projectA - projectB;
     } else {
-      return yearB !== yearA ? yearB - yearA : projectB - projectA;
+      if (yearB !== yearA) return yearB - yearA;
+      if (codeB !== codeA) return codeB.localeCompare(codeA);
+      return projectB - projectA;
     }
   });
 };
+
 
 function ExpedientesOrdenanzas() {
   const [data, setData] = useState([]);
@@ -49,15 +54,17 @@ function ExpedientesOrdenanzas() {
 
 
   const filteredData = data.filter((row) => {
-    const numeroProyecto = row['Numero'].split('-')[0];
+    const [numeroProyecto, codeProyecto] = row['Numero'].split('-');
     const searchTerm = diacritics.remove(search.toLowerCase());
     const proyectoLowerCase = numeroProyecto.toLowerCase();
-
+  
     return (
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || numeroProyecto === projectSearch)
+      (projectSearch === '' || 
+       (numeroProyecto === projectSearch || `${numeroProyecto}-${codeProyecto}` === projectSearch))
     );
   });
+  
 
 
 
@@ -95,7 +102,7 @@ function ExpedientesOrdenanzas() {
         e.handled = true;
   
         const matchingProjects = filteredData.filter(
-          (row) => row['Numero'].split('-')[0] === projectSearch
+          (row) => row['Numero'].split('-')[0] === projectSearch || row['Numero'] === projectSearch
         );
   
         if (matchingProjects.length === 0) {
@@ -118,6 +125,7 @@ function ExpedientesOrdenanzas() {
       }
     }
   };
+  
   
 
   return (
