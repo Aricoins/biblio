@@ -1,0 +1,332 @@
+[
+  {
+    "id": 201,
+    "numero_pcm": "290-PCM-23",
+    "descripcion": "Se modifica partida presupuestaria del Concejo Municipal año 2023",
+    "autor": "Presidenta del Concejo Municipal, Natalia Almonacid",
+    "numero_norma": "R-24-699",
+    "numero_norma_limpio": "699",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1ND0LlumVJJjutQI895a2MJit2tJ42DmM/view?usp=drive_link"
+  },
+  {
+    "id": 202,
+    "numero_pcm": "299-PCM-23",
+    "descripcion": "Se convoca audiencia pública proyecto 3/23: Se aprueba presupuesto municipal 2024; y 4/23: Se aprueba y reemplaza el anexo I de la ordenanza 2374-CM-12 y 5/23: Se aprueban y reemplazan los anexos I y II de la ordenanza 2375-CM-12",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-700",
+    "numero_norma_limpio": "700",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1AV9VlZcELLBR6RfgzjdXxLQjO3iTlru1/view?usp=drive_link"
+  },
+  {
+    "id": 203,
+    "numero_pcm": "322-PCM-23",
+    "descripcion": "Se declara de interés municipal y comunitario la II Carrera Bomberos Melipal",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2969",
+    "numero_norma_limpio": "2969",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1kjOQlZaGY5PBHry4MJ14z0gUytqJHoY0/view?usp=drive_link"
+  },
+  {
+    "id": 204,
+    "numero_pcm": "324-PCM-23",
+    "descripcion": "Se declara de interés municipal la trayectoria del barítono Alejandro Meerapfel",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2970",
+    "numero_norma_limpio": "2970",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1TanfPjJvuw4pXEemcIvawFWqKsdG5AZC/view?usp=drive_link"
+  },
+  {
+    "id": 205,
+    "numero_pcm": "327-PCM-23",
+    "descripcion": "Se declara de interés municipal Conferencia y Curso de Medicina de Montaña",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2971",
+    "numero_norma_limpio": "2971",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1CEpAEptigjZ6pNu-d462-g1yd5tB1gr4/view?usp=drive_link"
+  },
+  {
+    "id": 206,
+    "numero_pcm": "16-PCM-24",
+    "descripcion": "Se declara de interés municipal y cultural el evento H-D Bariloche Encuentro Internacional",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2972",
+    "numero_norma_limpio": "2972",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1uemVXa7lwz5TELOXcU9RUTgsQFegOIkn/view?usp=drive_link"
+  },
+  {
+    "id": 207,
+    "numero_pcm": "22-PCM-24",
+    "descripcion": "Se contratan asesores técnicos de la Unidad Coordinadora para integrar el Consejo de Planificación, Gestión 2023-2027",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-704",
+    "numero_norma_limpio": "704",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1v0EkqZrqDfnvU_TR5ATz4RKZEnxzYpgt/view?usp=drive_link"
+  },
+  {
+    "id": 208,
+    "numero_pcm": "23-PCM-24",
+    "descripcion": "Se designan representantes del Concejo Municipal en comisiones especiales, consejos y entes varios",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-702",
+    "numero_norma_limpio": "702",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1BMAFqt_1--imEvb-hXvLx5QB2sDXlACu/view?usp=drive_link"
+  },
+  {
+    "id": 209,
+    "numero_pcm": "24-PCM-24",
+    "descripcion": "",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-701",
+    "numero_norma_limpio": "701",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1okEvO6P2buDr_5QXHOBEXKS8_9O2MdDu/view?usp=drive_link"
+  },
+  {
+    "id": 210,
+    "numero_pcm": "34-PCM-24",
+    "descripcion": "Se contrata asesora técnica de la Unidad Coordinadora para integrar el Consejo de Planificación, Gestión 2023-2027",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-703",
+    "numero_norma_limpio": "703",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1JCxDeVLwCr0UAicQVXp6uCL1-_RdfINW/view?usp=drive_link"
+  },
+  {
+    "id": 211,
+    "numero_pcm": "37-PCM-24",
+    "descripcion": "Se declaran de interés municipal las III Jornadas Patagónicas de Derecho Tributario, Aduanero y Penal Tributario",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2980",
+    "numero_norma_limpio": "2980",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1juHzc1_m0k2vw9JHeLVNt0aJhMUOTv6S/view?usp=drive_link"
+  },
+  {
+    "id": 212,
+    "numero_pcm": "49-PCM-24",
+    "descripcion": "Se designa representante en la comisión Mesa 6 de Septiembre. Resolución 702-CM-24",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-705",
+    "numero_norma_limpio": "705",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1cMtVV19Hd79Q1X99ZEAML7nH5KJpV18N/view?usp=drive_link"
+  },
+  {
+    "id": 213,
+    "numero_pcm": "52-PCM-24",
+    "descripcion": "Se contrata asesor técnico de la Unidad Coordinadora para integrar el Consejo de Planificación Gestión 2023-2027",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-706",
+    "numero_norma_limpio": "706",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1wUFUkhU-jDxOj2w9fssWVDu4E02Coetk/view?usp=drive_link"
+  },
+  {
+    "id": 214,
+    "numero_pcm": "61-PCM-24",
+    "descripcion": "Se designa representante en la Comisión Fílmica. Resolución 702-CM-24",
+    "autor": "Presidente del Concejo Municipal, Gerardo del Río",
+    "numero_norma": "R-24-707",
+    "numero_norma_limpio": "707",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1QrK23Pe_nheqX0fUAOHS3CC-lHbGDDW6/view?usp=drive_link"
+  },
+  {
+    "id": 215,
+    "numero_pcm": "62-PCM-24",
+    "descripcion": "Se declara de interés municipal el 1° Encuentro Pescando en Familia, de la Asociación de Pesca y Caza Nahuel Huapi",
+    "autor": "Presidente del Concejo Municipal, Gerardo del Río",
+    "numero_norma": "D-24-2989",
+    "numero_norma_limpio": "2989",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/19edaUsfxXwLfUoMeJOdM9ZD2QnXdy2u5/view?usp=drive_link"
+  },
+  {
+    "id": 216,
+    "numero_pcm": "65-PCM-24",
+    "descripcion": "Se modifican resoluciones 703-CM-24, 704-CM-24 y 706-CM-24. Artículo 5º monto asesores técnicos Unidad Coordinadora",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-708",
+    "numero_norma_limpio": "708",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1GLcq-3EwpMOOuWaN722VGE5ZVEe2Pn6L/view?usp=drive_link"
+  },
+  {
+    "id": 217,
+    "numero_pcm": "68-PCM-24",
+    "descripcion": "Se declara de interés municipal y cultural el Club del Trueque Biblioteca Barrio Lera",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2990",
+    "numero_norma_limpio": "2990",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1dJC00SBZtw_DkC7eFh0Ta-qbQqpdy3p7/view?usp=drive_link"
+  },
+  {
+    "id": 218,
+    "numero_pcm": "77-PCM-24",
+    "descripcion": "Se declara de interés el evento denominado Fuego desde lo último de la Tierra",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2991",
+    "numero_norma_limpio": "2991",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1zCBuUKCjap422Vgm8QmXm9fGeeWTEvFn/view?usp=drive_link"
+  },
+  {
+    "id": 219,
+    "numero_pcm": "85-PCM-24",
+    "descripcion": "Se designa representante en Comisiones Especiales. Resolución 702-CM-24",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-709",
+    "numero_norma_limpio": "709",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1pDINaJJmXAAOLO4Az2pLTl01o09p80tg/view?usp=drive_link"
+  },
+  {
+    "id": 220,
+    "numero_pcm": "92-PCM-24",
+    "descripcion": "Se entregan distinciones año 2024 Antiguo Poblador Bariloche",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-710",
+    "numero_norma_limpio": "710",
+    "tipo_norma": "Resolución",
+    "enlace": "https://drive.google.com/file/d/1XL51TrJShzTQeNMClkwOpCv3rFz2B8GJ/view?usp=drive_link"
+  },
+  {
+    "id": 221,
+    "numero_pcm": "105-PCM-24",
+    "descripcion": "Se declara de interés municipal la exposición de la Biblioteca Néstor Kirchner en la 48º Feria Internacional del Libro",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2994",
+    "numero_norma_limpio": "2994",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/10_EgrPkajFYEy-ycX3tI_I_gSb_b8wqg/view?usp=drive_link"
+  },
+  {
+    "id": 222,
+    "numero_pcm": "106-PCM-24",
+    "descripcion": "Se declara de interés municipal la Expo Arte Decorativo Bariloche",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2995",
+    "numero_norma_limpio": "2995",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1JJvxQJliR1Wuoq_kXxAkvH5hQZtP98MA/view?usp=drive_link"
+  },
+  {
+    "id": 223,
+    "numero_pcm": "110-PCM-24",
+    "descripcion": "Se declara de interés municipal el 40º aniversario de la Posta Buenos Aires, Viedma, San Carlos de Bariloche",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-2996",
+    "numero_norma_limpio": "2996",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1JJvxQJliR1Wuoq_kXxAkvH5hQZtP98MA/view?usp=drive_link"
+  },
+  {
+    "id": 224,
+    "numero_pcm": "124-PCM-24",
+    "descripcion": "Se declara de interés municipal evento The Distinguished Gentleman’s Ride 2024",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3001",
+    "numero_norma_limpio": "3001",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/17Cd-D0NIPYU6UiiNN3jvCYIHMfF9_du9/view?usp=drive_link"
+  },
+  {
+    "id": 225,
+    "numero_pcm": "130-PCM-24",
+    "descripcion": "Se declara de interés municipal el evento intercambio musical entre Sur Argentina y Sur Portugal",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3002",
+    "numero_norma_limpio": "3002",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/17vNnjy8rRzjEUwxuWHngXbHgjWznb3ZW/view?usp=drive_link"
+  },
+  {
+    "id": 226,
+    "numero_pcm": "150-PCM-24",
+    "descripcion": "Se declara de interés municipal el evento Día de Pentecostés",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3003",
+    "numero_norma_limpio": "3003",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1y8WMcMhoYp9MhUbfv6xCJVU61H6sfUO7/view?usp=drive_link"
+  },
+  {
+    "id": 227,
+    "numero_pcm": "152-PCM-24",
+    "descripcion": "Se declara de interés municipal la trayectoria de veteranos misiones de paz",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3004",
+    "numero_norma_limpio": "3004",
+    "tipo_norma": "Declaración",
+    "enlace": "https://drive.google.com/file/d/1tNiwqkcFr6zfpWWn9M1y4myaadyi_BRu/view?usp=drive_link"
+  },
+  {
+    "id": 228,
+    "numero_pcm": "161-PCM-24",
+    "descripcion": "Se designa representante en comisiones especiales. Resolución 702-CM-24",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-711",
+    "numero_norma_limpio": "711",
+    "tipo_norma": "Resolución",
+    "enlace": "Enlace no disponible"
+  },
+  {
+    "id": 229,
+    "numero_pcm": "173-PCM-24",
+    "descripcion": "Se autoriza firma contrato locación de servicios profesional Ingeniero Gustavo Sergio Ortíz Uriburu, informática Digesto Municipal",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-712",
+    "numero_norma_limpio": "712",
+    "tipo_norma": "Resolución",
+    "enlace": "Enlace no disponible"
+  },
+  {
+    "id": 230,
+    "numero_pcm": "174-PCM-24",
+    "descripcion": "Se autoriza firma contrato locación de servicios profesional Jesús Matías Coronado Ovalle informática Digesto Municipal",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "R-24-713",
+    "numero_norma_limpio": "713",
+    "tipo_norma": "Resolución",
+    "enlace": "Enlace no disponible"
+  },
+  {
+    "id": 231,
+    "numero_pcm": "175-PCM-24",
+    "descripcion": "Se declara de interés municipal el evento Trae tu Taza, en San Carlos de Bariloche",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3009",
+    "numero_norma_limpio": "3009",
+    "tipo_norma": "Declaración",
+    "enlace": ""
+  },
+  {
+    "id": 232,
+    "numero_pcm": "182-PCM-24",
+    "descripcion": "Se declara de interés municipal la 2.ª edición de Juntos y Unánimes",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3010",
+    "numero_norma_limpio": "3010",
+    "tipo_norma": "Declaración",
+    "enlace": ""
+  },
+  {
+    "id": 233,
+    "numero_pcm": "199-PCM-24",
+    "descripcion": "Se declara de interés Municipal la presentación del libro El Pintor de la Suiza Argentina de Esteban Buch",
+    "autor": "Presidente del Concejo Municipal, Gerardo Del Río",
+    "numero_norma": "D-24-3011",
+    "numero_norma_limpio": "3011",
+    "tipo_norma": "Declaración",
+    "enlace": ""
+  }
+]

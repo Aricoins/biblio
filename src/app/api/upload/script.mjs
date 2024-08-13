@@ -75,12 +75,13 @@ async function procesarDatos(rutaArchivoDocx, rutaArchivoJson, rutaArchivoJsonCo
         const { value: textoCompleto } = await mammoth.extractRawText({ path: rutaArchivoDocx });
         const parrafos = textoCompleto.split('\n').filter(parrafo => parrafo.trim() !== '');
         const listaDatosPCM = [];
-        let contadorID = 1;
+        let contadorID = 452;
 
         for (const parrafo of parrafos) {
             const numeroNormaConFormato = extraccionPCM.extraerNumeroNorma(parrafo);
             const numeroNormaLimpio = extraccionPCM.extraerNumeroNormaLimpio(numeroNormaConFormato);
             const tipoNorma = extraccionPCM.determinarTipoNorma(numeroNormaConFormato);
+
 
             const datosPCM = {
                 id: contadorID++,
@@ -102,15 +103,22 @@ async function procesarDatos(rutaArchivoDocx, rutaArchivoJson, rutaArchivoJsonCo
 
         // Obtener enlaces desde los CSV
         const { comunicacionesData, declaracionesData, resolucionesData } = await obtenerEnlacesNormas();
-
         // Agregar enlaces a los datos PCM
         for (const data of listaDatosPCM) {
             let enlace = '';
             if (data.numero_norma_limpio) {
                 switch (data.tipo_norma) {
                     case 'Resolución':
-                        enlace = resolucionesData.find(row => row['Numero'] === data.numero_norma_limpio)?.['Link'] || '';
+                        console.log(`Buscando en resoluciones: ${data.numero_norma_limpio}`);
+                        const resultado = resolucionesData.find(row => row['Numero'].trim() === data.numero_norma_limpio);
+                        if (resultado) {
+                            console.log(`Encontrado: ${resultado['Numero']}, Enlace: ${resultado['Link']}`);
+                            enlace = resultado['Link'] || 'Enlace no disponible';
+                        } else {
+                            console.log(`No encontrado para: ${data.numero_norma_limpio}`);
+                        }
                         break;
+                    
                     case 'Comunicación':
                         enlace = comunicacionesData.find(row => row['Numero'] === data.numero_norma_limpio)?.['Link'] || '';
                         break;
@@ -134,8 +142,8 @@ async function procesarDatos(rutaArchivoDocx, rutaArchivoJson, rutaArchivoJsonCo
 }
 
 // Usa la función principal para procesar datos
-const rutaArchivoDocx = './PCMs.docx'; // Ajusta la ruta al archivo DOCX si es necesario
-const rutaArchivoJson = './datos_pcm.json'; // Nombre del archivo JSON de salida
-const rutaArchivoJsonConEnlaces = './datos_pcm_4.json'; // Nombre del archivo JSON de salida con enlaces
+const rutaArchivoDocx = './PCM2.docx'; // Ajusta la ruta al archivo DOCX si es necesario
+const rutaArchivoJson = './datos_pcm333.json'; // Nombre del archivo JSON de salida
+const rutaArchivoJsonConEnlaces = './datos_pcm_333json'; // Nombre del archivo JSON de salida con enlaces
 
 procesarDatos(rutaArchivoDocx, rutaArchivoJson, rutaArchivoJsonConEnlaces);

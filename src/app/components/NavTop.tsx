@@ -8,17 +8,25 @@ import { usePathname } from 'next/navigation';
 import { UserButton, SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
 import { useAuth } from '@clerk/nextjs';
 
+
 const NavTop = () => {
+
   const pathname = usePathname();
   const { isLoaded, userId, sessionId, getToken } = useAuth();
     return (
    <div className={styles.navTop}>
-    <Image 
-    src={logo}
-    width={200} 
-    height={300} 
-    className={styles.navTopImage}
-     alt="logotipo" priority />
+    <Link href="/" passHref className={styles.navTopLink} >
+        <div >
+        <Image 
+          src={logo}
+          width={200} 
+          height={300} 
+          alt="logotipo" 
+          priority
+       style={{width: "50%", height: "100%"}}
+        />
+        </div>
+      </Link>
     <div className={styles.navTopList}>
       <div className={styles.item}>    
        <Link href="/archivo" className={clsx(styles.link, {

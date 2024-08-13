@@ -20,7 +20,7 @@ interface PCMRecord {
 function PCMTable() {
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize, setPageSize] = useState(5);
-    const [filteredData, setFilteredData] = useState(dataSource);
+    const [filteredData, setFilteredData] = useState<PCMRecord[]>(dataSource);
     const [searchText, setSearchText] = useState('');
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [modalContent, setModalContent] = useState<PCMRecord | null>(null);
@@ -38,7 +38,13 @@ function PCMTable() {
             item.numero_pcm.toLowerCase().includes(value.toLowerCase()) ||
             item.descripcion.toLowerCase().includes(value.toLowerCase())
         );
-        setFilteredData(filtered);
+        // Ordenar por año, de la más nueva a la más antigua
+        const sorted = filtered.sort((a, b) => {
+            const yearA = parseInt(a.numero_norma.split('-').pop() || '0', 10);
+            const yearB = parseInt(b.numero_norma.split('-').pop() || '0', 10);
+            return yearB - yearA;
+        });
+        setFilteredData(sorted);
         setSearchText(value);
         setCurrentPage(1);
     };
@@ -98,18 +104,14 @@ function PCMTable() {
             },
         },
     ];
+
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     const paginatedData = filteredData.slice(startIndex, endIndex);
-    const transformLink = (url: string) => {
-        if (url.includes('/view')) {
-            return url.replace('/view', '/preview');
-        }
-        return url;
-    };
+
     return (
         <div> 
-            <h2 className={styles.hdos}>Normas por PCM</h2>
+            <h2 className={styles.hdos} data-aos="fade-up">Normas por PCM</h2>
             <h3 
                 data-aos="fade-left" 
                 style={{ 
