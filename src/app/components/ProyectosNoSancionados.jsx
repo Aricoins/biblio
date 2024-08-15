@@ -130,6 +130,8 @@ function ProyectosNoSancionados() {
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
+
+  
   return (
     <>
       <h2
@@ -138,8 +140,7 @@ function ProyectosNoSancionados() {
           setIsComponentVisible((prevVisibility) => !prevVisibility);
         }}
       >
-        Expedientes Sin Sanción | 2023 - 2011
-      </h2>
+        Expedientes Sin Sanción | 2011 - 2023      </h2>
 
       {isComponentVisible && (
         <div className={styles.block}>

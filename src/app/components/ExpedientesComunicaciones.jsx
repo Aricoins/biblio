@@ -135,13 +135,21 @@ function ExpedientesComunicaciones() {
     setSortOrder('desc');
     setSearch(e.target.value)}
 
-  return (
-    <>
-      <h2
-        className={styles.h2}
-        onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
-      >
-       Comunicaciones | actualidad - 1988
+    const date = new Date();
+    const [year] = [
+  
+      date.getFullYear(),
+    ];
+    console.log(year, "año", date, "date")
+      return (
+        <>
+          <h2
+            className={styles.h2}
+            onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
+          >
+           Comunicaciones |  1988 - {year}
+
+
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

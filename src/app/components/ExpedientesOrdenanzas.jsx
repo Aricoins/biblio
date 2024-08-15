@@ -126,7 +126,11 @@ function ExpedientesOrdenanzas() {
     }
   };
   
-  
+  const date = new Date();
+  const [year] = [
+
+    date.getFullYear(),
+  ];
 
   return (
     <>
@@ -134,7 +138,7 @@ function ExpedientesOrdenanzas() {
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Ordenanzas | 1989 - 2023 
+       Ordenanzas | 1958 - {year} 
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

@@ -55,9 +55,9 @@ const Archivo = () => {
             </div>
                      </div>
         </div>
-        <div data-aos="fade-up"  data-aos-duration="200" className={styles.component}>
+        {/* <div data-aos="fade-up"  data-aos-duration="200" className={styles.component}>
                 <PCM />
-              </div>
+              </div> */}
 
         <ProyectosNoSancionados />
 

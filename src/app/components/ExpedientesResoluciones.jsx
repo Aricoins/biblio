@@ -144,14 +144,18 @@ function ExpedientesResoluciones() {
       filtroAño === false ? setFiltroAño(true) : setFiltroAño(false);
     }
 
-
+    const date = new Date();
+    const [year] = [
+  
+      date.getFullYear(),
+    ];
   return (
     <>
       <h2
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Resoluciones |  actualidad - 1988 
+       Resoluciones |  1988 - {year} 
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

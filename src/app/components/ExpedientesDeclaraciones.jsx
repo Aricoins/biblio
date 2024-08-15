@@ -134,14 +134,18 @@ function ExpedientesDeclaraciones() {
     e.preventDefault();
     setSortOrder('desc');
     setSearch(e.target.value)}
-
+    const date = new Date();
+    const [year] = [
+  
+      date.getFullYear(),
+    ];
   return (
     <>
       <h2
         className={styles.h2}
         onClick={() => setIsComponentVisible((prevVisibility) => !prevVisibility)}
       >
-       Declaraciones | actualidad - 1988 
+       Declaraciones | 1988 - {year} 
       </h2>
       {isComponentVisible && (
         <div className={`${styles.block}`}>

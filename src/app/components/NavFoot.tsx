@@ -19,25 +19,25 @@ const NavFoot = () => {
           <Link className={styles.link } href="http://10.20.101.141/gbuscador/" 
           target="_blank">Digesto Jurídico</Link>
         </li>
-        <li className={styles.item}>
+        {/* <li className={styles.item}>
           <Link  className={styles.link}
           href="https://concejobariloche.gov.ar/index.php?option=com_rsform&formId=5"
           target="_blank"
           >Mesa de Entradas</Link>
-        </li>
-        <li className={styles.item}>
+        </li> */}
+        {/* <li className={styles.item}>
           <Link  className={styles.link}
           href="https://www.bariloche.gov.ar/resoluciones/"
           target="_blank"
           >Resoluciones Intendencia</Link>
 
-        </li>
-        <li className={styles.item}>
+        </li> */}
+        {/* <li className={styles.item}>
           <Link  className={styles.link}
           href="https://www.bariloche.gov.ar/buscador_boletin/"
           target="_blank"
           >Boletín Oficial</Link>
-        </li>
+        </li> */}
 </ul>
       <Image 
       src={logo} 
