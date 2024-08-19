@@ -222,17 +222,28 @@ function Proyectos() {
             dataIndex: 'observaciones',
             key: 'observaciones',
             render: (observaciones: string) => {
+                // Verifica si el campo es una URL de Google Drive
+                const isGoogleDriveLink = (url: string) => {
+                    return /^https:\/\/drive\.google\.com\/file\/d\/[a-zA-Z0-9_-]+\/view/.test(url);
+                };
+        
+                if (isGoogleDriveLink(observaciones)) {
+                    return (
+                        <a href={observaciones} target="_blank" rel="noopener noreferrer">
+                            PCM Ver Expediente
+                        </a>
+                    );
+                }
+        
+                // Maneja otros casos, como "sin sanción" o valores normales
                 if (observaciones === 'sin sanción') {
-                    return <button onClick={handleClick} >Buscar entre los expedientes no sancionados</button>;
+                    return <button onClick={handleClick}>Buscar entre los expedientes no sancionados</button>;
                 }
-                if (observaciones === "https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link")
-                    return <Link href="https://drive.google.com/file/d/1-Hs21WcLSI99zjI1lQdNn2uEmSKWMRUS/view?usp=drive_link">Ver dictamen</Link>;
-                else {
-                    return observaciones;
-                }
+        
+                return observaciones;
             },
             className: styles.observaciones
-        },
+        }
     ];
 
     const startIndex = (currentPage - 1) * pageSize;
