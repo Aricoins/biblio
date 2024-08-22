@@ -68,6 +68,15 @@ const Libros: FC = () => {
     return (
         <>
             <div className={styles.body}>
+            <div data-aos= "fade-right" 
+       style={{display: "flex",
+        justifyContent: "right", 
+        marginTop:"10%",
+        fontFamily: "Sans-Serif",  
+        color: "black", 
+        fontSize: "10vw",
+        opacity: 0.2,
+          }}> Biblioteca</div> 
                 <section className={styles.container}>
                     <input
                         className={styles.inputSearch}
