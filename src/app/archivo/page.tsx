@@ -30,26 +30,38 @@ const Archivo = () => {
   return (
     <>
       <NavTop />
+     
       <div className={styles.container}>
-        <div className={styles.h3}>
-          <div data-aos="fade-up"      data-aos-duration="200"
- className={styles.component}>
+      <div data-aos= "fade-right" 
+       style={{display: "flex",
+        justifyContent: "right", 
+        marginTop:"10%",
+        fontFamily: "Sans-Serif",  
+        color: "black", 
+        fontSize: "10vw",
+        opacity: 0.2,
+          }}> Archivo</div> 
+          <div className={styles.h3}>
+          <div data-aos="fade-up"      
+          data-aos-duration="200"
+          className={styles.component}>
          <Proyectos />
           </div>
           <div className={styles.subcontainer}>
             <div>
               <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
-            
-              <div data-aos="fade-up"  data-aos-duration="200" className={styles.component}>
+            <p style={{margin: "0 0 0 20%"}}>Los expedientes anteriores a 2015 se encuentran alojados en libros. 
+              Pida su escaneo a <Link href="mailto:digestoconcejo@gmail.com ">digestoconcejo@gmail.com</Link> </p>
+              <div data-aos="fade-left"  data-aos-duration="200" className={styles.component}>
                 <ExpedientesComunicaciones />
               </div>
-              <div data-aos="fade-up"  data-aos-duration="200" className={styles.component}>
+              <div data-aos="fade-left"  data-aos-duration="200" className={styles.component}>
                 <ExpedientesDeclaraciones />
               </div>
-              <div data-aos="fade-up"  data-aos-duration="200"  className={styles.component}>
+              <div data-aos="fade-left"  data-aos-duration="200"  className={styles.component}>
                 <ExpedientesResoluciones />
               </div>
-              <div data-aos="fade-up" data-aos-duration="200"className={styles.component}>
+              <div data-aos="fade-left" data-aos-duration="200"className={styles.component}>
                 <ExpedientesOrdenanzas />
               </div>
             </div>
@@ -58,9 +70,9 @@ const Archivo = () => {
         {/* <div data-aos="fade-up"  data-aos-duration="200" className={styles.component}>
                 <PCM />
               </div> */}
-
+<div data-aos="fade-left"  data-aos-duration="200" className={styles.component}>
         <ProyectosNoSancionados />
-
+        </div>
         <div className={styles.contactIcons}>
           <a href="https://wa.me/+5492945907975" target="_blank" rel="noopener noreferrer" className={styles.icon}>
             <FontAwesomeIcon  icon={faWhatsapp} />

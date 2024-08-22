@@ -5,6 +5,7 @@
     font-weight: 500;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     margin-bottom: 35%;
     padding: 1%;
@@ -16,7 +17,7 @@
     border: black 2px solid;
     transition: 1s;
     margin: 3%;
-    margin-top: 10%;
+    margin-top: 1%;
     width: 90%;
     margin-left: 5%;
     display: flex ;
