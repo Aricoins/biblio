@@ -36,7 +36,7 @@ const ExcoTable = () => {
 
   // Filtrar datos según el texto de búsqueda en nombre y apellido
   const filteredData = data.filter(item => {
-    const fullName = `${item['Apellido y Nombre']} ${item['Nombre']}`.toLowerCase();
+    const fullName = `${item['Apellido']} ${item['Nombre']}`.toLowerCase();
     return fullName.includes(searchText.toLowerCase());
   });
 
