@@ -48,7 +48,7 @@ const ExcoTable = () => {
     },
     {
       title: 'Apellido',
-      dataIndex: 'Apellido y Nombre', // Asegúrate de que coincida con el nombre de la columna en el CSV
+      dataIndex: 'Apellido', // Asegúrate de que coincida con el nombre de la columna en el CSV
       key: 'apellido',
     },
     {
