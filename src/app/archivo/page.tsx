@@ -32,14 +32,17 @@ const Archivo = () => {
       <NavTop />
      
       <div className={styles.container}>
-      <div data-aos= "fade-right" 
+      <div data-aos= "fade-right"  data-aos-duration="300"
        style={{display: "flex",
         justifyContent: "right", 
-        marginTop:"10%",
-        fontFamily: "Sans-Serif",  
+        marginTop:"10%",  
         color: "black", 
         fontSize: "10vw",
+        fontFamily: "Roboto, sans-serif ",
         opacity: 0.2,
+        marginRight: "8%"
+
+
           }}> Archivo</div> 
           <div className={styles.h3}>
           <div data-aos="fade-up"      
@@ -51,7 +54,9 @@ const Archivo = () => {
             <div>
               <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
             <p style={{margin: "0 0 0 20%"}}>Los expedientes anteriores a 2015 se encuentran alojados en libros. 
-              Pida su escaneo a <Link href="mailto:digestoconcejo@gmail.com ">digestoconcejo@gmail.com</Link> </p>
+              Pida su escaneo a <Link href="mailto:digestoconcejo@gmail.com">
+  digestoconcejo@gmail.com
+</Link> </p>
               <div data-aos="fade-left"  data-aos-duration="200" className={styles.component}>
                 <ExpedientesComunicaciones />
               </div>

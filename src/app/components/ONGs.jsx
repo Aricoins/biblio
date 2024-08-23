@@ -17,7 +17,7 @@ function ONGs() {
       });
   }, []);
 
-  const filteredData = data.filter(row => row.Resumen.toLowerCase().includes(search.toLowerCase()));
+  const filteredData = data.filter(row => row.Resumen().includes(search.toLowerCase()));
 
   return (
     <div>

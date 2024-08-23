@@ -7,6 +7,9 @@ import OtrosTitulos from "../components/OtrosTitulos";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "antd";
+import Exco  from '../components/Exco';
+import ONGs from "../components/ONGs";
+
 
 interface Libro {
   titulo: string;
@@ -17,7 +20,7 @@ interface Libro {
   id: string;
 }
 
-const Libros: FC = () => {
+const Libros: FC = ({}) => {
   const [data, setData] = useState<Libro[] | null>(null);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -68,6 +71,7 @@ const Libros: FC = () => {
     <>
       <div className={styles.body}>
         <div  data-aos= "fade-right" 
+        data-aos-duration= "300"
        style={{display: "flex",
         justifyContent: "right", 
         marginTop:"10%",
@@ -103,9 +107,13 @@ const Libros: FC = () => {
             </div>
           )}
 
-          <OtrosTitulos data-aos="fade-right" />
+          <OtrosTitulos data-aos="fade-right" data-aos-duraton= "500" />
         </section>
       </div>
+      <div style={{marginBottom: "20%"}}>
+    <h2 style={{ fontFamily: "'Roboto', sans-serif", justifyContent: "center"}}>Registros</h2>
+           <Exco/>
+    </div>
     </>
   );
 };

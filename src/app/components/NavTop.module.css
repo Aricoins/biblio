@@ -1,4 +1,4 @@
-/* styles.module.css */
+
 
 .navTop {
   background-color: #fcfdfb; /* Equivalente a bg-[#fcfdfb] */
@@ -48,7 +48,8 @@ margin: auto;
 height: 40%;
 padding: auto;
 align-content: center;
-width: 5%;
+width: 30%;
+align-self: center;
 margin-bottom: 10%;
 
 }
@@ -114,6 +115,8 @@ color:white;
 }
 .navTop {
   height: 8%;
+  position: "fixed";
+  width: 100%;
 }
 }
    
