@@ -53,11 +53,11 @@ function ProyectosNoSancionados() {
 
   useEffect(() => {
     const numSearchResults = data.filter((row) => {
-      const numeroProyecto = row['Proyecto'].split('-')[0];
+      const numeroProyecto = row['Proyecto'].split('-')[0].replace(/^0+/, ''); // Remove leading zeros
       const searchTerm = diacritics.remove(search.toLowerCase());
       return (
         diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-        (projectSearch === '' || numeroProyecto === projectSearch)
+        (projectSearch === '' || numeroProyecto === projectSearch.replace(/^0+/, '')) // Remove leading zeros
       );
     }).length;
     setNumSearchResults(numSearchResults);
@@ -73,7 +73,6 @@ function ProyectosNoSancionados() {
       return newVisibleRows > data.length ? data.length : newVisibleRows;
     });
     setShowLessButton(true);
-    
   };
 
   const handleShowLess = () => {
@@ -83,9 +82,8 @@ function ProyectosNoSancionados() {
     });
     if (visibleRows >= 1 || data > 1) {
       setShowLessButton(true);
-
+    }
   };
-};
 
   const handleSort = () => {
     setSortOrder((prevOrder) => (prevOrder === 'asc' ? 'desc' : 'asc'));
@@ -94,8 +92,9 @@ function ProyectosNoSancionados() {
   const handleProjectSearchEnter = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
+      const searchNumber = projectSearch.replace(/^0+/, ''); // Remove leading zeros
       const matchingProjects = data.filter(
-        (row) => row['Proyecto'].split('-')[0] === projectSearch
+        (row) => row['Proyecto'].split('-')[0].replace(/^0+/, '') === searchNumber
       );
 
       if (matchingProjects.length === 0) {
@@ -119,19 +118,17 @@ function ProyectosNoSancionados() {
   };
 
   const filteredData = data.filter((row) => {
-    const numeroProyecto = row['Proyecto'].split('-')[0];
+    const numeroProyecto = row['Proyecto'].split('-')[0].replace(/^0+/, ''); // Remove leading zeros
     const searchTerm = diacritics.remove(search.toLowerCase());
     return (
       diacritics.remove(row['Resumen'].toLowerCase()).includes(searchTerm) &&
-      (projectSearch === '' || numeroProyecto === projectSearch)
+      (projectSearch === '' || numeroProyecto === projectSearch.replace(/^0+/, '')) // Remove leading zeros
     );
   });
 
   const sortedFilteredData = sortData(filteredData, sortOrder);
   const visibleRowsData = sortedFilteredData.slice(0, visibleRows);
 
-
-  
   return (
     <>
       <h2
@@ -140,7 +137,8 @@ function ProyectosNoSancionados() {
           setIsComponentVisible((prevVisibility) => !prevVisibility);
         }}
       >
-        Expedientes Sin Sanción | 2011 - 2023      </h2>
+        Expedientes Sin Sanción | 2011 - 2023
+      </h2>
 
       {isComponentVisible && (
         <div className={styles.block}>
@@ -191,7 +189,7 @@ function ProyectosNoSancionados() {
                       </Link>
                     </td>
                   ) : (
-                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`}>
+                    <td className={`${styles.tableCell} ${styles.border} ${styles.padding}`} style={{textAlign: "center"}}>
                       {row['Proyecto']}
                     </td>
                   )}
@@ -201,19 +199,30 @@ function ProyectosNoSancionados() {
               ))}
             </tbody>
           </table>
-          {visibleRows < filteredData.length && (
-            <div className={styles.botones}>
-              <button onClick={handleShowMore} className={styles.verMas}>
-                <MdExpandMore /><p className={styles.mas}> Más </p>
-              </button>
-              {search ? (<p className={styles.datos}>Mostrando {numVisibleResults} resultado(s) de {numSearchResults}</p>) : null}
-              {showLessButton && visibleRows > 10 ? (
-                <button onClick={handleShowLess} className={styles.verMenos}>
-                  <p className={styles.mas}>Menos</p> <MdExpandLess />
-                </button>
-              ) : null}
-            </div>
-          )}
+          <div className={styles.buttonsContainer}>
+            {visibleRowsData.length > 0 && (
+              <div className={styles.buttons}>
+                {visibleRowsData.length > 10 && showLessButton && (
+                  <button
+                    className={styles.showMore}
+                    onClick={handleShowLess}
+                    disabled={visibleRows === 1}
+                  >
+                    <MdExpandLess size={24} /> Mostrar menos
+                  </button>
+                )}
+                {visibleRowsData.length < data.length && (
+                  <button
+                    className={styles.showMore}
+                    onClick={handleShowMore}
+                    disabled={visibleRows >= data.length}
+                  >
+                    <MdExpandMore size={24} /> Mostrar más
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>
