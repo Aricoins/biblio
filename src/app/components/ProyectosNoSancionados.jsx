@@ -137,7 +137,7 @@ function ProyectosNoSancionados() {
           setIsComponentVisible((prevVisibility) => !prevVisibility);
         }}
       >
-        Expedientes Sin Sanción | 2011 - 2023
+        Expedientes Sin Sanción | 2004 - 2023
       </h2>
 
       {isComponentVisible && (
