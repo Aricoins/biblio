@@ -107,34 +107,35 @@ function Proyectos() {
     const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
         let filteredProyectos = proyectos.filter((proyecto) => {
             const titulo = proyecto.titulo_proyecto.toLowerCase();
-            const numeroStr = proyecto.numero_proyecto.toString();
+            const numeroStr = proyecto.numero_proyecto.toString().replace(/^0+/, ''); // Eliminar ceros a la izquierda
             const tipoLower = proyecto.tipo_proyecto.toLowerCase();
             const autorStr = proyecto.autor.join(' ').toLowerCase();
-
-            const numeroExacto = numero !== '' && numeroStr === numero;
+    
+            const numeroExacto = numero !== '' && numeroStr === numero.replace(/^0+/, ''); // Eliminar ceros a la izquierda de la búsqueda
             const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
             const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
             const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-
+    
             let aprobadoMatch = true;
             if (aprobado) {
                 aprobadoMatch = proyecto.aprobado === true;
             } else if (rechazado) {
                 aprobadoMatch = proyecto.aprobado === false;
             }
-
+    
             return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && aprobadoMatch;
         });
-
+    
         filteredProyectos = filteredProyectos.sort((a, b) => {
             const yearA = parseInt(a.anio_proyecto, 10);
             const yearB = parseInt(b.anio_proyecto, 10);
             return yearB - yearA;
         });
-
+    
         setResultados(filteredProyectos);
         setCurrentPage(1);
     };
+    
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         window.scrollTo({
