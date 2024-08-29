@@ -38,6 +38,7 @@ function Proyectos() {
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
     const [datosCargados, setDatosCargados] = useState(false);
+    const [busquedaNumeroNorma, setBusquedaNumeroNorma] = useState('');
 
     // Estado para la paginación
     const [currentPage, setCurrentPage] = useState(1);
@@ -69,73 +70,80 @@ function Proyectos() {
 
     const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaNumero(event.target.value);
-        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
+        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
+        setHaRealizadoBusqueda(true);
+    };
+
+    const handleBusquedaNumeroNormaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setBusquedaNumeroNorma(event.target.value);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, event.target.value, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaPalabraChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaPalabra(event.target.value);
-        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaAutorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaAutor(event.target.value);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, filtroTipo, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setFiltroTipo(value);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, value, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, value, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroAprobadoChange = (checked: boolean) => {
         setFiltroAprobado(checked);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, checked, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, checked, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroRechazadoChange = (checked: boolean) => {
         setFiltroRechazado(checked);
-        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, checked);
         setHaRealizadoBusqueda(true);
     };
 
-    const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
+    const filtrarProyectos = (numero: string, palabra: string, autor: string, numeroNorma: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
         let filteredProyectos = proyectos.filter((proyecto) => {
             const titulo = proyecto.titulo_proyecto.toLowerCase();
             const numeroStr = proyecto.numero_proyecto.toString().replace(/^0+/, ''); // Eliminar ceros a la izquierda
             const tipoLower = proyecto.tipo_proyecto.toLowerCase();
             const autorStr = proyecto.autor.join(' ').toLowerCase();
-    
+            const numeroNormaStr = proyecto.numero_norma?.toLowerCase() || ''; // Nuevo filtro
+
             const numeroExacto = numero !== '' && numeroStr === numero.replace(/^0+/, ''); // Eliminar ceros a la izquierda de la búsqueda
             const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
             const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
+            const numeroNormaMatch = numeroNorma !== '' && numeroNormaStr.includes(numeroNorma.toLowerCase()); // Coincidencia exacta con número de norma
             const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
-    
+
             let aprobadoMatch = true;
             if (aprobado) {
                 aprobadoMatch = proyecto.aprobado === true;
             } else if (rechazado) {
                 aprobadoMatch = proyecto.aprobado === false;
             }
-    
-            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && aprobadoMatch;
+
+            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!numeroNorma || numeroNormaMatch) && (!tipo || tipoMatch) && aprobadoMatch;
         });
-    
+
         filteredProyectos = filteredProyectos.sort((a, b) => {
             const yearA = parseInt(a.anio_proyecto, 10);
             const yearB = parseInt(b.anio_proyecto, 10);
             return yearB - yearA;
         });
-    
+
         setResultados(filteredProyectos);
         setCurrentPage(1);
     };
-    
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         window.scrollTo({
@@ -285,22 +293,34 @@ function Proyectos() {
                             onChange={handleBusquedaAutorChange}
                             style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                         />
-                        {/* <select onChange={handleFiltroTipoChange} className={styles.sele}>
-                            <option value="">Por tipo</option>
-                            <option value="Ordenanza">Ordenanzas</option>
-                            <option value="Declaración">Declaraciones</option>
-                            <option value="Comunicacion">Comunicaciones</option>
-                            <option value="Resolución">Resoluciones</option>
-                        </select> */}
-                        <div className={styles.checkbox}>
-                            <Checkbox
-                                onChange={(event) => handleFiltroAprobadoChange(event.target.checked)}
-                            >
-                               Aprobados
-                            </Checkbox>
-                           
-                        </div>
-                    </div>
+                        <Input.Search
+                            placeholder="Por n° de norma..."
+                            value={busquedaNumeroNorma}
+                            onChange={handleBusquedaNumeroNormaChange}
+                            style={{ width: 200, marginRight: '16px', border: "solid rgb(255, 87, 51) 2px", marginBottom: '8px' }}
+                        />
+                        <select
+                            value={filtroTipo}
+                            onChange={handleFiltroTipoChange}
+                            style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
+                        >
+                            <option value="">Todos los tipos</option>
+                            <option value="comunicacion">Comunicación</option>
+                            <option value="resolución">Resolución</option>
+                            <option value="declaración">Declaración</option>
+                            <option value="ordenanza">Ordenanza</option>
+                        </select>
+                        <Checkbox
+                            checked={filtroAprobado}
+                            onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}
+                            style={{ marginRight: '16px', marginBottom: '8px' }}
+                        >
+                            Aprobados
+                        </Checkbox>
+                                        </div>
+
+                
+
 
                     {haRealizadoBusqueda ? (
                         <div className={styles.table}>
