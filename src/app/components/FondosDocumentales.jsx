@@ -52,7 +52,7 @@ const FondosDocumentales = () => {
             className={styles.block} 
             data-aos="fade-left" 
             onClick={() => showDevelopmentAlert('Convención Carta Orgánica')}>
-            <p className={styles.p}>Convención Carta Orgánica</p>
+            <p className={styles.p}>Convención Carta Orgánica Municipal</p>
           </div>
           <div 
             className={styles.block} 
@@ -79,6 +79,7 @@ const FondosDocumentales = () => {
             <p className={styles.p}>Parque Municipal Llao Llao</p>
           </div>
         </div>
+
       </div>
     </>
   );

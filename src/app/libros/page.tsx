@@ -27,6 +27,12 @@ const Libros: FC = ({}) => {
   const [pageSize, setPageSize] = useState(6);
   const [paginatedData, setPaginatedData] = useState<Libro[] | null>(null);
   const [totalItems, setTotalItems] = useState(0);
+  const [showExco, setShowExco] = useState(false);
+
+  const handleShowExco = () => {
+    setShowExco(!showExco);
+  };
+
 
   useEffect(() => {
     Aos.init({ duration: 3000 });
@@ -81,6 +87,28 @@ const Libros: FC = ({}) => {
         opacity: 0.2,}}>
             Biblioteca
         </div>
+        <div style={{ marginBottom: '2%' }}>
+           
+      {/* Botón para mostrar u ocultar Exco */}
+      <button 
+        onClick={handleShowExco} 
+        style={{
+          padding: '10px 20px',
+          fontFamily: "'Roboto', sans-serif",
+          fontSize: '1rem',
+          cursor: 'pointer',
+          backgroundColor: "orange",
+          color: "white",
+          borderRadius: "5%"
+        }}
+      >
+        {showExco ? 'Ocultar Registros' : 'Registros'}
+      </button>
+
+      {/* Mostrar el componente Exco solo si showExco es true */}
+      {showExco && <Exco />}
+    </div>
+
         <section className={styles.container}>
           <input
             className={styles.inputSearch}
@@ -110,10 +138,7 @@ const Libros: FC = ({}) => {
           <OtrosTitulos data-aos="fade-right" data-aos-duraton= "500" />
         </section>
       </div>
-      <div style={{marginBottom: "20%"}}>
-    <h2 style={{ fontFamily: "'Roboto', sans-serif", justifyContent: "center"}}>Registros</h2>
-           <Exco/>
-    </div>
+     
     </>
   );
 };
