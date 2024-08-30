@@ -12,7 +12,7 @@ const ExcoTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/exco'); // Aquí hacemos la llamada a tu API
+        const response = await fetch('/api/exco');
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -48,7 +48,7 @@ const ExcoTable = () => {
     },
     {
       title: 'Apellido',
-      dataIndex: 'Apellido', // Asegúrate de que coincida con el nombre de la columna en el CSV
+      dataIndex: 'Apellido y Nombre', // Asegúrate de que coincida con el nombre de la columna en el CSV
       key: 'apellido',
     },
     {
@@ -59,7 +59,7 @@ const ExcoTable = () => {
   ];
 
   return (
-    <div style={{ justifyContent: "center", marginLeft: "0"}}>
+    <div style={{ justifyContent: "center", margin: "5%"}}>
       <h2 
  
        style={{
