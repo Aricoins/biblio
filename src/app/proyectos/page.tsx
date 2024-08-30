@@ -310,18 +310,7 @@ function Proyectos() {
                             <option value="declaración">Declaración</option>
                             <option value="ordenanza">Ordenanza</option>
                         </select>
-                        <Checkbox
-                            checked={filtroAprobado}
-                            onChange={(e) => handleFiltroAprobadoChange(e.target.checked)}
-                            style={{ marginRight: '16px', marginBottom: '8px' }}
-                        >
-                            Aprobados
-                        </Checkbox>
-                                        </div>
-
-                
-
-
+                         </div>       
                     {haRealizadoBusqueda ? (
                         <div className={styles.table}>
                             <Table
