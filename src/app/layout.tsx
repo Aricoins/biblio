@@ -28,8 +28,8 @@ appearance={{
   },
 }}
 >
-      <html lang="en">
-        <body>
+      <html lang="en" >
+        <body style={{backgroundImage: "url(./bgif.webp"}}>
           <header>
           
           </header>

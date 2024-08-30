@@ -97,9 +97,10 @@ const Libros: FC = ({}) => {
           fontFamily: "'Roboto', sans-serif",
           fontSize: '1rem',
           cursor: 'pointer',
-          backgroundColor: "orange",
+          backgroundColor:  "rgb(255, 87, 51)",
           color: "white",
-          borderRadius: "5%"
+          borderRadius: "5%",
+          
         }}
       >
         {showExco ? 'Ocultar Registros' : 'Registros'}
