@@ -13,16 +13,9 @@ const FondosDocumentales = () => {
         <div className={styles.grid}>
         <div className={styles.block} data-aos="fade-left"  >
     
-            <p className={styles.p}>Registros Malvinas</p>
-             </div>
-            <div className={styles.block} data-aos="fade-right">
-            
-            
-            <p className={styles.p}>Registro ONGs</p>
-            </div>
-            <div className={styles.block} data-aos="fade-left">
-            <Link href= "\\10.20.101.141\compartido\digesto\CARTA_ORGANICA_ACTAS_CONVENCION"></Link>
-            <p className={styles.p}  >Convención Carta Orgánica </p>
+                     <div className={styles.block} data-aos="fade-left">
+            <Link href= "\\10.20.101.141\compartido\digesto\CARTA_ORGANICA_ACTAS_CONVENCION">
+            <p className={styles.p}  >Convención Carta Orgánica </p></Link>
             </div>
             <div className={styles.block} data-aos="fade-right">
             <p className={styles.p}>CEB</p>
