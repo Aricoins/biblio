@@ -23,7 +23,7 @@ const FondosDocumentales = () => {
     AOS.init({
       duration: 1000, // Default duration for animations
       offset: 120,    // Offset for triggering animations
-      once: true,     // Animate only once when scrolling
+
     });
     AOS.refresh(); // Refresh AOS to detect new elements
   }, []);
@@ -58,19 +58,19 @@ const FondosDocumentales = () => {
             className={styles.block} 
             data-aos="fade-right" 
             onClick={() => showDevelopmentAlert('CEB')}>
-            <p className={styles.p}>CEB</p>
+            <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
           </div>
           <div 
             className={styles.block} 
             data-aos="zoom-in" 
             onClick={() => showDevelopmentAlert('Estudios TUP')}>
-            <p className={styles.p}>Estudios TUP</p>
+            <p className={styles.p}>Estudios Servicio de Transporte Urbano de Pasajeros</p>
           </div>
           <div 
             className={styles.block} 
             data-aos="zoom-in" 
             onClick={() => showDevelopmentAlert('Fiesta de la Nieve')}>
-            <p className={styles.p}>Fiesta de la Nieve</p>
+            <p className={styles.p}>Fiesta Nacional de la Nieve</p>
           </div>
           <div 
             className={styles.block} 
