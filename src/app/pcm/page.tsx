@@ -14,7 +14,7 @@ interface PCMRecord {
     descripcion: string;
     autor: string;
     numero_norma: string;
-    enlace?: string; // Este campo es opcional
+    enlace?: string;
 }
 
 function PCMTable() {
