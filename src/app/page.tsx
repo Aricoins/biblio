@@ -32,6 +32,20 @@ export default function Libros() {
     }, 1000);
   }, [complete]);
 
+  if (loading) {
+    return (
+      <div 
+        style={{
+          marginTop: "15%", 
+          marginLeft: "45%", 
+          width: "100vh", 
+          height: "65vh"
+        }}>
+        <Spin size="large" />
+      </div>
+    );
+  }
+
   return (
     <>
       {showWelcome ? (
