@@ -48,7 +48,7 @@ const ExcoTable = () => {
     },
     {
       title: 'Apellido',
-      dataIndex: 'Apellido y Nombre', 
+      dataIndex: 'Apellido', 
       key: 'apellido',
     },
     {
