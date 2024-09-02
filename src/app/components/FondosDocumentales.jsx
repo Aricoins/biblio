@@ -41,7 +41,7 @@ const FondosDocumentales = () => {
           fontSize: "8vw",
           fontFamily: "Roboto, sans-serif",
           opacity: 0.2,
-          margin: "8%"
+          margin: "8%",
         }}>
         Material de consulta
       </div> 

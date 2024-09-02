@@ -43,17 +43,17 @@ const ExcoTable = () => {
   const columns = [
     {
       title: 'Número',
-      dataIndex: 'Número', // Asegúrate de que coincida con el nombre de la columna en el CSV
+      dataIndex: 'Número', 
       key: 'numero',
     },
     {
       title: 'Apellido',
-      dataIndex: 'Apellido y Nombre', // Asegúrate de que coincida con el nombre de la columna en el CSV
+      dataIndex: 'Apellido y Nombre', 
       key: 'apellido',
     },
     {
       title: 'Nombre',
-      dataIndex: 'Nombre', // Asegúrate de que coincida con el nombre de la columna en el CSV
+      dataIndex: 'Nombre',
       key: 'nombre',
     },
   ];
@@ -61,9 +61,8 @@ const ExcoTable = () => {
   return (
     <div style={{ justifyContent: "center", margin: "5%"}}>
       <h2 
- 
-       style={{
-         fontSize: 'large',
+        style={{
+        fontSize: 'large',
          fontWeight: 500,
          display: 'flex',
          justifyContent: 'left',
@@ -80,7 +79,7 @@ const ExcoTable = () => {
        onClick={() => setVisible(!visible)}
      >
   
-        Soldados Convocados Malvinas |  ordenanza 3102
+        Soldados Convocados Malvinas |  Ordenanza 3102-CM-19
       </h2>
       {visible && (
         <div className="mt-4">
