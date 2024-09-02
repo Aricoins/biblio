@@ -80,7 +80,7 @@ const ExcoTable = () => {
        onClick={() => setVisible(!visible)}
      >
   
-        Excombatientes Malvinas
+        Soldados Convocados Malvinas |  ordenanza 3102
       </h2>
       {visible && (
         <div className="mt-4">
