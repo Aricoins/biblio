@@ -10,7 +10,7 @@ const MySwal = withReactContent(Swal);
 const showDevelopmentAlert = (text) => {
   MySwal.fire({
     icon: "info",
-    html: `<strong>${text}</strong> está en desarrollo.<br> ¡Vuelve pronto para más actualizaciones!`,
+    html: `<strong>${text}</strong> está en desarrollo.<br> ¡Volvé pronto para más actualizaciones!`,
     showCloseButton: true,
     confirmButtonColor: "#ff5733",
   });
