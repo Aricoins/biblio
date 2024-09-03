@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 export async function GET(req: NextRequest) {
   try {
     const response = await fetch(
-        'https://docs.google.com/spreadsheets/d/1kUYPFO2Vqpj_r6xZ4-tjC0W81pP_-IuNPyQ4LAff8MA/pub?output=csv'    )
+        'https://docs.google.com/spreadsheets/d/1hTD2zMrwlh48ljI1yVi4e0yeFgFLHuZGQ4ZcoA2rt5A/pub?output=csv'    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch CSV data: ${response.statusText}`);

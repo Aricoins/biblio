@@ -3,8 +3,7 @@ import { Table, Input, message } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import styles from "./style.module.css";
 
-// Componente Exco
-const Exco = () => {
+const Exco2 = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState("");
@@ -13,7 +12,7 @@ const Exco = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/exco");
+        const response = await fetch("/api/exco2");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -31,7 +30,7 @@ const Exco = () => {
   }, []);
 
   // Function to handle search
-  const handleSearch = (e) => {
+  const handleSearch = (e: any) => {
     setSearchText(e.target.value);
   };
 
@@ -43,17 +42,18 @@ const Exco = () => {
 
   const columns = [
     {
-      title: "Nombre",
-      dataIndex: "Nombre",
-      key: "nombre",
-      align: "center",
-    },
+        title: "Nombre",
+        dataIndex: "Nombre",
+        key: "nombre",
+  
+      },
     {
       title: "Apellido",
-      dataIndex: "Apellido y Nombre",
+      dataIndex: "Apellido",
       key: "apellido",
-      align: "center",
+
     },
+   
   ];
 
   return (
@@ -77,10 +77,10 @@ const Exco = () => {
         }}
         onClick={() => setVisible(!visible)}
       >
-        Convocados Continentales | Ordenanza 3102-CM-19
+     Ex Combatientes Malvinas | Ordenanza 2017-CM-10
       </h2>
       {visible && (
-        <div  data-aos="fade-left" data-aos-duration="300" style={{ display: "flex", justifyContent: "center", marginTop: "1rem", backgroundColor: "rgb(0, 141, 154)", padding: "2%", borderRadius: "5%" }}>
+       <div data-aos="fade-left" data-aos-duration="300" style={{ display: "flex", justifyContent: "center", marginTop: "1rem", backgroundColor: "rgb(0, 141, 154)", padding: "2%", borderRadius: "5%" }}>
           <div style={{ width: "80%", maxWidth: "1200px" }}>
             <Input
               placeholder="Buscar por nombre o apellido"
@@ -104,4 +104,4 @@ const Exco = () => {
   );
 };
 
-export default Exco;
+export default Exco2;

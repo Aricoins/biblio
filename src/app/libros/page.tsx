@@ -8,7 +8,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "antd";
 import Exco  from '../components/Exco';
-import Exco2  from '../components/Exco';
+import Exco2  from '../components/Exco2';
 import ONGs from "../components/ONGs";
 
 
@@ -104,11 +104,14 @@ const Libros: FC = ({}) => {
           
         }}
       >
-        {showExco ? '⬇️ Registros ⬇️' : '⬆️ Registros ⬆️'}
+        {showExco ?  'Registros ⬆️': ' Registros ⬇️' }
       </button>
 
       {/* Mostrar el componente Exco solo si showExco es true */}
-      {showExco && <><Exco /><Exco2 /></>}
+      {showExco && <>
+      <Exco2 />
+      <Exco />
+      </>}
     </div>
 
         <section className={styles.container}>
