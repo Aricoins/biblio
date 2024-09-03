@@ -8,6 +8,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "antd";
 import Exco  from '../components/Exco';
+import Exco2  from '../components/Exco';
 import ONGs from "../components/ONGs";
 
 
@@ -82,7 +83,7 @@ const Libros: FC = ({}) => {
         justifyContent: "right", 
         marginTop:"10%",
         fontFamily: "Sans-Serif",  
-        color: "black", 
+        color: "white", 
         fontSize: "10vw",
         opacity: 0.2,}}>
             Biblioteca
@@ -93,21 +94,21 @@ const Libros: FC = ({}) => {
       <button 
         onClick={handleShowExco} 
         style={{
-          padding: '10px 20px',
+          padding: '5px 10px',
           fontFamily: "'Roboto', sans-serif",
           fontSize: '1rem',
           cursor: 'pointer',
-          backgroundColor:  "rgb(255, 87, 51)",
+          backgroundColor:  "gray",
           color: "white",
           borderRadius: "5%",
           
         }}
       >
-        {showExco ? 'Ocultar Registros' : 'Registros'}
+        {showExco ? '⬇️ Registros ⬇️' : '⬆️ Registros ⬆️'}
       </button>
 
       {/* Mostrar el componente Exco solo si showExco es true */}
-      {showExco && <Exco />}
+      {showExco && <><Exco /><Exco2 /></>}
     </div>
 
         <section className={styles.container}>

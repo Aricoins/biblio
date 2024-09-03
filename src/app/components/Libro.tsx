@@ -16,19 +16,11 @@ interface LibroProps {
 }
 
 const Libro: FC<LibroProps> = ({ libro }) => {
-
 const año = libro.decla
 if (año > "1900") {
  const  año = "2020"}
  else {
   const año = "2021"}
-
-
-
-  
-
-
-
   return (
    <>
     <Link className={styles.link} href={`/libros/${libro.id}`}>
@@ -48,10 +40,8 @@ if (año > "1900") {
         <div className={styles.infoContainer}>
           <div className={styles.title}>{libro.titulo}</div>
           <h5 className={styles.author}>{libro.autor}</h5>
-          {libro.decla ? (
-          
+          {libro.decla ? (          
                 <p className={styles.declaLink}> Declaración {libro.decla}</p>
-          
           ) : null}
         </div>
       </div>
@@ -59,5 +49,4 @@ if (año > "1900") {
     </>
   );
 };
-
 export default Libro;
