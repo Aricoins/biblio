@@ -54,6 +54,8 @@ const Exco2 = () => {
       align: "center" as const
     },
   ];
+  const i = 1
+  let count = i+1  
 
   return (
     <div style={{ textAlign: "center", margin: "5%" }}>
@@ -83,10 +85,12 @@ const Exco2 = () => {
           data-aos="fade-left"
           data-aos-duration="300"
           style={{
+            display: "flex", 
+        justifyContent: "center", 
             marginTop: "1rem",
             backgroundColor: "rgb(0, 141, 154)",
             padding: "2%",
-            borderRadius: "5%",
+            borderRadius: "25px",
           }}
         >
           <div style={{ width: "80%", maxWidth: "1200px", margin: "0 auto" }}>
@@ -101,7 +105,7 @@ const Exco2 = () => {
               columns={columns}
               dataSource={filteredData}
               loading={loading}
-              rowKey="Número"
+              rowKey={count}
               style={{
                 width: "100%",
                 textAlign: "center",

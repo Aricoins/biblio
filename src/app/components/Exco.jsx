@@ -50,7 +50,7 @@ const Exco = () => {
     },
     {
       title: "Apellido",
-      dataIndex: "Apellido y Nombre",
+      dataIndex: "Apellido",
       key: "apellido",
       align: "center",
     },
@@ -80,7 +80,12 @@ const Exco = () => {
         Convocados Continentales | Ordenanza 3102-CM-19
       </h2>
       {visible && (
-        <div  data-aos="fade-left" data-aos-duration="300" style={{ display: "flex", justifyContent: "center", marginTop: "1rem", backgroundColor: "rgb(0, 141, 154)", padding: "2%", borderRadius: "5%" }}>
+        <div  data-aos="fade-left" data-aos-duration="300" style={{ display: "flex", 
+        justifyContent: "center", 
+        marginTop: "1rem", 
+        backgroundColor: "rgb(0, 141, 154)", 
+        padding: "2%", 
+        borderRadius: "5%" }}>
           <div style={{ width: "80%", maxWidth: "1200px" }}>
             <Input
               placeholder="Buscar por nombre o apellido"
