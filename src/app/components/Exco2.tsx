@@ -42,18 +42,17 @@ const Exco2 = () => {
 
   const columns = [
     {
-        title: "Nombre",
-        dataIndex: "Nombre",
-        key: "nombre",
-  
-      },
+      title: "Nombre",
+      dataIndex: "Nombre",
+      key: "nombre",
+      align: "center" as const
+    },
     {
       title: "Apellido",
       dataIndex: "Apellido",
       key: "apellido",
-
+      align: "center" as const
     },
-   
   ];
 
   return (
@@ -77,11 +76,20 @@ const Exco2 = () => {
         }}
         onClick={() => setVisible(!visible)}
       >
-     Ex Combatientes Malvinas | Ordenanza 2017-CM-10
+        Ex Combatientes Malvinas | Ordenanza 2017-CM-10
       </h2>
       {visible && (
-       <div data-aos="fade-left" data-aos-duration="300" style={{ display: "flex", justifyContent: "center", marginTop: "1rem", backgroundColor: "rgb(0, 141, 154)", padding: "2%", borderRadius: "5%" }}>
-          <div style={{ width: "80%", maxWidth: "1200px" }}>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="300"
+          style={{
+            marginTop: "1rem",
+            backgroundColor: "rgb(0, 141, 154)",
+            padding: "2%",
+            borderRadius: "5%",
+          }}
+        >
+          <div style={{ width: "80%", maxWidth: "1200px", margin: "0 auto" }}>
             <Input
               placeholder="Buscar por nombre o apellido"
               prefix={<SearchOutlined />}
@@ -94,8 +102,15 @@ const Exco2 = () => {
               dataSource={filteredData}
               loading={loading}
               rowKey="Número"
-              style={{ width: "100%", textAlign: "center" }}
+              style={{
+                width: "100%",
+                textAlign: "center",
+                alignContent: "center",
+                justifyContent: "center",
+                margin: "0 auto",
+              }}
               bordered
+              pagination={false} // Optional: Disable pagination if not needed
             />
           </div>
         </div>
