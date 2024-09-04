@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+
 
 
 function ONGs() {
@@ -9,6 +9,7 @@ function ONGs() {
     <Link href = "https://concejobariloche.gov.ar/index.php/registro-de-ong">
       <div style={{ textAlign: "center", margin: "5%" }}>
       <h2
+   
         style={{
           fontSize: "medium",
           fontWeight: 500,
@@ -25,6 +26,7 @@ function ONGs() {
           margin: "0 auto",
           boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
         }}
+           className='hover:bg-slate-200 hover:text-black'
         onClick={() => setVisible(!visible)}
       >
        Registro de ONG
