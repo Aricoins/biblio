@@ -6,7 +6,7 @@ function ONGs() {
 
  
   return (
-    <Link href = "https://concejobariloche.gov.ar/index.php/registro-de-ong">
+    <Link href = "https://concejobariloche.gov.ar/index.php?option=com_content&view=article&id=16535">
       <div style={{ textAlign: "center", margin: "5%" }}>
       <h2
    
