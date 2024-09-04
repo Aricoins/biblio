@@ -10,82 +10,82 @@ interface Acta {
 
 const actas: Acta[] = [
   {
-    title: 'Acta 1',
+    title: 'Acta 1 del 6 de octubre de 2006',
     link: 'https://docs.google.com/document/d/1901XfilC88j6Pfm7dAsBoWYlR2XgKXc4/preview',
     id: '1901XfilC88j6Pfm7dAsBoWYlR2XgKXc4'
   },
   {
-    title: 'Acta 2',
+    title: 'Acta 2 del 18 de octubre de 2006',
     link: 'https://docs.google.com/document/d/195Wh-202W4ipPHuMJkE7NMHDw6wQbbJE/preview',
     id: '195Wh-202W4ipPHuMJkE7NMHDw6wQbbJE'
   },
   {
-    title: 'Acta 3',
+    title: 'Acta 3 del 26 de octubre de 2006',
     link: 'https://docs.google.com/document/d/18iHhCraDIVUF6kKq93MulPVC2kApiMhS/preview',
     id: '18iHhCraDIVUF6kKq93MulPVC2kApiMhS'
   },
   {
-    title: 'Acta 4',
+    title: 'Acta 4 del 27 de octubre de 2006',
     link: 'https://docs.google.com/document/d/1SXPRLudRu5RoBO_-HHpAcRGjpVZJM2bW/preview',
     id: '1SXPRLudRu5RoBO_-HHpAcRGjpVZJM2bW'
   },
   {
-    title: 'Acta 5',
+    title: 'Acta 5 del 30 de octubre de 2006',
     link: 'https://docs.google.com/document/d/1FJaG7Tpe2Jimr4K8SYjKgmJDvom5c2uF/preview',
     id: '1FJaG7Tpe2Jimr4K8SYjKgmJDvom5c2uF'
   },
   {
-    title: 'Acta 6',
+    title: 'Acta 6 del 13 de noviembre de 2006',
     link: 'https://drive.google.com/file/d/10RWxrfLXXcM62yoINZtujQYR2RMFnWhR/preview',
     id: '10RWxrfLXXcM62yoINZtujQYR2RMFnWhR'
   },
   {
-    title: 'Acta 7',
+    title: 'Acta 7 del 28 de noviembre de 2006',
     link: 'https://drive.google.com/file/d/123psMbiSzvDSvt_9KaLf4lJtgDLt05tb/preview',
     id: '123psMbiSzvDSvt_9KaLf4lJtgDLt05tb'
   },
   {
-    title: 'Acta 8',
+    title: 'Acta 8 del 30 días de octubre de 2006',
     link: 'https://drive.google.com/file/d/1q66fwy1okgJi8FXH-TSuEP-eYYPsbOjg/preview',
     id: '1q66fwy1okgJi8FXH-TSuEP-eYYPsbOjg'
   },
   {
-    title: 'Acta 9',
+    title: 'Acta 9 del 8 de diciembre de 2006',
     link: 'https://drive.google.com/file/d/1fQ17iPVBkTdLGLGWnb33gxS4Pv1_M3TF/preview',
     id: '1fQ17iPVBkTdLGLGWnb33gxS4Pv1_M3TF'
   },
   {
-    title: 'Acta 10',
+    title: 'Acta 10 del 19 de diciembre de 2006',
     link: 'https://drive.google.com/file/d/1TTZyQGx_SDH2_RVsrvegy6VpzCRVxyZJ/preview',
     id: '1TTZyQGx_SDH2_RVsrvegy6VpzCRVxyZJ'
   },
   {
-    title: 'Acta 11',
+    title: 'Acta 11 del 20 de diciembre de 2006',
     link: 'https://docs.google.com/document/d/1q4VyCeeqV1YbFJvBxSyF6FpmCzArYubk/preview',
     id: '1q4VyCeeqV1YbFJvBxSyF6FpmCzArYubk'
   },
   {
-    title: 'Acta 12',
+    title: 'Acta 12 del 22 de diciembre de 2006',
     link: 'https://docs.google.com/document/d/1RB-lrUVYBZNwCPeV63TJhiwoHFiALobx/preview',
     id: '1RB-lrUVYBZNwCPeV63TJhiwoHFiALobx'
   },
   {
-    title: 'Acta 13',
+    title: 'Acta 13 del 26 de diciembre de 2006',
     link: 'https://docs.google.com/document/d/1-oaZJXw6Y5FiDO32u1dJk06nW6-cY7H_/preview',
     id: '1-oaZJXw6Y5FiDO32u1dJk06nW6-cY7H_'
   },
   {
-    title: 'Acta 14',
+    title: 'Acta 14 del 3 de enero de 2007',
     link: 'https://docs.google.com/document/d/15jU9MbX5RTMAFUgAfT3FLTkpvb5toO9M/preview',
     id: '15jU9MbX5RTMAFUgAfT3FLTkpvb5toO9M'
   },
   {
-    title: 'Acta 15',
+    title: 'Acta 15 del 3 de enero de 2007',
     link: 'https://docs.google.com/document/d/1xm4TfCA_nqdan7luGsQh4SQNtyFuwenP/preview',
     id: '1xm4TfCA_nqdan7luGsQh4SQNtyFuwenP'
   },
   {
-    title: 'Acta 16',
+    title: 'Acta 16 del 4 de enero de 2007',
     link: 'https://docs.google.com/document/d/1A81TxmFrhF9om0lLBZkNBCN0lkia3Qxd/preview',
     id: '1A81TxmFrhF9om0lLBZkNBCN0lkia3Qxd'
   },
