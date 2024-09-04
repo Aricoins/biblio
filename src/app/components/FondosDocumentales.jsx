@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 
 const MySwal = withReactContent(Swal);
 
@@ -48,12 +49,12 @@ const FondosDocumentales = () => {
       
       <div className={styles.contenedor}>
         <div className={styles.grid}>
-          <div 
+       <Link href="/com">   <div 
             className={styles.block} 
-            data-aos="fade-left" 
-            onClick={() => showDevelopmentAlert('Convención Carta Orgánica')}>
-            <p className={styles.p}>Convención Carta Orgánica Municipal</p>
+            data-aos="fade-left"> 
+               <p className={styles.p}>Convención Carta Orgánica Municipal</p>
           </div>
+          </Link>
           <div 
             className={styles.block} 
             data-aos="fade-right" 
