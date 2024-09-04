@@ -1,6 +1,9 @@
 "use client"
 import { useState } from 'react';
 import { Modal, Button, List } from 'antd';
+import Link from 'next/link';
+import NavTop from '../components/NavTop';
+import NavFoot from '../components/NavFoot';
 
 interface Acta {
   title: string;
@@ -45,7 +48,7 @@ const actas: Acta[] = [
     id: '123psMbiSzvDSvt_9KaLf4lJtgDLt05tb'
   },
   {
-    title: 'Acta 8 del 30 días de octubre de 2006',
+    title: 'Acta 8 del 30 de octubre de 2006',
     link: 'https://drive.google.com/file/d/1q66fwy1okgJi8FXH-TSuEP-eYYPsbOjg/preview',
     id: '1q66fwy1okgJi8FXH-TSuEP-eYYPsbOjg'
   },
@@ -111,7 +114,9 @@ export default function Home() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+<>
+    <NavTop/>
+    <div style={{ padding: '20px', marginTop: "8%" }}>
       <h3 style={{
         fontSize: "medium",
         fontWeight: 500,
@@ -127,13 +132,20 @@ export default function Home() {
         margin: "0 auto",
         boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
       }}>Actas de la Convención Constituyente | 2007</h3>
+      <h3 style={{color: "orangered",   fontFamily: "'Roboto', sans-serif",
+        borderRadius: "25px",
+        textAlign: "center",}}>Carta Orgánica Municipal </h3>
       <List
         bordered
         dataSource={actas}
-        style={{backgroundColor: "black"}}
+        style={{backgroundColor: "rgba(0, 0, 0, 0.8)",
+                display:"flex",
+                justifyContent: "center", 
+                }}
         renderItem={(acta) => (
-          <List.Item>
-            <Button type="link" onClick={() => showModal(acta)}>
+          <List.Item   style={{justifyContent: "center", color: "orangered"}}>
+
+            <Button type="link"  onClick={() => showModal(acta)}>
               {acta.title}
             </Button>
           </List.Item>
@@ -146,6 +158,8 @@ export default function Home() {
         onCancel={handleCancel}
         footer={null}
         width={800}
+        style={{backgroundColor: "orangered", color: "green", padding: "1%", width: "100%"}}
+
       >
         {selectedActa && (
           <iframe
@@ -157,6 +171,9 @@ export default function Home() {
           />
         )}
       </Modal>
-    </div>
+      </div>
+   <NavFoot />
+   </>
+
   );
 }
