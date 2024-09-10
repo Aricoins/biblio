@@ -83,7 +83,7 @@ const Libros: FC = ({}) => {
         justifyContent: "right", 
         marginTop:"10%",
         fontFamily: "Sans-Serif",  
-        color: "white", 
+        color: "black", 
         fontSize: "10vw",
         opacity: 0.2,}}>
             Biblioteca
@@ -93,16 +93,15 @@ const Libros: FC = ({}) => {
       {/* Botón para mostrar u ocultar Exco */}
       <button 
         onClick={handleShowExco} 
-        style={{
-          padding: '5px 10px',
-          fontFamily: "'Roboto', sans-serif",
-          fontSize: '1rem',
-          cursor: 'pointer',
-          backgroundColor:  "gray",
-          color: "white",
-          borderRadius: "5%",
-          
-        }}
+        data-aos= "fade-right" 
+        data-aos-duration= "300"
+       style={{display: "flex",
+        justifyContent: "right", 
+        marginTop:"10%",
+        fontFamily: "Sans-Serif",  
+        color: "black", 
+        fontSize: "10vw",
+        opacity: 0.2,}}
       >
         {showExco ?  'Registros ⬆️': ' Registros ⬇️' }
       </button>

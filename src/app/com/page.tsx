@@ -117,6 +117,9 @@ export default function Home() {
 <>
     <NavTop/>
     <div style={{ padding: '20px', marginTop: "8%" }}>
+    <h3 style={{color: "black",   fontFamily: "'Roboto', sans-serif",
+        borderRadius: "25px",
+        textAlign: "center",}}>Carta Orgánica Municipal </h3>
       <h3 style={{
         fontSize: "medium",
         fontWeight: 500,
@@ -129,12 +132,11 @@ export default function Home() {
         borderRadius: "25px",
         textAlign: "center",
         width: "70%",
-        margin: "0 auto",
+      margin: "auto",
+      marginBottom: "2%",
         boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
       }}>Actas de la Convención Constituyente | 2007</h3>
-      <h3 style={{color: "orangered",   fontFamily: "'Roboto', sans-serif",
-        borderRadius: "25px",
-        textAlign: "center",}}>Carta Orgánica Municipal </h3>
+
       <List
         bordered
         dataSource={actas}
