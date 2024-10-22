@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Modal, Spin, Table, Button, Input } from 'antd';
 
-interface Proyecto {
+export interface Proyecto {
   id: number;
   numero_proyecto: string;
   anio_proyecto: string;

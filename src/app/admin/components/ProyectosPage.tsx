@@ -3,6 +3,7 @@ import ProyectosList from './ProyectosList';
 import EditarProyectoModal from './EditarProyectoModal';
 import CrearProyecto from './CrearProyecto';
 import { Button, notification } from 'antd';
+import { Proyecto } from './ProyectosList';
 
 export default function ProyectosPage() {
   const [selectedProject, setSelectedProject] = useState<Proyecto | null>(null);
@@ -53,7 +54,7 @@ export default function ProyectosPage() {
   return (
     <div>
       <Button type="primary" onClick={handleCreate}>Crear Nuevo Proyecto</Button>
-      <ProyectosList onEdit={handleEdit} projects={projects} />
+      <ProyectosList onEdit={handleEdit}  />
       <EditarProyectoModal
         visible={isEditModalVisible}
         proyecto={selectedProject}
