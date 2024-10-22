@@ -3,10 +3,33 @@ import Link from 'next/link';
 import logo from "../api/assets/concejo.png"
 import Image from 'next/image';
 import styles from './NavFoot.module.css';
+import clsx from 'clsx';
+import { useState, useEffect } from 'react';
 
 const NavFoot = () => {
+  const [isHidden, setIsHidden] = useState(false);
+
+  
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <div className={styles.navFoot}>
+    <div className={clsx(styles.navFoot, { [styles.hidden]: isHidden })}>
       
       <ul className={styles.navFootList}>
       <li className={styles.item}>

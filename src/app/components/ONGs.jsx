@@ -2,9 +2,8 @@ import Link from 'next/link';
 
 
 
-function ONGs() {
 
- 
+function ONGs() {
   return (
     <Link href = "https://concejobariloche.gov.ar/index.php?option=com_content&view=article&id=16535" 
     target= "_blank" rel="noopener noreferrer"
