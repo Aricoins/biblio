@@ -8,8 +8,8 @@ export interface Proyecto {
   anio_proyecto: string;
   titulo_proyecto: string;
   tipo_proyecto: string;
-  autor: string;
-  colaboradores: string;
+  autor: string[];
+  colaboradores: string[];
   girado_a: string;
   acta_fecha: string;
   aprobado: boolean;
