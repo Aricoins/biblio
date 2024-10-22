@@ -1,6 +1,6 @@
 // EditarProyectoModal.jsx
 import { Modal, Button, Input } from 'antd';
-import { Proyectos } from './proyectos';
+import { Proyecto } from './ProyectosList';
 import { useState } from 'react';
 
 interface EditarProyectoModalProps {
