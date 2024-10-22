@@ -7,7 +7,7 @@ function ONGs() {
  
   return (
     <Link href = "https://concejobariloche.gov.ar/index.php?option=com_content&view=article&id=16535" 
-    _blank="true" rel="noopener noreferrer"
+    target= "_blank" rel="noopener noreferrer"
     
     >
       <div style={{ textAlign: "center", margin: "5%" }}>
