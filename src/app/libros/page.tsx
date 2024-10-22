@@ -7,10 +7,9 @@ import OtrosTitulos from "../components/OtrosTitulos";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Pagination } from "antd";
-import Exco  from '../components/Exco';
-import Exco2  from '../components/Exco2';
+import Exco from "../components/Exco";
+import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
-
 
 interface Libro {
   titulo: string;
@@ -33,7 +32,6 @@ const Libros: FC = ({}) => {
   const handleShowExco = () => {
     setShowExco(!showExco);
   };
-
 
   useEffect(() => {
     Aos.init({ duration: 3000 });
@@ -77,42 +75,49 @@ const Libros: FC = ({}) => {
   return (
     <>
       <div className={styles.body}>
-        <div  data-aos= "fade-right" 
-        data-aos-duration= "300"
-       style={{display: "flex",
-        justifyContent: "right", 
-        marginTop:"10%",
-        fontFamily: "Sans-Serif",  
-        color: "black", 
-        fontSize: "10vw",
-        opacity: 0.2,}}>
-            Biblioteca
+        <div
+          data-aos="fade-right"
+          data-aos-duration="300"
+          style={{
+            display: "flex",
+            justifyContent: "right",
+            marginTop: "10%",
+            fontFamily: "Sans-Serif",
+            color: "black",
+            fontSize: "10vw",
+            opacity: 0.2,
+          }}
+        >
+          Biblioteca
         </div>
-        <div style={{ marginBottom: '2%' }}>
-           
-      {/* Botón para mostrar u ocultar Exco */}
-      <button 
-        onClick={handleShowExco} 
-        data-aos= "fade-right" 
-        data-aos-duration= "300"
-       style={{display: "flex",
-        justifyContent: "right", 
-        marginTop:"10%",
-        fontFamily: "Sans-Serif",  
-        color: "black", 
-        fontSize: "10vw",
-        opacity: 0.2,}}
-      >
-        {showExco ?  'Registros ⬆️': ' Registros ⬇️' }
-      </button>
+        <div style={{ marginBottom: "2%" }}>
+          {/* Botón para mostrar u ocultar Exco */}
+          <button
+            onClick={handleShowExco}
+            data-aos="fade-right"
+            data-aos-duration="300"
+            style={{
+              display: "flex",
+              justifyContent: "right",
+              marginTop: "10%",
+              fontFamily: "Sans-Serif",
+              color: "black",
+              fontSize: "2vw",
+              opacity: 0.6,
+            }}
+          >
+            {showExco ? "Registros ⬆️" : " Registros ⬇️"}
+          </button>
 
-      {/* Mostrar el componente Exco solo si showExco es true */}
-      {showExco && <>
-      <Exco2 />
-      <Exco />
-      <ONGs />
-      </>}
-    </div>
+          {/* Mostrar el componente Exco solo si showExco es true */}
+          {showExco && (
+            <>
+              <Exco2 />
+              <Exco />
+              <ONGs />
+            </>
+          )}
+        </div>
 
         <section className={styles.container}>
           <input
@@ -140,10 +145,9 @@ const Libros: FC = ({}) => {
             </div>
           )}
 
-          <OtrosTitulos data-aos="fade-right" data-aos-duraton= "500" />
+          <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
         </section>
       </div>
-     
     </>
   );
 };

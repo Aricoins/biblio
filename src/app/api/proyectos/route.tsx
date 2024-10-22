@@ -1,5 +1,6 @@
-import { sql, SQLQuery } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 import { NextResponse, NextRequest } from 'next/server';
+
 interface Proyecto {
   id: number;
   numero_proyecto: string;
@@ -15,6 +16,7 @@ interface Proyecto {
   numero_norma: string;
   observaciones: string;
 }
+
 export async function GET(req: NextRequest) {
   try {
     const { rows: proyectos } = await sql`
@@ -34,7 +36,8 @@ export async function GET(req: NextRequest) {
         observaciones 
       FROM 
         proyectos
-        order by id desc;
+      ORDER BY 
+        id DESC;
     `;
     return NextResponse.json({ proyectos }, { status: 200 });
   } catch (error) {
@@ -51,40 +54,49 @@ export async function POST(req: NextRequest) {
       tipo_norma, numero_norma, observaciones 
     } = await req.json();
 
-    const { rows: proyecto } = await sql`
-      INSERT INTO proyectos (
+    if (!numero_proyecto || !anio_proyecto || !titulo_proyecto || !autor) {
+      return NextResponse.json({ error: 'Faltan datos requeridos' }, { status: 400 });
+    }
+
+    const autorArray = Array.isArray(autor) ? autor : [autor];
+    const colaboradoresArray = Array.isArray(colaboradores) ? colaboradores : null;
+    
+    const { rows: [proyecto] } = await sql`
+      INSERT INTO proy (
         numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, 
         autor, colaboradores, girado_a, acta_fecha, aprobado, 
         tipo_norma, numero_norma, observaciones
       ) VALUES (
         ${numero_proyecto}, ${anio_proyecto}, ${titulo_proyecto}, ${tipo_proyecto}, 
-        ${autor}, ${colaboradores}, ${girado_a}, ${acta_fecha}, ${aprobado}, 
+        ARRAY[${autorArray}]::text[], ${colaboradoresArray}, ${girado_a}, ${acta_fecha}, ${aprobado}, 
         ${tipo_norma}, ${numero_norma}, ${observaciones}
-      ) RETURNING *
+      ) RETURNING id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, 
+      autor, colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones
     `;
-    return NextResponse.json({ proyecto: proyecto[0] }, { status: 201 });
+
+    return NextResponse.json({ proyecto }, { status: 201 });
   } catch (error) {
     console.error('Error al crear el proyecto:', error);
     return NextResponse.json({ error: 'Error al crear el proyecto' }, { status: 500 });
   }
 }
 
+
+
 export async function PATCH(req: NextRequest) {
   try {
-    const body = await req.json(); // Asegúrate de leer el cuerpo correctamente
+    const body = await req.json();
 
     const {
       id, numero_proyecto, anio_proyecto, titulo_proyecto, tipo_proyecto, autor,
       colaboradores, girado_a, acta_fecha, aprobado, tipo_norma, numero_norma, observaciones
     } = body as Partial<Proyecto>;
 
-    // Verifica que todos los campos requeridos estén presentes
     if (!id) {
-      throw new Error('El ID del proyecto es requerido');
+      return NextResponse.json({ error: 'El ID del proyecto es requerido' }, { status: 400 });
     }
 
-    // Actualizar el proyecto en la base de datos
-    const updatedProject = await sql`
+    const { rowCount } = await sql`
       UPDATE proyectos
       SET
         numero_proyecto = ${numero_proyecto},
@@ -104,11 +116,10 @@ export async function PATCH(req: NextRequest) {
       RETURNING *
     `;
 
-    if (updatedProject.count === 0) {
-      throw new Error('No se encontró un proyecto con el ID proporcionado');
+    if (rowCount === 0) {
+      return NextResponse.json({ error: 'No se encontró un proyecto con el ID proporcionado' }, { status: 404 });
     }
 
-    // Obtener todos los proyectos actualizados
     const { rows: proyectos } = await sql`
       SELECT *
       FROM proyectos;

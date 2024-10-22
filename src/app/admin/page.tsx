@@ -6,6 +6,7 @@ import Link from 'next/link';
 import {  SignIn, useAuth, SignUp, UserProfile, Protect } from '@clerk/nextjs';
 import { useUser } from "@clerk/clerk-react";
 import { useState } from 'react';
+import ProyectosPage from './components/ProyectosPage';
 
 
 // {
@@ -62,7 +63,7 @@ const Page = () => {
               <Proyectos />
             </div> </div>
 
-              <CrearLibro />
+              {/* <CrearLibro /> */}
          
 
         </div>

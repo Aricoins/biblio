@@ -1,0 +1,511 @@
+[
+  {
+    "id": 6468,
+    "numero_proyecto": "85",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica repudio a los hechos de violencia en espectáculos deportivos",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejales Leandro Costa Brutten (Incluyendo Bariloche);"
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": true,
+    "tipo_norma": "comunicacion",
+    "numero_norma": "C-24-1126",
+    "observaciones": ""
+  },
+  {
+    "id": 6469,
+    "numero_proyecto": "130",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se establece el horario inclusivo obligatorio en todos aquellos establecimiento con atención al público",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejales Natalia Almonacid, Juan Pablo Ferrari y Laura Totonelli (JSRN)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6470,
+    "numero_proyecto": "131",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Modifica anexo I ordenanza 1747-CM-07. Se asigna, amplia denominación calles",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejales Natalia Almonacid, Juan Pablo Ferrari y Laura Totonelli (JSRN)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6471,
+    "numero_proyecto": "132",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Comunica al Congreso de la Nación necesidad de modificar fecha ley nacional 24374 y ley provincial 3396",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejales Leandro Costa Brutten y Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1191/24",
+    "aprobado": true,
+    "tipo_norma": "comunicacion",
+    "numero_norma": "C-24-1134",
+    "observaciones": ""
+  },
+  {
+    "id": 6472,
+    "numero_proyecto": "133",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se modifica anexo I ordenanza 1629-CM-06. Antigüedad automotores servicio público de automóviles de alquiler con taxímetro",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6473,
+    "numero_proyecto": "134",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Creación concurso Un Proyecto para mi Barrio. Fiesta Nacional de la Nieve",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejales Laura Totonelli y Juan Pablo Ferrari (JSRN)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6474,
+    "numero_proyecto": "135",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Derogar Ecotasa, artículos 117-118 y 362- 371 de las ordenanzas 2375-CM-12 y 2374-CM-12",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6475,
+    "numero_proyecto": "136",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica rotunda oposición al proyecto de baja de edad de imputabilidad",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "comunicacion",
+    "numero_norma": "C-24-1136",
+    "observaciones": ""
+  },
+  {
+    "id": 6476,
+    "numero_proyecto": "137",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica el rechazo al Régimen de Incentivo a las Grandes Inversiones (RIGI)",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "19/24",
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6477,
+    "numero_proyecto": "138",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se modifica anexo I ordenanza 1747-CM-07. Asigna denominación a calles de Mirador del Challhuaco",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Facundo Blanco Villalba (Primero Río Negro)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6478,
+    "numero_proyecto": "139",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Aceptar donación de tablet, memoria ram y soporte micrófono",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Intendente Municipal Walter Cortés."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3464",
+    "observaciones": ""
+  },
+  {
+    "id": 6479,
+    "numero_proyecto": "140",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Aceptar donación de pantalla para proyector con control remoto",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Intendente Municipal Walter Cortés."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3465",
+    "observaciones": ""
+  },
+  {
+    "id": 6480,
+    "numero_proyecto": "141",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se crea registro municipal de comedores y merenderos comunitarios",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6481,
+    "numero_proyecto": "142",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Creación Área Natural Protegida Cerro Catedral-Cerro San Martín-Altas Cuencas Bariloche",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6482,
+    "numero_proyecto": "143",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Adhesión al Régimen de Incentivo de Grandes Inversiones (RIGI)",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejal Samanta Echenique (JxC)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "19/24",
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6483,
+    "numero_proyecto": "144",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Laura Totonelli (JSRN)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6484,
+    "numero_proyecto": "145",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se encomienda relevamiento social en vertedero. Crea programa de asistencia alimentaria",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6485,
+    "numero_proyecto": "146",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Autoriza fraccionamiento loteo NC 19-3-A-022-002. Declara de interés social. Sindicato de Luz y Fuerza de Bariloche",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejales Natalia Almonacid, Juan Pablo Ferrari, Laura Totonelli (JSRN), Leandro Costa Brutten (Incluyendo Bariloche), Facundo Blanco Villalba (Primero Río Negro) y Samanta Echenique (JxC)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6486,
+    "numero_proyecto": "147",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara de interés cultural, social, comunitario el 28° aniversario de Radio Imperio",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "Concejal Facundo Blanco Villalba (Primero Río Negro)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "declaracion",
+    "numero_norma": "D-24-3012",
+    "observaciones": ""
+  },
+  {
+    "id": 6487,
+    "numero_proyecto": "148",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Regula servicio de volquetes",
+    "tipo_proyecto": "",
+    "autor": [],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6488,
+    "numero_proyecto": "149",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara de interés municipal la 1° Feria Rasonar",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "Comisión Legislativa, concejales Gerardo Del Río, Tomás Hercigonja (PUL);"
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "declaracion",
+    "numero_norma": "D-24-3013",
+    "observaciones": ""
+  },
+  {
+    "id": 6489,
+    "numero_proyecto": "150",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se comunica la necesidad de activar el Consejo Local Consultivo para Personas con Discapacidad",
+    "tipo_proyecto": "comunicación",
+    "autor": [
+      "Concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "comunicacion",
+    "numero_norma": "C-24-1135",
+    "observaciones": ""
+  },
+  {
+    "id": 6490,
+    "numero_proyecto": "151",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Autorizar planteo urbanístico 19-2-P-247. Barrio 2 de Abril. Regularización",
+    "tipo_proyecto": "",
+    "autor": [
+      "Intendente Municipal Walter Cortés."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6491,
+    "numero_proyecto": "152",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Modifica ordenanza 1994-CM-09. Consejo de Planeamiento Estratégico y Unidad Planeamiento Estratégico",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Julieta Wallace (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6492,
+    "numero_proyecto": "153",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara de interés municipal la 12° Edición del Festival Audiovisual Bariloche",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "Concejal Gerardo Del Río (PUL)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "declaracion",
+    "numero_norma": "D-24-3014",
+    "observaciones": ""
+  },
+  {
+    "id": 6493,
+    "numero_proyecto": "154",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se modifica ordenanza 3236-CM-21",
+    "tipo_proyecto": "ordenanza",
+    "autor": [
+      "Concejales Natalia Almonacid (JSRN) y Gerardo Del Río (PUL).",
+      "autores: Concejales Juan Pablo Ferrari, Laura Totonelli (JSRN), María del Carmen Coronado y Tomás Hercigonja (PUL)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "ordenanza",
+    "numero_norma": "O-24-3463",
+    "observaciones": ""
+  },
+  {
+    "id": 6494,
+    "numero_proyecto": "155",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se crea la Comisión Municipal de Boxeo",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejales Gerardo Del Río, Tomás Hercigonja y María del Carmen Coronado (PUL)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": null,
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6495,
+    "numero_proyecto": "156",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se establece la Contribución Verde de Sostenimiento Ambiental (COVERSA) en el ejido municipal",
+    "tipo_proyecto": "",
+    "autor": [
+      "Concejala Roxana Ferreyra (Nos Une)."
+    ],
+    "colaboradores": null,
+    "girado_a": "Asesoría Letrada y a las comisiones de Economía, Hacienda, Finanzas y Desarrollo Económico, de Turismo y Medio Ambiente y de Gobierno y Legales",
+    "acta_fecha": "19/24",
+    "aprobado": false,
+    "tipo_norma": "",
+    "numero_norma": "",
+    "observaciones": "en tratamiento"
+  },
+  {
+    "id": 6496,
+    "numero_proyecto": "157",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Declarar de interés municipal a Radio Club Bariloche",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "declaracion",
+    "numero_norma": "D-24-3015",
+    "observaciones": ""
+  },
+  {
+    "id": 6497,
+    "numero_proyecto": "158",
+    "anio_proyecto": "2024",
+    "titulo_proyecto": "Se declara de interés a la Asociación de Fútbol de Bariloche ADEFUL",
+    "tipo_proyecto": "declaración",
+    "autor": [
+      "concejal Leandro Costa Brutten (Incluyendo Bariloche)."
+    ],
+    "colaboradores": null,
+    "girado_a": "",
+    "acta_fecha": "1192/24",
+    "aprobado": true,
+    "tipo_norma": "declaracion",
+    "numero_norma": "D-24-3016",
+    "observaciones": ""
+  }
+]

@@ -1,12 +1,13 @@
 import { createClient } from '@vercel/postgres';
 import fs from 'fs';
+import json from "./datos.json"
 
 // Cargar JSON
-const jsonData = JSON.parse(fs.readFileSync('../../proyectos/proyectoshoy.json'));
+const jsonData = JSON.parse(fs.readFileSync(json));
 
 // Configurar el cliente de Postgres
 const client = createClient({
-  connectionString:  process.env.POSTGRES_CONNECTION_STRING
+  connectionString:"postgres://default:tYLE1GkmV9lB@ep-aged-leaf-79142791.us-west-2.aws.neon.tech:5432/verceldb?sslmode=require"
 });
 
 // Función para formatear strings como literales de array de Postgres
@@ -40,7 +41,7 @@ function formatDate(dateStr) {
             pcm.titulo_proyecto,
             pcm.tipo_proyecto,
             pcm.autor, // No convertir a array, dejar como string
-            formatStringToArray(pcm.colaboradores), // Mantén esto si colaboradores es un array
+       pcm.colaboradores, // Mantén esto si colaboradores es un array
             pcm.girado_a,
             formatDate(pcm.acta_fecha),
             pcm.aprobado,

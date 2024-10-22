@@ -190,7 +190,7 @@ async function generarDatosProyecto(rutaArchivoDocx) {
 
         // Lista para almacenar los datos extraídos
         const listaDatosProyecto = [];
-        let contadorID = 5935;
+        let contadorID = 6468;
         // Itera sobre cada párrafo y extrae los datos
         parrafos.forEach(parrafo => {
             const datosProyecto = {
@@ -231,7 +231,7 @@ async function guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson) {
 }
 
 // Usa las funciones para leer el archivo DOCX y guardar los datos en formato JSON
-const rutaArchivoDocx = './proy2.docx';
-const rutaArchivoJson = './proyectoshoy.json';
+const rutaArchivoDocx = './proy8.docx';
+const rutaArchivoJson = './sep2024.json';
 
 guardarDatosEnJSON(rutaArchivoDocx, rutaArchivoJson);
