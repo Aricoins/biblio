@@ -37,7 +37,7 @@ const Archivo = () => {
         justifyContent: "right", 
         marginTop:"10%",  
         color: "black", 
-        fontSize: "10vw",
+        fontSize: "4vw",
         fontFamily: "Roboto, sans-serif ",
         opacity: 0.2,
         marginRight: "8%"
