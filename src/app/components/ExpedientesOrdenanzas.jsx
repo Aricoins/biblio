@@ -13,7 +13,7 @@ const sortData = (data, order) => {
   return data.sort((a, b) => {
     const [projectA, codeA, yearA] = a['Numero'].split('-');
     const [projectB, codeB, yearB] = b['Numero'].split('-');
-//ordenar datos
+
     if (order === 'asc') {
       if (yearA !== yearB) return yearA - yearB;
       if (codeA !== codeB) return codeA.localeCompare(codeB);
