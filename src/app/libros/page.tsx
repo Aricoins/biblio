@@ -84,7 +84,7 @@ const Libros: FC = ({}) => {
             marginTop: "10%",
             fontFamily: "Sans-Serif",
             color: "black",
-            fontSize: "10vw",
+            fontSize: "4vw",
             opacity: 0.2,
           }}
         >
