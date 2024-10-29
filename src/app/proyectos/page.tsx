@@ -28,7 +28,7 @@ interface Proyecto {
 
 function Proyectos() {
     const [proyectos, setProyectos] = useState<Proyecto[]>([]);
-    const [busquedaUnificada, setBusquedaUnificada] = useState('');
+    const [busquedaNumero, setBusquedaNumero] = useState('');
     const [busquedaPalabra, setBusquedaPalabra] = useState('');
     const [busquedaAutor, setBusquedaAutor] = useState('');
     const [filtroTipo, setFiltroTipo] = useState('');
@@ -38,6 +38,7 @@ function Proyectos() {
     const [ver, setVer] = useState(false);
     const [haRealizadoBusqueda, setHaRealizadoBusqueda] = useState(false);
     const [datosCargados, setDatosCargados] = useState(false);
+    const [busquedaNumeroNorma, setBusquedaNumeroNorma] = useState('');
 
     // Estado para la paginación
     const [currentPage, setCurrentPage] = useState(1);
@@ -45,79 +46,83 @@ function Proyectos() {
 
     useEffect(() => {
         if (ver && !datosCargados) {
-            fetchProyectos();
+          fetchProyectos();
         }
-    }, [ver, datosCargados]);
-
-    const fetchProyectos = async () => {
+      }, [ver, datosCargados]);
+    
+      const fetchProyectos = async () => {
         try {
-            const response = await fetch('/api/proyectos');
-            const data = await response.json();
-            setProyectos(data.proyectos);
-            setResultados(data.proyectos);
-            setDatosCargados(true);
-            Aos.init({ duration: 300 });
+          const response = await fetch('/api/proyectos');
+          const data = await response.json();
+          setProyectos(data.proyectos);
+          setResultados(data.proyectos);
+          setDatosCargados(true);
+          Aos.init({ duration: 300 });
         } catch (error) {
-            console.error('Error al cargar los proyectos:', error);
+          console.error('Error al cargar los proyectos:', error);
         }
-    };
-
+      };
     // Función para manejar los cambios de página
     const handlePageChange = (page: number, size: number) => {
         setCurrentPage(page);
         setPageSize(size);
     };
 
-    const handleBusquedaUnificadaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setBusquedaUnificada(event.target.value);
-        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
+    const handleBusquedaNumeroChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setBusquedaNumero(event.target.value);
+        filtrarProyectos(event.target.value, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
+        setHaRealizadoBusqueda(true);
+    };
+
+    const handleBusquedaNumeroNormaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setBusquedaNumeroNorma(event.target.value);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, event.target.value, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaPalabraChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaPalabra(event.target.value);
-        filtrarProyectos(busquedaUnificada, event.target.value, busquedaAutor, filtroTipo, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, event.target.value, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleBusquedaAutorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setBusquedaAutor(event.target.value);
-        filtrarProyectos(busquedaUnificada, busquedaPalabra, event.target.value, filtroTipo, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, event.target.value, busquedaNumeroNorma, filtroTipo, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroTipoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const value = event.target.value;
         setFiltroTipo(value);
-        filtrarProyectos(busquedaUnificada, busquedaPalabra, busquedaAutor, value, filtroAprobado, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, value, filtroAprobado, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroAprobadoChange = (checked: boolean) => {
         setFiltroAprobado(checked);
-        filtrarProyectos(busquedaUnificada, busquedaPalabra, busquedaAutor, filtroTipo, checked, filtroRechazado);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, checked, filtroRechazado);
         setHaRealizadoBusqueda(true);
     };
 
     const handleFiltroRechazadoChange = (checked: boolean) => {
         setFiltroRechazado(checked);
-        filtrarProyectos(busquedaUnificada, busquedaPalabra, busquedaAutor, filtroTipo, filtroAprobado, checked);
+        filtrarProyectos(busquedaNumero, busquedaPalabra, busquedaAutor, busquedaNumeroNorma, filtroTipo, filtroAprobado, checked);
         setHaRealizadoBusqueda(true);
     };
 
-    const filtrarProyectos = (numero: string, palabra: string, autor: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
+    const filtrarProyectos = (numero: string, palabra: string, autor: string, numeroNorma: string, tipo: string, aprobado: boolean, rechazado: boolean) => {
         let filteredProyectos = proyectos.filter((proyecto) => {
             const titulo = proyecto.titulo_proyecto.toLowerCase();
-            const numeroProyecto = proyecto.numero_proyecto.replace(/^0+/, ''); // Eliminar ceros a la izquierda
-            const numeroNorma = proyecto.numero_norma?.toLowerCase() || ''; // Manejar cuando no hay norma
+            const numeroStr = proyecto.numero_proyecto.toString().replace(/^0+/, ''); // Eliminar ceros a la izquierda
             const tipoLower = proyecto.tipo_proyecto.toLowerCase();
             const autorStr = proyecto.autor.join(' ').toLowerCase();
+            const numeroNormaStr = proyecto.numero_norma?.toLowerCase() || ''; // Nuevo filtro
 
-            const numeroMatch =
-                numero !== '' &&
-                (numeroProyecto === numero.replace(/^0+/, '') || numeroNorma.includes(numero.toLowerCase())); // Coincidencia con ambos campos
-            const palabraMatch = palabra !== '' && titulo.includes(palabra.toLowerCase());
+            const numeroExacto = numero !== '' && numeroStr === numero.replace(/^0+/, ''); // Eliminar ceros a la izquierda de la búsqueda
+            const palabraMatch = palabra !== '' && titulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(palabra.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase());
             const autorMatch = autor !== '' && autorStr.includes(autor.toLowerCase());
+            const numeroNormaMatch = numeroNorma !== '' && numeroNormaStr.includes(numeroNorma.toLowerCase()); // Coincidencia exacta con número de norma
             const tipoMatch = tipo !== '' && tipoLower === tipo.toLowerCase();
 
             let aprobadoMatch = true;
@@ -127,7 +132,7 @@ function Proyectos() {
                 aprobadoMatch = proyecto.aprobado === false;
             }
 
-            return (!numero || numeroMatch) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!tipo || tipoMatch) && aprobadoMatch;
+            return (!numero || numeroExacto) && (!palabra || palabraMatch) && (!autor || autorMatch) && (!numeroNorma || numeroNormaMatch) && (!tipo || tipoMatch) && aprobadoMatch;
         });
 
         filteredProyectos = filteredProyectos.sort((a, b) => {
@@ -140,13 +145,114 @@ function Proyectos() {
         setCurrentPage(1);
     };
 
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        window.scrollTo({
+            top: 2000,
+            behavior: 'smooth',
+        });
+    };
+
+    const downloadFile = async (filePath: string) => {
+        try {
+            const response = await fetch(filePath);
+            if (response.ok) {
+                window.open(filePath, '_blank');
+            } else if (response.status === 404) {
+                alert('El archivo no se encuentra disponible');
+            } else {
+                alert('Error al descargar el archivo.');
+            }
+        } catch (error) {
+            console.error('Error en la descarga:', error);
+            alert('Error al descargar el archivo.');
+        }
+    };
+
     const columns = [
         { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto', className: styles.año },
         { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto', className: styles.descripcion },
-        { title: 'Autores', dataIndex: 'autor', key: 'autor', className: styles.autores },
-        { title: 'Norma', dataIndex: 'numero_norma', key: 'numero_norma', className: styles.norma },
-        { title: 'Observaciones', dataIndex: 'observaciones', key: 'observaciones', className: styles.observaciones }
+        {
+            title: 'Autores',
+            dataIndex: 'autor',
+            key: 'autor',
+            render: (autores: string[]) => (
+              <>
+                {autores.map((autor, index) => (
+                  <span key={index}>
+                    {autor}
+                    {index < autores.length - 1 && ', '}
+                  </span>
+                ))}
+              </>
+            ),
+            className: styles.autores
+          },
+          {
+            title: 'Norma',
+            dataIndex: 'numero_norma',
+            key: 'numero_norma',
+            render: (numeroNorma: string, record: Proyecto) => {
+                if (numeroNorma) {
+                    const partesNorma = numeroNorma.split('-');
+                    let añoNorma = null;
+
+                    if (partesNorma.length > 1) {
+                        const digitos = partesNorma[1];
+                        añoNorma = `20${digitos}`;
+                    }
+                    let tipoNorma = record.tipo_norma.toLowerCase();
+
+                    if (tipoNorma === "comunicacion") {
+                        tipoNorma = "comunicaciones";
+                    } else if (tipoNorma === "resolución") {
+                        tipoNorma = "resoluciones";
+                    } else if (tipoNorma === "declaración") {
+                        tipoNorma = "declaraciones";
+                    } else if (tipoNorma === "ordenanza") {
+                        tipoNorma = "ordenanzas";
+                    }
+                    
+                    const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
+
+                    return (
+                        <button onClick={() => downloadFile(filePath)}>
+                            {numeroNorma}
+                        </button>
+                    );
+                } else {
+                    return '';
+                }
+            },
+            className: styles.norma
+        },
+        {
+            title: 'Observaciones',
+            dataIndex: 'observaciones',
+            key: 'observaciones',
+            render: (observaciones: string) => {
+                // Verifica si el campo es una URL de Google Drive
+                const isGoogleDriveLink = (url: string) => {
+                    return /^https:\/\/drive\.google\.com\/file\/d\/[a-zA-Z0-9_-]+\/view/.test(url);
+                };
+        
+                if (isGoogleDriveLink(observaciones)) {
+                    return (
+                        <a href={observaciones} target="_blank" rel="noopener noreferrer">
+                            PCM Ver Expediente
+                        </a>
+                    );
+                }
+        
+                // Maneja otros casos, como "sin sanción" o valores normales
+                if (observaciones === 'sin sanción') {
+                    return <button onClick={handleClick}>Buscar entre los expedientes no sancionados</button>;
+                }
+        
+                return observaciones;
+            },
+            className: styles.observaciones
+        }
     ];
 
     const startIndex = (currentPage - 1) * pageSize;
@@ -156,10 +262,12 @@ function Proyectos() {
     return (
         <>
             <div onClick={() => setVer(!ver)}>
-                <h2 className={styles.hdos}>
-                    {ver ? <MdExpandLess style={{ fontSize: "x-large" }} /> : <MdExpandMore style={{ fontSize: "x-large" }} />}
-                    Buscador general de expedientes | 2003-2024
-                    {ver ? <MdExpandLess style={{ fontSize: "x-large" }} /> : <MdExpandMore style={{ fontSize: "x-large" }} />}
+                <h2 className={styles.hdos} >
+                    {ver ? 
+                    <MdExpandLess style= {{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
+                    Buscador general de expedientes | 2003-2024   
+                    {ver ? 
+                    <MdExpandLess style={{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
                 </h2>
             </div>
 
@@ -168,9 +276,9 @@ function Proyectos() {
                     <p className={styles.spinText}> Busque entre los expedientes sancionados y no sancionados </p>
                     <div className={styles.inputs}>
                         <Input.Search
-                            placeholder="Por n° proyecto o norma"
-                            value={busquedaUnificada}
-                            onChange={handleBusquedaUnificadaChange}
+                            placeholder="Por n° de proyecto..."
+                            value={busquedaNumero}
+                            onChange={handleBusquedaNumeroChange}
                             style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                         />
                         <Input.Search
@@ -185,6 +293,12 @@ function Proyectos() {
                             onChange={handleBusquedaAutorChange}
                             style={{ width: 200, marginRight: '16px', marginBottom: '8px' }}
                         />
+                        <Input.Search
+                            placeholder="Por n° de norma..."
+                            value={busquedaNumeroNorma}
+                            onChange={handleBusquedaNumeroNormaChange}
+                            style={{ width: 200, marginRight: '16px', border: "solid rgb(255, 87, 51) 2px", marginBottom: '8px' }}
+                        />
                         <select
                             value={filtroTipo}
                             onChange={handleFiltroTipoChange}
@@ -196,7 +310,7 @@ function Proyectos() {
                             <option value="declaración">Declaración</option>
                             <option value="ordenanza">Ordenanza</option>
                         </select>
-                    </div>
+                         </div>       
                     {haRealizadoBusqueda ? (
                         <div className={styles.table}>
                             <Table
@@ -204,6 +318,7 @@ function Proyectos() {
                                 columns={columns}
                                 pagination={false}
                                 rowKey="id"
+                           
                             />
                             <Pagination
                                 current={currentPage}
@@ -215,7 +330,9 @@ function Proyectos() {
                         </div>
                     ) : (
                         <div className={styles.spinContainer}>
-                            <BsDatabaseFillCheck /> | Conectado a la Base de Datos.
+                          
+                            <BsDatabaseFillCheck />
+ | Conectado a la Base de Datos.
                         </div>
                     )}
                 </div>
