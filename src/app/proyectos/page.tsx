@@ -265,7 +265,7 @@ function Proyectos() {
                 <h2 className={styles.hdos} >
                     {ver ? 
                     <MdExpandLess style= {{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
-                    Buscador general de expedientes | 2003-2024   
+                    Buscador general de expedientes | 2004-2024   
                     {ver ? 
                     <MdExpandLess style={{ fontSize: "x-large"}} /> : <MdExpandMore style={{ fontSize: "x-large"}} />}
                 </h2>
