@@ -7,12 +7,21 @@ import styles from './style.module.css';
 import Swal from 'sweetalert2';
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
+const preprocessProjectData = (data) => {
+  return data.map((row) => {
+    const proyecto = row['Proyecto'];
+    // Standardize format by replacing any non-numeric, non-hyphen characters with hyphens
+    row['Proyecto'] = proyecto ? proyecto.replace(/[^0-9\-]/g, '-') : proyecto;
+    return row;
+  });
+};
+
 const sortData = (data, order) => {
   return data.sort((a, b) => {
     const projectA = parseInt(a['Proyecto'].split('-')[0], 10);
-    const yearA = parseInt(a['Proyecto'].split('-')[1], 10);
+    const yearA = parseInt(a['Proyecto'].split('-')[1], 10) + 2000; // Adjust for 2-digit years
     const projectB = parseInt(b['Proyecto'].split('-')[0], 10);
-    const yearB = parseInt(b['Proyecto'].split('-')[1], 10);
+    const yearB = parseInt(b['Proyecto'].split('-')[1], 10) + 2000;
 
     if (order === 'asc') {
       return yearA !== yearB ? yearA - yearB : projectA - projectB;
@@ -39,7 +48,8 @@ function ProyectosNoSancionados() {
       try {
         const response = await axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vSAycv4tgekAevzQpI9YTAfriCbuTPWuHhrBwbyF5rZqGMCq-8LcSGf3Av0QI2NR5VLupuLBrSMmcGS/pub?output=csv');
         const results = Papa.parse(response.data, { header: true });
-        const sortedData = sortData(results.data, 'desc');
+        const cleanedData = preprocessProjectData(results.data);
+        const sortedData = sortData(cleanedData, 'desc');
         setData(sortedData);
         const numProjectsWithLink = sortedData.filter(row => row['Link']).length;
         setNumProjectsWithLink(numProjectsWithLink);
@@ -141,6 +151,7 @@ function ProyectosNoSancionados() {
       </h2>
 
       {isComponentVisible && (
+    
         <div className={styles.block}>
           <div className={styles.inputsydata}>
             <input
