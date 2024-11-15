@@ -169,7 +169,7 @@ function Proyectos() {
     };
 
     const columns = [
-        { title: 'N°', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
+        { title: 'Proyecto', dataIndex: 'numero_proyecto', key: 'numero_proyecto', className: styles.numero },
         { title: 'Año', dataIndex: 'anio_proyecto', key: 'anio_proyecto', className: styles.año },
         { title: 'Descripción', dataIndex: 'titulo_proyecto', key: 'titulo_proyecto', className: styles.descripcion },
         {
@@ -238,7 +238,7 @@ function Proyectos() {
         
                 if (isGoogleDriveLink(observaciones)) {
                     return (
-                        <a href={observaciones} target="_blank" rel="noopener noreferrer">
+                        <a style{{backgroundColor="yellow" href={observaciones} target="_blank" rel="noopener noreferrer">
                             PCM Ver Expediente
                         </a>
                     );
