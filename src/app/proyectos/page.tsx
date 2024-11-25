@@ -238,7 +238,7 @@ function Proyectos() {
         
                 if (isGoogleDriveLink(observaciones)) {
                     return (
-                        <a style={{backgroundColor:"yellow", color: "black", pading:"2%" }} href={observaciones} target="_blank" rel="noopener noreferrer">
+                        <a style={{backgroundColor:"yellow", color: "black", padding:"2%" }} href={observaciones} target="_blank" rel="noopener noreferrer">
                             PCM Ver Expediente
                         </a>
                     );
