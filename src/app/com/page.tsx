@@ -98,6 +98,12 @@ const actas: Acta[] = [
     id: '1U_FYoinrwLlR-UlS7DTzG5CB6luDklKF'
   }
 ];
+const actas2: Acta[] = [{
+  title: 'Convención Constituyente 1986',
+  link: 'https://drive.google.com/file/d/1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h/view?usp=drive_link',
+id: '1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h '
+}];
+
 
 export default function Home() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -173,6 +179,60 @@ export default function Home() {
           />
         )}
       </Modal>
+
+      <h3 style={{
+        fontSize: "medium",
+        fontWeight: 500,
+        padding: "1%",
+        backgroundColor: "orangered",
+        color: "rgb(255, 255, 255)",
+        transition: "0.3s",
+        border: "rgb(255, 255, 255) 2px solid",
+        fontFamily: "'Roboto', sans-serif",
+        borderRadius: "25px",
+        textAlign: "center",
+        width: "70%",
+      margin: "auto",
+      marginBottom: "2%",
+        boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
+      }}>Actas de la Convención Constituyente | 1986</h3>
+        <List
+        bordered
+        dataSource={actas2}
+        style={{backgroundColor: "rgba(0, 0, 0, 0.8)",
+                display:"flex",
+                justifyContent: "center", 
+                }}
+        renderItem={(acta) => (
+          <List.Item   style={{justifyContent: "center", color: "orangered"}}>
+
+            <Button type="link"  onClick={() => showModal(acta)}>
+              {acta.title}
+            </Button>
+          </List.Item>
+        )}
+      />
+
+      <Modal
+        title={selectedActa?.title}
+        open={isModalVisible}
+        onCancel={handleCancel}
+        footer={null}
+        width={800}
+        style={{backgroundColor: "orangered", color: "green", padding: "1%", width: "100%"}}
+
+      >
+        {selectedActa && (
+          <iframe
+            src={selectedActa.link}
+            width="100%"
+            height="600px"
+            style={{ border: 'none' }}
+            allowFullScreen
+          />
+        )}
+      </Modal>
+
       </div>
    <NavFoot />
    </>
