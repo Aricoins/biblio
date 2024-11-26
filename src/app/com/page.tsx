@@ -100,7 +100,7 @@ const actas: Acta[] = [
 ];
 const actas2: Acta[] = [{
   title: 'Convención Constituyente 1986',
-  link: 'https://drive.google.com/file/d/1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h/view?usp=drive_link',
+  link: 'https://drive.google.com/file/d/1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h/preview',
 id: '1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h '
 }];
 
