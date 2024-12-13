@@ -1,16 +1,16 @@
-"use client"
-import { useState } from 'react';
-import { Modal, Button, List } from 'antd';
-import Link from 'next/link';
-import NavTop from '../components/NavTop';
-import NavFoot from '../components/NavFoot';
+"use client"; // Indica que este es un componente del lado del cliente en Next.js.
+import { useState } from "react"; // Importa useState para manejar el estado.
+import { Modal, Button, List } from "antd"; // Importa componentes de Ant Design.
+import Link from "next/link"; // Importa Link para navegación entre páginas.
+import NavTop from "../components/NavTop"; // Importa el componente NavTop.
+import NavFoot from "../components/NavFoot"; // Importa el componente NavFoot.
+import DataPage from "./component/com"; // Importa DataPage.
 
-interface Acta {
+interface Acta { // Define la interfaz para los datos de las actas.
   title: string;
   link: string;
   id: string;
 }
-
 const actas: Acta[] = [
   {
     title: 'Acta 1 del 6 de octubre de 2006',
@@ -104,138 +104,137 @@ const actas2: Acta[] = [{
 id: '1V-BIiVd6ccl2R5lxIVbhqprZlx4zav0h '
 }];
 
+export default function Home() { // Componente principal.
+  const [isModalVisible, setIsModalVisible] = useState(false); // Estado para mostrar el modal.
+  const [selectedActa, setSelectedActa] = useState<Acta | null>(null); // Estado para la acta seleccionada.
+  const [expandedSection, setExpandedSection] = useState<string | null>(null); // Estado para la sección expandida.
 
-export default function Home() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedActa, setSelectedActa] = useState<Acta | null>(null);
-
-  const showModal = (acta: Acta) => {
+  const showModal = (acta: Acta) => { // Función para abrir el modal.
     setSelectedActa(acta);
     setIsModalVisible(true);
   };
 
-  const handleCancel = () => {
+  const handleCancel = () => { // Función para cerrar el modal.
     setIsModalVisible(false);
     setSelectedActa(null);
   };
 
+  const toggleSection = (section: string) => { // Función para alternar la sección.
+    setExpandedSection(expandedSection === section ? null : section);
+  };
+
   return (
-<>
-    <NavTop/>
-    <div style={{ padding: '20px', marginTop: "8%" }}>
-    <h3 style={{color: "black",   fontFamily: "'Roboto', sans-serif",
-        borderRadius: "25px",
-        textAlign: "center",}}>Carta Orgánica Municipal </h3>
-      <h3 style={{
-        fontSize: "medium",
-        fontWeight: 500,
-        padding: "1%",
-        backgroundColor: "orangered",
-        color: "rgb(255, 255, 255)",
-        transition: "0.3s",
-        border: "rgb(255, 255, 255) 2px solid",
-        fontFamily: "'Roboto', sans-serif",
-        borderRadius: "25px",
-        textAlign: "center",
-        width: "70%",
-      margin: "auto",
-      marginBottom: "2%",
-        boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
-      }}>Actas de la Convención Constituyente | 2007</h3>
+    <>
+      <NavTop />
+      <div style={{ padding: "20px", marginTop: "8%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+        <h3        
+        data-aos= "fade-right"  data-aos-duration="300"
+       style={{display: "flex",
+        justifyContent: "right", 
+        marginTop:"10%",  
+        color: "black", 
+        fontSize: "4vw",
+        fontFamily: "Roboto, sans-serif ",
+        opacity: 0.2,
+        marginRight: "8%"}}>
+          Carta Orgánica Municipal
+        </h3>
 
-      <List
-        bordered
-        dataSource={actas}
-        style={{backgroundColor: "rgba(0, 0, 0, 0.8)",
-                display:"flex",
-                justifyContent: "center", 
-                }}
-        renderItem={(acta) => (
-          <List.Item   style={{justifyContent: "center", color: "orangered"}}>
+        <Button
+          type="link"
+          style={{
+            fontSize: "medium",
+            fontWeight: 500,
+            padding: "1%",
+            backgroundColor: "orangered",
+            color: "rgb(255, 255, 255)",
+            border: "rgb(255, 255, 255) 2px solid",
+            fontFamily: "'Roboto', sans-serif",
+            borderRadius: "25px",
+            textAlign: "center",
+            width: "70%",
+            margin: "auto",
+            marginBottom: "2%",
+            boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
+          }}
+          onClick={() => toggleSection("2007")}
+        >
+          Actas de la Convención Constituyente | 2007
+        </Button>
 
-            <Button type="link"  onClick={() => showModal(acta)}>
-              {acta.title}
-            </Button>
-          </List.Item>
-        )}
-      />
-
-      <Modal
-        title={selectedActa?.title}
-        open={isModalVisible}
-        onCancel={handleCancel}
-        footer={null}
-        width={800}
-        style={{backgroundColor: "orangered", color: "green", padding: "1%", width: "100%"}}
-
-      >
-        {selectedActa && (
-          <iframe
-            src={selectedActa.link}
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            allowFullScreen
+        {expandedSection === "2007" && ( // Renderiza la lista si la sección está expandida.
+          <List
+            bordered
+            dataSource={actas}
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)", display: "flex", justifyContent: "center" }}
+            renderItem={(acta) => (
+              <List.Item style={{ justifyContent: "center", color: "orangered" }}>
+                <Button type="link" onClick={() => showModal(acta)}>
+                  {acta.title}
+                </Button>
+              </List.Item>
+            )}
           />
         )}
-      </Modal>
+        <DataPage />
 
-      <h3 style={{
-        fontSize: "medium",
-        fontWeight: 500,
-        padding: "1%",
-        backgroundColor: "orangered",
-        color: "rgb(255, 255, 255)",
-        transition: "0.3s",
-        border: "rgb(255, 255, 255) 2px solid",
-        fontFamily: "'Roboto', sans-serif",
-        borderRadius: "25px",
-        textAlign: "center",
-        width: "70%",
-      margin: "auto",
-      marginBottom: "2%",
-        boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
-      }}>Actas de la Convención Constituyente | 1986</h3>
-        <List
-        bordered
-        dataSource={actas2}
-        style={{backgroundColor: "rgba(0, 0, 0, 0.8)",
-                display:"flex",
-                justifyContent: "center", 
-                }}
-        renderItem={(acta) => (
-          <List.Item   style={{justifyContent: "center", color: "orangered"}}>
+        <Button
+          type="link"
+          style={{
+            fontSize: "medium",
+            fontWeight: 500,
+            padding: "1%",
+            backgroundColor: "orangered",
+            color: "rgb(255, 255, 255)",
+            border: "rgb(255, 255, 255) 2px solid",
+            fontFamily: "'Roboto', sans-serif",
+            borderRadius: "25px",
+            textAlign: "center",
+            width: "70%",
+            margin: "auto",
+            marginBottom: "2%",
+            boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
+          }}
+          onClick={() => toggleSection("1986")}
+        >
+          Actas de la Convención Constituyente | 1986
+        </Button>
 
-            <Button type="link"  onClick={() => showModal(acta)}>
-              {acta.title}
-            </Button>
-          </List.Item>
-        )}
-      />
-
-      <Modal
-        title={selectedActa?.title}
-        open={isModalVisible}
-        onCancel={handleCancel}
-        footer={null}
-        width={800}
-        style={{backgroundColor: "orangered", color: "green", padding: "1%", width: "100%"}}
-
-      >
-        {selectedActa && (
-          <iframe
-            src={selectedActa.link}
-            width="100%"
-            height="600px"
-            style={{ border: 'none' }}
-            allowFullScreen
+        {expandedSection === "1986" && ( // Renderiza la lista si la sección está expandida.
+          <List
+            bordered
+            dataSource={actas2}
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)", display: "flex", justifyContent: "center" }}
+            renderItem={(acta) => (
+              <List.Item style={{ justifyContent: "center", color: "orangered" }}>
+                <Button type="link" onClick={() => showModal(acta)}>
+                  {acta.title}
+                </Button>
+              </List.Item>
+            )}
           />
         )}
-      </Modal>
 
+        <Modal
+          title={selectedActa?.title}
+          open={isModalVisible}
+          onCancel={handleCancel}
+          footer={null}
+          width={800}
+          style={{ backgroundColor: "orangered", color: "green", padding: "1%", width: "100%" }}
+        >
+          {selectedActa && (
+            <iframe
+              src={selectedActa.link}
+              width="100%"
+              height="600px"
+              style={{ border: "none" }}
+              allowFullScreen
+            />
+          )}
+        </Modal>
       </div>
-   <NavFoot />
-   </>
-
+      <NavFoot />
+    </>
   );
 }
