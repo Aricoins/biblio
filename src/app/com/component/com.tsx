@@ -54,7 +54,7 @@ useEffect(() => {
     <div style={{fontFamily: "'Roboto', sans-serif"}}>
 
       <div className="container" style={{ padding: "20px" }}>
-        <h1>Fondo Documental de la Convención Constituyente 2006-2007</h1>
+        <h3>Material de Archivo: Convención Constituyente 2006-2007</h3>
         <Select
           style={{ width: "100%", marginBottom: 20, }}
           value={selectedSection}
