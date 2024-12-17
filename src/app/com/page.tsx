@@ -5,7 +5,8 @@ import Link from "next/link"; // Importa Link para navegación entre páginas.
 import NavTop from "../components/NavTop"; // Importa el componente NavTop.
 import NavFoot from "../components/NavFoot"; // Importa el componente NavFoot.
 import DataPage from "./component/com"; // Importa DataPage.
-
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import styles from "../../app/proyectos/styles.module.css"; // Importa los estilos.
 interface Acta { // Define la interfaz para los datos de las actas.
   title: string;
   link: string;
@@ -136,7 +137,8 @@ export default function Home() { // Componente principal.
         fontSize: "4vw",
         fontFamily: "Roboto, sans-serif ",
         opacity: 0.2,
-        marginRight: "8%"}}>
+        marginRight: "8%"}}
+     >
           Carta Orgánica Municipal
         </h3>
 
@@ -152,15 +154,18 @@ export default function Home() { // Componente principal.
             fontFamily: "'Roboto', sans-serif",
             borderRadius: "25px",
             textAlign: "center",
-            width: "70%",
+            width: "100%",
             margin: "auto",
             marginBottom: "2%",
             boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"
           }}
+          className={styles.hdos} 
+        
           onClick={() => toggleSection("2007")}
         >
-          Actas de la Convención Constituyente | 2007
-        </Button>
+{expandedSection ?  <MdExpandLess /> :<MdExpandMore /> }
+          Actas de la Convención Constituyente | 2007 {expandedSection ?  <MdExpandLess /> :<MdExpandMore /> }
+        </Button> 
 
         {expandedSection === "2007" && ( // Renderiza la lista si la sección está expandida.
           <List
@@ -190,7 +195,7 @@ export default function Home() { // Componente principal.
             fontFamily: "'Roboto', sans-serif",
             borderRadius: "25px",
             textAlign: "center",
-            width: "70%",
+            width: "100%",
             margin: "auto",
             marginBottom: "2%",
             boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)"

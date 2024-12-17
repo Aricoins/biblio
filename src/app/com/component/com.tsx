@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { List, Spin, Select } from "antd";
 import Link from "next/link";
+import styles from '../../../app/proyectos/styles.module.css';
 
 
 const { Option } = Select;
@@ -53,7 +54,7 @@ useEffect(() => {
   return (
     <div style={{fontFamily: "'Roboto', sans-serif"}}>
 
-      <div className="container" style={{ padding: "20px" }}>
+      <div style={{ padding: "20px" }}>
         <h3>Material de Archivo: Convención Constituyente 2006-2007</h3>
         <Select
           style={{ width: "100%", marginBottom: 20, }}
