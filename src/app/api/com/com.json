@@ -1,167 +1,5 @@
 {
-  "Carta de la Tierra": [
-    {
-      "id": 1,
-      "titulo": "CARTA DE LA TIERRA",
-      "descripcion": "Sokka Gacai Internacional de Argentina",
-      "Vinculo": "https://drive.google.com/file/d/1qyCAcOuh5n4JLXvj9ULKDtWQhKLbwdNL/view?usp=drive_link"
-    }
-  ],
-  "Cartas Orgánicas de Otras Localidades": [
-    {
-      "id": 1,
-      "titulo": "Carta Municipal de Barcelona",
-      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
-      "Vinculo": "https://drive.google.com/file/d/1aaySlJwVNQV2pFcDEvVwin3W9UoVekP6/view?usp=drive_link"
-    },
-    {
-      "id": 2,
-      "titulo": "Convención Constituyente Ciudad de Zapala",
-      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
-      "Vinculo": "https://drive.google.com/file/d/1j7pxMBZQ_9_wGqe0JOxlG9p_b-nfjhHm/view?usp=drive_link"
-    },
-    {
-      "id": 3,
-      "titulo": "Constitución de la ciudad autónoma de Bueno Aires",
-      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
-      "Vinculo": "https://drive.google.com/file/d/1N4nau8L2-T8I58P0Rnz7ZP7rJAGWUiGe/view?usp=drive_link"
-    },
-    {
-      "id": 4,
-      "titulo": "Sanción de la Carta Orgánica Municipal de Ushuaia",
-      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
-      "Vinculo": "https://drive.google.com/file/d/1Qhn8noZ4SBGQKMhKpD-MdcAs_Xca1a8j/view?usp=drive_link"
-    },
-    {
-      "id": 5,
-      "titulo": "Carta Orgánica Ciudad de Neuquén",
-      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
-      "Vinculo": "https://drive.google.com/file/d/1JLDgHPiSDtuiSKOm5JgkEbsFPo3PxmfL/view?usp=drive_link"
-    }
-  ], 
-  "Publicaciones Periodísticas": [
-    {
-        "id": 1,
-        "titulo": "Los cargos operativos fueron para el Frente Grande",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 2,
-        "titulo": "Con conflictos, la Convenci\u00f3n defini\u00f3 organigrama y colaboradores",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 3,
-        "titulo": "Se constituir\u00e1 un grupo de trabajo para entender en aspectos del Cerro Catedral",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 4,
-        "titulo": "Convenci\u00f3n para la Reforma de la Carta Org\u00e1nica defini\u00f3 el orgamigrama",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 5,
-        "titulo": "Satisfacci\u00f3n en la comuna por decisi\u00f3n sobre tierras del Catedral",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 6,
-        "titulo": "Los convencionales del Frente dieron a conocer un comunicado",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 7,
-        "titulo": "Dimes y diretes desde el Centro C\u00edvico",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 8,
-        "titulo": "El Frente teje alianzas en la Convenci\u00f3n de Bariloche",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 9,
-        "titulo": "Los j\u00f3venes suman ideas para la nueva Carta Org\u00e1nica",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 10,
-        "titulo": "La Convenci\u00f3n aprob\u00f3 su Reglamento",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 11,
-        "titulo": "Trabajar para defender la ciudad",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 12,
-        "titulo": "La Convenci\u00f3n defini\u00f3 en 250000 su presupuesto y estudia el Reglamento",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 13,
-        "titulo": "La Convenci\u00f3n defini\u00f3 la plena participaci\u00f3n de los vecinos",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 14,
-        "titulo": "La Convenci\u00f3n resolvi\u00f3 trabajar a puertas abiertas",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 15,
-        "titulo": "Presentan las conclusiones del Foro participativo Juvenil por la modificaci\u00f3n de la COM",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 16,
-        "titulo": "Los convencionales decidieron trabajar a puertas abiertas",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 17,
-        "titulo": "La Convenci\u00f3n decidi\u00f3 la plena participaci\u00f3n de los vecinos",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 18,
-        "titulo": "La Convencion Constituyente ya tiene reglamento",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 19,
-        "titulo": "La Convenci\u00f3n aprob\u00f3 el reglamento interno s\u00f3lo en general",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    },
-    {
-        "id": 20,
-        "titulo": "La Convenci\u00f3n avanz\u00f3 con la aprobaci\u00f3n del Reglamento",
-        "descripcion": "PUBLICACIONES PERIODISTICAS",
-        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
-    }
-], 
-"Proyectos para la Actualización": [
+    "Proyectos para la Actualización": [
   {
       "id": 1,
       "titulo": " 01-CMCA-06",
@@ -1999,6 +1837,170 @@
       "Vinculo": "https://drive.google.com/file/d/1APtGaicZUrWh6KcnQGM7yTPAImWimZ6y/view?usp=drive_link"
     }
   ], 
+  "Carta de la Tierra": [
+    {
+      "id": 1,
+      "titulo": "CARTA DE LA TIERRA",
+      "descripcion": "Sokka Gacai Internacional de Argentina",
+      "Vinculo": "https://drive.google.com/file/d/1qyCAcOuh5n4JLXvj9ULKDtWQhKLbwdNL/view?usp=drive_link"
+    }
+  ],
+  "Cartas Orgánicas de Otras Localidades": [
+    {
+      "id": 1,
+      "titulo": "Carta Municipal de Barcelona",
+      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
+      "Vinculo": "https://drive.google.com/file/d/1aaySlJwVNQV2pFcDEvVwin3W9UoVekP6/view?usp=drive_link"
+    },
+    {
+      "id": 2,
+      "titulo": "Convención Constituyente Ciudad de Zapala",
+      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
+      "Vinculo": "https://drive.google.com/file/d/1j7pxMBZQ_9_wGqe0JOxlG9p_b-nfjhHm/view?usp=drive_link"
+    },
+    {
+      "id": 3,
+      "titulo": "Constitución de la ciudad autónoma de Bueno Aires",
+      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
+      "Vinculo": "https://drive.google.com/file/d/1N4nau8L2-T8I58P0Rnz7ZP7rJAGWUiGe/view?usp=drive_link"
+    },
+    {
+      "id": 4,
+      "titulo": "Sanción de la Carta Orgánica Municipal de Ushuaia",
+      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
+      "Vinculo": "https://drive.google.com/file/d/1Qhn8noZ4SBGQKMhKpD-MdcAs_Xca1a8j/view?usp=drive_link"
+    },
+    {
+      "id": 5,
+      "titulo": "Carta Orgánica Ciudad de Neuquén",
+      "descripcion": "CARTA ORGÁNICA OTRAS LOCALIDADES",
+      "Vinculo": "https://drive.google.com/file/d/1JLDgHPiSDtuiSKOm5JgkEbsFPo3PxmfL/view?usp=drive_link"
+    }
+  ], 
+  "Publicaciones Periodísticas": [
+    {
+        "id": 1,
+        "titulo": "Los cargos operativos fueron para el Frente Grande",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 2,
+        "titulo": "Con conflictos, la Convenci\u00f3n defini\u00f3 organigrama y colaboradores",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 3,
+        "titulo": "Se constituir\u00e1 un grupo de trabajo para entender en aspectos del Cerro Catedral",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 4,
+        "titulo": "Convenci\u00f3n para la Reforma de la Carta Org\u00e1nica defini\u00f3 el orgamigrama",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 5,
+        "titulo": "Satisfacci\u00f3n en la comuna por decisi\u00f3n sobre tierras del Catedral",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 6,
+        "titulo": "Los convencionales del Frente dieron a conocer un comunicado",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 7,
+        "titulo": "Dimes y diretes desde el Centro C\u00edvico",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 8,
+        "titulo": "El Frente teje alianzas en la Convenci\u00f3n de Bariloche",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 9,
+        "titulo": "Los j\u00f3venes suman ideas para la nueva Carta Org\u00e1nica",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 10,
+        "titulo": "La Convenci\u00f3n aprob\u00f3 su Reglamento",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 11,
+        "titulo": "Trabajar para defender la ciudad",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 12,
+        "titulo": "La Convenci\u00f3n defini\u00f3 en 250000 su presupuesto y estudia el Reglamento",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 13,
+        "titulo": "La Convenci\u00f3n defini\u00f3 la plena participaci\u00f3n de los vecinos",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 14,
+        "titulo": "La Convenci\u00f3n resolvi\u00f3 trabajar a puertas abiertas",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 15,
+        "titulo": "Presentan las conclusiones del Foro participativo Juvenil por la modificaci\u00f3n de la COM",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 16,
+        "titulo": "Los convencionales decidieron trabajar a puertas abiertas",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 17,
+        "titulo": "La Convenci\u00f3n decidi\u00f3 la plena participaci\u00f3n de los vecinos",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 18,
+        "titulo": "La Convencion Constituyente ya tiene reglamento",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 19,
+        "titulo": "La Convenci\u00f3n aprob\u00f3 el reglamento interno s\u00f3lo en general",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    },
+    {
+        "id": 20,
+        "titulo": "La Convenci\u00f3n avanz\u00f3 con la aprobaci\u00f3n del Reglamento",
+        "descripcion": "PUBLICACIONES PERIODISTICAS",
+        "Vinculo": "https://drive.google.com/file/d/1wXMfsVQA6ioJnB58ZHYgaUqtgycWyhnG/view?usp=drive_link"
+    }
+], 
+
+
   "Notas y documentos varios": [
     {
       "id": 1,
