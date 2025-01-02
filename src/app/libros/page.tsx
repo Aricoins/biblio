@@ -6,10 +6,12 @@ import styles from "./style.module.css";
 import OtrosTitulos from "../components/OtrosTitulos";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import diacritics from 'diacritics';
 import { Pagination } from "antd";
 import Exco from "../components/Exco";
 import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
+
 
 interface Libro {
   titulo: string;
@@ -38,8 +40,13 @@ const Libros: FC = ({}) => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/api/verLibros");
-
-        setData(response.data.libros);
+        
+        // Eliminar acentos de los datos
+        const librosConAcento: Libro[] = response.data.libros.map((libro: Libro) => ({
+          ...libro,
+          titulo: diacritics.remove(libro.titulo.toLowerCase())
+        }));
+        setData(librosConAcento);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -68,6 +75,7 @@ const Libros: FC = ({}) => {
   }, [search, data, currentPage, pageSize]);
 
   const handlePageChange = (page: number, size: number) => {
+    
     setCurrentPage(page);
     setPageSize(size);
   };
