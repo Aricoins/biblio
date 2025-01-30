@@ -49,18 +49,16 @@ const FondosDocumentales = () => {
       
       <div className={styles.contenedor}>
         <div className={styles.grid}>
-       <Link href="/com">   <div 
-            className={styles.block} 
-            data-aos="fade-left"> 
-               <p className={styles.p}>Convención Carta Orgánica Municipal</p>
-          </div>
+          <Link href="/com">
+            <div className={styles.block} data-aos="fade-left"> 
+              <p className={styles.p}>Convención Carta Orgánica Municipal</p>
+            </div>
           </Link>
-          <div 
-            className={styles.block} 
-            data-aos="fade-right" 
-            onClick={() => showDevelopmentAlert('CEB')}>
-            <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
-          </div>
+          <Link href="/ceb">
+            <div className={styles.block} data-aos="fade-left"> 
+              <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
+            </div>
+          </Link>
           <div 
             className={styles.block} 
             data-aos="zoom-in" 
@@ -80,7 +78,6 @@ const FondosDocumentales = () => {
             <p className={styles.p}>Parque Municipal Llao Llao</p>
           </div>
         </div>
-
       </div>
     </>
   );

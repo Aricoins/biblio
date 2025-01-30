@@ -128,7 +128,7 @@ const Archivo = () => {
         </div>
       </div>
       <FondosDocumentales />
-      <ChatBot />
+
       <NavFoot />
     </>
   );

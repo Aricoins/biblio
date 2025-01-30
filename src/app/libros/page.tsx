@@ -12,7 +12,6 @@ import Exco from "../components/Exco";
 import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
 
-
 interface Libro {
   titulo: string;
   autor: string;
@@ -41,7 +40,6 @@ const Libros: FC = ({}) => {
       try {
         const response = await axios.get("/api/verLibros");
         
-        // Eliminar acentos de los datos
         const librosConAcento: Libro[] = response.data.libros.map((libro: Libro) => ({
           ...libro,
           titulo: diacritics.remove(libro.titulo.toLowerCase())
@@ -57,15 +55,12 @@ const Libros: FC = ({}) => {
   useEffect(() => {
     console.log(data, "libros front");
     if (data && Array.isArray(data)) {
-      // Filtra los libros basándose en la búsqueda
-      const filteredData = data.filter((libro) =>
+       const filteredData = data.filter((libro) =>
         libro.titulo.toLowerCase().includes(search.toLowerCase())
       );
 
-      // Actualiza el total de elementos filtrados
       setTotalItems(filteredData.length);
 
-      // Pagina los datos filtrados
       const start = (currentPage - 1) * pageSize;
       const end = start + pageSize;
       const paginated = filteredData.slice(start, end);
