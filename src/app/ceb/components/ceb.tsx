@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { List, Spin, Alert } from "antd";
 import Link from "next/link";
+import NavFoot from "@/app/components/NavFoot";
+import NavTop from "@/app/components/NavTop";
 interface ApiResponse {
   "": string;
   _1: string;
@@ -53,8 +55,11 @@ const Ceb = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  return (
-    <div className="min-h-screen m-32 bg-gray-50">
+return (
+  <>
+    <NavTop />
+    {/* <div className="min-h-screen m-32 bg-gray-50">
+                
       <div className="container flex flex-col items-center">
         {loading ? (
           <div className="flex justify-center items-center min-h-[50vh]">
@@ -95,12 +100,16 @@ const Ceb = () => {
                   }
                 />
               </List.Item>
+           
             )}
           />
         )}
       </div>
-    </div>
+      </div> */}
+      <NavFoot />
+    </>
   );
+  
 };
 
 export default Ceb;
