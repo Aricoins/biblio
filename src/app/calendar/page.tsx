@@ -22,7 +22,7 @@ export default function CalendarPage() {
         <p style={{ fontSize: "14px", textAlign: "center" }}>
           CONSOLIDACION NORMATIVA. ESTABLECE CALENDARIO DE CONMEMORACIONES, EFEMÉRIDES Y CELEBRACIONES MUNICIPALES.
         </p>
-        <p>Anexo II</p>
+        <p>Ordenanza 2033-CM-12 | Anexo II</p>
 
         <div style={{ width: "100%",  aspectRatio: "16/10", borderRadius: "10px", overflow: "hidden", border: "2px dashed orangered", backgroundColor: "orangered" }}>
           <iframe
