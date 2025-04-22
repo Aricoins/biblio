@@ -10,7 +10,7 @@ export default function CalendarPage() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          margin: "0 auto",
+          margin: "5% auto",
           width: "80%",
           fontFamily: "Sans-Serif",
           color: "black",
