@@ -10,9 +10,9 @@ export default function CalendarPage() {
         <div>
           <iframe
             src="https://calendar.google.com/calendar/embed?src=digestoconcejo%40gmail.com&ctz=America%2FBuenosAires"
-            style={{ border: "medium dashed green",   margin: "0", padding: "2%", borderRadius: "10px", backgroundColor: "orangered" }}
+            style={{ border: "medium dashed orangered",   margin: "0", padding: "%", borderRadius: "10px", backgroundColor: "orangered" }}
             width="700vh"
-            height="250%"
+            height="400vh"
           
           ></iframe>
         </div>
