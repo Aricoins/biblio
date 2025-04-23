@@ -11,7 +11,7 @@ export default function CalendarPage() {
           flexDirection: "column",
           alignItems: "center",
           margin: "5% auto",
-          width: "80%",
+          width: "100%",
           fontFamily: "Sans-Serif",
           color: "black",
           fontSize: "2vw",
@@ -24,14 +24,16 @@ export default function CalendarPage() {
         </p>
         <p>Ordenanza 2033-CM-12 | Anexo II</p>
 
-        <div style={{ width: "100%",  aspectRatio: "16/10", borderRadius: "10px", overflow: "hidden", border: "2px dashed orangered", backgroundColor: "orangered" }}>
-          <iframe
-            src="https://calendar.google.com/calendar/embed?src=digestoconcejo%40gmail.com&ctz=America%2FBuenosAires"
-            style={{ width: "100%", height: "100%", border: 0, fontSize: "xx-small" }}
-            frameBorder="0"
-            scrolling="no"
-            allowFullScreen
-          ></iframe>
+        <div style={{ width: "100%", height: "150%",  aspectRatio: "16/12", borderRadius: "10px", fontSize: "sm" , overflow: "hidden", border: "2px dashed orangered", backgroundColor: "orangered" }}>
+        <iframe
+  src="https://calendar.google.com/calendar/embed?src=digestoconcejo%40gmail.com&ctz=America%2FBuenosAires&mode=AGENDA"
+  style={{ width: "100%", height: "100%", border: 0, fontSize: "8px" }}
+  frameBorder="0"
+  scrolling="no"
+  
+  allowFullScreen
+></iframe>
+
         </div>
       </main>
       <NavFoot />
