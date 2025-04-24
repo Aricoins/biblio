@@ -97,7 +97,7 @@ const Libros: FC = ({}) => {
         >
           Biblioteca
         </div>
-        <div style={{width: "80%", cursor: "pointer", }} title="ver en una nueva pesataña" onClick={handleRedirectCalendar}>
+        <div style={{width: "80%", cursor: "pointer", }} title="Haga click para ver el Calendario en una nueva pesataña" onClick={handleRedirectCalendar}>
         <CalendarPage />
         
         </div>
