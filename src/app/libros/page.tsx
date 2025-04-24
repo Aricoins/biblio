@@ -11,6 +11,7 @@ import { Pagination } from "antd";
 import Exco from "../components/Exco";
 import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
+import CalendarPage from "../calendar/page";
 
 interface Libro {
   titulo: string;
@@ -70,10 +71,13 @@ const Libros: FC = ({}) => {
   }, [search, data, currentPage, pageSize]);
 
   const handlePageChange = (page: number, size: number) => {
-    
     setCurrentPage(page);
     setPageSize(size);
   };
+
+  const handleRedirectCalendar = () => {
+    window.location.href = "/calendar";
+  }
 
   return (
     <>
@@ -92,6 +96,10 @@ const Libros: FC = ({}) => {
           }}
         >
           Biblioteca
+        </div>
+        <div style={{width: "80%", cursor: "pointer", }} title="ver en una nueva pesataña" onClick={handleRedirectCalendar}>
+        <CalendarPage />
+        
         </div>
         <div style={{ marginBottom: "2%" }}>
           {/* Botón para mostrar u ocultar Exco */}

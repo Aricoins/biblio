@@ -15,20 +15,20 @@ export default function CalendarPage() {
           fontFamily: "Sans-Serif",
           color: "black",
           fontSize: "2vw",
-          opacity: 0.6,
+          opacity: 1,
            }}
       >
         <h4>Calendario de Efemérides</h4>
-        <p style={{ fontSize: "14px", textAlign: "center" }}>
+        <p style={{ fontSize: "medium", textAlign: "center" }}>
           CONSOLIDACION NORMATIVA. ESTABLECE CALENDARIO DE CONMEMORACIONES, EFEMÉRIDES Y CELEBRACIONES MUNICIPALES.
         </p>
         <p>Ordenanza 2033-CM-12 | Anexo II</p>
 
         <div style={{ width: "100%", height: "150%",  aspectRatio: "16/12", borderRadius: "10px", fontSize: "sm" , overflow: "hidden", border: "2px dashed orangered", backgroundColor: "orangered" }}>
         <iframe
-  src="https://calendar.google.com/calendar/embed?src=digestoconcejo%40gmail.com&ctz=America%2FBuenosAires&mode=AGENDA"
+  src="https://calendar.google.com/calendar/embed?src=digestoconcejo%40gmail.com&ctz=America%2FBuenosAires"
   style={{ width: "100%", height: "100%", border: 0, fontSize: "8px" }}
-  frameBorder="0"
+  frameBorder="10"
   scrolling="no"
   
   allowFullScreen
