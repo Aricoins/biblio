@@ -14,6 +14,7 @@ const showDevelopmentAlert = (text) => {
     html: `<strong>${text}</strong> está en desarrollo.<br> ¡Volvé pronto para más actualizaciones!`,
     showCloseButton: true,
     confirmButtonColor: "#ff5733",
+    zindex: 1,
   });
 };
 
@@ -43,12 +44,13 @@ const FondosDocumentales = () => {
           fontFamily: "Roboto, sans-serif",
           opacity: 0.2,
           margin: "8%",
+          zIndex: 1,
         }}>
         Material de consulta
       </div> 
       
-      <div className={styles.contenedor}>
-        <div className={styles.grid}>
+      <div className={styles.contenedor} style={{ zIndex: 1 }}>
+        <div className={styles.grid} style={{ zIndex: 1 }}>
           <Link href="/com">
             <div className={styles.block} data-aos="fade-left"> 
               <p className={styles.p}>Convención Carta Orgánica Municipal</p>
@@ -69,7 +71,7 @@ const FondosDocumentales = () => {
             className={styles.block} 
             data-aos="zoom-in" 
             onClick={() => showDevelopmentAlert('Fiesta de la Nieve')}>
-            <p className={styles.p}>Fiesta Nacional de la Nieve</p>
+            <p className={styles.p} style={{ zIndex: 1 }}>Fiesta Nacional de la Nieve</p>
           </div>
           <div 
             className={styles.block} 

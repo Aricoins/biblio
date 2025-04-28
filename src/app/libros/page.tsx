@@ -12,6 +12,7 @@ import Exco from "../components/Exco";
 import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
 import CalendarPage from "../calendar/page";
+import ChatBot from "../components/ChatBot";
 
 interface Libro {
   titulo: string;
@@ -57,7 +58,7 @@ const Libros: FC = ({}) => {
     console.log(data, "libros front");
     if (data && Array.isArray(data)) {
        const filteredData = data.filter((libro) =>
-        libro.titulo.toLowerCase().includes(search.toLowerCase())
+        libro.titulo.toLowerCase().includes(search)
       );
 
       setTotalItems(filteredData.length);
@@ -131,6 +132,7 @@ const Libros: FC = ({}) => {
         </div>
 
         <section className={styles.container}>
+          <h2 style={{color: "black"}}>Libros declarados de interés por el Concejo</h2>
           <input
             className={styles.inputSearch}
             type="text"
@@ -158,6 +160,7 @@ const Libros: FC = ({}) => {
 
           <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
         </section>
+        <ChatBot />
       </div>
     </>
   );

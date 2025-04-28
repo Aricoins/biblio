@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 
 const H1 = styled.h6`
-  font-size: 12px;
+  font-size: 8px;
   height: 100%;
   width: 90%;
   color: #080855;

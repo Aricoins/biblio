@@ -1,13 +1,12 @@
 import { sql } from "@vercel/postgres";
 import { NextResponse, NextRequest } from "next/server";
+import librosData from "../verLibros/interes.json";
 
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url)
     const id = searchParams.get('id')
     try {
-      const { rows: libros } = await sql`
-        SELECT * FROM libros WHERE id = ${id}
-      `;
+      const libros = librosData
 
       return NextResponse.json({ libros });
     } catch (error) {

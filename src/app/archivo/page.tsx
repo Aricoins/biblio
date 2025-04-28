@@ -21,6 +21,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
+import ChatBot from "../components/ChatBot";
 
 const Archivo = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const Archivo = () => {
             data-aos-duration="200"
             className={styles.component}
           >
-            <Proyectos />
+            {/* <Proyectos /> */}
           </div>
           <div className={styles.subcontainer}>
             <div>
@@ -124,11 +125,14 @@ const Archivo = () => {
           >
             <MdOutgoingMail />
           </a>
-        </div>
+         
       </div>
       <FondosDocumentales />
       <NavFoot />
-    </>
+      <div style={{zIndex: 999999}}>  <ChatBot/>
+          </div>
+          
+        </div></>
   );
 };
 

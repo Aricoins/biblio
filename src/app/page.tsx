@@ -9,8 +9,9 @@ import './globals.css';
 import { Spin, Typography } from "antd";
 import { ClerkProvider, SignInButton, SignOutButton, SignedIn, SignedOut, UserButton, SignIn, UserProfile, SignUp } from '@clerk/nextjs';
 import { useAuth } from "@clerk/nextjs";
+import  Gallery  from './components/Gallery'
 
-const Container = 'w-full mx-auto bg-gradient-to-b animated-gradient-x flex items-center justify-center flex-col md:flex-row';
+const Container = 'w-50% mx-auto animated-gradient-x flex items-center justify-center flex-col md:flex-row h-100vw';
 
 const Subcontainer = 'w-full md:w-1/2 h-full flex items-center justify-center p-4 md:p-8';
 
@@ -48,8 +49,9 @@ export default function Libros() {
 
   return (
     <>
+    <Gallery />
       {showWelcome ? (
-        <div className={Container}>
+        <div className={Container} style={{ marginTop: "5%", }}>
           <div className={Subcontainer}>
             <div className={LeftContent}>
               <Image
@@ -60,21 +62,21 @@ export default function Libros() {
                 height={300}
                 priority
               />
-              <div style={{ width: "100%", height: "50px" }}>
+              <div style={{ width: "100%", height: "auto" }}>
                 <div>
                   <Text setComplete={setComplete} />
                 </div>
                 {complete && (
                   <div>
-                    <p style={{ margin: "auto", fontWeight: "600", fontSize: "small" }}>¡Bienvenidos!</p>
+                    <p style={{ margin: "5%", fontWeight: "600", fontSize: "small", color: "black", textAlign: "center" }}>¡Bienvenidos!</p>
                   </div>
                 )}
               </div>
             </div>
           </div>
-          <div className={Subcontainer}>
-            <div className={RightContent}>
-              <SignedOut>
+          <div className={Subcontainer} >
+            <div className={RightContent} style={{ width: "100%", scale: "0.7" }} >
+              <SignedOut >
                 <SignIn routing='hash' />
               </SignedOut>
               <SignedIn>

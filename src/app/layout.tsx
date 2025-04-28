@@ -5,6 +5,7 @@ import {esES } from "@clerk/localizations";
 import { Analytics } from '@vercel/analytics/react';
 
 
+
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +30,8 @@ appearance={{
 }}
 >
       <html lang="en" >
-        <body style={{backgroundImage: "url(./bgif.webp"}}>
+        <body style={{backgroundColor: "white"}}>
+
           <header>
           
           </header>

@@ -38,7 +38,7 @@ if (año > "1900") {
                 />
         </div>
         <div className={styles.infoContainer}>
-          <div className={styles.title}>{libro.titulo}</div>
+          <div className={styles.title}>{libro.titulo.toLocaleUpperCase()}</div>
           <h5 className={styles.author}>{libro.autor}</h5>
           {libro.decla ? (          
                 <p className={styles.declaLink}> Declaración {libro.decla}</p>

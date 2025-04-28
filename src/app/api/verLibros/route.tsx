@@ -1,13 +1,14 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse, NextRequest } from 'next/server';
+import libros from "./interes.json"
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     // Consulta a la base de datos
-    const data = await sql`SELECT resenia, titulo, autor, imagen, id, decla FROM "libros";`;
-    const libros = data.rows;
+    // const data = await sql`SELECT resenia, titulo, autor, imagen, id, decla FROM "libros";`;
+    // const libros = data.rows;
 
-    console.log(libros, "libros api");
+    console.log(libros, "libros json");
 
     // Respuesta con los libros y encabezados para evitar caché
     return new NextResponse(JSON.stringify({ libros }))
