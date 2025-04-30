@@ -66,32 +66,34 @@ export default function Detail({ params }: { params: { id: number } }) {
         />
       ) : (
         <div className={styles.container}>
+          <div onClick={handleClick}>
+            <Image
+              src={currentImage || librosDetail?.imagen || "/placeholder.jpg"}
+              alt={librosDetail?.titulo || "imagen"}
+              width={300}
+              height={400}
+              className={`${styles.imagen}`}
+            />
+          </div>
 
-          <div  onClick={handleClick}>
-            
-                <Image
-                  src={currentImage || librosDetail?.imagen || "/placeholder.jpg"}
-                  alt={librosDetail?.titulo || "imagen"}
-                  width={400}
-                  height={600}
-                />
-             
-        </div>
-      
-        <div className={styles.texto}>
-          <h1 className="p-5 text-4xl font-bold">{librosDetail?.titulo}</h1>
-          <h2 className="p-5 text-2xl font-semibold">de {librosDetail?.autor}</h2>
-          <div className={styles.resenia}>
-            {librosDetail?.resenia?.split(". ").map((paragraph: string, index: number) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-            <p className="m-1 font-light">
-              Declaración {librosDetail?.decla} del Concejo Municipal de San Carlos de Bariloche
-            </p>
+          <div className={styles.texto}>
+            <h1 className="p-5 text-4xl font-bold">{librosDetail?.titulo}</h1>
+            <h2 className="p-5 text-2xl font-semibold">
+              de {librosDetail?.autor}
+            </h2>
+            <div className={styles.resenia}>
+              {librosDetail?.resenia
+                ?.split(". ")
+                .map((paragraph: string, index: number) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              <p className="m-1 font-light">
+                Declaración {librosDetail?.decla} del Concejo Municipal de San
+                Carlos de Bariloche
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      
       )}
     </>
   );

@@ -11,5 +11,36 @@ model Message {
   id        Int      @id @default(autoincrement())
   userInput String
   botReply  String
-  createdAt DateTime @default(now())
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
 }
+
+model products {
+  id         Int       @id @default(autoincrement())
+  model      String    @db.VarChar(255)
+  category   String    @db.VarChar(255)
+  specs      Json
+  image      String    @db.VarChar(255)
+  price      Decimal   @db.Decimal
+  video      String?   @db.VarChar(255)
+  disable    Boolean?  @default(false)
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model proyectos {
+  id              Int       @id
+  numero_proyecto String    @db.VarChar(50)
+  anio_proyecto   String    @db.VarChar(10)
+  titulo_proyecto String
+  tipo_proyecto   String    @db.VarChar(100)
+  autor           Json      @db.Json
+  colaboradores   String?
+  girado_a        String    @db.VarChar(255)
+  acta_fecha      DateTime? @db.Date
+  aprobado        Boolean
+  tipo_norma      String    @db.VarChar(100)
+  numero_norma    String    @db.VarChar(50)
+  observaciones   String
+}
+
+
