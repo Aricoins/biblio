@@ -85,11 +85,11 @@ export default function Libros() {
               <div className='flex justify-center items-center'>
                 <p style={{ justifySelf: "left", color: "white", margin: "10px" }}>o</p>
               </div>
-              <div>
+              {/* <div>
                 <Link href='/archivo'>
                   <button className={Boton}>Ingresar sin registro</button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

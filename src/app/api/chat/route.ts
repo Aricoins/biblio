@@ -3,13 +3,15 @@ import fs from 'fs';
 import path from 'path';
 import NextResponse from 'next/server';
 
+
+
 const prisma = new PrismaClient();
 interface Knowledge {
   [key: string]: any; 
 }
 
 async function loadJsonKnowledge() {
-  const files = ['datos.json', 'proyectos.json']; 
+  const files = ['datos.json', 'proyectos.json', '../proyectos/datos.json']; 
   let data = [];
 
   for (const file of files) {

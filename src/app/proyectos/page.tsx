@@ -52,7 +52,7 @@ function Proyectos() {
     
       const fetchProyectos = async () => {
         try {
-          const response = await fetch('./proyectos.json');
+          const response = await fetch('/api/verProyectos');
           const data = await response.json();
           setProyectos(data.proyectos);
           setResultados(data.proyectos);

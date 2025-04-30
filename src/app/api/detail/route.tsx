@@ -1,15 +1,24 @@
-import { sql } from "@vercel/postgres";
 import { NextResponse, NextRequest } from "next/server";
 import librosData from "../verLibros/interes.json";
 
 export async function GET(req: NextRequest) {
-    const { searchParams } = new URL(req.url)
-    const id = searchParams.get('id')
-    try {
-      const libros = librosData
+  try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
 
-      return NextResponse.json({ libros });
-    } catch (error) {
-      console.error('Error fetching products:', error);
-      return NextResponse.json({ message: 'Error fetching products' }, { status: 500 });
-    }}
+    if (!id) {
+      return NextResponse.json({ message: "Missing id parameter" }, { status: 400 });
+    }
+
+    const libro = librosData.find((l) => String(l.id) === id);
+
+    if (!libro) {
+      return NextResponse.json({ message: "Libro no encontrado" }, { status: 404 });
+    }
+
+    return NextResponse.json(libro);
+  } catch (error) {
+    console.error("Error fetching libro:", error);
+    return NextResponse.json({ message: "Error interno del servidor" }, { status: 500 });
+  }
+}

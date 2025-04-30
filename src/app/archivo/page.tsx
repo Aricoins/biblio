@@ -55,7 +55,7 @@ const Archivo = () => {
             data-aos-duration="200"
             className={styles.component}
           >
-            {/* <Proyectos /> */}
+            <Proyectos /> 
           </div>
           <div className={styles.subcontainer}>
             <div>
