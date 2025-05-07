@@ -4,10 +4,53 @@ import { KnowledgeLoader } from '../../lib/knowledge/knowledgeLoader';
 import { AIService } from '../../lib/ai/aiService';
 import { dbService } from '../../lib/db/db.service';
 
+export const dynamic = 'force-dynamic'; // Importante para desactivar SSG
+export const revalidate = 0; // Para ISR
+
+export const GET = async (req: NextRequest) => {
+  try {
+    // Evitar ejecución durante el build
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return NextResponse.json([]);
+    }
+
+    // Obtener parámetros de paginación
+    const { searchParams } = new URL(req.url);
+    const limit = Number(searchParams.get('limit')) || 20;
+    const page = Number(searchParams.get('page')) || 1;
+
+    // Obtener historial de la base de datos
+    const history = await dbService.getInteractions({
+      skip: (page - 1) * limit,
+      take: limit,
+      orderBy: { timestamp: 'desc' }
+    });
+
+    return NextResponse.json({
+      data: history,
+      pagination: {
+        currentPage: page,
+        totalPages: Math.ceil(history.length / limit),
+        totalItems: await dbService.getTotalInteractions()
+      }
+    });
+
+  } catch (error) {
+    console.error('Error obteniendo historial:', error);
+    return NextResponse.json(
+      { error: 'Error al obtener el historial de conversaciones' },
+      { status: 500 }
+    );
+  }
+};
+
+
 export const POST = async (req: NextRequest) => {
   try {
     const { message, history = [] } = await req.json();
-    
+      if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return NextResponse.json({ reply: 'Servicio en mantenimiento' });
+  }
     if (!message) {
       return NextResponse.json(
         { error: 'Mensaje requerido' },

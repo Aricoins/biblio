@@ -14,6 +14,7 @@ export class KnowledgeLoader {
   private lastLoaded: Date | null = null;
 
   async loadKnowledge(): Promise<KnowledgeChunk[]> {
+    if (this.isBuildPhase()) return [];
     if (this.isCacheValid()) return this.cache;
 
     const loadedData: KnowledgeChunk[] = [];
@@ -63,6 +64,10 @@ export class KnowledgeLoader {
 
   private isCacheValid(): boolean {
     return this.lastLoaded !== null && 
-      (Date.now() - this.lastLoaded.getTime()) < 1000 * 60 * 5; // 5 minutos de cache
+      (Date.now() - this.lastLoaded.getTime()) < 1000 * 60 * 5; 
+  }
+
+  private isBuildPhase(): boolean {
+    return process.env.NODE_ENV === 'production';
   }
 }

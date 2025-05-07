@@ -10,6 +10,7 @@ class DBService {
     this.setupMiddleware();
   }
 
+
   static getInstance(): DBService {
     if (!DBService.instance) {
       DBService.instance = new DBService();
@@ -28,6 +29,10 @@ class DBService {
   }
 
   async saveInteraction(userInput: string, botReply: string) {
+
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+        return;       }
+  
     return this.prisma.message.create({
       data: {
         userInput,
@@ -35,6 +40,36 @@ class DBService {
         createdAt: new Date()
       }
     });
+  }
+
+  async getInteractions(options?: {
+    skip?: number;
+    take?: number;
+    orderBy?: Record<string, 'asc' | 'desc'>;
+  }) {
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return [];
+    }
+
+    return this.prisma.message.findMany({
+      skip: options?.skip,
+      take: options?.take,
+      orderBy: options?.orderBy,
+      select: {
+        id: true,
+        userInput: true,
+        botReply: true,
+        createdAt: true
+      }
+    });
+  }
+
+  async getTotalInteractions() {
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return 0;
+    }
+
+    return this.prisma.message.count();
   }
 }
 

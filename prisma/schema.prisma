@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
 }
 
 datasource db {
@@ -42,5 +43,3 @@ model proyectos {
   numero_norma    String    @db.VarChar(50)
   observaciones   String
 }
-
-
