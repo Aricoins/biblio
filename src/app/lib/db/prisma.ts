@@ -1,14 +1,14 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 
-// Prevenir múltiples instancias de PrismaClient en desarrollo
 const globalForPrisma = global as unknown as {
-  prisma: PrismaClient | undefined;
-};
-
-// Opciones para mayor estabilidad
-const prismaOptions = {
-  log: ['error', 'warn'],
-  connectionTimeout: 20000, // 20 segundos
+    prisma: PrismaClient | undefined;
+  };
+  const prismaOptions: Prisma.PrismaClientOptions = {
+    log: [
+      { level: 'error', emit: 'stdout' },
+      { level: 'warn', emit: 'stdout' }
+    ],
+    connectionTimeout: 20000 // 20 segundos
 };
 
 // Crear o reutilizar la instancia de PrismaClient
