@@ -72,7 +72,13 @@ export const POST = async (req: NextRequest) => {
     const reply = await aiService.generateResponse(context, knowledge);
     
     // Guardar en base de datos
-    await dbService.saveInteraction(message, reply);
+    try {
+      await dbService.saveInteraction(message, reply);
+    } catch (dbError) {
+      // Si falla la BD, aún devolvemos la respuesta pero logueamos el error
+      console.error("Error guardando en base de datos:", dbError);
+      // Continúa la ejecución - no queremos que el usuario no reciba respuesta
+    }
 
     return NextResponse.json({ reply });
     

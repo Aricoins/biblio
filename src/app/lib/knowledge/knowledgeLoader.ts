@@ -4,9 +4,12 @@ import path from 'path';
 import { KnowledgeChunk } from '../ai/ai.types';
 
 const KNOWLEDGE_FILES = ['datos.json', 'proyectos.json'];
+// Update the KNOWLEDGE_PATHS array to include the location of your JSON files:
+
 const KNOWLEDGE_PATHS = [
   path.join(process.cwd(), 'knowledge'),
   path.join(process.cwd(), 'src', 'data'),
+  path.join(process.cwd(), 'src', 'app', 'api', 'chat')
 ];
 
 export class KnowledgeLoader {

@@ -1,6 +1,10 @@
 // src/lib/db/db.service.ts
 import { PrismaClient } from '@prisma/client';
+import { prisma } from './prisma';
 
+const globalForPrisma = global as unknown as {
+  prisma: PrismaClient | undefined;
+};
 class DBService {
   private prisma: PrismaClient;
   private static instance: DBService;
@@ -29,10 +33,6 @@ class DBService {
   }
 
   async saveInteraction(userInput: string, botReply: string) {
-
-    if (process.env.NEXT_PHASE === 'phase-production-build') {
-        return;       }
-  
     return this.prisma.message.create({
       data: {
         userInput,
@@ -47,10 +47,6 @@ class DBService {
     take?: number;
     orderBy?: Record<string, 'asc' | 'desc'>;
   }) {
-    if (process.env.NEXT_PHASE === 'phase-production-build') {
-      return [];
-    }
-
     return this.prisma.message.findMany({
       skip: options?.skip,
       take: options?.take,
@@ -65,12 +61,32 @@ class DBService {
   }
 
   async getTotalInteractions() {
-    if (process.env.NEXT_PHASE === 'phase-production-build') {
-      return 0;
-    }
-
     return this.prisma.message.count();
   }
+}
+
+// Función helper para reintentar operaciones de BD
+async function withRetry<T>(
+  operation: () => Promise<T>,
+  maxRetries = 3,
+  delay = 1000
+): Promise<T> {
+  let lastError;
+  
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await operation();
+    } catch (error) {
+      console.error(`Intento ${attempt + 1} fallido:`, error);
+      lastError = error;
+      
+      if (attempt < maxRetries - 1) {
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+  }
+  
+  throw lastError;
 }
 
 export const dbService = DBService.getInstance();
