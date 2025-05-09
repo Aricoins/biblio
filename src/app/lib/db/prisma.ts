@@ -8,7 +8,6 @@ const globalForPrisma = global as unknown as {
       { level: 'error', emit: 'stdout' },
       { level: 'warn', emit: 'stdout' }
     ],
-    connectionTimeout: 20000 // 20 segundos
 };
 
 // Crear o reutilizar la instancia de PrismaClient

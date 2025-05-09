@@ -62,7 +62,7 @@ export default function ChatBot() {
             boxShadow: "0px 10px 15px rgba(0,0,0,0.8)",
           }}
         >
-          {isOpen ? "Cerrar el chat IA ✨" : "Consultá nuestra IA ✨"}
+          {isOpen ? "X" : "Consultá nuestra IA ✨"}
         </button>
       </div>
 
