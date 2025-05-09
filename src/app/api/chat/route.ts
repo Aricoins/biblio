@@ -3,8 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { KnowledgeLoader } from '../../lib/knowledge/knowledgeLoader';
 import { AIService } from '../../lib/ai/aiService';
 import { dbService } from '../../lib/db/db.service';
-
-export const dynamic = 'force-dynamic'; // Importante para desactivar SSG
+export const dynamic = 'force-dynamic';
 export const revalidate = 0; // Para ISR
 export interface Knowledge {
   id: number;
@@ -56,6 +55,9 @@ export const GET = async (req: NextRequest) => {
 
 
 export const POST = async (req: NextRequest) => {
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return NextResponse.json({ reply: 'Servicio en mantenimiento' });
+  }
   try {
     const { message, history = [] } = await req.json();
       if (process.env.NEXT_PHASE === 'phase-production-build') {
