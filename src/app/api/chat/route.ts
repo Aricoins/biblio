@@ -6,7 +6,17 @@ import { dbService } from '../../lib/db/db.service';
 
 export const dynamic = 'force-dynamic'; // Importante para desactivar SSG
 export const revalidate = 0; // Para ISR
-
+export interface Knowledge {
+  id: number;
+  titulo?: string;
+  descripcion?: string;
+  numero_proyecto?: string;
+  anio_proyecto?: string;
+  tipo_proyecto?: string;
+  autor?: string[] | string;
+  observaciones?: string;
+  [key: string]: any;
+}
 export const GET = async (req: NextRequest) => {
   try {
     // Evitar ejecución durante el build

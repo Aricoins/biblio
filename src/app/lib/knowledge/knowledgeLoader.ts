@@ -34,14 +34,23 @@ export class KnowledgeLoader {
     return this.cache;
   }
 
-  private async loadFile(filename: string): Promise<any> {
+  private async loadFile(fileName: string): Promise<KnowledgeChunk[]> {
     for (const basePath of KNOWLEDGE_PATHS) {
-      const filePath = path.join(basePath, filename);
-      if (fs.existsSync(filePath)) {
-        return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+      const filePath = path.join(basePath, fileName);
+      try {
+        if (fs.existsSync(filePath)) {
+          console.log(`Cargando conocimiento desde: ${filePath}`);
+          const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          return Array.isArray(data) ? data : [data];
+        }
+      } catch (error) {
+        console.warn(`Error al intentar leer ${filePath}:`, error);
       }
     }
-    throw new Error(`Archivo de conocimiento no encontrado: ${filename}`);
+    
+    // Maneja el caso donde no se encuentra el archivo de manera más elegante
+    console.warn(`Archivo de conocimiento no encontrado: ${fileName}`);
+    return []; // Devuelve un array vacío en lugar de fallar
   }
 
   private processContent(content: any, source: string): KnowledgeChunk[] {

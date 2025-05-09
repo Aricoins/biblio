@@ -8,7 +8,7 @@ const globalForPrisma = global as unknown as {
       { level: 'error', emit: 'stdout' },
       { level: 'warn', emit: 'stdout' }
     ],
-};
+}
 
 // Crear o reutilizar la instancia de PrismaClient
 export const prisma = globalForPrisma.prisma ?? new PrismaClient(prismaOptions);
