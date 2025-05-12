@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2018",
+    "lib": ["dom", "dom.iterable", "esnext","es2018"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,6 +22,18 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/OtrosTitulos.jsx", "src/app/components/NavTop.jsx", "src/app/components/NavTop.jsx", "src/app/components/Proyectos.tsx", "src/app/admin/page.tsx", "src/app/api/IA/route.js", "src/app/api/upload/script.mjs"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/components/OtrosTitulos.jsx",
+    "src/app/components/NavTop.jsx",
+    "src/app/components/NavTop.jsx",
+    "src/app/components/Proyectos.tsx",
+    "src/app/admin/page.tsx",
+    "src/app/api/IA/route.js",
+    "src/app/api/upload/script.mjs"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,17 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { KnowledgeLoader } from '../../lib/knowledge/knowledgeLoader';
 import { AIService } from '../../lib/ai/aiService';
-import { dbService } from '../../lib/db/db.service';
 
-// Marcamos la ruta como dinámica - CRUCIAL para evitar errores de compilación
+// Marcamos la ruta como dinámica
 export const dynamic = 'force-dynamic';
 
-// No se necesita inicializar DB - la clase DBService ya se inicializa
-// cuando se importa por primera vez
-let dbInitialized = true; // Cambiado a true directamente
+// Importación condicional para evitar que Prisma se inicialice durante la compilación
+async function getDbService() {
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return {
+      getInteractions: async () => [],
+      getTotalInteractions: async () => 0,
+      saveInteraction: async () => null
+    };
+  }
+  const { dbService } = await import('../../lib/db/db.service');
+  return dbService;
+}
 
 export async function GET(req: NextRequest) {
-  // Evitamos accesos a DB durante la fase de build
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({
       data: [],
@@ -20,13 +27,11 @@ export async function GET(req: NextRequest) {
   }
   
   try {
-    // Eliminamos la llamada a initializeDB ya que no es necesaria
-    
+    const dbService = await getDbService();
     const { searchParams } = new URL(req.url);
     const limit = Number(searchParams.get('limit')) || 20;
     const page = Number(searchParams.get('page')) || 1;
 
-    // Tratamos de obtener los datos con manejo de errores adicional
     try {
       const [history, total] = await Promise.all([
         dbService.getInteractions({
@@ -62,7 +67,6 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  // Evitamos accesos a DB durante la fase de build
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ reply: "Esta es una respuesta de compilación" });
   }
@@ -71,14 +75,12 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     
     if (!body.message) {
-      return NextResponse.json(
-        { error: 'Mensaje requerido' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Mensaje requerido' }, { status: 400 });
     }
 
     const knowledgeLoader = new KnowledgeLoader();
     const aiService = new AIService();
+    const dbService = await getDbService();
     
     try {
       const knowledge = await knowledgeLoader.loadKnowledge();
@@ -87,12 +89,10 @@ export async function POST(req: NextRequest) {
         history: body.history || []
       }, knowledge);
 
-      // Capturamos errores específicamente de la base de datos
       try {
         await dbService.saveInteraction(body.message, reply);
       } catch (dbError) {
         console.error("Error saving to database:", dbError);
-        // Continuamos aunque falle el guardado
       }
 
       return NextResponse.json({ reply });
