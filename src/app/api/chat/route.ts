@@ -22,9 +22,14 @@ export const GET = async (req: NextRequest) => {
   try {
     // Evitar ejecución durante el build
     if (process.env.NEXT_PHASE === 'phase-production-build') {
-      return NextResponse.json([]);
+      try {
+        // Intenta cargar datos locales como alternativa
+        const proyectosData = require('../../../proyectos/proyectos3.json');
+        return NextResponse.json(proyectosData);
+      } catch {
+        return NextResponse.json([]);
+      }
     }
-
     // Obtener parámetros de paginación
     const { searchParams } = new URL(req.url);
     const limit = Number(searchParams.get('limit')) || 20;
