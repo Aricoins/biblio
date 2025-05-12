@@ -22,6 +22,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
 import ChatBot from "../components/ChatBot";
+import JuntasVecinales from "../components/Juntas";
 
 const Archivo = () => {
   useEffect(() => {
@@ -107,6 +108,14 @@ const Archivo = () => {
           className={styles.component}
         >
           <ProyectosNoSancionados />
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-duration="200"
+          className={styles.component}
+        >
+          <JuntasVecinales />
         </div>
         <div className={styles.contactIcons}>
           <a
