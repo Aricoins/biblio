@@ -161,6 +161,7 @@ export default function ChatBot() {
             />
             <button
               onClick={sendMessage}
+              disabled={isLoading}
               style={{
                 backgroundColor: "orangered",
                 color: "white",
