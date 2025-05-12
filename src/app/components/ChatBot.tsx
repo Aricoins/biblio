@@ -43,6 +43,8 @@ export default function ChatBot() {
           color: "orangered",
           width: "40%",
           padding: "10px",
+          display: "flex",
+          justifyContent: "right",
        
         }}
       >
@@ -54,11 +56,11 @@ export default function ChatBot() {
             border: "2px solid white",
             cursor: "pointer",
             fontSize: "large",
-            borderRadius: "50%",
+            borderRadius: "25% 25% 25% 25%" ,
             zIndex: 9,
             textAlign: "right",
             justifyContent: "right",
-            padding: "2%",
+            padding: "5%",
             boxShadow: "0px 10px 15px rgba(0,0,0,0.8)",
           }}
         >

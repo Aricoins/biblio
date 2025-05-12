@@ -1,115 +1,112 @@
-// src/app/api/chat/route.ts
 import { NextRequest, NextResponse } from 'next/server';
+import { KnowledgeLoader } from '../../lib/knowledge/knowledgeLoader';
+import { AIService } from '../../lib/ai/aiService';
+import { dbService } from '../../lib/db/db.service';
 
-// IMPORTANTE: Declarar esto al inicio del archivo
+// Marcamos la ruta como dinámica - CRUCIAL para evitar errores de compilación
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
 
-// Importaciones que podrían causar problemas en build, moverlas dentro de las funciones
-// para cargarlas solo cuando se ejecuten realmente
-const importDependencies = () => {
-  const { KnowledgeLoader } = require('../../lib/knowledge/knowledgeLoader');
-  const { AIService } = require('../../lib/ai/aiService');
-  const { dbService } = require('../../lib/db/db.service');
-  return { KnowledgeLoader, AIService, dbService };
-};
-
-export interface Knowledge {
-  id: number;
-  titulo?: string;
-  descripcion?: string;
-  numero_proyecto?: string;
-  anio_proyecto?: string;
-  tipo_proyecto?: string;
-  autor?: string[] | string;
-  observaciones?: string;
-  [key: string]: any;
-}
+// No se necesita inicializar DB - la clase DBService ya se inicializa
+// cuando se importa por primera vez
+let dbInitialized = true; // Cambiado a true directamente
 
 export async function GET(req: NextRequest) {
-  // Comprobación inmediata para el build
+  // Evitamos accesos a DB durante la fase de build
   if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json([]);
+    return NextResponse.json({
+      data: [],
+      pagination: { currentPage: 1, totalPages: 0, totalItems: 0 }
+    });
   }
-
+  
   try {
-    // Importaciones dinámicas
-    const { dbService } = importDependencies();
+    // Eliminamos la llamada a initializeDB ya que no es necesaria
     
-    // Resto de la lógica GET
     const { searchParams } = new URL(req.url);
     const limit = Number(searchParams.get('limit')) || 20;
     const page = Number(searchParams.get('page')) || 1;
 
-    const history = await dbService.getInteractions({
-      skip: (page - 1) * limit,
-      take: limit,
-      orderBy: { timestamp: 'desc' }
-    });
+    // Tratamos de obtener los datos con manejo de errores adicional
+    try {
+      const [history, total] = await Promise.all([
+        dbService.getInteractions({
+          skip: (page - 1) * limit,
+          take: limit,
+          orderBy: { createdAt: 'desc' }
+        }),
+        dbService.getTotalInteractions()
+      ]);
 
-    return NextResponse.json({
-      data: history,
-      pagination: {
-        currentPage: page,
-        totalPages: Math.ceil(history.length / limit),
-        totalItems: await dbService.getTotalInteractions()
-      }
-    });
+      return NextResponse.json({
+        data: history,
+        pagination: {
+          currentPage: page,
+          totalPages: Math.ceil(total / limit),
+          totalItems: total
+        }
+      });
+    } catch (dbError) {
+      console.error("Error accessing database:", dbError);
+      return NextResponse.json({
+        data: [],
+        pagination: { currentPage: 1, totalPages: 0, totalItems: 0 }
+      });
+    }
   } catch (error) {
-    console.error('Error obteniendo historial:', error);
+    console.error('GET Error:', error);
     return NextResponse.json(
-      { error: 'Error al obtener el historial de conversaciones' },
+      { error: 'Error al obtener historial' },
       { status: 500 }
     );
   }
 }
 
 export async function POST(req: NextRequest) {
-  // Comprobación inmediata para el build
+  // Evitamos accesos a DB durante la fase de build
   if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ reply: 'Servicio en mantenimiento durante la compilación' });
+    return NextResponse.json({ reply: "Esta es una respuesta de compilación" });
   }
   
   try {
     const body = await req.json();
-    const { message, history = [] } = body;
-
-    if (!message) {
+    
+    if (!body.message) {
       return NextResponse.json(
         { error: 'Mensaje requerido' },
         { status: 400 }
       );
     }
 
-    // Importaciones dinámicas
-    const { KnowledgeLoader, AIService, dbService } = importDependencies();
-    
-    // Cargar conocimiento
     const knowledgeLoader = new KnowledgeLoader();
-    const knowledge = await knowledgeLoader.loadKnowledge();
-    
-    // Generar respuesta
     const aiService = new AIService();
-    const context = {
-      currentQuery: message,
-      history: history
-    };
     
-    const reply = await aiService.generateResponse(context, knowledge);
-    
-    // Guardar en base de datos
     try {
-      await dbService.saveInteraction(message, reply);
-    } catch (dbError) {
-      console.error("Error guardando en base de datos:", dbError);
-    }
+      const knowledge = await knowledgeLoader.loadKnowledge();
+      const reply = await aiService.generateResponse({
+        currentQuery: body.message,
+        history: body.history || []
+      }, knowledge);
 
-    return NextResponse.json({ reply });
-    
+      // Capturamos errores específicamente de la base de datos
+      try {
+        await dbService.saveInteraction(body.message, reply);
+      } catch (dbError) {
+        console.error("Error saving to database:", dbError);
+        // Continuamos aunque falle el guardado
+      }
+
+      return NextResponse.json({ reply });
+    } catch (processingError) {
+      console.error("Error processing message:", processingError);
+      return NextResponse.json(
+        { error: 'Error procesando mensaje' },
+        { status: 500 }
+      );
+    }
   } catch (error) {
-    console.error('Error en el endpoint /api/chat:', error);
+    console.error('POST Error:', error);
     return NextResponse.json(
-      { error: 'Error interno del servidor' },
+      { error: 'Error procesando solicitud' },
       { status: 500 }
     );
   }

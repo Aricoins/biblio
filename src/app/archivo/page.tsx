@@ -56,7 +56,7 @@ const Archivo = () => {
             data-aos-duration="200"
             className={styles.component}
           >
-            <Proyectos /> 
+            <Proyectos />
           </div>
           <div className={styles.subcontainer}>
             <div>
@@ -73,28 +73,28 @@ const Archivo = () => {
                 data-aos-duration="200"
                 className={styles.component}
               >
-                <ExpedientesComunicaciones/>
+                <ExpedientesComunicaciones />
               </div>
               <div
                 data-aos="fade-left"
                 data-aos-duration="200"
                 className={styles.component}
               >
-                <ExpedientesDeclaraciones/>
+                <ExpedientesDeclaraciones />
               </div>
               <div
                 data-aos="fade-left"
                 data-aos-duration="200"
                 className={styles.component}
               >
-                <ExpedientesResoluciones/>
+                <ExpedientesResoluciones />
               </div>
               <div
                 data-aos="fade-left"
                 data-aos-duration="200"
                 className={styles.component}
               >
-                <ExpedientesOrdenanzas/>
+                <ExpedientesOrdenanzas />
               </div>
             </div>
           </div>
@@ -135,13 +135,15 @@ const Archivo = () => {
             <MdOutgoingMail />
           </a>
          
-      </div>
-      <FondosDocumentales />
-      <NavFoot />
-      <div style={{zIndex: 999999}}>  <ChatBot/>
+        </div>
+        <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
+            {" "}
+            <ChatBot />
           </div>
-          
-        </div></>
+        <FondosDocumentales />
+        <NavFoot />
+      </div>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ const globalForPrisma = global as unknown as {
 class DBService {
   private prisma: PrismaClient;
   private static instance: DBService;
+  
 
   private constructor() {
     this.prisma = new PrismaClient();
