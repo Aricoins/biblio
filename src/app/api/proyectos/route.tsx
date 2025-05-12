@@ -25,7 +25,7 @@ export async function GET() {
       if (dbError.code === '42P01') { // Código de error para "relation does not exist"
         // Cargar datos desde un archivo JSON local como alternativa
         try {
-          const proyectosData = require('../../../proyectos/proyectos3.json');
+          const proyectosData = require('../../api/chat/proyectos.json');
           return NextResponse.json(proyectosData);
         } catch (jsonError) {
           console.error("Error cargando datos de respaldo:", jsonError);
