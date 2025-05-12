@@ -56,16 +56,17 @@ export const GET = async (req: NextRequest) => {
 };
 
 
-export const POST = async (req: NextRequest) => {
 
+export const POST = async (req: NextRequest) => {
   try {
+    const body = await req.json();
+    const { message, history = [] } = body;
+    
+    // Una única verificación es suficiente
     if (process.env.NEXT_PHASE === 'phase-production-build') {
-      return NextResponse.json({ reply: 'Servicio en mantenimiento' });
+      return NextResponse.json({ reply: 'Servicio en mantenimiento durante la compilación' });
     }
-    const { message, history = [] } = await req.json();
-      if (process.env.NEXT_PHASE === 'phase-production-build') {
-    return NextResponse.json({ reply: 'Servicio en mantenimiento' });
-  }
+
     if (!message) {
       return NextResponse.json(
         { error: 'Mensaje requerido' },

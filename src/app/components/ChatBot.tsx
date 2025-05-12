@@ -54,7 +54,7 @@ export default function ChatBot() {
             border: "2px solid white",
             cursor: "pointer",
             fontSize: "large",
-            borderRadius: "20px",
+            borderRadius: "50%",
             zIndex: 9,
             textAlign: "right",
             justifyContent: "right",
@@ -62,7 +62,7 @@ export default function ChatBot() {
             boxShadow: "0px 10px 15px rgba(0,0,0,0.8)",
           }}
         >
-          {isOpen ? "X" : "Consultá nuestra IA ✨"}
+          {isOpen ? "X" : "Dibiase IA ✨"}
         </button>
       </div>
 
