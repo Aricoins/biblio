@@ -56,19 +56,17 @@ const FondosDocumentales = () => {
               <p className={styles.p}>Convención Carta Orgánica Municipal</p>
             </div>
           </Link>
-          <Link href="/ceb">
-            <div className={styles.block} data-aos="fade-left"> 
-              <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
-            </div>
-          </Link>
-           <Link href="/ceb">         
+           <Link href="https://drive.google.com/drive/folders/1UUPkChUcSr3SCe6euBOWLSppAkH_arUF?usp=sharing">
             <div 
             className={styles.block} 
-            data-aos="zoom-in" 
-            onClick={() => showDevelopmentAlert('Defensoría del Pueblo')}>
+            data-aos="zoom-in" >
             <p className={styles.p}>Defensoría del Pueblo</p>
           </div>
-         </Link> 
+</Link>
+            <div className={styles.block} data-aos="fade-left"
+               onClick={() => showDevelopmentAlert('CEB')}>
+                <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
+            </div>
           <div 
             className={styles.block} 
             data-aos="zoom-in" 
