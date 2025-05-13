@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table, Input, message } from "antd";
 import type { ColumnsType } from 'antd/es/table';
 import { SearchOutlined } from "@ant-design/icons";
+import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
 type JuntaData = {
   "Junta Vecinal": string;
@@ -92,7 +93,7 @@ const JuntasVecinales = () => {
         fontWeight: 500,
         padding: "1%",
         cursor: "pointer",
-        backgroundColor: "rgb(0, 141, 154)",
+        backgroundColor: "rgb(81, 81, 81)",
         color: "rgb(255, 255, 255)",
         transition: "0.3s",
         border: "rgb(255, 255, 255) 2px solid",
@@ -105,10 +106,11 @@ const JuntasVecinales = () => {
       }}
       onClick={() => setVisible(!visible)}
     >
-      Juntas Vecinales | Estatutos
-    </h2>
+ {visible ? <MdExpandLess/>: <MdExpandMore/>}      Juntas Vecinales | Estatutos 
+ {visible ? <MdExpandLess/>: <MdExpandMore/>}   
+ </h2>
      {visible && (
-      <div>
+      <div style={{ marginTop: "2%" }}>
       <Input
         placeholder="Buscar junta vecinal"
         prefix={<SearchOutlined />}

@@ -107,6 +107,7 @@ const Archivo = () => {
           data-aos-duration="200"
           className={styles.component}
         >
+                <h2 className={styles.h4}> EXPEDIENTES NO APROBADOS: </h2>
           <ProyectosNoSancionados />
         </div>
 
