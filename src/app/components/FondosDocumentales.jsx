@@ -61,6 +61,14 @@ const FondosDocumentales = () => {
               <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
             </div>
           </Link>
+           <Link href="/ceb">         
+            <div 
+            className={styles.block} 
+            data-aos="zoom-in" 
+            onClick={() => showDevelopmentAlert('Defensoría del Pueblo')}>
+            <p className={styles.p}>Defensoría del Pueblo</p>
+          </div>
+         </Link> 
           <div 
             className={styles.block} 
             data-aos="zoom-in" 
@@ -79,6 +87,7 @@ const FondosDocumentales = () => {
             onClick={() => showDevelopmentAlert('Parque Municipal Llao Llao')}>
             <p className={styles.p}>Parque Municipal Llao Llao</p>
           </div>
+        
         </div>
       </div>
     </>
