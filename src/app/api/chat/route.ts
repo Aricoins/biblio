@@ -15,16 +15,17 @@ async function getDbService() {
     };
   }
   try {
-  const { dbService } = await import('../../lib/db/db.service');
-  return dbService;
+    const { dbService } = await import('../../lib/db/db.service');
+    return dbService;
+  } catch (error) {
+    console.error('Error al importar dbService:', error);
+    return {
+      getInteractions: async () => [],
+      getTotalInteractions: async () => 0,
+      saveInteraction: async () => null
+    };
+  }
 }
-}catch (error) {
-  console.error('Error al importar dbService:', error);
-  return {
-    getInteractions: async () => [],
-    getTotalInteractions: async () => 0,
-    saveInteraction: async () => null
-  };
   
 export async function GET(req: NextRequest) {
   if (process.env.NEXT_PHASE === 'phase-production-build') {
