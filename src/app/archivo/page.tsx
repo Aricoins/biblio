@@ -111,13 +111,13 @@ const Archivo = () => {
           <ProyectosNoSancionados />
         </div>
 
-        <div
+        {/* <div
           data-aos="fade-left"
           data-aos-duration="200"
           className={styles.component}
         >
           <JuntasVecinales />
-        </div>
+        </div> */}
         <div className={styles.contactIcons}>
           <a
             href="https://wa.me/+5492945907975"

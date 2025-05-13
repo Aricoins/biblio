@@ -19,7 +19,7 @@ const LeftContent = 'flex flex-col items-center justify-center bg-white p-8 roun
 
 const RightContent = 'flex flex-col items-center justify-center  p-8 rounded-lg shadow-lg';
 
-const Boton = 'bg-black border border-orange-500 border-2 w-full flex p-4 justify-center items-center text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
+const Boton = 'bg-black border border-orange-500 border-2 w-full flex p-8 justify-center items-center text-white rounded-md transition duration-500 hover:bg-gray-200 hover:border-gray-900 hover:text-gray-900';
 
 export default function Libros() {
   const [complete, setComplete] = useState(false);
