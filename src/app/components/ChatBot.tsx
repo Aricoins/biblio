@@ -52,7 +52,7 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const tempBotMessage = { role: "bot", content: "Consulta enviada" };
+      const tempBotMessage = { role: "bot", content: "..." };
       setMessages((prev) => [...prev, tempBotMessage]);
 
       const res = await fetch("/api/chat", {
@@ -71,7 +71,7 @@ export default function ChatBot() {
     } catch (error) {
       setMessages((prev) => [
         ...prev.slice(0, -1),
-        { role: "bot", content: "⚠️ Error al obtener la respuesta. Intenta nuevamente." }
+        { role: "bot", content: "El volumen de la respuesta excede mi capacidad actual de respuesta." }
       ]);
     } finally {
       setIsLoading(false);

@@ -8,8 +8,8 @@ const KNOWLEDGE_FILES = ['datos.json', 'proyectos.json'];
 
 const KNOWLEDGE_PATHS = [
   path.join(process.cwd(), 'knowledge'),
-  path.join(process.cwd(), 'src', 'data'),
-  path.join(process.cwd(), 'src', 'app', 'api', 'chat')
+  path.join(process.cwd(),  'data'),
+  path.join(process.cwd(),  'chat')
 ];
 
 export class KnowledgeLoader {
