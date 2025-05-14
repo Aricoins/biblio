@@ -54,25 +54,36 @@ export default function ChatBot() {
     try {
       const tempBotMessage = { role: "bot", content: "..." };
       setMessages((prev) => [...prev, tempBotMessage]);
+  const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 9500); // Abort after 9.5s
 
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
+        signal: controller.signal,
       });
-
+   clearTimeout(timeoutId);
       const data = await res.json();
+       if (res.ok) {
+
       const formattedResponse = formatResponse(data.reply);
       
       setMessages((prev) => [
         ...prev.slice(0, -1),
         { role: "bot", content: formattedResponse }
-      ]);
+      ]);} else {
+       throw new Error("Error en la respuesta del servidor");
+      } 
     } catch (error) {
-      setMessages((prev) => [
-        ...prev.slice(0, -1),
-        { role: "bot", content: "El volumen de la respuesta excede mi capacidad actual de respuesta." }
-      ]);
+      const errorMessage = error.name === 'AbortError' 
+      ? "La consulta está tomando más tiempo del esperado. Por favor intente una pregunta más específica o en unos momentos."
+      : "Lo siento, no pude procesar tu consulta en este momento. Inténtalo nuevamente.";
+      
+    setMessages((prev) => [
+      ...prev.slice(0, -1),
+      { role: "bot", content: errorMessage }
+    ]);
     } finally {
       setIsLoading(false);
     }

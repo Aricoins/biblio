@@ -5,6 +5,9 @@ import { AIService } from '../../lib/ai/aiService';
 // Marcamos la ruta como dinámica
 export const dynamic = 'force-dynamic';
 
+export const runtime = 'nodejs'; // o 'edge' si prefieres
+export const maxDuration = 30; // Aumentar tiempo disponible
+
 // Importación condicional para evitar que Prisma se inicialice durante la compilación
 async function getDbService() {
   if (process.env.NEXT_PHASE === 'phase-production-build') {
@@ -74,12 +77,16 @@ export async function GET(req: NextRequest) {
     );
   }
 }
-
+export const config = {
+  maxDuration: 9, // Set slightly below Vercel's 10s limit
+};
 export async function POST(req: NextRequest) {
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ reply: "Esta es una respuesta de compilación" });
   }
-  
+  const timeoutPromise = new Promise((_, reject) => 
+    setTimeout(() => reject(new Error('AI request timeout')), 28000)
+  );
   try {
     const body = await req.json();
     
@@ -89,34 +96,57 @@ export async function POST(req: NextRequest) {
 
     const knowledgeLoader = new KnowledgeLoader();
     const aiService = new AIService();
-    const dbService = await getDbService();
-    
+  // Cargar el conocimiento con manejo de errores independiente
+    let knowledge = [];
     try {
-      const knowledge = await knowledgeLoader.loadKnowledge();
-      const reply = await aiService.generateResponse({
+      knowledge = await Promise.race([
+        knowledgeLoader.loadKnowledge(),
+        new Promise((resolve) => setTimeout(() => {
+          console.log("Knowledge loading timeout - using empty knowledge");
+          resolve([]);
+        }, 5000))
+      ]);
+    } catch (knowledgeError) {
+      console.error("Error loading knowledge:", knowledgeError);
+      // Continuar con conocimiento vacío
+    }
+
+    // Generar respuesta con timeout más largo
+    try {
+      const replyPromise = aiService.generateResponse({
         currentQuery: body.message,
         history: body.history || []
       }, knowledge);
 
-      try {
-        await dbService.saveInteraction(body.message, reply);
-      } catch (dbError) {
-        console.error("Error saving to database:", dbError);
-      }
+      // Si tenemos respuesta antes del timeout, úsala
+      const reply = await Promise.race([replyPromise, timeoutPromise]);
+
+      // Guardar en DB sin bloquear respuesta
+      const dbService = await getDbService();
+      dbService.saveInteraction(body.message, reply)
+        .catch(dbError => console.error("Error saving to database:", dbError));
 
       return NextResponse.json({ reply });
-    } catch (processingError) {
-      console.error("Error processing message:", processingError);
+    } catch (aiError) {
+      console.error("AI Error:", aiError);
+      
+      // Si el error es timeout, dar respuesta predefinida
+      if (aiError.message === 'AI request timeout') {
+        return NextResponse.json({
+          reply: "Lo siento, estoy tardando más de lo esperado en procesar tu consulta. Por favor, intenta una pregunta más específica o contáctanos por correo a digestoconcejo@gmail.com."
+        });
+      }
+      
       return NextResponse.json(
-        { error: 'Error procesando mensaje' },
-        { status: 500 }
+        { reply: "Disculpa, no pude procesar tu consulta en este momento. Por favor intenta nuevamente." },
+        { status: 200 } // Usar 200 para que el cliente lo maneje adecuadamente
       );
     }
   } catch (error) {
     console.error('POST Error:', error);
     return NextResponse.json(
-      { error: 'Error procesando solicitud' },
-      { status: 500 }
+      { reply: "Hubo un problema técnico. Por favor, intenta nuevamente en unos momentos." },
+      { status: 200 } // Usar 200 en lugar de 500 para que el cliente maneje mejor
     );
   }
 }

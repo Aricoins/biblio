@@ -6,8 +6,8 @@ export class AIService {
   private readonly config: AIConfig = {
     model: "deepseek/deepseek-prover-v2:free",
     maxTokens: 3000,
-    temperature: 0.7,
-    maxContextLength: 5
+    temperature: 0.4,
+    maxContextLength: 50
   };
 
   async generateResponse(
