@@ -13,9 +13,7 @@ type JuntaData = {
   Ordenanza5: string;
   Link1: string;
   Link2: string;
-  Link3: string;
-  Link4: string;
-  Link5: string;
+
 };
 
 const JuntasVecinales = () => {
@@ -103,11 +101,12 @@ const JuntasVecinales = () => {
         width: "70%",
         margin: "0 auto",
         boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
+        flexDirection: "column",
       }}
       onClick={() => setVisible(!visible)}
     >
- {visible ? <MdExpandLess/>: <MdExpandMore/>}      Juntas Vecinales | Estatutos 
- {visible ? <MdExpandLess/>: <MdExpandMore/>}   
+ {visible ? <MdExpandLess/>: <MdExpandMore/>} Juntas Vecinales | Estatutos  {visible ? <MdExpandLess/>: <MdExpandMore/>}   
+
  </h2>
      {visible && (
       <div style={{ marginTop: "2%" }}>

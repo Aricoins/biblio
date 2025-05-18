@@ -9,7 +9,7 @@ export async function GET() {
   try {
     // URL de Google Sheets con parámetro para evitar caché
     const timestamp = new Date().getTime();
-    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTubNOlChZrcgIlxjhA0AzloTVbTYeTeex8-CxgemKmXCAoRKaeE8xo0ZT6LQP7M0ueIfOy0DJYCAKE/pub?output=csv&t=${timestamp}`;
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTubNOlChZrcgIlxjhA0AzloTVbTYeTeex8-CxgemKmXCAoRKaeE8xo0ZT6LQP7M0ueIfOy0DJYCAKE/pub?output=csv`;
     
     const response = await fetch(sheetUrl, {
       headers: {

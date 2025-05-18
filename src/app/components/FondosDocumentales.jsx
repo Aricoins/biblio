@@ -5,6 +5,7 @@ import withReactContent from 'sweetalert2-react-content';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import JuntasVecinales from './Juntas';
 
 const MySwal = withReactContent(Swal);
 
@@ -85,6 +86,14 @@ const FondosDocumentales = () => {
             onClick={() => showDevelopmentAlert('Parque Municipal Llao Llao')}>
             <p className={styles.p}>Parque Municipal Llao Llao</p>
           </div>
+         <Link href="/juntas">
+          <div 
+            className={styles.block} 
+            data-aos="zoom-in" 
+            >
+            <p className={styles.p}>Juntas Vecinales</p>
+          </div>
+        </Link>
         
         </div>
       </div>

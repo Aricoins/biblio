@@ -23,6 +23,7 @@ import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
 import ChatBot from "../components/ChatBot";
 import JuntasVecinales from "../components/Juntas";
+import Footer from "../components/Footer";
 
 const Archivo = () => {
   useEffect(() => {
@@ -144,6 +145,7 @@ const Archivo = () => {
         <FondosDocumentales />
         <NavFoot />
       </div>
+      <Footer />
     </>
   );
 };
