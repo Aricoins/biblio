@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaTwitter, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -24,17 +24,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-red-500 transition-colors">
+                <Link href="/" className="hover:text-red-500 transition-colors">
                   Nuestro Equipo
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-red-500 transition-colors">
+                <Link href="/" className="hover:text-red-500 transition-colors">
                 Reglamento Interno de la Biblioteca
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-red-500 transition-colors">
+                <Link href="/" className="hover:text-red-500 transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -46,7 +46,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Conectate</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://twitter.com/tudiusuario" 
+                href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-500 transition-colors"
@@ -54,28 +54,28 @@ const Footer = () => {
                 <FaTwitter size={24} />
               </a>
               <a 
-                href="https://github.com/tudiusuario" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a 
-                href="https://linkedin.com/in/tudiusuario" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
-              >
-                <FaLinkedin size={24} />
-              </a>
-              <a 
-                href="https://instagram.com/tudiusuario" 
+                href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-500 transition-colors"
               >
                 <FaInstagram size={24} />
+              </a>
+              <a 
+                href="/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-red-500 transition-colors"
+              >
+                <FaFacebook size={24} />
+              </a>
+              <a 
+                href="/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-red-500 transition-colors"
+              >
+                <FaLinkedin size={24} />
               </a>
             </div>
           </div>
