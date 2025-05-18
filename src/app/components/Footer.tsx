@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sección Acerca de */}
           <div className="space-y-4">
-            <h2 className="text-xl font-bold text-red-500">DibiaseNet</h2>
+            <h2 className="text-xl font-bold text-red-500">DiBiase.Net</h2>
             <p className="text-gray-400">
-              Desarrollo web, tecnología y soluciones digitales innovadoras.
+              Biblioteca y Archivo Graciela Di Biase del Concejo Deliberante de de San Carlos de Bariloche.
             </p>
           </div>
 
@@ -25,12 +25,12 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/about" className="hover:text-red-500 transition-colors">
-                  Sobre Mí
+                  Nuestro Equipo
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-red-500 transition-colors">
-                  Proyectos
+                Reglamento Interno de la Biblioteca
                 </Link>
               </li>
               <li>
@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* Redes Sociales */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Conéctate</h3>
+            <h3 className="text-lg font-semibold">Conectate</h3>
             <div className="flex space-x-4">
               <a 
                 href="https://twitter.com/tudiusuario" 
@@ -84,9 +84,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contacto</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>contacto@dibiase.net</li>
-              <li>+54 9 11 1234-5678</li>
-              <li>Buenos Aires, Argentina</li>
+              <li>digestoconcejo@gmail.com</li>
+              <li>+54 9 294 429100</li>
+              <li>Bariloche, Argentina</li>
             </ul>
           </div>
         </div>
