@@ -234,7 +234,7 @@ export class AIService {
     }
     
     // General error message for other issues
-    return "No pude generar una respuesta. Por favor, intenta nuevamente.";
+    return "Hemos excedido el limite de uso del LLM gratuito. Por favor, intenta nuevamente más tarde.";
   }
 }
 }
