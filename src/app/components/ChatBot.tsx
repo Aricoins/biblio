@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface ChatMessage {
   role: string;
@@ -11,73 +11,55 @@ export default function ChatBot() {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+const messagesEndRef = useRef<HTMLDivElement>(null);
 const formatResponse = (text: string): JSX.Element => {
-  const sections = text.split(/\n\n+/);
+  // Limpiar asteriscos y formato markdown
+  const cleanText = text.replace(/\*\*/g, '').replace(/#{1,3}/g, '');
+  
+  const sections = cleanText.split(/\n\n+/);
+  
   return (
     <div className="response-container">
       {sections.map((section, index) => {
-        if (section.startsWith("###")) {
-          return <h3 key={index} className="section-title">{section.replace(/###/, "").trim()}</h3>;
-        }
-        if (section.startsWith("**Consulta:**")) {
+        const trimmedSection = section.trim();
+        
+        if (trimmedSection.toLowerCase().startsWith("consulta:")) {
           return (
             <div key={index} className="question-section">
               <div className="icon-section">📋</div>
               <div className="content-section">
-                <p className="question-text">{section.replace("**Consulta:**", "").trim()}</p>
+                <p className="question-text">{trimmedSection.replace(/consulta:\s*/i, '')}</p>
+                <p>LA IA generativa es experimental y un trabajo en proceso, verifique los datos con información oficial</p>
               </div>
             </div>
           );
         }
-        if (section.startsWith("**Respuesta:**")) {
+        
+        if (trimmedSection.toLowerCase().startsWith("respuesta:")) {
           return (
             <div key={index} className="answer-section">
               <div className="icon-section">✅</div>
               <div className="content-section">
-                <p className="answer-text">{section.replace("**Respuesta:**", "").trim()}</p>
+                <p className="answer-text">{trimmedSection.replace(/respuesta:\s*/i, '')}</p>
               </div>
             </div>
           );
         }
-        if (section.startsWith("**Detalles Adicionales:**")) {
-          const details = section.split("\n").slice(1);
-          return (
-            <div key={index} className="details-section">
-              <div className="icon-section">📌</div>
-              <div className="content-section">
-                <h4 className="details-title">Detalles importantes</h4>
-                <ul className="details-list">
-                  {details.map((detail, i) => (
-                    <li key={i} className="detail-item">
-                      {detail.replace(/^- /, "").trim()}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          );
-        }
-        if (section.startsWith("**Nota:**")) {
-          return (
-            <div key={index} className="note-section">
-              <div className="icon-section">ℹ️</div>
-              <div className="content-section">
-                <p className="note-text">{section.replace("**Nota:**", "").trim()}</p>
-              </div>
-            </div>
-          );
-        }
-        return <p key={index} className="regular-text">{section}</p>;
+        
+        // Resto de las condiciones similares sin los **
+        
+        return <p key={index} className="regular-text">{trimmedSection}</p>;
       })}
     </div>
   );
 };
-
+const scrollToBottom = () => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+};
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
-    
+    setTimeout(scrollToBottom, 100);
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
     setInput("");

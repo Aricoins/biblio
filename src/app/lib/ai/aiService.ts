@@ -4,19 +4,22 @@ import Papa from 'papaparse';
 
 export class AIService {
   private readonly config: AIConfig = {
-    model: "deepseek/deepseek-chat-v3-0324:free",
-    maxTokens: 3000,
-    temperature: 0.4,
-    maxContextLength: 50
-  };
+  model: "deepseek/deepseek-chat-v3-0324:free",
+  temperature: 0.1,        // Máxima precisión
+  maxTokens: 1000,         // Respuestas concisas pero completas
+  topP: 0.9,               // Balance entre creatividad y control
+  frequencyPenalty: 0.5,   // Reduce repeticiones
+  presencePenalty: 0.3,    // Evita divagaciones
+  stopSequences: ["\n\n"], // Detiene generación en párrafos
+  maxContextLength: 5      // Mantiene foco en última consulta
+};
+
 
   async generateResponse(
     context: ConversationContext,
     knowledge: KnowledgeChunk[]
   ): Promise<string> {
-    // Obtener conocimiento adicional de ordenanzas
-    const ordenanzas = await this.fetchOrdenanzas();
-    const combinedKnowledge = [...knowledge, ...ordenanzas];
+   const combinedKnowledge = [...knowledge];
     
     const relevantKnowledge = await this.findRelevantKnowledge(context.currentQuery, combinedKnowledge);
     const messages = this.buildMessages(context, relevantKnowledge);
@@ -24,35 +27,35 @@ export class AIService {
     return this.queryAIAPI(messages);
   }
 
-  private async fetchOrdenanzas(): Promise<KnowledgeChunk[]> {
-    try {
-      const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRG6dLsp3OS5Yh7KafIfj989OB-kQXxXJdlZ_loCJ1aKk8cBdXddrwCMpnHdtIqtnQidWIjyPsoLynv/pub?output=csv');
+  // private async fetchOrdenanzas(): Promise<KnowledgeChunk[]> {
+  //   try {
+  //     const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRG6dLsp3OS5Yh7KafIfj989OB-kQXxXJdlZ_loCJ1aKk8cBdXddrwCMpnHdtIqtnQidWIjyPsoLynv/pub?output=csv');
       
-      if (!response.ok) {
-        console.error(`Error fetching ordenanzas: ${response.statusText}`);
-        return [];
-      }
+  //     if (!response.ok) {
+  //       console.error(`Error fetching ordenanzas: ${response.statusText}`);
+  //       return [];
+  //     }
       
-      const csvText = await response.text();
-      const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+  //     const csvText = await response.text();
+  //     const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
       
-      if (result.errors && result.errors.length > 0) {
-        console.error('Error parsing CSV:', result.errors);
-        return [];
-      }
+  //     if (result.errors && result.errors.length > 0) {
+  //       console.error('Error parsing CSV:', result.errors);
+  //       return [];
+  //     }
 
-      // Convertir los datos CSV a KnowledgeChunk
-      return result.data.map((row: any, index: number) => ({
-        id: `ordenanza-${index}`,
-        content: `Ordenanza ${row.numero || 'N/D'}: ${row.titulo || 'Sin título'} ${row.descripcion ? `- ${row.descripcion}` : ''} (Fecha: ${row.fecha || 'N/D'})`,
-        source: 'Registro de Ordenanzas',
-        metadata: { ...row }
-      }));
-    } catch (error) {
-      console.error('Error fetching ordenanzas:', error);
-      return [];
-    }
-  }
+  //     // Convertir los datos CSV a KnowledgeChunk
+  //     return result.data.map((row: any, index: number) => ({
+  //       id: `ordenanza-${index}`,
+  //       content: `Ordenanza ${row.numero || 'N/D'}: ${row.titulo || 'Sin título'} ${row.descripcion ? `- ${row.descripcion}` : ''} (Fecha: ${row.fecha || 'N/D'})`,
+  //       source: 'Registro de Ordenanzas',
+  //       metadata: { ...row }
+  //     }));
+  //   } catch (error) {
+  //     console.error('Error fetching ordenanzas:', error);
+  //     return [];
+  //   }
+  // }
 
   private async findRelevantKnowledge(
     query: string,
@@ -129,7 +132,7 @@ export class AIService {
   
     return {
       role: "system",
-      content: `Eres "DiBiase IA", un asistente virutal de la biblioteca y archivo "Graciela Di Biase" del Concejo Municipal de San Carlos de Bariloche.
+      content: `Eres "DiBiase IA", asistente virutal en desarrollo de la biblioteca y archivo "Graciela Di Biase" del Concejo Municipal de San Carlos de Bariloche.
   
       FUNCIÓN:
       Dar respuesta fundada a las consultas de los usuarios buscando en los datos información relevante vinculada tanto temáticamente como por proximidad temporal.
@@ -147,9 +150,25 @@ export class AIService {
       6. ESTRUCTURA: Organiza tus respuestas con títulos y subtítulos cuando sea apropiado.
       7. CONTACTO: Si te piden más información que no puedes proporcionar, sugiere contactar a digestoconcejo@gmail.com o al teléfono 442 9100 (días hábiles de 7 a 17h).
       8. Revisa tus respuestas antes de enviarlas para asegurarte de que sean claras y útiles.
-      
-         
-      Adaptá tu respuesta según el tipo de consulta y usuario, priorizando siempre la información precisa y de calidad.`
+      Directrices Estrictas de Respuesta:
+1. PRIORIDAD ABSOLUTA a coincidencias literales de: 
+   - Nombres completos de juntas vecinales 
+   - Números exactos de ordenanza
+   - Direcciones específicas
+
+2. Estructura Obligatoria:
+   [Tipo de Norma] [Número] - [Nombre Exacto]:
+   Fecha: [AAAA-MM-DD]
+   Norma: [Texto literal relevante]
+
+3. Si hay coincidencia exacta:
+   - NO mencionar otros items
+   - Citación textual de los 3 artículos más relevantes
+
+4. Sin coincidencias exactas:
+   - Listar máx 3 items relacionados
+   - Especificar "No se encontró coincidencia exacta" 
+         `
     };
   }
  

@@ -24,10 +24,10 @@ class DBService {
   }
 
   private setupMiddleware() {
-    this.prisma.$use(async (params, next) => {
-      const start = Date.now();
-      const result = await next(params);
-      const duration = Date.now() - start;
+    this.prisma.$use(async (params: { model?: string; action: string }, next: (params: any) => Promise<any>): Promise<any> => {
+      const start: number = Date.now();
+      const result: any = await next(params);
+      const duration: number = Date.now() - start;
       console.log(`Query ${params.model}.${params.action} took ${duration}ms`);
       return result;
     });
