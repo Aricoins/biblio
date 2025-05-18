@@ -33,8 +33,8 @@ export default function CalendarPage() {
             borderRadius: "10px",
             fontSize: "sm",
             overflow: "hidden",
-            border: "2px dashed orangered",
-            backgroundColor: "orangered",
+            border: "2px dashed #74cbc3",
+            backgroundColor: "#74cbc3",
           }}
         >
           <iframe

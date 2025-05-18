@@ -7,9 +7,8 @@ const KNOWLEDGE_FILES = ['datos.json', 'proyectos.json'];
 // Update the KNOWLEDGE_PATHS array to include the location of your JSON files:
 
 const KNOWLEDGE_PATHS = [
-  path.join(process.cwd(), 'knowledge'),
-  path.join(process.cwd(),  'data'),
-  path.join(process.cwd(),  'chat')
+  path.join(process.cwd(), ''), // raíz del proyecto
+  path.join(process.cwd(), 'src', 'app', 'lib', 'knowledge'), // carpeta donde está proyectos.json
 ];
 
 export class KnowledgeLoader {

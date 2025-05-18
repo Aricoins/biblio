@@ -58,7 +58,7 @@ export default function Detail({ params }: { params: { id: number } }) {
         <Spin
           style={{
             fontSize: "",
-            color: "orangered",
+            color: "#74cbc3",
             display: "flex",
             justifyContent: "center",
             marginTop: "20%",

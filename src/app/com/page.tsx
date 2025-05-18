@@ -167,7 +167,7 @@ export default function Home() {
             fontSize: "medium",
             fontWeight: 500,
             padding: "1%",
-            backgroundColor: "orangered",
+            backgroundColor: "#74cbc3",
             color: "rgb(255, 255, 255)",
             border: "rgb(255, 255, 255) 2px solid",
             fontFamily: "'Roboto', sans-serif",
@@ -197,7 +197,7 @@ export default function Home() {
             }}
             renderItem={(acta) => (
               <List.Item
-                style={{ justifyContent: "center", color: "orangered" }}
+                style={{ justifyContent: "center", color: '#74cbc3' }}
               >
                 <Button type="link" onClick={() => showModal(acta)}>
                   {acta.title}
@@ -214,7 +214,7 @@ export default function Home() {
             fontSize: "medium",
             fontWeight: 500,
             padding: "1%",
-            backgroundColor: "orangered",
+            backgroundColor: "#74cbc3",
             color: "rgb(255, 255, 255)",
             border: "rgb(255, 255, 255) 2px solid",
             fontFamily: "'Roboto', sans-serif",
@@ -242,7 +242,7 @@ export default function Home() {
               }}
               renderItem={(acta) => (
                 <List.Item
-                  style={{ justifyContent: "center", color: "orangered" }}
+                  style={{ justifyContent: "center", color: "#74cbc3" }}
                 >
                   <Button type="link" onClick={() => showModal(acta)}>
                     {acta.title}
@@ -254,7 +254,7 @@ export default function Home() {
               <Button
                 type="link"
                 style={{
-                  color: "orangered",
+                  color: "#74cbc3",
                   fontWeight: "bold",
                   fontSize: "16px",
                 }}
@@ -274,7 +274,7 @@ export default function Home() {
           footer={null}
           width={800}
           style={{
-            backgroundColor: "orangered",
+            backgroundColor: "#74cbc3",
             color: "green",
             padding: "1%",
             width: "100%",

@@ -58,7 +58,7 @@ const Page = () => {
             display: "flex",
             backgroundColor: "black"
           }}>
-            <div style={{ width: "98%", color: "black", backgroundColor: "orangered", margin: "auto"}}>
+            <div style={{ width: "98%", color: "black", backgroundColor: "#74cbc3", margin: "auto"}}>
               <p style={{ color: "white", fontFamily: "Arial" }}>Archivo</p>
               <Proyectos />
             </div> </div>
@@ -79,7 +79,7 @@ const Page = () => {
        <div style={{color: "green", margin: "auto"}}>
           <SignIn  routing='hash'/>
             <Link href="/" > <button style={{fontSize: "large", 
-                backgroundColor: "orangered", 
+                backgroundColor: "'#74cbc3", 
                 padding: "1%", color: "white", marginLeft: "42%", borderRadius: "10%"}}> Salir de Admin </button> </Link>
 
         </div>

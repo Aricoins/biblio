@@ -4,7 +4,7 @@ import Papa from 'papaparse';
 
 export class AIService {
   private readonly config: AIConfig = {
-    model: "deepseek/deepseek-prover-v2:free",
+    model: "deepseek/deepseek-chat-v3-0324:free",
     maxTokens: 3000,
     temperature: 0.4,
     maxContextLength: 50
@@ -152,53 +152,70 @@ export class AIService {
       Adaptá tu respuesta según el tipo de consulta y usuario, priorizando siempre la información precisa y de calidad.`
     };
   }
-  
+ 
   async queryAIAPI(messages: any[]): Promise<string> {
-    const apiKey = process.env.OPENROUTER_API_KEY;
-    if (!apiKey) throw new Error('API key no configurada');
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) throw new Error('API key no configurada');
+
+  // Set a reasonable timeout (20 seconds)
+  const timeoutMs = 50000;
   
-    try {
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: this.config.model,
-          max_tokens: this.config.maxTokens,
-          temperature: this.config.temperature,
-          messages
-        }),
-      });
-  
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`API Error (${response.status}): ${errorText}`);
-        throw new Error(`Error de API: ${response.statusText}`);
-      }
-      
-      const data = await response.json();
-      console.log("Respuesta completa de API:", JSON.stringify(data, null, 2));
-      
-      // Validación adecuada de la respuesta
-      if (!data) {
-        throw new Error("No se recibió respuesta del API");
-      }
-  
-      if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
-        throw new Error("Formato de respuesta inválido");
-      }
-      
-      if (!data.choices[0].message || !data.choices[0].message.content) {
-        throw new Error("No se encontró contenido en la respuesta");
-      }
-      
-      return data.choices[0].message.content;
-    } catch (error) {
-      console.error('Error en AI Service:', error);
-      // Devuelve un mensaje de error amigable en lugar de lanzar una excepción
-      return "No pude generar una respuesta. Por favor, intenta nuevamente.";
+  try {
+    // Create an AbortController for timeout management
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+    
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: this.config.model,
+        max_tokens: this.config.maxTokens,
+        temperature: this.config.temperature,
+        messages
+      }),
+      signal: controller.signal, // Add the abort signal here
+    });
+    
+    // Clear the timeout as soon as the response is received
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error(`API Error (${response.status}): ${errorText}`);
+      throw new Error(`Error de API: ${response.statusText}`);
     }
+    
+    const data = await response.json();
+    console.log("Respuesta completa de API:", JSON.stringify(data, null, 2));
+    
+    // Validación adecuada de la respuesta
+    if (!data) {
+      throw new Error("No se recibió respuesta del API");
+    }
+
+    if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
+      throw new Error("Formato de respuesta inválido");
+    }
+    
+    if (!data.choices[0].message || !data.choices[0].message.content) {
+      throw new Error("No se encontró contenido en la respuesta");
+    }
+    
+    return data.choices[0].message.content;
+  } catch (error) {
+    console.error('Error en AI Service:', error);
+    
+    // Specific error message for timeout
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      return "La consulta está tomando más tiempo del esperado. Por favor, intenta una pregunta más específica o contacta a digestoconcejo@gmail.com para asistencia.";
+    }
+    
+    // General error message for other issues
+    return "No pude generar una respuesta. Por favor, intenta nuevamente.";
   }
+}
 }

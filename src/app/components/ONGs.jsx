@@ -17,7 +17,7 @@ function ONGs() {
           fontWeight: 500,
           padding: "1%",
           cursor: "pointer",
-          backgroundColor: "orangered",
+          backgroundColor: "#74cbc3",
           color: "rgb(255, 255, 255)",
           transition: "0.3s",
           border: "rgb(255, 255, 255) 2px solid",

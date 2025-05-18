@@ -115,7 +115,7 @@ function ExpedientesOrdenanzas() {
               title: `${styles.alert}`, 
               content: `${styles.content}`, 
             },
-            background: "#570c7a",
+            background: "#74cbc3",
             color: "white",
             borderRadius: "50%",
           }).then(() => {

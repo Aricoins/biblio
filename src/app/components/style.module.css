@@ -7,7 +7,7 @@ position: relative;
   margin-bottom: 35%;
   padding: 1%;
   cursor: pointer;
-  background-color: rgb(255, 87, 51);
+  background-color: #74cbc3;
   color: white ;
   font-family: 'Roboto', sans-serif;
   border-radius: 25px;
@@ -23,8 +23,8 @@ position: relative;
 }
 .h2PCM:hover {
   background-color: #f7f8fa;
-  color: rgb(255, 87, 51);
-  border: rgb(255, 87, 51) 2px solid;
+  color: #74cbc3;
+  border: #74cbc3 2px solid;
   
 }
 @media (max-width: 768px) {
@@ -70,7 +70,7 @@ position: relative;
     background-color: rgb(0, 0, 0);
     color: white;
     transition: 0.3s;
-    border: rgb(255, 87, 51) 2px solid;
+    border: #74cbc3 2px solid;
     font-family: 'Roboto', sans-serif;
     border-radius: 25px;
     width: 90%;
@@ -123,7 +123,7 @@ position: relative;
     gap: 10px;
     margin-top: 1%;
     margin-bottom: 1%;
-    color: rgb(255, 87, 51);
+    color: #74cbc3;
     font-family: 'Roboto', sans-serif;
     font-size: xx-small;
     font-weight: 800;

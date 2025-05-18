@@ -5,7 +5,7 @@
 .avanzada{
     background-color: rgb(250, 246, 246);
     text-decoration: none;
-    color: orangered;
+    color: #74cbc3;
     width: 20%;
     border: black 1px solid;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 
@@ -61,8 +61,8 @@
 
 /* Estilos generales para la clase h4 */
 .h4 {
-    background-color: rgb(255, 87, 51);
-    color: rgb(249, 245, 245);
+    background-color: #74cbc3;
+    color: black;
     font-size: small;
     border: px solid black;
     width: 50%;

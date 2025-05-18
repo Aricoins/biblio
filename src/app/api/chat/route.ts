@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reply: "Esta es una respuesta de compilación" });
   }
   const timeoutPromise = new Promise((_, reject) => 
-    setTimeout(() => reject(new Error('AI request timeout')), 28000)
+    setTimeout(() => reject(new Error('AI request timeout')), 500000)
   );
   try {
     const body = await req.json();
@@ -104,8 +104,8 @@ export async function POST(req: NextRequest) {
         new Promise((resolve) => setTimeout(() => {
           console.log("Knowledge loading timeout - using empty knowledge");
           resolve([]);
-        }, 5000))
-      ]);
+        }, 500000))
+      ]) as any[];
     } catch (knowledgeError) {
       console.error("Error loading knowledge:", knowledgeError);
       // Continuar con conocimiento vacío
@@ -123,7 +123,7 @@ export async function POST(req: NextRequest) {
 
       // Guardar en DB sin bloquear respuesta
       const dbService = await getDbService();
-      dbService.saveInteraction(body.message, reply)
+      dbService.saveInteraction(body.message, String(reply))
         .catch(dbError => console.error("Error saving to database:", dbError));
 
       return NextResponse.json({ reply });
@@ -131,7 +131,7 @@ export async function POST(req: NextRequest) {
       console.error("AI Error:", aiError);
       
       // Si el error es timeout, dar respuesta predefinida
-      if (aiError.message === 'AI request timeout') {
+      if (aiError instanceof Error && aiError.message === 'AI request timeout') {
         return NextResponse.json({
           reply: "Lo siento, estoy tardando más de lo esperado en procesar tu consulta. Por favor, intenta una pregunta más específica o contáctanos por correo a digestoconcejo@gmail.com."
         });
