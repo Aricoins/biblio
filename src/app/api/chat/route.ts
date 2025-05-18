@@ -77,9 +77,7 @@ export async function GET(req: NextRequest) {
     );
   }
 }
-export const config = {
-  maxDuration: 9, // Set slightly below Vercel's 10s limit
-};
+
 export async function POST(req: NextRequest) {
   if (process.env.NEXT_PHASE === 'phase-production-build') {
     return NextResponse.json({ reply: "Esta es una respuesta de compilación" });
