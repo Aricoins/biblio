@@ -70,7 +70,7 @@ const JuntasVecinales = () => {
           if (!ordenanza) return null;
           
           return link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "green", backgroundColor: "yellow", textDecoration: "underline" }}>
               {ordenanza}
             </a>
           ) : (
