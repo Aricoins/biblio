@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
 
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
+    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8 " >
+   <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sección Acerca de */}
           <div className="space-y-4">
@@ -24,17 +25,22 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-red-500 transition-colors">
+                <Link href="/archivo" className="hover:text-red-500 transition-colors">
+                Archivo
+                </Link>
+              </li>
+              <li>
+                <Link href="/libros" className="hover:text-red-500 transition-colors">
+                Biblioteca
+                </Link>
+              </li>
+              <li>             <Link href="/archivo" className="hover:text-red-500 transition-colors">
                   Nuestro Equipo
                 </Link>
-              </li>
+</li>
+   
               <li>
-                <Link href="/" className="hover:text-red-500 transition-colors">
-                Reglamento Interno de la Biblioteca
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="hover:text-red-500 transition-colors">
+                <Link href="mailto:digestoconcejo@gmail.com" className="hover:text-red-500 transition-colors">
                   Contacto
                 </Link>
               </li>

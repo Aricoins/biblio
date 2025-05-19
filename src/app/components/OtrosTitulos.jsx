@@ -18,7 +18,7 @@ export default function OtrosTitulos() {
   }, []);
 
   return (
-    <div data-aos="fade-left" data-aos-duration= "50000" className={styles.otros}>
+    <div data-aos="fade-left" data-aos-duration= "50000" className={styles.otros} style={{ zIndex: 2 }}>
       <h1 className={styles.otrostitulos}> Todos los títulos </h1>
       {libros.map((libro) => (
         <div key={libro.titulo} className={libro.decla ? styles.otrosdecla : styles.default}>

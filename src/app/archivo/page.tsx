@@ -145,7 +145,8 @@ const Archivo = () => {
         <FondosDocumentales />
         <NavFoot />
       </div>
-
+ <Footer />
+       
     </>
   );
 };

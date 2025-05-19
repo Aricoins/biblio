@@ -10,6 +10,7 @@ import { Spin, Typography } from "antd";
 import { ClerkProvider, SignInButton, SignOutButton, SignedIn, SignedOut, UserButton, SignIn, UserProfile, SignUp } from '@clerk/nextjs';
 import { useAuth } from "@clerk/nextjs";
 import  Gallery  from './components/Gallery'
+import Footer from './components/Footer';
 
 const Container = 'w-50% mx-auto animated-gradient-x flex items-center justify-center flex-col md:flex-row h-100vw';
 

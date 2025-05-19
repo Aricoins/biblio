@@ -11,8 +11,9 @@ import { Pagination } from "antd";
 import Exco from "../components/Exco";
 import Exco2 from "../components/Exco2";
 import ONGs from "../components/ONGs";
-import CalendarPage from "../calendar/page";
+import CalendarPage from "../components/Calendar";
 import ChatBot from "../components/ChatBot";
+import Footer from "../components/Footer";
 
 interface Libro {
   titulo: string;
@@ -89,7 +90,7 @@ const Libros: FC = ({}) => {
           style={{
             display: "flex",
             justifyContent: "right",
-            marginTop: "10%",
+            marginTop: "0%",
             fontFamily: "Sans-Serif",
             color: "black",
             fontSize: "4vw",
@@ -98,10 +99,9 @@ const Libros: FC = ({}) => {
         >
           Biblioteca
         </div>
-        <div style={{width: "80%", cursor: "pointer", }} title="Haga click para ver el Calendario en una nueva pesataña" onClick={handleRedirectCalendar}>
+       
         <CalendarPage />
-        
-        </div>
+
         <div style={{ marginBottom: "2%" }}>
           {/* Botón para mostrar u ocultar Exco */}
           <button
@@ -157,13 +157,19 @@ const Libros: FC = ({}) => {
               />
             </div>
           )}
-
-          <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
         </section>
+
+
         <ChatBot />
+
+  <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
+
+<div style={{display: "flex", position: "absolute", zIndex: 60000, width: "100%" }}>
+     <Footer /></div>
       </div>
-    </>
-  );
+    
+    </>)
+
 };
 
 export default Libros;

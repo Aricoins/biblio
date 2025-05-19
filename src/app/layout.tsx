@@ -3,9 +3,6 @@ import React from 'react'
 import {ClerkProvider, SignedOut, SignInButton, SignedIn, UserButton} from '@clerk/nextjs'
 import {esES } from "@clerk/localizations";
 import { Analytics } from '@vercel/analytics/react';
-import Footer from './components/Footer';
-
-
 
 export default function RootLayout({
   children,
@@ -38,7 +35,6 @@ appearance={{
           </header>
           <main>
             {children}
-            <Footer />
             <Analytics />
           </main>
         </body>

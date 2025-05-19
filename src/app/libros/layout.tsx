@@ -2,6 +2,8 @@
 import type { Metadata } from 'next'
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
+import "../../../globals.css";
+import Footer from '../components/Footer';
 
 
 
@@ -30,6 +32,8 @@ export default function RootLayout({
 
           <NavTop />
          {children}
+    
+
          <NavFoot />
    
          </div>
