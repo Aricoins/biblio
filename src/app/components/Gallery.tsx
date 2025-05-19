@@ -21,7 +21,7 @@ function Gallery() {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imagenes.length);
         setIsTransitioning(false);
-      }, 600); // Duración del fundido a blanco
+      }, 200); // Duración del fundido a blanco
       
     }, 2000); // Tiempo total entre cambios (incluyendo la transición)
 

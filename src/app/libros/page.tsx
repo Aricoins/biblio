@@ -164,7 +164,7 @@ const Libros: FC = ({}) => {
 
   <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
 
-<div style={{display: "flex", position: "absolute", zIndex: 60000, width: "100%" }}>
+<div style={{display: "flex", position: "absolute", zIndex: 10, width: "100%" }}>
      <Footer /></div>
       </div>
     
