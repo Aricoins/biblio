@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Table, Input, message } from "antd";
+import { Table, Input, message, Tooltip } from "antd";
 import type { ColumnsType } from 'antd/es/table';
-import { SearchOutlined } from "@ant-design/icons";
+import { LinkOutlined, SearchOutlined } from "@ant-design/icons";
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 
 type JuntaData = {
   "Junta Vecinal": string;
-  Ordenanza1: string;
-  Ordenanza2: string;
-  Ordenanza3: string;
-  Ordenanza4: string;
-  Ordenanza5: string;
-  Link1: string;
-  Link2: string;
+  Link: string;
 
 };
 
@@ -49,36 +43,57 @@ const JuntasVecinales = () => {
   );
   const generateColumns = (): ColumnsType<JuntaData> => {
     const columns: ColumnsType<JuntaData> = [
-         {
+      {
         title: "Junta Vecinal",
         dataIndex: "Junta Vecinal",
         key: "junta",
         width: 300,
         fixed: 'left' as const,
       },
+{
+  title: "Estatuto",
+  dataIndex: "Link",
+  key: "link",
+  width: 100,
+  align: 'center' as const,
+  render: (text) => {
+    const hasLink = text && text.trim() !== '';
+    return (
+      <Tooltip title={hasLink ? "Ver estatuto" : "Estatuto no disponible"} placement="left">
+        {hasLink ? (
+          <a
+            href={text}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#1890ff",
+              fontSize: '1.2rem',
+              display: 'inline-block'
+            }}
+          >
+            <LinkOutlined style={{ 
+              transition: 'transform 0.3s',
+              cursor: 'pointer',
+              transform: 'rotate(-45deg)'
+            }}/>
+          </a>
+        ) : (
+          <span style={{
+            color: "#999",
+            fontSize: '1.2rem',
+            cursor: 'not-allowed'
+          }}>
+            <LinkOutlined style={{ 
+              transform: 'rotate(-45deg)',
+              opacity: 0.5
+            }}/>
+          </span>
+        )}
+      </Tooltip>
+    );
+  },
+},
     ];
-
-    // Generar columnas dinámicas
-    for (let i = 1; i <= 5; i++) {
-      columns.push({
-        title: `Ordenanza ${i}`,
-        key: `ordenanza-${i}`,
-        render: (_: any, record: JuntaData) => {
-          const ordenanza = record[`Ordenanza${i}` as keyof JuntaData];
-          const link = record[`Link${i}` as keyof JuntaData];
-          
-          if (!ordenanza) return null;
-          
-          return link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "green", backgroundColor: "yellow", textDecoration: "underline" }}>
-              {ordenanza}
-            </a>
-          ) : (
-            <span>{ordenanza}</span>
-          );
-        },
-      });
-    }
 
     return columns;
   };
