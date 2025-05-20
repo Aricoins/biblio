@@ -1,6 +1,6 @@
 import { KnowledgeLoader } from "../knowledge/knowledgeLoader";
 import { AIService } from "../ai/aiService";
-import { getDbService } from "../db/db.service";
+import { dbService } from "../db/db.service";
 import { KnowledgeChunk } from "../ai/ai.types";
 
 export class ChatService {
@@ -26,7 +26,7 @@ export class ChatService {
     ]);
 
     // 3. Guardado en BD sin bloquear
-    getDbService()
+    dbService
       .saveInteraction(message, reply)
       .catch(err => console.error("DB error:", err));
 
