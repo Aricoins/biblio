@@ -1,64 +1,48 @@
 import { NextResponse } from 'next/server';
 import Papa from 'papaparse';
 
-// Marcar como dinámica para evitar caché
 export const dynamic = 'force-dynamic';
-export const revalidate = 0; // No caché
+export const revalidate = 0;
 
 export async function GET() {
   try {
-    // URL de Google Sheets con parámetro para evitar caché
     const timestamp = new Date().getTime();
-    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTubNOlChZrcgIlxjhA0AzloTVbTYeTeex8-CxgemKmXCAoRKaeE8xo0ZT6LQP7M0ueIfOy0DJYCAKE/pub?output=csv`;
+    // Nueva URL de la hoja actualizada
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTJFmgfIWFWJVb7FV11IuOZ7OYXWs5x9Q7Ta-EHwm3aymuF6oT8uCeNNTr0Pd36FSGux-A8Hmb0iRuV/pub?output=csv&t=${timestamp}`;
     
     const response = await fetch(sheetUrl, {
+      cache: 'no-store',
       headers: {
-        'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      },
-      cache: 'no-store' // No caché a nivel de fetch
+        'Cache-Control': 'no-cache'
+      }
     });
     
-    if (!response.ok) {
-      throw new Error(`Error al obtener datos: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
     
     const csvData = await response.text();
     
-    // Usar PapaParse para procesar CSV correctamente
     const parsed = Papa.parse(csvData, {
-      header: false, // No tenemos encabezados
+      header: false,
       skipEmptyLines: true
     });
     
-    // Eliminar fila de encabezados
-    const rows = parsed.data.slice(1);
-    
-    // Mapear a la estructura esperada
-    const results = rows.map((columns: unknown) => {
-      const cols = columns as string[];
-      return {
-        "Junta Vecinal": cols[0] || '',
-        "Ordenanza1": cols[1] || '',
-        "Ordenanza2": cols[2] || '',
-        "Ordenanza3": cols[3] || '',
-        "Ordenanza4": cols[4] || '',
-        "Ordenanza5": cols[5] || '',
-        "Link1": cols[6] || '',
-        "Link2": cols[7] || '',
-        "Link3": cols[8] || '',
-        "Link4": cols[9] || '',
-        "Link5": cols[10] || '',
-      };
-    }).filter(item => item["Junta Vecinal"] !== ''); // Filtrar filas vacías
+    const results = parsed.data
+      .slice(1) // Eliminar encabezado
+      .map((cols: unknown) => {
+        const columns = cols as string[];
+        return {
+          "Junta Vecinal": columns[0]?.trim() || '',
+          "Link": columns[3]?.trim() || '' // El enlace está en la 4ta columna
+        };
+      })
+      .filter(item => item["Junta Vecinal"] !== '');
 
-    // Devolvemos solo los datos sin envolverlos en otro objeto
     return NextResponse.json(results);
+    
   } catch (error) {
-    console.error('Error procesando datos de juntas:', error);
+    console.error('Error:', error);
     return NextResponse.json(
-      { error: 'Error al cargar los datos de juntas vecinales' },
+      { error: 'Error al cargar los datos' },
       { status: 500 }
     );
   }
