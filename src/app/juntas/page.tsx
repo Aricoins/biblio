@@ -5,7 +5,7 @@ import { useState } from "react";
 import NavFoot from "../components/NavFoot";
 import NavTop from "../components/NavTop";
 
- const Page = async () => {
+ const Page = () => {
     
     return (
         <>
