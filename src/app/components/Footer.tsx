@@ -4,12 +4,12 @@ import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaFacebook } from 'react-
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8 " >
+    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8  w-full" >
    <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sección Acerca de */}
           <div className="space-y-4">
-            <h2 className="text-xl font-bold text-red-500">DibiaseNet</h2>
+            <h2 className="text-xl font-bold text-red-500">DiBiase.Net</h2>
             <p className="text-gray-400">
               Biblioteca y Archivo Graciela Di Biase del Concejo Deliberante de de San Carlos de Bariloche.
             </p>
@@ -100,7 +100,7 @@ const Footer = () => {
         {/* Derechos de autor */}
         <div className="border-t border-gray-800 py-6 text-center text-gray-400">
           <p>
-            © {new Date().getFullYear()} DibiaseNet. Todos los derechos reservados.
+            © {new Date().getFullYear()} DiBiase.Net | Todos los derechos reservados.
           </p>
         </div>
       </div>
