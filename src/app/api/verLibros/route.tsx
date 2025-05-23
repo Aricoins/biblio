@@ -9,9 +9,9 @@ export async function GET(req: NextRequest, res: NextResponse) {
     // const libros = data.rows;
 
     console.log(libros, "libros json");
-
+const librosAlverre = libros.reverse()
     // Respuesta con los libros y encabezados para evitar caché
-    return new NextResponse(JSON.stringify({ libros }))
+    return new NextResponse(JSON.stringify({ librosAlverre }))
   } catch (error) {
     console.error('Error al llamar los libros:', error);
 }

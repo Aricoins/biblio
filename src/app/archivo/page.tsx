@@ -138,10 +138,10 @@ const Archivo = () => {
           </a>
          
         </div>
-        <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
+        {/* <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
             {" "}
             <ChatBot />
-          </div>
+          </div> */}
         <FondosDocumentales />
         <NavFoot />
       </div>

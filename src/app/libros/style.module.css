@@ -1,9 +1,9 @@
 /* styles.module.css */
 .body{
-  width: 66%;
+  width: 70%;
 }	
 .container {
-    width: 100%;
+    width: 90%;
     margin-right: 50%;
     justify-content: center;
     margin: 0 auto;

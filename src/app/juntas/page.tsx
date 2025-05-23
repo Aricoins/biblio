@@ -10,7 +10,7 @@ import NavTop from "../components/NavTop";
     return (
         <>
     <NavTop />
-    <div style={{marginTop: "10%"}}>
+    <div style={{marginTop: "10%" }}>
             <JuntasVecinales /></div>
             <NavFoot />
         </>

@@ -37,23 +37,41 @@ const Libros: FC = ({}) => {
     setShowExco(!showExco);
   };
 
-  useEffect(() => {
-    Aos.init({ duration: 3000 });
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/api/verLibros");
-        
-        const librosConAcento: Libro[] = response.data.libros.map((libro: Libro) => ({
+
+useEffect(() => {
+  Aos.init({ duration: 3000 });
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("/api/verLibros");
+      // Ajuste: la API devuelve directamente un array o un objeto con clave 'libros'
+     const rawData: Libro[] = Array.isArray(response.data)
+  ? response.data
+  : (
+      response.data?.libros
+      ?? response.data?.librosAlverre  // <-- support the actual key
+      ?? []
+    );
+
+if (!Array.isArray(rawData)) {
+  console.error("Formato de datos inesperado:", response.data);
+  setData([]);
+  return;
+}
+
+      const librosConAcento: Libro[] = rawData
+        .map((libro: Libro) => ({
           ...libro,
           titulo: diacritics.remove(libro.titulo.toLowerCase())
-        }));
-        setData(librosConAcento);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+        }))
+        .reverse(); // Invertir el orden aquí
+
+      setData(librosConAcento);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  fetchData();
+}, []);
 
   useEffect(() => {
     console.log(data, "libros front");
@@ -160,8 +178,7 @@ const Libros: FC = ({}) => {
         </section>
 
 
-        <ChatBot />
-
+     
   <OtrosTitulos data-aos="fade-right" data-aos-duraton="500" />
 
 <div style={{display: "flex", position: "absolute", zIndex: 10, width: "100%" }}>

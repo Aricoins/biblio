@@ -104,7 +104,6 @@ const JuntasVecinales = () => {
       style={{
         fontSize: "medium",
         fontWeight: 500,
-        padding: "0",
         cursor: "pointer",
         backgroundColor: "rgb(81, 81, 81)",
         color: "rgb(255, 255, 255)",

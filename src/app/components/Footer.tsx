@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sección Acerca de */}
           <div className="space-y-4">
-            <h2 className="text-xl font-bold text-red-500">DiBiase.Net</h2>
+            <h2 className="text-xl font-bold text-[#74cbc3] ">DiBiase.Net</h2>
             <p className="text-gray-400">
               Biblioteca y Archivo Graciela Di Biase del Concejo Deliberante de de San Carlos de Bariloche.
             </p>
@@ -20,21 +20,21 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Enlaces Rápidos</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/" className="hover:text-red-500 transition-colors">
+                <Link href="/" className="hover:text-[#74cbc3]  transition-colors">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link href="/archivo" className="hover:text-red-500 transition-colors">
+                <Link href="/archivo" className="hover:text-[#74cbc3] transition-colors">
                 Archivo
                 </Link>
               </li>
               <li>
-                <Link href="/libros" className="hover:text-red-500 transition-colors">
+                <Link href="/libros" className="hover:text-[#74cbc3] transition-colors">
                 Biblioteca
                 </Link>
               </li>
-              <li>             <Link href="/archivo" className="hover:text-red-500 transition-colors">
+              <li>             <Link href="/archivo" className="hover:text-[#74cbc3]  transition-colors">
                   Nuestro Equipo
                 </Link>
 </li>

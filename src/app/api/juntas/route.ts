@@ -7,7 +7,6 @@ export const revalidate = 0;
 export async function GET() {
   try {
     const timestamp = new Date().getTime();
-    // Nueva URL de la hoja actualizada
     const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTJFmgfIWFWJVb7FV11IuOZ7OYXWs5x9Q7Ta-EHwm3aymuF6oT8uCeNNTr0Pd36FSGux-A8Hmb0iRuV/pub?output=csv&t=${timestamp}`;
     
     const response = await fetch(sheetUrl, {
@@ -32,10 +31,11 @@ export async function GET() {
         const columns = cols as string[];
         return {
           "Junta Vecinal": columns[0]?.trim() || '',
-          "Link": columns[3]?.trim() || '' // El enlace está en la 4ta columna
+          "Link": columns[3]?.trim() || ''
         };
       })
-      .filter(item => item["Junta Vecinal"] !== '');
+      .filter(item => item["Junta Vecinal"] !== '')
+      .reverse(); // Invertir el orden del array aquí
 
     return NextResponse.json(results);
     
