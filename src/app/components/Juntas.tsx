@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { Table, Input, message, Tooltip } from "antd";
 import type { ColumnsType } from 'antd/es/table';
@@ -66,7 +68,7 @@ const JuntasVecinales = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              color: "#1890ff",
+              color: "#0125b4",
               fontSize: '1.2rem',
               display: 'inline-block'
             }}
@@ -79,7 +81,7 @@ const JuntasVecinales = () => {
           </a>
         ) : (
           <span style={{
-            color: "#999",
+            color: "#7bdd0b",
             fontSize: '1.2rem',
             cursor: 'not-allowed'
           }}>

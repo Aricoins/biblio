@@ -7,7 +7,7 @@ export const revalidate = 0;
 export async function GET() {
   try {
     const timestamp = new Date().getTime();
-    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTJFmgfIWFWJVb7FV11IuOZ7OYXWs5x9Q7Ta-EHwm3aymuF6oT8uCeNNTr0Pd36FSGux-A8Hmb0iRuV/pub?output=csv&t=${timestamp}`;
+    const sheetUrl = `https://docs.google.com/spreadsheets/d/e/2PACX-1vTJFmgfIWFWJVb7FV11IuOZ7OYXWs5x9Q7Ta-EHwm3aymuF6oT8uCeNNTr0Pd36FSGux-A8Hmb0iRuV/pub?gid=0&single=true&output=csv&t=${timestamp}`;
     
     const response = await fetch(sheetUrl, {
       cache: 'no-store',
