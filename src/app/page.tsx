@@ -12,7 +12,7 @@ import { useAuth } from "@clerk/nextjs";
 import  Gallery  from './components/Gallery'
 import Footer from './components/Footer';
 
-const Container = 'w-50% mx-auto animated-gradient-x flex items-center justify-center flex-col md:flex-row h-100vw';
+const Container = 'md:scale-0.1 w-50% mx-auto animated-gradient-x flex items-center justify-center flex-col md:flex-row h-100vw';
 
 const Subcontainer = 'w-full md:w-1/2 h-full flex items-center justify-center p-4 md:p-8';
 

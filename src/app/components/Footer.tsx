@@ -4,7 +4,7 @@ import { FaTwitter, FaGithub, FaLinkedin, FaInstagram, FaFacebook } from 'react-
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8  w-full" >
+    <footer className="bg-gray-900 text-white pt-12 px-4 md:px-8  w-full mb-0" >
    <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Sección Acerca de */}

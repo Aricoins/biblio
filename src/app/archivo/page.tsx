@@ -1,5 +1,4 @@
 "use client";
-import ONGs from "../components/ONGs";
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
 import "../style.module.css";
@@ -8,21 +7,18 @@ import ExpedientesResoluciones from "../components/ExpedientesResoluciones";
 import ExpedientesOrdenanzas from "../components/ExpedientesOrdenanzas";
 import ExpedientesDeclaraciones from "../components/ExpedientesDeclaraciones";
 import ExpedientesComunicaciones from "../components/ExpedientesComunicaciones";
-import PCM from "../components/PCM";
 import styles from "./style.module.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Link from "next/link";
 import Proyectos from "../proyectos/page";
-import { Modal } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
-import ChatBot from "../components/ChatBot";
-import JuntasVecinales from "../components/Juntas";
+//import ChatBot from "../components/ChatBot";
 import Footer from "../components/Footer";
 
 const Archivo = () => {
@@ -108,7 +104,7 @@ const Archivo = () => {
           data-aos-duration="200"
           className={styles.component}
         >
-                <h2 className={styles.h4}> EXPEDIENTES NO APROBADOS: </h2>
+          <h2 className={styles.h4}> EXPEDIENTES NO APROBADOS: </h2>
           <ProyectosNoSancionados />
         </div>
 
@@ -136,19 +132,19 @@ const Archivo = () => {
           >
             <MdOutgoingMail />
           </a>
-         
         </div>
+         
+      </div> 
         {/* <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
             {" "}
             <ChatBot />
           </div> */}
         <FondosDocumentales />
-        <NavFoot />
 
- <Footer />
-       
-    
-    </div></>
+      <Footer />
+
+      <NavFoot />
+    </>
   );
 };
 
