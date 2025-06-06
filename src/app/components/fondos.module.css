@@ -12,7 +12,7 @@
 
 .h1 {
     font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
+    font-size: 1rem;
     color: black;
     text-align: right;
     text-shadow: 2px 1px 1px white;
@@ -25,7 +25,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 2%;
-    font-size: xx-large;
+    font-size: xx-small;
     z-index: 1;
     margin: auto;
 }
@@ -35,19 +35,22 @@
     height: 100%;
     border: 3px solid #f7f4f4;
     box-shadow: 1px 1px 8px 4px rgba(0, 0, 0, 0.5);
-    color: rgb(5, 0, 0);
+    color: red;
     font-family: 'Roboto', sans-serif;
     padding: 2%;
     text-shadow: 1px 1px 1px rgba(242, 239, 239, 0.5);
     border-radius: 5%;
-    margin-bottom: 5%;
     text-align: center;
     filter: saturate(0%);
     background-image: url('/material.png'); /* Imagen de fondo */
     background-size: cover; /* Ajusta la imagen para que cubra todo el block */
     background-position: center; /* Centra la imagen en el block */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-    z-index: 1;
+    z-index: 0;
+     align-content: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
 }
 
 .endevdiv {
@@ -58,7 +61,7 @@
 
 .p {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     color: rgb(255, 255, 255);
     text-align: center;
     width: 80%;
@@ -67,7 +70,7 @@
     justify-content: center;
     align-self: center;
     align-items: center;
-    margin-top: 20%;
+
     background-color: rgb(0, 0, 0);
     opacity: 0.5;
     padding: 4%;
@@ -87,12 +90,7 @@
 
 @media (max-width: 640px) {
   .contenedor {
-    width: 100%;
-    padding-bottom: 30%;
+    padding-bottom: 40%;
   }
-  .grid {
-    width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    margin-bottom: 100%; 
-  }
+
 }
