@@ -1,4 +1,4 @@
-# Proyecto Biblio
+# DiBiaseNet
 
 Esta es una aplicación Next.js para gestionar y visualizar documentación del Archivo y Bilbioteca Graciela Di Biase  del Concejo Municipal de San Carlos de Bariloche.
 
