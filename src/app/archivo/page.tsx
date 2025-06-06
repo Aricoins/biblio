@@ -144,10 +144,11 @@ const Archivo = () => {
           </div> */}
         <FondosDocumentales />
         <NavFoot />
-      </div>
+
  <Footer />
        
-    </>
+    
+    </div></>
   );
 };
 
