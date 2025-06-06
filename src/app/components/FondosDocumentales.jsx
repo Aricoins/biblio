@@ -49,44 +49,44 @@ const FondosDocumentales = () => {
         Material de consulta
       </div> 
       
-      <div className={styles.contenedor} style={{ zIndex: 1 }}>
-        <div className={styles.grid} style={{ zIndex: 1 }}>
+      <div className={styles.contenedor} style={{ zIndex: 1 }}>   
+        <div className={styles.grid} style={{ zIndex: 1 }} >
           <Link href="/com">
-            <div className={styles.block}> 
-              <p className={styles.p}>Convención Carta Orgánica Municipal</p>
+            <div className={styles.block} data-aos="zoom-in"  data-aos-duration="500"> 
+              <p className={styles.p}>Carta Orgánica Municipal</p>
             </div>
           </Link>
            <Link href="https://drive.google.com/drive/folders/1UUPkChUcSr3SCe6euBOWLSppAkH_arUF?usp=sharing">
             <div 
-            className={styles.block} 
+            className={styles.block}  data-aos="zoom-in"  data-aos-duration="500"
        >
             <p className={styles.p}>Defensoría del Pueblo</p>
           </div>
 </Link>
     <Link href="/juntas">
           <div 
-            className={styles.block} 
+            className={styles.block} data-aos="zoom-in"  data-aos-duration="500"
             >
             <p className={styles.p}>Juntas Vecinales</p>
           </div>
         </Link>
-            <div className={styles.block} 
+            <div className={styles.block} data-aos="zoom-in"  data-aos-duration="500"
                onClick={() => showDevelopmentAlert('CEB')}>
                 <p className={styles.p}>Cooperativa de Electricidad Bariloche</p>
             </div>
           <div 
-            className={styles.block} 
+            className={styles.block}  data-aos="zoom-in"  data-aos-duration="500"
             onClick={() => showDevelopmentAlert('Estudios TUP')}>
-            <p className={styles.p}>Estudios Servicio de Transporte Urbano de Pasajeros</p>
+            <p className={styles.p}>Transporte Urbano de Pasajeros</p>
           </div>
           <div 
-            className={styles.block} 
+            className={styles.block}  data-aos="zoom-in"  data-aos-duration="500"
      
             onClick={() => showDevelopmentAlert('Fiesta de la Nieve')}>
             <p className={styles.p} style={{ zIndex: 1 }}>Fiesta Nacional de la Nieve</p>
           </div>
-          <div 
-            className={styles.block} 
+          <div  
+            className={styles.block} data-aos="zoom-in"  data-aos-duration="500"
             onClick={() => showDevelopmentAlert('Parque Municipal Llao Llao')}>
             <p className={styles.p}>Parque Municipal Llao Llao</p>
           </div>
