@@ -51,6 +51,12 @@
     justify-content: center;
     align-self: center;
     align-items: center;
+    :hover {
+      scale: 1.15;
+       transition: scale 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.9);
+        color: black
+    }
 }
 
 .endevdiv {
