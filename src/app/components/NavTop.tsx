@@ -68,7 +68,7 @@ const NavTop = () => {
           </Link>
         </div>
         <div className={styles.item2}>
-          <li className={styles.link}>
+          <li >
             <SignedOut>
               <SignUpButton>Ingresar</SignUpButton>
             </SignedOut>
