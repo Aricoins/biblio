@@ -40,7 +40,7 @@ const Footer = () => {
 </li>
    
               <li>
-                <Link href="mailto:digestoconcejo@gmail.com" className="hover:text-red-500 transition-colors">
+                <Link href="mailto:digestoconcejo@gmail.com" className="hover:text-[#74cbc3]  transition-colors">
                   Contacto
                 </Link>
               </li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
+                className="text-gray-400 hover:text-[#74cbc3]  transition-colors"
               >
                 <FaTwitter size={24} />
               </a>
@@ -63,7 +63,7 @@ const Footer = () => {
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
+                  className="text-gray-400 hover:text-[#74cbc3]  transition-colors"
               >
                 <FaInstagram size={24} />
               </a>
@@ -71,7 +71,7 @@ const Footer = () => {
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
+                 className="text-gray-400 hover:text-[#74cbc3]  transition-colors"
               >
                 <FaFacebook size={24} />
               </a>
@@ -79,7 +79,7 @@ const Footer = () => {
                 href="/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-red-500 transition-colors"
+                 className="text-gray-400 hover:text-[#74cbc3]  transition-colors"
               >
                 <FaLinkedin size={24} />
               </a>
