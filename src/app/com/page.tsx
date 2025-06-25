@@ -7,6 +7,7 @@ import NavFoot from "../components/NavFoot"; // Importa el componente NavFoot.
 import DataPage from "./component/com"; // Importa DataPage.
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import styles from "../../app/proyectos/styles.module.css"; // Importa los estilos.
+import ProtectedRoute from '../components/ProtectedRoute';
 interface Acta {
   // Define la interfaz para los datos de las actas.
   title: string;
@@ -132,7 +133,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <ProtectedRoute>
       <NavTop />
       <div
         style={{
@@ -292,6 +293,6 @@ export default function Home() {
         </Modal>
       </div>
       <NavFoot />
-    </>
+    </ProtectedRoute>
   );
 }

@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import styles from './styles.module.css';
 import dataSource from '../api/upload/datos_pcm_2.json';
 import PCM from '../components/PCM';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 const { Search } = Input;
 
@@ -111,7 +112,8 @@ function PCMTable() {
     const paginatedData = filteredData.slice(startIndex, endIndex);
 
     return (
-        <div> 
+        <ProtectedRoute>
+            <div> 
             <h2 className={styles.hdos} data-aos="fade-up">Normas por PCM</h2>
             <h3 
                 data-aos="fade-left" 
@@ -191,7 +193,8 @@ function PCMTable() {
                 )}
             </Modal>
             <PCM/>
-        </div>
+            </div>
+        </ProtectedRoute>
     );
 }
 

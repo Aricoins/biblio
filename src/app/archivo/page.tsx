@@ -15,11 +15,11 @@ import Link from "next/link";
 import Proyectos from "../proyectos/page";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
 //import ChatBot from "../components/ChatBot";
 import Footer from "../components/Footer";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const Archivo = () => {
   useEffect(() => {
@@ -27,7 +27,7 @@ const Archivo = () => {
   }, []);
 
   return (
-    <>
+    <ProtectedRoute>
       <NavTop />
       <div className={styles.container}>
         <div
@@ -144,7 +144,7 @@ const Archivo = () => {
       <Footer />
 
       <NavFoot />
-    </>
+    </ProtectedRoute>
   );
 };
 

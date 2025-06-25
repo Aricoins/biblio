@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 import { useRouter } from 'next/navigation';
 import NavFoot from '@/app/components/NavFoot';
 import NavTop from '@/app/components/NavTop';
+import ProtectedRoute from '../../components/ProtectedRoute';
 
 import styles from './style.module.css'; // Importar el archivo CSS Modules correspondiente
 
@@ -141,9 +142,9 @@ const handleAddReview = () => {
 console.log(errors, 'errors')
 
 return (
-    <>
-    <NavTop/>
-   <div className={styles.flexContainer}>
+    <ProtectedRoute>
+        <NavTop/>
+        <div className={styles.flexContainer}>
     <div className={styles.flexItem}>
     <div className={styles.formContainer}>
        <h1 data-aos='flip-right' className={styles.formTitle}>
@@ -266,10 +267,8 @@ return (
   )}
    </div>
     </div>
-
-<NavFoot/>
-
-    </>
+        <NavFoot/>
+    </ProtectedRoute>
   );
   
 };

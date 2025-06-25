@@ -14,6 +14,7 @@ import ONGs from "../components/ONGs";
 import CalendarPage from "../components/Calendar";
 import ChatBot from "../components/ChatBot";
 import Footer from "../components/Footer";
+import ProtectedRoute from '../components/ProtectedRoute';
 
 interface Libro {
   titulo: string;
@@ -100,7 +101,7 @@ if (!Array.isArray(rawData)) {
   }
 
   return (
-    <>
+    <ProtectedRoute>
       <div className={styles.body}>
         <div
           data-aos="fade-right"
@@ -185,7 +186,7 @@ if (!Array.isArray(rawData)) {
      <Footer /></div>
       </div>
     
-    </>)
+    </ProtectedRoute>);
 
 };
 

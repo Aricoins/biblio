@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import { MdExpandMore, MdExpandLess } from "react-icons/md";
 import { BsDatabaseFillCheck } from "react-icons/bs";
+import ProtectedRoute from '../components/ProtectedRoute';
 
 const { Title } = Typography;
 
@@ -260,7 +261,7 @@ function Proyectos() {
     const datosPaginaActual = resultados.slice(startIndex, endIndex);
 
     return (
-        <>
+        <ProtectedRoute>
             <div onClick={() => setVer(!ver)}>
                 <h2 className={styles.hdos} >
                     {ver ? 
@@ -337,7 +338,7 @@ function Proyectos() {
                     )}
                 </div>
             )}
-        </>
+        </ProtectedRoute>
     );
 }
 

@@ -68,7 +68,7 @@ const NavTop = () => {
           </Link>
         </div>
         <div className={styles.item2}>
-          <li >
+          <li style={{alignContent: "center"}}>
             <SignedOut>
               <SignUpButton>Ingresar</SignUpButton>
             </SignedOut>

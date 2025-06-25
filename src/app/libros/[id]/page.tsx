@@ -6,6 +6,7 @@ import styles from "./style.module.css";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { cp } from "fs";
+import ProtectedRoute from '../../components/ProtectedRoute';
 
 interface Detail {
   id: number;
@@ -53,7 +54,7 @@ export default function Detail({ params }: { params: { id: number } }) {
   };
 
   return (
-    <>
+    <ProtectedRoute>
       {loading ? (
         <Spin
           style={{
@@ -95,6 +96,6 @@ export default function Detail({ params }: { params: { id: number } }) {
           </div>
         </div>
       )}
-    </>
+    </ProtectedRoute>
   );
 }

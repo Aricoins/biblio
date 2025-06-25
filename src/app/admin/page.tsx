@@ -7,6 +7,7 @@ import {  SignIn, useAuth, SignUp, UserProfile, Protect } from '@clerk/nextjs';
 import { useUser } from "@clerk/clerk-react";
 import { useState } from 'react';
 import ProyectosPage from './components/ProyectosPage';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 
 // {
@@ -36,7 +37,7 @@ const Page = () => {
   ];
   
   return (
-    <>
+    <ProtectedRoute>
      {(userId && authorizedUserIds.includes(userId)) ? 
      (
         <div style={{
@@ -89,7 +90,7 @@ const Page = () => {
         
         )
       
-          }    </>)};
+          }    </ProtectedRoute>)};
 
 export default Page;
 
