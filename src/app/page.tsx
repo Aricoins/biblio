@@ -81,22 +81,8 @@ export default function Libros() {
                 <SignIn routing='hash' />
               </SignedOut>
               <SignedIn>
-                <div className='flex flex-col gap-4'>
-                  <p style={{ color: "white", textAlign: "center", fontSize: "18px", fontWeight: "600" }}>
-                    ¡Bienvenido al sistema!
-                  </p>
-                  <Link href='/archivo'>
-                    <button className={Boton}>Acceder al archivo</button>
-                  </Link>
-                  <Link href='/libros'>
-                    <button className={Boton}>Ver libros</button>
-                  </Link>
-                  <Link href='/proyectos'>
-                    <button className={Boton}>Ver proyectos</button>
-                  </Link>
-                </div>
               </SignedIn>
-            </div>
+              </div>
           </div>
         </div>
       ) : (
