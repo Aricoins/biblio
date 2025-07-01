@@ -101,29 +101,43 @@ const JuntasVecinales = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", margin: "5%" }}>
-    <h2
-      style={{
-        fontSize: "medium",
-        fontWeight: 500,
-        cursor: "pointer",
-        backgroundColor: "rgb(81, 81, 81)",
-        color: "rgb(255, 255, 255)",
-        transition: "0.5s",
-        border: "rgb(255, 255, 255) 2px solid",
-        fontFamily: "'Roboto', sans-serif",
-        borderRadius: "25px",
-        textAlign: "center",
-        width: "70%",
-        margin: "0 auto",
-        boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
-        flexDirection: "column",
-      }}
-      onClick={() => setVisible(!visible)}
-    >
- {visible ? <MdExpandLess/>: <MdExpandMore/>} Juntas Vecinales | Estatutos  {visible ? <MdExpandLess/>: <MdExpandMore/>}   
-
- </h2>
+     <div style={{ textAlign: "center", margin: "5%" }}>
+      {/* Header */}
+      <h2
+        style={{
+          fontSize: "medium",
+          fontWeight: 500,
+          cursor: "pointer",
+          backgroundColor: "#74cbc3",
+          color: "black",
+          transition: "0.5s",
+          border: "black 2px solid",
+          fontFamily: "'Roboto', sans-serif",
+          borderRadius: "25px",
+          textAlign: "center",
+          width: "70%",
+          margin: "0 auto 2% auto",
+          padding: "1%",
+          boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px"
+        }}
+        onClick={() => setVisible(!visible)}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#f7f8fa";
+          e.currentTarget.style.border = "#74cbc3 2px solid";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "#74cbc3";
+          e.currentTarget.style.border = "black 2px solid";
+        }}
+      >
+        {visible ? <MdExpandLess /> : <MdExpandMore />} 
+        Juntas Vecinales | Estatutos  
+        {visible ? <MdExpandLess /> : <MdExpandMore />}
+      </h2>
      {visible && (
       <div style={{ marginTop: "2%" }}>
       <Input
