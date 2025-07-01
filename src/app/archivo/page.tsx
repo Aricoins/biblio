@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { MdOutgoingMail } from "react-icons/md";
 import FondosDocumentales from "../components/FondosDocumentales";
-//import ChatBot from "../components/ChatBot";
+import ChatBot from "../components/ChatBot";
 import Footer from "../components/Footer";
 import ProtectedRoute from "../components/ProtectedRoute";
 
@@ -135,10 +135,10 @@ const Archivo = () => {
         </div>
          
       </div> 
-        {/* <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
+        <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
             {" "}
             <ChatBot />
-          </div> */}
+          </div>
         <FondosDocumentales />
 
       <Footer />
