@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import logo from '../../src/app/api/assets/moran.png';
 import Text from './components/text';
 import './globals.css';
@@ -26,7 +27,15 @@ export default function Libros() {
   const [complete, setComplete] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { isLoaded, userId, sessionId, getToken } = useAuth();
+  const { isLoaded, isSignedIn } = useAuth();
+  const router = useRouter();
+
+
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.push('/archivo');
+    }
+  }, [isLoaded, isSignedIn, router]);
 
   useEffect(() => {
     setTimeout(() => {
