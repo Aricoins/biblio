@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Papa from 'papaparse';
 import { Input, Checkbox, Typography, Table, Spin, Pagination } from 'antd';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -27,6 +28,7 @@ interface Proyecto {
     observaciones: string;
 }
 
+
 function Proyectos() {
     const [proyectos, setProyectos] = useState<Proyecto[]>([]);
     const [busquedaNumero, setBusquedaNumero] = useState('');
@@ -44,6 +46,68 @@ function Proyectos() {
     // Estado para la paginación
     const [currentPage, setCurrentPage] = useState(1);
     const [pageSize, setPageSize] = useState(5);
+
+    // Estado para los mapas de links de Drive por tipo de norma
+    type NormasDriveMap = { [numero: string]: string };
+    type NormasDriveByTipo = {
+        [tipo: string]: NormasDriveMap;
+        ordenanza: NormasDriveMap;
+        resolucion: NormasDriveMap;
+        declaracion: NormasDriveMap;
+        comunicacion: NormasDriveMap;
+        proyectosNoSancionados: NormasDriveMap;
+    };
+    const [normasDrive, setNormasDrive] = useState<NormasDriveByTipo>({
+        ordenanza: {},
+        resolucion: {},
+        declaracion: {},
+        comunicacion: {},
+        proyectosNoSancionados: {}
+    });
+    const [csvsCargados, setCsvsCargados] = useState(false);
+
+    // URLs de los CSVs por tipo
+    const csvUrls = {
+        ordenanza: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRG6dLsp3OS5Yh7KafIfj989OB-kQXxXJdlZ_loCJ1aKk8cBdXddrwCMpnHdtIqtnQidWIjyPsoLynv/pub?output=csv',
+        resolucion: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYYsJNNXkfrt90nDsIaR3ceaDZqBo6Vwd0fxecHNC4zfgUrwLFl8E9_a-i5HCQ7el0CxlKYugzXAkM/pub?output=csv',
+        declaracion: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTOPvyh0NxFC-EyV28tFWZlX3f_OFPrY2w4JFVnqF3CDyPJ4pNbORFaq5yI1uNw4aeoP27jXWp82GTU/pub?output=csv',
+        comunicacion: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQehN_KoR_FWj8pHcksQjGXLoi_kZeOxQWldM9a-vIGafQiirhDNH8nhdn5qGjEaGrDxSIfcAWVDprP/pub?output=csv',
+        // proyectosNoSancionados: 'URL_DEL_CSV_SI_APLICA'
+    };
+
+    // Cargar los CSVs al expandir el buscador (ver)
+    useEffect(() => {
+        if (ver && !csvsCargados) {
+            const tipos = Object.keys(csvUrls);
+            Promise.all(
+                tipos.map(tipo =>
+                    fetch(csvUrls[tipo as keyof typeof csvUrls])
+                        .then(res => res.text())
+                        .then(csv => {
+                            const parsed = Papa.parse(csv, { header: true }) as Papa.ParseResult<{ [key: string]: string }>;
+                            // Construir el mapa: { Numero: Link }
+                            const map: NormasDriveMap = {};
+                            parsed.data.forEach((row) => {
+                                if (row && row['Numero'] && row['Link']) {
+                                    map[row['Numero']] = row['Link'];
+                                }
+                            });
+                            return { tipo, map };
+                        })
+                )
+            ).then(results => {
+                const newNormasDrive: NormasDriveByTipo = { ...normasDrive };
+                results.forEach(({ tipo, map }) => {
+                    newNormasDrive[tipo] = map;
+                });
+                setNormasDrive(newNormasDrive);
+                setCsvsCargados(true);
+            }).catch(err => {
+                console.error('Error cargando CSVs de normas:', err);
+            });
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [ver, csvsCargados]);
 
     useEffect(() => {
         if (ver && !datosCargados) {
@@ -189,41 +253,84 @@ function Proyectos() {
             ),
             className: styles.autores
           },
-          {
+        {
             title: 'Norma',
             dataIndex: 'numero_norma',
             key: 'numero_norma',
             render: (numeroNorma: string, record: Proyecto) => {
-                if (numeroNorma) {
-                    const partesNorma = numeroNorma.split('-');
-                    let añoNorma = null;
+                if (!numeroNorma) return '';
+                // Normalizar tipo para el mapa y la ruta local (sin tildes, minúsculas)
+                const quitarTildes = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                let tipoNorma = quitarTildes(record.tipo_norma || '').toLowerCase();
+                // Mapear a las claves correctas del objeto normasDrive
+                let tipoMapa: keyof typeof normasDrive = 'ordenanza';
+                if (tipoNorma.includes('comunicacion')) tipoMapa = 'comunicacion';
+                else if (tipoNorma.includes('resolucion')) tipoMapa = 'resolucion';
+                else if (tipoNorma.includes('declaracion')) tipoMapa = 'declaracion';
+                else if (tipoNorma.includes('ordenanza')) tipoMapa = 'ordenanza';
 
-                    if (partesNorma.length > 1) {
-                        const digitos = partesNorma[1];
-                        añoNorma = `20${digitos}`;
-                    }
-                    let tipoNorma = record.tipo_norma.toLowerCase();
+                // Para la ruta local, plural
+                let tipoRuta = tipoMapa;
+                if (tipoMapa === 'comunicacion') tipoRuta = 'comunicaciones';
+                else if (tipoMapa === 'resolucion') tipoRuta = 'resoluciones';
+                else if (tipoMapa === 'declaracion') tipoRuta = 'declaraciones';
+                else if (tipoMapa === 'ordenanza') tipoRuta = 'ordenanzas';
 
-                    if (tipoNorma === "comunicacion") {
-                        tipoNorma = "comunicaciones";
-                    } else if (tipoNorma === "resolución") {
-                        tipoNorma = "resoluciones";
-                    } else if (tipoNorma === "declaración") {
-                        tipoNorma = "declaraciones";
-                    } else if (tipoNorma === "ordenanza") {
-                        tipoNorma = "ordenanzas";
-                    }
-                    
-                    const filePath = `normas/${tipoNorma}/${añoNorma}/${numeroNorma}.doc`;
-
-                    return (
-                        <button onClick={() => downloadFile(filePath)}>
-                            {numeroNorma}
-                        </button>
-                    );
-                } else {
-                    return '';
+                // Calcular año de la norma
+                const partesNorma = numeroNorma.split('-');
+                let añoNorma = null;
+                if (partesNorma.length > 1) {
+                    const digitos = partesNorma[1];
+                    añoNorma = `20${digitos}`;
                 }
+                const filePath = `normas/${tipoRuta}/${añoNorma}/${numeroNorma}.doc`;
+
+                // Extraer solo el número final para buscar en el mapa
+                // Ejemplo: "D-24-2985" => "2985"
+                let claveNorma = numeroNorma;
+                const match = numeroNorma.match(/(\d{3,4})$/);
+                if (match) claveNorma = match[1];
+
+                const driveUrl = normasDrive[tipoMapa]?.[claveNorma];
+                return (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 4, alignItems: 'flex-start' }}>
+                        <span style={{ fontWeight: 500, fontSize: '0.95em', marginBottom: 2 }}>{numeroNorma}</span>
+                        <div style={{ display: 'flex', gap: 8 }}>
+                            <button
+                                disabled={!driveUrl}
+                                style={{
+                                    backgroundColor: driveUrl ? '#07db91' : '#cfeec7',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: 4,
+                                    padding: '2px 10px',
+                                    cursor: driveUrl ? 'pointer' : 'not-allowed',
+                                    fontWeight: 500
+                                }}
+                                onClick={() => { if (driveUrl) window.open(driveUrl, '_blank'); }}
+                            >
+                                Expediente
+                            </button>
+                            <button
+                                style={{
+                                    backgroundColor: '#28a745',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: 4,
+                                    padding: '2px 10px',
+                                    fontWeight: 500,
+                                    cursor: 'pointer'
+                                }}
+                                onClick={() => downloadFile(filePath)}
+                            >
+                                Editable
+                            </button>
+                        </div>
+                        {!driveUrl && (
+                            <span style={{ color: '#888', fontSize: '0.9em', marginTop: 2 }}>Norma no disponible</span>
+                        )}
+                    </div>
+                );
             },
             className: styles.norma
         },
