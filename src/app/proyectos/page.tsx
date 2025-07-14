@@ -421,6 +421,15 @@ function Proyectos() {
               driveUrl = mapa[clave];
             }
           }
+        } else if (tipoMapa === "resolucion") {
+          // Para resoluciones, buscar solo por correlativo puro
+          const match = numeroNorma.match(/R-\d{2}-(\d{3,4})/i);
+          if (match) {
+            const correlativo = match[1];
+            if (mapa[correlativo]) {
+              driveUrl = mapa[correlativo];
+            }
+          }
         } else {
           // Para otros tipos, mantener lógica robusta
           const normalizarClave = (clave: string) => {
