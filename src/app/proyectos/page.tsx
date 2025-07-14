@@ -387,6 +387,8 @@ function Proyectos() {
         else if (tipoNorma.includes("declaracion")) tipoMapa = "declaracion";
         else if (tipoNorma.includes("ordenanza")) tipoMapa = "ordenanza";
 
+        const mapa = normasDrive[tipoMapa] || {};
+
         // Para la ruta local, plural
         let tipoRuta = tipoMapa;
         if (tipoMapa === "comunicacion") tipoRuta = "comunicaciones";
@@ -402,14 +404,48 @@ function Proyectos() {
           añoNorma = `20${digitos}`;
         }
         const filePath = `normas/${tipoRuta}/${añoNorma}/${numeroNorma}.doc`;
+        // ...existing code...
 
-        // Extraer solo el número final para buscar en el mapa
-        // Ejemplo: "D-24-2985" => "2985"
-        let claveNorma = numeroNorma;
-        const match = numeroNorma.match(/(\d{3,4})$/);
-        if (match) claveNorma = match[1];
+        // --- Búsqueda tipo ExpedientesOrdenanzas para ordenanzas ---
+        // (la variable 'mapa' ya está declarada arriba, no volver a declararla)
+        let driveUrl: string | undefined = undefined;
+        if (tipoMapa === "ordenanza") {
+          // Extraer correlativo y año de numeroNorma (ej: O-04-1358)
+          const match = numeroNorma.match(/O-(\d{2})-(\d{3,4})/i);
+          if (match) {
+            const anio = `20${match[1]}`;
+            const correlativo = match[2];
+            // Buscar clave que contenga ambos
+            const clave = Object.keys(mapa).find(k => k.includes(correlativo) && k.includes(anio));
+            if (clave) {
+              driveUrl = mapa[clave];
+            }
+          }
+        } else {
+          // Para otros tipos, mantener lógica robusta
+          const normalizarClave = (clave: string) => {
+            if (!clave) return "";
+            let c = clave.toUpperCase();
+            c = c.replace(/^(O-|ORD-|ORDENANZA-|N-|D-|R-|DEC-|COM-|C-)/, "");
+            c = c.replace(/[^0-9]/g, "");
+            c = c.replace(/^0+/, "");
+            return c;
+          };
+          const mapaNormalizado: { [k: string]: string } = {};
+          Object.keys(mapa).forEach((k) => {
+            mapaNormalizado[normalizarClave(k)] = mapa[k];
+          });
+          const claveBuscada = normalizarClave(numeroNorma);
+          if (mapaNormalizado[claveBuscada]) {
+            driveUrl = mapaNormalizado[claveBuscada];
+          } else {
+            const match = claveBuscada.match(/(\d{3,4})$/);
+            if (match && mapaNormalizado[match[1]]) {
+              driveUrl = mapaNormalizado[match[1]];
+            }
+          }
+        }
 
-        const driveUrl = normasDrive[tipoMapa]?.[claveNorma];
         return (
           <div
             style={{
