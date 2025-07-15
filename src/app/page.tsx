@@ -1,17 +1,15 @@
 "use client"
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import logo from '../../src/app/api/assets/moran.png';
 import Text from './components/text';
 import './globals.css';
-import { Spin, Typography } from "antd";
-import { ClerkProvider, SignInButton, SignOutButton, SignedIn, SignedOut, UserButton, SignIn, UserProfile, SignUp } from '@clerk/nextjs';
+import { Spin } from "antd";
+import { SignedIn, SignedOut, SignIn, SignUp } from '@clerk/nextjs';
 import { useAuth } from "@clerk/nextjs";
 import  Gallery  from './components/Gallery'
-import Footer from './components/Footer';
 
 const Container = 'md:scale-0.1 w-50% mx-auto animated-gradient-x flex items-center justify-center flex-col md:flex-row h-100vw';
 

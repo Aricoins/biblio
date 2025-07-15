@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { KnowledgeChunk } from '../ai/ai.types';
 
-const KNOWLEDGE_FILES = ['datos.json', 'proyectos.json'];
+const KNOWLEDGE_FILES = ['proyectos.json'];
 // Update the KNOWLEDGE_PATHS array to include the location of your JSON files:
 
 const KNOWLEDGE_PATHS = [
@@ -65,12 +65,27 @@ export class KnowledgeLoader {
         metadata: KnowledgeItem;
     }
 
-            return content.map((item: KnowledgeItem, index: number): ProcessedKnowledgeChunk => ({
-                id: `${source}-${index}-${Date.now()}`,
-                content: JSON.stringify(item),
-                source,
-                metadata: item
-            }));
+    return content.map((item: KnowledgeItem, index: number): ProcessedKnowledgeChunk => {
+        // Construir un resumen legible y rico en palabras clave
+        const tipoNorma = item.tipo_norma || item.tipo_proyecto || '';
+        const numeroNorma = item.numero_norma || item.numero_proyecto || '';
+        const anio = item.anio_proyecto || '';
+        const titulo = item.titulo_proyecto || '';
+        const observaciones = item.observaciones || '';
+        const autores = Array.isArray(item.autor) ? item.autor.join('; ') : (item.autor || '');
+        const colaboradores = item.colaboradores || '';
+        const aprobado = item.aprobado ? 'Aprobado' : 'No aprobado';
+        const acta = item.acta_fecha || '';
+
+        const resumen = `[Tipo: ${tipoNorma}] [N°: ${numeroNorma}] Año: ${anio}\nTítulo: ${titulo}\nAutores: ${autores}\nColaboradores: ${colaboradores}\nEstado: ${aprobado}\nActa/Fecha: ${acta}\nObservaciones: ${observaciones}`;
+
+        return {
+            id: `${source}-${index}-${Date.now()}`,
+            content: resumen,
+            source,
+            metadata: item
+        };
+    });
   }
 
   private isCacheValid(): boolean {

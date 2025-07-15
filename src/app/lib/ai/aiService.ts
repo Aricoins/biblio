@@ -62,56 +62,43 @@ export class AIService {
     knowledge: KnowledgeChunk[],
     topN = 10  // Aumentado para incluir más contexto
   ): Promise<KnowledgeChunk[]> {
-    // Ampliar los sinónimos para incluir términos relacionados a ordenanzas
-    const keywordSynonyms: {[key: string]: string[]} = {
-      'vertedero': ['basura', 'residuos', 'desechos', 'relleno sanitario', 'disposición final', 'recolección'],
-      'ambiente': ['ambiental', 'ecología', 'ecológico', 'naturaleza', 'medioambiente', 'contaminación'],
-      'ordenanza': ['norma', 'regulación', 'legislación', 'normativa', 'reglamentación', 'ley municipal'],
-      'tasa': ['impuesto', 'tributo', 'arancel', 'contribución', 'tarifa', 'gravamen'],
-      'concejo': ['deliberante', 'municipalidad', 'legislativo', 'municipal', 'ayuntamiento'],
-    };
-    
+    // Búsqueda estricta: coincidencia literal y exacta en campos clave
     const queryLower = query.toLowerCase();
-    
-    // Función para calcular una puntuación de relevancia
     const getRelevanceScore = (chunk: KnowledgeChunk): number => {
-      const contentLower = chunk.content.toLowerCase();
       let score = 0;
-      
-      // Buscar palabras clave exactas
-      for (const keyword of Object.keys(keywordSynonyms)) {
-        if (queryLower.includes(keyword)) {
-          // Palabra clave exacta en la consulta
-          if (contentLower.includes(keyword)) {
-            score += 10;
-          }
-          
-          // Sinónimos en el contenido
-          for (const synonym of keywordSynonyms[keyword]) {
-            if (contentLower.includes(synonym)) {
-              score += 5;
-            }
-          }
-        }
+      // Coincidencia exacta en número de norma
+      if (chunk.metadata && chunk.metadata.numero_norma && queryLower.includes(String(chunk.metadata.numero_norma).toLowerCase())) {
+        score += 100;
       }
-      
-      // Palabras individuales de la consulta
+      // Coincidencia exacta en título
+      if (chunk.metadata && chunk.metadata.titulo_proyecto && queryLower.includes(String(chunk.metadata.titulo_proyecto).toLowerCase())) {
+        score += 100;
+      }
+      // Coincidencia exacta en nombre de junta vecinal
+      if (chunk.metadata && chunk.metadata.titulo_proyecto && queryLower.includes(String(chunk.metadata.titulo_proyecto).toLowerCase())) {
+        score += 100;
+      }
+      // Coincidencia parcial en campos relevantes
+      if (chunk.metadata && chunk.metadata.titulo_proyecto && String(chunk.metadata.titulo_proyecto).toLowerCase().includes(queryLower)) {
+        score += 20;
+      }
+      if (chunk.metadata && chunk.metadata.observaciones && String(chunk.metadata.observaciones).toLowerCase().includes(queryLower)) {
+        score += 10;
+      }
+      // Palabras individuales
       const queryWords = queryLower.split(/\W+/).filter(w => w.length > 3);
       for (const word of queryWords) {
-        if (contentLower.includes(word)) {
+        if (chunk.content.toLowerCase().includes(word)) {
           score += 2;
         }
       }
-      
       return score;
     };
-    
-    // Ordenar por puntuación de relevancia
     return knowledge
       .map(chunk => ({ chunk, score: getRelevanceScore(chunk) }))
-      .filter(item => item.score > 0)  // Solo mantener coincidencias
-      .sort((a, b) => b.score - a.score)  // Ordenar por puntuación descendente
-      .slice(0, topN)  // Limitar a los top N resultados
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, topN)
       .map(item => item.chunk);
   }
 
