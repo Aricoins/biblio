@@ -8,6 +8,8 @@ import { usePathname } from 'next/navigation';
 import { UserButton, SignedIn, SignedOut, SignUpButton } from '@clerk/nextjs';
 import { useAuth } from '@clerk/nextjs';
 import { useState, useEffect } from 'react';
+// Importar los iconos mejorados
+import { FaArchive, FaBook, FaDatabase, FaUser } from 'react-icons/fa';
 
 const NavTop = () => {
   const pathname = usePathname();
@@ -18,7 +20,7 @@ const NavTop = () => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
@@ -34,51 +36,80 @@ const NavTop = () => {
   }, []);
 
   return (
-    <div className={clsx(styles.navTop, { [styles.hidden]: isHidden })}>
-      <Link href="/" passHref className={styles.navTopLink}>
-        <div>
+    <nav className={clsx(styles.navTop, { [styles.hidden]: isHidden })}>
+      <Link href="/" className={styles.navTopLink}>
+        <div className={styles.logoContainer}>
           <Image 
             src={logo}
             width={200} 
             height={300} 
-            alt="logotipo" 
+            alt="DiBiase.Net - Archivo Municipal" 
             priority
-            style={{width: "50%", height: "100%"}}
+            className={styles.navTopImage}
           />
         </div>
       </Link>
-      <div className={styles.navTopList}>
-        <div className={styles.item}>    
+      
+      <ul className={styles.navTopList}>
+        <li className={styles.item}>
           <Link href="/archivo" className={clsx(styles.link, {
             [styles.link2]: pathname === '/archivo',
           })}>
-            Archivo
+            <span className={styles.linkContent}>
+              <FaArchive className={styles.linkIcon} />
+              <span className={styles.linkText}>Archivo</span>
+            </span>
           </Link>
-        </div>
-        <div className={styles.item}>
+        </li>
+        
+        <li className={styles.item}>
           <Link href="/libros" className={clsx(styles.link, {
             [styles.link2]: pathname === '/libros',
           })}>
-            Biblioteca
+            <span className={styles.linkContent}>
+              <FaBook className={styles.linkIcon} />
+              <span className={styles.linkText}>Biblioteca</span>
+            </span>
           </Link>
-        </div>
-        <div className={styles.item}>
-          <Link className={styles.link} href="/admin">
-            Datos
+        </li>
+        
+        <li className={styles.item}>
+          <Link href="/admin" className={clsx(styles.link, {
+            [styles.link2]: pathname === '/admin',
+          })}>
+            <span className={styles.linkContent}>
+              <FaDatabase className={styles.linkIcon} />
+              <span className={styles.linkText}>Datos</span>
+            </span>
           </Link>
-        </div>
-        <div className={styles.item2}>
-          <li style={{alignContent: "center"}}>
+        </li>
+        
+        <li className={styles.authItem}>
+          <div className={styles.authContainer}>
             <SignedOut>
-              <SignUpButton>Ingresar</SignUpButton>
+              <SignUpButton mode="modal">
+                <button className={styles.authButton}>
+                  <FaUser className={styles.authIcon} />
+                  <span className={styles.authText}>Ingresar</span>
+                </button>
+              </SignUpButton>
             </SignedOut>
             <SignedIn>
-              <UserButton />
+              <div className={styles.userButtonContainer}>
+                <UserButton 
+                  appearance={{
+                    elements: {
+                      avatarBox: styles.userAvatar,
+                      userButtonTrigger: styles.userButtonTrigger
+                    }
+                  }}
+                />
+              </div>
             </SignedIn>
-          </li> 
-        </div>
-      </div>
-    </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

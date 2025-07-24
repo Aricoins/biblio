@@ -11,6 +11,7 @@ export default function ChatBot() {
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [systemStatus, setSystemStatus] = useState<'healthy' | 'degraded' | 'error' | 'unknown'>('unknown');
 const messagesEndRef = useRef<HTMLDivElement>(null);
 const formatResponse = (text: string): JSX.Element => {
   // Limpiar asteriscos y formato markdown
@@ -56,53 +57,101 @@ const formatResponse = (text: string): JSX.Element => {
 const scrollToBottom = () => {
   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
 };
+
+// Verificar estado del sistema al abrir el chat
+const checkSystemHealth = async () => {
+  try {
+    const response = await fetch('/api/health');
+    const health = await response.json();
+    setSystemStatus(health.status === 'healthy' ? 'healthy' : 'degraded');
+  } catch (error) {
+    console.error('Health check failed:', error);
+    setSystemStatus('error');
+  }
+};
+
+// Verificar salud del sistema cuando se abre el chat
+useEffect(() => {
+  if (isOpen && systemStatus === 'unknown') {
+    checkSystemHealth();
+  }
+}, [isOpen, systemStatus]);
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input.trim()) return;
+    
+    // Verificar estado del sistema antes de enviar
+    if (systemStatus === 'error') {
+      const errorMsg = "El sistema está experimentando problemas técnicos. Por favor, intenta más tarde o contacta a digestoconcejo@gmail.com";
+      setMessages((prev) => [...prev, 
+        { role: "user", content: input },
+        { role: "bot", content: errorMsg }
+      ]);
+      setInput("");
+      return;
+    }
+    
     setTimeout(scrollToBottom, 100);
     const userMessage = { role: "user", content: input };
+    const messageToSend = input;
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
     try {
-      const tempBotMessage = { role: "bot", content: "Consulta enviada..." };
+      const tempBotMessage = { role: "bot", content: "Procesando tu consulta..." };
       setMessages((prev) => [...prev, tempBotMessage]);
-  const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 95000000); // Abort after 9.5s
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 segundos timeout
 
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ 
+          message: messageToSend,
+          history: messages.slice(-4).map(m => ({
+            role: m.role === 'user' ? 'user' : 'assistant',
+            content: typeof m.content === 'string' ? m.content : m.content.toString()
+          }))
+        }),
         signal: controller.signal,
       });
 
-     clearTimeout(timeoutId);
-    const data = await res.json();
-       if (res.ok) {
-
-      const formattedResponse = formatResponse(data.reply);
+      clearTimeout(timeoutId);
+      const data = await res.json();
+      
+      if (res.ok && data.reply) {
+        const formattedResponse = formatResponse(data.reply);
+        
+        setMessages((prev) => [
+          ...prev.slice(0, -1),
+          { role: "bot", content: formattedResponse }
+        ]);
+        
+        // Actualizar estado del sistema si la respuesta fue exitosa
+        if (systemStatus !== 'healthy') {
+          setSystemStatus('healthy');
+        }
+      } else {
+        throw new Error(data.error || "Error en la respuesta del servidor");
+      } 
+    } catch (error) {
+      console.error('Chat error:', error);
+      
+      let errorMessage = "Estamos experimentando dificultades técnicas. Por favor, intenta nuevamente o contacta a nuestro equipo de soporte.";
+      
+      if (error instanceof DOMException && error.name === 'AbortError') {
+        errorMessage = "La consulta está tomando más tiempo del esperado. Por favor, intenta con una pregunta más específica.";
+        setSystemStatus('degraded');
+      } else {
+        setSystemStatus('error');
+      }
       
       setMessages((prev) => [
         ...prev.slice(0, -1),
-        { role: "bot", content: formattedResponse }
-      ]);} else {
-       throw new Error("Error en la respuesta del servidor");
-      } 
-    } catch (error) {
-      const errorMessage =
-        typeof error === "object" &&
-        error !== null &&
-        "name" in error &&
-        (error as { name?: string }).name === "AbortError"
-          ? "Estamos trabajando en optimizar esta herramienta, por favor intenta nuevamente más tarde."
-          : "Estamos trabajando en optimizar esta herramienta, por favor intenta nuevamente más tarde.";
-      
-    setMessages((prev) => [
-      ...prev.slice(0, -1),
-      { role: "bot", content: errorMessage }
-    ]);
+        { role: "bot", content: errorMessage }
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -227,22 +276,43 @@ const scrollToBottom = () => {
 };
   
 
+  // Función para obtener color del botón según el estado del sistema
+  const getButtonColor = () => {
+    switch (systemStatus) {
+      case 'healthy': return '#74cbc3';
+      case 'degraded': return '#f39c12';
+      case 'error': return '#e74c3c';
+      default: return '#95a5a6';
+    }
+  };
+
+  const getStatusIcon = () => {
+    switch (systemStatus) {
+      case 'healthy': return '✨';
+      case 'degraded': return '⚠️';
+      case 'error': return '❌';
+      default: return '🔄';
+    }
+  };
+
   return (
     <div style={{fontFamily: 'Roboto, sans-serif', fontSize: 'large'}}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         style={{
           ...styles.floatingButton,
-          backgroundColor: '#74cbc3',
-          color: 'black',
+          backgroundColor: getButtonColor(),
+          color: systemStatus === 'error' ? 'white' : 'black',
           border: '2px solid white',
           borderRadius: '25%',
           padding: '15px 25px',
           cursor: 'pointer',
           fontSize: '1.1em',
+          transition: 'all 0.3s ease',
         }}
+        title={`Estado del sistema: ${systemStatus}`}
       >
-        {isOpen ? " ✕ " : "IA ✨"}
+        {isOpen ? " ✕ " : `IA ${getStatusIcon()}`}
       </button>
 
       {isOpen && (

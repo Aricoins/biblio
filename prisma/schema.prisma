@@ -10,9 +10,30 @@ datasource db {
 
 model Message {
   id        Int      @id @default(autoincrement())
-  userInput String
-  botReply  String
+  userInput String   @db.Text
+  botReply  String   @db.Text
+  userId    String?  @db.VarChar(255) // Para asociar con usuarios de Clerk
   createdAt DateTime @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime @updatedAt @db.Timestamptz(6)
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Libro {
+  id            Int      @id @default(autoincrement())
+  titulo        String   @db.VarChar(255)
+  autor         String   @db.VarChar(255)
+  descripcion   String?  @db.Text
+  imagen        String?  @db.VarChar(500)
+  creadoPor     String   @db.VarChar(255) // ID del usuario de Clerk
+  fechaCreacion DateTime @default(now()) @db.Timestamptz(6)
+  fechaActualiz DateTime @updatedAt @db.Timestamptz(6)
+  activo        Boolean  @default(true)
+
+  @@index([creadoPor])
+  @@index([fechaCreacion])
+  @@index([activo])
 }
 
 model products {
@@ -21,25 +42,36 @@ model products {
   category   String    @db.VarChar(255)
   specs      Json
   image      String    @db.VarChar(255)
-  price      Decimal   @db.Decimal
+  price      Decimal   @db.Decimal(10, 2)
   video      String?   @db.VarChar(255)
   disable    Boolean?  @default(false)
   created_at DateTime? @default(now()) @db.Timestamptz(6)
-  updated_at DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at DateTime? @updatedAt @db.Timestamptz(6)
+
+  @@index([category])
+  @@index([disable])
 }
 
 model proyectos {
-  id              Int       @id
+  id              Int       @id @default(autoincrement()) // Cambiado para auto-incremento
   numero_proyecto String    @db.VarChar(50)
   anio_proyecto   String    @db.VarChar(10)
-  titulo_proyecto String
+  titulo_proyecto String    @db.Text
   tipo_proyecto   String    @db.VarChar(100)
   autor           Json      @db.Json
-  colaboradores   String?
+  colaboradores   String?   @db.Text
   girado_a        String    @db.VarChar(255)
   acta_fecha      DateTime? @db.Date
-  aprobado        Boolean
+  aprobado        Boolean   @default(false)
   tipo_norma      String    @db.VarChar(100)
   numero_norma    String    @db.VarChar(50)
-  observaciones   String
+  observaciones   String    @db.Text
+  created_at      DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime  @updatedAt @db.Timestamptz(6)
+
+  @@unique([numero_proyecto, anio_proyecto])
+  @@index([numero_proyecto])
+  @@index([anio_proyecto])
+  @@index([aprobado])
+  @@index([tipo_norma])
 }

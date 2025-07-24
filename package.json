@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "setup": "node scripts/setup.js",
+    "db:migrate": "prisma migrate dev",
+    "db:reset": "prisma migrate reset",
+    "db:seed": "prisma db seed",
+    "health": "curl http://localhost:3000/api/health"
   },
   "dependencies": {
     "@clerk/localizations": "^2.4.4",
     "@clerk/nextjs": "^5.1.5",
     "@clerk/types": "^4.6.0",
+    "zod": "^3.22.4",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
