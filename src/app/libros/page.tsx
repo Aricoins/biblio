@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 import Libro from "../components/Libro";
 import axios from "axios";
 import styles from "./style.module.css";
+import stylesa from "../archivo/style.module.css";
 import OtrosTitulos from "../components/OtrosTitulos";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -15,6 +16,9 @@ import CalendarPage from "../components/Calendar";
 import ChatBot from "../components/ChatBot";
 import Footer from "../components/Footer";
 import ProtectedRoute from '../components/ProtectedRoute';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { MdOutgoingMail } from "react-icons/md";
 
 interface Libro {
   titulo: string;
@@ -184,7 +188,25 @@ if (!Array.isArray(rawData)) {
 <div style={{display: "flex", position: "absolute", zIndex: 10, width: "100%" }}>
      <Footer /></div>
       </div>
-    
+            <div className={stylesa.contactIcons}>
+          <a
+            href="https://wa.me/+5492945907975"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={stylesa.icon}
+          >
+            <FontAwesomeIcon icon={faWhatsapp} />
+          </a>
+          <a
+            href="mailto:http://digestobariloche@gmail.com"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className={stylesa.icon}
+          >
+            <MdOutgoingMail />
+          </a>
+          <ChatBot />
+        </div>
     </ProtectedRoute>);
 
 };

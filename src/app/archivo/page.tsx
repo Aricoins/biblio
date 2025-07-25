@@ -1,7 +1,6 @@
 "use client";
 import NavTop from "../components/NavTop";
 import NavFoot from "../components/NavFoot";
-import "../style.module.css";
 import ProyectosNoSancionados from "../components/ProyectosNoSancionados";
 import ExpedientesResoluciones from "../components/ExpedientesResoluciones";
 import ExpedientesOrdenanzas from "../components/ExpedientesOrdenanzas";
@@ -55,6 +54,7 @@ const Archivo = () => {
           >
             <Proyectos />
           </div>
+
           <div className={styles.subcontainer}>
             <div>
               <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
@@ -132,10 +132,9 @@ const Archivo = () => {
           >
             <MdOutgoingMail />
           </a>
-        </div>
-        <div className={styles.contactIcons} style={{ zIndex: 99999 }}>
           <ChatBot />
-    </div>      </div>
+        </div>
+      </div>
 
       <FondosDocumentales />
 

@@ -162,11 +162,11 @@ useEffect(() => {
     floatingButton: {
       position: 'fixed' as const,
       bottom: 65,
-      right: 0,
+      right: 12,
       zIndex: 99,
-      transform: 'scale(0.8)',
-      transition: 'transform 0.3s ease',
-    },
+      transform: 'scale(0.5)',
+      transition: 'transform 0.3s ease'
+       },
     chatWindow: {
       position: 'fixed' as const,
       bottom: 130,
