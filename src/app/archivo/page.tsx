@@ -58,7 +58,7 @@ const Archivo = () => {
           <div className={styles.subcontainer}>
             <div>
               <h2 className={styles.h4}> EXPEDIENTES APROBADOS: </h2>
-              <p style={{ margin: "0 0 0 20%" }}>
+              <p style={{ fontSize: "8px", textAlign: "center" }}>
                 Los expedientes anteriores a 2015 se encuentran alojados en
                 libros. Pida su escaneo a{" "}
                 <Link href="mailto:digestoconcejo@gmail.com">
@@ -133,13 +133,12 @@ const Archivo = () => {
             <MdOutgoingMail />
           </a>
         </div>
-         
-      </div> 
-        <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
-            {" "}
-            <ChatBot />
-          </div>
-        <FondosDocumentales />
+      </div>
+      <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
+        {" "}
+        <ChatBot />
+      </div>
+      <FondosDocumentales />
 
       <Footer />
 

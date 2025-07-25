@@ -41,7 +41,7 @@ const FondosDocumentales = () => {
           justifyContent: "right", 
           marginTop: "10%",  
           color: "black", 
-          fontSize: "8vw",
+          fontSize: "12px",
           fontFamily: "Roboto, sans-serif",
           opacity: 0.2,
           zIndex: 1,
