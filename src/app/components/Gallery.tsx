@@ -27,7 +27,7 @@ function Gallery() {
           setIsTransitioning(false);
         }, 200); // Duración del fundido a blanco
       };
-    }, 2000);
+    }, 4000);
     return () => {
       isMounted = false;
       clearInterval(interval);
