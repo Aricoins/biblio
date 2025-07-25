@@ -34,10 +34,11 @@ const Footer = () => {
                 Biblioteca
                 </Link>
               </li>
-              <li>             <Link href="/archivo" className="hover:text-[#74cbc3]  transition-colors">
-                  Nuestro Equipo
+              <li>
+                <Link href="/nosotros" className="hover:text-[#74cbc3]  transition-colors">
+                  Nosotros
                 </Link>
-</li>
+              </li>
    
               <li>
                 <Link href="mailto:digestoconcejo@gmail.com" className="hover:text-[#74cbc3]  transition-colors">

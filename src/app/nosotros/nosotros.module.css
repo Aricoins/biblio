@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem
+}
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+}
+.section {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.listItem {
+  margin-bottom: 0.5rem;
+}

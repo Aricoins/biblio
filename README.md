@@ -1,100 +1,177 @@
+
 # DiBiaseNet
 
-Esta es una aplicación Next.js para gestionar y visualizar documentación del Archivo y Bilbioteca Graciela Di Biase  del Concejo Municipal de San Carlos de Bariloche.
+DiBiaseNet es una webapp moderna para la gestión, consulta y visualización de documentación legislativa y bibliográfica del Concejo Municipal de San Carlos de Bariloche. Permite digitalizar, indexar y acceder a expedientes, normas, libros y materiales de interés municipal, con funcionalidades avanzadas de búsqueda, seguridad y automatización.
 
-Tecnologías utilizadas:
-- React + Next.js (App Router)
-- TypeScript
-- Prisma ORM con PostgreSQL
-- Tailwind CSS y CSS Modules para estilos
-- Clerk para autenticación
+---
 
-## Requisitos previos
+## Tecnologías principales
 
-- Node.js v16+
-- Base de datos PostgreSQL
-- `pnpm`, `npm` o `yarn` como gestor de paquetes
+- **Frontend:** React + Next.js (App Router), TypeScript, Tailwind CSS, CSS Modules
+- **Backend:** Prisma ORM con PostgreSQL
+- **Autenticación:** Clerk
+- **UI:** Ant Design, Heroicons, react-icons
+- **Procesamiento:** Zod (validación), SweetAlert2, XLSX, PapaParse, Marked, Highlight.js
+- **APIs externas:** Google Sheets, Cloudinary (imágenes/PDF)
+- **Gestión de datos:** Prisma, pg-promise, fs-extra
 
-## Configuración
+---
 
-1. Clonar el repositorio:
+## Estructura del proyecto
+
+```
+├── prisma/
+│   ├── schema.prisma         # Esquema de base de datos
+│   ├── migrations/           # Migraciones Prisma
+│   └── seed.js               # Script de seed para proyectos
+├── src/
+│   ├── app/                  # App Router y páginas principales
+│   ├── knowledge/            # JSON de proyectos y datos
+│   ├── components/           # Componentes UI (ChatBot, Libro, etc.)
+│   ├── lib/                  # Lógica de AI, validación, DB, loaders
+│   └── api/                  # Endpoints API
+├── public/                   # Assets estáticos
+├── scripts/
+│   └── setup.js              # Script de setup automatizado
+├── README.md                 # Este archivo
+```
+
+---
+
+## Instalación y configuración
+
+1. Clona el repositorio:
    ```powershell
    git clone <repo-url> .
    ```
-2. Instalar dependencias:
+2. Ejecuta el setup automatizado:
    ```powershell
-   npm install
+   node scripts/setup.js
    ```
-3. Copiar variables de entorno:
-   ```powershell
-   cp .env.example .env
-   ```
-4. Configurar la conexión a la base de datos en `.env`:
+   - Crea `.env` si no existe
+   - Instala dependencias
+   - Genera cliente Prisma
+3. Configura la conexión a la base de datos en `.env`:
    ```dotenv
    DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/nombre_db"
    ```
-5. Ejecutar migraciones de Prisma:
+4. Ejecuta migraciones Prisma:
    ```powershell
    npx prisma migrate dev
    ```
+5. Seed de datos reales:
+   ```powershell
+   node prisma/seed.js
+   ```
+
+---
 
 ## Desarrollo
 
-Iniciar servidor de desarrollo:
-```powershell
-npm run dev
-```
-Abrir http://localhost:3000 en el navegador.
+- Inicia el servidor de desarrollo:
+  ```powershell
+  npm run dev
+  ```
+- Accede a http://localhost:3000
 
-## Compilación y producción
+---
 
-Generar build de producción:
-```powershell
-npm run build
-```
-Iniciar en modo producción:
-```powershell
-npm start
-```
+## Producción
 
+- Build de producción:
+  ```powershell
+  npm run build
+  ```
+- Inicia en modo producción:
+  ```powershell
+  npm start
+  ```
+
+---
+
+## Funcionalidades detalladas
+
+### 1. Gestión documental avanzada
+- Acceso total a expedientes originales escaneados y normas en versión firmada
+- Digitalización y despapelización: reducción de uso de papel y espacio físico
+- Biblioteca digital de libros y materiales municipales
+
+### 2. Búsqueda e indexación inteligente
+- Búsqueda avanzada por número, tipo, autor, palabras clave y año
+- Índices automáticos y filtros dinámicos
+- Recuperación eficiente: reducción de tiempos de consulta en más de 60%
+
+### 3. ChatBot asistente virtual
+- ChatBot con IA (OpenRouter, OpenAI, Anthropic) para consultas legislativas
+- Acceso y procesamiento de información desde el JSON principal (`src/knowledge/proyectos.json`)
+- Respuestas contextuales y personalizadas
+
+### 4. Seguridad y control de acceso
+- Autenticación robusta con Clerk
+- Validación estricta de datos con Zod
+- Manejo seguro de errores y logs
+- Auditoría de accesos y gestión de permisos
+
+### 5. Integración y automatización
+- Integración con sistemas de gestión documental existentes
+- APIs externas: Google Sheets, Cloudinary para imágenes y PDFs
+- Scripts automatizados para setup y seed de datos
+
+### 6. Analíticas y reportes
+- Reportes de uso, accesos y frecuencia de consultas
+- Estadísticas de satisfacción y eficiencia
+
+### 7. Estructura modular y escalable
+- Componentes reutilizables y lógica desacoplada
+- Migraciones y seeds automatizados
+- Soporte para ampliación de funcionalidades
+
+---
+
+## Seguridad y buenas prácticas
+
+- Consultas SQL protegidas con Prisma ORM
+- Validación de entrada con Zod schemas
+- Autenticación y control de acceso con Clerk
+- Manejo seguro de errores y logs
+- Migraciones y seeds automatizados
+
+---
+
+## Datos de interés
+
+- JSON principal: `src/knowledge/proyectos.json` (fuente de verdad para proyectos)
+- Seed automatizado para poblar la base de datos desde JSON
+- Reducción de tiempos de consulta y costos de almacenamiento
+
+---
 
 ## Contribuciones
 
-1. Hacer fork del repositorio
-2. Crear una rama nueva (feature)
-3. Realizar commits de tus cambios
-4. Abrir un pull request
+1. Haz fork del repositorio
+2. Crea una rama nueva (feature)
+3. Realiza commits de tus cambios
+4. Abre un pull request
 
 ---
-## Qué es DiBiase.net
 
-Se trata de una innovadora herramienta diseñada para optimizar la calidad legislativa mediante el acceso y manejo eficiente de documentos digitales. Desarrollada por nuestro equipo, DiBiase.net facilita la gestión de todo tipo de regulaciones y expedientes, promoviendo la modernización y la eficiencia en el trabajo diario.
+## Ejemplo de uso de endpoints y scripts
 
-### Objetivos
-- **Acceso total** a documentos digitalizados (proyectos, ordenanzas, comunicaciones, declaraciones, resoluciones).
-- **Despapelización**, reduciendo el uso de papel y liberando espacio físico.
+### Seed de proyectos desde JSON
+```powershell
+node prisma/seed.js
+```
 
-### Principales funcionalidades
-- Acceso a expedientes originales escaneados y normas en versión firmada.
-- Índices avanzados: búsquedas por número, tipo, autor o palabras clave.
-- Biblioteca digital de libros de interés municipal y otros materiales.
-- Gestión de permisos y auditoría de accesos.
-- Búsqueda avanzada y recuperación eficiente (reducción de tiempos de consulta en más de 60%).
-- Integración con sistemas de gestión documental existentes.
-- Analíticas y reportes de uso, accesos y frecuencia de consultas.
+### Setup automatizado
+```powershell
+node scripts/setup.js
+```
 
-### Beneficios
-- **Reducción de costos**: hasta 70% menos en almacenamiento y mantenimiento físico.
-- **Accesibilidad remota**: consulta desde cualquier lugar por múltiples usuarios.
-- **Seguridad y preservación**: respaldos en múltiples ubicaciones y control de accesos.
-- **Impacto ambiental**: menor consumo de papel y reducción de residuos.
+---
 
-### Datos de interés
-- Sólo el 20% de documentos físicos se consultan regularmente; el 80% restante ocupa espacio sin uso.
-- Búsquedas digitalizadas pueden reducir tiempos de 15 minutos a menos de 1 minuto por documento.
-- Encuestas muestran aumento del 70% en la satisfacción de usuarios.
+## Sobre DiBiaseNet
 
-**DiBiase.net** automatiza la digitalización, indexación y almacenamiento, transformando la gestión documental en un proceso eficiente, seguro y sostenible.
+DiBiaseNet automatiza la digitalización, indexación y almacenamiento, transformando la gestión documental en un proceso eficiente, seguro y sostenible. Desarrollada para optimizar la calidad legislativa y administrativa, facilita el acceso, consulta y manejo de regulaciones y expedientes, promoviendo la modernización y eficiencia en el trabajo diario.
 
-Para más información o demostraciones personalizadas, contáctenos.
+¿Dudas o demostraciones? ¡Contáctanos!
 
