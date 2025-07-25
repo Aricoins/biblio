@@ -14,20 +14,25 @@ function Gallery() {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
     const interval = setInterval(() => {
-      // Iniciar transición: fundir a blanco
       setIsTransitioning(true);
-      
-      // Después de un breve tiempo, cambiar la imagen y volver a mostrar
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % imagenes.length);
-        setIsTransitioning(false);
-      }, 200); // Duración del fundido a blanco
-      
-    }, 2000); // Tiempo total entre cambios (incluyendo la transición)
-
-    return () => clearInterval(interval);
-  }, []);
+      const nextIndex = (currentIndex + 1) % imagenes.length;
+      const nextImg = new window.Image();
+      nextImg.src = imagenes[nextIndex].src;
+      nextImg.onload = () => {
+        if (!isMounted) return;
+        setTimeout(() => {
+          setCurrentIndex(nextIndex);
+          setIsTransitioning(false);
+        }, 200); // Duración del fundido a blanco
+      };
+    }, 2000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, [currentIndex]);
 
   return (
     <div className="fixed inset-0 -z-10">
