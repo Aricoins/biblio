@@ -59,12 +59,11 @@ if (!Array.isArray(rawData)) {
   return;
 }
 
-      const librosConAcento: Libro[] = rawData
+      const librosConAcento: Libro[] = [...rawData]
         .map((libro: Libro) => ({
           ...libro,
           titulo: diacritics.remove(libro.titulo.toLowerCase())
-        }))
-        .reverse(); // Invertir el orden aquí
+        })).reverse(); // Invertir el orden aquí
 
       setData(librosConAcento);
     } catch (error) {

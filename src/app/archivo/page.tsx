@@ -133,11 +133,10 @@ const Archivo = () => {
             <MdOutgoingMail />
           </a>
         </div>
-      </div>
-      <div className={styles.contactIcons} style={{ zIndex: 999999 }}>
-        {" "}
-        <ChatBot />
-      </div>
+        <div className={styles.contactIcons} style={{ zIndex: 99999 }}>
+          <ChatBot />
+    </div>      </div>
+
       <FondosDocumentales />
 
       <Footer />

@@ -5,7 +5,6 @@ import withReactContent from 'sweetalert2-react-content';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
-import JuntasVecinales from './Juntas';
 
 const MySwal = withReactContent(Swal);
 
