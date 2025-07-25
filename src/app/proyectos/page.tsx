@@ -461,11 +461,11 @@ function Proyectos() {
               display: "flex",
               flexDirection: "column",
               gap: 3,
-              alignItems: "flex-start",
+              alignItems: "center",
             }}
           >
             <span
-              style={{ fontWeight: 500, fontSize: "0.95em", marginBottom: 2 }}
+              style={{ fontWeight: 600, fontSize: "20px", justifyContent: "center" }}
             >
               {numeroNorma}
             </span>
@@ -504,7 +504,7 @@ function Proyectos() {
             </div>
             {!driveUrl && (
               <span style={{ color: "#888", fontSize: "0.9em", marginTop: 2 }}>
-                Norma no disponible
+                Expediente no disponible
               </span>
             )}
           </div>
