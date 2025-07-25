@@ -21,11 +21,11 @@ export default function NosotrosPage() {
         <Card className={styles.card}>
           <Typography.Title level={2}>¿Qué es DiBiaseNet?</Typography.Title>
           <Typography.Paragraph>
-            DiBiaseNet es una plataforma digital que moderniza el acceso, consulta y gestión de la documentación legislativa y bibliográfica del Concejo Municipal de San Carlos de Bariloche. Permite a los usuarios consultar expedientes, normas, libros y materiales municipales de forma rápida, segura y eficiente.
+            DiBiaseNet es una plataforma digital que moderniza el acceso, consulta y gestión de la documentación legislativa y bibliográfica del Concejo Municipal de San Carlos de Bariloche. Permite a los usuarios consultar expedientes, libros y material de archivo de forma rápida, segura y eficiente.
           </Typography.Paragraph>
           <Typography.Title level={3}>Fundamentos y creación</Typography.Title>
           <Typography.Paragraph>
-            La Biblioteca fue creada por la Resolución 425-CM-12, con el objetivo de preservar, digitalizar y facilitar el acceso público a la documentación legislativa y bibliográfica. Los fundamentos de la resolución destacan la importancia de la memoria institucional, la transparencia, la modernización administrativa y el acceso universal a la información pública.
+            La Biblioteca fue creada con el objetivo de preservar, digitalizar y facilitar el acceso público a la documentación legislativa y bibliográfica. Los fundamentos de la resolución destacan la importancia de la memoria institucional, la transparencia, la modernización administrativa y el acceso universal a la información pública.
           </Typography.Paragraph>
           <Typography.Paragraph>
             <strong>Fundamentos principales:</strong>
@@ -43,10 +43,10 @@ export default function NosotrosPage() {
         <Card className={styles.card}>
           <Typography.Title level={3}>Funcionalidades para usuarios</Typography.Title>
           <ul className={styles.list}>
-            <li className={styles.listItem}>Consulta y búsqueda avanzada de expedientes, normas y libros.</li>
+            <li className={styles.listItem}>Consulta y búsqueda avanzada de expedientes, editables y libros.</li>
             <li className={styles.listItem}>Acceso a documentos originales escaneados y versiones firmadas.</li>
             <li className={styles.listItem}>Índices por número, tipo, autor, año y palabras clave.</li>
-            <li className={styles.listItem}>ChatBot asistente virtual para consultas legislativas.</li>
+            <li className={styles.listItem}>ChatBot asistente virtual en desarrollo para consultas legislativas.</li>
             <li className={styles.listItem}>Gestión de permisos y auditoría de accesos.</li>
             <li className={styles.listItem}>Analíticas y reportes de uso.</li>
             <li className={styles.listItem}>Interfaz moderna, accesible y responsiva.</li>
